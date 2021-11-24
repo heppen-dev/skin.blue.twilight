@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+  <include name="Primus_Main">
+    <control type="label">
+      <label>That's the place where fun begin</label>
+    </control>
+  </include>
+</includes>
