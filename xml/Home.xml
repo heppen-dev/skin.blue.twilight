@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+  <defaultcontrol>9000</defaultcontrol>
+  <backgroundcolor>$VAR[HomeBackgroundColor]</backgroundcolor>
+  <onunload>ClearProperty(TMDbHelper.WidgetContainer,home)</onunload>
+  <onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;levels=3&amp;group=mainmenu|shutdown|searchmenu)</onload>
+  <!-- set default home layout if none is set -->
+  <onload condition="!Skin.HasSetting(Vertical_Main) + !Skin.HasSetting(Classic_Main) + !Skin.HasSetting(Horizontal_Main)">Skin.SetBool(Classic_Main)</onload>
+  <!-- set fallback menu style -->
+  <onload condition="String.IsEmpty(Skin.String(MenuStyle))">Skin.SetString(MenuStyle,IconsText)</onload>
+  <!-- set default selection box -->
+  <onload condition="String.IsEmpty(Skin.String(HighlightSize))">Skin.SetString(HighlightSize,Bold)</onload>
+  <!-- set colourful rating icons as default -->
+  <onload condition="String.IsEmpty(Skin.String(Icons))">Skin.SetString(Icons,colorful)</onload>
+  <controls>
+    <control type="button" id="20000">
+      <include>HiddenObject</include>
+      <animation effect="fade" time="300" start="100" end="0">Focus</animation>
+      <onfocus>SetFocus(2000)</onfocus>
+      <onclick>noop</onclick>
+      <visible allowhiddenfocus="true">Control.HasFocus(20000)</visible>
+    </control>
+    <control type="button" id="20001">
+      <include>HiddenObject</include>
+      <animation effect="fade" time="300" start="100" end="0">Focus</animation>
+      <onfocus>SetFocus(2000)</onfocus>
+      <onclick>noop</onclick>
+      <visible allowhiddenfocus="true">Control.HasFocus(20001)</visible>
+    </control>
+    <include>DefaultBackground</include>
+    <control type="list" id="9989">
+      <posx>-20</posx>
+      <posy>-20</posy>
+      <width>1</width>
+      <height>1</height>
+      <visible>true</visible>
+      <onup>50</onup>
+      <ondown>50</ondown>
+      <onleft>50</onleft>
+      <onright>50</onright>
+      <itemlayout width="1" height="1">
+      </itemlayout>
+      <focusedlayout height="1" width="1">
+      </focusedlayout>
+      <content>
+        <include>skinshortcuts-submenu-1</include>
+      </content>
+    </control>
+    <control type="group">
+      <include>Visible_Fade</include>
+      <include condition="Skin.HasSetting(Vertical_Main)">Vertical_Main</include>
+      <include condition="Skin.HasSetting(Classic_Main)">Classic_Main</include>
+      <include condition="Skin.HasSetting(Horizontal_Main)">Horizontal_Main</include>
+    </control>
+  </controls>
+</window>

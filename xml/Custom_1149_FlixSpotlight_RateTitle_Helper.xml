@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="1149">
+  <onload>SetProperty(TMDbHelper.WidgetContainer,3000,Home)</onload>
+  <onload condition="[String.IsEmpty(Window(home).Property(spotlight_DBID)) | ![String.IsEqual(Window(home).Property(spotlight_DBType),movie) | String.IsEqual(Window(home).Property(spotlight_DBType),tvshow)]]">AlarmClock(moveto1,RunScript(plugin.video.themoviedb.helper,add_path=$INFO[Window(home).Property(spotlight_FolderPath)],call_auto=1190),00:03,silent)</onload>
+  <onload condition="String.IsEqual(Window(home).Property(spotlight_DBType),movie)">AlarmClock(moveto2,RunScript(plugin.video.themoviedb.helper,add_path=$INFO[Window(home).Property(spotlight_Label),videodb://movies/titles/?xsp=%7B%22order%22%3A%7B%22direction%22%3A%22ascending%22%2C%22ignorefolders%22%3A0%2C%22method%22%3A%22sorttitle%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22title%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%22,%22%5D%7D%5D%7D%2C%22type%22%3A%22movies%22%7D],call_auto=1190),00:03,silent)</onload>
+  <onload condition="String.IsEqual(Window(home).Property(spotlight_DBType),tvshow)">AlarmClock(moveto3,RunScript(plugin.video.themoviedb.helper,add_path=$INFO[Window(home).Property(spotlight_Label),videodb://tvshows/titles/?xsp=%7B%22order%22%3A%7B%22direction%22%3A%22ascending%22%2C%22ignorefolders%22%3A0%2C%22method%22%3A%22sorttitle%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22title%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%22,%22%5D%7D%5D%7D%2C%22type%22%3A%22tvshows%22%7D],call_auto=1190),00:03,silent)</onload>
+  <onload>AlarmClock(closewindow,Dialog.Close(all,true),00:00,silent)</onload>
+
+  <onunload>ClearProperty(spotlight_FolderPath,home)</onunload>
+  <onunload>ClearProperty(spotlight_Label,home)</onunload>
+  <onunload>ClearProperty(spotlight_DBID,home)</onunload>
+  <onunload>ClearProperty(spotlight_DBType,home)</onunload>
+  <controls>
+    <!-- empty -->
+  </controls>
+</window>

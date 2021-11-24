@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+  <include name="Animation_FocusTextureFade">
+    <animation effect="fade" start="0" end="100" time="200" tween="sine">Focus</animation>
+    <animation effect="fade" start="100" end="0" time="0">UnFocus</animation>
+  </include>
+  <include name="Animation_DialogPopupOpenClose">
+    <animation type="WindowOpen" reversible="false">
+      <effect type="zoom" start="80" end="100" center="50%,50%" delay="160" tween="back" time="240"/>
+      <effect type="fade" delay="160" end="100" time="240"/>
+    </animation>
+    <animation type="WindowClose" reversible="false">
+      <effect type="zoom" start="100" end="80" center="50%,50%" easing="in" tween="back" time="240"/>
+      <effect type="fade" start="100" end="0" time="240"/>
+    </animation>
+    <depth>DepthDialog</depth>
+  </include>
+  <include name="Animation_DialogPopupVisible">
+    <animation type="Visible" reversible="false">
+      <effect type="zoom" start="80" end="100" center="50%,50%" delay="160" tween="back" time="240"/>
+      <effect type="fade" delay="160" end="100" time="240"/>
+    </animation>
+    <animation type="Hidden" reversible="false">
+      <effect type="zoom" start="100" end="80" center="50%,50%" easing="in" tween="back" time="240"/>
+      <effect type="fade" start="100" end="0" time="240"/>
+    </animation>
+  </include>
+  <include name="Visible_Fade">
+    <animation effect="fade" end="100" time="200">Visible</animation>
+    <animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+  </include>
+  <include name="OpenClose_Fade">
+    <animation effect="fade" end="100" time="200">WindowOpen</animation>
+    <animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+  </include>
+  <include name="Visible_Right_Delayed">
+    <include condition="Skin.HasSetting(no_slide_animations)">Visible_Fade</include>
+    <include content="Vis_FadeSlide_Right_Delayed" condition="!Skin.HasSetting(no_slide_animations)">
+      <param name="id" value="$PARAM[id]"/>
+    </include>
+  </include>
+  <include name="Vis_FadeSlide_Right_Delayed">
+    <animation type="Conditional" condition="String.IsEqual(Container(9000).ListItem.Property(id),$PARAM[id])">
+      <effect type="fade" start="0" end="100" time="300" tween="sine" delay="300" easing="out"/>
+      <effect type="slide" start="320" end="0" time="400" delay="300" tween="cubic" easing="out"/>
+    </animation>
+    <animation type="Hidden">
+      <effect type="fade" start="100" end="0" time="300" tween="sine" easing="out"/>
+      <effect type="slide" start="0" end="320" time="300" tween="cubic" easing="out"/>
+    </animation>
+  </include>
+  <include name="Visible_Right">
+    <include condition="Skin.HasSetting(no_slide_animations)">Visible_Fade</include>
+    <include condition="!Skin.HasSetting(no_slide_animations)">Vis_FadeSlide_Right</include>
+  </include>
+  <include name="Animation_TopSlide">
+    <animation type="WindowOpen" reversible="False">
+      <effect type="fade" start="0" end="100" time="300"/>
+      <effect type="slide" start="0,-200" end="0,0" time="300" tween="cubic" easing="out"/>
+    </animation>
+    <animation type="WindowClose" reversible="False">
+      <effect type="fade" start="100" end="0" time="300"/>
+      <effect type="slide" start="0,0" end="0,-200" time="300" tween="cubic" easing="out"/>
+    </animation>
+  </include>
+  <include name="Animation_BottomSlide">
+    <animation type="WindowOpen" reversible="False">
+      <effect type="fade" start="0" end="100" time="300"/>
+      <effect type="slide" start="0,200" end="0,0" time="300" tween="cubic" easing="out"/>
+    </animation>
+    <animation type="WindowClose" reversible="False">
+      <effect type="fade" start="100" end="0" time="300"/>
+      <effect type="slide" start="0,0" end="0,200" time="300" tween="cubic" easing="out"/>
+    </animation>
+  </include>
+  <include name="Vis_FadeSlide_Right">
+    <animation type="Visible" reversible="False">
+      <effect type="fade" start="0" end="100" time="300" tween="sine" easing="out"/>
+      <effect type="slide" start="320" end="0" time="400" tween="cubic" easing="out"/>
+    </animation>
+    <animation type="Hidden" reversible="False">
+      <effect type="fade" start="100" end="0" time="300" tween="sine" easing="out"/>
+      <effect type="slide" start="0" end="320" time="300" tween="cubic" easing="out"/>
+    </animation>
+  </include>
+  <include name="Visible_Left">
+    <include condition="Skin.HasSetting(no_slide_animations)">Visible_Fade</include>
+    <include condition="!Skin.HasSetting(no_slide_animations)">Vis_FadeSlide_Left</include>
+  </include>
+  <include name="Vis_FadeSlide_Left">
+    <animation type="Visible" reversible="False">
+      <effect type="fade" start="0" end="100" time="300" tween="sine" easing="out"/>
+      <effect type="slide" start="-320" end="0" time="400" tween="cubic" easing="out"/>
+    </animation>
+    <animation type="Hidden" reversible="False">
+      <effect type="fade" start="100" end="0" time="300" tween="sine" easing="out"/>
+      <effect type="slide" start="0" end="-320" time="300" tween="cubic" easing="out"/>
+    </animation>
+  </include>
+  <include name="OpenClose_Left">
+    <include condition="Skin.HasSetting(no_slide_animations)">OpenClose_Fade</include>
+    <include condition="!Skin.HasSetting(no_slide_animations)">OpenClose_FadeSlide_Left</include>
+  </include>
+  <include name="OpenClose_FadeSlide_Left">
+    <animation type="WindowOpen">
+      <effect type="fade" start="0" end="100" time="300" tween="sine" easing="out"/>
+      <effect type="slide" start="-320" end="0" time="400" tween="cubic" easing="out"/>
+    </animation>
+    <animation type="WindowClose">
+      <effect type="fade" start="100" end="0" time="300" tween="sine" easing="out"/>
+      <effect type="slide" start="0" end="-320" time="300" tween="cubic" easing="out"/>
+    </animation>
+  </include>
+  <include name="OpenClose_Right">
+    <include condition="Skin.HasSetting(no_slide_animations)">OpenClose_Fade</include>
+    <include condition="!Skin.HasSetting(no_slide_animations)">OpenClose_FadeSlide_Right</include>
+  </include>
+  <include name="OpenClose_FadeSlide_Right">
+    <animation type="WindowOpen">
+      <effect type="fade" start="0" end="100" time="300" tween="sine" easing="out"/>
+      <effect type="slide" start="320" end="0" time="400" tween="cubic" easing="out"/>
+    </animation>
+    <animation type="WindowClose">
+      <effect type="fade" start="100" end="0" time="300" tween="sine" easing="out"/>
+      <effect type="slide" start="0" end="320" time="300" tween="cubic" easing="out"/>
+    </animation>
+  </include>
+  <include name="Keyboard_Slide_Up">
+    <animation type="WindowOpen">
+      <effect type="fade" start="0" end="100" time="300" tween="sine" easing="out"/>
+      <effect type="slide" start="0,1080" end="0,0" time="400" tween="cubic" easing="out"/>
+    </animation>
+    <animation type="WindowClose">
+      <effect type="fade" start="100" end="0" time="300" tween="sine" easing="out"/>
+      <effect type="slide" start="0,0" end="0,1080" time="400" tween="cubic" easing="out"/>
+    </animation>
+  </include>
+  <include name="Animation_Widget_Slide">
+    <animation effect="slide" end="0,-460" time="600" tween="cubic" easing="inout" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,0)">Conditional</animation>
+    <animation effect="slide" end="0,-460" time="600" tween="cubic" easing="inout" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,1)">Conditional</animation>
+    <animation effect="slide" end="0,-460" time="600" tween="cubic" easing="inout" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,2)">Conditional</animation>
+    <animation effect="slide" end="0,-460" time="600" tween="cubic" easing="inout" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,3)">Conditional</animation>
+    <animation effect="slide" end="0,-460" time="600" tween="cubic" easing="inout" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,4)">Conditional</animation>
+    <animation effect="slide" end="0,-460" time="600" tween="cubic" easing="inout" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,5)">Conditional</animation>
+    <animation effect="slide" end="0,-460" time="600" tween="cubic" easing="inout" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,6)">Conditional</animation>
+    <animation effect="slide" end="0,-460" time="600" tween="cubic" easing="inout" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,7)">Conditional</animation>
+    <animation effect="slide" end="0,-460" time="600" tween="cubic" easing="inout" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,8)">Conditional</animation>
+    <animation effect="slide" end="0,-460" time="600" tween="cubic" easing="inout" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,9)">Conditional</animation>
+    <animation effect="slide" end="0,-460" time="600" tween="cubic" easing="inout" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,10)">Conditional</animation>
+    <animation effect="slide" end="0,-460" time="600" tween="cubic" easing="inout" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,11)">Conditional</animation>
+    <animation effect="slide" end="0,-460" time="600" tween="cubic" easing="inout" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,12)">Conditional</animation>
+    <animation effect="slide" end="0,-460" time="600" tween="cubic" easing="inout" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,13)">Conditional</animation>
+    <animation effect="slide" end="0,-460" time="600" tween="cubic" easing="inout" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,14)">Conditional</animation>
+    <animation effect="slide" end="0,-460" time="600" tween="cubic" easing="inout" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,15)">Conditional</animation>
+    <animation effect="slide" end="0,-460" time="600" tween="cubic" easing="inout" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,16)">Conditional</animation>
+    <animation effect="slide" end="0,-460" time="600" tween="cubic" easing="inout" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,17)">Conditional</animation>
+    <animation effect="slide" end="0,-460" time="600" tween="cubic" easing="inout" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,18)">Conditional</animation>
+    <animation effect="slide" end="0,-460" time="600" tween="cubic" easing="inout" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,19)">Conditional</animation>
+    <animation effect="slide" end="0,-460" time="600" tween="cubic" easing="inout" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,20)">Conditional</animation>
+    <animation effect="slide" end="0,-460" time="600" tween="cubic" easing="inout" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,21)">Conditional</animation>
+    <animation effect="slide" end="0,-460" time="600" tween="cubic" easing="inout" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,22)">Conditional</animation>
+    <animation effect="slide" end="0,-460" time="600" tween="cubic" easing="inout" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,23)">Conditional</animation>
+    <animation effect="slide" end="0,-460" time="600" tween="cubic" easing="inout" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,24)">Conditional</animation>
+    <animation effect="slide" end="0,-460" time="600" tween="cubic" easing="inout" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,25)">Conditional</animation>
+    <animation effect="slide" end="0,-460" time="600" tween="cubic" easing="inout" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,26)">Conditional</animation>
+    <animation effect="slide" end="0,-460" time="600" tween="cubic" easing="inout" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,27)">Conditional</animation>
+    <animation effect="slide" end="0,-460" time="600" tween="cubic" easing="inout" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,28)">Conditional</animation>
+    <animation effect="slide" end="0,-460" time="600" tween="cubic" easing="inout" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,29)">Conditional</animation>
+    <animation effect="slide" end="0,-460" time="600" tween="cubic" easing="inout" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,30)">Conditional</animation>
+    <animation effect="slide" end="0,-460" time="600" tween="cubic" easing="inout" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,31)">Conditional</animation>
+    <animation effect="slide" end="0,-460" time="600" tween="cubic" easing="inout" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,32)">Conditional</animation>
+    <animation effect="slide" end="0,-460" time="600" tween="cubic" easing="inout" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,33)">Conditional</animation>
+    <animation effect="slide" end="0,-460" time="600" tween="cubic" easing="inout" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,34)">Conditional</animation>
+    <animation effect="slide" end="0,-460" time="600" tween="cubic" easing="inout" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,35)">Conditional</animation>
+    <animation effect="slide" end="0,-460" time="600" tween="cubic" easing="inout" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,36)">Conditional</animation>
+    <animation effect="slide" end="0,-460" time="600" tween="cubic" easing="inout" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,37)">Conditional</animation>
+    <animation effect="slide" end="0,-460" time="600" tween="cubic" easing="inout" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,38)">Conditional</animation>
+    <animation effect="slide" end="0,-460" time="600" tween="cubic" easing="inout" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,39)">Conditional</animation>
+  </include>
+  <include name="GenreCycle">
+    <animation effect="fade" start="100" end="0" time="600" delay="3000" reversible="false" condition="System.IdleTime(6)">Conditional</animation>
+  </include>
+  <include name="StudioCycle">
+    <animation effect="slide" start="0" end="0,800" time="0" delay="0" reversible="false" condition="System.IdleTime(9)">Conditional</animation>
+    <animation effect="fade" start="0" end="100" time="600" delay="500" reversible="false" condition="System.IdleTime(9)">Conditional</animation>
+    <animation effect="fade" start="100" end="0" time="600" delay="0" reversible="false" condition="System.IdleTime(18)">Conditional</animation>
+  </include>
+  <include name="CastCycle">
+    <animation effect="slide" start="0" end="0,800" time="0" delay="0" reversible="false" condition="System.IdleTime(18)">Conditional</animation>
+    <animation effect="fade" start="0" end="100" time="600" delay="500" reversible="false" condition="System.IdleTime(18)">Conditional</animation>
+  </include>
+  <include name="Animation_AlarmDelay">
+    <animation effect="slide" end="0,0" time="3000" reversible="false">Focus</animation>
+  </include>
+</includes>

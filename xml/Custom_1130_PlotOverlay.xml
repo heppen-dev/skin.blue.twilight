@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window type="dialog" id="1130">
+  <defaultcontrol always="true">1000</defaultcontrol>
+  <include>Animation_DialogPopupOpenClose</include>
+  <onunload>ClearProperty(Title,1130)</onunload>
+  <onunload>ClearProperty(Plot,1130)</onunload>
+  <controls>
+    <control type="image">
+      <width>1920</width>
+      <height>1080</height>
+      <texture background="true" colordiffuse="D9FFFFFF">colors/black.png</texture>
+    </control>
+    <control type="group">
+      <left>13%</left>
+      <centertop>50%</centertop>
+      <height>880</height>
+      <control type="textbox" id="2000">
+        <left>1%</left>
+        <top>85</top>
+        <width>82%</width>
+        <height>675</height>
+        <pagecontrol>3000</pagecontrol>
+        <font>font60</font>
+        <textcolor>dialog_fg_100</textcolor>
+        <label>$VAR[Label_OverlayPlot]$VAR[Label_OverlayCritics]</label>
+      </control>
+      <control type="scrollbar" id="3000">
+        <include>HiddenObject</include>
+        <ondown>3000</ondown>
+        <onup>3000</onup>
+      </control>
+    </control>
+    <control type="button" id="1000">
+      <include>HiddenObject</include>
+      <onclick>Action(Close)</onclick>
+      <onup>PageUp(3000)</onup>
+      <ondown>PageDown(3000)</ondown>
+    </control>
+  </controls>
+</window>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="1140">
+  <animation effect="slide" start="0,-1000" end="0" time="400" tween="quadratic" condition="Window.IsActive(1140)">WindowOpen</animation>
+  <animation effect="fade" start="0" end="100" time="100" delay="100" condition="Window.IsActive(1140)">WindowOpen</animation>
+  <defaultcontrol>6000</defaultcontrol>
+  <onunload>PlayerControl(Stop)</onunload>
+  <controls>
+    <control type="group">
+      <top>300</top>
+      <left>80</left>
+      <animation effect="fade" start="100" end="0" time="400" tween="quadratic" condition="Window.IsActive(1141)">Conditional</animation>
+      <control type="image">
+        <top>-300</top>
+        <left>-150</left>
+        <width>1920</width>
+        <height>1080</height>
+        <texture background="true">common/flixspotlight-shadowspot.png</texture>
+        <visible>Player.HasVideo + [Skin.HasSetting(PlayTrailersFullScreen) | Skin.HasSetting(Horizontal_Main)]</visible>
+        <animation effect="fade" start="0" end="100" time="1200" tween="quadratic" condition="Player.HasVideo">Conditional</animation>
+      </control>
+      <control type="group" id="5600">
+        <top>-100</top>
+        <control type="image">
+          <top>-840</top>
+          <left>150</left>
+          <width>640</width>
+          <aspectratio>keep</aspectratio>
+          <texture background="true">$INFO[Window(home).Property(spotlight_ClearLogo)]</texture>
+          <visible>!String.IsEmpty(Window(home).Property(spotlight_ClearLogo))</visible>
+        </control>
+        <control type="group">
+          <control type="image">
+            <top>155</top>
+            <left>150</left>
+            <width>64</width>
+            <height>auto</height>
+            <aspectratio>keep</aspectratio>
+            <texture>flags/colorful/ratings/imdbtop250.png</texture>
+            <visible>!String.IsEmpty(Window(home).Property(spotlight_250))</visible>
+          </control>
+          <control type="image">
+            <top>120</top>
+            <left>134</left>
+            <width>92</width>
+            <height>auto</height>
+            <aspectratio>keep</aspectratio>
+            <texture>special://skin/extras/icons/userrating.png</texture>
+            <visible>String.IsEmpty(Window(home).Property(spotlight_250))</visible>
+          </control>
+          <control type="label">
+            <textcolor>dialog_fg_100</textcolor>
+            <top>170</top>
+            <left>240</left>
+            <width>auto</width>
+            <height>42</height>
+            <font>font30_title</font>
+            <label>$VAR[Label_Spotlight_Top250]</label>
+          </control>
+        </control>
+        <include content="Object_Item_Showcase">
+          <param name="title" value="$INFO[Window(home).Property(spotlight_Title)]"/>
+          <param name="title_width" value="1200" />
+          <param name="title_visible" value="String.IsEmpty(Window(home).Property(spotlight_ClearLogo))" />
+          <param name="plot" value="$INFO[Window(home).Property(spotlight_Plot)]"/>
+          <param name="visible_infoline" value="false" />
+        </include>
+        <visible>!$EXP[infodialog_active]</visible>
+      </control>
+      <control type="group">
+        <top>300</top>
+        <left>150</left>
+        <control type="grouplist">
+          <orientation>horizontal</orientation>
+          <ondown>PlayerControl(Stop)</ondown>
+          <ondown>AlarmClock(closeDialogs,Dialog.Close(all),00:02,silent)</ondown>
+          <include content="InfoButton">
+            <param name="id" value="6000"/>
+            <param name="groupid" value="7000"/>
+            <param name="icon" value="special://skin/extras/icons/play3.png"/>
+            <param name="label" value="$VAR[Flix_Spotlight_Title]"/>
+            <param name="visible" value="Control.IsVisible(6000)"/>
+            <param name="onclick_1" value="Dialog.Close(all,true)" />
+            <param name="onclick_2_condition" value="[String.IsEqual(Window(home).Property(spotlight_DBType),movie) | String.IsEqual(Window(home).Property(spotlight_DBType),episode) | String.IsEqual(Window(home).Property(spotlight_DBType),video)] | String.IsEqual(Window(home).Property(spotlight_isPVR),true)" />
+            <param name="onclick_2" value="RunScript(script.embuary.helper,action=playitem,item='$ESCINFO[ListItem.Filenameandpath]')" />
+            <param name="onclick_3_condition" value="![[String.IsEqual(Window(home).Property(spotlight_DBType),movie) | String.IsEqual(Window(home).Property(spotlight_DBType),episode) | String.IsEqual(Window(home).Property(spotlight_DBType),video)] | String.IsEqual(Window(home).Property(spotlight_isPVR),true)]" />
+            <param name="onclick_3" value="RunScript(plugin.video.themoviedb.helper,close_dialog=1190,call_path=$INFO[ListItem.FolderPath])" />
+          </include>
+          <include content="InfoButton">
+            <param name="id" value="6001"/>
+            <param name="groupid" value="7001"/>
+            <param name="icon" value="special://skin/extras/icons/info.png"/>
+            <param name="label" value="$LOCALIZE[31406]"/>
+            <param name="visible" value="Control.IsVisible(6001)"/>
+            <param name="onclick_1" value="ActivateWindow(1141)" />
+          </include>
+        </control>
+      </control>
+    </control>
+  </controls>
+</window>

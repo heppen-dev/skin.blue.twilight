@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="1118">
+  <defaultcontrol>9000</defaultcontrol>
+  <include>Animation_DialogPopupOpenClose</include>
+  <coordinates>
+    <origin x="50%" y="175"/>
+  </coordinates>
+  <controls>
+    <control type="image">
+      <left>-1920</left>
+      <top>-1080</top>
+      <width>5760</width>
+      <height>3240</height>
+      <animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
+      <animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+      <texture colordiffuse="B0FFFFFF">colors/black.png</texture>
+    </control>
+    <control type="button">
+      <left>-1920</left>
+      <top>-1080</top>
+      <width>5760</width>
+      <height>3240</height>
+      <texturefocus/>
+      <texturenofocus/>
+      <onclick>Action(close)</onclick>
+    </control>
+    <control type="group">
+      <animation effect="slide" end="-225" time="0" condition="true">conditional</animation>
+      <centertop>40%</centertop>
+      <width>506</width>
+      <height>680</height>
+      <control type="image" id="999">
+        <description>background image</description>
+        <top>-24</top>
+        <left>-24</left>
+        <width>506</width>
+        <height>680</height>
+        <bordersize>24</bordersize>
+        <bordertexture border="32">common/shadow-dialog-24.png</bordertexture>
+        <texture border="16" colordiffuse="dialog_bg_100">common/dialog.png</texture>
+      </control>
+      <include content="DefaultSettingButtonGradient">
+        <param name="id" value="9000"/>
+        <param name="height" value="70"/>
+        <top>0</top>
+        <height>70</height>
+        <width>458</width>
+        <visible>ControlGroup(9000).HasFocus()</visible>
+      </include>
+      <control type="grouplist" id="9000">
+        <description>grouplist for context buttons</description>
+        <left>0</left>
+        <top>0</top>
+        <width>506</width>
+        <height max="780">auto</height>
+        <usecontrolcoords>true</usecontrolcoords>
+        <control type="radiobutton" id="9001">
+          <label>$LOCALIZE[31330]</label>
+          <right>190</right>
+          <width>458</width>
+          <height>70</height>
+          <align>right</align>
+          <radioposx>470</radioposx>
+          <texturefocus/>
+          <texturenofocus/>
+          <onclick>Skin.ToggleSetting(Ratings.Oscars)</onclick>
+          <selected>Skin.HasSetting(Ratings.Oscars)</selected>
+        </control>
+        <control type="radiobutton" id="9002">
+          <label>$LOCALIZE[31331]</label>
+          <right>190</right>
+          <width>458</width>
+          <height>70</height>
+          <align>right</align>
+          <radioposx>470</radioposx>
+          <texturefocus/>
+          <texturenofocus/>
+          <onclick>Skin.ToggleSetting(Ratings.Trakt)</onclick>
+          <selected>Skin.HasSetting(Ratings.Trakt)</selected>
+        </control>
+        <control type="radiobutton" id="9003">
+          <label>$LOCALIZE[31332]</label>
+          <right>190</right>
+          <width>458</width>
+          <height>70</height>
+          <align>right</align>
+          <radioposx>470</radioposx>
+          <texturefocus/>
+          <texturenofocus/>
+          <onclick>Skin.ToggleSetting(Ratings.Metacritic)</onclick>
+          <selected>Skin.HasSetting(Ratings.Metacritic)</selected>
+        </control>
+        <control type="radiobutton" id="9004">
+          <label>$LOCALIZE[31333]</label>
+          <right>190</right>
+          <width>458</width>
+          <height>70</height>
+          <align>right</align>
+          <radioposx>470</radioposx>
+          <texturefocus/>
+          <texturenofocus/>
+          <onclick>Skin.ToggleSetting(Ratings.RottenTomatoes)</onclick>
+          <selected>Skin.HasSetting(Ratings.RottenTomatoes)</selected>
+        </control>
+        <control type="radiobutton" id="9005">
+          <label>$LOCALIZE[31334]</label>
+          <right>190</right>
+          <width>458</width>
+          <height>70</height>
+          <align>right</align>
+          <radioposx>470</radioposx>
+          <texturefocus/>
+          <texturenofocus/>
+          <onclick>Skin.ToggleSetting(Ratings.TheMovieDB)</onclick>
+          <selected>Skin.HasSetting(Ratings.TheMovieDB)</selected>
+        </control>
+        <control type="radiobutton" id="9006">
+          <label>$LOCALIZE[31335]</label>
+          <right>190</right>
+          <width>458</width>
+          <height>70</height>
+          <align>right</align>
+          <radioposx>470</radioposx>
+          <texturefocus/>
+          <texturenofocus/>
+          <onclick>Skin.ToggleSetting(Ratings.IMDB)</onclick>
+          <selected>Skin.HasSetting(Ratings.IMDB)</selected>
+        </control>
+        <control type="radiobutton" id="9007">
+          <label>$LOCALIZE[31336]</label>
+          <right>190</right>
+          <width>458</width>
+          <height>70</height>
+          <align>right</align>
+          <radioposx>470</radioposx>
+          <texturefocus/>
+          <texturenofocus/>
+          <onclick>Skin.ToggleSetting(Ratings.IMDB.Votes)</onclick>
+          <selected>Skin.HasSetting(Ratings.IMDB.Votes)</selected>
+        </control>
+        <control type="radiobutton" id="9008">
+          <label>$LOCALIZE[31337]</label>
+          <right>190</right>
+          <width>458</width>
+          <height>70</height>
+          <align>right</align>
+          <radioposx>470</radioposx>
+          <texturefocus/>
+          <texturenofocus/>
+          <onclick>Skin.ToggleSetting(Ratings.Top250)</onclick>
+          <selected>Skin.HasSetting(Ratings.Top250)</selected>
+        </control>
+        <control type="radiobutton" id="9009">
+          <label>$LOCALIZE[31338]</label>
+          <right>190</right>
+          <width>458</width>
+          <height>70</height>
+          <align>right</align>
+          <radioposx>470</radioposx>
+          <texturefocus/>
+          <texturenofocus/>
+          <onclick>Skin.ToggleSetting(Ratings.User)</onclick>
+          <selected>Skin.HasSetting(Ratings.User)</selected>
+        </control>
+      </control>
+      <include content="UpDownArrows">
+        <param name="container_id" value="9000"/>
+        <param name="posx" value="201"/>
+        <param name="up_posy" value="-40"/>
+        <param name="down_posy" value="798"/>
+      </include>
+    </control>
+    <control type="button" id="1000">
+      <description>button template</description>
+      <left>0</left>
+      <width>458</width>
+      <height>70</height>
+      <align>left</align>
+      <texturefocus/>
+      <texturenofocus/>
+    </control>
+  </controls>
+</window>

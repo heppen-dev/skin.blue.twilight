@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="skin.primus" version="1.0.0~alpha" name="Primus" provider-name="heppen (nfm886)">
+  <requires>
+    <import addon="xbmc.gui" version="5.15.0"/>
+    <import addon="script.skinshortcuts" version="1.1.5"/>
+    <import addon="plugin.video.themoviedb.helper" version="4.3.0"/>
+    <import addon="script.embuary.helper" version="2.0.8"/>
+    <import addon="resource.images.studios.white" version="0.0.28"/>
+    <import addon="resource.images.weathericons.white" version="0.0.6"/>
+  </requires>
+  <extension point="xbmc.gui.skin" debugging="false">
+    <res width="1920" height="1080" aspect="16:9" default="true" folder="xml"/>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <news>1.0.0~alpha[CR]Alpha release.</news>
+    <summary lang="en_GB">Simple. Lightweight. Elegant. That's all you need to enjoy Kodi.</summary>
+    <summary lang="pl_PL">Prosto. Lekko. Elegancko. To wszystko czego potrzebujesz do rozrywki z Kodi.</summary>
+    <description lang="en_GB">The skin is designed to allow the user to focus on media consumption. It provides many innovative solutions that every movie lover will appreciate.</description>
+    <description lang="pl_PL">Skórka została zaprojektowana, aby użytkownik mógł skupić się na konsumpcji mediów. Udostępnia wiele innowacyjnych rozwiązań, które doceni każdy kinoman.</description>
+    <platform>all</platform>
+    <license>Creative Commons Attribution Non-Commercial Share-Alike 4.0</license>
+    <forum />
+    <source>https://github.com/nfm886/skin.primus</source>
+    <assets>
+      <icon>resources/icon.png</icon>
+      <fanart>resources/fanart.jpg</fanart>
+      <screenshot>resources/screenshot-01.jpg</screenshot>
+      <screenshot>resources/screenshot-02.jpg</screenshot>
+      <screenshot>resources/screenshot-03.jpg</screenshot>
+      <screenshot>resources/screenshot-04.jpg</screenshot>
+      <screenshot>resources/screenshot-05.jpg</screenshot>
+      <screenshot>resources/screenshot-06.jpg</screenshot>
+    </assets>
+  </extension>
+</addon>

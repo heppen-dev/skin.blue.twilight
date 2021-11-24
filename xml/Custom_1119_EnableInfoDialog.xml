@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="1119">
+  <defaultcontrol>9000</defaultcontrol>
+  <include>Animation_DialogPopupOpenClose</include>
+  <coordinates>
+    <origin x="50%" y="175"/>
+  </coordinates>
+  <controls>
+    <control type="image">
+      <left>-1920</left>
+      <top>-1080</top>
+      <width>5760</width>
+      <height>3240</height>
+      <animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
+      <animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+      <texture colordiffuse="B0FFFFFF">colors/black.png</texture>
+    </control>
+    <control type="button">
+      <left>-1920</left>
+      <top>-1080</top>
+      <width>5760</width>
+      <height>3240</height>
+      <texturefocus/>
+      <texturenofocus/>
+      <onclick>Action(close)</onclick>
+    </control>
+    <control type="group">
+      <animation effect="slide" end="-225" time="0" condition="true">conditional</animation>
+      <centertop>40%</centertop>
+      <width>506</width>
+      <height>820</height>
+      <control type="image" id="999">
+        <description>background image</description>
+        <top>-24</top>
+        <left>-24</left>
+        <width>506</width>
+        <height>820</height>
+        <bordersize>24</bordersize>
+        <bordertexture border="32">common/shadow-dialog-24.png</bordertexture>
+        <texture border="16" colordiffuse="dialog_bg_100">common/dialog.png</texture>
+      </control>
+      <include content="DefaultSettingButtonGradient">
+        <param name="id" value="9000"/>
+        <param name="height" value="70"/>
+        <top>0</top>
+        <height>70</height>
+        <width>458</width>
+        <visible>ControlGroup(9000).HasFocus()</visible>
+      </include>
+      <control type="grouplist" id="9000">
+        <description>grouplist for context buttons</description>
+        <left>0</left>
+        <top>0</top>
+        <width>506</width>
+        <height max="780">auto</height>
+        <usecontrolcoords>true</usecontrolcoords>
+        <control type="radiobutton" id="9001">
+          <label>$LOCALIZE[31261]</label>
+          <right>190</right>
+          <width>458</width>
+          <height>70</height>
+          <align>right</align>
+          <radioposx>470</radioposx>
+          <texturefocus/>
+          <texturenofocus/>
+          <onclick>Skin.ToggleSetting(InfoDialog.Cast)</onclick>
+          <selected>!Skin.HasSetting(InfoDialog.Cast)</selected>
+        </control>
+        <control type="radiobutton" id="9002">
+          <label>$LOCALIZE[31262]</label>
+          <right>190</right>
+          <width>458</width>
+          <height>70</height>
+          <align>right</align>
+          <radioposx>470</radioposx>
+          <texturefocus/>
+          <texturenofocus/>
+          <onclick>Skin.ToggleSetting(InfoDialog.Sets)</onclick>
+          <selected>!Skin.HasSetting(InfoDialog.Sets)</selected>
+        </control>
+        <control type="radiobutton" id="9003">
+          <label>$LOCALIZE[31263]</label>
+          <right>190</right>
+          <width>458</width>
+          <height>70</height>
+          <align>right</align>
+          <radioposx>470</radioposx>
+          <texturefocus/>
+          <texturenofocus/>
+          <onclick>Skin.ToggleSetting(InfoDialog.Similar)</onclick>
+          <selected>Skin.HasSetting(InfoDialog.Similar)</selected>
+        </control>
+        <control type="radiobutton" id="9004">
+          <label>$LOCALIZE[31257]</label>
+          <right>190</right>
+          <width>458</width>
+          <height>70</height>
+          <align>right</align>
+          <radioposx>470</radioposx>
+          <texturefocus/>
+          <texturenofocus/>
+          <onclick>Skin.ToggleSetting(InfoDialog.Director)</onclick>
+          <selected>Skin.HasSetting(InfoDialog.Director)</selected>
+        </control>
+        <control type="radiobutton" id="9005">
+          <label>$LOCALIZE[31256]</label>
+          <right>190</right>
+          <width>458</width>
+          <height>70</height>
+          <align>right</align>
+          <radioposx>470</radioposx>
+          <texturefocus/>
+          <texturenofocus/>
+          <onclick>Skin.ToggleSetting(InfoDialog.Studio)</onclick>
+          <selected>Skin.HasSetting(InfoDialog.Studio)</selected>
+        </control>
+        <control type="radiobutton" id="9006">
+          <label>$LOCALIZE[31264]</label>
+          <right>190</right>
+          <width>458</width>
+          <height>70</height>
+          <align>right</align>
+          <radioposx>470</radioposx>
+          <texturefocus/>
+          <texturenofocus/>
+          <onclick>Skin.ToggleSetting(InfoDialog.Crew)</onclick>
+          <selected>Skin.HasSetting(InfoDialog.Crew)</selected>
+        </control>
+        <control type="radiobutton" id="9007">
+          <label>$LOCALIZE[31265]</label>
+          <right>190</right>
+          <width>458</width>
+          <height>70</height>
+          <align>right</align>
+          <radioposx>470</radioposx>
+          <texturefocus/>
+          <texturenofocus/>
+          <onclick>Skin.ToggleSetting(InfoDialog.Recommended)</onclick>
+          <selected>Skin.HasSetting(InfoDialog.Recommended)</selected>
+        </control>
+        <control type="radiobutton" id="9008">
+          <label>$LOCALIZE[31356]</label>
+          <right>190</right>
+          <width>458</width>
+          <height>70</height>
+          <align>right</align>
+          <radioposx>470</radioposx>
+          <texturefocus/>
+          <texturenofocus/>
+          <onclick>Skin.ToggleSetting(InfoDialog.FromYear)</onclick>
+          <selected>Skin.HasSetting(InfoDialog.FromYear)</selected>
+        </control>
+        <control type="radiobutton" id="9009">
+          <label>$LOCALIZE[31255]</label>
+          <right>190</right>
+          <width>458</width>
+          <height>70</height>
+          <align>right</align>
+          <radioposx>470</radioposx>
+          <texturefocus/>
+          <texturenofocus/>
+          <onclick>Skin.ToggleSetting(InfoDialog.Genre)</onclick>
+          <selected>Skin.HasSetting(InfoDialog.Genre)</selected>
+        </control>
+        <control type="radiobutton" id="9010">
+          <label>$LOCALIZE[31365]</label>
+          <right>190</right>
+          <width>458</width>
+          <height>70</height>
+          <align>right</align>
+          <radioposx>470</radioposx>
+          <texturefocus/>
+          <texturenofocus/>
+          <onclick>Skin.ToggleSetting(InfoDialog.YouTube)</onclick>
+          <selected>Skin.HasSetting(InfoDialog.YouTube)</selected>
+        </control>
+        <control type="radiobutton" id="9011">
+          <label>$LOCALIZE[31266]</label>
+          <right>190</right>
+          <width>458</width>
+          <height>70</height>
+          <align>right</align>
+          <radioposx>470</radioposx>
+          <texturefocus/>
+          <texturenofocus/>
+          <onclick>Skin.ToggleSetting(InfoDialog.Posters)</onclick>
+          <selected>Skin.HasSetting(InfoDialog.Posters)</selected>
+        </control>
+      </control>
+      <include content="UpDownArrows">
+        <param name="container_id" value="9000"/>
+        <param name="posx" value="201"/>
+        <param name="up_posy" value="-40"/>
+        <param name="down_posy" value="798"/>
+      </include>
+    </control>
+    <control type="button" id="1000">
+      <description>button template</description>
+      <left>0</left>
+      <width>458</width>
+      <height>70</height>
+      <align>left</align>
+      <texturefocus/>
+      <texturenofocus/>
+    </control>
+  </controls>
+</window>

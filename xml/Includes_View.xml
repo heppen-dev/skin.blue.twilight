@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+  <include name="View_Settings">
+    <control type="panel" id="5001">
+      <left>0</left>
+      <width>100%</width>
+      <top>170</top>
+      <height>300</height>
+      <onup>noop</onup>
+      <onleft condition="Window.IsVisible(Home)">9000</onleft>
+      <onback condition="Window.IsVisible(Home)">9000</onback>
+      <ondown>Control.SetFocus(5002,$INFO[Container(5001).Position],absolute)</ondown>
+      <include>SettingsPanel</include>
+      <include>Items_Settings_System</include>
+    </control>
+    <control type="panel" id="5002">
+      <left>0</left>
+      <right>0</right>
+      <top>520</top>
+      <bottom>0</bottom>
+      <onleft condition="Window.IsVisible(Home)">9000</onleft>
+      <onback condition="Window.IsVisible(Home)">9000</onback>
+      <onup>Control.SetFocus(5001,$INFO[Container(5002).Position],absolute)</onup>
+      <ondown>noop</ondown>
+      <include>SettingsPanel</include>
+      <include>Items_Settings_Main</include>
+    </control>
+  </include>
+  <include name="View_Weather">
+    <control type="grouplist" id="2000">
+      <orientation>vertical</orientation>
+      <top>60</top>
+      <height>100%</height>
+      <left>0</left>
+      <ondown>20001</ondown>
+      <usecontrolcoords>true</usecontrolcoords>
+      <animation type="Conditional" condition="Control.IsVisible(20000)" reversible="false">
+        <effect type="slide" end="0,20" time="60" tween="sine"/>
+        <effect type="slide" end="0,-20" time="180" tween="sine" delay="80"/>
+      </animation>
+      <animation type="Conditional" condition="Control.IsVisible(20001)" reversible="false">
+        <effect type="slide" end="0,-20" time="60" tween="sine"/>
+        <effect type="slide" end="0,20" time="180" tween="sine" delay="80"/>
+      </animation>
+      <scrolltime tween="cubic" easing="out">500</scrolltime>
+      <include>OpenClose_Right</include>
+      <itemgap>-160</itemgap>
+      <control type="group" id="567">
+        <description>Weather info</description>
+        <height>410</height>
+        <left>22</left>
+        <control type="image">
+          <left>2.5%</left>
+          <top>100</top>
+          <width>95%</width>
+          <height>220</height>
+        </control>
+        <control type="label">
+          <top>330</top>
+          <left>10%</left>
+          <width>80%</width>
+          <align>center</align>
+          <height>44</height>
+          <shadowcolor>text_shadow</shadowcolor>
+          <label>$LOCALIZE[31154]</label>
+          <visible>Control.HasFocus(2001)</visible>
+          <animation effect="fade" time="400">VisibleChange</animation>
+        </control>
+        <control type="button" id="2001">
+          <left>2.5%</left>
+          <top>100</top>
+          <width>95%</width>
+          <height>220</height>
+          <align>center</align>
+          <aligny>center</aligny>
+          <textoffsetx>40</textoffsetx>
+          <textoffsety>0</textoffsety>
+          <texturefocus colordiffuse="AltPosterBack" border="5">diffuse/poster-wall.png</texturefocus>
+          <bordertexture border="21">overlays/shadow.png</bordertexture>
+          <texturenofocus/>
+          <onup>20000</onup>
+          <ondown>15100</ondown>
+          <onleft>9000</onleft>
+          <onback>9000</onback>
+          <font>font12</font>
+          <onclick>Weather.LocationNext</onclick>
+          <label>
+          </label>
+        </control>
+        <control type="label">
+          <right>100</right>
+          <top>194</top>
+          <aligny>center</aligny>
+          <height>24</height>
+          <width>500</width>
+          <align>right</align>
+          <font>WeatherTemp</font>
+          <label>$INFO[Weather.Temperature]</label>
+        </control>
+        <control type="label">
+          <right>400</right>
+          <top>164</top>
+          <align>right</align>
+          <label>[I]$LOCALIZE[402]: $INFO[Window(weather).Property(Current.FeelsLike)]$INFO[System.TemperatureUnits][/I][CR]$INFO[Weather.Conditions]</label>
+          <font>font14</font>
+          <width>630</width>
+        </control>
+        <control type="grouplist">
+          <top>154</top>
+          <left>90</left>
+          <right>800</right>
+          <align>justify</align>
+          <orientation>horizontal</orientation>
+          <include content="WeatherIconMyWeather">
+            <param name="label" value="Window(weather).Property(Current.Wind)"/>
+            <param name="texture" value="icons/weather/wind.png"/>
+            <param name="header" value="$LOCALIZE[404]"/>
+          </include>
+          <include content="WeatherIconMyWeather">
+            <param name="label" value="Window(weather).Property(Current.Humidity)"/>
+            <param name="texture" value="icons/weather/humidity.png"/>
+            <param name="header" value="$LOCALIZE[406]"/>
+          </include>
+          <include content="WeatherIconMyWeather">
+            <param name="label" value="Window(weather).Property(Current.Precipitation)"/>
+            <param name="texture" value="icons/weather/rain.png"/>
+            <param name="header" value="$LOCALIZE[33021]"/>
+          </include>
+          <include content="WeatherIconMyWeather">
+            <param name="label" value="Window(weather).Property(Today.Sunrise)"/>
+            <param name="texture" value="icons/weather/sunrise.png"/>
+            <param name="header" value="$LOCALIZE[405]"/>
+          </include>
+          <include content="WeatherIconMyWeather">
+            <param name="label" value="Window(weather).Property(Today.Sunset)"/>
+            <param name="texture" value="icons/weather/sunset.png"/>
+            <param name="header" value="$LOCALIZE[403]"/>
+          </include>
+        </control>
+      </control>
+      <include content="WeatherWidget">
+        <param name="content_include" value="DailyItems"/>
+        <param name="list_id" value="15100"/>
+        <param name="widget_header" value="$LOCALIZE[31019]"/>
+        <param name="visible" value="!String.IsEmpty(Window(weather).Property(Daily.IsFetched))"/>
+        <param name="width" value="258"/>
+      </include>
+      <include content="WeatherWidget">
+        <param name="content_include" value="HourlyItems"/>
+        <param name="list_id" value="15200"/>
+        <param name="widget_header" value="$LOCALIZE[33036]"/>
+        <param name="visible" value="!String.IsEmpty(Window(weather).Property(Hourly.IsFetched))"/>
+        <param name="width" value="258"/>
+      </include>
+      <include content="WeatherMapItem">
+        <param name="item_id" value="1"/>
+        <param name="onup_id" value="15200"/>
+        <param name="ondown_id" value="70020"/>
+      </include>
+      <include content="WeatherMapItem">
+        <param name="item_id" value="2"/>
+        <param name="onup_id" value="70010"/>
+        <param name="ondown_id" value="70030"/>
+      </include>
+      <include content="WeatherMapItem">
+        <param name="item_id" value="3"/>
+        <param name="onup_id" value="70020"/>
+        <param name="ondown_id" value="70040"/>
+      </include>
+      <include content="WeatherMapItem">
+        <param name="item_id" value="4"/>
+        <param name="onup_id" value="70030"/>
+        <param name="ondown_id" value="70050"/>
+      </include>
+      <include content="WeatherMapItem">
+        <param name="item_id" value="5"/>
+        <param name="onup_id" value="70040"/>
+        <param name="ondown_id" value="20001"/>
+      </include>
+    </control>
+    <include content="TopBar">
+      <param name="breadcrumbs_label" value="$INFO[Window(Weather).Property(Location)]"/>
+      <param name="left" value="$PARAM[left]"/>
+      <param name="topbar_visible" value="$PARAM[topbar_visible]"/>
+    </include>
+    <!-- <include>BottomBar</include> -->
+  </include>
+  <include name="WatchedOverlay_Focus">
+    <definition>
+      <control type="group">
+        <animation type="Focus" condition="$PARAM[focusbounce]">
+          <effect type="zoom" start="96.5" end="100" time="150" tween="sine" easing="inout" center="auto"/>
+          <effect type="fade" start="20" end="100" time="150" tween="back" easing="out"/>
+        </animation>
+        <width>44</width>
+        <height>44</height>
+        <include content="Object_Control">
+          <param name="type" value="group"/>
+          <include content="Defs_Pad">
+            <param name="pad" value="-7"/>
+          </include>
+          <control type="group">
+            <control type="image">
+              <texture colordiffuse="$VAR[ColorHighlight]">$VAR[Image_Overlay_Backing]-fo.png</texture>
+              <include content="WatchedOverlay_Focus_bs0" condition="String.IsEqual(Skin.String(HighlightSize),Bold)"/>
+              <include content="WatchedOverlay_Focus_bs4" condition="String.IsEqual(Skin.String(HighlightSize),Thin)"/>
+            </control>
+            <control type="image">
+              <animation effect="fade" end="50" condition="true">Conditional</animation>
+              <texture colordiffuse="$VAR[ColorGradient]">$VAR[Image_Overlay_Backing]-fo.png</texture>
+              <include content="WatchedOverlay_Focus_bs0" condition="String.IsEqual(Skin.String(HighlightSize),Bold)"/>
+              <include content="WatchedOverlay_Focus_bs4" condition="String.IsEqual(Skin.String(HighlightSize),Thin)"/>
+            </control>
+            <visible>String.IsEqual(Skin.String(PosterHighlight),Highlight) | String.IsEmpty(PosterHighlight)</visible>
+          </control>
+          <control type="group">
+            <control type="image">
+              <texture colordiffuse="ffffffff">$VAR[Image_Overlay_Backing]-fo.png</texture>
+              <include content="WatchedOverlay_Focus_bs0" condition="String.IsEqual(Skin.String(HighlightSize),Bold)"/>
+              <include content="WatchedOverlay_Focus_bs4" condition="String.IsEqual(Skin.String(HighlightSize),Thin)"/>
+            </control>
+            <visible>String.IsEqual(Skin.String(PosterHighlight),White)</visible>
+          </control>
+        </include>
+        <visible>$PARAM[visible]</visible>
+      </control>
+    </definition>
+  </include>
+  <include name="View_WatchedOverlay">
+    <param name="affix" default=""/>
+    <param name="listitem" default="ListItem"/>
+    <param name="selected" default="false"/>
+    <param name="visible" default="!Skin.HasSetting(DisableWatchedOverlay)" />
+    <definition>
+      <control type="group">
+        <nested/>
+        <bottom>$PARAM[bottom]</bottom>
+        <right>$PARAM[right]</right>
+        <width>44</width>
+        <height>44</height>
+        <visible>$PARAM[visible]</visible>
+        <include content="WatchedOverlay_Focus">
+          <param name="visible" value="$PARAM[visible]"/>
+        </include>
+        <include content="Object_Control" condition="$PARAM[selected]">
+          <param name="type" value="group"/>
+          <include content="Defs_Pad">
+            <param name="pad" value="-7"/>
+          </include>
+          <control type="image">
+            <include content="Defs_Pad">
+              <param name="pad" value="-24"/>
+            </include>
+            <texture>$VAR[Image_Overlay_Backing$PARAM[affix],,-fo-shadow.png]</texture>
+          </control>
+          <control type="image">
+            <texture colordiffuse="$VAR[ColorHighlight]">$VAR[Image_Overlay_Backing$PARAM[affix],,-fo.png]</texture>
+          </control>
+          <control type="image">
+            <animation effect="fade" end="50" condition="true">Conditional</animation>
+            <texture colordiffuse="$VAR[ColorGradient]">$VAR[Image_Overlay_Backing$PARAM[affix],,-fo.png]</texture>
+          </control>
+        </include>
+        <control type="image">
+          <texture colordiffuse="ff333333">$VAR[Image_Overlay_Backing$PARAM[affix],,-bg.png]</texture>
+        </control>
+        <control type="image">
+          <include content="Defs_Pad">
+            <param name="pad" value="-8"/>
+          </include>
+          <texture colordiffuse="$VAR[ColorWatchedProgress]">$VAR[Defs_PercentPlayed$PARAM[affix],progress/circle/p,.png]</texture>
+          <aspectratio align="center" aligny="center">keep</aspectratio>
+        </control>
+        <control type="image">
+          <texture colordiffuse="black">$VAR[Image_Overlay_Backing$PARAM[affix],,-fg.png]</texture>
+        </control>
+        <control type="image">
+          <include content="Defs_Pad">
+            <param name="pad" value="10"/>
+          </include>
+          <texture colordiffuse="white">$VAR[Image_Overlay$PARAM[affix]]</texture>
+        </control>
+        <control type="image">
+          <include content="Defs_Pad">
+            <param name="pad" value="10"/>
+          </include>
+          <texture colordiffuse="$VAR[ColorWatchedProgress]">indicator/checkmark.png</texture>
+          <visible>!Skin.HasSetting(DisableIndicator.Watched)</visible>
+          <visible>String.IsEqual($PARAM[listitem].Overlay,OverlayWatched.png) | [!String.IsEmpty($PARAM[listitem].PlayCount) + !Integer.IsEqual($PARAM[listitem].PlayCount,0) + !String.IsEqual($PARAM[listitem].DBType,song) + !String.IsEqual($PARAM[listitem].DBType,album) + !String.IsEqual($PARAM[listitem].DBType,artist) + !String.IsEqual($PARAM[listitem].DBType,image) + !String.IsEqual($PARAM[listitem].DBType,addon)]</visible>
+          <visible>Integer.IsEqual($PARAM[listitem].Property(UnWatchedEpisodes),0) | Skin.HasSetting(DisableIndicator.Episodes)</visible>
+          <visible>!$PARAM[listitem].IsRecording + !$PARAM[listitem].HasTimer</visible>
+          <visible>!$PARAM[listitem].IsResumable | Skin.HasSetting(DisableIndicator.Progress)</visible>
+        </control>
+        <control type="label">
+          <font>font_tiny10</font>
+          <align>center</align>
+          <aligny>center</aligny>
+          <textcolor>panel_fg_100</textcolor>
+          <label>$INFO[$PARAM[listitem].Property(UnWatchedEpisodes)]</label>
+          <visible>Integer.IsGreater($PARAM[listitem].Property(UnWatchedEpisodes),0) + [String.IsEqual($PARAM[listitem].DBType,tvshow) | String.IsEqual($PARAM[listitem].DBType,season)] + !Skin.HasSetting(DisableIndicator.Episodes)</visible>
+        </control>
+      </control>
+    </definition>
+  </include>
+</includes>

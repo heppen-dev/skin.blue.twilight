@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+  <include name="DialogVideoInfo">
+    <control type="group">
+      <control type="group" id="98">
+        <control type="group">
+          <control type="image">
+            <top>-120</top>
+            <left>-5</left>
+            <width>620</width>
+            <height>1400</height>
+            <texture colordiffuse="AltPosterBack">diffuse/poster-wall.png</texture>
+            <bordertexture border="21">overlays/shadow.png</bordertexture>
+            <bordersize>20</bordersize>
+          </control>
+          <control type="image">
+            <left>20</left>
+            <width>570</width>
+            <height>830</height>
+            <centertop>50%</centertop>
+            <aspectratio>scale</aspectratio>
+            <texture background="true">$VAR[Image_Poster]</texture>
+            <bordertexture border="21">overlays/shadow.png</bordertexture>
+            <bordersize>15</bordersize>
+          </control>
+        </control>
+        <control type="group">
+          <left>570</left>
+          <control type="group">
+            <top>60</top>
+            <control type="label">
+              <left>150</left>
+              <bottom>60</bottom>
+              <label>$INFO[ListItem.Title]</label>
+              <font>font_title_bold</font>
+              <visible>String.IsEmpty(ListItem.Art(clearlogo)) + String.IsEmpty(ListItem.Art(tvshow.clearlogo))</visible>
+            </control>
+            <control type="image">
+              <top>-940</top>
+              <left>150</left>
+              <width>480</width>
+              <aspectratio>keep</aspectratio>
+              <texture background="true">$VAR[ClearLogoHome]</texture>
+              <visible>!String.IsEmpty(ListItem.Art(clearlogo)) | !String.IsEmpty(ListItem.Art(tvshow.clearlogo))</visible>
+            </control>
+          </control>
+          <control type="group">
+            <top>185</top>
+            <left>150</left>
+            <include>Object_Info_Line</include>
+          </control>
+          <control type="group">
+            <include content="Object_Ratings_Content">
+              <param name="directory" value="$INFO[Skin.String(Icons)]"/>
+              <param name="align" value="left"/>
+              <param name="top" value="255"/>
+              <param name="left" value="145"/>
+            </include>
+          </control>
+          <control type="group">
+            <control type="textbox">
+              <top>325</top>
+              <left>150</left>
+              <width>940</width>
+              <height>120</height>
+              <label>$INFO[ListItem.Plot]</label>
+              <font>font32</font>
+              <shadowcolor>shadow</shadowcolor>
+              <autoscroll delay="4000" time="4500" repeat="7000">Skin.HasSetting(autoscroll)</autoscroll>
+            </control>
+          </control>
+        </control>
+        <animation effect="fade" start="100" end="0" time="200" easing="inout" condition="ControlGroup(100).HasFocus">Conditional</animation>
+        <control type="grouplist" id="99">
+          <top>500</top>
+          <left>620</left>
+          <height>142</height>
+          <ondown>100</ondown>
+          <onback>RunScript(plugin.video.themoviedb.helper,close_dialog=1190)</onback>
+          <orientation>horizontal</orientation>
+          <onup>SetProperty(Plot,"$VAR[Label_OverlayPlot]",1130)</onup>
+          <onup>SetProperty(Critics,"$VAR[Label_OverlayCritics]",1130)</onup>
+          <onup>ActivateWindow(1130)</onup>
+          <include content="InfoButton">
+            <param name="id" value="8"/>
+            <param name="groupid" value="8008"/>
+            <param name="icon" value="special://skin/extras/icons/play3.png"/>
+            <param name="label" value="$LOCALIZE[208]"/>
+            <param name="visible" value="Control.IsVisible(8)"/>
+          </include>
+          <include content="InfoButton">
+            <param name="id" value="11"/>
+            <param name="groupid" value="8011"/>
+            <param name="icon" value="special://skin/extras/icons/film.png"/>
+            <param name="label" value="$LOCALIZE[20410]"/>
+            <param name="visible" value="Control.IsVisible(11)"/>
+          </include>
+          <include content="InfoButton">
+            <param name="id" value="8897"/>
+            <param name="groupid" value="8097"/>
+            <param name="icon" value="special://skin/extras/icons/watchlist.png"/>
+            <param name="label" value="$LOCALIZE[31317]"/>
+            <param name="onclick_1_condition" value="!String.IsEmpty(ListItem.Property(tmdb_id))"/>
+            <param name="onclick_1" value="RunScript(plugin.video.themoviedb.helper,sync_trakt=watchlist,tmdb_id=$INFO[ListItem.Property(tmdb_id)],type=$VAR[TMDB_TYPE],cache_refresh)"/>
+            <param name="onclick_2_condition" value="String.IsEmpty(ListItem.Property(tmdb_id))"/>
+            <param name="onclick_2" value="RunScript(plugin.video.themoviedb.helper,sync_trakt=watchlist,tmdb_id=$INFO[window(home).property(TMDbHelper.listitem.tmdb_id)],type=$VAR[TMDB_TYPE],cache_refresh)"/>
+            <param name="visible" value="Control.IsVisible(8897)"/>
+          </include>
+          <include content="InfoButton">
+            <param name="id" value="8898"/>
+            <param name="groupid" value="8098"/>
+            <param name="icon" value="special://skin/extras/icons/settings.png"/>
+            <param name="label" value="$LOCALIZE[31312]"/>
+            <param name="onclick_1" value="Control.SetFocus(9000,1,absolute)"/>
+            <param name="visible" value="Control.IsVisible(8898)"/>
+          </include>
+        </control>
+        <control type="group" id="10049">
+          <top>660</top>
+          <left>710</left>
+          <height>382.5</height>
+          <control type="group">
+            <control type="group">
+              <control type="label">
+                <font>font27_bold</font>
+                <label>$LOCALIZE[31256]</label>
+              </control>
+              <control type="label">
+                <top>40</top>
+                <width>460</width>
+                <height>50</height>
+                <wrapmultiline>true</wrapmultiline>
+                <label>$INFO[Listitem.Studio]</label>
+              </control>
+            </control>
+            <control type="group">
+              <control type="label">
+                <top>120</top>
+                <font>font27_bold</font>
+                <label>$LOCALIZE[31258]</label>
+              </control>
+              <control type="label">
+                <top>160</top>
+                <width>460</width>
+                <height>50</height>
+                <wrapmultiline>true</wrapmultiline>
+                <label>$INFO[ListItem.Country]</label>
+              </control>
+            </control>
+            <control type="group">
+              <control type="label">
+                <top>240</top>
+                <font>font27_bold</font>
+                <label>$LOCALIZE[31255]</label>
+              </control>
+              <control type="label">
+                <top>280</top>
+                <width>460</width>
+                <height>50</height>
+                <wrapmultiline>true</wrapmultiline>
+                <label>$INFO[ListItem.Genre]</label>
+              </control>
+            </control>
+          </control>
+          <control type="group">
+            <left>550</left>
+            <control type="group">
+              <control type="label">
+                <font>font27_bold</font>
+                <label>$LOCALIZE[31257]</label>
+              </control>
+              <control type="label">
+                <top>40</top>
+                <width>460</width>
+                <height>50</height>
+                <wrapmultiline>true</wrapmultiline>
+                <label>$INFO[ListItem.Director]</label>
+              </control>
+            </control>
+            <control type="group">
+              <control type="label">
+                <top>120</top>
+                <font>font27_bold</font>
+                <label>$LOCALIZE[31259]</label>
+              </control>
+              <control type="label">
+                <top>160</top>
+                <width>460</width>
+                <height>50</height>
+                <wrapmultiline>true</wrapmultiline>
+                <label>$INFO[ListItem.Writer]</label>
+              </control>
+            </control>
+            <control type="group">
+              <control type="label">
+                <top>240</top>
+                <font>font27_bold</font>
+                <label>$LOCALIZE[31260]</label>
+              </control>
+              <control type="label">
+                <top>280</top>
+                <width>460</width>
+                <height>50</height>
+                <wrapmultiline>true</wrapmultiline>
+                <label>$INFO[ListItem.Premiered]</label>
+              </control>
+            </control>
+          </control>
+        </control>
+      </control>
+      <control type="grouplist" id="100">
+        <onup>99</onup>
+        <top>35</top>
+        <left>20</left>
+        <height>975</height>
+        <width>1920</width>
+        <itemgap>52</itemgap>
+        <animation effect="slide" start="0,0" end="0,1080" time="200" tween="cubic" easing="inout" condition="!ControlGroup(100).HasFocus">Conditional</animation>
+        <include content="InfoDialogLabel">
+          <param name="groupid" value="1051"/>
+          <param name="id" value="50"/>
+          <param name="label" value="$INFO[ListItem.Label]"/>
+          <param name="altlabel" value="$LOCALIZE[31261]"/>
+          <param name="left" value="20"/>
+          <param name="top" value="0"/>
+          <param name="visible" value="true"/>
+        </include>
+        <control type="list" id="50">
+          <scrolltime tween="quadratic">400</scrolltime>
+          <orientation>horizontal</orientation>
+          <top>0</top>
+          <height>407</height>
+          <visible>!Skin.HasSetting(InfoDialog.Cast)</visible>
+          <scrolltime tween="sine" easing="out">200</scrolltime>
+          <itemlayout width="270" height="427">
+            <include content="InfoDialogItemLayout">
+              <param name="icon" value="$INFO[ListItem.Icon]"/>
+              <param name="label" value="$INFO[ListItem.Label]"/>
+              <param name="label2" value="$INFO[ListItem.Label2]"/>
+            </include>
+          </itemlayout>
+          <focusedlayout width="270" height="427">
+            <include content="InfoDialogFocusedLayout">
+              <param name="icon" value="$INFO[ListItem.Icon]"/>
+              <param name="label" value="$INFO[ListItem.Label]"/>
+              <param name="label2" value="$INFO[ListItem.Label2]"/>
+            </include>
+          </focusedlayout>
+        </control>
+        <include content="InfoDialogWallContainer">
+          <param name="id" value="1052"/>
+          <param name="groupid" value="10052"/>
+          <param name="icon" value="$INFO[ListItem.Icon]"/>
+          <param name="altlabel" value="$LOCALIZE[31262]"/>
+          <param name="label" value="$INFO[ListItem.Label]"/>
+          <param name="label2" value="$INFO[ListItem.Label2]"/>
+          <param name="content" value="$VAR[Def_Set_List]"/>
+          <param name="target" value="videos"/>
+          <param name="limit" value="25"/>
+          <param name="itemwidth" value="270"/>
+          <param name="itemheight" value="407"/>
+          <param name="visible" value="!Skin.HasSetting(InfoDialog.Sets) + [!String.IsEmpty(ListItem.Set) | ListItem.IsCollection]"/>
+        </include>
+        <include content="InfoDialogWallContainer">
+          <param name="id" value="1053"/>
+          <param name="groupid" value="10053"/>
+          <param name="icon" value="$INFO[ListItem.Icon]"/>
+          <param name="altlabel" value="$LOCALIZE[31263]"/>
+          <param name="label" value="$INFO[ListItem.Label]"/>
+          <param name="label2" value="$INFO[ListItem.Label2]"/>
+          <param name="content" value="$VAR[Def_Similar_List]"/>
+          <param name="target" value="videos"/>
+          <param name="limit" value="25"/>
+          <param name="itemwidth" value="270"/>
+          <param name="itemheight" value="407"/>
+          <param name="visible" value="!String.IsEmpty(ListItem.IMDBNumber) + Skin.HasSetting(InfoDialog.Similar)"/>
+        </include>
+        <include content="InfoDialogWallContainer">
+          <param name="id" value="1054"/>
+          <param name="groupid" value="10054"/>
+          <param name="icon" value="$INFO[ListItem.Icon]"/>
+          <param name="altlabel" value="$LOCALIZE[31257]"/>
+          <param name="label" value="$INFO[ListItem.Label]"/>
+          <param name="label2" value="$INFO[ListItem.Label2]"/>
+          <param name="content" value="$VAR[Def_Director_List]"/>
+          <param name="target" value="videos"/>
+          <param name="limit" value="25"/>
+          <param name="itemwidth" value="270"/>
+          <param name="itemheight" value="407"/>
+          <param name="visible" value="!String.IsEmpty(ListItem.Director) + Skin.HasSetting(InfoDialog.Director)"/>
+        </include>
+        <include content="InfoDialogWallContainer">
+          <param name="id" value="1055"/>
+          <param name="groupid" value="10055"/>
+          <param name="icon" value="$INFO[ListItem.Icon]"/>
+          <param name="altlabel" value="$LOCALIZE[31256]"/>
+          <param name="label" value="$INFO[ListItem.Label]"/>
+          <param name="label2" value="$INFO[ListItem.Label2]"/>
+          <param name="content" value="$VAR[Def_Studio_List]"/>
+          <param name="target" value="videos"/>
+          <param name="limit" value="25"/>
+          <param name="itemwidth" value="270"/>
+          <param name="itemheight" value="407"/>
+          <param name="visible" value="!String.IsEmpty(ListItem.Studio) + Skin.HasSetting(InfoDialog.Studio)"/>
+        </include>
+        <include content="InfoDialogWallContainer">
+          <param name="id" value="1056"/>
+          <param name="groupid" value="10056"/>
+          <param name="icon" value="$INFO[ListItem.Icon]"/>
+          <param name="altlabel" value="$LOCALIZE[31264]"/>
+          <param name="label" value="$INFO[ListItem.Label]"/>
+          <param name="label2" value="$INFO[ListItem.Label2]"/>
+          <param name="content" value="$VAR[Def_Crew_List]"/>
+          <param name="target" value="videos"/>
+          <param name="limit" value="25"/>
+          <param name="itemwidth" value="270"/>
+          <param name="itemheight" value="407"/>
+          <param name="visible" value="Skin.HasSetting(InfoDialog.Crew)"/>
+        </include>
+        <include content="InfoDialogWallContainer">
+          <param name="id" value="1057"/>
+          <param name="groupid" value="10057"/>
+          <param name="icon" value="$INFO[ListItem.Icon]"/>
+          <param name="altlabel" value="$LOCALIZE[31265]"/>
+          <param name="label" value="$INFO[ListItem.Label]"/>
+          <param name="label2" value="$INFO[ListItem.Label2]"/>
+          <param name="content" value="$VAR[Def_Recommended_List]"/>
+          <param name="target" value="videos"/>
+          <param name="limit" value="25"/>
+          <param name="itemwidth" value="270"/>
+          <param name="itemheight" value="407"/>
+          <param name="visible" value="Skin.HasSetting(InfoDialog.Recommended)"/>
+        </include>
+        <include content="InfoDialogWallContainer">
+          <param name="id" value="1058"/>
+          <param name="groupid" value="10058"/>
+          <param name="icon" value="$INFO[ListItem.Icon]"/>
+          <param name="altlabel" value="$LOCALIZE[31356]"/>
+          <param name="label" value="$INFO[ListItem.Label]"/>
+          <param name="label2" value="$INFO[ListItem.Label2]"/>
+          <param name="content" value="$VAR[Def_FromYear_List]"/>
+          <param name="target" value="videos"/>
+          <param name="limit" value="25"/>
+          <param name="itemwidth" value="270"/>
+          <param name="itemheight" value="407"/>
+          <param name="visible" value="Skin.HasSetting(InfoDialog.FromYear) + !String.IsEmpty(ListItem.Year)"/>
+        </include>
+        <include content="InfoDialogWallContainer">
+          <param name="id" value="1059"/>
+          <param name="groupid" value="10059"/>
+          <param name="icon" value="$INFO[ListItem.Icon]"/>
+          <param name="altlabel" value="$LOCALIZE[31255]"/>
+          <param name="label" value="$INFO[ListItem.Label]"/>
+          <param name="label2" value="$INFO[ListItem.Label2]"/>
+          <param name="content" value="$VAR[Def_Genre_List]"/>
+          <param name="target" value="videos"/>
+          <param name="limit" value="25"/>
+          <param name="itemwidth" value="270"/>
+          <param name="itemheight" value="407"/>
+          <param name="visible" value="Skin.HasSetting(InfoDialog.Genre) + !String.IsEmpty(ListItem.Genre)"/>
+        </include>
+        <include content="InfoDialogLabel">
+          <param name="groupid" value="10060"/>
+          <param name="id" value="1060"/>
+          <param name="label" value="$INFO[ListItem.Label]"/>
+          <param name="altlabel" value="$LOCALIZE[31365]"/>
+          <param name="left" value="20"/>
+          <param name="top" value="0"/>
+          <param name="visible" value="Skin.HasSetting(InfoDialog.YouTube) + System.HasAddon(plugin.video.youtube) + [String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,tvshow) | String.IsEqual(ListItem.DBTYPE,season) | String.IsEqual(ListItem.DBTYPE,episode)]"/>
+        </include>
+        <control type="list" id="1060">
+          <scrolltime tween="quadratic">400</scrolltime>
+          <orientation>horizontal</orientation>
+          <height>375.5</height>
+          <itemlayout height="375.5" width="600">
+            <include content="ViewLandscapeItemLayout">
+						</include>
+          </itemlayout>
+          <focusedlayout height="375.5" width="600">
+            <include content="ViewLandscapeItemLayout">
+						</include>
+            <include content="Selectbox">
+              <param name="pad_top_b" value="-8"/>
+              <param name="pad_bottom_b" value="18"/>
+              <param name="pad_left_b" value="-8"/>
+              <param name="pad_right_b" value="10"/>
+              <param name="pad_top_t" value="-3"/>
+              <param name="pad_bottom_t" value="23"/>
+              <param name="pad_left_t" value="-3"/>
+              <param name="pad_right_t" value="15"/>
+              <param name="visible_posters" value="false"/>
+              <param name="visible_squares" value="false"/>
+              <param name="visible_landscapes" value="true + Control.HasFocus(1060)"/>
+            </include>
+          </focusedlayout>
+          <onclick>RunScript(plugin.video.themoviedb.helper,close_dialog=1190)</onclick>
+          <onclick>PlayMedia($ESCINFO[ListItem.FileNameAndPath])</onclick>
+          <content limit="10" target="videos" sortby="file" condition="!String.IsEmpty(ListItem.TvShowTitle) + System.HasAddon(plugin.video.youtube)">$INFO[ListItem.TvShowTitle,plugin://plugin.video.youtube/search/?q=,]</content>
+          <content limit="10" target="videos" sortby="file" condition="!String.IsEmpty(ListItem.Artist) + System.HasAddon(plugin.video.youtube)">$INFO[ListItem.Artist,plugin://plugin.video.youtube/search/?q=,]</content>
+          <content limit="10" target="videos" sortby="file" condition="!String.IsEmpty(ListItem.Title) + System.HasAddon(plugin.video.youtube)">$INFO[ListItem.Title,plugin://plugin.video.youtube/search/?q=,]</content>
+          <content limit="10" target="videos" sortby="file" condition="System.HasAddon(plugin.video.youtube)">$INFO[ListItem.Label,plugin://plugin.video.youtube/search/?q=,]</content>
+          <visible>Skin.HasSetting(InfoDialog.YouTube) + System.HasAddon(plugin.video.youtube) + [String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,tvshow) | String.IsEqual(ListItem.DBTYPE,season) | String.IsEqual(ListItem.DBTYPE,episode)]</visible>
+        </control>
+        <include content="InfoDialogWallContainer">
+          <param name="id" value="1061"/>
+          <param name="groupid" value="10061"/>
+          <param name="icon" value="$INFO[ListItem.Icon]"/>
+          <param name="altlabel" value="$LOCALIZE[31266]"/>
+          <param name="label" value="$INFO[ListItem.Label]"/>
+          <param name="label2" value="$INFO[ListItem.Label2]"/>
+          <param name="content" value="$VAR[Def_Posters_List]"/>
+          <param name="target" value="images"/>
+          <param name="limit" value="25"/>
+          <param name="itemwidth" value="270"/>
+          <param name="itemheight" value="407"/>
+          <param name="visible" value="Skin.HasSetting(InfoDialog.Posters) + [String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,tvshow)]"/>
+        </include>
+      </control>
+      <control type="group" id="8999">
+        <visible>ControlGroup(9000).HasFocus()</visible>
+        <include>Animation_DialogPopupVisible</include>
+        <control type="image">
+          <left>-1920</left>
+          <top>-1080</top>
+          <width>5760</width>
+          <height>3240</height>
+          <animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
+          <animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+          <texture colordiffuse="B0FFFFFF">colors/black.png</texture>
+        </control>
+        <control type="button">
+          <left>-1920</left>
+          <top>-1080</top>
+          <width>5760</width>
+          <height>3240</height>
+          <texturefocus/>
+          <texturenofocus/>
+          <onclick>Action(close)</onclick>
+        </control>
+        <control type="group">
+          <centertop>50%</centertop>
+          <centerleft>50%</centerleft>
+          <width>506</width>
+          <height>330</height>
+          <control type="image" id="999">
+            <description>background image</description>
+            <top>-24</top>
+            <left>-24</left>
+            <width>506</width>
+            <height>330</height>
+            <bordersize>24</bordersize>
+            <bordertexture border="32">common/shadow-dialog-24.png</bordertexture>
+            <texture border="16" colordiffuse="dialog_bg_100">common/dialog.png</texture>
+          </control>
+          <include content="DefaultSettingButtonGradient">
+            <param name="id" value="9000"/>
+            <param name="height" value="70"/>
+            <top>0</top>
+            <height>70</height>
+            <width>458</width>
+            <visible>ControlGroup(9000).HasFocus()</visible>
+          </include>
+          <control type="grouplist" id="9000">
+            <description>grouplist for context buttons</description>
+            <left>0</left>
+            <top>0</top>
+            <width>506</width>
+            <onleft>Control.SetFocus(8898)</onleft>
+            <onright>Control.SetFocus(8898)</onright>
+            <ondown>Control.SetFocus(8898)</ondown>
+            <onback>Control.SetFocus(8)</onback>
+            <height max="780">auto</height>
+            <usecontrolcoords>true</usecontrolcoords>
+            <control type="button" id="6">
+              <label>$LOCALIZE[31313]</label>
+              <left>0</left>
+              <width>458</width>
+              <height>70</height>
+              <align>center</align>
+              <texturefocus/>
+              <texturenofocus/>
+            </control>
+            <control type="button" id="7">
+              <label>$LOCALIZE[31314]</label>
+              <left>0</left>
+              <width>458</width>
+              <height>70</height>
+              <align>center</align>
+              <texturefocus/>
+              <texturenofocus/>
+            </control>
+            <control type="button" id="10">
+              <label>$LOCALIZE[31315]</label>
+              <left>0</left>
+              <width>458</width>
+              <height>70</height>
+              <align>center</align>
+              <texturefocus/>
+              <texturenofocus/>
+            </control>
+            <control type="button" id="13">
+              <label>$LOCALIZE[137]</label>
+              <left>0</left>
+              <width>458</width>
+              <height>70</height>
+              <align>center</align>
+              <texturefocus/>
+              <texturenofocus/>
+            </control>
+          </control>
+        </control>
+      </control>
+    </control>
+  </include>
+</includes>

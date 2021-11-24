@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="1141">
+  <animation effect="fade" start="0" end="100" time="400" delay="300" tween="quadratic" condition="Window.IsActive(1141)">WindowOpen</animation>
+  <defaultcontrol always="true">5999</defaultcontrol>
+  <onload>SetProperty(TMDbHelper.Blur.Fallback,$VAR[MediaFanartVar],Home)</onload>
+  <onload>Skin.SetBool(TMDbHelper.EnableBlur)</onload>
+  <onunload condition="!Skin.HasSetting(BlurEnabledByUser)">Skin.Reset(TMDbHelper.EnableBlur)</onunload>
+  <controls>
+    <control type="group">
+      <left>300</left>
+      <top>300</top>
+      <visible>!$EXP[infodialog_active] + Window.IsVisible(1141)</visible>
+      <control type="image">
+        <top>-300</top>
+        <left>-300</left>
+        <width>1920</width>
+        <height>1080</height>
+        <texture background="true">common/flixspotlight2-shadowspot.png</texture>
+        <visible>Player.HasVideo + Skin.HasSetting(PlayTrailersFullScreen)</visible>
+        <animation effect="fade" start="0" end="100" time="1200" tween="quadratic" condition="Player.HasVideo">Conditional</animation>
+      </control>
+      <control type="group" id="5600">
+        <top>-100</top>
+        <control type="grouplist">
+          <width>300</width>
+          <orientation>vertical</orientation>
+          <control type="label">
+            <width>auto</width>
+            <scroll>true</scroll>
+            <label>$VAR[Label_Spotlight_Top250]</label>
+            <height>80</height>
+            <align>right</align>
+            <aligny>center</aligny>
+            <font>font30_title</font>
+            <shadowcolor>black</shadowcolor>
+          </control>
+          <control type="label">
+            <width>auto</width>
+            <height>35</height>
+            <scroll>true</scroll>
+            <label>Director</label>
+            <align>right</align>
+            <aligny>center</aligny>
+            <font>font30_title</font>
+            <shadowcolor>black</shadowcolor>
+            <visible>!String.IsEmpty(Window(home).Property(spotlight_Director))</visible>
+          </control>
+          <control type="label">
+            <width>auto</width>
+            <height>35</height>
+            <scroll>true</scroll>
+            <label>$INFO[Window(home).Property(spotlight_Director)]</label>
+            <align>right</align>
+            <aligny>center</aligny>
+            <font>font32</font>
+            <shadowcolor>black</shadowcolor>
+          </control>
+          <control type="label">
+            <width>auto</width>
+            <height>50</height>
+            <scroll>true</scroll>
+            <label>Cast</label>
+            <align>right</align>
+            <aligny>center</aligny>
+            <font>font30_title</font>
+            <shadowcolor>black</shadowcolor>
+            <visible>!String.IsEmpty(Window(home).Property(spotlight_Cast))</visible>
+          </control>
+          <control type="label">
+            <width>auto</width>
+            <height>200</height>
+            <scroll>true</scroll>
+            <label>$INFO[Window(home).Property(spotlight_Cast)]</label>
+            <align>right</align>
+            <aligny>center</aligny>
+            <font>font32</font>
+            <shadowcolor>black</shadowcolor>
+          </control>
+          <control type="label">
+            <width>auto</width>
+            <height>64</height>
+            <scroll>true</scroll>
+            <label>Writer</label>
+            <align>right</align>
+            <aligny>center</aligny>
+            <font>font30_title</font>
+            <shadowcolor>black</shadowcolor>
+            <visible>!String.IsEmpty(Window(home).Property(spotlight_Writer))</visible>
+          </control>
+          <control type="label">
+            <width>auto</width>
+            <height>35</height>
+            <scroll>true</scroll>
+            <label>$INFO[Window(home).Property(spotlight_Writer)]</label>
+            <align>right</align>
+            <aligny>center</aligny>
+            <font>font32</font>
+            <shadowcolor>black</shadowcolor>
+          </control>
+        </control>
+        <control type="group">
+          <left>350</left>
+          <control type="label">
+            <top>0</top>
+            <width>auto</width>
+            <scroll>true</scroll>
+            <label>$INFO[Window(home).Property(spotlight_Title)]</label>
+            <height>150</height>
+            <aligny>bottom</aligny>
+            <font>font_title_bold</font>
+            <textcolor>$VAR[ColorHighlight]</textcolor>
+            <shadowcolor>black</shadowcolor>
+          </control>
+          <control type="label">
+            <top>100</top>
+            <width>auto</width>
+            <scroll>true</scroll>
+            <label>$VAR[Label_InfoLine_Spotlight]</label>
+            <height>72</height>
+            <aligny>bottom</aligny>
+            <font>font32</font>
+            <textcolor>$VAR[ColorHighlight]</textcolor>
+            <shadowcolor>black</shadowcolor>
+          </control>
+        </control>
+        <control type="group">
+          <left>200</left>
+          <include content="Object_Item_Showcase">
+            <param name="title" value="$INFO[Window(home).Property(spotlight_Title)]"/>
+            <param name="title_width" value="1200" />
+            <param name="title_visible" value="false" />
+            <param name="plot" value="$INFO[Window(home).Property(spotlight_Plot)]"/>
+            <param name="plot_top" value="150" />
+            <param name="plot_height" value="220" />
+            <param name="visible_infoline" value="false" />
+          </include>
+        </control>
+      </control>
+      <control type="group">
+        <top>290</top>
+        <bottom>80</bottom>
+        <left>350</left>
+        <height>200</height>
+        <control type="grouplist" id="5999">
+          <orientation>horizontal</orientation>
+          <include content="SpotlightButton">
+            <param name="id" value="6001"/>
+            <param name="icon" value="special://skin/extras/icons/watchlist.png"/>
+            <param name="label" value="$LOCALIZE[31408]"/>
+            <param name="visible" value="String.IsEqual(Window(home).Property(spotlight_EnableWatchlist),true)" />
+            <param name="onclick_1_condition" value="!String.IsEmpty(Window(home).Property(spotlight_TMDBid))"/>
+            <param name="onclick_1" value="RunScript(plugin.video.themoviedb.helper,sync_trakt=watchlist,tmdb_id=$INFO[Window(home).Property(spotlight_TMDBid)],type=$INFO[Window(home).Property(spotlight_TMDBTYPE)],cache_refresh)"/>
+            <param name="onclick_2_condition" value="String.IsEmpty(Window(home).Property(spotlight_TMDBid))"/>
+            <param name="onclick_2" value="RunScript(plugin.video.themoviedb.helper,sync_trakt=watchlist,tmdb_id=$INFO[Window(home).Property(spotlight_TMDBid2)],type=$INFO[Window(home).Property(spotlight_TMDBTYPE)],cache_refresh)"/>
+          </include>
+          <include content="SpotlightButton">
+            <param name="id" value="6002"/>
+            <param name="icon" value="special://skin/extras/icons/collection.png"/>
+            <param name="label" value="$LOCALIZE[31409]"/>
+            <param name="visible" value="String.IsEqual(Window(home).Property(spotlight_isFolder),true)" />
+            <param name="onclick_1" value="Dialog.Close(1141,true)" />
+            <param name="onclick_2" value="Dialog.Close(1140,true)" />
+            <param name="onclick_3" value="RunScript(plugin.video.themoviedb.helper,close_dialog=1190,call_path=$INFO[ListItem.FolderPath])" />
+          </include>
+          <include content="SpotlightButton">
+            <param name="id" value="6003"/>
+            <param name="icon" value="special://skin/extras/icons/videoplay.png"/>
+            <param name="label" value="$LOCALIZE[31410]"/>
+            <param name="visible" value="String.IsEqual(Window(home).Property(spotlight_isTrailer),true)" />
+            <param name="onclick_1" value="RunScript(script.embuary.helper,action=playitem,item='$ESCINFO[Window(home).Property(spotlight_Trailer)]')" />
+          </include>
+          <include content="SpotlightButton">
+            <param name="id" value="6004"/>
+            <param name="icon" value="special://skin/extras/icons/dependencies.png"/>
+            <param name="label" value="$LOCALIZE[31411]"/>
+            <param name="visible" value="String.IsEqual(Window(home).Property(spotlight_FindSimilar),true)" />
+            <param name="onclick_1" value="SetProperty(spotlight.similar_titles,true,1142)" />
+            <param name="onclick_2" value="Dialog.Close(all,true)" />
+            <param name="onclick_3" value="ActivateWindow(1142)" />
+          </include>
+          <include content="SpotlightButton">
+            <param name="id" value="6005"/>
+            <param name="icon" value="special://skin/extras/icons/ribbon.png"/>
+            <param name="label" value="$LOCALIZE[31413]"/>
+            <param name="visible" value="String.IsEqual(Window(home).Property(spotlight_DBType),movie) | String.IsEqual(Window(home).Property(spotlight_DBType),tvshow)" />
+            <param name="onclick_1" value="SetProperty(spotlight.recommended_titles,true,1143)" />
+            <param name="onclick_2" value="Dialog.Close(all,true)" />
+            <param name="onclick_3" value="ActivateWindow(1143)" />
+          </include>
+          <include content="SpotlightButton">
+            <param name="id" value="6006"/>
+            <param name="icon" value="special://skin/extras/icons/actor.png"/>
+            <param name="label" value="$LOCALIZE[31414]"/>
+            <param name="visible" value="String.IsEqual(Window(home).Property(spotlight_DBType),movie) | String.IsEqual(Window(home).Property(spotlight_DBType),tvshow)" />
+            <param name="onclick_1" value="SetProperty(spotlight.cast_of_title,true,1144)" />
+            <param name="onclick_2" value="Dialog.Close(all,true)" />
+            <param name="onclick_3" value="ActivateWindow(1144)" />
+          </include>
+          <include content="SpotlightButton">
+            <param name="id" value="6007"/>
+            <param name="icon" value="special://skin/extras/icons/director.png"/>
+            <param name="label" value="$LOCALIZE[31415]"/>
+            <param name="visible" value="String.IsEqual(Window(home).Property(spotlight_DBType),movie) | String.IsEqual(Window(home).Property(spotlight_DBType),tvshow)" />
+            <param name="onclick_1" value="SetProperty(spotlight.crew_of_title,true,1145)" />
+            <param name="onclick_2" value="Dialog.Close(all,true)" />
+            <param name="onclick_3" value="ActivateWindow(1145)" />
+          </include>
+          <include content="SpotlightButton">
+            <param name="id" value="6008"/>
+            <param name="icon" value="special://skin/extras/icons/thumb-up.png"/>
+            <param name="label" value="$LOCALIZE[31412]"/>
+            <param name="visible" value="String.IsEqual(Window(home).Property(spotlight_EnableRating),true)" />
+            <param name="onclick_1" value="SetProperty(spotlight.user_rating,true,home)" />
+            <param name="onclick_2" value="Dialog.Close(all,true)" />
+            <param name="onclick_3" value="ActivateWindow(1149)" />
+          </include>
+          <include content="SpotlightButton">
+            <param name="id" value="6009"/>
+            <param name="icon" value="special://skin/extras/icons/livetv.png"/>
+            <param name="label" value="$LOCALIZE[10700]"/>
+            <param name="visible" value="String.IsEqual(Window(home).Property(spotlight_isPVR),true)" />
+            <param name="onclick_1" value="Dialog.Close(all,true)" />
+            <param name="onclick_2" value="ActivateWindow(tvchannels)" />
+          </include>
+          <include content="SpotlightButton">
+            <param name="id" value="6010"/>
+            <param name="icon" value="special://skin/extras/icons/playlist.png"/>
+            <param name="label" value="$LOCALIZE[10702]"/>
+            <param name="visible" value="String.IsEqual(Window(home).Property(spotlight_isPVR),true)" />
+            <param name="onclick_1" value="Dialog.Close(all,true)" />
+            <param name="onclick_2" value="ActivateWindow(tvguide)" />
+          </include>
+          <include content="SpotlightButton">
+            <param name="id" value="6011"/>
+            <param name="icon" value="special://skin/extras/icons/info.png"/>
+            <param name="label" value="$LOCALIZE[22081]"/>
+            <param name="visible" value="String.IsEqual(Window(home).Property(spotlight_isPVR),true)" />
+            <param name="onclick_1" value="Dialog.Close(all,true)" />
+            <param name="onclick_2" value="Action(Info)" />
+          </include>
+        </control>
+      </control>
+    </control>
+  </controls>
+</window>

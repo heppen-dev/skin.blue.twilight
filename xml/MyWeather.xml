@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+  <defaultcontrol always="true">15100</defaultcontrol>
+  <backgroundcolor>Background</backgroundcolor>
+  <menucontrol>10000</menucontrol>
+  <controls>
+    <control type="button" id="20000">
+      <include>HiddenObject</include>
+      <animation effect="fade" time="300" start="100" end="0">Focus</animation>
+      <onfocus>SetFocus(2000)</onfocus>
+      <onclick>noop</onclick>
+      <visible allowhiddenfocus="true">Control.HasFocus(20000)</visible>
+    </control>
+    <control type="button" id="20001">
+      <include>HiddenObject</include>
+      <animation effect="fade" time="300" start="100" end="0">Focus</animation>
+      <onfocus>SetFocus(2000)</onfocus>
+      <onclick>noop</onclick>
+      <visible allowhiddenfocus="true">Control.HasFocus(20001)</visible>
+    </control>
+    <control type="button" id="10000">
+      <include>HiddenObject</include>
+      <onfocus>ActivateWindow(servicesettings,weather)</onfocus>
+      <onclick>noop</onclick>
+    </control>
+    <control type="videowindow">
+      <depth>DepthBackground</depth>
+      <include>FullScreenDimensions</include>
+      <visible>Player.HasVideo</visible>
+    </control>
+    <control type="visualisation">
+      <include>FullScreenDimensions</include>
+      <visible>Player.HasAudio</visible>
+    </control>
+    <control type="group">
+      <animation effect="zoom" center="auto" end="102,102" time="0" condition="Integer.IsGreater(System.StereoscopicMode,0)">conditional</animation>
+      <animation effect="fade" start="100" end="bg_alpha" time="0" condition="Player.HasMedia">Conditional</animation>
+      <animation effect="fade" start="0" end="100" time="300" condition="Window.Previous(fullscreenvideo) | Window.Previous(FullscreenGame) | Window.Previous(startup)">WindowOpen</animation>
+      <include>ColoredBackgroundImages</include>
+    </control>
+    <control type="multiimage">
+      <depth>DepthBackground</depth>
+      <include>FullScreenDimensions</include>
+      <aspectratio>scale</aspectratio>
+      <fadetime>400</fadetime>
+      <animation effect="zoom" center="auto" end="102,102" time="0" condition="Integer.IsGreater(System.StereoscopicMode,0)">conditional</animation>
+      <animation effect="fade" start="0" end="100" time="400">WindowOpen</animation>
+      <animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
+      <animation effect="fade" time="400">VisibleChange</animation>
+      <imagepath background="true" colordiffuse="30FFFFFF">$VAR[WeatherFanartVar]</imagepath>
+      <visible>!Player.HasMedia</visible>
+    </control>
+    <include content="View_Weather">
+      <parma name="topbar_visible" value="true"/>
+    </include>
+  </controls>
+</window>

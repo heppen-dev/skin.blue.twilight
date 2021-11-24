@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="1145">
+  <defaultcontrol>11045</defaultcontrol>
+  <onunload>ClearProperty(spotlight_SimilarLabel,home)</onunload>
+  <onunload>ClearProperty(spotlight_SimilarLabel2,home)</onunload>
+  <onunload>ClearProperty(spotlight_SimilarTYPE,home)</onunload>
+  <onunload>ClearProperty(spotlight_SimilarQUERY,home)</onunload>
+  <onunload>ClearProperty(spotlight.crew_of_title,1145)</onunload>
+  <controls>
+    <include>DefaultBackground</include>
+    <control type="group">
+      <visible>!$EXP[infodialog_active]</visible>
+      <include>OpenClose_Right</include>
+      <include>Visible_Right</include>
+      <control type="grouplist">
+        <left>1500</left>
+        <orientation>vertical</orientation>
+        <itemgap>30</itemgap>
+        <usecontrolcoords>true</usecontrolcoords>
+        <control type="label">
+          <top>35</top>
+          <right>75</right>
+          <font>font_clock</font>
+          <align>right</align>
+          <label>$INFO[System.Time]</label>
+          <visible>!$EXP[infodialog_active]</visible>
+        </control>
+        <visible>!Skin.HasSetting(DisableClock)</visible>
+      </control>
+      <control type="group" id="5600">
+        <include content="Object_Item_Showcase">
+          <param name="title" value="$VAR[Label_Title]"/>
+          <param name="title_width" value="930"/>
+          <param name="plot" value="$VAR[Label_PlotTextBoxVar]"/>
+          <param name="plot_height" value="200"/>
+          <param name="info_line_top" value="180"/>
+          <param name="plot_top" value="260"/>
+          <param name="visible_infoline" value="!Container(10045).IsUpdating" />
+        </include>
+        <visible>!Control.HasFocus(511)</visible>
+      </control>
+      <control type="group" id="10045">
+        <!-- crew -->
+        <control type="fixedlist" id="11045">
+          <top>610</top>
+          <left>-120</left>
+          <width>2400</width>
+          <onup>511</onup>
+          <ondown>511</ondown>
+          <pagecontrol>511</pagecontrol>
+          <scrolltime tween="linear" easing="inout">400</scrolltime>
+          <orientation>horizontal</orientation>
+          <focusposition>1</focusposition>
+          <animation effect="slide" time="0" start="0" end="-100,0" condition="true">Conditional</animation>
+          <viewtype>icon</viewtype>
+          <visible>String.IsEqual(Window.Property(spotlight.crew_of_title),true)</visible>
+          <focusedlayout height="382.5" width="270">
+            <control type="group">
+              <include content="View_56_Posters_Layout">
+                <param name="WallWatchedIconVar_visible" value="false"/>
+              </include>
+            </control>
+          </focusedlayout>
+          <itemlayout height="382.5" width="270">
+            <control type="group">
+              <include content="View_56_Posters_Layout">
+                <param name="WallWatchedIconVar_visible" value="false"/>
+              </include>
+            </control>
+          </itemlayout>
+          <content limit="50" target="videos">plugin://plugin.video.themoviedb.helper?info=crew&amp;type=movie&amp;imdb_id=$INFO[Window(home).Property(spotlight_SimilarIMDB)]</content>
+        </control>
+      </control>
+      <control type="group">
+        <top>610</top>
+        <left>50</left>
+        <width>270</width>
+        <height>382.5</height>
+        <include content="Selectbox">
+          <param name="pad_top_b" value="-13"/>
+          <param name="pad_bottom_b" value="-10"/>
+          <param name="pad_left_b" value="17"/>
+          <param name="pad_right_b" value="-32"/>
+          <param name="pad_top_t" value="-8"/>
+          <param name="pad_bottom_t" value="-4"/>
+          <param name="pad_left_t" value="17"/>
+          <param name="pad_right_t" value="-32"/>
+          <param name="visible_posters" value="!Container(10045).IsUpdating"/>
+          <param name="visible_squares" value="false"/>
+          <param name="visible_landscapes" value="false"/>
+          <param name="focusbounce" value="false" />
+        </include>
+        <include content="View_WatchedOverlay">
+          <param name="bottom" value="-12"/>
+          <param name="right" value="20"/>
+          <param name="visible" value="true"/>
+        </include>
+      </control>
+      <control type="group">
+        <top>620</top>
+        <left>0</left>
+        <width>65</width>
+        <height>360</height>
+        <control type="image">
+          <texture colordiffuse="BFFFFFFF">colors/black.png</texture>
+        </control>
+        <animation effect="fade" time="400">VisibleChange</animation>
+        <visible>Integer.IsGreater(Container(10045).CurrentItem,1)</visible>
+      </control>
+      <control type="scrollbar" id="511">
+        <onup>11045</onup>
+        <left>0</left>
+        <bottom>0</bottom>
+        <height>12</height>
+        <width>100%</width>
+        <orientation>horizontal</orientation>
+        <animation effect="fade" start="100" end="0" time="200" condition="!Control.HasFocus(511)">Conditional</animation>
+        <animation effect="fade" start="0" end="100" time="200" condition="Control.HasFocus(511)">Conditional</animation>
+      </control>
+    </control>
+    <control type="group">
+      <control type="image">
+        <texture>colors/black.png</texture>
+        <include>FullScreenDimensions</include>
+        <animation effect="fade" start="100" end="70" time="0" condition="true">Conditional</animation>
+      </control>
+      <include>DialogBusy</include>
+      <visible>Container(11045).IsUpdating</visible>
+    </control>
+  </controls>
+</window>

@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+  <include name="Classic_Main">
+    <control type="group">
+      <visible>!Window.IsActive(1140)</visible>
+      <visible>!Skin.HasSetting(BringBackClassic)</visible>
+      <control type="image">
+        <top>0</top>
+        <left>0</left>
+        <width>1920</width>
+        <height>150</height>
+        <texture colordiffuse="selected">common/white-gradient90-t40.png</texture>
+        <visible>!Player.HasVideo</visible>
+      </control>
+      <control type="image">
+        <top>150</top>
+        <left>0</left>
+        <width>1920</width>
+        <height>4</height>
+        <texture colordiffuse="selected">common/fancy-line-horizontal.png</texture>
+        <visible>!Player.HasVideo</visible>
+      </control>
+      <control type="image">
+        <top>28</top>
+        <left>28</left>
+        <width>92</width>
+        <height>92</height>
+        <aligny>auto</aligny>
+        <texture>special://skin/extras/icons/kodi.png</texture>
+        <animation effect="slide" start="0,0" end="260" time="200" reversible="true" tween="linear" easing="inout" condition="[Control.HasFocus(9000) | Control.HasFocus(9001)] + !String.IsEqual(Skin.String(MenuStyle),Icons)">Conditional</animation>
+        <animation effect="fade" start="100" end="0" time="50" condition="Player.HasVideo + Skin.HasSetting(PlayTrailersFullScreen)">Conditional</animation>
+        <!-- <animation effect="slide" end="-260,0" time="0" condition="String.IsEqual(Skin.String(MenuStyle),Icons)">Conditional</animation> -->
+      </control>
+    </control>
+    <control type="group">
+      <left>100</left>
+      <control type="label">
+        <top>35</top>
+        <right>75</right>
+        <align>right</align>
+        <font>font_clock</font>
+        <label>$INFO[System.Time]</label>
+        <visible>!$EXP[infodialog_active]</visible>
+      </control>
+      <visible>!Skin.HasSetting(DisableClock)</visible>
+      <animation effect="fade" start="100" end="0" time="650" tween="sine" condition="Player.HasVideo">Conditional</animation>
+    </control>
+    <control type="group" id="5600">
+      <left>340</left>
+      <animation effect="slide" start="0,0" end="-280,0" time="200" reversible="true" tween="linear" easing="inout" condition="!Control.HasFocus(9000) | String.IsEqual(Skin.String(MenuStyle),Icons)">Conditional</animation>
+      <animation effect="slide" start="0,0" end="-280,0" time="200" reversible="true" tween="linear" easing="inout" condition="Control.HasFocus(9001)">Conditional</animation>
+      <include content="Object_Item_Showcase">
+        <param name="title" value="$VAR[Label_Title]"/>
+        <param name="title_top" value="-25" />
+        <param name="title_width" value="1400"/>
+        <param name="plot" value="$VAR[Label_PlotTextBoxVar]"/>
+        <param name="plot_height" value="200"/>
+        <param name="info_line_top" value="180"/>
+        <param name="plot_top" value="300"/>
+        <param name="clearlogo_top_margin" value="-985" />
+        <param name="clearlogo_width" value="360"/>
+      </include>
+      <visible>!$EXP[infodialog_active]</visible>
+      <animation effect="fade" start="100" end="0" time="200" condition="Window.IsActive(1140)">Conditional</animation>
+      <animation effect="fade" start="100" end="0" time="200" reversible="true" condition="Control.HasFocus(9000)">Conditional</animation>
+    </control>
+    <control type="group" id="2999">
+      <animation effect="slide" start="0,0" end="-280,0" time="200" reversible="true" tween="linear" easing="inout" condition="!Control.HasFocus(9000) | String.IsEqual(Skin.String(MenuStyle),Icons)">Conditional</animation>
+      <animation effect="slide" start="0,0" end="-280,0" time="200" reversible="true" tween="linear" easing="inout" condition="Control.HasFocus(9001)">Conditional</animation>
+      <control type="group">
+        <include content="Object_Ratings_Content">
+          <param name="top" value="235"/>
+          <param name="left" value="450"/>
+          <param name="align" value="left"/>
+          <param name="directory" value="$INFO[Skin.String(Icons)]"/>
+        </include>
+        <visible>!Window.IsActive(1140) + !Window.IsActive(1141)</visible>
+      </control>
+      <visible>!Window.IsVisible(movieinformation) + !Window.IsVisible(pvrguideinfo)</visible>
+      <control type="group">
+        <top>250</top>
+        <left>450</left>
+        <control type="group">
+          <control type="image">
+            <top>-75</top>
+            <left>1155</left>
+            <width>476</width>
+            <height>290</height>
+            <aspectratio>scale</aspectratio>
+            <texture diffuse="common/geometric.png" colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+            <bordertexture border="32">common/dark-shadow-24.png</bordertexture>
+            <bordersize>24</bordersize>
+          </control>
+          <control type="image">
+            <top>-50</top>
+            <left>1180</left>
+            <width max="426">426</width>
+            <height max="240">240</height>
+            <aspectratio>stretch</aspectratio>
+            <texture>$INFO[Listitem.EpgEventIcon]</texture>
+          </control>
+          <include content="Selectbox">
+            <param name="pad_top_b" value="-70"/>
+            <param name="pad_bottom_b" value="620"/>
+            <param name="pad_left_b" value="1160"/>
+            <param name="pad_right_b" value="-160"/>
+            <param name="pad_top_t" value="-66"/>
+            <param name="pad_bottom_t" value="624"/>
+            <param name="pad_left_t" value="1164"/>
+            <param name="pad_right_t" value="144"/>
+            <param name="visible_posters" value="false"/>
+            <param name="visible_squares" value="false"/>
+            <param name="visible_landscapes" value="true"/>
+          </include>
+          <visible>!String.IsEmpty(Listitem.EpgEventIcon)</visible>
+        </control>
+        <visible>String.StartsWith(ListItem.FolderPath,pvr://) + Skin.HasSetting(ShowEPGEventIcon)</visible>
+      </control>
+    </control>
+    <control type="group">
+      <animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
+      <control type="group" id="2000">
+        <animation type="Conditional" condition="Control.IsVisible(20000)" reversible="false">
+          <effect type="slide" end="0,20" time="60" tween="sine"/>
+          <effect type="slide" end="0,-20" time="180" tween="sine" delay="80"/>
+        </animation>
+        <animation type="Conditional" condition="Control.IsVisible(20001)" reversible="false">
+          <effect type="slide" end="0,-20" time="60" tween="sine"/>
+          <effect type="slide" end="0,20" time="180" tween="sine" delay="80"/>
+        </animation>
+        <include>OpenClose_Right</include>
+        <animation effect="slide" start="0" end="0,280" time="200" tween="quadratic" condition="Window.IsActive(1140) + !Skin.HasSetting(PlayTrailersFullScreen)">Conditional</animation>
+        <animation effect="slide" start="0" end="0,560" time="200" tween="quadratic" condition="Window.IsActive(1140) + Skin.HasSetting(PlayTrailersFullScreen)">Conditional</animation>
+        <left>470</left>
+        <control type="group">
+          <animation effect="slide" start="0,0" end="-280,0" time="200" reversible="true" tween="linear" easing="inout" condition="!Control.HasFocus(9000) | String.IsEqual(Skin.String(MenuStyle),Icons)">Conditional</animation>
+          <animation effect="slide" start="0,0" end="280" time="200" reversible="true" tween="linear" easing="inout" condition="Control.HasFocus(9001)">Conditional</animation>
+          <include content="WidgetVerticalLabel">
+            <param name="font" value="font27_bold"/>
+            <param name="top" value="520"/>
+          </include>
+        </control>
+        <control type="grouplist" id="3000">
+          <animation effect="slide" start="0,0" end="-280,0" time="200" reversible="true" tween="linear" easing="inout" condition="!Control.HasFocus(9000) | String.IsEqual(Skin.String(MenuStyle),Icons)">Conditional</animation>
+          <animation effect="slide" start="0,0" end="280" time="200" reversible="true" tween="linear" easing="inout" condition="Control.HasFocus(9001)">Conditional</animation>
+          <visible>!String.IsEqual(Container(9989).ListItemAbsolute(0).Property(list),Settings) + !String.IsEqual(Container(9989).ListItemAbsolute(0).Property(list),Weather)</visible>
+          <top>595</top>
+          <width>1800</width>
+          <height>999999</height>
+          <usecontrolcoords>false</usecontrolcoords>
+          <include content="Animation_Widget_Slide">
+            <param name="container" value="3000" />
+          </include>
+          <include condition="String.IsEmpty(Skin.String(FlixedScrolling))">skinshortcuts-template-vertical</include>
+          <visible>String.IsEmpty(Skin.String(FlixedScrolling))</visible>
+        </control>
+        <control type="grouplist" id="3000">
+          <animation effect="slide" start="0,0" end="-280,0" time="200" reversible="true" tween="linear" easing="inout" condition="!Control.HasFocus(9000) | String.IsEqual(Skin.String(MenuStyle),Icons)">Conditional</animation>
+          <animation effect="slide" start="0,0" end="280" time="200" reversible="true" tween="linear" easing="inout" condition="Control.HasFocus(9001) + !String.IsEqual(Skin.String(MenuStyle),Icons)">Conditional</animation>
+          <visible>!String.IsEqual(Container(9989).ListItemAbsolute(0).Property(list),Settings) + !String.IsEqual(Container(9989).ListItemAbsolute(0).Property(list),Weather)</visible>
+          <top>595</top>
+          <left>-472</left>
+          <width>2300</width>
+          <height>999999</height>
+          <usecontrolcoords>false</usecontrolcoords>
+          <include content="Animation_Widget_Slide">
+            <param name="container" value="3000" />
+          </include>
+          <include condition="!String.IsEmpty(Skin.String(FlixedScrolling))">skinshortcuts-template-vertical-flix</include>
+          <visible>!String.IsEmpty(Skin.String(FlixedScrolling))</visible>
+        </control>
+        <control type="group">
+          <top>595</top>
+          <left>-272</left>
+          <visible>ControlGroup(3000).HasFocus + !String.IsEmpty(Skin.String(FlixedScrolling)) + Integer.IsGreater(Container(7502).NumItems,0)</visible>
+          <control type="group">
+            <width>270</width>
+            <height>382</height>
+            <include content="Selectbox">
+              <param name="pad_top_b" value="-15"/>
+              <param name="pad_bottom_b" value="-22"/>
+              <param name="pad_left_b" value="-15"/>
+              <param name="pad_right_b" value="-5"/>
+              <param name="pad_top_t" value="-10"/>
+              <param name="pad_bottom_t" value="-16"/>
+              <param name="pad_left_t" value="-12"/>
+              <param name="pad_right_t" value="-2"/>
+              <param name="visible_posters" value="String.IsEqual(Window(home).Property(currentPoster),true)"/>
+              <param name="visible_squares" value="false"/>
+              <param name="visible_landscapes" value="false"/>
+            </include>
+            <include content="View_WatchedOverlay">
+              <param name="bottom" value="-25"/>
+              <param name="right" value="44"/>
+              <param name="visible" value="String.IsEqual(Window(home).Property(currentPoster),true) + !Skin.HasSetting(DisableWatchedOverlay)"/>
+            </include>
+          </control>
+          <control type="group">
+            <width>360</width>
+            <height>382</height>
+            <include content="Selectbox">
+              <param name="pad_top_b" value="-15"/>
+              <param name="pad_bottom_b" value="-23"/>
+              <param name="pad_left_b" value="-15"/>
+              <param name="pad_right_b" value="17"/>
+              <param name="pad_top_t" value="-8"/>
+              <param name="pad_bottom_t" value="-18"/>
+              <param name="pad_left_t" value="-10"/>
+              <param name="pad_right_t" value="22"/>
+              <param name="visible_posters" value="false"/>
+              <param name="visible_squares" value="String.IsEqual(Window(home).Property(currentSquare),true)"/>
+              <param name="visible_landscapes" value="false"/>
+            </include>
+            <include content="View_WatchedOverlay">
+              <param name="bottom" value="-25"/>
+              <param name="right" value="72"/>
+              <param name="visible" value="String.IsEqual(Window(home).Property(currentSquare),true) + !Skin.HasSetting(DisableWatchedOverlay)"/>
+            </include>
+          </control>
+          <control type="group">
+            <width>590</width>
+            <height>375</height>
+            <include content="Selectbox">
+              <param name="pad_top_b" value="-8"/>
+              <param name="pad_bottom_b" value="18"/>
+              <param name="pad_left_b" value="-8"/>
+              <param name="pad_right_b" value="10"/>
+              <param name="pad_top_t" value="-3"/>
+              <param name="pad_bottom_t" value="23"/>
+              <param name="pad_left_t" value="-8"/>
+              <param name="pad_right_t" value="13"/>
+              <param name="visible_posters" value="false"/>
+              <param name="visible_squares" value="false"/>
+              <param name="visible_landscapes" value="[String.IsEqual(Window(home).Property(currentLandscape),true) | String.IsEqual(Window(home).Property(currentFanart),true)] + !Skin.HasSetting(DisableWatchedOverlay)"/>
+            </include>
+            <include content="View_WatchedOverlay">
+              <param name="bottom" value="18"/>
+              <param name="right" value="72"/>
+              <param name="visible" value="String.IsEqual(Window(home).Property(currentLandscape),true) | String.IsEqual(Window(home).Property(currentFanart),true)"/>
+            </include>
+          </control>
+        </control>
+        <control type="group" id="4000">
+          <visible>String.IsEqual(Container(9989).ListItemAbsolute(0).Property(list),Weather)</visible>
+          <animation effect="slide" start="0,0" end="-280,0" time="200" reversible="true" tween="linear" easing="inout" condition="!Control.HasFocus(9000) | String.IsEqual(Skin.String(MenuStyle),Icons)">Conditional</animation>
+          <animation effect="slide" start="0,0" end="280" time="200" reversible="true" tween="linear" easing="inout" condition="Control.HasFocus(9001)">Conditional</animation>
+          <width>1800</width>
+          <include content="View_Weather">
+            <param name="topbar_visible" value="false"/>
+          </include>
+        </control>
+        <control type="group" id="5000">
+          <visible>String.IsEqual(Container(9989).ListItemAbsolute(0).Property(list),Settings)</visible>
+          <animation effect="slide" start="0,0" end="-280,0" time="200" reversible="true" tween="linear" easing="inout" condition="!Control.HasFocus(9000) | String.IsEqual(Skin.String(MenuStyle),Icons)">Conditional</animation>
+          <animation effect="slide" start="0,0" end="280" time="200" reversible="true" tween="linear" easing="inout" condition="Control.HasFocus(9001)">Conditional</animation>
+          <centerleft>50%</centerleft>
+          <width>1600</width>
+          <left>70</left>
+          <top>0</top>
+          <bottom>0</bottom>
+          <include>OpenClose_Right</include>
+          <control type="label">
+            <left>0</left>
+            <right>0</right>
+            <top>440</top>
+            <height>400</height>
+            <label>$LOCALIZE[5]</label>
+            <align>center</align>
+            <font>font27</font>
+          </control>
+          <include>View_Settings</include>
+        </control>
+      </control>
+      <control type="group">
+        <visible>!Skin.HasSetting(BringBackClassic)</visible>
+        <animation effect="fade" start="100" end="0" time="50" condition="Player.HasVideo + Skin.HasSetting(PlayTrailersFullScreen)">Conditional</animation>
+        <control type="image">
+          <top>0</top>
+          <left>0</left>
+          <width>417</width>
+          <height>1080</height>
+          <texture colordiffuse="selected">common/white-gradient-t40.png</texture>
+          <animation effect="slide" start="0" end="-280,0" time="200" condition="ControlGroup(3000).HasFocus | [ControlGroup(4000).HasFocus | ControlGroup(5000).HasFocus] | String.IsEqual(Skin.String(MenuStyle),Icons)">Conditional</animation>
+        </control>
+        <control type="image">
+          <top>342</top>
+          <left>-430</left>
+          <width>1080</width>
+          <height>4</height>
+          <texture colordiffuse="selected">common/fancy-line-horizontal.png</texture>
+          <animation effect="slide" start="0" end="-280,0" time="200" condition="ControlGroup(3000).HasFocus | [ControlGroup(4000).HasFocus | ControlGroup(5000).HasFocus] | String.IsEqual(Skin.String(MenuStyle),Icons)">Conditional</animation>
+          <animation effect="rotate" end="90" center="360,288" time="0" condition="true">Conditional</animation>
+        </control>
+      </control>
+      <control type="group">
+        <depth>DepthContentPanel</depth>
+        <!-- <include>OpenClose_Left</include> -->
+        <control type="fixedlist" id="9000">
+          <top>180</top>
+          <width>462</width>
+          <height>750</height>
+          <bottom>-40</bottom>
+          <movement>7</movement>
+          <focusposition>0</focusposition>
+          <onleft>9001</onleft>
+          <include>Flix_Spotlight_ClearProperties_focus</include>
+          <onright condition="!String.IsEqual(Container(9989).ListItem.Property(list),Settings) + !String.IsEqual(Container(9989).ListItem.Property(list),Weather)">3000</onright>
+          <onright condition="String.IsEqual(Container(9989).ListItem.Property(list),Weather)">4000</onright>
+          <onright condition="String.IsEqual(Container(9989).ListItem.Property(list),Settings)">5000</onright>
+          <scrolltime tween="linear" easing="out">500</scrolltime>
+          <focusedlayout height="95">
+            <control type="group">
+              <animation effect="slide" start="0,0" end="-440,0" time="200" reversible="true" tween="linear" easing="inout" condition="!Control.HasFocus(9000)">Conditional</animation>
+              <control type="label">
+                <top>0</top>
+                <height>95</height>
+                <width>280</width>
+                <aligny>center</aligny>
+                <align>right</align>
+                <font>font_menu_focus</font>
+                <textcolor>dialog_fg_100</textcolor>
+                <label>$INFO[ListItem.Label]</label>
+                <shadowcolor>text_shadow</shadowcolor>
+              </control>
+              <visible>String.IsEqual(Skin.String(MenuStyle),IconsText) | String.IsEqual(Skin.String(MenuStyle),Text) | String.IsEmpty(Skin.String(MenuStyle))</visible>
+            </control>
+            <control type="group">
+              <animation effect="slide" start="0,0" end="-265,0" time="200" reversible="true" tween="linear" easing="inout" condition="!Control.HasFocus(9000) + !String.IsEqual(Skin.String(MenuStyle),Icons)">Conditional</animation>
+              <animation effect="slide" start="0,0" end="-265,0" time="200" reversible="true" tween="linear" easing="inout" condition="Control.HasFocus(9001)">Conditional</animation>
+              <animation effect="slide" start="0" end="-265,0" time="0" reversible="false" condition="String.IsEqual(Skin.String(MenuStyle),Icons)">Conditional</animation>
+              <control type="image">
+                <right>80</right>
+                <top>1</top>
+                <align>right</align>
+                <width>95</width>
+                <height>95</height>
+                <texture colordiffuse="selected">$INFO[ListItem.Art(thumb)]</texture>
+              </control>
+              <visible>String.IsEqual(Skin.String(MenuStyle),Icons) | String.IsEqual(Skin.String(MenuStyle),IconsText) | String.IsEmpty(Skin.String(MenuStyle))</visible>
+              <animation effect="fade" start="100" end="0" time="50" condition="Player.HasVideo + Skin.HasSetting(PlayTrailersFullScreen)">Conditional</animation>
+            </control>
+            <control type="image">
+              <animation effect="slide" start="0,0" end="-280,0" time="200" tween="linear" easing="inout" condition="ControlGroup(3000).HasFocus | Window.IsActive(1140) | [ControlGroup(4000).HasFocus | ControlGroup(5000).HasFocus] | [ControlGroup(4000).HasFocus | ControlGroup(5000).HasFocus]">Conditional</animation>
+              <top>-32</top>
+              <left>400</left>
+              <width>32</width>
+              <height>159</height>
+              <texture colordiffuse="selected">common/fancy-line.png</texture>
+              <animation effect="fade" start="100" end="0" time="50" condition="Player.HasVideo + Skin.HasSetting(PlayTrailersFullScreen)">Conditional</animation>
+              <visible>!String.IsEqual(Skin.String(MenuStyle),Icons)</visible>
+              <visible>!Skin.HasSetting(BringBackClassic)</visible>
+            </control>
+            <control type="image">
+              <top>-32</top>
+              <left>120</left>
+              <width>32</width>
+              <height>159</height>
+              <texture colordiffuse="selected">common/fancy-line.png</texture>
+              <animation effect="fade" start="100" end="0" time="50" condition="Player.HasVideo + Skin.HasSetting(PlayTrailersFullScreen)">Conditional</animation>
+              <visible>String.IsEqual(Skin.String(MenuStyle),Icons)</visible>
+            </control>
+          </focusedlayout>
+          <itemlayout height="95">
+            <control type="group">
+              <animation effect="slide" start="0,0" end="-440,0" time="200" reversible="true" tween="linear" easing="inout" condition="!Control.HasFocus(9000)">Conditional</animation>
+              <control type="label">
+                <top>0</top>
+                <height>95</height>
+                <width>280</width>
+                <aligny>center</aligny>
+                <align>right</align>
+                <font>font_menu</font>
+                <label>$INFO[ListItem.Label]</label>
+                <shadowcolor>text_shadow</shadowcolor>
+              </control>
+              <visible>String.IsEqual(Skin.String(MenuStyle),IconsText) | String.IsEqual(Skin.String(MenuStyle),Text) | String.IsEmpty(Skin.String(MenuStyle))</visible>
+            </control>
+            <control type="group">
+              <animation effect="slide" start="0,0" end="-265,0" time="200" reversible="true" tween="linear" easing="inout" condition="!Control.HasFocus(9000) + !String.IsEqual(Skin.String(MenuStyle),Icons)">Conditional</animation>
+              <animation effect="slide" start="0,0" end="-265,0" time="200" reversible="true" tween="linear" easing="inout" condition="Control.HasFocus(9001)">Conditional</animation>
+              <animation effect="slide" start="0" end="-265,0" time="0" reversible="false" condition="String.IsEqual(Skin.String(MenuStyle),Icons)">Conditional</animation>
+              <control type="image">
+                <right>80</right>
+                <top>1</top>
+                <align>right</align>
+                <width>95</width>
+                <height>95</height>
+                <texture colordiffuse="dialog_fg_100">$INFO[ListItem.Art(thumb)]</texture>
+              </control>
+              <visible>String.IsEqual(Skin.String(MenuStyle),Icons) | String.IsEqual(Skin.String(MenuStyle),IconsText) | String.IsEmpty(Skin.String(MenuStyle))</visible>
+              <animation effect="fade" start="100" end="0" time="50" condition="Player.HasVideo + Skin.HasSetting(PlayTrailersFullScreen)">Conditional</animation>
+            </control>
+          </itemlayout>
+          <content>
+            <include>skinshortcuts-mainmenu</include>
+          </content>
+        </control>
+        <include>skinshortcuts-template-submenu</include>
+      </control>
+      <control type="group">
+        <animation effect="slide" start="0" end="-265,0" time="200" reversible="true" tween="linear" easing="inout" condition="ControlGroup(3000).HasFocus">Conditional</animation>
+        <control type="label">
+          <left>160</left>
+          <top>35</top>
+          <right>75</right>
+          <font>font_clock</font>
+          <label>$INFO[ListItem.Label]</label>
+          <shadowcolor>text_shadow</shadowcolor>
+        </control>
+        <visible>String.IsEqual(Skin.String(MenuStyle),Icons) + [Control.HasFocus(9000) | Control.HasFocus(9001)]</visible>
+      </control>
+    </control>
+  </include>
+</includes>

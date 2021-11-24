@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+  <defaultcontrol always="true">99</defaultcontrol>
+  <onload>SetProperty(infobackground,$ESCINFO[ListItem.Art(fanart)],home)</onload>
+  <onunload>ClearProperty(infobackground,home)</onunload>
+  <onunload>ClearProperty(spotlight.user_rating,home)</onunload>
+  <onload condition="String.IsEqual(Window(home).Property(spotlight.user_rating),true)">SendClick(7)</onload>
+  <controls>
+    <control type="group">
+      <centertop>50%</centertop>
+      <!-- <height>2000</height> -->
+      <centerleft>50%</centerleft>
+      <width>1920</width>
+      <include>DialogVideoInfo</include>
+    </control>
+  </controls>
+</window>

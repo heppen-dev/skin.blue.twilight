@@ -1,0 +1,761 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="1111">
+  <defaultcontrol>8000</defaultcontrol>
+  <include>Animation_DialogPopupOpenClose</include>
+  <coordinates>
+    <origin x="160" y="175"/>
+  </coordinates>
+  <controls>
+    <control type="image">
+      <left>-1920</left>
+      <top>-1080</top>
+      <width>5760</width>
+      <height>3240</height>
+      <animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
+      <animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+      <texture colordiffuse="B0FFFFFF">colors/black.png</texture>
+    </control>
+    <control type="button">
+      <left>-1920</left>
+      <top>-1080</top>
+      <width>5760</width>
+      <height>3240</height>
+      <texturefocus/>
+      <texturenofocus/>
+      <onclick>Action(close)</onclick>
+    </control>
+    <include content="DialogBackgroundCommons">
+      <param name="width" value="1600"/>
+      <param name="height" value="810"/>
+      <param name="header_label" value="$LOCALIZE[31397]"/>
+      <param name="header_id" value="999"/>
+    </include>
+    <control type="group">
+      <top>130</top>
+      <width>1600</width>
+      <height>70</height>
+      <centerleft>50%</centerleft>
+      <control type="label">
+        <label>$LOCALIZE[31419]$INFO[Skin.String(HomeAlphaValue), (,%)]</label>
+        <left>-160</left>
+        <width>390</width>
+        <height>70</height>
+        <align>center</align>
+      </control>
+      <control type="label">
+        <label>$LOCALIZE[31398]$INFO[Skin.String(AlphaValue), (,%)]</label>
+        <left>230</left>
+        <width>390</width>
+        <height>70</height>
+        <align>center</align>
+      </control>
+      <control type="label">
+        <label>$LOCALIZE[31399] ($VAR[LuminanceVariable])</label>
+        <left>660</left>
+        <width>390</width>
+        <height>70</height>
+        <align>center</align>
+      </control>
+      <control type="label">
+        <label>$LOCALIZE[31400] ($VAR[SaturationVariable])</label>
+        <left>1060</left>
+        <width>390</width>
+        <height>70</height>
+        <align>center</align>
+      </control>
+    </control>
+    <control type="group">
+      <animation effect="slide" end="210" time="0" condition="true">conditional</animation>
+      <centertop>40%</centertop>
+      <width>360</width>
+      <height>610</height>
+      <include content="DefaultSettingButtonGradient">
+        <param name="id" value="8000"/>
+        <param name="height" value="70"/>
+        <top>60</top>
+        <left>-180</left>
+        <height>70</height>
+        <width>312</width>
+        <visible>ControlGroup(8000).HasFocus()</visible>
+      </include>
+      <control type="grouplist" id="8000">
+        <left>-180</left>
+        <top>60</top>
+        <width>360</width>
+        <height>560</height>
+        <onleft>11000</onleft>
+        <onright>9000</onright>
+        <usecontrolcoords>true</usecontrolcoords>
+        <control type="button" id="8001">
+          <label>100%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(HomeAlphaValue,100)</onclick>
+        </control>
+        <control type="button" id="8002">
+          <label>95%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(HomeAlphaValue,95)</onclick>
+        </control>
+        <control type="button" id="8003">
+          <label>90%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(HomeAlphaValue,90)</onclick>
+        </control>
+        <control type="button" id="8004">
+          <label>85%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(HomeAlphaValue,85)</onclick>
+        </control>
+        <control type="button" id="8005">
+          <label>80%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(HomeAlphaValue,80)</onclick>
+        </control>
+        <control type="button" id="8006">
+          <label>75%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(HomeAlphaValue,75)</onclick>
+        </control>
+        <control type="button" id="8007">
+          <label>70%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(HomeAlphaValue,70)</onclick>
+        </control>
+        <control type="button" id="8008">
+          <label>65%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(HomeAlphaValue,65)</onclick>
+        </control>
+        <control type="button" id="8009">
+          <label>60%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(HomeAlphaValue,60)</onclick>
+        </control>
+        <control type="button" id="8010">
+          <label>55%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(HomeAlphaValue,55)</onclick>
+        </control>
+        <control type="button" id="8011">
+          <label>50%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(HomeAlphaValue,50)</onclick>
+        </control>
+        <control type="button" id="8012">
+          <label>45%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(HomeAlphaValue,45)</onclick>
+        </control>
+        <control type="button" id="8013">
+          <label>40%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(HomeAlphaValue,40)</onclick>
+        </control>
+        <control type="button" id="8014">
+          <label>35%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(HomeAlphaValue,35)</onclick>
+        </control>
+        <control type="button" id="8015">
+          <label>30%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(HomeAlphaValue,30)</onclick>
+        </control>
+        <control type="button" id="8016">
+          <label>25%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(HomeAlphaValue,25)</onclick>
+        </control>
+        <control type="button" id="8017">
+          <label>20%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(HomeAlphaValue,20)</onclick>
+        </control>
+        <control type="button" id="8018">
+          <label>15%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(HomeAlphaValue,15)</onclick>
+        </control>
+        <control type="button" id="8019">
+          <label>10%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(HomeAlphaValue,10)</onclick>
+        </control>
+        <control type="button" id="8020">
+          <label>5%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(HomeAlphaValue,5)</onclick>
+        </control>
+        <control type="button" id="8021">
+          <label>0%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(HomeAlphaValue,0)</onclick>
+        </control>
+      </control>
+      <include content="DefaultSettingButtonGradient">
+        <param name="id" value="9000"/>
+        <param name="height" value="70"/>
+        <top>60</top>
+        <left>220</left>
+        <height>70</height>
+        <width>312</width>
+        <visible>ControlGroup(9000).HasFocus()</visible>
+      </include>
+      <control type="grouplist" id="9000">
+        <left>220</left>
+        <top>60</top>
+        <width>360</width>
+        <height>560</height>
+        <onleft>8000</onleft>
+        <onright>10000</onright>
+        <usecontrolcoords>true</usecontrolcoords>
+        <control type="button" id="9001">
+          <label>100%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(AlphaValue,100)</onclick>
+        </control>
+        <control type="button" id="9002">
+          <label>95%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(AlphaValue,95)</onclick>
+        </control>
+        <control type="button" id="9003">
+          <label>90%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(AlphaValue,90)</onclick>
+        </control>
+        <control type="button" id="9004">
+          <label>85%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(AlphaValue,85)</onclick>
+        </control>
+        <control type="button" id="9005">
+          <label>80%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(AlphaValue,80)</onclick>
+        </control>
+        <control type="button" id="9006">
+          <label>75%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(AlphaValue,75)</onclick>
+        </control>
+        <control type="button" id="9007">
+          <label>70%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(AlphaValue,70)</onclick>
+        </control>
+        <control type="button" id="9008">
+          <label>65%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(AlphaValue,65)</onclick>
+        </control>
+        <control type="button" id="9009">
+          <label>60%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(AlphaValue,60)</onclick>
+        </control>
+        <control type="button" id="9010">
+          <label>55%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(AlphaValue,55)</onclick>
+        </control>
+        <control type="button" id="9011">
+          <label>50%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(AlphaValue,50)</onclick>
+        </control>
+        <control type="button" id="9012">
+          <label>45%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(AlphaValue,45)</onclick>
+        </control>
+        <control type="button" id="9013">
+          <label>40%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(AlphaValue,40)</onclick>
+        </control>
+        <control type="button" id="9014">
+          <label>35%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(AlphaValue,35)</onclick>
+        </control>
+        <control type="button" id="9015">
+          <label>30%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(AlphaValue,30)</onclick>
+        </control>
+        <control type="button" id="9016">
+          <label>25%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(AlphaValue,25)</onclick>
+        </control>
+        <control type="button" id="9017">
+          <label>20%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(AlphaValue,20)</onclick>
+        </control>
+        <control type="button" id="9018">
+          <label>15%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(AlphaValue,15)</onclick>
+        </control>
+        <control type="button" id="9019">
+          <label>10%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(AlphaValue,10)</onclick>
+        </control>
+        <control type="button" id="9020">
+          <label>5%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(AlphaValue,5)</onclick>
+        </control>
+        <control type="button" id="9021">
+          <label>0%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(AlphaValue,0)</onclick>
+        </control>
+      </control>
+      <include content="DefaultSettingButtonGradient">
+        <param name="id" value="10000"/>
+        <param name="height" value="70"/>
+        <top>60</top>
+        <left>640</left>
+        <height>70</height>
+        <width>312</width>
+        <visible>ControlGroup(10000).HasFocus()</visible>
+      </include>
+      <control type="grouplist" id="10000">
+        <left>640</left>
+        <top>60</top>
+        <width>360</width>
+        <height>560</height>
+        <onleft>9000</onleft>
+        <onright>11000</onright>
+        <usecontrolcoords>true</usecontrolcoords>
+        <control type="button" id="10001">
+          <label>100%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(TMDbHelper.Colors.Luminance,1.0)</onclick>
+        </control>
+        <control type="button" id="10002">
+          <label>95%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(TMDbHelper.Colors.Luminance,0.95)</onclick>
+        </control>
+        <control type="button" id="10003">
+          <label>90%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(TMDbHelper.Colors.Luminance,0.90)</onclick>
+        </control>
+        <control type="button" id="10004">
+          <label>85%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(TMDbHelper.Colors.Luminance,0.85)</onclick>
+        </control>
+        <control type="button" id="10005">
+          <label>80%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(TMDbHelper.Colors.Luminance,0.80)</onclick>
+        </control>
+        <control type="button" id="10006">
+          <label>75%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(TMDbHelper.Colors.Luminance,0.75)</onclick>
+        </control>
+        <control type="button" id="10007">
+          <label>70%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(TMDbHelper.Colors.Luminance,0.70)</onclick>
+        </control>
+        <control type="button" id="10008">
+          <label>65%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(TMDbHelper.Colors.Luminance,0.65)</onclick>
+        </control>
+        <control type="button" id="10009">
+          <label>60%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(TMDbHelper.Colors.Luminance,0.60)</onclick>
+        </control>
+        <control type="button" id="10010">
+          <label>55%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(TMDbHelper.Colors.Luminance,0.55)</onclick>
+        </control>
+        <control type="button" id="10011">
+          <label>50%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(TMDbHelper.Colors.Luminance,0.50)</onclick>
+        </control>
+        <control type="button" id="10012">
+          <label>45%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(TMDbHelper.Colors.Luminance,0.45)</onclick>
+        </control>
+        <control type="button" id="10013">
+          <label>40%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(TMDbHelper.Colors.Luminance,0.40)</onclick>
+        </control>
+        <control type="button" id="10014">
+          <label>35%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(TMDbHelper.Colors.Luminance,0.35)</onclick>
+        </control>
+        <control type="button" id="10015">
+          <label>30%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(TMDbHelper.Colors.Luminance,0.30)</onclick>
+        </control>
+        <control type="button" id="10016">
+          <label>25%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(TMDbHelper.Colors.Luminance,0.25)</onclick>
+        </control>
+        <control type="button" id="10017">
+          <label>20%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(TMDbHelper.Colors.Luminance,0.20)</onclick>
+        </control>
+        <control type="button" id="10018">
+          <label>15%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(TMDbHelper.Colors.Luminance,0.15)</onclick>
+        </control>
+        <control type="button" id="10019">
+          <label>10%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(TMDbHelper.Colors.Luminance,0.10)</onclick>
+        </control>
+        <control type="button" id="10020">
+          <label>5%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(TMDbHelper.Colors.Luminance,0.05)</onclick>
+        </control>
+        <control type="button" id="10021">
+          <label>0%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(TMDbHelper.Colors.Luminance,0.0)</onclick>
+        </control>
+      </control>
+      <include content="DefaultSettingButtonGradient">
+        <param name="id" value="11000"/>
+        <param name="height" value="70"/>
+        <top>60</top>
+        <left>1040</left>
+        <height>70</height>
+        <width>312</width>
+        <visible>ControlGroup(11000).HasFocus()</visible>
+      </include>
+      <control type="grouplist" id="11000">
+        <left>1040</left>
+        <top>60</top>
+        <width>360</width>
+        <height>560</height>
+        <onleft>10000</onleft>
+        <onright>8000</onright>
+        <usecontrolcoords>true</usecontrolcoords>
+        <control type="button" id="11001">
+          <label>100%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(TMDbHelper.Colors.Saturation,1.0)</onclick>
+        </control>
+        <control type="button" id="11002">
+          <label>95%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(TMDbHelper.Colors.Saturation,0.95)</onclick>
+        </control>
+        <control type="button" id="11003">
+          <label>90%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(TMDbHelper.Colors.Saturation,0.90)</onclick>
+        </control>
+        <control type="button" id="11004">
+          <label>85%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(TMDbHelper.Colors.Saturation,0.85)</onclick>
+        </control>
+        <control type="button" id="11005">
+          <label>80%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(TMDbHelper.Colors.Saturation,0.80)</onclick>
+        </control>
+        <control type="button" id="11006">
+          <label>75%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(TMDbHelper.Colors.Saturation,0.75)</onclick>
+        </control>
+        <control type="button" id="11007">
+          <label>70%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(TMDbHelper.Colors.Saturation,0.70)</onclick>
+        </control>
+        <control type="button" id="11008">
+          <label>65%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(TMDbHelper.Colors.Saturation,0.65)</onclick>
+        </control>
+        <control type="button" id="11009">
+          <label>60%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(TMDbHelper.Colors.Saturation,0.60)</onclick>
+        </control>
+        <control type="button" id="11010">
+          <label>55%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(TMDbHelper.Colors.Saturation,0.55)</onclick>
+        </control>
+        <control type="button" id="11011">
+          <label>50%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(TMDbHelper.Colors.Saturation,0.50)</onclick>
+        </control>
+        <control type="button" id="11012">
+          <label>45%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(TMDbHelper.Colors.Saturation,0.45)</onclick>
+        </control>
+        <control type="button" id="11013">
+          <label>40%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(TMDbHelper.Colors.Saturation,0.40)</onclick>
+        </control>
+        <control type="button" id="11014">
+          <label>35%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(TMDbHelper.Colors.Saturation,0.35)</onclick>
+        </control>
+        <control type="button" id="11015">
+          <label>30%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(TMDbHelper.Colors.Saturation,0.30)</onclick>
+        </control>
+        <control type="button" id="11016">
+          <label>25%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(TMDbHelper.Colors.Saturation,0.25)</onclick>
+        </control>
+        <control type="button" id="11017">
+          <label>20%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(TMDbHelper.Colors.Saturation,0.20)</onclick>
+        </control>
+        <control type="button" id="11018">
+          <label>15%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(TMDbHelper.Colors.Saturation,0.15)</onclick>
+        </control>
+        <control type="button" id="11019">
+          <label>10%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(TMDbHelper.Colors.Saturation,0.10)</onclick>
+        </control>
+        <control type="button" id="11020">
+          <label>5%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(TMDbHelper.Colors.Saturation,0.05)</onclick>
+        </control>
+        <control type="button" id="11021">
+          <label>0%</label>
+          <width>312</width>
+          <height>70</height>
+          <align>center</align>
+          <onclick>Skin.SetString(TMDbHelper.Colors.Saturation,0.0)</onclick>
+        </control>
+      </control>
+      <include content="UpDownArrows">
+        <param name="container_id" value="9000"/>
+        <param name="posx" value="350"/>
+        <param name="up_posy" value="-40"/>
+        <param name="down_posy" value="645"/>
+      </include>
+      <include content="UpDownArrows">
+        <param name="container_id" value="10000"/>
+        <param name="posx" value="770"/>
+        <param name="up_posy" value="-40"/>
+        <param name="down_posy" value="645"/>
+      </include>
+      <include content="UpDownArrows">
+        <param name="container_id" value="11000"/>
+        <param name="posx" value="1170"/>
+        <param name="up_posy" value="-40"/>
+        <param name="down_posy" value="645"/>
+      </include>
+    </control>
+    <control type="button" id="1000">
+      <description>button template</description>
+      <left>0</left>
+      <width>312</width>
+      <height>70</height>
+      <align>left</align>
+      <texturefocus/>
+      <texturenofocus/>
+    </control>
+  </controls>
+</window>

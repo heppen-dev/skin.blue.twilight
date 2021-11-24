@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+  <onload condition="!Player.PauseEnabled">SetFocus(603)</onload>
+  <defaultcontrol always="true">602</defaultcontrol>
+  <depth>DepthOSD</depth>
+  <controls>
+    <control type="button">
+      <description>background close area</description>
+      <left>0</left>
+      <top>0</top>
+      <width>100%</width>
+      <bottom>280</bottom>
+      <texturefocus/>
+      <texturenofocus/>
+      <onclick>Action(close)</onclick>
+    </control>
+    <control type="button" id="99220">
+      <include>HiddenObject</include>
+      <onfocus>SetFocus(15)</onfocus>
+      <onfocus condition="Window.IsVisible(videoosd)">Action(Close)</onfocus>
+    </control>
+    <include condition="Skin.HasSetting(touchmode)">TouchBackOSDButton</include>
+    <control type="group">
+      <include>Animation_BottomSlide</include>
+      <bottom>0</bottom>
+      <height>180</height>
+      <visible>![Window.IsVisible(SliderDialog) | Window.IsVisible(1110) | Window.IsVisible(osdaudiosettings) | Window.IsVisible(osdvideosettings) | Window.IsVisible(VideoBookmarks) | Window.IsVisible(playerprocessinfo) | Window.IsVisible(osdcmssettings) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(pvrchannelguide)]</visible>
+      <animation effect="fade" time="200">VisibleChange</animation>
+      <!-- <control type="label">
+				<animation effect="slide" end="0,-20" time="150" condition="VideoPlayer.Content(LiveTV)">conditional</animation>
+				<right>20</right>
+				<top>0</top>
+				<align>right</align>
+				<aligny>center</aligny>
+				<width>1000</width>
+				<height>50</height>
+				<label>$VAR[OSDHelpTextVar]</label>
+				<shadowcolor>black</shadowcolor>
+				<visible>!VideoPlayer.Content(livetv)</visible>
+			</control> -->
+      <include content="LiveTV_OSD_Minimal" condition="VideoPlayer.Content(livetv) + Skin.HasSetting(KeepMinimalPVROSD)"/>
+      <include content="LiveTV_OSD" condition="VideoPlayer.Content(livetv) + !Skin.HasSetting(KeepMinimalPVROSD)"/>
+      <include content="Video_OSD" condition="!VideoPlayer.Content(livetv)"/>
+    </control>
+  </controls>
+</window>

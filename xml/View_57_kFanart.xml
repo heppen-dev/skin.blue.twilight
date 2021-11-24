@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+  <include name="View_57_kFanart">
+    <control type="group">
+      <bottom>-20</bottom>
+      <left>0</left>
+      <height>880</height>
+      <control type="group">
+        <visible>Control.IsVisible(57)</visible>
+        <animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
+        <animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
+        <animation effect="fade" time="200">VisibleChange</animation>
+        <control type="image">
+          <left>0</left>
+          <bottom>0</bottom>
+          <width>100%</width>
+          <height>380</height>
+          <texture colordiffuse="CCFFFFFF">diffuse/box-sharp.png</texture>
+        </control>
+        <control type="image">
+          <right>0</right>
+          <bottom>40</bottom>
+          <width>36%</width>
+          <height>330</height>
+          <texture colordiffuse="CCFFFFFF">diffuse/box-sharp.png</texture>
+        </control>
+      </control>
+      <control type="group">
+        <visible>Control.IsVisible(57)</visible>
+        <include>Visible_Right</include>
+        <include>OpenClose_Right</include>
+        <top>160</top>
+        <control type="list" id="57">
+          <left>0</left>
+          <top>0</top>
+          <width>62.5%</width>
+          <height>695</height>
+          <pagecontrol>5199</pagecontrol>
+          <scrolltime tween="cubic" easing="out">500</scrolltime>
+          <orientation>horizontal</orientation>
+          <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(musicvideos) | Container.Content(artists) | Container.Content(albums) | Container.Content(mixed) | Container.Content(images) | Container.Content(videos) | Container.Content(games)</visible>
+          <onleft>53</onleft>
+          <onup>9000</onup>
+          <ondown>5199</ondown>
+          <onright>53</onright>
+          <viewtype label="31362">icon</viewtype>
+          <include content="View_Forced">
+            <param name="string" value="$LOCALIZE[31362]"/>
+          </include>
+          <itemlayout width="200">
+            <control type="image">
+              <left>0</left>
+              <bottom>15</bottom>
+              <width>200</width>
+              <height>45</height>
+              <texture colordiffuse="CCFFFFFF">diffuse/box-sharp.png</texture>
+            </control>
+            <control type="image">
+              <depth>DepthContentPopout</depth>
+              <left>0</left>
+              <bottom>60</bottom>
+              <width>200</width>
+              <height>285</height>
+              <aspectratio aligny="center">scale</aspectratio>
+              <texture fallback="DefaultVideo.png">$VAR[ShiftThumbVar]</texture>
+            </control>
+            <control type="textbox">
+              <left>10</left>
+              <bottom>20</bottom>
+              <width>180</width>
+              <height>35</height>
+              <aligny>center</aligny>
+              <font>font_tiny10</font>
+              <textcolor>ff181818</textcolor>
+              <label>$INFO[ListItem.Label]</label>
+            </control>
+          </itemlayout>
+          <focusedlayout width="200">
+            <control type="image">
+              <left>0</left>
+              <bottom>15</bottom>
+              <width>200</width>
+              <height>45</height>
+              <visible>Control.HasFocus(57)</visible>
+              <animation effect="fade" time="200">VisibleChange</animation>
+              <texture colordiffuse="$VAR[ColorHighlight]">colors/grey.png</texture>
+            </control>
+            <control type="image">
+              <depth>DepthContentPopout</depth>
+              <left>0</left>
+              <bottom>60</bottom>
+              <width>200</width>
+              <height>285</height>
+              <aspectratio aligny="center">scale</aspectratio>
+              <texture fallback="DefaultVideo.png">$VAR[ShiftThumbVar]</texture>
+            </control>
+            <control type="textbox">
+              <left>10</left>
+              <bottom>20</bottom>
+              <width>180</width>
+              <height>35</height>
+              <aligny>center</aligny>
+              <font>font_tiny10</font>
+              <label>$INFO[ListItem.Label]</label>
+              <autoscroll delay="3000" time="1000" repeat="3000">Skin.HasSetting(autoscroll)</autoscroll>
+            </control>
+          </focusedlayout>
+        </control>
+      </control>
+      <control type="group">
+        <visible>Control.IsVisible(57)</visible>
+        <control type="label">
+          <top>520</top>
+          <left>1240</left>
+          <align>center</align>
+          <font>font_clock</font>
+          <width>120</width>
+          <textcolor>ff181818</textcolor>
+          <label>$INFO[Container.CurrentItem]</label>
+        </control>
+        <control type="label">
+          <top>530</top>
+          <left>1360</left>
+          <width>420</width>
+          <scroll>true</scroll>
+          <font>font32_bold</font>
+          <textcolor>4D181818</textcolor>
+          <label>$INFO[ListItem.Label]</label>
+        </control>
+        <control type="label">
+          <top>570</top>
+          <left>1360</left>
+          <width>420</width>
+          <scroll>true</scroll>
+          <font>font12</font>
+          <textcolor>B3181818</textcolor>
+          <label>$INFO[ListItem.Genre]</label>
+        </control>
+        <control type="image">
+          <top>610</top>
+          <left>1260</left>
+          <width>620</width>
+          <height>1</height>
+          <texture colordiffuse="4D181818">diffuse/box-sharp.png</texture>
+        </control>
+        <control type="label">
+          <top>615</top>
+          <left>1240</left>
+          <align>center</align>
+          <font>font37</font>
+          <width>120</width>
+          <textcolor>ff181818</textcolor>
+          <label>$INFO[Container.NumItems]</label>
+        </control>
+        <control type="textbox">
+          <top>625</top>
+          <left>1360</left>
+          <align>justify</align>
+          <font>font_tiny10</font>
+          <width>500</width>
+          <height>140</height>
+          <textcolor>B3181818</textcolor>
+          <label>$INFO[ListItem.Plot]</label>
+          <autoscroll delay="3000" time="3500" repeat="5000">Skin.HasSetting(autoscroll)</autoscroll>
+        </control>
+        <control type="label">
+          <top>785</top>
+          <left>1360</left>
+          <align>left</align>
+          <width>120</width>
+          <font>font_tiny_match</font>
+          <textcolor>ff27ae60</textcolor>
+          <label>$VAR[PercentageRating]% Match</label>
+        </control>
+        <control type="label">
+          <top>785</top>
+          <right>60</right>
+          <align>right</align>
+          <font>font_tiny10</font>
+          <textcolor>ff181818</textcolor>
+          <label>$INFO[ListItem.Duration(mins),, $LOCALIZE[31191]]</label>
+        </control>
+      </control>
+    </control>
+    <control type="group">
+      <visible>Control.IsVisible(57)</visible>
+      <control type="image">
+        <left>-20%</left>
+        <top>-30</top>
+        <width>150%</width>
+        <height>140</height>
+        <texture colordiffuse="ff000000">diffuse/box-sharp.png</texture>
+        <bordertexture border="21">overlays/shadow.png</bordertexture>
+        <bordersize>20</bordersize>
+      </control>
+      <control type="image">
+        <left>32</left>
+        <top>10</top>
+        <width>64</width>
+        <height>64</height>
+        <texture colordiffuse="$VAR[ColorHighlight]">diffuse/box-sharp.png</texture>
+      </control>
+      <control type="image">
+        <left>32</left>
+        <top>10</top>
+        <width>64</width>
+        <height>64</height>
+        <texture>$VAR[BreadcrumbsVideoIconVar]</texture>
+      </control>
+      <control type="label">
+        <top>0</top>
+        <left>128</left>
+        <font>font60</font>
+        <label>[UPPERCASE]$VAR[BreadcrumbsVideoVar][/UPPERCASE]</label>
+      </control>
+      <control type="label">
+        <top>0</top>
+        <right>60</right>
+        <align>right</align>
+        <font>font60</font>
+        <label>$INFO[System.Time]</label>
+      </control>
+    </control>
+  </include>
+</includes>

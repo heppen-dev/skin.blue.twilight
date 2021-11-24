@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+  <submenu include="submenu">
+    <controls>
+      <include content="Object_Submenu_Content">
+        <param name="icon" value="$INFO[ListItem.Icon]"/>
+        <param name="label" value="$INFO[ListItem.Label]"/>
+        <content>
+          <skinshortcuts>items</skinshortcuts>
+        </content>
+        <skinshortcuts>visibility</skinshortcuts>
+      </include>
+    </controls>
+  </submenu>
+  <submenu include="search" name="searchmenu">
+    <controls>
+      <skinshortcuts insert="searchlist">items</skinshortcuts>
+    </controls>
+    <items insert="searchlist">
+      <property name="widgetLabel" tag="label" />
+      <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-Movies">videodb://movies/titles/?xsp=%7B%22order%22%3A%7B%22direction%22%3A%22ascending%22%2C%22ignorefolders%22%3A0%2C%22method%22%3A%22sorttitle%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22title%22%2C%22operator%22%3A%22contains%22%2C%22value%22%3A%5B%22</property>
+      <property name="widgetPath2" tag="property" attribute="name|list" value="DefaultSearch-Movies">%22%5D%7D%5D%7D%2C%22type%22%3A%22movies%22%7D</property>
+      <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-TvShows">videodb://tvshows/titles/?xsp=%7B%22order%22%3A%7B%22direction%22%3A%22ascending%22%2C%22ignorefolders%22%3A0%2C%22method%22%3A%22sorttitle%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22title%22%2C%22operator%22%3A%22contains%22%2C%22value%22%3A%5B%22</property>
+      <property name="widgetPath2" tag="property" attribute="name|list" value="DefaultSearch-TvShows">%22%5D%7D%5D%7D%2C%22type%22%3A%22tvshows%22%7D</property>
+      <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-Episodes">videodb://tvshows/titles/-1/-1/-1/-1/?xsp=%7B%22order%22%3A%7B%22direction%22%3A%22ascending%22%2C%22ignorefolders%22%3A0%2C%22method%22%3A%22sorttitle%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22title%22%2C%22operator%22%3A%22contains%22%2C%22value%22%3A%5B%22</property>
+      <property name="widgetPath2" tag="property" attribute="name|list" value="DefaultSearch-Episodes">%22%5D%7D%5D%7D%2C%22type%22%3A%22episodes%22%7D</property>
+      <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-Genres">videodb://movies/titles/?xsp=%7B%22order%22%3A%7B%22direction%22%3A%22ascending%22%2C%22ignorefolders%22%3A0%2C%22method%22%3A%22sorttitle%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22genre%22%2C%22operator%22%3A%22contains%22%2C%22value%22%3A%5B%22</property>
+      <property name="widgetPath2" tag="property" attribute="name|list" value="DefaultSearch-Genres">%22%5D%7D%5D%7D%2C%22type%22%3A%22movies%22%7D</property>
+      <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-Year">videodb://movies/titles/?xsp=%7B%22order%22%3A%7B%22direction%22%3A%22ascending%22%2C%22ignorefolders%22%3A0%2C%22method%22%3A%22sorttitle%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22year%22%2C%22operator%22%3A%22contains%22%2C%22value%22%3A%5B%22</property>
+      <property name="widgetPath2" tag="property" attribute="name|list" value="DefaultSearch-Year">%22%5D%7D%5D%7D%2C%22type%22%3A%22movies%22%7D</property>
+      <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-Studio">videodb://movies/titles/?xsp=%7B%22order%22%3A%7B%22direction%22%3A%22ascending%22%2C%22ignorefolders%22%3A0%2C%22method%22%3A%22sorttitle%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22studio%22%2C%22operator%22%3A%22contains%22%2C%22value%22%3A%5B%22</property>
+      <property name="widgetPath2" tag="property" attribute="name|list" value="DefaultSearch-Studio">%22%5D%7D%5D%7D%2C%22type%22%3A%22movies%22%7D</property>
+      <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-Country">videodb://movies/titles/?xsp=%7B%22order%22%3A%7B%22direction%22%3A%22ascending%22%2C%22ignorefolders%22%3A0%2C%22method%22%3A%22sorttitle%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22country%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%22</property>
+      <property name="widgetPath2" tag="property" attribute="name|list" value="DefaultSearch-Country">%22%5D%7D%5D%7D%2C%22type%22%3A%22movies%22%7D</property>
+      <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-Actor">videodb://movies/titles/?xsp=%7B%22order%22%3A%7B%22direction%22%3A%22ascending%22%2C%22ignorefolders%22%3A0%2C%22method%22%3A%22sorttitle%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22actor%22%2C%22operator%22%3A%22contains%22%2C%22value%22%3A%5B%22</property>
+      <property name="widgetPath2" tag="property" attribute="name|list" value="DefaultSearch-Actor">%22%5D%7D%5D%7D%2C%22type%22%3A%22movies%22%7D</property>
+      <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-Director">videodb://movies/titles/?xsp=%7B%22order%22%3A%7B%22direction%22%3A%22ascending%22%2C%22ignorefolders%22%3A0%2C%22method%22%3A%22sorttitle%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22director%22%2C%22operator%22%3A%22contains%22%2C%22value%22%3A%5B%22</property>
+      <property name="widgetPath2" tag="property" attribute="name|list" value="DefaultSearch-Director">%22%5D%7D%5D%7D%2C%22type%22%3A%22movies%22%7D</property>
+      <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-Albums">musicdb://albums/?xsp=%7B%22order%22%3A%7B%22direction%22%3A%22ascending%22%2C%22ignorefolders%22%3A0%2C%22method%22%3A%22sorttitle%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22album%22%2C%22operator%22%3A%22contains%22%2C%22value%22%3A%5B%22</property>
+      <property name="widgetPath2" tag="property" attribute="name|list" value="DefaultSearch-Albums">%22%5D%7D%5D%7D%2C%22type%22%3A%22albums%22%7D</property>
+      <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-Artists">musicdb://artists/?xsp=%7B%22order%22%3A%7B%22direction%22%3A%22ascending%22%2C%22ignorefolders%22%3A0%2C%22method%22%3A%22sorttitle%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22artist%22%2C%22operator%22%3A%22contains%22%2C%22value%22%3A%5B%22</property>
+      <property name="widgetPath2" tag="property" attribute="name|list" value="DefaultSearch-Artists">%22%5D%7D%5D%7D%2C%22type%22%3A%22artists%22%7D</property>
+      <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-Songs">musicdb://songs/?xsp=%7B%22order%22%3A%7B%22direction%22%3A%22ascending%22%2C%22ignorefolders%22%3A0%2C%22method%22%3A%22sorttitle%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22title%22%2C%22operator%22%3A%22contains%22%2C%22value%22%3A%5B%22</property>
+      <property name="widgetPath2" tag="property" attribute="name|list" value="DefaultSearch-Songs">%22%5D%7D%5D%7D%2C%22type%22%3A%22songs%22%7D</property>
+      <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-MusicVideos">videodb://musicvideos/titles/?xsp=%7b%22order%22%3a%7b%22direction%22%3a%22ascending%22%2c%22ignorefolders%22%3a0%2c%22method%22%3a%22sorttitle%22%7d%2c%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22title%22%2c%22operator%22%3a%22contains%22%2c%22value%22%3a%5b%22</property>
+      <property name="widgetPath2" tag="property" attribute="name|list" value="DefaultSearch-MusicVideos">%22%5d%7d%5d%7d%2c%22type%22%3a%22musicvideos%22%7d</property>
+      <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-MusicVideoArtists">videodb://musicvideos/titles/?xsp=%7b%22order%22%3a%7b%22direction%22%3a%22ascending%22%2c%22ignorefolders%22%3a0%2c%22method%22%3a%22sorttitle%22%7d%2c%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22artist%22%2c%22operator%22%3a%22contains%22%2c%22value%22%3a%5b%22</property>
+      <property name="widgetPath2" tag="property" attribute="name|list" value="DefaultSearch-MusicVideoArtists">%22%5d%7d%5d%7d%2c%22type%22%3a%22musicvideos%22%7d</property>
+      <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-Youtube">plugin://plugin.video.youtube/search/?q=</property>
+      <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-Netflix">plugin://plugin.video.netflix/directory/search/search/?query=</property>
+      <property name="widgetPath2" tag="property" attribute="name|list" value="DefaultSearch-Youtube">&amp;search_type=notvalid</property>
+      <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-Addons">addons://search/</property>
+      <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-TMDBMovies">plugin://plugin.video.themoviedb.helper?info=search&amp;type=movie&amp;query=</property>
+      <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-TMDBShows">plugin://plugin.video.themoviedb.helper?info=search&amp;type=tv&amp;query=</property>
+      <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-TMDBPeople">plugin://plugin.video.themoviedb.helper?info=search&amp;type=person&amp;query=</property>
+      <property name="widgetPath" tag="property" attribute="name|list"/>
+      <property name="widgetLimit" tag="property" attribute="name|widgetLimit" />
+      <property name="widgetTarget" tag="property" attribute="name|list" value="DefaultSearch-Albums">music</property>
+      <property name="widgetTarget" tag="property" attribute="name|list" value="DefaultSearch-Artists">music</property>
+      <property name="widgetTarget" tag="property" attribute="name|list" value="DefaultSearch-Songs">music</property>
+      <property name="widgetTarget" tag="property" attribute="name|list" value="DefaultSearch-Addons">addons</property>
+      <property name="widgetTarget" tag="property" attribute="name|widgetTarget" />
+      <property name="widgetTarget">videos</property>
+      <property name="widgetAspect" tag="property" attribute="name|widgetAspect"/>
+      <property name="widgetAspect">Poster</property>
+      <property name="widgetSourceArt" tag="property" attribute="name|widgetAspect" value="Square">thumb</property>
+      <property name="widgetSourceArt" tag="property" attribute="name|widgetAspect" value="Landscape">landscape</property>
+      <property name="widgetSourceArt">poster</property>
+      <property name="id" tag="property" attribute="name|id" value="$NUMBER[1]">1</property>
+      <property name="id" tag="property" attribute="name|id" value="$NUMBER[2]">2</property>
+      <property name="id" tag="property" attribute="name|id" value="$NUMBER[3]">3</property>
+      <property name="id" tag="property" attribute="name|id" value="$NUMBER[4]">4</property>
+      <property name="id" tag="property" attribute="name|id" value="$NUMBER[5]">5</property>
+      <property name="id" tag="property" attribute="name|id" value="$NUMBER[6]">6</property>
+      <property name="id" tag="property" attribute="name|id" value="$NUMBER[7]">7</property>
+      <property name="id" tag="property" attribute="name|id" value="$NUMBER[8]">8</property>
+      <property name="id" tag="property" attribute="name|id" value="$NUMBER[9]">9</property>
+      <property name="id" tag="property" attribute="name|id" value="$NUMBER[10]">10</property>
+      <property name="id" tag="property" attribute="name|id" value="$NUMBER[11]">11</property>
+      <property name="id" tag="property" attribute="name|id" value="$NUMBER[12]">12</property>
+      <property name="id" tag="property" attribute="name|id" value="$NUMBER[13]">13</property>
+      <property name="id" tag="property" attribute="name|id" value="$NUMBER[14]">14</property>
+      <property name="id" tag="property" attribute="name|id" value="$NUMBER[15]">15</property>
+      <property name="id" tag="property" attribute="name|id" value="$NUMBER[16]">16</property>
+      <property name="id" tag="property" attribute="name|id" value="$NUMBER[17]">17</property>
+      <property name="id" tag="property" attribute="name|id" value="$NUMBER[18]">18</property>
+      <property name="id" tag="property" attribute="name|id" value="$NUMBER[19]">19</property>
+      <property name="id" tag="property" attribute="name|id" value="$NUMBER[20]">20</property>
+      <property name="id" tag="property" attribute="name|id" value="$NUMBER[21]">21</property>
+      <property name="id" tag="property" attribute="name|id" value="$NUMBER[22]">22</property>
+      <property name="id" tag="property" attribute="name|id" value="$NUMBER[23]">23</property>
+      <property name="id" tag="property" attribute="name|id" value="$NUMBER[24]">24</property>
+      <property name="id" tag="property" attribute="name|id" value="$NUMBER[25]">25</property>
+      <property name="id" tag="property" attribute="name|id" value="$NUMBER[26]">26</property>
+      <property name="id" tag="property" attribute="name|id" value="$NUMBER[27]">27</property>
+      <property name="id" tag="property" attribute="name|id" value="$NUMBER[28]">28</property>
+      <property name="id" tag="property" attribute="name|id" value="$NUMBER[29]">29</property>
+      <property name="id" tag="property" attribute="name|id" value="$NUMBER[30]">30</property>
+      <property name="id" tag="property" attribute="name|id" value="$NUMBER[31]">31</property>
+      <property name="id" tag="property" attribute="name|id" value="$NUMBER[32]">32</property>
+      <property name="id" tag="property" attribute="name|id" value="$NUMBER[33]">33</property>
+      <property name="id" tag="property" attribute="name|id" value="$NUMBER[34]">34</property>
+      <property name="id" tag="property" attribute="name|id" value="$NUMBER[35]">35</property>
+      <property name="id" tag="property" attribute="name|id" value="$NUMBER[36]">36</property>
+      <property name="id" tag="property" attribute="name|id" value="$NUMBER[37]">37</property>
+      <property name="id" tag="property" attribute="name|id" value="$NUMBER[38]">38</property>
+      <property name="id" tag="property" attribute="name|id" value="$NUMBER[39]">39</property>
+      <property name="id" tag="property" attribute="name|id" value="$NUMBER[40]">40</property>
+      <property name="id" tag="property" attribute="name|id" value="$NUMBER[41]">41</property>
+      <property name="id" tag="property" attribute="name|id" value="$NUMBER[42]">42</property>
+      <property name="id" tag="property" attribute="name|id" value="$NUMBER[43]">43</property>
+      <property name="id" tag="property" attribute="name|id" value="$NUMBER[44]">44</property>
+      <property name="id" tag="property" attribute="name|id" value="$NUMBER[45]">45</property>
+      <property name="id" tag="property" attribute="name|id" value="$NUMBER[46]">46</property>
+      <property name="id" tag="property" attribute="name|id" value="$NUMBER[47]">47</property>
+      <property name="id" tag="property" attribute="name|id" value="$NUMBER[48]">48</property>
+      <property name="id" tag="property" attribute="name|id" value="$NUMBER[49]">49</property>
+      <property name="id">50</property>
+      <controls>
+        <include content="Object_Widget_Content_SearchList">
+          <param name="controltype" value="list"/>
+          <param name="label" value="$SKINSHORTCUTS[widgetLabel]"/>
+          <param name="groupid" value="$PYTHON[int(id) + 8500]"/>
+          <param name="image" value="$SKINSHORTCUTS[widgetSourceArt]"/>
+          <param name="id" value="$PYTHON[int(id) + 7500]"/>
+          <param name="target" value="$SKINSHORTCUTS[widgetTarget]"/>
+          <param name="limit" value="$SKINSHORTCUTS[widgetLimit]"/>
+          <param name="path" value="$SKINSHORTCUTS[widgetPath]$INFO[Skin.String(SearchTerm)]$SKINSHORTCUTS[widgetPath2]"/>
+          <param name="postercondition" value="$PYTHON['true' if widgetAspect in 'Poster' else 'false']"/>
+          <param name="squarecondition" value="$PYTHON['true' if widgetAspect in 'Square' else 'false']"/>
+          <param name="landscapecondition" value="$PYTHON['true' if widgetAspect in 'Landscape' else 'false']"/>
+          <param name="fanartcondition" value="$PYTHON['true' if widgetAspect in 'Fanart' else 'false']"/>
+        </include>
+      </controls>
+    </items>
+  </submenu>
+  <other>
+    <controls>
+      <description>This is a fake template which is needed to trick Skin Shortcuts into building the submenuOther templates</description>
+    </controls>
+  </other>
+  <submenuOther include="vertical" level="1">
+    <!-- <condition tag="property" attribute="name|path" /> -->
+    <condition tag="property" attribute="name|list"/>
+    <property name="id" tag="mainmenuid"/>
+    <property name="path" tag="property" attribute="name|list"/>
+    <property name="sortby" tag="property" attribute="name|widgetSortBy"/>
+    <property name="sortdirection" tag="property" attribute="name|widgetSortDirection"/>
+    <property name="limit" tag="property" attribute="name|widgetLimit"/>
+    <property name="aspect" tag="property" attribute="name|widgetAspect"/>
+    <property name="aspect">Poster</property>
+    <propertyGroup>mainmenuWidgets</propertyGroup>
+    <controls>
+      <include content="Object_Widget_Content" condition="!Skin.HasSetting(DisableFixedScrolling)">
+        <param name="controltype" value="fixedlist"/>
+        <param name="name" value="$SKINSHORTCUTS[label]"/>
+        <param name="id" value="$PYTHON[int(id) + 7501]"/>
+        <param name="target" value="$SKINSHORTCUTS[target]"/>
+        <param name="sortby" value="$SKINSHORTCUTS[sortby]"/>
+        <param name="sortdirection" value="$SKINSHORTCUTS[sortdirection]"/>
+        <param name="limit" value="$SKINSHORTCUTS[limit]"/>
+        <param name="path" value="$SKINSHORTCUTS[path]"/>
+        <param name="image" value="$SKINSHORTCUTS[artwork]"/>
+        <param name="postercondition" value="$PYTHON['true' if aspect in 'Poster' else 'false']"/>
+        <param name="squarecondition" value="$PYTHON['true' if aspect in 'Square' else 'false']"/>
+        <param name="landscapecondition" value="$PYTHON['true' if aspect in 'Landscape' else 'false']"/>
+        <param name="fanartcondition" value="$PYTHON['true' if aspect in 'Fanart' else 'false']"/>
+        <onunfocus>ClearProperty(TMDbHelper.WidgetContainer,home)</onunfocus>
+        <skinshortcuts>visibility</skinshortcuts>
+      </include>
+      <include content="Object_Widget_Content" condition="Skin.HasSetting(DisableFixedScrolling)">
+        <param name="controltype" value="list"/>
+        <param name="name" value="$SKINSHORTCUTS[label]"/>
+        <param name="id" value="$PYTHON[int(id) + 7501]"/>
+        <param name="target" value="$SKINSHORTCUTS[target]"/>
+        <param name="sortby" value="$SKINSHORTCUTS[sortby]"/>
+        <param name="sortdirection" value="$SKINSHORTCUTS[sortdirection]"/>
+        <param name="limit" value="$SKINSHORTCUTS[limit]"/>
+        <param name="path" value="$SKINSHORTCUTS[path]"/>
+        <param name="image" value="$SKINSHORTCUTS[artwork]"/>
+        <param name="postercondition" value="$PYTHON['true' if aspect in 'Poster' else 'false']"/>
+        <param name="squarecondition" value="$PYTHON['true' if aspect in 'Square' else 'false']"/>
+        <param name="landscapecondition" value="$PYTHON['true' if aspect in 'Landscape' else 'false']"/>
+        <param name="fanartcondition" value="$PYTHON['true' if aspect in 'Fanart' else 'false']"/>
+        <onunfocus>ClearProperty(TMDbHelper.WidgetContainer,home)</onunfocus>
+        <skinshortcuts>visibility</skinshortcuts>
+      </include>
+    </controls>
+  </submenuOther>
+  <submenuOther include="vertical-flix" level="1">
+    <!-- <condition tag="property" attribute="name|path" /> -->
+    <condition tag="property" attribute="name|list"/>
+    <property name="id" tag="mainmenuid"/>
+    <property name="path" tag="property" attribute="name|list"/>
+    <property name="sortby" tag="property" attribute="name|widgetSortBy"/>
+    <property name="sortdirection" tag="property" attribute="name|widgetSortDirection"/>
+    <property name="limit" tag="property" attribute="name|widgetLimit"/>
+    <property name="aspect" tag="property" attribute="name|widgetAspect"/>
+    <property name="aspect">Poster</property>
+    <propertyGroup>mainmenuWidgets</propertyGroup>
+    <controls>
+      <include content="Object_Widget_Content_FlixScroll">
+        <param name="controltype" value="fixedlist"/>
+        <param name="name" value="$SKINSHORTCUTS[label]"/>
+        <param name="id" value="$PYTHON[int(id) + 7501]"/>
+        <param name="target" value="$SKINSHORTCUTS[target]"/>
+        <param name="sortby" value="$SKINSHORTCUTS[sortby]"/>
+        <param name="sortdirection" value="$SKINSHORTCUTS[sortdirection]"/>
+        <param name="limit" value="$SKINSHORTCUTS[limit]"/>
+        <param name="path" value="$SKINSHORTCUTS[path]"/>
+        <param name="image" value="$SKINSHORTCUTS[artwork]"/>
+        <param name="postercondition" value="$PYTHON['true' if aspect in 'Poster' else 'false']"/>
+        <param name="squarecondition" value="$PYTHON['true' if aspect in 'Square' else 'false']"/>
+        <param name="landscapecondition" value="$PYTHON['true' if aspect in 'Landscape' else 'false']"/>
+        <param name="fanartcondition" value="$PYTHON['true' if aspect in 'Fanart' else 'false']"/>
+        <onunfocus>ClearProperty(TMDbHelper.WidgetContainer,home)</onunfocus>
+        <onunfocus>ClearProperty(currentPoster,home)</onunfocus>
+        <onunfocus>ClearProperty(currentSquare,home)</onunfocus>
+        <onunfocus>ClearProperty(currentLandscape,home)</onunfocus>
+        <onunfocus>ClearProperty(currentFanart,home)</onunfocus>
+        <onfocus>SetProperty(currentPoster,$PYTHON['true' if aspect in 'Poster' else 'false'],home)</onfocus>
+        <onfocus>SetProperty(currentLandscape,$PYTHON['true' if aspect in 'Landscape' else 'false'],home)</onfocus>
+        <onfocus>SetProperty(currentFanart,$PYTHON['true' if aspect in 'Fanart' else 'false'],home)</onfocus>
+        <onfocus>SetProperty(currentSquare,$PYTHON['true' if aspect in 'Square' else 'false'],home)</onfocus>
+        <skinshortcuts>visibility</skinshortcuts>
+      </include>
+    </controls>
+  </submenuOther>
+  <submenuOther include="horizontal" level="1">
+    <!-- <condition tag="property" attribute="name|path" /> -->
+    <condition tag="property" attribute="name|list"/>
+    <property name="id" tag="mainmenuid"/>
+    <property name="path" tag="property" attribute="name|list"/>
+    <property name="sortby" tag="property" attribute="name|widgetSortBy"/>
+    <property name="sortdirection" tag="property" attribute="name|widgetSortDirection"/>
+    <property name="limit" tag="property" attribute="name|widgetLimit"/>
+    <property name="aspect" tag="property" attribute="name|widgetAspect"/>
+    <property name="aspect">Poster</property>
+    <propertyGroup>mainmenuWidgets</propertyGroup>
+    <controls>
+      <include content="Object_Widget_Content_Horizontal">
+        <param name="controltype" value="list"/>
+        <param name="name" value="$SKINSHORTCUTS[label]"/>
+        <param name="groupid" value="$PYTHON[int(id) + 7601]"/>
+        <param name="image" value="$SKINSHORTCUTS[artwork]"/>
+        <param name="id" value="$PYTHON[int(id) + 7501]"/>
+        <param name="target" value="$SKINSHORTCUTS[target]"/>
+        <param name="sortby" value="$SKINSHORTCUTS[sortby]"/>
+        <param name="sortdirection" value="$SKINSHORTCUTS[sortdirection]"/>
+        <param name="limit" value="$SKINSHORTCUTS[limit]"/>
+        <param name="path" value="$SKINSHORTCUTS[path]"/>
+        <param name="postercondition" value="$PYTHON['true' if aspect in 'Poster' else 'false']"/>
+        <param name="squarecondition" value="$PYTHON['true' if aspect in 'Square' else 'false']"/>
+        <param name="landscapecondition" value="$PYTHON['true' if aspect in 'Landscape' else 'false']"/>
+        <onunfocus>ClearProperty(TMDbHelper.WidgetContainer,home)</onunfocus>
+        <skinshortcuts>visibility</skinshortcuts>
+      </include>
+    </controls>
+  </submenuOther>
+  <propertyGroup name="mainmenuWidgets">
+    <property name="id" tag="mainmenuid"/>
+    <property name="name" tag="property" attribute="name|widgetName"/>
+    <!-- <property name="path" tag="property" attribute="name|path" /> -->
+    <property name="target" tag="property" attribute="name|widgetTarget"/>
+    <property name="target">
+    </property>
+    <!-- <property name="path">$INCLUDE[skinshortcuts-group-$SKINSHORTCUTS[submenuVisibility]]</property> -->
+    <!-- For TV Shows, we want to specify the artwork as the tv show poster, otherwise we'll use the icon -->
+    <property name="artwork" tag="property" attribute="name|widgetType" value="tvshows">$INFO[ListItem.Art(tvshow.poster)]</property>
+    <property name="artwork">$VAR[ImagePoster]</property>
+    <property name="widgetInclude" tag="property" attribute="name|path">Object_Widget_Content</property>
+    <property name="submenuVisibility" tag="property" attribute="name|submenuVisibility"/>
+    <property name="label" tag="label"/>
+    <property name="label">$INFO[ListItem.Label]</property>
+    <property name="background" tag="property" attribute="name|background"/>
+  </propertyGroup>
+</template>

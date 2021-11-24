@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+  <defaultcontrol always="true">9000</defaultcontrol>
+  <onload condition="!ListItem.Property(addon.isinstalled) + Window.IsActive(addonbrowser)">SetFocus(6)</onload>
+  <onload>SetProperty(infobackground,$ESCINFO[ListItem.Art(fanart)],home)</onload>
+  <onunload>ClearProperty(infobackground,home)</onunload>
+  <controls>
+    <control type="group">
+      <centertop>60%</centertop>
+      <height>1080</height>
+      <centerleft>50%</centerleft>
+      <width>1920</width>
+      <control type="group">
+        <include>OpenClose_Right</include>
+        <control type="button" id="5000">
+          <left>606</left>
+          <top>400</top>
+          <width>1235</width>
+          <height>435</height>
+          <label/>
+          <onup>50</onup>
+          <ondown>9000</ondown>
+          <onclick>SetProperty(TextViewer_Header,$LOCALIZE[31141] $INFO[ListItem.AddonVersion],home)</onclick>
+          <onclick>SetProperty(TextViewer_Text,$ESCINFO[ListItem.AddonNews],home)</onclick>
+          <onclick>ActivateWindow(1102)</onclick>
+          <enable>!String.IsEmpty(ListItem.AddonNews)</enable>
+          <texturenofocus />
+          <texturefocus />
+        </control>
+        <control type="textbox">
+          <left>650</left>
+          <top>430</top>
+          <width>1110</width>
+          <height>300</height>
+          <label>$INFO[ListItem.AddonSummary,[B],[/B][CR]]$INFO[ListItem.AddonDescription][CR]$VAR[AddonNewsVar,[I][CR][CR],[/I]]</label>
+          <autoscroll delay="5000" repeat="7500" time="5000">true</autoscroll>
+          <animation effect="fade" start="60" end="100" time="200" condition="Control.HasFocus(5000)">Conditional</animation>
+          <animation effect="fade" start="100" end="60" time="0" condition="!Control.HasFocus(5000)">Conditional</animation>
+        </control>
+        <control type="group">
+          <left>606</left>
+          <top>160</top>
+          <visible>Integer.IsEqual(Container(50).NumItems,0)</visible>
+          <control type="image">
+            <width>425</width>
+            <height>260</height>
+            <texture background="true">DefaultNoPreview.png</texture>
+            <aspectratio>scale</aspectratio>
+            <bordertexture border="21">overlays/shadow.png</bordertexture>
+            <bordersize>20</bordersize>
+          </control>
+          <control type="image">
+            <left>405</left>
+            <width>425</width>
+            <height>260</height>
+            <texture background="true">DefaultNoPreview.png</texture>
+            <aspectratio>scale</aspectratio>
+            <bordertexture border="21">overlays/shadow.png</bordertexture>
+            <bordersize>20</bordersize>
+          </control>
+          <control type="image">
+            <left>810</left>
+            <width>425</width>
+            <height>260</height>
+            <texture background="true">DefaultNoPreview.png</texture>
+            <aspectratio>scale</aspectratio>
+            <bordertexture border="21">overlays/shadow.png</bordertexture>
+            <bordersize>20</bordersize>
+          </control>
+        </control>
+        <control type="panel" id="50">
+          <left>618</left>
+          <top>160</top>
+          <width>1215</width>
+          <height>273</height>
+          <ondown>5000</ondown>
+          <onup>9000</onup>
+          <orientation>horizontal</orientation>
+          <itemlayout height="225" width="405">
+            <control type="image">
+              <left>-12</left>
+              <width>425</width>
+              <height>260</height>
+              <texture background="true">DefaultNoPreview.png</texture>
+              <aspectratio>scale</aspectratio>
+              <bordertexture border="21">overlays/shadow.png</bordertexture>
+              <bordersize>20</bordersize>
+            </control>
+            <control type="image">
+              <left>-12</left>
+              <width>425</width>
+              <height>260</height>
+              <texture background="true">$INFO[ListItem.Icon]</texture>
+              <aspectratio>scale</aspectratio>
+              <bordertexture border="21">overlays/shadow.png</bordertexture>
+              <bordersize>20</bordersize>
+            </control>
+          </itemlayout>
+          <focusedlayout height="225" width="405">
+            <control type="image">
+              <left>-12</left>
+              <width>425</width>
+              <height>260</height>
+              <texture background="true">DefaultNoPreview.png</texture>
+              <aspectratio>scale</aspectratio>
+              <bordertexture border="21">overlays/shadow.png</bordertexture>
+              <bordersize>20</bordersize>
+            </control>
+            <control type="image">
+              <left>-12</left>
+              <width>425</width>
+              <height>260</height>
+              <texture background="true">$INFO[ListItem.Icon]</texture>
+              <aspectratio>scale</aspectratio>
+              <bordertexture border="21">overlays/shadow.png</bordertexture>
+              <bordersize>20</bordersize>
+            </control>
+            <control type="image">
+              <left>4</left>
+              <top>16</top>
+              <width>393</width>
+              <height>228</height>
+              <texture border="8" colordiffuse="$VAR[ColorHighlight]">buttons/thumbnail_focused.png</texture>
+            </control>
+          </focusedlayout>
+        </control>
+        <include content="LeftRightArrows">
+          <param name="list_id" value="50"/>
+          <param name="left_posx" value="590"/>
+          <param name="right_posx" value="1840"/>
+          <param name="posy" value="280"/>
+          <param name="visible" value="true"/>
+        </include>
+        <control type="grouplist" id="9000">
+          <top>910</top>
+          <width>1920</width>
+          <height>300</height>
+          <onup>5000</onup>
+          <align>center</align>
+          <itemgap>50</itemgap>
+          <orientation>horizontal</orientation>
+          <control type="group">
+            <control type="image">
+              <top>0</top>
+              <left>-500</left>
+              <width>3000</width>
+              <height>300</height>
+              <texture background="true" colordiffuse="AltPosterBack">common/white.png</texture>
+            </control>
+          </control>
+          <include content="AddonDialogButton">
+            <param name="id" value="12"/>
+            <param name="icon" value="special://skin/extras/icons/rocket.png"/>
+            <param name="label" value="$LOCALIZE[518]"/>
+          </include>
+          <include content="AddonDialogButton">
+            <param name="id" value="9"/>
+            <param name="icon" value="special://skin/extras/icons/configure.png"/>
+            <param name="label" value="$LOCALIZE[24020]"/>
+          </include>
+          <include content="AddonDialogToggleButton">
+            <param name="id" value="13"/>
+            <param name="icon_on" value="special://skin/extras/icons/antenna-on.png"/>
+            <param name="icon_off" value="special://skin/extras/icons/antenna.png"/>
+            <param name="visible" value="Control.IsEnabled(13)"/>
+          </include>
+          <include content="AddonDialogButton">
+            <param name="id" value="10"/>
+            <param name="icon" value="special://skin/extras/icons/info.png"/>
+            <param name="label" value="$LOCALIZE[39024]"/>
+          </include>
+          <include content="AddonDialogToggleButton">
+            <param name="id" value="7"/>
+            <param name="icon_on" value="special://skin/extras/icons/disabled.png"/>
+            <param name="icon_off" value="special://skin/extras/icons/enabled.png"/>
+            <param name="selected" value="!String.StartsWith(Control.GetLabel(7),$LOCALIZE[24022]) | !Window.IsActive(addonbrowser)"/>
+            <param name="label" value=""/>
+          </include>
+          <include content="AddonDialogButton">
+            <param name="id" value="8"/>
+            <param name="icon" value="special://skin/extras/icons/install.png"/>
+            <param name="label" value="$LOCALIZE[24138]"/>
+          </include>
+          <include content="AddonDialogButton">
+            <param name="id" value="14"/>
+            <param name="icon" value="special://skin/extras/icons/update.png"/>
+            <param name="label" value="$LOCALIZE[24069]"/>
+          </include>
+          <include content="AddonDialogToggleButton">
+            <param name="id" value="6"/>
+            <param name="icon_on" value="special://skin/extras/icons/uninstall.png"/>
+            <param name="icon_off" value="special://skin/extras/icons/install.png"/>
+            <param name="selected" value="ListItem.Property(addon.isinstalled) | !Window.IsActive(addonbrowser)"/>
+            <param name="label" value=""/>
+          </include>
+        </control>
+      </control>
+      <control type="group">
+        <include>OpenClose_Left</include>
+        <top>158</top>
+        <left>80</left>
+        <control type="image">
+          <left>-6</left>
+          <top>4</top>
+          <width>540</width>
+          <height>540</height>
+          <aspectratio>scale</aspectratio>
+          <texture>dialogs/dialog-bg-nobo.png</texture>
+          <bordertexture border="21">overlays/shadow.png</bordertexture>
+          <bordersize>20</bordersize>
+        </control>
+        <control type="image">
+          <left>14</left>
+          <top>24</top>
+          <width>500</width>
+          <height>500</height>
+          <aspectratio aligny="top">scale</aspectratio>
+          <fadetime>300</fadetime>
+          <texture fallback="DefaultAddon.png" background="true">$INFO[ListItem.Art(thumb)]</texture>
+        </control>
+        <control type="group">
+          <visible>String.IsEqual(ListItem.AddonLifecycleType,$LOCALIZE[24170]) | String.IsEqual(ListItem.AddonLifecycleType,$LOCALIZE[24171])</visible>
+          <control type="image">
+            <left>14</left>
+            <top>24</top>
+            <width>500</width>
+            <height>500</height>
+            <texture colordiffuse="AAFFFFFF">colors/black.png</texture>
+          </control>
+          <control type="textbox">
+            <left>25</left>
+            <top>24</top>
+            <width>478</width>
+            <height>500</height>
+            <align>center</align>
+            <aligny>center</aligny>
+            <label>$VAR[AddonLifecycleType]</label>
+            <font>font32_title</font>
+          </control>
+        </control>
+      </control>
+      <control type="textbox">
+        <left>150</left>
+        <top>780</top>
+        <width>1620</width>
+        <height>82</height>
+        <align>center</align>
+        <aligny>center</aligny>
+        <animation effect="fade" start="0" end="100" time="300" delay="300">WindowOpen</animation>
+        <animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+        <label>[I]$INFO[ListItem.AddonDisclaimer][/I]</label>
+        <textcolor>88FFFFFF</textcolor>
+        <autoscroll time="2000" delay="3000" repeat="5000">true</autoscroll>
+      </control>
+      <include content="InfoDialogTopBarInfo">
+        <param name="main_label" value="$INFO[ListItem.AddonName]"/>
+        <param name="sub_label" value="$INFO[ListItem.AddonVersion,[COLOR grey],[/COLOR]]$INFO[ListItem.AddonCreator, $LOCALIZE[31071] ]"/>
+      </include>
+    </control>
+  </controls>
+</window>

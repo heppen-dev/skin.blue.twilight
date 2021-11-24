@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+  <animation effect="fade" end="100" time="560">WindowOpen</animation>
+  <animation effect="fade" start="100" end="0" time="240">WindowClose</animation>
+  <onload condition="Window.IsVisible(1140)">Dialog.Close(10138,true)</onload>
+  <controls>
+    <control type="group">
+      <visible>String.IsEmpty(Window(Home).Property(script.cinemavision.running))</visible>
+      <animation effect="fade" time="400">VisibleChange</animation>
+      <visible>!Window.IsActive(startup) + !Player.Caching</visible>
+      <visible>[!Window.IsVisible(Home) | !Skin.HasSetting(BackgroundPlayingTrailers)]</visible>
+      <control type="image">
+        <texture>colors/black.png</texture>
+        <include>FullScreenDimensions</include>
+        <animation effect="fade" start="100" end="70" time="0" condition="true">Conditional</animation>
+        <animation effect="fade" start="100" end="0" time="0" condition="Window.IsVisible(fullscreenvideo) | Window.IsVisible(FullscreenGame)">Conditional</animation>
+      </control>
+      <control type="group">
+        <include content="DialogBusy" condition="!Skin.HasSetting(MinimalDialogBusy)"/>
+        <include content="MinimalDialogBusy" condition="Skin.HasSetting(MinimalDialogBusy)"/>
+      </control>
+    </control>
+  </controls>
+</window>
