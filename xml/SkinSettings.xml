@@ -3,7 +3,7 @@
   <defaultcontrol>9000</defaultcontrol>
   <backgroundcolor>Background</backgroundcolor>
   <onload condition="String.IsEmpty(Skin.String(background_overlay))">Skin.SetString(background_overlay,1)</onload>
-  <onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;levels=3&amp;group=mainmenu|shutdown|searchmenu)</onunload>
+  <onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;levels=5&amp;group=mainmenu|widgets|shutdown|searchmenu)</onunload>
   <controls>
     <include>DefaultBackground</include>
     <control type="multiimage">
@@ -74,6 +74,11 @@
             <label>$LOCALIZE[31174]</label>
             <include>DefaultSettingButton</include>
             <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
+          </control>
+          <control type="button" id="4010" description="Global widgets">
+            <label>Global Widget Wall</label>
+            <include>DialogSettingButton</include>
+            <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=widgets)</onclick>
           </control>
           <control type="button" id="602" description="Change home layout">
             <label>$LOCALIZE[31183]</label>

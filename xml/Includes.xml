@@ -1190,10 +1190,7 @@
           <include>OpenClose_Fade</include>
           <animation effect="fade" time="100">VisibleChange</animation>
           <control type="multiimage" id="32111">
-            <include content="HorizontalFanartBox" condition="Window.IsVisible(home) + Skin.HasSetting(Horizontal_Main)" />
-            <include content="ClassicFanartBox" condition="Window.IsVisible(home) + Skin.HasSetting(Classic_Main) + !Skin.HasSetting(BringBackClassic)" />
-            <include content="FullScreenDimensions" condition="[Skin.HasSetting(TMDbHelper.EnableBlur) + !Skin.HasSetting(DontBlurHome)] | ![Skin.HasSetting(Vertical_Main) | Window.IsVisible(home)] + !Skin.HasSetting(BringBackClassic)" />
-            <include content="FanartDimensions" condition="[Skin.HasSetting(Vertical_Main) + Window.IsVisible(home)]" />
+            <include content="FullScreenDimensions" condition="[Skin.HasSetting(TMDbHelper.EnableBlur) + !Skin.HasSetting(DontBlurHome)] | Window.IsVisible(home)" />
             <animation effect="zoom" end="150" center="200" time="200" condition="Window.IsActive(1140) + Skin.HasSetting(Vertical_Main)">Conditional</animation>
             <animation effect="slide" start="0" end="-554,0" time="200" condition="Window.IsActive(1140) + Skin.HasSetting(Vertical_Main)">Conditional</animation>
             <animation effect="zoom" end="175" center="-30" time="200" condition="Window.IsActive(1140) + Skin.HasSetting(Horizontal_Main)">Conditional</animation>

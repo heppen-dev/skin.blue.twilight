@@ -1,8 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
   <include name="Primus_Main">
-    <control type="label">
-      <label>That's the place where fun begin</label>
+    <control type="group">
+      <control type="group">
+        <control type="list" id="9000">
+          <height>100</height>
+          <top>3</top>
+          <left>92</left>
+          <onleft>665</onleft>
+          <onright>667</onright>
+          <ondown>2999</ondown>
+          <orientation>horizontal</orientation>
+          <scrolltime tween="cubic" easing="out">500</scrolltime>
+          <focusedlayout height="95" width="260">
+            <control type="group">
+              <control type="label">
+                <left>0</left>
+                <top>0</top>
+                <height>95</height>
+                <width>260</width>
+                <scroll>true</scroll>
+                <aligny>center</aligny>
+                <align>center</align>
+                <font>font_menu</font>
+                <textcolor>selected</textcolor>
+                <label>$INFO[ListItem.Label]</label>
+                <shadowcolor>text_shadow</shadowcolor>
+              </control>
+              <visible>String.IsEqual(Skin.String(MenuStyle),IconsText) | String.IsEqual(Skin.String(MenuStyle),Text) | String.IsEmpty(Skin.String(MenuStyle))</visible>
+            </control>
+          </focusedlayout>
+          <itemlayout height="95" width="260">
+            <control type="group">
+              <control type="label">
+                <left>0</left>
+                <top>0</top>
+                <height>95</height>
+                <width>260</width>
+                <scroll>true</scroll>
+                <aligny>center</aligny>
+                <align>center</align>
+                <font>font_menu</font>
+                <textcolor>dialog_fg_70</textcolor>
+                <label>$INFO[ListItem.Label]</label>
+                <shadowcolor>text_shadow</shadowcolor>
+              </control>
+              <visible>String.IsEqual(Skin.String(MenuStyle),IconsText) | String.IsEqual(Skin.String(MenuStyle),Text) | String.IsEmpty(Skin.String(MenuStyle))</visible>
+            </control>
+          </itemlayout>
+          <content>
+            <include>skinshortcuts-mainmenu</include>
+          </content>
+        </control>
+      </control>
+      <control type="group">
+        <control type="grouplist" id="2999">
+          <onup>9000</onup>
+          <ondown>3000</ondown>
+          <top>112</top>
+          <height>218</height>
+          <include>skinshortcuts-template-localWidget</include>
+        </control>
+        <control type="grouplist" id="3000">
+          <onup>9000</onup>
+          <top>330</top>
+          <height>1080</height>
+          <include>skinshortcuts-template-widgetsWall</include>
+        </control>
+      </control>
     </control>
   </include>
 </includes>

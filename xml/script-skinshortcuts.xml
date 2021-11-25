@@ -285,11 +285,12 @@
             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
             <include>DialogSettingButton</include>
             <visible>!String.EndsWith(Window.Property(groupname),.1)</visible>
-            <!-- <visible>Skin.HasSetting(Horizontal_Main)</visible> -->
           </control>
-          <!-- Manage widgets -->
-          <control type="button" id="406">
-            <label>$LOCALIZE[31176]</label>
+          <control type="button" id="3120">
+            <label>Local Banner</label>
+            <label2>$INFO[Container(211).ListItem.Property(widgetName.1)]</label2>
+            <onclick>SetProperty(widgetID,1)</onclick>
+            <onclick>SendClick(312)</onclick>
             <include>DialogSettingButton</include>
             <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>

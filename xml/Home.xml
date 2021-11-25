@@ -3,9 +3,8 @@
   <defaultcontrol>9000</defaultcontrol>
   <backgroundcolor>$VAR[HomeBackgroundColor]</backgroundcolor>
   <onunload>ClearProperty(TMDbHelper.WidgetContainer,home)</onunload>
-  <onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;levels=3&amp;group=mainmenu|shutdown|searchmenu)</onload>
+  <onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;levels=5&amp;group=mainmenu|widgets|shutdown|searchmenu)</onload>
   <!-- set fallback menu style -->
-  <onload condition="String.IsEmpty(Skin.String(MenuStyle))">Skin.SetString(MenuStyle,IconsText)</onload>
   <!-- set default selection box -->
   <onload condition="String.IsEmpty(Skin.String(HighlightSize))">Skin.SetString(HighlightSize,Bold)</onload>
   <!-- set colourful rating icons as default -->
