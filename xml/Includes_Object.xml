@@ -385,6 +385,44 @@
       </control>
     </definition>
   </include>
+  <include name="Object_LocalWidget_Content">
+    <param name="id" default="5610"/>
+    <param name="target" default=""/>
+    <param name="sortby" default=""/>
+    <param name="sortdirection" default=""/>
+    <param name="limit" default=""/>
+    <param name="path" default=""/>
+    <param name="postercondition" default="true"/>
+    <definition>
+      <control type="list" id="$PARAM[id]">
+        <nested/>
+        <orientation>horizontal</orientation>
+        <onleft>noop</onleft>
+        <onright>noop</onright>
+        <onup>9000</onup>
+        <onback>9000</onback>
+        <height>220</height>
+        <!-- Posters aspect ratio -->
+        <itemlayout height="185" width="1920" condition="$PARAM[postercondition]">
+          <include content="ViewBannerItemLayout">
+            <param name="bg_visible" value="false" />
+          </include>
+        </itemlayout>
+        <focusedlayout height="185" width="1920" condition="$PARAM[postercondition]">
+          <include content="ViewBannerItemLayout">
+            <param name="bg_visible" value="true" />
+          </include>
+        </focusedlayout>
+        <include content="Object_Widget_Content_Path">
+          <param name="target" value="$PARAM[target]"/>
+          <param name="sortby" value="$PARAM[sortby]"/>
+          <param name="sortdirection" value="$PARAM[sortdirection]"/>
+          <param name="limit" value="$PARAM[limit]"/>
+          <param name="path" value="$PARAM[path]"/>
+        </include>
+      </control>
+    </definition>
+  </include>
   <include name="Object_Widget_Content_Path">
     <content target="$PARAM[target]" sortby="$PARAM[sortby]" sortorder="$PARAM[sortdirection]" limit="$PARAM[limit]">$PARAM[path]</content>
   </include>

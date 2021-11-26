@@ -7,8 +7,6 @@
           <height>100</height>
           <top>3</top>
           <left>92</left>
-          <onleft>665</onleft>
-          <onright>667</onright>
           <ondown>2999</ondown>
           <orientation>horizontal</orientation>
           <scrolltime tween="cubic" easing="out">500</scrolltime>
@@ -58,7 +56,8 @@
           <onup>9000</onup>
           <ondown>3000</ondown>
           <top>112</top>
-          <height>218</height>
+          <left>368</left>
+          <height>220</height>
           <include>skinshortcuts-template-localWidget</include>
         </control>
         <control type="grouplist" id="3000">

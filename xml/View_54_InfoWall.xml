@@ -246,6 +246,43 @@
       </control>
     </definition>
   </include>
+  <include name="ViewBannerItemLayout">
+    <definition>
+      <control type="group">
+        <control type="image">
+          <top>3</top>
+          <left>37</left>
+          <right>8</right>
+          <width>1010</width>
+          <height>195</height>
+          <aspectratio>scale</aspectratio>
+          <texture diffuse="special://skin/extras/backgrounds/primary.jpg" colordiffuse="ffff9900">common/white.png</texture>
+          <bordertexture border="32">common/dark-shadow-24.png</bordertexture>
+          <visible>$PARAM[bg_visible] + !String.StartsWith(ListItem.FolderPath,pvr://)</visible>
+        </control>
+        <control type="image">
+          <top>8</top>
+          <left>42</left>
+          <right>8</right>
+          <width>1000</width>
+          <height>185</height>
+          <aspectratio>scale</aspectratio>
+          <texture background="true">$VAR[Image_Banner]</texture>
+          <visible>!String.StartsWith(ListItem.FolderPath,pvr://)</visible>
+        </control>
+        <control type="image">
+          <top>8</top>
+          <left>42</left>
+          <right>8</right>
+          <width>1000</width>
+          <height>185</height>
+          <aspectratio>keep</aspectratio>
+          <texture background="true">$VAR[Image_Banner]</texture>
+          <visible>String.StartsWith(ListItem.FolderPath,pvr://)</visible>
+        </control>
+      </control>
+    </definition>
+  </include>
   <include name="ViewSquareItemLayout">
     <definition>
       <control type="image">

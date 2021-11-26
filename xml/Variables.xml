@@ -328,6 +328,12 @@
     <value condition="!String.IsEmpty(Container.Art(thumb))">$INFO[Container.Art(thumb)]</value>
     <value>$INFO[ListItem.Icon]</value>
   </variable>
+  <variable name="Image_Banner">
+      <value condition="!String.IsEmpty(ListItem.Art(banner))">$INFO[ListItem.Art(banner)]</value>
+      <value condition="!String.IsEmpty(ListItem.Art(tvshow.banner))">$INFO[ListItem.Art(tvshow.banner)]</value>
+      <value condition="!String.IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
+      <value>$INFO[ListItem.Icon]</value>
+  </variable>
   <variable name="PVRStatusImageVar">
     <value condition="ListItem.IsRecording">windows/pvr/record.png</value>
     <value condition="ListItem.HasTimer | ListItem.HasTimerSchedule">windows/pvr/timer.png</value>

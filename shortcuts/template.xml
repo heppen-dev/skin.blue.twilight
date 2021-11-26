@@ -48,7 +48,7 @@
     <property name="aspect">Poster</property>
     <propertyGroup>mainmenuWidgets</propertyGroup>
     <controls>
-      <include content="Object_Widget_Content">
+      <include content="Object_LocalWidget_Content">
         <param name="controltype" value="list"/>
         <param name="name" value="$SKINSHORTCUTS[label]"/>
         <param name="groupid" value="660$SKINSHORTCUTS[id]"/>
