@@ -10,6 +10,7 @@
           <param name="visible_condi" value="!ControlGroup(2999).HasFocus"/>
         </include>
         <animation effect="fade" time="200" start="0" end="100" condition="ControlGroup(3000).HasFocus + !ControlGroup(2999).HasFocus">Conditional</animation>
+        <animation effect="fade" time="200" end="0" start="100" condition="Window.IsVisible(1140)">Conditional</animation>
       </control>
       <control type="group">
         <control type="list" id="9000">
@@ -77,6 +78,7 @@
           <height>728</height>
           <include>skinshortcuts-template-widgetsWall</include>
           <animation effect="slide" time="200" start="0" end="0,400" reversible="true" condition="ControlGroup(3000).HasFocus">Conditional</animation>
+          <animation effect="slide" time="200" start="0" end="0,240" reversible="true" condition="Window.IsVisible(1140)">Conditional</animation>
         </control>
       </control>
     </control>
