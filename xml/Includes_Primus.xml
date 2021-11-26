@@ -61,7 +61,7 @@
           <include>skinshortcuts-template-localWidget</include>
         </control>
         <control type="grouplist" id="3000">
-          <onup>9000</onup>
+          <onup>2999</onup>
           <top>330</top>
           <height>728</height>
           <include>skinshortcuts-template-widgetsWall</include>

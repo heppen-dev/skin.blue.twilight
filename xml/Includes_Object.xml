@@ -403,14 +403,27 @@
         <onback>9000</onback>
         <height>220</height>
         <!-- Posters aspect ratio -->
-        <itemlayout height="185" width="1920" condition="$PARAM[postercondition]">
+        <itemlayout height="185" width="1120" condition="$PARAM[postercondition]">
           <include content="ViewBannerItemLayout">
             <param name="bg_visible" value="false" />
           </include>
         </itemlayout>
-        <focusedlayout height="185" width="1920" condition="$PARAM[postercondition]">
+        <focusedlayout height="185" width="1120" condition="$PARAM[postercondition]">
           <include content="ViewBannerItemLayout">
             <param name="bg_visible" value="true" />
+          </include>
+          <include content="Selectbox">
+            <param name="pad_top_b" value="-15"/>
+            <param name="pad_bottom_b" value="-25"/>
+            <param name="pad_left_b" value="20"/>
+            <param name="pad_right_b" value="60"/>
+            <param name="pad_top_t" value="-10"/>
+            <param name="pad_bottom_t" value="-16"/>
+            <param name="pad_left_t" value="-10"/>
+            <param name="pad_right_t" value="0"/>
+            <param name="visible_posters" value="$PARAM[postercondition] + Control.HasFocus($PARAM[id]) + !String.StartsWith(ListItem.FolderPath,pvr://)"/>
+            <param name="visible_squares" value="false"/>
+            <param name="visible_landscapes" value="false"/>
           </include>
         </focusedlayout>
         <include content="Object_Widget_Content_Path">
