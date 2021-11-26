@@ -16,7 +16,7 @@
       <property name="aspect">Poster</property>
       <propertyGroup>mainmenuWidgets</propertyGroup>
       <controls>
-        <include content="Object_Widget_Content">
+        <include content="Object_WidgetsWall_Content">
           <param name="controltype" value="list"/>
           <param name="name" value="$SKINSHORTCUTS[label]"/>
           <param name="groupid" value="760$SKINSHORTCUTS[id]"/>
@@ -27,7 +27,7 @@
           <param name="sortdirection" value="$SKINSHORTCUTS[sortdirection]"/>
           <param name="limit" value="$SKINSHORTCUTS[limit]"/>
           <param name="path" value="$SKINSHORTCUTS[path]"/>
-          <param name="postercondition" value="true"/>
+          <param name="landscapecondition" value="true"/>
         </include>
       </controls>
     </items>

@@ -334,14 +334,14 @@
       </control>
     </definition>
   </include>
-  <include name="Object_Widget_Content">
+  <include name="Object_WidgetsWall_Content">
     <param name="id" default="5610"/>
     <param name="target" default=""/>
     <param name="sortby" default=""/>
     <param name="sortdirection" default=""/>
     <param name="limit" default=""/>
     <param name="path" default=""/>
-    <param name="postercondition" default="true"/>
+    <param name="landscapecondition" default="true"/>
     <definition>
       <control type="list" id="$PARAM[id]">
         <nested/>
@@ -350,30 +350,30 @@
         <onright>noop</onright>
         <onup>9000</onup>
         <onback>9000</onback>
-        <height>460</height>
-        <onfocus>SetProperty(TMDbHelper.WidgetContainer,$PARAM[id],home)</onfocus>
-        <onfocus>SetProperty(widgetNameLabelHoriz,$PARAM[name],home)</onfocus>
-        <onclick condition="[String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE, tvshow)] + Control.HasFocus($PARAM[id]) + Skin.HasSetting(BackgroundPlayingTrailers) + !Player.HasVideo + !String.IsEmpty(ListItem.Trailer)">AlarmClock(trailerdelay,PlayMedia($ESCINFO[ListItem.Trailer],1),00:01,silent)</onclick>
-        <onclick condition="[String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE, tvshow)] + Control.HasFocus($PARAM[id]) + Skin.HasSetting(BackgroundPlayingTrailers) + !Player.HasVideo + String.IsEmpty(ListItem.Trailer) + !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Trailer))">AlarmClock(trailerdelay,PlayMedia($ESCINFO[Window(Home).Property(TMDbHelper.ListItem.Trailer)],1),00:01,silent)</onclick>
-        <onclick condition="[[String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE, tvshow)] + Skin.HasSetting(BackgroundPlayingTrailers) + String.IsEmpty(ListItem.Trailer) + String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Trailer))] + !Skin.HasSetting(DontShowNotificationANT)">Notification($LOCALIZE[31389], $LOCALIZE[31390])</onclick>
-        <include content="Flix_Spotlight_Properties">
-          <param name="include_condition" value="!String.StartsWith(ListItem.FolderPath,favourites://) + !String.IsEqual(Listitem.DBTYPE,music) + !String.IsEqual(Listitem.DBTYPE,song) + !String.IsEqual(Listitem.DBTYPE,album) + !String.IsEqual(Listitem.DBTYPE,artist)" />
-        </include>
-        <onclick condition="!String.StartsWith(ListItem.FolderPath,favourites://) + !String.IsEqual(Listitem.DBTYPE,song) + !String.IsEqual(Listitem.DBTYPE,album) + !String.IsEqual(Listitem.DBTYPE,artist)">ActivateWindow(1140)</onclick>
+        <height>195</height>
         <!-- Posters aspect ratio -->
-        <itemlayout height="330" width="300" condition="$PARAM[postercondition]">
-          <include content="ViewPosterItemLayoutHorizontal">
+        <itemlayout height="225" width="315" condition="$PARAM[landscapecondition]">
+          <include content="ViewLandscapeItemLayout">
             <param name="bg_visible" value="false" />
           </include>
         </itemlayout>
-        <focusedlayout height="330" width="300" condition="$PARAM[postercondition]">
-          <include content="ViewPosterItemLayoutHorizontal">
+        <focusedlayout height="225" width="315" condition="$PARAM[landscapecondition]">
+          <include content="ViewLandscapeItemLayout">
             <param name="bg_visible" value="true" />
           </include>
-          <control type="button">
-            <include>HiddenObject</include>
-            <include>Flix_Spotlight_ClearProperties</include>
-          </control>
+          <include content="Selectbox">
+            <param name="pad_top_b" value="0"/>
+            <param name="pad_bottom_b" value="20"/>
+            <param name="pad_left_b" value="0"/>
+            <param name="pad_right_b" value="0"/>
+            <param name="pad_top_t" value="-10"/>
+            <param name="pad_bottom_t" value="-16"/>
+            <param name="pad_left_t" value="-10"/>
+            <param name="pad_right_t" value="0"/>
+            <param name="visible_posters" value="$PARAM[landscapecondition] + Control.HasFocus($PARAM[id])"/>
+            <param name="visible_squares" value="false"/>
+            <param name="visible_landscapes" value="false"/>
+          </include>
         </focusedlayout>
         <include content="Object_Widget_Content_Path">
           <param name="target" value="$PARAM[target]"/>

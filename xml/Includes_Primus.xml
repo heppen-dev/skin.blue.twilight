@@ -63,7 +63,7 @@
         <control type="grouplist" id="3000">
           <onup>9000</onup>
           <top>330</top>
-          <height>1080</height>
+          <height>728</height>
           <include>skinshortcuts-template-widgetsWall</include>
         </control>
       </control>
