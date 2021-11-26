@@ -1162,14 +1162,14 @@
       <control type="videowindow">
         <depth>DepthBackground</depth>
         <include>FullScreenDimensions</include>
-        <visible>Player.HasVideo + !Skin.HasSetting(BackgroundPlayingTrailers) | Skin.HasSetting(PlayTrailersFullScreen) | Skin.HasSetting(Horizontal_Main)</visible>
+        <visible>Player.HasVideo</visible>
         <visible>!Slideshow.IsActive</visible>
       </control>
-      <control type="videowindow">
+      <!-- <control type="videowindow">
         <include>TrailerWindowDimensions</include>
         <visible>[Player.HasVideo + Skin.HasSetting(BackgroundPlayingTrailers) | [Window.IsActive(1140) | Window.IsAtive(1141)]] + !Skin.HasSetting(PlayTrailersFullScreen)</visible>
         <visible>!Slideshow.IsActive</visible>
-      </control>
+      </control> -->
       <control type="visualisation">
         <include>FullScreenDimensions</include>
         <visible>!Slideshow.IsActive</visible>

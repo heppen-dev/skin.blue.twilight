@@ -351,6 +351,11 @@
         <onup>9000</onup>
         <onback>9000</onback>
         <height>195</height>
+        <!-- trailers -->
+        <onclick condition="[String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE, tvshow)] + Control.HasFocus($PARAM[id]) + Skin.HasSetting(BackgroundPlayingTrailers) + !Player.HasVideo + !String.IsEmpty(ListItem.Trailer)">AlarmClock(trailerdelay,PlayMedia($ESCINFO[ListItem.Trailer],1),00:01,silent)</onclick>
+        <onclick condition="[String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE, tvshow)] + Control.HasFocus($PARAM[id]) + Skin.HasSetting(BackgroundPlayingTrailers) + !Player.HasVideo + String.IsEmpty(ListItem.Trailer) + !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Trailer))">AlarmClock(trailerdelay,PlayMedia($ESCINFO[Window(Home).Property(TMDbHelper.ListItem.Trailer)],1),00:01,silent)</onclick>
+        <onclick condition="[[String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE, tvshow)] + Skin.HasSetting(BackgroundPlayingTrailers) + String.IsEmpty(ListItem.Trailer) + String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Trailer))] + !Skin.HasSetting(DontShowNotificationANT)">Notification($LOCALIZE[31389], $LOCALIZE[31390])</onclick>
+        <!-- flix spotlight -->
         <include content="Flix_Spotlight_Properties">
           <param name="include_condition" value="!String.StartsWith(ListItem.FolderPath,favourites://) + !String.IsEqual(Listitem.DBTYPE,music) + !String.IsEqual(Listitem.DBTYPE,song) + !String.IsEqual(Listitem.DBTYPE,album) + !String.IsEqual(Listitem.DBTYPE,artist)" />
         </include>
@@ -469,10 +474,6 @@
             <font>font_title_bold</font>
             <visible>[[String.IsEmpty(ListItem.Art(clearlogo)) + String.IsEmpty(ListItem.Art(tvshow.clearlogo))] | Skin.HasSetting(DisableClearlogo)] + [!Control.HasFocus(9000) + !Control.HasFocus(9001) + !String.IsEqual(Container(9989).ListItemAbsolute(0).Property(list),Settings) + !String.IsEqual(Container(9989).ListItemAbsolute(0).Property(list),Weather)]</visible>
             <visible>$PARAM[title_visible]</visible>
-            <animation type="Conditional" condition="Player.HasVideo + !Skin.HasSetting(DontHideShowcase)" reversible="false">
-              <effect type="fade" start="100" end="0" time="300"/>
-              <effect type="slide" start="0" end="-1400,0" time="600"/>
-            </animation>
           </control>
           <control type="image">
             <top>$PARAM[clearlogo_top_margin]</top>
@@ -481,16 +482,6 @@
             <aspectratio>keep</aspectratio>
             <texture background="true">$VAR[Image_ClearLogo]</texture>
             <visible>[!String.IsEmpty(ListItem.Art(clearlogo)) | !String.IsEmpty(ListItem.Art(tvshow.clearlogo))] + !Skin.HasSetting(DisableClearlogo)</visible>
-            <animation type="Conditional" condition="Player.HasVideo + Skin.HasSetting(AnimateClearLogo) + !Skin.HasSetting(DontHideShowcase)" reversible="false">
-              <effect type="slide" start="0" end="0,140" time="350" delay="300"/>
-              <effect type="slide" start="0" end="40,0" time="350" delay="600"/>
-              <effect type="rotate" end="30" center="300,228" time="350" delay="600"/>
-              <effect type="zoom" start="100" center="100,200" end="110" time="350" delay="600" tween="sine" easing="inout"/>
-            </animation>
-            <animation type="Conditional" condition="Player.HasVideo + !Skin.HasSetting(AnimateClearLogo) + !Skin.HasSetting(DontHideShowcase)" reversible="false">
-              <effect type="fade" start="100" end="0" time="300"/>
-              <effect type="slide" start="0" end="-1400,0" time="600"/>
-            </animation>
           </control>
         </control>
         <control type="group">
