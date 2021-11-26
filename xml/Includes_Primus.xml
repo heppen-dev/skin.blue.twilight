@@ -7,7 +7,7 @@
           <param name="title" value="$VAR[Label_Title]"/>
           <param name="title_width" value="1000" />
           <param name="plot" value="$VAR[Label_PlotTextBoxVar]"/>
-          <param name="visible_condi" value="!ControlGroup(2999).HasFocus"/>
+          <param name="visible_condi" value="!ControlGroup(2999).HasFocus + ControlGroup(3000).HasFocus"/>
         </include>
         <animation effect="fade" time="200" start="0" end="100" condition="ControlGroup(3000).HasFocus + !ControlGroup(2999).HasFocus">Conditional</animation>
         <animation effect="fade" time="200" end="0" start="100" condition="Window.IsVisible(1140)">Conditional</animation>
