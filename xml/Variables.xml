@@ -156,7 +156,7 @@
     <value>Null</value>
   </variable>
   <variable name="BackgroundOverlay">
-    <value condition="Control.HasFocus(57)">FFFFFFFF</value>
+    <value condition="Control.HasFocus(57) | ControlGroup(3000).HasFocus">FFFFFFFF</value>
     <value condition="Window.IsVisible(Home)">$VAR[HomeAlphaPercentage]</value>
     <value>$VAR[AlphaPercentage]</value>
   </variable>

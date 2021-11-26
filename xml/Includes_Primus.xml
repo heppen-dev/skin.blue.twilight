@@ -3,6 +3,15 @@
   <include name="Primus_Main">
     <control type="group">
       <control type="group">
+        <include content="Object_Item_Showcase">
+          <param name="title" value="$VAR[Label_Title]"/>
+          <param name="title_width" value="1000" />
+          <param name="plot" value="$VAR[Label_PlotTextBoxVar]"/>
+          <param name="visible_condi" value="!ControlGroup(2999).HasFocus"/>
+        </include>
+        <animation effect="fade" time="200" start="0" end="100" condition="ControlGroup(3000).HasFocus + !ControlGroup(2999).HasFocus">Conditional</animation>
+      </control>
+      <control type="group">
         <control type="list" id="9000">
           <height>100</height>
           <top>3</top>
@@ -50,6 +59,7 @@
             <include>skinshortcuts-mainmenu</include>
           </content>
         </control>
+        <animation effect="slide" time="200" start="0" end="0,-400" reversible="true" condition="ControlGroup(3000).HasFocus">Conditional</animation>
       </control>
       <control type="group">
         <control type="grouplist" id="2999">
@@ -59,12 +69,14 @@
           <left>368</left>
           <height>220</height>
           <include>skinshortcuts-template-localWidget</include>
+          <animation effect="slide" time="200" start="0" end="0,-400" reversible="true" condition="ControlGroup(3000).HasFocus">Conditional</animation>
         </control>
         <control type="grouplist" id="3000">
           <onup>2999</onup>
           <top>330</top>
           <height>728</height>
           <include>skinshortcuts-template-widgetsWall</include>
+          <animation effect="slide" time="200" start="0" end="0,400" reversible="true" condition="ControlGroup(3000).HasFocus">Conditional</animation>
         </control>
       </control>
     </control>

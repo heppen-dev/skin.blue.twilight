@@ -1190,11 +1190,9 @@
           <include>OpenClose_Fade</include>
           <animation effect="fade" time="100">VisibleChange</animation>
           <control type="multiimage" id="32111">
-            <include content="FullScreenDimensions" condition="[Skin.HasSetting(TMDbHelper.EnableBlur) + !Skin.HasSetting(DontBlurHome)] | Window.IsVisible(home)" />
-            <animation effect="zoom" end="150" center="200" time="200" condition="Window.IsActive(1140) + Skin.HasSetting(Vertical_Main)">Conditional</animation>
-            <animation effect="slide" start="0" end="-554,0" time="200" condition="Window.IsActive(1140) + Skin.HasSetting(Vertical_Main)">Conditional</animation>
-            <animation effect="zoom" end="175" center="-30" time="200" condition="Window.IsActive(1140) + Skin.HasSetting(Horizontal_Main)">Conditional</animation>
-            <animation effect="slide" start="0" end="-260,-100" time="200" condition="Window.IsActive(1140) + Skin.HasSetting(Horizontal_Main)">Conditional</animation>
+            <include>FanartDimensions</include>
+            <animation effect="zoom" end="150" center="200" time="200" condition="!ControlGroup(3000).HasFocus">Conditional</animation>
+            <animation effect="slide" start="0" end="-554,0" time="200" condition="!ControlGroup(3000).HasFocus">Conditional</animation>
             <aspectratio aligny="top">scale</aspectratio>
             <fadetime>600</fadetime>
             <timeperimage>6000</timeperimage>
@@ -1206,65 +1204,6 @@
             <animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(KenBurnsEffect)">Conditional</animation>
             <animation effect="slide" start="-30,-30" end="30,30" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(KenBurnsEffect)">Conditional</animation>
             <include>OpenClose_Fade</include>
-          </control>
-          <control type="group">
-            <include>TrailerWindowDimensions</include>
-            <include>ColoredBackgroundImages</include>
-            <animation effect="zoom" end="300" center="400" time="200" condition="Window.IsActive(1140)">Conditional</animation>
-            <animation effect="slide" start="0" end="-554,100" time="200" reversible="true" condition="Window.IsActive(1140)">Conditional</animation>
-            <animation effect="fade" time="200" end="0" condition="String.IsEqual(Skin.String(HomeAlphaValue),100)">Conditional</animation>
-            <animation effect="fade" time="200" end="5" condition="String.IsEqual(Skin.String(HomeAlphaValue),95)">Conditional</animation>
-            <animation effect="fade" time="200" end="10" condition="String.IsEqual(Skin.String(HomeAlphaValue),90)">Conditional</animation>
-            <animation effect="fade" time="200" end="15" condition="String.IsEqual(Skin.String(HomeAlphaValue),85)">Conditional</animation>
-            <animation effect="fade" time="200" end="20" condition="String.IsEqual(Skin.String(HomeAlphaValue),80)">Conditional</animation>
-            <animation effect="fade" time="200" end="25" condition="String.IsEqual(Skin.String(HomeAlphaValue),75)">Conditional</animation>
-            <animation effect="fade" time="200" end="30" condition="String.IsEqual(Skin.String(HomeAlphaValue),70)">Conditional</animation>
-            <animation effect="fade" time="200" end="35" condition="String.IsEqual(Skin.String(HomeAlphaValue),65)">Conditional</animation>
-            <animation effect="fade" time="200" end="40" condition="String.IsEqual(Skin.String(HomeAlphaValue),60)">Conditional</animation>
-            <animation effect="fade" time="200" end="45" condition="String.IsEqual(Skin.String(HomeAlphaValue),55)">Conditional</animation>
-            <animation effect="fade" time="200" end="50" condition="String.IsEqual(Skin.String(HomeAlphaValue),50)">Conditional</animation>
-            <animation effect="fade" time="200" end="55" condition="String.IsEqual(Skin.String(HomeAlphaValue),45)">Conditional</animation>
-            <animation effect="fade" time="200" end="60" condition="String.IsEqual(Skin.String(HomeAlphaValue),40)">Conditional</animation>
-            <animation effect="fade" time="200" end="65" condition="String.IsEqual(Skin.String(HomeAlphaValue),35)">Conditional</animation>
-            <animation effect="fade" time="200" end="70" condition="String.IsEqual(Skin.String(HomeAlphaValue),30)">Conditional</animation>
-            <animation effect="fade" time="200" end="75" condition="String.IsEqual(Skin.String(HomeAlphaValue),25)">Conditional</animation>
-            <animation effect="fade" time="200" end="80" condition="String.IsEqual(Skin.String(HomeAlphaValue),20)">Conditional</animation>
-            <animation effect="fade" time="200" end="85" condition="String.IsEqual(Skin.String(HomeAlphaValue),15)">Conditional</animation>
-            <animation effect="fade" time="200" end="90" condition="String.IsEqual(Skin.String(HomeAlphaValue),10)">Conditional</animation>
-            <animation effect="fade" time="200" end="95" condition="String.IsEqual(Skin.String(HomeAlphaValue),5)">Conditional</animation>
-            <animation effect="fade" time="200" end="100" condition="String.IsEqual(Skin.String(HomeAlphaValue),0)">Conditional</animation>
-            <visible>Skin.HasSetting(TMDbHelper.EnableColors) + Skin.HasSetting(Vertical_Main) + Window.IsVisible(home)</visible>
-            <visible>[!String.IsEqual(Container(9989).ListItemAbsolute(0).Property(list),Weather) + !String.IsEqual(Container(9989).ListItemAbsolute(0).Property(list),Settings)] | !String.IsEmpty(Skin.String(HomeBackgroundImage))</visible>
-            <visible>!$EXP[infodialog_active]</visible>
-            <visible>!Skin.HasSetting(TMDbHelper.EnableBlur)</visible>
-          </control>
-          <control type="group">
-            <include>TrailerWindowDimensions</include>
-            <include>ColoredBackgroundImages</include>
-            <animation effect="zoom" end="300" center="400" time="200" condition="Window.IsActive(1140)">Conditional</animation>
-            <animation effect="slide" start="0" end="-554,100" time="200" reversible="true" condition="Window.IsActive(1140)">Conditional</animation>
-            <animation effect="fade" time="200" end="0" condition="String.IsEqual(Skin.String(AlphaValue),100)">Conditional</animation>
-            <animation effect="fade" time="200" end="5" condition="String.IsEqual(Skin.String(AlphaValue),95)">Conditional</animation>
-            <animation effect="fade" time="200" end="10" condition="String.IsEqual(Skin.String(AlphaValue),90)">Conditional</animation>
-            <animation effect="fade" time="200" end="15" condition="String.IsEqual(Skin.String(AlphaValue),85)">Conditional</animation>
-            <animation effect="fade" time="200" end="20" condition="String.IsEqual(Skin.String(AlphaValue),80)">Conditional</animation>
-            <animation effect="fade" time="200" end="25" condition="String.IsEqual(Skin.String(AlphaValue),75)">Conditional</animation>
-            <animation effect="fade" time="200" end="30" condition="String.IsEqual(Skin.String(AlphaValue),70)">Conditional</animation>
-            <animation effect="fade" time="200" end="35" condition="String.IsEqual(Skin.String(AlphaValue),65)">Conditional</animation>
-            <animation effect="fade" time="200" end="40" condition="String.IsEqual(Skin.String(AlphaValue),60)">Conditional</animation>
-            <animation effect="fade" time="200" end="45" condition="String.IsEqual(Skin.String(AlphaValue),55)">Conditional</animation>
-            <animation effect="fade" time="200" end="50" condition="String.IsEqual(Skin.String(AlphaValue),50)">Conditional</animation>
-            <animation effect="fade" time="200" end="55" condition="String.IsEqual(Skin.String(AlphaValue),45)">Conditional</animation>
-            <animation effect="fade" time="200" end="60" condition="String.IsEqual(Skin.String(AlphaValue),40)">Conditional</animation>
-            <animation effect="fade" time="200" end="65" condition="String.IsEqual(Skin.String(AlphaValue),35)">Conditional</animation>
-            <animation effect="fade" time="200" end="70" condition="String.IsEqual(Skin.String(AlphaValue),30)">Conditional</animation>
-            <animation effect="fade" time="200" end="75" condition="String.IsEqual(Skin.String(AlphaValue),25)">Conditional</animation>
-            <animation effect="fade" time="200" end="80" condition="String.IsEqual(Skin.String(AlphaValue),20)">Conditional</animation>
-            <animation effect="fade" time="200" end="85" condition="String.IsEqual(Skin.String(AlphaValue),15)">Conditional</animation>
-            <animation effect="fade" time="200" end="90" condition="String.IsEqual(Skin.String(AlphaValue),10)">Conditional</animation>
-            <animation effect="fade" time="200" end="95" condition="String.IsEqual(Skin.String(AlphaValue),5)">Conditional</animation>
-            <animation effect="fade" time="200" end="100" condition="String.IsEqual(Skin.String(AlphaValue),0)">Conditional</animation>
-            <visible>Window.IsVisible(1140) + Skin.HasSetting(Vertical_Main)</visible>
           </control>
           <control type="image">
             <left>-3</left>
@@ -1281,21 +1220,10 @@
           <control type="image">
             <include>FullScreenDimensions</include>
             <aspectratio aligny="center">scale</aspectratio>
-            <animation effect="fade" time="100" delay="600">Hidden</animation>
-            <animation effect="fade" start="100" end="0" time="200" condition="!Player.HasVideo + Window.IsActive(1140)">Conditional</animation>
+            <animation effect="fade" time="200" delay="200">Hidden</animation>
             <texture background="true">common/vignette-vert-main.png</texture>
-            <visible>[Window.IsVisible(Home) + !Window.IsVisible(movieinformation)] + [!Skin.HasSetting(TMDbHelper.EnableBlur) | Skin.HasSetting(DontBlurHome)]</visible>
-            <visible>Skin.HasSetting(Vertical_Main) + !Skin.HasSetting(Classic_Main) + !Skin.HasSetting(Horizontal_Main) + !Control.HasFocus(510)</visible>
-            <visible>[!String.IsEqual(Container(9989).ListItemAbsolute(0).Property(list),Weather) + !String.IsEqual(Container(9989).ListItemAbsolute(0).Property(list),Settings)] | !String.IsEmpty(Skin.String(HomeBackgroundImage))</visible>
+            <visible>ControlGroup(3000).HasFocus</visible>
           </control>
-        </control>
-        <control type="image">
-          <include>FullScreenDimensions</include>
-          <aspectratio aligny="center">scale</aspectratio>
-          <animation effect="fade" time="100">VisibleChange</animation>
-          <animation effect="fade" start="600" end="0" time="200" condition="!Player.HasVideo + Window.IsActive(1140)">Conditional</animation>
-          <texture background="true">common/vignette-vert-main.png</texture>
-          <visible>[Player.HasVideo + Skin.HasSetting(BackgroundPlayingTrailers) | [Window.IsActive(1140) | Window.IsAtive(1141)]] + !Skin.HasSetting(PlayTrailersFullScreen)</visible>
         </control>
       </control>
     </definition>

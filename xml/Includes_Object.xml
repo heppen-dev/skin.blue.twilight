@@ -450,6 +450,7 @@
     <definition>
       <control type="group">
         <top>$PARAM[top]</top>
+        <visible>$PARAM[visible_condi]</visible>
         <control type="group">
           <top>60</top>
           <control type="label">
@@ -494,10 +495,6 @@
           <include content="Object_Info_Line">
             <param name="visible_infoline" value="$PARAM[visible_infoline]" />
           </include>
-          <animation type="Conditional" condition="Player.HasVideo + !Skin.HasSetting(DontHideShowcase)" reversible="false">
-            <effect type="fade" start="100" end="0" time="300"/>
-            <effect type="slide" start="0" end="-1400,0" time="600"/>
-          </animation>
         </control>
         <control type="group">
           <control type="textbox">
@@ -512,10 +509,6 @@
             <autoscroll delay="4000" time="4500" repeat="7000">Control.IsVisible(5600) + Skin.HasSetting(autoscroll)</autoscroll>
             <visible>!Skin.HasSetting(HidePlot)</visible>
           </control>
-          <animation type="Conditional" condition="Player.HasVideo + !Skin.HasSetting(DontHideShowcase)" reversible="false">
-            <effect type="fade" start="100" end="0" time="300"/>
-            <effect type="slide" start="0" end="-1400,0" time="600"/>
-          </animation>
         </control>
         <include content="CyclingInfo" condition="!Skin.HasSetting(HideInfoTag)">
           <param name="visible2" value="!String.IsEmpty(ListItem.Studio)"/>
