@@ -372,20 +372,13 @@
     <definition>
       <control type="grouplist">
         <orientation>horizontal</orientation>
-        <right>20</right>
+        <left>20</left>
         <top>0</top>
         <height>70</height>
-        <align>right</align>
+        <align>left</align>
         <itemgap>10</itemgap>
         <width>1900</width>
         <usecontrolcoords>true</usecontrolcoords>
-        <control type="group">
-          <width>150</width>
-          <visible>System.AddonIsEnabled(resource.images.studios.white) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Studio)</visible>
-          <include content="MediaFlag">
-            <param name="texture" value="$INFO[$PARAM[infolabel_prefix]ListItem.Studio,resource://resource.images.studios.white/,.png]"/>
-          </include>
-        </control>
         <control type="group">
           <top>10</top>
           <width>200</width>
@@ -408,6 +401,38 @@
           </control>
           <include content="MediaFlag">
             <param name="texture" value="flags/flag.png"/>
+          </include>
+        </control>
+      </control>
+    </definition>
+  </include>
+  <include name="MediaFlags_NewLine">
+    <param name="infolabel_prefix">
+    </param>
+    <param name="resolution_var">$VAR[ResolutionFlagVar]</param>
+    <definition>
+      <control type="grouplist">
+        <orientation>horizontal</orientation>
+        <left>20</left>
+        <top>0</top>
+        <height>70</height>
+        <align>left</align>
+        <itemgap>10</itemgap>
+        <width>1900</width>
+        <usecontrolcoords>true</usecontrolcoords>
+        <orientation>horizontal</orientation>
+        <left>20</left>
+        <top>0</top>
+        <height>70</height>
+        <align>left</align>
+        <itemgap>10</itemgap>
+        <width>1900</width>
+        <usecontrolcoords>true</usecontrolcoords>
+        <control type="group">
+          <width>150</width>
+          <visible>System.AddonIsEnabled(resource.images.studios.white) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Studio)</visible>
+          <include content="MediaFlag">
+            <param name="texture" value="$INFO[$PARAM[infolabel_prefix]ListItem.Studio,resource://resource.images.studios.white/,.png]"/>
           </include>
         </control>
         <include content="MediaFlag">
@@ -1221,7 +1246,7 @@
             <include>FullScreenDimensions</include>
             <aspectratio aligny="center">scale</aspectratio>
             <animation effect="fade" time="200" delay="200">Hidden</animation>
-            <texture background="true">common/vignette-vert-main.png</texture>
+            <texture background="true">common/vignette.png</texture>
             <visible>ControlGroup(3000).HasFocus</visible>
           </control>
         </control>

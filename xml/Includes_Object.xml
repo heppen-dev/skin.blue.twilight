@@ -450,8 +450,10 @@
   </include>
   <include name="Object_Item_Showcase">
     <param name="top" default="0"/>
-    <param name="info_line_top" default="185"/>
-    <param name="plot_top" default="235"/>
+    <param name="percentageinfo_line_top" default="200"/>
+    <param name="mediaflags_line_top" default="250"/>
+    <param name="videoinfo_line_top" default="460"/>
+    <param name="plot_top" default="320"/>
     <param name="plot_height" default="120"/>
     <param name="title_visible" default="true" />
     <param name="clearlogo_top_margin" default="-940" />
@@ -471,7 +473,7 @@
             <textcolor>$VAR[TitleColour]</textcolor>
             <shadowcolor>black</shadowcolor>
             <label>$PARAM[title]</label>
-            <font>font_title_bold</font>
+            <font>font_title</font>
             <visible>[[String.IsEmpty(ListItem.Art(clearlogo)) + String.IsEmpty(ListItem.Art(tvshow.clearlogo))] | Skin.HasSetting(DisableClearlogo)] + [!Control.HasFocus(9000) + !Control.HasFocus(9001) + !String.IsEqual(Container(9989).ListItemAbsolute(0).Property(list),Settings) + !String.IsEqual(Container(9989).ListItemAbsolute(0).Property(list),Weather)]</visible>
             <visible>$PARAM[title_visible]</visible>
           </control>
@@ -485,10 +487,24 @@
           </control>
         </control>
         <control type="group">
-          <top>$PARAM[info_line_top]</top>
+          <top>$PARAM[percentageinfo_line_top]</top>
           <left>150</left>
-          <include content="Object_Info_Line">
-            <param name="visible_infoline" value="$PARAM[visible_infoline]" />
+          <include content="Object_Info_First_Line">
+            <param name="visible_infoline" value="true" />
+          </include>
+        </control>
+        <control type="group">
+          <top>$PARAM[mediaflags_line_top]</top>
+          <left>150</left>
+          <include content="Object_Info_Line_MediaFlags">
+            <param name="visible_infoline" value="true" />
+          </include>
+        </control>
+        <control type="group">
+          <top>$PARAM[videoinfo_line_top]</top>
+          <left>150</left>
+          <include content="Object_Video_Info_Line">
+            <param name="visible_infoline" value="true" />
           </include>
         </control>
         <control type="group">
@@ -499,9 +515,9 @@
             <height>$PARAM[plot_height]</height>
             <textcolor>white</textcolor>
             <label>$PARAM[plot]</label>
-            <font>font32</font>
+            <font>font_plot_normal</font>
             <shadowcolor>black</shadowcolor>
-            <autoscroll delay="4000" time="4500" repeat="7000">Control.IsVisible(5600) + Skin.HasSetting(autoscroll)</autoscroll>
+            <autoscroll delay="4000" time="4500" repeat="7000">Skin.HasSetting(autoscroll)</autoscroll>
             <visible>!Skin.HasSetting(HidePlot)</visible>
           </control>
         </control>
@@ -510,60 +526,6 @@
           <param name="visible1" value="!String.IsEmpty(ListItem.Genre)"/>
           <param name="visible3" value="!String.IsEmpty(ListItem.Cast)"/>
         </include>
-      </control>
-    </definition>
-  </include>
-  <include name="Object_Item_Showcase_Horizontal">
-    <param name="top" default="0"/>
-    <param name="clearlogo_top_margin" default="-940"/>
-    <param name="clearlogo_width" default="480" />
-    <param name="info_line_top" default="185"/>
-    <param name="plot_top" default="235"/>
-    <param name="plot_height" default="120"/>
-    <param name="title_visible" default="true" />
-    <param name="wrapmultiline_title" default="false" />
-    <definition>
-      <control type="group">
-        <top>$PARAM[top]</top>
-        <control type="group">
-          <top>60</top>
-          <control type="textbox">
-            <left>150</left>
-            <top>0</top>
-            <autoscroll delay="5000" time="2000" repeat="5000">Skin.HasSetting(autoscroll)</autoscroll>
-            <height>150</height>
-            <width>$PARAM[title_width]</width>
-            <textcolor>$VAR[TitleColour]</textcolor>
-            <wrapmultiline>$PARAM[wrapmultiline_title]</wrapmultiline>
-            <shadowcolor>black</shadowcolor>
-            <label>$PARAM[title]</label>
-            <font>font_title_bold</font>
-            <visible>[[String.IsEmpty(ListItem.Art(clearlogo)) + String.IsEmpty(ListItem.Art(tvshow.clearlogo))] | Skin.HasSetting(DisableClearlogo)] + [!Control.HasFocus(9000) + !Control.HasFocus(9001) + !String.IsEqual(Container(9989).ListItemAbsolute(0).Property(list),Settings) + !String.IsEqual(Container(9989).ListItemAbsolute(0).Property(list),Weather)]</visible>
-            <visible>$PARAM[title_visible]</visible>
-          </control>
-          <control type="image">
-            <top>$PARAM[clearlogo_top_margin]</top>
-            <left>150</left>
-            <width>$PARAM[clearlogo_width]</width>
-            <aspectratio>keep</aspectratio>
-            <texture background="true">$VAR[Image_ClearLogo]</texture>
-            <visible>[!String.IsEmpty(ListItem.Art(clearlogo)) | !String.IsEmpty(ListItem.Art(tvshow.clearlogo))] + !Skin.HasSetting(DisableClearlogo)</visible>
-          </control>
-          <control type="group">
-            <control type="textbox">
-              <top>$PARAM[plot_top]</top>
-              <left>150</left>
-              <width>940</width>
-              <height>$PARAM[plot_height]</height>
-              <textcolor>white</textcolor>
-              <label>$PARAM[plot]</label>
-              <font>font32</font>
-              <shadowcolor>black</shadowcolor>
-              <autoscroll delay="4000" time="4500" repeat="7000">Control.IsVisible(5600) + Skin.HasSetting(autoscroll)</autoscroll>
-              <visible>!Skin.HasSetting(HidePlot)</visible>
-            </control>
-          </control>
-        </control>
       </control>
     </definition>
   </include>
@@ -696,11 +658,95 @@
         <scroll>true</scroll>
         <label fallback="$PARAM[fallback]">$PARAM[label]</label>
         <height>72</height>
+        <top>$PARAM[top]</top>
+        <left>$PARAM[left]</left>
         <aligny>bottom</aligny>
         <font>$PARAM[font]</font>
         <textcolor>$PARAM[textcolor]</textcolor>
         <shadowcolor>black</shadowcolor>
         <visible>$PARAM[visible]</visible>
+      </control>
+    </definition>
+  </include>
+  <include name="Object_Info_First_Line">
+    <param name="label" default=""/>
+    <param name="nextaired" default="true"/>
+    <param name="textcolor" default="main_fg_100"/>
+    <param name="container" default=""/>
+    <param name="uid" default="661"/>
+    <param name="green" default="ff27ae60"/>
+    <param name="visible_infoline" default="!Container(7502).IsUpdating + [!Control.HasFocus(9000) + !Control.HasFocus(9001) + !Control.HasFocus(303)] + !String.StartsWith(ListItem.FolderPath,favourites://)" />
+    <definition>
+      <control type="grouplist">
+        <height>48</height>
+        <orientation>horizontal</orientation>
+        <usecontrolcoords>true</usecontrolcoords>
+        <itemgap>0</itemgap>
+        <left>0</left>
+        <right>0</right>
+        <control type="group">
+          <top>8</top>
+          <left>0</left>
+          <width>260</width>
+          <control type="image">
+            <top>0</top>
+            <width>100%</width>
+            <height>32</height>
+            <aspectratio align="left">scale</aspectratio>
+            <texture background="true" colordiffuse="ff0fafff">common/badge.png</texture>
+            <visible>$PARAM[visible_infoline]</visible>
+          </control>
+          <include content="Object_Info_Line_Label">
+            <param name="label" value="$VAR[PercentageRating]% $LOCALIZE[31384]"/>
+            <param name="font" value="font_tiny_hintlabel"/>
+            <param name="textcolor" value="dialog_fg_100"/>
+            <param name="divider" value="false"/>
+            <param name="fallback" value="N/A"/>
+            <param name="visible" value="$PARAM[visible_infoline]"/>
+            <param name="width" value="100%" />
+            <param name="top" value="4" />
+            <param name="left" value="12" />
+          </include>
+        </control>
+        <control type="label" id="$PARAM[id]">
+          <label fallback="N/A">$INFO[ListItem.Year]</label>
+          <width>auto</width>
+          <height>32</height>
+          <top>12</top>
+          <left>-48</left>
+          <align>center</align>
+          <font>font_tiny_hintlabel</font>
+          <textcolor>dialog_fg_100</textcolor>
+          <visible>!String.IsEmpty(ListItem.Year)</visible>
+        </control>
+        <control type="group">
+          <top>-6</top>
+          <left>0</left>
+          <include>MediaFlags</include>
+        </control>
+      </control>
+    </definition>
+  </include>
+  <include name="Object_Info_Line_MediaFlags">
+    <param name="label" default=""/>
+    <param name="nextaired" default="true"/>
+    <param name="textcolor" default="main_fg_100"/>
+    <param name="container" default=""/>
+    <param name="uid" default="661"/>
+    <param name="green" default="ff27ae60"/>
+    <param name="visible_infoline" default="!String.IsEqual(Container(9989).ListItemAbsolute(0).Property(list),Settings) + !String.IsEqual(Container(9989).ListItemAbsolute(0).Property(list),Weather) + !Container(7502).IsUpdating + [!Control.HasFocus(9000) + !Control.HasFocus(9001) + !Control.HasFocus(303)] + !String.StartsWith(ListItem.FolderPath,favourites://)" />
+    <definition>
+      <control type="grouplist">
+        <height>72</height>
+        <orientation>horizontal</orientation>
+        <usecontrolcoords>true</usecontrolcoords>
+        <itemgap>0</itemgap>
+        <left>0</left>
+        <right>0</right>
+        <control type="group">
+          <width>1000</width>
+          <include>MediaFlags_NewLine</include>
+        </control>
       </control>
     </definition>
   </include>
@@ -729,15 +775,6 @@
           <visible>$PARAM[visible_infoline]</visible>
         </control>
         <include content="Object_Info_Line_Label">
-          <param name="label" value="  $VAR[PercentageRating]% $LOCALIZE[31384]"/>
-          <param name="font" value="font32_title"/>
-          <param name="textcolor" value="$PARAM[green]"/>
-          <param name="divider" value="false"/>
-          <param name="fallback" value="N/A"/>
-          <param name="visible" value="!String.IsEmpty(ListItem.Rating) + Skin.HasSetting(Ratings.User)"/>
-          <param name="width" value="auto" />
-        </include>
-        <include content="Object_Info_Line_Label">
           <param name="label" value="$VAR[Label_InfoLine]"/>
           <param name="textcolor" value="$VAR[ColorHighlight]"/>
           <param name="divider" value="false"/>
@@ -755,6 +792,33 @@
           <param name="divider" value="false"/>
           <param name="visible" value="Window.IsVisible(videoosd)"/>
           <param name="width" value="1200" />
+        </include>
+      </control>
+    </definition>
+  </include>
+  <include name="Object_Video_Info_Line">
+    <param name="label" default=""/>
+    <param name="nextaired" default="true"/>
+    <param name="textcolor" default="main_fg_100"/>
+    <param name="container" default=""/>
+    <param name="uid" default="661"/>
+    <param name="green" default="ff27ae60"/>
+    <param name="visible_infoline" default="!Container(7502).IsUpdating + [!Control.HasFocus(9000) + !Control.HasFocus(9001) + !Control.HasFocus(303)] + !String.StartsWith(ListItem.FolderPath,favourites://)" />
+    <definition>
+      <control type="grouplist">
+        <height>200</height>
+        <orientation>horizontal</orientation>
+        <usecontrolcoords>true</usecontrolcoords>
+        <itemgap>0</itemgap>
+        <left>0</left>
+        <right>0</right>
+        <include content="Object_Info_Line_Label">
+          <param name="label" value="$VAR[Label_VideoInfoLine]"/>
+          <param name="textcolor" value="main_fg_100"/>
+          <param name="font" value="font_tiny_hintlabel"/>
+          <param name="divider" value="false"/>
+          <param name="visible" value="$PARAM[visible_infoline]"/>
+          <param name="width" value="auto" />
         </include>
       </control>
     </definition>

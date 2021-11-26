@@ -144,6 +144,12 @@
       <filename>AmazonEmberDisplay_Bd.ttf</filename>
       <size>30</size>
     </font>
+    <!-- Plot Fonts -->
+    <font>
+      <name>font_plot_normal</name>
+      <filename>AmazonEmberDisplay_Rg.ttf</filename>
+      <size>26</size>
+    </font>
     <!-- Title Fonts -->
     <font>
       <name>font_flag</name>
@@ -194,9 +200,9 @@
       <style>bold</style>
     </font>
     <font>
-      <name>font_title_bold</name>
-      <filename>AmazonEmberDisplay_Bd.ttf</filename>
-      <size>64</size>
+      <name>font_title</name>
+      <filename>AmazonEmberDisplay_Rg.ttf</filename>
+      <size>45</size>
       <style>bold</style>
     </font>
   </fontset>
@@ -395,10 +401,9 @@
       <style>bold</style>
     </font>
     <font>
-      <name>font_title_bold</name>
+      <name>font_title</name>
       <filename>arial.ttf</filename>
-      <size>64</size>
-      <style>bold</style>
+      <size>45</size>
     </font>
   </fontset>
 </fonts>
