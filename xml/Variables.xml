@@ -188,8 +188,8 @@
     <value>flags/quality/info.png</value>
   </variable>
   <variable name="Flix_Spotlight_Title">
-    <value condition="String.IsEqual(Window(home).Property(spotlight_DBType),episode)">$INFO[Window(home).Property(spotlight_Season),$LOCALIZE[208] Season , ]$INFO[Window(home).Property(spotlight_Episode),Episode ,]</value>
-    <value>$INFO[Window(home).Property(spotlight_Title),$LOCALIZE[208] ]</value>
+    <value condition="String.IsEqual(Window(home).Property(spotlight_DBType),episode)">$INFO[Window(home).Property(spotlight_Season), Season , ]$INFO[Window(home).Property(spotlight_Episode),Episode ,]</value>
+    <value>$INFO[Window(home).Property(spotlight_Title)]</value>
   </variable>
   <variable name="Label_Spotlight_Top250">
     <value condition="!String.IsEmpty(Window(home).Property(spotlight_250))">$INFO[Window(home).Property(spotlight_250),No. , on IMDb / ]$INFO[Window(home).Property(spotlight_Match),[COLOR ff27ae60],% $LOCALIZE[31384][/COLOR]]</value>

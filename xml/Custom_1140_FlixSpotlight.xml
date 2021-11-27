@@ -71,28 +71,68 @@
         <left>150</left>
         <control type="grouplist">
           <orientation>horizontal</orientation>
-          <ondown>PlayerControl(Stop)</ondown>
-          <ondown>AlarmClock(closeDialogs,Dialog.Close(all),00:02,silent)</ondown>
-          <include content="InfoButton">
-            <param name="id" value="6000"/>
-            <param name="groupid" value="7000"/>
-            <param name="icon" value="special://skin/extras/icons/play3.png"/>
-            <param name="label" value="$VAR[Flix_Spotlight_Title]"/>
-            <param name="visible" value="Control.IsVisible(6000)"/>
-            <param name="onclick_1" value="Dialog.Close(all,true)" />
-            <param name="onclick_2_condition" value="[String.IsEqual(Window(home).Property(spotlight_DBType),movie) | String.IsEqual(Window(home).Property(spotlight_DBType),episode) | String.IsEqual(Window(home).Property(spotlight_DBType),video)] | String.IsEqual(Window(home).Property(spotlight_isPVR),true)" />
-            <param name="onclick_2" value="RunScript(script.embuary.helper,action=playitem,item='$ESCINFO[ListItem.Filenameandpath]')" />
-            <param name="onclick_3_condition" value="![[String.IsEqual(Window(home).Property(spotlight_DBType),movie) | String.IsEqual(Window(home).Property(spotlight_DBType),episode) | String.IsEqual(Window(home).Property(spotlight_DBType),video)] | String.IsEqual(Window(home).Property(spotlight_isPVR),true)]" />
-            <param name="onclick_3" value="RunScript(plugin.video.themoviedb.helper,close_dialog=1190,call_path=$INFO[ListItem.FolderPath])" />
-          </include>
-          <include content="InfoButton">
-            <param name="id" value="6001"/>
-            <param name="groupid" value="7001"/>
-            <param name="icon" value="special://skin/extras/icons/info.png"/>
-            <param name="label" value="$LOCALIZE[31406]"/>
-            <param name="visible" value="Control.IsVisible(6001)"/>
-            <param name="onclick_1" value="ActivateWindow(1141)" />
-          </include>
+          <control type="group">
+            <control type="radiobutton" id="6000">
+              <ondown>PlayerControl(Stop)</ondown>
+              <ondown>AlarmClock(closeDialogs,Dialog.Close(all),00:02,silent)</ondown>
+              <onright>6001</onright>
+              <width>300</width>
+              <height>68</height>
+              <align>left</align>
+              <aligny>top</aligny>
+              <texturefocus border="5" colordiffuse="ff0f79af">common/box.png</texturefocus>
+              <texturenofocus />
+              <radioposx>-20</radioposx>
+              <radioposy>-5</radioposy>
+              <radiowidth>108</radiowidth>
+              <radioheight>72</radioheight>
+              <textwidth>180</textwidth>
+              <font>font_tiny_hintlabel</font>
+              <textureradioonfocus colordiffuse="D0FFFFFF">special://skin/extras/icons/play3.png</textureradioonfocus>
+              <textureradioonnofocus colordiffuse="D0FFFFFF">special://skin/extras/icons/play3.png</textureradioonnofocus>
+              <textureradioofffocus colordiffuse="D0FFFFFF">special://skin/extras/icons/play3.png</textureradioofffocus>
+              <textureradiooffnofocus colordiffuse="D0FFFFFF">special://skin/extras/icons/play3.png</textureradiooffnofocus>
+              <textureradiooffdisabled colordiffuse="dialog_fg_30">special://skin/extras/icons/play3.png</textureradiooffdisabled>
+              <textureradioondisabled colordiffuse="dialog_fg_30">special://skin/extras/icons/play3.png</textureradioondisabled>
+              <onclick>Dialog.Close(all,true)</onclick>
+              <onclick condition="[String.IsEqual(Window(home).Property(spotlight_DBType),movie) | String.IsEqual(Window(home).Property(spotlight_DBType),episode) | String.IsEqual(Window(home).Property(spotlight_DBType),video)] | String.IsEqual(Window(home).Property(spotlight_isPVR),true)">RunScript(script.embuary.helper,action=playitem,item='$ESCINFO[ListItem.Filenameandpath]')</onclick>
+              <onclick condition="![[String.IsEqual(Window(home).Property(spotlight_DBType),movie) | String.IsEqual(Window(home).Property(spotlight_DBType),episode) | String.IsEqual(Window(home).Property(spotlight_DBType),video)] | String.IsEqual(Window(home).Property(spotlight_isPVR),true)]">RunScript(plugin.video.themoviedb.helper,close_dialog=1190,call_path=$INFO[ListItem.FolderPath])</onclick>
+              <visible>Control.IsVisible(6000)</visible>
+            </control>
+            <control type="label">
+              <left>60</left>
+              <top>21</top>
+              <width>200</width>
+              <label>$VAR[Flix_Spotlight_Title]</label>
+              <font>font_tiny_hintlabel</font>
+              <scroll>false</scroll>
+            </control>
+          </control>
+          <control type="group">
+            <control type="radiobutton" id="6001">
+              <ondown>PlayerControl(Stop)</ondown>
+              <ondown>AlarmClock(closeDialogs,Dialog.Close(all),00:02,silent)</ondown>
+              <onleft>6000</onleft>
+              <left>300</left>
+              <width>68</width>
+              <height>68</height>
+              <align>center</align>
+              <aligny>center</aligny>
+              <texturefocus border="5" colordiffuse="ff566b84">common/circle.png</texturefocus>
+              <texturenofocus />
+              <radioposx>-25</radioposx>
+              <radioposy>-5</radioposy>
+              <font>font_tiny_hintlabel</font>
+              <textureradioonfocus colordiffuse="D0FFFFFF">special://skin/extras/icons/info.png</textureradioonfocus>
+              <textureradioonnofocus colordiffuse="D0FFFFFF">special://skin/extras/icons/info.png</textureradioonnofocus>
+              <textureradioofffocus colordiffuse="D0FFFFFF">special://skin/extras/icons/info.png</textureradioofffocus>
+              <textureradiooffnofocus colordiffuse="D0FFFFFF">special://skin/extras/icons/info.png</textureradiooffnofocus>
+              <textureradiooffdisabled colordiffuse="dialog_fg_30">special://skin/extras/icons/info.png</textureradiooffdisabled>
+              <textureradioondisabled colordiffuse="dialog_fg_30">special://skin/extras/icons/info.png</textureradioondisabled>
+              <onclick>ActivateWindow(1141)</onclick>
+              <visible>Control.IsVisible(6001)</visible>
+            </control>
+          </control>
         </control>
       </control>
     </control>
