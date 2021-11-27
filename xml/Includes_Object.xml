@@ -380,8 +380,8 @@
           <include content="Selectbox">
             <param name="pad_top_b" value="0"/>
             <param name="pad_bottom_b" value="20"/>
-            <param name="pad_left_b" value="0"/>
-            <param name="pad_right_b" value="0"/>
+            <param name="pad_left_b" value="-12"/>
+            <param name="pad_right_b" value="-12"/>
             <param name="pad_top_t" value="-10"/>
             <param name="pad_bottom_t" value="-16"/>
             <param name="pad_left_t" value="-10"/>
