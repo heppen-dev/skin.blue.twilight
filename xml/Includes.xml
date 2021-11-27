@@ -1215,9 +1215,9 @@
           <include>OpenClose_Fade</include>
           <animation effect="fade" time="100">VisibleChange</animation>
           <control type="multiimage" id="32111">
-            <include>FanartDimensions</include>
-            <animation effect="zoom" end="150" center="200" time="200" condition="!ControlGroup(3000).HasFocus">Conditional</animation>
-            <animation effect="slide" start="0" end="-554,0" time="200" condition="!ControlGroup(3000).HasFocus">Conditional</animation>
+            <include condition="!Window.IsVisible(1141)">FanartDimensions</include>
+            <animation effect="zoom" end="150" center="200" time="200" condition="!ControlGroup(3000).HasFocus | Window.IsVisible(1141)">Conditional</animation>
+            <animation effect="slide" start="0" end="-554,0" time="200" condition="!ControlGroup(3000).HasFocus | Window.IsVisible(1141)">Conditional</animation>
             <aspectratio aligny="top">scale</aspectratio>
             <fadetime>600</fadetime>
             <timeperimage>6000</timeperimage>
@@ -1247,7 +1247,7 @@
             <aspectratio aligny="center">scale</aspectratio>
             <animation effect="fade" time="200" delay="200">Hidden</animation>
             <texture background="true">common/vignette.png</texture>
-            <visible>ControlGroup(3000).HasFocus</visible>
+            <visible>ControlGroup(3000).HasFocus + !Window.IsVisible(1141)</visible>
           </control>
         </control>
       </control>

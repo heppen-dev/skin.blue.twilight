@@ -922,13 +922,14 @@
     <value condition="!String.IsEmpty(Window(home).Property(spotlight_Fanart)) + Window.IsActive(1140)">$INFO[Window(home).Property(spotlight_Fanart)]</value>
     <value>$INFO[Container.Art(fanart)]</value>
   </variable>
+  <variable name="BlurSpotlight">
+    <value>$INFO[Window(Home).Property(TMDbHelper.ListItem.BlurImage)]</value>
+  </variable>
   <variable name="BlurBackground">
     <value condition="!ControlGroup(3000).HasFocus">$INFO[Window(Home).Property(TMDbHelper.ListItem.BlurImage)]</value>
     <value condition="!String.IsEmpty(ListItem.Property(background))">$INFO[ListItem.Property(background)]</value>
+    <value condition="Window.IsVisible(1141)">$VAR[BlurSpotlight]</value>
     <value>$VAR[MediaFanartVar]</value>
-  </variable>
-  <variable name="BlurSpotlight">
-    <value condition="Window.IsVisible(1141)">$INFO[Window(Home).Property(TMDbHelper.ListItem.BlurImage)]</value>
   </variable>
   <variable name="WeatherFanartVar">
     <value condition="!String.IsEmpty(Container.ListItem.Property(FanartCode))">$INFO[Skin.String(WeatherFanart.path)]$INFO[Container.ListItem.Property(FanartCode)]$INFO[Skin.String(WeatherFanart.ext)]</value>

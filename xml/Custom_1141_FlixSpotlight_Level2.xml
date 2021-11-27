@@ -3,8 +3,6 @@
   <animation effect="fade" start="0" end="100" time="400" delay="300" tween="quadratic" condition="Window.IsActive(1141)">WindowOpen</animation>
   <defaultcontrol always="true">5999</defaultcontrol>
   <onload>SetProperty(TMDbHelper.Blur.Fallback,$VAR[MediaFanartVar],Home)</onload>
-  <onload>Skin.SetBool(TMDbHelper.EnableBlur)</onload>
-  <onunload condition="!Skin.HasSetting(BlurEnabledByUser)">Skin.Reset(TMDbHelper.EnableBlur)</onunload>
   <controls>
     <control type="group">
       <left>300</left>
@@ -16,7 +14,7 @@
         <width>1920</width>
         <height>1080</height>
         <texture background="true">common/flixspotlight2-shadowspot.png</texture>
-        <visible>Player.HasVideo + Skin.HasSetting(PlayTrailersFullScreen)</visible>
+        <visible>Player.HasVideo</visible>
         <animation effect="fade" start="0" end="100" time="1200" tween="quadratic" condition="Player.HasVideo">Conditional</animation>
       </control>
       <control type="group" id="5600">
