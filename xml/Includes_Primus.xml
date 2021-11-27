@@ -75,7 +75,7 @@
         <control type="grouplist" id="3000">
           <onup>2999</onup>
           <top>330</top>
-          <height>728</height>
+          <height>999999</height>
           <include>skinshortcuts-template-widgetsWall</include>
           <animation effect="slide" time="200" start="0" end="0,400" reversible="true" condition="ControlGroup(3000).HasFocus">Conditional</animation>
           <animation effect="slide" time="200" start="0" end="0,240" reversible="true" condition="Window.IsVisible(1140)">Conditional</animation>

@@ -351,6 +351,13 @@
         <onup>9000</onup>
         <onback>9000</onback>
         <height>195</height>
+        <!-- movement -->
+        <include content="Animation_Widget_Slide">
+          <param name="container" value="3000" />
+        </include>
+        <onfocus>SetProperty(TMDbHelper.WidgetContainer,$PARAM[id],home)</onfocus>
+        <onfocus>SetProperty(widgetMovementId,$PARAM[id],home)</onfocus>
+        <animation effect="fade" start="100" end="0" time="300" reversible="true" easing="inout" condition="Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[id])">Conditional</animation>
         <!-- trailers -->
         <onclick condition="[String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE, tvshow)] + Control.HasFocus($PARAM[id]) + Skin.HasSetting(BackgroundPlayingTrailers) + !Player.HasVideo + !String.IsEmpty(ListItem.Trailer)">AlarmClock(trailerdelay,PlayMedia($ESCINFO[ListItem.Trailer],1),00:01,silent)</onclick>
         <onclick condition="[String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE, tvshow)] + Control.HasFocus($PARAM[id]) + Skin.HasSetting(BackgroundPlayingTrailers) + !Player.HasVideo + String.IsEmpty(ListItem.Trailer) + !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Trailer))">AlarmClock(trailerdelay,PlayMedia($ESCINFO[Window(Home).Property(TMDbHelper.ListItem.Trailer)],1),00:01,silent)</onclick>
@@ -455,6 +462,7 @@
     <param name="videoinfo_line_top" default="460"/>
     <param name="plot_top" default="320"/>
     <param name="plot_height" default="120"/>
+    <param name="title_top" default="70"/>
     <param name="title_visible" default="true" />
     <param name="clearlogo_top_margin" default="-940" />
     <param name="clearlogo_width" default="480" />
