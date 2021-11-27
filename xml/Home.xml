@@ -4,7 +4,7 @@
   <backgroundcolor>$VAR[HomeBackgroundColor]</backgroundcolor>
   <onunload>ClearProperty(TMDbHelper.WidgetContainer,home)</onunload>
   <onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;levels=5&amp;group=mainmenu|widgets|shutdown|searchmenu)</onload>
-  <!-- set fallback menu style -->
+  <onload>SetProperty(TMDbHelper.Blur.SourceImage,landscape,Home)</onload>
   <!-- set default selection box -->
   <onload condition="String.IsEmpty(Skin.String(HighlightSize))">Skin.SetString(HighlightSize,Bold)</onload>
   <!-- set colourful rating icons as default -->

@@ -923,7 +923,7 @@
     <value>$INFO[Container.Art(fanart)]</value>
   </variable>
   <variable name="BlurBackground">
-    <value condition="Skin.HasSetting(TMDbHelper.EnableBlur) + !Skin.HasSetting(DontBlurHome)">$INFO[Window(Home).Property(TMDbHelper.ListItem.BlurImage)]</value>
+    <value condition="!ControlGroup(3000).HasFocus">$INFO[Window(Home).Property(TMDbHelper.ListItem.BlurImage)]</value>
     <value condition="!String.IsEmpty(ListItem.Property(background))">$INFO[ListItem.Property(background)]</value>
     <value>$VAR[MediaFanartVar]</value>
   </variable>
