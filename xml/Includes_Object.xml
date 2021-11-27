@@ -418,6 +418,7 @@
         <onup>9000</onup>
         <onback>9000</onback>
         <height>220</height>
+        <onfocus>SetProperty(TMDbHelper.WidgetContainer,$PARAM[id],home)</onfocus>
         <!-- Posters aspect ratio -->
         <itemlayout height="185" width="1120" condition="$PARAM[postercondition]">
           <include content="ViewBannerItemLayout">
