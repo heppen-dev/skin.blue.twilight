@@ -80,96 +80,6 @@
             <include>DialogSettingButton</include>
             <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=widgets)</onclick>
           </control>
-          <control type="button" id="602" description="Change home layout">
-            <label>$LOCALIZE[31183]</label>
-            <label2>$VAR[homeLayout]</label2>
-            <include>DefaultSettingButton</include>
-            <onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31184],home)</onclick>
-            <onclick>SetProperty(Dialog.1.Label2,$LOCALIZE[31185],home)</onclick>
-            <onclick>SetProperty(Dialog.1.Icon,special://skin/extras/icons/home.png,home)</onclick>
-            <onclick>SetProperty(Dialog.1.BuiltIn, Skin.Reset(Horizontal_Main) || Skin.Reset(Classic_Main) || Skin.SetBool(Vertical_Main),home)</onclick>
-            <onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31345],home)</onclick>
-            <onclick>SetProperty(Dialog.2.Label2,$LOCALIZE[31346],home)</onclick>
-            <onclick>SetProperty(Dialog.2.Icon,special://skin/extras/icons/home.png,home)</onclick>
-            <onclick>SetProperty(Dialog.2.BuiltIn, Skin.Reset(Horizontal_Main) || Skin.Reset(Vertical_Main) || Skin.SetBool(Classic_Main),home)</onclick>
-            <onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31186],home)</onclick>
-            <onclick>SetProperty(Dialog.3.Label2,$LOCALIZE[31187],home)</onclick>
-            <onclick>SetProperty(Dialog.3.Icon,special://skin/extras/icons/home.png,home)</onclick>
-            <onclick>SetProperty(Dialog.3.BuiltIn, Skin.Reset(Vertical_Main) || Skin.Reset(Classic_Main) || Skin.SetBool(Horizontal_Main),home)</onclick>
-            <onclick>RunScript(script.embuary.helper,action=createselect,header=$LOCALIZE[31183],usedetails=true,window=home)</onclick>
-          </control>
-          <control type="button" id="603" description="Home Menu Style">
-            <include>DefaultSettingButton</include>
-            <label>$LOCALIZE[31304]</label>
-            <label2>$VAR[menuStyle]</label2>
-            <onclick>SetProperty(Context.1.Label,$LOCALIZE[31305])</onclick>
-            <onclick>SetProperty(Context.1.BuiltIn,Skin.SetString(MenuStyle,Icons))</onclick>
-            <onclick>SetProperty(Context.2.Label,$LOCALIZE[31306])</onclick>
-            <onclick>SetProperty(Context.2.BuiltIn,Skin.SetString(MenuStyle,IconsText))</onclick>
-            <onclick>SetProperty(Context.3.Label,$LOCALIZE[31307])</onclick>
-            <onclick>SetProperty(Context.3.BuiltIn,Skin.SetString(MenuStyle,Text))</onclick>
-            <onclick>RunScript(script.embuary.helper,action=createcontext)</onclick>
-            <visible>!Skin.HasSetting(Horizontal_Main)</visible>
-          </control>
-          <control type="radiobutton" id="604" description="Bring back classic to classic">
-            <label>$LOCALIZE[31422]</label>
-            <include>DefaultSettingButton</include>
-            <visible>Skin.HasSetting(Classic_Main)</visible>
-            <selected>Skin.HasSetting(BringBackClassic)</selected>
-            <onclick>Skin.ToggleSetting(BringBackClassic)</onclick>
-          </control>
-          <control type="radiobutton" id="605" description="Enable Flix Spotlight">
-            <label>$LOCALIZE[31407]</label>
-            <include>DefaultSettingButton</include>
-            <visible>Skin.HasSetting(Vertical_Main) | Skin.HasSetting(Classic_Main)</visible>
-            <selected>Skin.HasSetting(EnableFlixSpotlight)</selected>
-            <onclick>Skin.ToggleSetting(EnableFlixSpotlight)</onclick>
-          </control>
-          <control type="radiobutton" id="606" description="Flix spotlight on Enter/OK button">
-            <label>$LOCALIZE[31416]</label>
-            <include>DefaultSettingButton</include>
-            <visible>Skin.HasSetting(EnableFlixSpotlight) + !Skin.HasSetting(Horizontal_Main)</visible>
-            <selected>Skin.HasSetting(TriggerSpotlightOnSelect)</selected>
-            <onclick>Skin.ToggleSetting(TriggerSpotlightOnSelect)</onclick>
-          </control>
-          <control type="radiobutton" id="607" description="Disable search button in horizontal layout">
-            <label>$LOCALIZE[31421]</label>
-            <include>DefaultSettingButton</include>
-            <visible>Skin.HasSetting(Horizontal_Main)</visible>
-            <selected>Skin.HasSetting(DisableSearchButton)</selected>
-            <onclick>Skin.ToggleSetting(DisableSearchButton)</onclick>
-          </control>
-          <control type="radiobutton" id="608" description="Show weather in horizontal">
-            <label>$LOCALIZE[31344]</label>
-            <include>DefaultSettingButton</include>
-            <visible>Skin.HasSetting(Horizontal_Main)</visible>
-            <selected>Skin.HasSetting(EnableWeatherInHorizontalTopbar)</selected>
-            <onclick>Skin.ToggleSetting(EnableWeatherInHorizontalTopbar)</onclick>
-          </control>
-          <control type="radiobutton" id="609" description="Hide Profile Info in vertical">
-            <label>$LOCALIZE[31189]</label>
-            <include>DefaultSettingButton</include>
-            <visible>Skin.HasSetting(Vertical_Main)</visible>
-            <selected>Skin.HasSetting(DisabledProfileInfo)</selected>
-            <onclick>Skin.ToggleSetting(DisabledProfileInfo)</onclick>
-          </control>
-          <control type="button" id="610" description="Widgets scrolling type">
-            <label>$LOCALIZE[31348]</label>
-            <label2>$VAR[widgetScrollingType]</label2>
-            <include>DefaultSettingButton</include>
-            <onclick>Skin.ToggleSetting(DisableFixedScrolling)</onclick>
-            <onclick condition="!String.IsEmpty(Skin.String(FlixedScrolling))">Skin.Reset(FlixedScrolling)</onclick>
-            <visible>!Skin.HasSetting(Horizontal_Main)</visible>
-          </control>
-          <control type="button" id="611" description="Flixed scrolling">
-            <label>$LOCALIZE[31401]</label>
-            <label2>$INFO[Skin.String(FlixedScrolling)]</label2>
-            <include>DefaultSettingButton</include>
-            <enable>!Skin.HasSetting(DisableFixedScrolling)</enable>
-            <onclick condition="!String.IsEmpty(Skin.String(FlixedScrolling))">Skin.Reset(FlixedScrolling)</onclick>
-            <onclick condition="String.IsEmpty(Skin.String(FlixedScrolling))">Skin.SetString(FlixedScrolling,Flix It!)</onclick>
-            <visible>!Skin.HasSetting(Horizontal_Main)</visible>
-          </control>
           <control type="button" id="612" description="Set Fallback Image">
             <include>DefaultSettingButton</include>
             <label>$LOCALIZE[31340]</label>
@@ -181,12 +91,6 @@
             <onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31342])</onclick>
             <onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetPath(HomeBackgroundImage))</onclick>
             <onclick>RunScript(script.embuary.helper,action=createselect,header=$LOCALIZE[31340])</onclick>
-          </control>
-          <control type="radiobutton" id="613" description="Disable clock">
-            <label>$LOCALIZE[31388]</label>
-            <include>DefaultSettingButton</include>
-            <selected>Skin.HasSetting(DisableClock)</selected>
-            <onclick>Skin.ToggleSetting(DisableClock)</onclick>
           </control>
           <control type="label" id="614">
             <textoffsetx>30</textoffsetx>
