@@ -142,16 +142,6 @@
         <control type="grouplist" id="5999">
           <orientation>horizontal</orientation>
           <include content="SpotlightButton">
-            <param name="id" value="6001"/>
-            <param name="icon" value="special://skin/extras/icons/watchlist.png"/>
-            <param name="label" value="$LOCALIZE[31408]"/>
-            <param name="visible" value="String.IsEqual(Window(home).Property(spotlight_EnableWatchlist),true)" />
-            <param name="onclick_1_condition" value="!String.IsEmpty(Window(home).Property(spotlight_TMDBid))"/>
-            <param name="onclick_1" value="RunScript(plugin.video.themoviedb.helper,sync_trakt=watchlist,tmdb_id=$INFO[Window(home).Property(spotlight_TMDBid)],type=$INFO[Window(home).Property(spotlight_TMDBTYPE)],cache_refresh)"/>
-            <param name="onclick_2_condition" value="String.IsEmpty(Window(home).Property(spotlight_TMDBid))"/>
-            <param name="onclick_2" value="RunScript(plugin.video.themoviedb.helper,sync_trakt=watchlist,tmdb_id=$INFO[Window(home).Property(spotlight_TMDBid2)],type=$INFO[Window(home).Property(spotlight_TMDBTYPE)],cache_refresh)"/>
-          </include>
-          <include content="SpotlightButton">
             <param name="id" value="6002"/>
             <param name="icon" value="special://skin/extras/icons/collection.png"/>
             <param name="label" value="$LOCALIZE[31409]"/>

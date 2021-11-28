@@ -76,12 +76,13 @@
               <ondown>PlayerControl(Stop)</ondown>
               <ondown>AlarmClock(closeDialogs,Dialog.Close(all),00:02,silent)</ondown>
               <onright>6001</onright>
+              <onleft>6002</onleft>
               <width>300</width>
               <height>68</height>
               <align>left</align>
               <aligny>top</aligny>
-              <texturefocus border="5" colordiffuse="ff0f79af">common/box.png</texturefocus>
-              <texturenofocus />
+              <texturefocus border="5" colordiffuse="ff1399de">common/box.png</texturefocus>
+              <texturenofocus border="5" colordiffuse="ff0f79af">common/box.png</texturenofocus>
               <radioposx>-20</radioposx>
               <radioposy>-5</radioposy>
               <radiowidth>108</radiowidth>
@@ -113,16 +114,16 @@
               <ondown>PlayerControl(Stop)</ondown>
               <ondown>AlarmClock(closeDialogs,Dialog.Close(all),00:02,silent)</ondown>
               <onleft>6000</onleft>
-              <left>300</left>
-              <width>68</width>
-              <height>68</height>
+              <onright>6002</onright>
+              <left>320</left>
+              <width>70</width>
+              <height>70</height>
               <align>center</align>
               <aligny>center</aligny>
+              <radioposx>-24</radioposx>
+              <radioposy>-4</radioposy>
               <texturefocus border="5" colordiffuse="ff566b84">common/circle.png</texturefocus>
-              <texturenofocus />
-              <radioposx>-25</radioposx>
-              <radioposy>-5</radioposy>
-              <font>font_tiny_hintlabel</font>
+              <texturenofocus border="5" colordiffuse="ff425265">common/circle.png</texturenofocus>
               <textureradioonfocus colordiffuse="D0FFFFFF">special://skin/extras/icons/info.png</textureradioonfocus>
               <textureradioonnofocus colordiffuse="D0FFFFFF">special://skin/extras/icons/info.png</textureradioonnofocus>
               <textureradioofffocus colordiffuse="D0FFFFFF">special://skin/extras/icons/info.png</textureradioofffocus>
@@ -130,6 +131,32 @@
               <textureradiooffdisabled colordiffuse="dialog_fg_30">special://skin/extras/icons/info.png</textureradiooffdisabled>
               <textureradioondisabled colordiffuse="dialog_fg_30">special://skin/extras/icons/info.png</textureradioondisabled>
               <onclick>ActivateWindow(1141)</onclick>
+              <visible>Control.IsVisible(6001)</visible>
+            </control>
+          </control>
+          <control type="group">
+            <control type="radiobutton" id="6002">
+              <ondown>PlayerControl(Stop)</ondown>
+              <ondown>AlarmClock(closeDialogs,Dialog.Close(all),00:02,silent)</ondown>
+              <onleft>6001</onleft>
+              <onright>6000</onright>
+              <left>405</left>
+              <width>70</width>
+              <height>70</height>
+              <align>center</align>
+              <aligny>center</aligny>
+              <radioposx>-25</radioposx>
+              <radioposy>-5</radioposy>
+              <texturefocus border="5" colordiffuse="ff566b84">common/circle.png</texturefocus>
+              <texturenofocus border="5" colordiffuse="ff425265">common/circle.png</texturenofocus>
+              <textureradioonfocus colordiffuse="D0FFFFFF">special://skin/extras/icons/watchlist.png</textureradioonfocus>
+              <textureradioonnofocus colordiffuse="D0FFFFFF">special://skin/extras/icons/watchlist.png</textureradioonnofocus>
+              <textureradioofffocus colordiffuse="D0FFFFFF">special://skin/extras/icons/watchlist.png</textureradioofffocus>
+              <textureradiooffnofocus colordiffuse="D0FFFFFF">special://skin/extras/icons/watchlist.png</textureradiooffnofocus>
+              <textureradiooffdisabled colordiffuse="dialog_fg_30">special://skin/extras/icons/watchlist.png</textureradiooffdisabled>
+              <textureradioondisabled colordiffuse="dialog_fg_30">special://skin/extras/icons/watchlist.png</textureradioondisabled>
+              <onclick condition="!String.IsEmpty(Window(home).Property(spotlight_TMDBid))">RunScript(plugin.video.themoviedb.helper,sync_trakt=watchlist,tmdb_id=$INFO[Window(home).Property(spotlight_TMDBid)],type=$INFO[Window(home).Property(spotlight_TMDBTYPE)],cache_refresh)</onclick>
+              <onclick condition="String.IsEmpty(Window(home).Property(spotlight_TMDBid))">RunScript(plugin.video.themoviedb.helper,sync_trakt=watchlist,tmdb_id=$INFO[Window(home).Property(spotlight_TMDBid2)],type=$INFO[Window(home).Property(spotlight_TMDBTYPE)],cache_refresh)</onclick>
               <visible>Control.IsVisible(6001)</visible>
             </control>
           </control>
