@@ -99,7 +99,7 @@
         <animation effect="slide" start="0,-1000" end="0" time="400" tween="quadratic" condition="Window.IsActive(1140)">Conditional</animation>
         <animation effect="fade" start="0" end="100" time="100" delay="100" condition="Window.IsActive(1140)">Conditional</animation>
         <control type="label">
-          <top>215</top>
+          <top>280</top>
           <left>150</left>
           <bottom>60</bottom>
           <scroll>false</scroll>
@@ -109,6 +109,21 @@
           <label>$VAR[Label_Title]</label>
           <font>font_title</font>
           <visible>String.IsEmpty(Window(home).Property(spotlight_ClearLogo))</visible>
+        </control>
+        <control type="image">
+          <top>-630</top>
+          <left>150</left>
+          <width>640</width>
+          <aspectratio>keep</aspectratio>
+          <texture background="true">$INFO[Window(home).Property(spotlight_ClearLogo)]</texture>
+          <visible>!String.IsEmpty(Window(home).Property(spotlight_ClearLogo))</visible>
+        </control>
+        <control type="group">
+          <top>360</top>
+          <left>150</left>
+          <include content="Object_Info_First_Line">
+            <param name="visible_infoline" value="true" />
+          </include>
         </control>
         <control type="group">
           <control type="textbox">
@@ -122,21 +137,6 @@
             <shadowcolor>black</shadowcolor>
             <autoscroll delay="4000" time="4500" repeat="7000">Skin.HasSetting(autoscroll)</autoscroll>
           </control>
-        </control>
-        <control type="image">
-          <top>-800</top>
-          <left>150</left>
-          <width>640</width>
-          <aspectratio>keep</aspectratio>
-          <texture background="true">$INFO[Window(home).Property(spotlight_ClearLogo)]</texture>
-          <visible>!String.IsEmpty(Window(home).Property(spotlight_ClearLogo))</visible>
-        </control>
-        <control type="group">
-          <top>360</top>
-          <left>150</left>
-          <include content="Object_Info_First_Line">
-            <param name="visible_infoline" value="true" />
-          </include>
         </control>
         <visible>!$EXP[infodialog_active]</visible>
       </control>

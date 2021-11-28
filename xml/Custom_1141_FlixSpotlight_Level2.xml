@@ -105,8 +105,8 @@
             <label>$INFO[Window(home).Property(spotlight_Title)]</label>
             <height>150</height>
             <aligny>bottom</aligny>
-            <font>font_title_bold</font>
-            <textcolor>$VAR[ColorHighlight]</textcolor>
+            <font>font_title</font>
+            <textcolor>$VAR[TitleColour]</textcolor>
             <shadowcolor>black</shadowcolor>
           </control>
           <control type="label">
