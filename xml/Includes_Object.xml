@@ -499,21 +499,21 @@
           <top>$PARAM[percentageinfo_line_top]</top>
           <left>150</left>
           <include content="Object_Info_First_Line">
-            <param name="visible_infoline" value="true" />
+            <param name="visible_infoline" value="$PARAM[visible_infoline]" />
           </include>
         </control>
         <control type="group">
           <top>$PARAM[mediaflags_line_top]</top>
           <left>150</left>
           <include content="Object_Info_Line_MediaFlags">
-            <param name="visible_infoline" value="true" />
+            <param name="visible_infoline" value="$PARAM[visible_infoline]" />
           </include>
         </control>
         <control type="group">
           <top>$PARAM[videoinfo_line_top]</top>
           <left>150</left>
           <include content="Object_Video_Info_Line">
-            <param name="visible_infoline" value="true" />
+            <param name="visible_infoline" value="$PARAM[visible_infoline]" />
           </include>
         </control>
         <control type="group">

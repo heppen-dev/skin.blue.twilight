@@ -44,7 +44,7 @@
               <visible>Control.IsVisible(6000)</visible>
             </control>
             <control type="label">
-              <left>60</left>
+              <left>75</left>
               <top>21</top>
               <width>200</width>
               <label>$VAR[Flix_Spotlight_Title]</label>
