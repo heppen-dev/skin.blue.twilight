@@ -67,14 +67,16 @@
           <onup>9000</onup>
           <ondown>3000</ondown>
           <top>112</top>
-          <left>368</left>
+          <left>460</left>
           <height>220</height>
           <include>skinshortcuts-template-localWidget</include>
           <animation effect="slide" time="200" start="0" end="0,-400" reversible="true" condition="ControlGroup(3000).HasFocus">Conditional</animation>
         </control>
         <control type="grouplist" id="3000">
+          <centerleft>50%</centerleft>
           <onup>2999</onup>
           <top>330</top>
+          <width>1560</width>
           <height>999999</height>
           <include>skinshortcuts-template-widgetsWall</include>
           <animation effect="slide" time="200" start="0" end="0,400" reversible="true" condition="ControlGroup(3000).HasFocus">Conditional</animation>
@@ -86,12 +88,12 @@
     <control type="group">
       <animation effect="fade" start="100" end="0" time="400" tween="quadratic" condition="Window.IsActive(1141)">Conditional</animation>
       <control type="image">
-        <top>150</top>
+        <top>0</top>
         <left>-150</left>
         <width>1920</width>
         <height>1080</height>
         <texture background="true">common/flixspotlight-shadowspot.png</texture>
-        <visible>Player.HasVideo</visible>
+        <visible>Player.HasVideo + Window.IsVisible(1140)</visible>
         <animation effect="fade" start="0" end="100" time="1200" tween="quadratic" condition="Player.HasVideo">Conditional</animation>
       </control>
       <control type="group" id="5600">
