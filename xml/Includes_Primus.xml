@@ -73,7 +73,7 @@
           <onup>9000</onup>
           <ondown>3000</ondown>
           <top>112</top>
-          <left>460</left>
+          <left>-700</left>
           <height>220</height>
           <include>skinshortcuts-template-localWidget</include>
           <animation effect="slide" time="200" start="0" end="0,-400" reversible="true" condition="ControlGroup(3000).HasFocus">Conditional</animation>
