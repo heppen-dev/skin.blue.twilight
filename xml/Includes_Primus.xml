@@ -35,7 +35,14 @@
                 <label>$INFO[ListItem.Label]</label>
                 <shadowcolor>text_shadow</shadowcolor>
               </control>
-              <visible>String.IsEqual(Skin.String(MenuStyle),IconsText) | String.IsEqual(Skin.String(MenuStyle),Text) | String.IsEmpty(Skin.String(MenuStyle))</visible>
+              <control type="image">
+                <left>0</left>
+                <top>0</top>
+                <height>5</height>
+                <width>260</width>
+                <texture colordiffuse="">common/white.png</texture>
+                <visible>Control.HasFocus(9000)</visible>
+              </control>
             </control>
           </focusedlayout>
           <itemlayout height="95" width="260">
@@ -53,7 +60,6 @@
                 <label>$INFO[ListItem.Label]</label>
                 <shadowcolor>text_shadow</shadowcolor>
               </control>
-              <visible>String.IsEqual(Skin.String(MenuStyle),IconsText) | String.IsEqual(Skin.String(MenuStyle),Text) | String.IsEmpty(Skin.String(MenuStyle))</visible>
             </control>
           </itemlayout>
           <content>
