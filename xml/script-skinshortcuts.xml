@@ -5,7 +5,7 @@
     <control type="group">
       <centerleft>50%</centerleft>
       <centertop>50%</centertop>
-      <height>880</height>
+      <height>920</height>
       <width>1800</width>
       <animation effect="fade" time="200">VisibleChange</animation>
       <control type="group">
@@ -210,7 +210,7 @@
           <control type="button" id="401" description="Choose Shortcut">
             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
             <include>DialogSettingButton</include>
-            <visible>![String.EndsWith(Window.Property(groupname),.1) | String.IsEqual(Window.Property(groupname),searchmenu)]</visible>
+            <visible>![String.EndsWith(Window.Property(groupname),.1) | String.IsEqual(Window.Property(groupname),searchmenu) | String.IsEqual(Window.Property(groupname),widgets)]</visible>
           </control>
           <!-- choose widget -->
           <control type="button" id="4001" description="Choose Widget">
@@ -220,7 +220,7 @@
             <onclick>SetProperty(custom-grouping,widget)</onclick>
             <onclick>SendClick(401)</onclick>
             <include>DialogSettingButton</include>
-            <visible>String.EndsWith(Window.Property(groupname),.1)</visible>
+            <visible>String.IsEqual(Window.Property(groupname),widgets)</visible>
             <onback condition="String.IsEmpty(Container(211).ListItem.Property(widgetTarget)) + [String.Contains(Container(211).ListItem.Property(path),musicdb://) | String.Contains(Container(211).ListItem.Property(path),library://music) | String.Contains(Container(211).ListItem.Property(path),sources://music) | String.Contains(Container(211).ListItem.Property(path),plugin://plugin.audio)]">SetProperty(customProperty,widgetTarget)</onback>
             <onback condition="String.IsEmpty(Container(211).ListItem.Property(widgetTarget)) + [String.Contains(Container(211).ListItem.Property(path),musicdb://) | String.Contains(Container(211).ListItem.Property(path),library://music) | String.Contains(Container(211).ListItem.Property(path),sources://music) | String.Contains(Container(211).ListItem.Property(path),plugin://plugin.audio)]">SetProperty(customValue,music)</onback>
             <onback condition="String.IsEmpty(Container(211).ListItem.Property(widgetTarget)) + [String.Contains(Container(211).ListItem.Property(path),musicdb://) | String.Contains(Container(211).ListItem.Property(path),library://music) | String.Contains(Container(211).ListItem.Property(path),sources://music) | String.Contains(Container(211).ListItem.Property(path),plugin://plugin.audio)]">SendClick(404)</onback>
@@ -272,19 +272,36 @@
             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
             <include>DialogSettingButton</include>
           </control>
-          <control type="button" id="306" description="Icon">
+          <!-- <control type="button" id="306" description="Icon">
             <label>$LOCALIZE[31173]</label>
             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
             <include>DialogSettingButton</include>
             <visible>!String.IsEqual(Window.Property(groupname),shutdown)</visible>
             <visible>![String.EndsWith(Window.Property(groupname),.1) | String.IsEqual(Window.Property(groupname),searchmenu)]</visible>
-          </control>
+          </control> -->
           <control type="button" id="405" description="Submenu">
             <label>$LOCALIZE[31170]</label>
             <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
             <include>DialogSettingButton</include>
             <visible>!String.EndsWith(Window.Property(groupname),.1)</visible>
+          </control>
+          <control type="button" id="310" description="Background">
+            <label>$LOCALIZE[31171]</label>
+            <label2>$INFO[Container(211).ListItem.Property(background)]</label2>
+            <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+            <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
+            <include>DialogSettingButton</include>
+            <visible>![String.EndsWith(Window.Property(groupname),.1) | String.IsEqual(Window.Property(groupname),searchmenu)]</visible>
+          </control>
+          <control type="label" id="614">
+            <textoffsetx>30</textoffsetx>
+            <width>470</width>
+            <height>70</height>
+            <textcolor>dialog_fg_30</textcolor>
+            <label>Configure local banner</label>
+            <font>font_small_defaults</font>
+            <aligny>center</aligny>
           </control>
           <control type="button" id="3120">
             <label>Local Banner</label>
@@ -301,24 +318,24 @@
             <label>$LOCALIZE[31378]</label>
             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
             <label2>$INFO[Container(211).ListItem.Property(widgetTarget)]</label2>
-            <visible>[String.EndsWith(Window.Property(groupname),.1) | String.IsEqual(Window.Property(groupname),searchmenu)]</visible>
+            <visible>[String.EndsWith(Window.Property(groupname),.1) | String.IsEqual(Window.Property(groupname),searchmenu) | String.IsEqual(Window.Property(groupname),widgets)]</visible>
             <include>DialogSettingButton</include>
           </control>
           <!-- Widget aspect -->
-          <control type="button" id="505">
+          <!-- <control type="button" id="505">
             <label>$LOCALIZE[31253]</label>
             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
             <label2>$INFO[Container(211).ListItem.Property(widgetAspect)]</label2>
             <visible>[String.EndsWith(Window.Property(groupname),.1) | String.IsEqual(Window.Property(groupname),searchmenu)]</visible>
             <include>DialogSettingButton</include>
             <onclick>SendClick(404)</onclick>
-          </control>
+          </control> -->
           <!-- Widget sort by -->
           <control type="button" id="502">
             <label>$LOCALIZE[31177]</label>
             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
             <label2>$INFO[Container(211).ListItem.Property(widgetSortBy)]</label2>
-            <visible>[String.EndsWith(Window.Property(groupname),.1) | String.IsEqual(Window.Property(groupname),searchmenu)]</visible>
+            <visible>[String.EndsWith(Window.Property(groupname),.1) | String.IsEqual(Window.Property(groupname),searchmenu) | String.IsEqual(Window.Property(groupname),widgets) | String.IsEqual(Window.Property(groupname),mainmenu)]</visible>
             <include>DialogSettingButton</include>
             <onclick>SendClick(404)</onclick>
           </control>
@@ -327,7 +344,7 @@
             <label>$LOCALIZE[31178]</label>
             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
             <label2>$INFO[Container(211).ListItem.Property(widgetSortDirection)]</label2>
-            <visible>[String.EndsWith(Window.Property(groupname),.1) | String.IsEqual(Window.Property(groupname),searchmenu)]</visible>
+            <visible>[String.EndsWith(Window.Property(groupname),.1) | String.IsEqual(Window.Property(groupname),searchmenu) | String.IsEqual(Window.Property(groupname),widgets) | String.IsEqual(Window.Property(groupname),mainmenu)]</visible>
             <include>DialogSettingButton</include>
             <onclick>SendClick(404)</onclick>
           </control>
@@ -336,17 +353,9 @@
             <label>$LOCALIZE[31179]</label>
             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
             <label2>$INFO[Container(211).ListItem.Property(widgetLimit)]</label2>
-            <visible>[String.EndsWith(Window.Property(groupname),.1) | String.IsEqual(Window.Property(groupname),searchmenu)]</visible>
+            <visible>[String.EndsWith(Window.Property(groupname),.1) | String.IsEqual(Window.Property(groupname),searchmenu) | String.IsEqual(Window.Property(groupname),widgets) | String.IsEqual(Window.Property(groupname),mainmenu)]</visible>
             <include>DialogSettingButton</include>
             <onclick>SendClick(404)</onclick>
-          </control>
-          <control type="button" id="310" description="Background">
-            <label>$LOCALIZE[31171]</label>
-            <label2>$INFO[Container(211).ListItem.Property(background)]</label2>
-            <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
-            <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
-            <include>DialogSettingButton</include>
-            <visible>![String.EndsWith(Window.Property(groupname),.1) | String.IsEqual(Window.Property(groupname),searchmenu)]</visible>
           </control>
           <control type="button" id="308">
             <include>DialogSettingButton</include>
