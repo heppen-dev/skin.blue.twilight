@@ -302,6 +302,9 @@
             <label>Configure local banner</label>
             <font>font_small_defaults</font>
             <aligny>center</aligny>
+            <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+            <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
+            <visible>!String.EndsWith(Window.Property(groupname),.1)</visible>
           </control>
           <control type="button" id="3120">
             <label>Local Banner</label>
