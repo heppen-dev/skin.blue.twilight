@@ -343,7 +343,7 @@
     <param name="path" default=""/>
     <param name="landscapecondition" default="true"/>
     <definition>
-      <control type="list" id="$PARAM[id]">
+      <control type="fixedlist" id="$PARAM[id]">
         <nested/>
         <orientation>horizontal</orientation>
         <onleft>noop</onleft>
@@ -351,6 +351,9 @@
         <onup>9000</onup>
         <onback>9000</onback>
         <height>195</height>
+        <!-- <left>1920</left> -->
+        <focusposition>3</focusposition>
+        <animation effect="slide" time="0" start="0" end="-120,0" reversible="true" condition="true">Conditional</animation>
         <!-- movement -->
         <include content="Animation_Widget_Slide">
           <param name="container" value="3000" />
