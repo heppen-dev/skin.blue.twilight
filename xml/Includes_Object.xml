@@ -443,7 +443,7 @@
             <param name="pad_bottom_t" value="-16"/>
             <param name="pad_left_t" value="-10"/>
             <param name="pad_right_t" value="0"/>
-            <param name="visible_posters" value="$PARAM[postercondition] + Control.HasFocus($PARAM[id]) + !String.StartsWith(ListItem.FolderPath,pvr://)"/>
+            <param name="visible_posters" value="$PARAM[postercondition] + Control.HasFocus($PARAM[id])"/>
             <param name="visible_squares" value="false"/>
             <param name="visible_landscapes" value="false"/>
           </include>
