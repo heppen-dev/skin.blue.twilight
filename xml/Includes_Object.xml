@@ -424,7 +424,11 @@
         <height>220</height>
         <focusposition>1</focusposition>
         <onfocus>SetProperty(TMDbHelper.WidgetContainer,$PARAM[id],home)</onfocus>
-        <!-- Posters aspect ratio -->
+        <!-- flix spotlight -->
+        <include content="Flix_Spotlight_Properties">
+          <param name="include_condition" value="!String.StartsWith(ListItem.FolderPath,favourites://) + !String.IsEqual(Listitem.DBTYPE,music) + !String.IsEqual(Listitem.DBTYPE,song) + !String.IsEqual(Listitem.DBTYPE,album) + !String.IsEqual(Listitem.DBTYPE,artist)" />
+        </include>
+        <onclick condition="!String.StartsWith(ListItem.FolderPath,favourites://) + !String.IsEqual(Listitem.DBTYPE,song) + !String.IsEqual(Listitem.DBTYPE,album) + !String.IsEqual(Listitem.DBTYPE,artist)">ActivateWindow(1146)</onclick>
         <itemlayout height="185" width="1120" condition="$PARAM[postercondition]">
           <include content="ViewBannerItemLayout">
             <param name="bg_visible" value="false" />

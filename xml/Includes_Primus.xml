@@ -56,7 +56,7 @@
             <include>skinshortcuts-mainmenu</include>
           </content>
         </control>
-        <animation effect="slide" time="200" start="0" end="0,-400" reversible="true" condition="ControlGroup(3000).HasFocus">Conditional</animation>
+        <animation effect="slide" time="200" start="0" end="0,-400" reversible="true" condition="ControlGroup(3000).HasFocus | Window.IsVisible(1146)">Conditional</animation>
       </control>
       <control type="group">
         <control type="grouplist" id="2999">
@@ -66,7 +66,7 @@
           <left>-700</left>
           <height>220</height>
           <include>skinshortcuts-template-localWidget</include>
-          <animation effect="slide" time="200" start="0" end="0,-400" reversible="true" condition="ControlGroup(3000).HasFocus">Conditional</animation>
+          <animation effect="slide" time="200" start="0" end="0,-400" reversible="true" condition="ControlGroup(3000).HasFocus | Window.IsVisible(1146)">Conditional</animation>
         </control>
         <control type="grouplist" id="3000">
           <centerleft>50%</centerleft>
@@ -77,6 +77,7 @@
           <include>skinshortcuts-template-widgetsWall</include>
           <animation effect="slide" time="200" start="0" end="0,500" reversible="true" condition="ControlGroup(3000).HasFocus">Conditional</animation>
           <animation effect="slide" time="200" start="0" end="0,340" reversible="true" condition="Window.IsVisible(1140)">Conditional</animation>
+          <animation effect="slide" time="200" start="0" end="0,780" reversible="true" condition="Window.IsVisible(1146)">Conditional</animation>
         </control>
       </control>
       <control type="group">
@@ -85,10 +86,10 @@
           <param name="title" value="$VAR[Label_Title]"/>
           <param name="title_width" value="1000" />
           <param name="plot" value="$VAR[Label_PlotTextBoxVar]"/>
-          <param name="visible_condi" value="!ControlGroup(2999).HasFocus + ControlGroup(3000).HasFocus"/>
+          <param name="visible_condi" value="[!ControlGroup(2999).HasFocus + ControlGroup(3000).HasFocus] | [Window.IsVisible(1146) + ControlGroup(2999).HasFocus]"/>
         </include>
         <animation effect="fade" time="200" start="0" end="100" condition="ControlGroup(3000).HasFocus + !ControlGroup(2999).HasFocus">Conditional</animation>
-        <animation effect="fade" time="200" end="0" start="100" condition="Window.IsVisible(1140) | Window.IsVisible(1141)">Conditional</animation>
+        <animation effect="fade" time="200" end="0" start="100" condition="Window.IsVisible(1140) | Window.IsVisible(1141) | Window.IsVisible(1146)">Conditional</animation>
       </control>
     </control>
     <!-- spotlight -->
@@ -104,9 +105,9 @@
         <animation effect="fade" start="0" end="100" time="1200" tween="quadratic" condition="Player.HasVideo">Conditional</animation>
       </control>
       <control type="group" id="5600">
-        <visible>Window.IsVisible(1140)</visible>
-        <animation effect="slide" start="0,-1000" end="0" time="400" tween="quadratic" condition="Window.IsActive(1140)">Conditional</animation>
-        <animation effect="fade" start="0" end="100" time="100" delay="100" condition="Window.IsActive(1140)">Conditional</animation>
+        <visible>Window.IsVisible(1140) | Window.IsVisible(1146)</visible>
+        <animation effect="slide" start="0,-1000" end="0" time="400" tween="quadratic" condition="Window.IsActive(1140) | Window.IsActive(1146)">Conditional</animation>
+        <animation effect="fade" start="0" end="100" time="100" delay="100" condition="Window.IsActive(1140) | Window.IsActive(1146)">Conditional</animation>
         <control type="label">
           <top>280</top>
           <left>150</left>
