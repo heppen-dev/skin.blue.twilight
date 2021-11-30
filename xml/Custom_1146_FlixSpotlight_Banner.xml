@@ -17,9 +17,10 @@
           <control type="group">
             <control type="radiobutton" id="6000">
               <ondown>PlayerControl(Stop)</ondown>
-              <ondown>AlarmClock(closeDialogs,Dialog.Close(all),00:02,silent)</ondown>
+              <ondown condition="Player.HasVideo">AlarmClock(closeDialogs,Dialog.Close(all),00:02,silent)</ondown>
+              <ondown>Dialog.Close(all)</ondown>
               <onright>6001</onright>
-              <onleft>6002</onleft>
+              <onleft>6003</onleft>
               <width>300</width>
               <height>68</height>
               <align>left</align>
@@ -55,7 +56,8 @@
           <control type="group">
             <control type="radiobutton" id="6001">
               <ondown>PlayerControl(Stop)</ondown>
-              <ondown>AlarmClock(closeDialogs,Dialog.Close(all),00:02,silent)</ondown>
+              <ondown condition="Player.HasVideo">AlarmClock(closeDialogs,Dialog.Close(all),00:02,silent)</ondown>
+              <ondown>Dialog.Close(all)</ondown>
               <onleft>6000</onleft>
               <onright>6002</onright>
               <left>320</left>
@@ -80,10 +82,38 @@
           <control type="group">
             <control type="radiobutton" id="6002">
               <ondown>PlayerControl(Stop)</ondown>
-              <ondown>AlarmClock(closeDialogs,Dialog.Close(all),00:02,silent)</ondown>
+              <ondown condition="Player.HasVideo">AlarmClock(closeDialogs,Dialog.Close(all),00:02,silent)</ondown>
+              <ondown>Dialog.Close(all)</ondown>
               <onleft>6001</onleft>
-              <onright>6000</onright>
+              <onright>6003</onright>
               <left>405</left>
+              <width>70</width>
+              <height>70</height>
+              <align>center</align>
+              <aligny>center</aligny>
+              <radioposx>-24</radioposx>
+              <radioposy>-4</radioposy>
+              <texturefocus border="5" colordiffuse="ff566b84">common/circle.png</texturefocus>
+              <texturenofocus border="5" colordiffuse="ff425265">common/circle.png</texturenofocus>
+              <textureradioonfocus colordiffuse="D0FFFFFF">special://skin/extras/icons/videoplay.png</textureradioonfocus>
+              <textureradioonnofocus colordiffuse="D0FFFFFF">special://skin/extras/icons/videoplay.png</textureradioonnofocus>
+              <textureradioofffocus colordiffuse="D0FFFFFF">special://skin/extras/icons/videoplay.png</textureradioofffocus>
+              <textureradiooffnofocus colordiffuse="D0FFFFFF">special://skin/extras/icons/videoplay.png</textureradiooffnofocus>
+              <textureradiooffdisabled colordiffuse="dialog_fg_30">special://skin/extras/icons/videoplay.png</textureradiooffdisabled>
+              <textureradioondisabled colordiffuse="dialog_fg_30">special://skin/extras/icons/videoplay.png</textureradioondisabled>
+              <!-- trailers -->
+              <!-- implement trailers here -->
+              <visible>Control.IsVisible(6002)</visible>
+            </control>
+          </control>
+          <control type="group">
+            <control type="radiobutton" id="6003">
+              <ondown>PlayerControl(Stop)</ondown>
+              <ondown condition="Player.HasVideo">AlarmClock(closeDialogs,Dialog.Close(all),00:02,silent)</ondown>
+              <ondown>Dialog.Close(all)</ondown>
+              <onleft>6002</onleft>
+              <onright>6000</onright>
+              <left>490</left>
               <width>70</width>
               <height>70</height>
               <align>center</align>
