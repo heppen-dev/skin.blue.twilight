@@ -28,6 +28,7 @@
           <param name="limit" value="$SKINSHORTCUTS[limit]"/>
           <param name="path" value="$SKINSHORTCUTS[path]"/>
           <param name="landscapecondition" value="true"/>
+          <param name="idtofade" value="$PYTHON[750$SKINSHORTCUTS[id] + int(1)]"/>
         </include>
       </controls>
     </items>

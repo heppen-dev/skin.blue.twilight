@@ -3,16 +3,6 @@
   <include name="Primus_Main">
     <control type="group">
       <control type="group">
-        <include content="Object_Item_Showcase">
-          <param name="title" value="$VAR[Label_Title]"/>
-          <param name="title_width" value="1000" />
-          <param name="plot" value="$VAR[Label_PlotTextBoxVar]"/>
-          <param name="visible_condi" value="!ControlGroup(2999).HasFocus + ControlGroup(3000).HasFocus"/>
-        </include>
-        <animation effect="fade" time="200" start="0" end="100" condition="ControlGroup(3000).HasFocus + !ControlGroup(2999).HasFocus">Conditional</animation>
-        <animation effect="fade" time="200" end="0" start="100" condition="Window.IsVisible(1140) | Window.IsVisible(1141)">Conditional</animation>
-      </control>
-      <control type="group">
         <control type="list" id="9000">
           <height>100</height>
           <top>3</top>
@@ -85,9 +75,20 @@
           <width>1560</width>
           <height>999999</height>
           <include>skinshortcuts-template-widgetsWall</include>
-          <animation effect="slide" time="200" start="0" end="0,400" reversible="true" condition="ControlGroup(3000).HasFocus">Conditional</animation>
-          <animation effect="slide" time="200" start="0" end="0,240" reversible="true" condition="Window.IsVisible(1140)">Conditional</animation>
+          <animation effect="slide" time="200" start="0" end="0,500" reversible="true" condition="ControlGroup(3000).HasFocus">Conditional</animation>
+          <animation effect="slide" time="200" start="0" end="0,340" reversible="true" condition="Window.IsVisible(1140)">Conditional</animation>
         </control>
+      </control>
+      <control type="group">
+        <left>50</left>
+        <include content="Object_Item_Showcase">
+          <param name="title" value="$VAR[Label_Title]"/>
+          <param name="title_width" value="1000" />
+          <param name="plot" value="$VAR[Label_PlotTextBoxVar]"/>
+          <param name="visible_condi" value="!ControlGroup(2999).HasFocus + ControlGroup(3000).HasFocus"/>
+        </include>
+        <animation effect="fade" time="200" start="0" end="100" condition="ControlGroup(3000).HasFocus + !ControlGroup(2999).HasFocus">Conditional</animation>
+        <animation effect="fade" time="200" end="0" start="100" condition="Window.IsVisible(1140) | Window.IsVisible(1141)">Conditional</animation>
       </control>
     </control>
     <!-- spotlight -->
