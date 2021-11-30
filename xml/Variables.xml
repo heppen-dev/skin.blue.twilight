@@ -156,7 +156,7 @@
     <value>Null</value>
   </variable>
   <variable name="BackgroundOverlay">
-    <value condition="Control.HasFocus(57) | ControlGroup(3000).HasFocus">FFFFFFFF</value>
+    <value condition="Control.HasFocus(57) | ControlGroup(3000).HasFocus | Window.IsVisible(1146)">FFFFFFFF</value>
     <value condition="Window.IsVisible(Home)">$VAR[HomeAlphaPercentage]</value>
     <value>$VAR[AlphaPercentage]</value>
   </variable>
@@ -919,14 +919,14 @@
     <!-- home fanart first widget item -->
     <value condition="Window.IsVisible(home) + String.IsEmpty(Container(3000).ListItem.Property(Background)) + !String.IsEmpty(Container(7502).ListItem.Art(fanart)) + Control.IsVisible(7502)">$INFO[Container(7502).ListItem.Art(fanart)]</value>
     <!-- flix hub fanart -->
-    <value condition="!String.IsEmpty(Window(home).Property(spotlight_Fanart)) + Window.IsActive(1140)">$INFO[Window(home).Property(spotlight_Fanart)]</value>
+    <value condition="!String.IsEmpty(Window(home).Property(spotlight_Fanart)) + [Window.IsActive(1140) | Window.IsActive(1146)]">$INFO[Window(home).Property(spotlight_Fanart)]</value>
     <value>$INFO[Container.Art(fanart)]</value>
   </variable>
   <variable name="BlurSpotlight">
     <value>$INFO[Window(Home).Property(TMDbHelper.ListItem.BlurImage)]</value>
   </variable>
   <variable name="BlurBackground">
-    <value condition="!ControlGroup(3000).HasFocus">$INFO[Window(Home).Property(TMDbHelper.ListItem.BlurImage)]</value>
+    <value condition="!ControlGroup(3000).HasFocus + !Window.IsVisible(1146)">$INFO[Window(Home).Property(TMDbHelper.ListItem.BlurImage)]</value>
     <value condition="!String.IsEmpty(ListItem.Property(background))">$INFO[ListItem.Property(background)]</value>
     <value condition="Window.IsVisible(1141)">$VAR[BlurSpotlight]</value>
     <value>$VAR[MediaFanartVar]</value>

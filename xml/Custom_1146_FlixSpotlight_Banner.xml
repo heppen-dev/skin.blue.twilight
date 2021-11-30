@@ -16,6 +16,9 @@
           <orientation>horizontal</orientation>
           <control type="group">
             <control type="radiobutton" id="6000">
+              <onup>PlayerControl(Stop)</onup>
+              <onup condition="Player.HasVideo">AlarmClock(closeDialogs,Dialog.Close(all),00:02,silent)</onup>
+              <onup>Dialog.Close(all)</onup>
               <ondown>PlayerControl(Stop)</ondown>
               <ondown condition="Player.HasVideo">AlarmClock(closeDialogs,Dialog.Close(all),00:02,silent)</ondown>
               <ondown>Dialog.Close(all)</ondown>
@@ -55,6 +58,9 @@
           </control>
           <control type="group">
             <control type="radiobutton" id="6001">
+              <onup>PlayerControl(Stop)</onup>
+              <onup condition="Player.HasVideo">AlarmClock(closeDialogs,Dialog.Close(all),00:02,silent)</onup>
+              <onup>Dialog.Close(all)</onup>
               <ondown>PlayerControl(Stop)</ondown>
               <ondown condition="Player.HasVideo">AlarmClock(closeDialogs,Dialog.Close(all),00:02,silent)</ondown>
               <ondown>Dialog.Close(all)</ondown>
@@ -81,6 +87,9 @@
           </control>
           <control type="group">
             <control type="radiobutton" id="6002">
+              <onup>PlayerControl(Stop)</onup>
+              <onup condition="Player.HasVideo">AlarmClock(closeDialogs,Dialog.Close(all),00:02,silent)</onup>
+              <onup>Dialog.Close(all)</onup>
               <ondown>PlayerControl(Stop)</ondown>
               <ondown condition="Player.HasVideo">AlarmClock(closeDialogs,Dialog.Close(all),00:02,silent)</ondown>
               <ondown>Dialog.Close(all)</ondown>
@@ -108,6 +117,9 @@
           </control>
           <control type="group">
             <control type="radiobutton" id="6003">
+              <onup>PlayerControl(Stop)</onup>
+              <onup condition="Player.HasVideo">AlarmClock(closeDialogs,Dialog.Close(all),00:02,silent)</onup>
+              <onup>Dialog.Close(all)</onup>
               <ondown>PlayerControl(Stop)</ondown>
               <ondown condition="Player.HasVideo">AlarmClock(closeDialogs,Dialog.Close(all),00:02,silent)</ondown>
               <ondown>Dialog.Close(all)</ondown>
