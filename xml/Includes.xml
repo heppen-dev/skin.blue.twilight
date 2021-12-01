@@ -1204,7 +1204,7 @@
         <include>FullScreenDimensions</include>
         <animation effect="zoom" center="auto" end="102,102" time="0" condition="Integer.IsGreater(System.StereoscopicMode,0)">conditional</animation>
         <control type="group">
-          <animation effect="fade" start="100" end="0" time="300" condition="Player.HasVideo + Skin.HasSetting(BackgroundPlayingTrailers) + !VideoPlayer.Content(livetv)">Conditional</animation>
+          <animation effect="fade" start="100" end="0" time="300" condition="String.IsEqual(Window(home).Property(hasTrailer),true)">Conditional</animation>
           <animation effect="fade" start="100" end="bg_alpha" time="0" condition="!Control.IsVisible(31111)">Conditional</animation>
           <animation effect="fade" start="0" end="100" time="300" condition="Window.Previous(fullscreenvideo) | Window.Previous(FullscreenGame) | Window.Previous(startup)">WindowOpen</animation>
           <include>ColoredBackgroundImages</include>
