@@ -6,7 +6,7 @@
       <animation effect="fade" start="0" end="100" time="100">WindowOpen</animation>
       <animation effect="fade" start="100" end="0" time="100">WindowClose</animation>
       <animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
-      <visible>!Window.IsActive(fullscreenvideo) | Window.Previous(10000)</visible>
+      <visible>!Window.IsActive(fullscreenvideo) | Window.Previous(10106)</visible>
       <include>ColoredBackgroundImages</include>
     </control>
     <include condition="!Skin.HasSetting(LegacyPVR)">PVRChannelGuideModern</include>
