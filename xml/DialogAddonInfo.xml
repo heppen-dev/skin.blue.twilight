@@ -178,7 +178,7 @@
           </include>
           <include content="AddonDialogButton">
             <param name="id" value="8"/>
-            <param name="icon" value="special://skin/extras/icons/install.png"/>
+            <param name="icon" value="special://skin/extras/icons/addtile.png"/>
             <param name="label" value="$LOCALIZE[24138]"/>
           </include>
           <include content="AddonDialogButton">
@@ -189,7 +189,7 @@
           <include content="AddonDialogToggleButton">
             <param name="id" value="6"/>
             <param name="icon_on" value="special://skin/extras/icons/uninstall.png"/>
-            <param name="icon_off" value="special://skin/extras/icons/install.png"/>
+            <param name="icon_off" value="special://skin/extras/icons/addtile.png"/>
             <param name="selected" value="ListItem.Property(addon.isinstalled) | !Window.IsActive(addonbrowser)"/>
             <param name="label" value=""/>
           </include>
