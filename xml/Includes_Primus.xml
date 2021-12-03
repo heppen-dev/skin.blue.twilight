@@ -80,6 +80,25 @@
           <animation effect="slide" time="200" start="0" end="0,340" reversible="true" condition="Window.IsVisible(1140)">Conditional</animation>
           <animation effect="slide" time="200" start="0" end="0,780" reversible="true" condition="Window.IsVisible(1146)">Conditional</animation>
         </control>
+        <!-- <control type="group">
+          <left>175</left>
+          <bottom>25</bottom>
+          <width>315</width>
+          <height>225</height>
+          <include content="Selectbox">
+            <param name="pad_top_b" value="0"/>
+            <param name="pad_bottom_b" value="20"/>
+            <param name="pad_left_b" value="-12"/>
+            <param name="pad_right_b" value="-12"/>
+            <param name="pad_top_t" value="-10"/>
+            <param name="pad_bottom_t" value="-16"/>
+            <param name="pad_left_t" value="-10"/>
+            <param name="pad_right_t" value="0"/>
+            <param name="visible_posters" value="ControlGroup(3000).HasFocus"/>
+            <param name="visible_squares" value="false"/>
+            <param name="visible_landscapes" value="false"/>
+          </include>
+        </control> -->
       </control>
       <control type="group">
         <left>50</left>
