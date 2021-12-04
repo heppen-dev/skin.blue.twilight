@@ -359,7 +359,7 @@
         </include>
         <onfocus>SetProperty(TMDbHelper.WidgetContainer,$PARAM[id],home)</onfocus>
         <onfocus>SetProperty(widgetMovementId,$PARAM[id],home)</onfocus>
-        <animation effect="fade" start="100" end="0" time="100" reversible="true" condition="Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[idtofade])">Conditional</animation>
+        <animation effect="fade" start="100" end="0" time="0" reversible="true" condition="Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[idtofade])">Conditional</animation>
         <!-- trailers -->
         <onclick condition="[String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE, tvshow)] + Control.HasFocus($PARAM[id]) + Skin.HasSetting(BackgroundPlayingTrailers) + !Player.HasVideo + !String.IsEmpty(ListItem.Trailer)">AlarmClock(trailerdelay,PlayMedia($ESCINFO[ListItem.Trailer],1),00:01,silent)</onclick>
         <onclick condition="[String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE, tvshow)] + Control.HasFocus($PARAM[id]) + Skin.HasSetting(BackgroundPlayingTrailers) + !Player.HasVideo + String.IsEmpty(ListItem.Trailer) + !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Trailer))">AlarmClock(trailerdelay,PlayMedia($ESCINFO[Window(Home).Property(TMDbHelper.ListItem.Trailer)],1),00:01,silent)</onclick>
@@ -375,13 +375,11 @@
         <itemlayout height="225" width="315" condition="$PARAM[landscapecondition]">
           <include content="ViewLandscapeItemLayout">
             <param name="firstrow_fade" value="Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[id])" />
-            <param name="wallnofade" value="!Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[id])" />
           </include>
         </itemlayout>
         <focusedlayout height="225" width="315" condition="$PARAM[landscapecondition]">
           <include content="ViewLandscapeItemLayout">
             <param name="firstrow_fade" value="Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[id])" />
-            <param name="wallnofade" value="!Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[id])" />
           </include>
           <include content="Selectbox">
             <param name="pad_top_b" value="0"/>
