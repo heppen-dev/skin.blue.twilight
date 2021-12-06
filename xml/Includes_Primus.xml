@@ -56,7 +56,7 @@
             <include>skinshortcuts-mainmenu</include>
           </content>
         </control>
-        <animation effect="slide" time="200" start="0" end="0,-400" reversible="true" condition="ControlGroup(3000).HasFocus | Window.IsVisible(1146)">Conditional</animation>
+        <animation effect="slide" time="200" start="0" end="0,-400" reversible="true" condition="ControlGroup(3000).HasFocus | $EXP[flix_spotlight_level1] | Window.IsVisible(1146)">Conditional</animation>
       </control>
       <control type="group">
         <control type="grouplist" id="2999">
@@ -66,7 +66,7 @@
           <left>-700</left>
           <height>220</height>
           <include>skinshortcuts-template-localWidget</include>
-          <animation effect="slide" time="200" start="0" end="0,-400" reversible="true" condition="ControlGroup(3000).HasFocus | Window.IsVisible(1146)">Conditional</animation>
+          <animation effect="slide" time="200" start="0" end="0,-400" reversible="true" condition="ControlGroup(3000).HasFocus | $EXP[flix_spotlight_level1] | Window.IsVisible(1146)">Conditional</animation>
         </control>
         <control type="grouplist" id="3000">
           <centerleft>50%</centerleft>
@@ -76,8 +76,8 @@
           <height>999999</height>
           <include>skinshortcuts-template-widgetsWall</include>
           <animation effect="slide" time="0" start="0" end="0,195" reversible="false" condition="!ControlGroup(3000).HasFocus + Integer.IsGreater(Container(3000).Position,0)">Conditional</animation>
-          <animation effect="slide" time="200" start="0" end="0,500" reversible="true" condition="ControlGroup(3000).HasFocus">Conditional</animation>
-          <animation effect="slide" time="200" start="0" end="0,340" reversible="true" condition="Window.IsVisible(1140)">Conditional</animation>
+          <animation effect="slide" time="200" start="0" end="0,500" reversible="true" condition="ControlGroup(3000).HasFocus | $EXP[flix_spotlight_level1]">Conditional</animation>
+          <animation effect="slide" time="200" start="0" end="0,340" reversible="true" condition="$EXP[flix_spotlight_level1]">Conditional</animation>
           <animation effect="slide" time="200" start="0" end="0,780" reversible="true" condition="Window.IsVisible(1146)">Conditional</animation>
         </control>
         <!-- <control type="group">
@@ -106,69 +106,136 @@
           <param name="title" value="$VAR[Label_Title]"/>
           <param name="title_width" value="1000" />
           <param name="plot" value="$VAR[Label_PlotTextBoxVar]"/>
-          <param name="visible_condi" value="[!ControlGroup(2999).HasFocus + ControlGroup(3000).HasFocus] | [Window.IsVisible(1146) + ControlGroup(2999).HasFocus]"/>
+          <param name="visible_condi" value="[!ControlGroup(2999).HasFocus + ControlGroup(3000).HasFocus] | [Window.IsVisible(1146) + ControlGroup(2999).HasFocus] | $EXP[flix_spotlight_level1]"/>
         </include>
         <animation effect="fade" time="200" start="0" end="100" condition="ControlGroup(3000).HasFocus + !ControlGroup(2999).HasFocus">Conditional</animation>
-        <animation effect="fade" time="200" end="0" start="100" condition="Window.IsVisible(1140) | Window.IsVisible(1141) | Window.IsVisible(1146)">Conditional</animation>
+        <animation effect="fade" time="200" end="0" start="100" condition="$EXP[flix_spotlight_level1] | Window.IsVisible(1141) | Window.IsVisible(1146)">Conditional</animation>
       </control>
     </control>
     <!-- spotlight -->
     <control type="group">
-      <animation effect="fade" start="100" end="0" time="400" tween="quadratic" condition="Window.IsActive(1141)">Conditional</animation>
+      <animation effect="fade" start="100" end="0" time="400" tween="linear" condition="Window.IsActive(1141)">Conditional</animation>
       <control type="image">
         <top>0</top>
         <left>-150</left>
         <width>1920</width>
         <height>1080</height>
         <texture background="true">common/flixspotlight-shadowspot.png</texture>
-        <visible>Player.HasVideo + Window.IsVisible(1140)</visible>
-        <animation effect="fade" start="0" end="100" time="1200" tween="quadratic" condition="Player.HasVideo">Conditional</animation>
+        <visible>Player.HasVideo + $EXP[flix_spotlight_level1]</visible>
+        <animation effect="fade" start="0" end="100" time="1200" tween="linear" condition="Player.HasVideo">Conditional</animation>
       </control>
-      <control type="group" id="5600">
-        <visible>Window.IsVisible(1140) | Window.IsVisible(1146)</visible>
-        <animation effect="slide" start="0,-1000" end="0" time="400" tween="quadratic" condition="Window.IsActive(1140) | Window.IsActive(1146)">Conditional</animation>
-        <animation effect="fade" start="0" end="100" time="100" delay="100" condition="Window.IsActive(1140) | Window.IsActive(1146)">Conditional</animation>
-        <control type="label">
-          <top>280</top>
-          <left>150</left>
-          <bottom>60</bottom>
-          <scroll>false</scroll>
-          <width>1000</width>
-          <textcolor>$VAR[TitleColour]</textcolor>
-          <shadowcolor>black</shadowcolor>
-          <label>$VAR[Label_Title]</label>
-          <font>font_title</font>
-          <visible>String.IsEmpty(Window(home).Property(spotlight_ClearLogo))</visible>
-        </control>
-        <control type="image">
-          <top>-630</top>
-          <left>150</left>
-          <width>640</width>
-          <aspectratio>keep</aspectratio>
-          <texture background="true">$INFO[Window(home).Property(spotlight_ClearLogo)]</texture>
-          <visible>!String.IsEmpty(Window(home).Property(spotlight_ClearLogo))</visible>
-        </control>
+      <control type="group">
+        <left>50</left>
+        <include content="Object_Item_Showcase">
+          <param name="title" value=""/>
+          <param name="title_width" value="1000" />
+          <param name="plot" value="$INFO[Window(home).Property(spotlight_Plot)]"/>
+          <param name="visible_condi" value="$EXP[flix_spotlight_level1]"/>
+        </include>
+      </control>
+      <!-- buttons area -->
+      <control type="group">
+        <top>260</top>
+        <left>50</left>
+        <visible>ControlGroup(3000).HasFocus | [$EXP[flix_spotlight_level1] + String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))]</visible>
+        <animation effect="slide" start="0" end="0,-100" time="400" tween="linear" condition="$EXP[flix_spotlight_level1]">Conditional</animation>
+        <animation effect="fade" start="100" end="0" time="400" tween="linear" condition="Window.IsActive(1141)">Conditional</animation>
         <control type="group">
-          <top>360</top>
+          <top>300</top>
           <left>150</left>
-          <include content="Object_Info_First_Line">
-            <param name="visible_infoline" value="true" />
-          </include>
-        </control>
-        <control type="group">
-          <control type="textbox">
-            <top>420</top>
-            <left>150</left>
-            <width>940</width>
-            <height>120</height>
-            <textcolor>white</textcolor>
-            <label>$VAR[Label_PlotTextBoxVar]</label>
-            <font>font_plot_normal</font>
-            <shadowcolor>black</shadowcolor>
-            <autoscroll delay="4000" time="4500" repeat="7000">Skin.HasSetting(autoscroll)</autoscroll>
+          <control type="grouplist">
+            <orientation>horizontal</orientation>
+            <control type="group">
+              <control type="radiobutton" id="6000">
+                <ondown>PlayerControl(Stop)</ondown>
+                <ondown>AlarmClock(closeDialogs,SetFocus(3000),00:01,silent)</ondown>
+                <onright>6001</onright>
+                <onleft>6002</onleft>
+                <width>300</width>
+                <height>68</height>
+                <align>left</align>
+                <aligny>top</aligny>
+                <texturefocus border="5" colordiffuse="ff1399de">common/box.png</texturefocus>
+                <texturenofocus border="5" colordiffuse="ff0f79af">common/box.png</texturenofocus>
+                <radioposx>-20</radioposx>
+                <radioposy>-5</radioposy>
+                <radiowidth>108</radiowidth>
+                <radioheight>72</radioheight>
+                <textwidth>180</textwidth>
+                <font>font_tiny_hintlabel</font>
+                <textureradioonfocus colordiffuse="D0FFFFFF">special://skin/extras/icons/play3.png</textureradioonfocus>
+                <textureradioonnofocus colordiffuse="D0FFFFFF">special://skin/extras/icons/play3.png</textureradioonnofocus>
+                <textureradioofffocus colordiffuse="D0FFFFFF">special://skin/extras/icons/play3.png</textureradioofffocus>
+                <textureradiooffnofocus colordiffuse="D0FFFFFF">special://skin/extras/icons/play3.png</textureradiooffnofocus>
+                <textureradiooffdisabled colordiffuse="dialog_fg_30">special://skin/extras/icons/play3.png</textureradiooffdisabled>
+                <textureradioondisabled colordiffuse="dialog_fg_30">special://skin/extras/icons/play3.png</textureradioondisabled>
+                <onclick>Dialog.Close(all,true)</onclick>
+                <onclick>PlayMedia($INFO[ListItem.FilenameAndPath])</onclick>
+                <!-- <onclick condition="![[String.IsEqual(Window(home).Property(spotlight_DBType),movie) | String.IsEqual(Window(home).Property(spotlight_DBType),episode) | String.IsEqual(Window(home).Property(spotlight_DBType),video)] | String.IsEqual(Window(home).Property(spotlight_isPVR),true)]">PlayMedia($ESCINFO[ListItem.FolderPath])</onclick> -->
+                <visible>Control.IsVisible(6000)</visible>
+              </control>
+              <control type="label">
+                <left>75</left>
+                <top>21</top>
+                <width>200</width>
+                <label>$INFO[Window(home).Property(ItemTitle)]</label>
+                <font>font_tiny_hintlabel</font>
+                <scroll>false</scroll>
+              </control>
+            </control>
+            <control type="group">
+              <control type="radiobutton" id="6001">
+                <ondown>PlayerControl(Stop)</ondown>
+                <ondown>AlarmClock(closeDialogs,SetFocus(3000),00:01,silent)</ondown>
+                <onleft>6000</onleft>
+                <onright>6002</onright>
+                <left>320</left>
+                <width>70</width>
+                <height>70</height>
+                <align>center</align>
+                <aligny>center</aligny>
+                <radioposx>-24</radioposx>
+                <radioposy>-4</radioposy>
+                <texturefocus border="5" colordiffuse="ff566b84">common/circle.png</texturefocus>
+                <texturenofocus border="5" colordiffuse="ff425265">common/circle.png</texturenofocus>
+                <textureradioonfocus colordiffuse="D0FFFFFF">special://skin/extras/icons/info.png</textureradioonfocus>
+                <textureradioonnofocus colordiffuse="D0FFFFFF">special://skin/extras/icons/info.png</textureradioonnofocus>
+                <textureradioofffocus colordiffuse="D0FFFFFF">special://skin/extras/icons/info.png</textureradioofffocus>
+                <textureradiooffnofocus colordiffuse="D0FFFFFF">special://skin/extras/icons/info.png</textureradiooffnofocus>
+                <textureradiooffdisabled colordiffuse="dialog_fg_30">special://skin/extras/icons/info.png</textureradiooffdisabled>
+                <textureradioondisabled colordiffuse="dialog_fg_30">special://skin/extras/icons/info.png</textureradioondisabled>
+                <onclick>ActivateWindow(1141)</onclick>
+                <visible>Control.IsVisible(6001)</visible>
+              </control>
+            </control>
+            <control type="group">
+              <control type="radiobutton" id="6002">
+                <ondown>PlayerControl(Stop)</ondown>
+                <ondown>AlarmClock(closeDialogs,SetFocus(3000),00:01,silent)</ondown>
+                <onleft>6001</onleft>
+                <onright>6000</onright>
+                <left>405</left>
+                <width>70</width>
+                <height>70</height>
+                <align>center</align>
+                <aligny>center</aligny>
+                <radioposx>-25</radioposx>
+                <radioposy>-5</radioposy>
+                <texturefocus border="5" colordiffuse="ff566b84">common/circle.png</texturefocus>
+                <texturenofocus border="5" colordiffuse="ff425265">common/circle.png</texturenofocus>
+                <textureradioonfocus colordiffuse="D0FFFFFF">special://skin/extras/icons/watchlist.png</textureradioonfocus>
+                <textureradioonnofocus colordiffuse="D0FFFFFF">special://skin/extras/icons/watchlist.png</textureradioonnofocus>
+                <textureradioofffocus colordiffuse="D0FFFFFF">special://skin/extras/icons/watchlist.png</textureradioofffocus>
+                <textureradiooffnofocus colordiffuse="D0FFFFFF">special://skin/extras/icons/watchlist.png</textureradiooffnofocus>
+                <textureradiooffdisabled colordiffuse="dialog_fg_30">special://skin/extras/icons/watchlist.png</textureradiooffdisabled>
+                <textureradioondisabled colordiffuse="dialog_fg_30">special://skin/extras/icons/watchlist.png</textureradioondisabled>
+                <onclick condition="!String.IsEmpty(Window(home).Property(spotlight_TMDBid))">RunScript(plugin.video.themoviedb.helper,sync_trakt=watchlist,tmdb_id=$INFO[Window(home).Property(spotlight_TMDBid)],type=$INFO[Window(home).Property(spotlight_TMDBTYPE)],cache_refresh)</onclick>
+                <onclick condition="String.IsEmpty(Window(home).Property(spotlight_TMDBid))">RunScript(plugin.video.themoviedb.helper,sync_trakt=watchlist,tmdb_id=$INFO[Window(home).Property(spotlight_TMDBid2)],type=$INFO[Window(home).Property(spotlight_TMDBTYPE)],cache_refresh)</onclick>
+                <visible>Control.IsVisible(6001)</visible>
+              </control>
+            </control>
           </control>
         </control>
-        <visible>!$EXP[infodialog_active]</visible>
       </control>
     </control>
   </include>

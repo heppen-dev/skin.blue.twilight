@@ -25,7 +25,7 @@
       <visible allowhiddenfocus="true">Control.HasFocus(20001)</visible>
     </control>
     <include>DefaultBackground</include>
-    <control type="list" id="9989">
+<!--     <control type="list" id="9989">
       <posx>-20</posx>
       <posy>-20</posy>
       <width>1</width>
@@ -42,7 +42,7 @@
       <content>
         <include>skinshortcuts-submenu-1</include>
       </content>
-    </control>
+    </control> -->
     <control type="group">
       <include>Visible_Fade</include>
       <include>Primus_Main</include>

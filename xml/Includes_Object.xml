@@ -370,7 +370,7 @@
         <include content="Flix_Spotlight_Properties">
           <param name="include_condition" value="!String.StartsWith(ListItem.FolderPath,favourites://) + !String.IsEqual(Listitem.DBTYPE,music) + !String.IsEqual(Listitem.DBTYPE,song) + !String.IsEqual(Listitem.DBTYPE,album) + !String.IsEqual(Listitem.DBTYPE,artist)" />
         </include>
-        <onclick condition="!String.StartsWith(ListItem.FolderPath,favourites://) + !String.IsEqual(Listitem.DBTYPE,song) + !String.IsEqual(Listitem.DBTYPE,album) + !String.IsEqual(Listitem.DBTYPE,artist)">ActivateWindow(1140)</onclick>
+        <onclick condition="!String.StartsWith(ListItem.FolderPath,favourites://) + !String.IsEqual(Listitem.DBTYPE,song) + !String.IsEqual(Listitem.DBTYPE,album) + !String.IsEqual(Listitem.DBTYPE,artist)">SetFocus(6000)</onclick>
         <!-- Landscapes -->
         <itemlayout height="225" width="315" condition="$PARAM[landscapecondition]">
           <include content="ViewLandscapeItemLayout">
@@ -394,6 +394,10 @@
             <param name="visible_squares" value="false"/>
             <param name="visible_landscapes" value="false"/>
           </include>
+          <control type="button">
+            <include>HiddenObject</include>
+            <onfocus>SetProperty(ItemTitle,$INFO[ListItem.Title],home)</onfocus>
+          </control>
         </focusedlayout>
         <include content="Object_Widget_Content_Path">
           <param name="target" value="$PARAM[target]"/>
@@ -509,7 +513,7 @@
           <top>$PARAM[percentageinfo_line_top]</top>
           <left>150</left>
           <include content="Object_Info_First_Line">
-            <param name="visible_infoline" value="$PARAM[visible_infoline]" />
+            <param name="visible_condi" value="$PARAM[visible_condi] + !$EXP[flix_spotlight_level1]" />
           </include>
         </control>
         <control type="group">
@@ -694,7 +698,7 @@
     <param name="container" default=""/>
     <param name="uid" default="661"/>
     <param name="green" default="ff27ae60"/>
-    <param name="visible_infoline" default="!Container(7502).IsUpdating + [!Control.HasFocus(9000) + !Control.HasFocus(9001) + !Control.HasFocus(303)] + !String.StartsWith(ListItem.FolderPath,favourites://)" />
+    <param name="visible_infoline" default="!Container(7501).IsUpdating + [!Control.HasFocus(9000) + !Control.HasFocus(9001) + !Control.HasFocus(303)] + !String.StartsWith(ListItem.FolderPath,favourites://)" />
     <definition>
       <control type="grouplist">
         <height>48</height>
@@ -713,7 +717,7 @@
             <height>32</height>
             <aspectratio align="left">scale</aspectratio>
             <texture background="true" colordiffuse="ff0fafff">common/badge.png</texture>
-            <visible>$PARAM[visible_infoline]</visible>
+            <visible>$PARAM[visible_condi]</visible>
           </control>
           <include content="Object_Info_Line_Label">
             <param name="label" value="$VAR[PercentageRating]% $LOCALIZE[31384]"/>
@@ -721,7 +725,7 @@
             <param name="textcolor" value="dialog_fg_100"/>
             <param name="divider" value="false"/>
             <param name="fallback" value="N/A"/>
-            <param name="visible" value="$PARAM[visible_infoline]"/>
+            <param name="visible" value="$PARAM[visible_condi]"/>
             <param name="width" value="100%" />
             <param name="top" value="4" />
             <param name="left" value="12" />
@@ -822,7 +826,7 @@
     <param name="container" default=""/>
     <param name="uid" default="661"/>
     <param name="green" default="ff27ae60"/>
-    <param name="visible_infoline" default="!Container(7502).IsUpdating + [!Control.HasFocus(9000) + !Control.HasFocus(9001) + !Control.HasFocus(303)] + !String.StartsWith(ListItem.FolderPath,favourites://)" />
+    <param name="visible_infoline" default="!Container(7502).IsUpdating + !$EXP[flix_spotlight_level1] + [!Control.HasFocus(9000) + !Control.HasFocus(9001) + !Control.HasFocus(303)] + !String.StartsWith(ListItem.FolderPath,favourites://)" />
     <definition>
       <control type="grouplist">
         <height>200</height>
