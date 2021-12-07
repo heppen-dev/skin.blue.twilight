@@ -1216,6 +1216,7 @@
           <include>OpenClose_Fade</include>
           <animation effect="fade" time="100">VisibleChange</animation>
           <control type="multiimage" id="32111">
+            <include condition="Skin.HasSetting(FullScreenHomeBackground)">FullScreenDimensions</include>
             <include condition="Window.IsActive(home)">FanartDimensions</include>
             <animation effect="zoom" end="150" center="200" time="200" condition="[!ControlGroup(3000).HasFocus + !Window.IsVisible(1146)] | Window.IsVisible(1141)">Conditional</animation>
             <animation effect="slide" start="0" end="-554,0" time="200" condition="[!ControlGroup(3000).HasFocus + !Window.IsVisible(1146)] | Window.IsVisible(1141)">Conditional</animation>
@@ -1248,7 +1249,7 @@
             <aspectratio aligny="center">scale</aspectratio>
             <animation effect="fade" time="200" delay="200">Hidden</animation>
             <texture background="true">common/vignette.png</texture>
-            <visible>[ControlGroup(3000).HasFocus | Window.IsVisible(1146)] + !Window.IsVisible(1141)</visible>
+            <visible>[ControlGroup(3000).HasFocus | Window.IsVisible(1146)] + !Window.IsVisible(1141) + !Skin.HasSetting(FullScreenHomeBackground)</visible>
           </control>
         </control>
       </control>
