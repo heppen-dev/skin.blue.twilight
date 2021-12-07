@@ -147,6 +147,9 @@
             <orientation>horizontal</orientation>
             <control type="group">
               <control type="radiobutton" id="6000">
+
+                <include>ClearFolderCollectionBool</include>
+
                 <ondown>PlayerControl(Stop)</ondown>
                 <ondown>AlarmClock(closeDialogs,SetFocus(3000),00:01,silent)</ondown>
                 <onright>6001</onright>
@@ -170,21 +173,32 @@
                 <textureradiooffdisabled colordiffuse="dialog_fg_30">special://skin/extras/icons/play3.png</textureradiooffdisabled>
                 <textureradioondisabled colordiffuse="dialog_fg_30">special://skin/extras/icons/play3.png</textureradioondisabled>
                 <onclick>Dialog.Close(all,true)</onclick>
-                <onclick>PlayMedia($INFO[ListItem.FilenameAndPath])</onclick>
-                <!-- <onclick condition="![[String.IsEqual(Window(home).Property(spotlight_DBType),movie) | String.IsEqual(Window(home).Property(spotlight_DBType),episode) | String.IsEqual(Window(home).Property(spotlight_DBType),video)] | String.IsEqual(Window(home).Property(spotlight_isPVR),true)]">PlayMedia($ESCINFO[ListItem.FolderPath])</onclick> -->
+                
+                <!-- playing folders/collections -->
+                <include content="PlayFolderCollection">
+                  <param name="includecondition" value="String.IsEqual(Window(home).Property(spotlight_isFolder),true) | String.IsEqual(Window(home).Property(spotlight_isCollection),true)" />
+                </include>
+                <!-- movies playing -->
+                <include content="PlaySingleItem">
+                  <param name="includecondition" value="!String.IsEqual(Window(home).Property(spotlight_isFolder),true) + !String.IsEqual(Window(home).Property(spotlight_isCollection),true)" />
+                </include>
+
                 <visible>Control.IsVisible(6000)</visible>
               </control>
               <control type="label">
                 <left>75</left>
                 <top>21</top>
                 <width>200</width>
-                <label>$INFO[Window(home).Property(ItemTitle)]</label>
+                <label>$INFO[Window(home).Property(spotlight_Title)]</label>
                 <font>font_tiny_hintlabel</font>
                 <scroll>false</scroll>
               </control>
             </control>
             <control type="group">
               <control type="radiobutton" id="6001">
+                
+                <include>ClearFolderCollectionBool</include>
+
                 <ondown>PlayerControl(Stop)</ondown>
                 <ondown>AlarmClock(closeDialogs,SetFocus(3000),00:01,silent)</ondown>
                 <onleft>6000</onleft>
@@ -210,6 +224,9 @@
             </control>
             <control type="group">
               <control type="radiobutton" id="6002">
+                
+                <include>ClearFolderCollectionBool</include>
+
                 <ondown>PlayerControl(Stop)</ondown>
                 <ondown>AlarmClock(closeDialogs,SetFocus(3000),00:01,silent)</ondown>
                 <onleft>6001</onleft>

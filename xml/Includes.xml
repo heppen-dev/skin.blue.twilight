@@ -2752,6 +2752,20 @@
   <include name="Horizontal_Menubar_wSearch_Width">
     <width>1300</width>
   </include>
+  <include name="ClearFolderCollectionBool">
+    <!-- reset folder/collection bool -->
+    <onback>ClearProperty(spotlight_isFolder)</onback>
+    <onback>ClearProperty(spotlight_isCollection)</onback>
+    <ondown>ClearProperty(spotlight_isFolder)</ondown>
+    <ondown>ClearProperty(spotlight_isCollection)</ondown>
+  </include>
+  <include name="PlaySingleItem">
+    <onclick condition="$PARAM[includecondition] + !String.IsEmpty(Window(home).Property(spotlight_Path))">RunScript(plugin.video.themoviedb.helper,close_dialog=1190,playmedia='$ESCINFO[Window(home).Property(spotlight_Path)]')</onclick>
+    <onclick condition="$PARAM[includecondition] + String.IsEmpty(Window(home).Property(spotlight_Path))">RunScript(plugin.video.themoviedb.helper,close_dialog=1190,playmedia='$ESCINFO[Window(home).Property(spotlight_FolderPath)]')</onclick>
+  </include>
+  <include name="PlayFolderCollection">
+    <onclick condition="$PARAM[includecondition]">RunScript(plugin.video.themoviedb.helper,close_dialog=1190,call_path=$INFO[Window(home).Property(spotlight_FolderPath)])</onclick>
+  </include>
   <include name="Flix_Spotlight_Properties_onBack">
     <onback condition="$PARAM[include_condition]">SetProperty(spotlight_Fanart,"$VAR[MediaFanartVar]",home)</onback>
     <onback condition="$PARAM[include_condition]">SetProperty(spotlight_ClearLogo,"$VAR[Image_ClearLogo]",home)</onback>
@@ -2761,7 +2775,7 @@
     <onback condition="$PARAM[include_condition]">SetProperty(spotlight_Season,"$INFO[ListItem.Season]",home)</onback>
     <onback condition="$PARAM[include_condition]">SetProperty(spotlight_Episode,"$INFO[ListItem.Episode]",home)</onback>
     <onback condition="$PARAM[include_condition]">SetProperty(spotlight_Plot,"$VAR[Label_OverlayPlot]",home)</onback>
-    <onback condition="$PARAM[include_condition]">SetProperty(spotlight_Path,"$ESCINFO[ListItem.FileNameAndPath]",home)</onback>
+    <onback condition="$PARAM[include_condition]">SetProperty(spotlight_Path,"$INFO[ListItem.FileNameAndPath]",home)</onback>
     <onback condition="$PARAM[include_condition] + [String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,tvshow) | String.IsEqual(ListItem.DBTYPE,season) | String.IsEqual(ListItem.DBTYPE,episode)]">SetProperty(spotlight_EnableWatchlist,true,home)</onback>
     <onback condition="$PARAM[include_condition]">SetProperty(spotlight_TMDBid,"$INFO[ListItem.Property(TMDB_ID)]",home)</onback>
     <onback condition="$PARAM[include_condition]">SetProperty(spotlight_TMDBid2,"$INFO[Window(home).Property(TMDbHelper.ListItem.TMDB_ID)]",home)</onback>
@@ -2805,6 +2819,7 @@
     <onclick condition="$PARAM[include_condition]">SetProperty(spotlight_TMDBid2,"$INFO[Window(home).Property(TMDbHelper.ListItem.TMDB_ID)]",home)</onclick>
     <onclick condition="$PARAM[include_condition]">SetProperty(spotlight_TMDBTYPE,"$VAR[TMDB_TYPE]",home)</onclick>
     <onclick condition="[$PARAM[include_condition] + ListItem.IsFolder]">SetProperty(spotlight_isFolder,true,home)</onclick>
+    <onclick condition="[$PARAM[include_condition] + ListItem.IsCollection]">SetProperty(spotlight_isCollection,true,home)</onclick>
     <onclick condition="$PARAM[include_condition] + [!String.IsEmpty(ListItem.Trailer) | !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Trailer))]">SetProperty(spotlight_isTrailer,true,home)</onclick>
     <onclick condition="[$PARAM[include_condition] + !String.IsEmpty(ListItem.Trailer)]">SetProperty(spotlight_Trailer,"$ESCINFO[ListItem.Trailer]",home)</onclick>
     <onclick condition="[$PARAM[include_condition] + !String.IsEmpty(ListItem.IMDBNumber)]">SetProperty(spotlight_FindSimilar,true,home)</onclick>

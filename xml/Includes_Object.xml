@@ -396,7 +396,11 @@
           </include>
           <control type="button">
             <include>HiddenObject</include>
-            <onfocus>SetProperty(ItemTitle,$INFO[ListItem.Title],home)</onfocus>
+            <onfocus condition="ListItem.IsFolder">SetProperty(spotlight_isFolder,true,home)</onfocus>
+            <onfocus condition="ListItem.IsCollection">SetProperty(spotlight_isCollection,true,home)</onfocus>
+            <onfocus condition="!ListItem.IsFolder">ClearProperty(spotlight_isFolder)</onfocus>
+            <onfocus condition="!ListItem.IsCollection">ClearProperty(spotlight_isCollection)</onfocus>
+            <onfocus>SetProperty(spotlight_Title,$INFO[ListItem.Title],home)</onfocus>
           </control>
         </focusedlayout>
         <include content="Object_Widget_Content_Path">
