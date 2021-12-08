@@ -156,7 +156,7 @@
     <value>Null</value>
   </variable>
   <variable name="BackgroundOverlay">
-    <value condition="[Control.HasFocus(57) | ControlGroup(3000).HasFocus | Window.IsVisible(1146)] + !Skin.HasSetting(FullScreenHomeBackground)">FFFFFFFF</value>
+    <value condition="[Control.HasFocus(57) | ControlGroup(3000).HasFocus] + !Skin.HasSetting(FullScreenHomeBackground)">FFFFFFFF</value>
     <value condition="Window.IsVisible(Home)">$VAR[HomeAlphaPercentage]</value>
     <value>$VAR[AlphaPercentage]</value>
   </variable>
@@ -926,9 +926,9 @@
     <value>$INFO[Window(Home).Property(TMDbHelper.ListItem.BlurImage)]</value>
   </variable>
   <variable name="BlurBackground">
-    <value condition="!ControlGroup(3000).HasFocus + !$EXP[flix_spotlight_level1] + !Window.IsVisible(1146)">$INFO[Window(Home).Property(TMDbHelper.ListItem.BlurImage)]</value>
+    <value condition="!ControlGroup(3000).HasFocus + !$EXP[flix_spotlight_level1]">$INFO[Window(Home).Property(TMDbHelper.ListItem.BlurImage)]</value>
     <value condition="!String.IsEmpty(ListItem.Property(background))">$INFO[ListItem.Property(background)]</value>
-    <value condition="Window.IsVisible(1141)">$VAR[BlurSpotlight]</value>
+    <value condition="Window.IsVisible(1141) | String.IsEqual(Window(home).Property(activateSpotlight),true)">$VAR[BlurSpotlight]</value>
     <value>$VAR[MediaFanartVar]</value>
   </variable>
   <variable name="WeatherFanartVar">
