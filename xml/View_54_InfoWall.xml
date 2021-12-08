@@ -330,12 +330,13 @@
             <bordersize>20</bordersize>
           </control>
           <control type="image">
-            <right>0</right>
-            <bottom>10</bottom>
-            <height>$PARAM[iconheight]</height>
-            <aspectratio>keep</aspectratio>
+            <top>0</top>
+            <left>-10</left>
+            <width>335</width>
+            <height>205</height>
+            <aspectratio>scale</aspectratio>
             <texture background="true" diffuse="common/landscape-diffuse.png">$VAR[Image_Landscape]</texture>
-            <bordersize>10</bordersize>
+            <bordersize>20</bordersize>
             <visible>!String.StartsWith(ListItem.FolderPath,pvr://)</visible>
           </control>
         </control>
