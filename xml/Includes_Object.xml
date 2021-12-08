@@ -495,12 +495,12 @@
     <definition>
       <control type="group">
         <top>$PARAM[top]</top>
+        <left>100</left>
         <visible>$PARAM[visible_condi]</visible>
         <control type="group">
           <top>60</top>
           <control type="label">
             <top>$PARAM[title_top]</top>
-            <left>150</left>
             <bottom>60</bottom>
             <scroll>true</scroll>
             <width>$PARAM[title_width]</width>
@@ -513,7 +513,6 @@
           </control>
           <control type="image">
             <top>$PARAM[clearlogo_top_margin]</top>
-            <left>150</left>
             <width>$PARAM[clearlogo_width]</width>
             <aspectratio>keep</aspectratio>
             <texture background="true">$VAR[Image_ClearLogo]</texture>
@@ -522,21 +521,18 @@
         </control>
         <control type="group">
           <top>$PARAM[percentageinfo_line_top]</top>
-          <left>150</left>
           <include content="Object_Info_First_Line">
             <param name="visible_condi" value="$PARAM[visible_condi] + !$EXP[flix_spotlight_level1]" />
           </include>
         </control>
         <control type="group">
           <top>$PARAM[mediaflags_line_top]</top>
-          <left>150</left>
           <include content="Object_Info_Line_MediaFlags">
             <param name="visible_infoline" value="$PARAM[visible_infoline]" />
           </include>
         </control>
         <control type="group">
           <top>$PARAM[videoinfo_line_top]</top>
-          <left>150</left>
           <include content="Object_Video_Info_Line">
             <param name="visible_infoline" value="$PARAM[visible_infoline]" />
           </include>
@@ -544,8 +540,7 @@
         <control type="group">
           <control type="textbox">
             <top>$PARAM[plot_top]</top>
-            <left>150</left>
-            <width>940</width>
+            <width>720</width>
             <height>$PARAM[plot_height]</height>
             <textcolor>white</textcolor>
             <label>$PARAM[plot]</label>

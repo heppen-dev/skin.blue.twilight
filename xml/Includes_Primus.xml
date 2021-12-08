@@ -6,17 +6,17 @@
         <control type="list" id="9000">
           <height>100</height>
           <top>3</top>
-          <left>92</left>
+          <!-- <left>92</left> -->
           <ondown>2999</ondown>
           <orientation>horizontal</orientation>
           <scrolltime tween="cubic" easing="out">500</scrolltime>
-          <focusedlayout height="95" width="260">
+          <focusedlayout height="95" width="274">
             <control type="group">
               <control type="label">
                 <left>0</left>
                 <top>0</top>
                 <height>95</height>
-                <width>260</width>
+                <width>274</width>
                 <scroll>true</scroll>
                 <aligny>center</aligny>
                 <align>center</align>
@@ -29,19 +29,19 @@
                 <left>0</left>
                 <top>0</top>
                 <height>5</height>
-                <width>260</width>
+                <width>274</width>
                 <texture colordiffuse="">common/white.png</texture>
                 <visible>Control.HasFocus(9000)</visible>
               </control>
             </control>
           </focusedlayout>
-          <itemlayout height="95" width="260">
+          <itemlayout height="95" width="274">
             <control type="group">
               <control type="label">
                 <left>0</left>
                 <top>0</top>
                 <height>95</height>
-                <width>260</width>
+                <width>274</width>
                 <scroll>true</scroll>
                 <aligny>center</aligny>
                 <align>center</align>
@@ -75,6 +75,7 @@
           <width>3220</width>
           <height>999999</height>
           <include>skinshortcuts-template-widgetsWall</include>
+          <animation effect="slide" time="0" start="0" end="-100,0" reversible="false" condition="true">Conditional</animation>
           <animation effect="slide" time="0" start="0" end="0,195" reversible="false" condition="!ControlGroup(3000).HasFocus + Integer.IsGreater(Container(3000).Position,0)">Conditional</animation>
           <animation effect="slide" time="200" start="0" end="0,500" reversible="true" condition="ControlGroup(3000).HasFocus | $EXP[flix_spotlight_level1]">Conditional</animation>
           <animation effect="slide" time="200" start="0" end="0,340" reversible="true" condition="$EXP[flix_spotlight_level1]">Conditional</animation>
@@ -82,7 +83,6 @@
         </control>
       </control>
       <control type="group">
-        <left>50</left>
         <include content="Object_Item_Showcase">
           <param name="title" value="$VAR[Label_Title]"/>
           <param name="title_width" value="1000" />
@@ -106,7 +106,6 @@
         <animation effect="fade" start="0" end="100" time="1200" tween="linear" condition="Player.HasVideo">Conditional</animation>
       </control>
       <control type="group">
-        <left>50</left>
         <include content="Object_Item_Showcase">
           <param name="title" value="$INFO[Window(home).Property(spotlight_Title)]"/>
           <param name="title_top" value="200"/>
@@ -125,7 +124,7 @@
         <animation effect="fade" start="100" end="0" time="400" tween="linear" condition="Window.IsActive(1141)">Conditional</animation>
         <control type="group">
           <top>300</top>
-          <left>150</left>
+          <left>50</left>
           <control type="grouplist">
             <orientation>horizontal</orientation>
             <control type="group">
