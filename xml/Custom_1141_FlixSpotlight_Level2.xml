@@ -155,7 +155,7 @@
             <param name="icon" value="special://skin/extras/icons/videoplay.png"/>
             <param name="label" value="$LOCALIZE[31410]"/>
             <param name="visible" value="String.IsEqual(Window(home).Property(spotlight_isTrailer),true)" />
-            <param name="onclick_1" value="RunScript(script.embuary.helper,action=playitem,item='$ESCINFO[Window(home).Property(spotlight_Trailer)]')" />
+            <param name="onclick_1" value="RunScript(plugin.video.themoviedb.helper,close_dialog=1190,playmedia='$ESCINFO[Window(home).Property(spotlight_Trailer)]')" />
           </include>
           <include content="SpotlightButton">
             <param name="id" value="6004"/>
