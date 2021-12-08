@@ -9,6 +9,7 @@
   <onload condition="String.IsEmpty(Skin.String(HighlightSize))">Skin.SetString(HighlightSize,Bold)</onload>
   <!-- set colourful rating icons as default -->
   <onload condition="String.IsEmpty(Skin.String(Icons))">Skin.SetString(Icons,colorful)</onload>
+  <onload condition="String.IsEmpty(Skin.String(Icons))">Skin.SetString(icons.label, $LOCALIZE[31295])</onload>
   <controls>
     <control type="button" id="20000">
       <include>HiddenObject</include>

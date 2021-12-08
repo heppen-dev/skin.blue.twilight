@@ -467,7 +467,7 @@
             <include>DefaultSettingButton</include>
             <label>$LOCALIZE[31293]</label>
             <label2>$INFO[Skin.String(icons.label)]</label2>
-            
+
             <onclick condition="String.IsEmpty(Skin.String(Icons)) | String.IsEqual(Skin.String(Icons),colorful)">Skin.SetString(Icons, monochrome)</onclick>
             <onclick condition="String.IsEmpty(Skin.String(Icons)) | String.IsEqual(Skin.String(Icons),colorful)">Skin.SetString(icons.label, $LOCALIZE[31294])</onclick>
 
@@ -672,36 +672,12 @@
             <selected>System.HasAddon(resource.images.studios.white)</selected>
             <include>DefaultSettingButton</include>
           </control>
-          <control type="radiobutton" id="1209">
-            <label>resource.images.studios.coloured</label>
-            <label2>$INFO[System.AddonVersion(resource.images.studios.coloured)]               </label2>
-            <onclick>Addon.OpenSettings(resource.images.studios.coloured)</onclick>
-            <onclick condition="!System.HasAddon(resource.images.studios.coloured)">InstallAddon(resource.images.studios.coloured)</onclick>
-            <selected>System.HasAddon(resource.images.studios.coloured)</selected>
-            <include>DefaultSettingButton</include>
-          </control>
           <control type="radiobutton" id="1210">
             <label>resource.images.weathericons.white</label>
             <label2>$INFO[System.AddonVersion(resource.images.weathericons.white)]               </label2>
             <onclick>Addon.OpenSettings(resource.images.weathericons.white)</onclick>
             <onclick condition="!System.HasAddon(resource.images.weathericons.white)">InstallAddon(resource.images.weathericons.white)</onclick>
             <selected>System.HasAddon(resource.images.weathericons.white)</selected>
-            <include>DefaultSettingButton</include>
-          </control>
-          <control type="radiobutton" id="1211">
-            <label>resource.images.moviegenreicons.transparent</label>
-            <label2>$INFO[System.AddonVersion(resource.images.moviegenreicons.transparent)]               </label2>
-            <onclick>Addon.OpenSettings(resource.images.moviegenreicons.transparent)</onclick>
-            <onclick condition="!System.HasAddon(resource.images.moviegenreicons.transparent)">InstallAddon(resource.images.moviegenreicons.transparent)</onclick>
-            <selected>System.HasAddon(resource.images.moviegenreicons.transparent)</selected>
-            <include>DefaultSettingButton</include>
-          </control>
-          <control type="radiobutton" id="1212">
-            <label>resource.images.moviecountryicons.maps</label>
-            <label2>$INFO[System.AddonVersion(resource.images.moviecountryicons.maps)]               </label2>
-            <onclick>Addon.OpenSettings(resource.images.moviecountryicons.maps)</onclick>
-            <onclick condition="!System.HasAddon(resource.images.moviecountryicons.maps)">InstallAddon(resource.images.moviecountryicons.maps)</onclick>
-            <selected>System.HasAddon(resource.images.moviecountryicons.maps)</selected>
             <include>DefaultSettingButton</include>
           </control>
         </control>
