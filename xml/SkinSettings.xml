@@ -90,7 +90,7 @@
             <onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetImage(HomeBackgroundImage))</onclick>
             <onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31342])</onclick>
             <onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetPath(HomeBackgroundImage))</onclick>
-            <onclick>RunScript(script.embuary.helper,action=createselect,header=$LOCALIZE[31340])</onclick>
+            <onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31340])</onclick>
           </control>
           <control type="label" id="614">
             <textoffsetx>30</textoffsetx>
@@ -359,7 +359,7 @@
             <onclick>SetProperty(Dialog.7.BuiltIn,Skin.SetString(Trailer_Delay,00:27))</onclick>
             <onclick>SetProperty(Dialog.8.Label,$LOCALIZE[31324])</onclick>
             <onclick>SetProperty(Dialog.8.BuiltIn,Skin.SetString(Trailer_Delay,00:57))</onclick>
-            <onclick>RunScript(script.embuary.helper,action=createselect,header=$LOCALIZE[31325])</onclick>
+            <onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31325])</onclick>
           </control>
           <control type="radiobutton" id="904" description="Manually play trailer">
             <label>$LOCALIZE[31405]</label>
@@ -467,11 +467,12 @@
             <include>DefaultSettingButton</include>
             <label>$LOCALIZE[31293]</label>
             <label2>$INFO[Skin.String(icons.label)]</label2>
-            <onclick>SetProperty(Context.1.Label,$LOCALIZE[31295])</onclick>
-            <onclick>SetProperty(Context.1.BuiltIn, Skin.SetString(Icons, colorful) || Skin.SetString(icons.label, $LOCALIZE[31295]))</onclick>
-            <onclick>SetProperty(Context.2.Label,$LOCALIZE[31294])</onclick>
-            <onclick>SetProperty(Context.2.BuiltIn, Skin.SetString(Icons, monochrome) || Skin.SetString(icons.label, $LOCALIZE[31294]))</onclick>
-            <onclick>RunScript(script.embuary.helper,action=createcontext)</onclick>
+            
+            <onclick condition="String.IsEmpty(Skin.String(Icons)) | String.IsEqual(Skin.String(Icons),colorful)">Skin.SetString(Icons, monochrome)</onclick>
+            <onclick condition="String.IsEmpty(Skin.String(Icons)) | String.IsEqual(Skin.String(Icons),colorful)">Skin.SetString(icons.label, $LOCALIZE[31294])</onclick>
+
+            <onclick condition="!String.IsEqual(Skin.String(Icons),colorful)">Skin.SetString(Icons, colorful)</onclick>
+            <onclick condition="!String.IsEqual(Skin.String(Icons),colorful)">Skin.SetString(icons.label, $LOCALIZE[31295])</onclick>
           </control>
           <control type="radiobutton" id="921" description="Landscape art">
             <label>$LOCALIZE[31351]</label>
@@ -536,7 +537,7 @@
             <onclick>SetProperty(Dialog.8.BuiltIn,Skin.SetString(OSD_Timeout,$LOCALIZE[31291]))</onclick>
             <onclick>SetProperty(Dialog.9.Label,$LOCALIZE[31292])</onclick>
             <onclick>SetProperty(Dialog.9.BuiltIn,Skin.SetString(OSD_Timeout,$LOCALIZE[31292]))</onclick>
-            <onclick>RunScript(script.embuary.helper,action=createselect,header=Autoclose OSD)</onclick>
+            <onclick>RunScript(script.toolbox,info=selectdialog,header=Autoclose OSD)</onclick>
             <selected>!String.IsEmpty(Skin.String(OSD_Timeout))</selected>
           </control>
         </control>
@@ -647,14 +648,6 @@
             <selected>System.HasAddon(script.skinshortcuts)</selected>
             <include>DefaultSettingButton</include>
           </control>
-          <control type="radiobutton" id="1205">
-            <label>script.embuary.info</label>
-            <label2>$INFO[System.AddonVersion(script.embuary.info)]               </label2>
-            <onclick>Addon.OpenSettings(script.embuary.info)</onclick>
-            <onclick condition="!System.HasAddon(script.embuary.info)">InstallAddon(script.embuary.info)</onclick>
-            <selected>System.HasAddon(script.embuary.info)</selected>
-            <include>DefaultSettingButton</include>
-          </control>
           <control type="radiobutton" id="1206">
             <label>plugin.video.themoviedb.helper</label>
             <label2>$INFO[System.AddonVersion(plugin.video.themoviedb.helper)]               </label2>
@@ -664,11 +657,11 @@
             <include>DefaultSettingButton</include>
           </control>
           <control type="radiobutton" id="1207">
-            <label>script.embuary.helper</label>
-            <label2>$INFO[System.AddonVersion(script.embuary.helper)]               </label2>
-            <onclick>Addon.OpenSettings(script.embuary.helper)</onclick>
-            <onclick condition="!System.HasAddon(script.embuary.helper)">InstallAddon(script.embuary.helper)</onclick>
-            <selected>System.HasAddon(script.embuary.helper)</selected>
+            <label>script.toolbox</label>
+            <label2>$INFO[System.AddonVersion(script.toolbox)]               </label2>
+            <onclick>Addon.OpenSettings(script.toolbox)</onclick>
+            <onclick condition="!System.HasAddon(script.toolbox)">InstallAddon(script.toolbox)</onclick>
+            <selected>System.HasAddon(script.toolbox)</selected>
             <include>DefaultSettingButton</include>
           </control>
           <control type="radiobutton" id="1208">
