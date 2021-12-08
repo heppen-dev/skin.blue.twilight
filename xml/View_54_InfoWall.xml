@@ -341,12 +341,13 @@
           </control>
         </control>
         <control type="image">
-          <!-- <right>18</right> -->
-          <centerleft>50%</centerleft>
-          <centertop>50%</centertop>
-          <width>200</width>
-          <aspectratio>keep</aspectratio>
+          <top>0</top>
+          <left>-10</left>
+          <width>335</width>
+          <height>205</height>
+          <aspectratio scalediffuse="false">keep</aspectratio>
           <texture background="true">$VAR[Image_Landscape]</texture>
+          <bordersize>50</bordersize>
           <visible>String.StartsWith(ListItem.FolderPath,pvr://)</visible>
         </control>
       </control>
