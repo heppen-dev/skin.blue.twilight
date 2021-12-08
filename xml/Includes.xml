@@ -404,6 +404,13 @@
             <param name="texture" value="flags/flag.png"/>
           </include>
         </control>
+        <control type="group">
+          <width>150</width>
+          <visible>System.AddonIsEnabled(resource.images.studios.white) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Studio)</visible>
+          <include content="MediaFlag">
+            <param name="texture" value="$INFO[$PARAM[infolabel_prefix]ListItem.Studio,resource://resource.images.studios.white/,.png]"/>
+          </include>
+        </control>
       </control>
     </definition>
   </include>
@@ -414,7 +421,7 @@
     <definition>
       <control type="grouplist">
         <orientation>horizontal</orientation>
-        <left>20</left>
+        <left>0</left>
         <top>0</top>
         <height>70</height>
         <align>left</align>
@@ -422,20 +429,12 @@
         <width>1900</width>
         <usecontrolcoords>true</usecontrolcoords>
         <orientation>horizontal</orientation>
-        <left>20</left>
         <top>0</top>
         <height>70</height>
         <align>left</align>
         <itemgap>10</itemgap>
         <width>1900</width>
         <usecontrolcoords>true</usecontrolcoords>
-        <control type="group">
-          <width>150</width>
-          <visible>System.AddonIsEnabled(resource.images.studios.white) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Studio)</visible>
-          <include content="MediaFlag">
-            <param name="texture" value="$INFO[$PARAM[infolabel_prefix]ListItem.Studio,resource://resource.images.studios.white/,.png]"/>
-          </include>
-        </control>
         <include content="MediaFlag">
           <param name="texture" value="$INFO[ListItem.VideoCodec,flags/videocodec/,.png]"/>
           <param name="visible" value="!String.IsEmpty($PARAM[infolabel_prefix]ListItem.VideoCodec)"/>
