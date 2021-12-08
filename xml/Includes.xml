@@ -2752,12 +2752,15 @@
   <include name="Horizontal_Menubar_wSearch_Width">
     <width>1300</width>
   </include>
-  <include name="ClearFolderCollectionBool">
+  <include name="ClearBoolProps">
     <!-- reset folder/collection bool -->
+    <onup>ClearProperty(activateSpotlight)</onup>
     <onback>ClearProperty(spotlight_isFolder)</onback>
     <onback>ClearProperty(spotlight_isCollection)</onback>
+    <onback>ClearProperty(activateSpotlight)</onback>
     <ondown>ClearProperty(spotlight_isFolder)</ondown>
     <ondown>ClearProperty(spotlight_isCollection)</ondown>
+    <ondown>ClearProperty(activateSpotlight)</ondown>
   </include>
   <include name="PlaySingleItem">
     <onclick condition="$PARAM[includecondition] + !String.IsEmpty(Window(home).Property(spotlight_Path))">RunScript(plugin.video.themoviedb.helper,close_dialog=1190,playmedia='$ESCINFO[Window(home).Property(spotlight_Path)]')</onclick>
