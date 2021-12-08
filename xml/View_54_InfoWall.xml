@@ -276,6 +276,7 @@
           <height>185</height>
           <aspectratio>keep</aspectratio>
           <texture background="true">$VAR[Image_Banner]</texture>
+          <bordersize>25</bordersize>
           <visible>String.StartsWith(ListItem.FolderPath,pvr://)</visible>
         </control>
       </control>
