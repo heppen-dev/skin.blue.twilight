@@ -70,7 +70,9 @@
         </control>
         <control type="grouplist" id="3000">
           <centerleft>50%</centerleft>
+          <onback>9000</onback>
           <onup>2999</onup>
+          <ondown>noop</ondown>
           <top>330</top>
           <width>3220</width>
           <height>999999</height>
