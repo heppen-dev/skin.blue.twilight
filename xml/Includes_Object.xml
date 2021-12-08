@@ -443,6 +443,7 @@
         <include content="Flix_Spotlight_Properties">
           <param name="include_condition" value="!String.StartsWith(ListItem.FolderPath,favourites://) + !String.IsEqual(Listitem.DBTYPE,music) + !String.IsEqual(Listitem.DBTYPE,song) + !String.IsEqual(Listitem.DBTYPE,album) + !String.IsEqual(Listitem.DBTYPE,artist)" />
         </include>
+        <onclick condition="String.StartsWith(ListItem.FolderPath,pvr://)">SetProperty(pvrWidget,true,home)</onclick>
         <onclick condition="!String.StartsWith(ListItem.FolderPath,favourites://) + !String.IsEqual(Listitem.DBTYPE,song) + !String.IsEqual(Listitem.DBTYPE,album) + !String.IsEqual(Listitem.DBTYPE,artist)">SetProperty(activateSpotlight,true,home)</onclick>
         <onclick condition="!String.StartsWith(ListItem.FolderPath,favourites://) + !String.IsEqual(Listitem.DBTYPE,song) + !String.IsEqual(Listitem.DBTYPE,album) + !String.IsEqual(Listitem.DBTYPE,artist)">SetFocus(6000)</onclick>
         <itemlayout height="185" width="1120" condition="$PARAM[postercondition]">

@@ -2754,12 +2754,17 @@
   <include name="ClearBoolProps">
     <!-- reset folder/collection bool -->
     <onup>ClearProperty(activateSpotlight)</onup>
+    <onup>ClearProperty(pvrWidget)</onup>
+    <!-- onback -->
     <onback>ClearProperty(spotlight_isFolder)</onback>
     <onback>ClearProperty(spotlight_isCollection)</onback>
     <onback>ClearProperty(activateSpotlight)</onback>
+    <onback>ClearProperty(pvrWidget)</onback>
+    <!-- ondown -->
     <ondown>ClearProperty(spotlight_isFolder)</ondown>
     <ondown>ClearProperty(spotlight_isCollection)</ondown>
     <ondown>ClearProperty(activateSpotlight)</ondown>
+    <ondown>ClearProperty(pvrWidget)</ondown>
   </include>
   <include name="PlaySingleItem">
     <onclick condition="$PARAM[includecondition] + !String.IsEmpty(Window(home).Property(spotlight_Path))">RunScript(plugin.video.themoviedb.helper,close_dialog=1190,playmedia='$ESCINFO[Window(home).Property(spotlight_Path)]')</onclick>
