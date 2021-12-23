@@ -667,6 +667,7 @@
     <param name="visible" default="true"/>
     <param name="fallback" default=""/>
     <param name="font" default="font32"/>
+    <param name="autoscroll" default="true"/>
     <definition>
       <control type="label">
         <width>auto</width>
@@ -681,7 +682,7 @@
       </control>
       <control type="label" id="$PARAM[id]">
         <width>$PARAM[width]</width>
-        <scroll>true</scroll>
+        <scroll>$PARAM[autoscroll]</scroll>
         <label fallback="$PARAM[fallback]">$PARAM[label]</label>
         <height>72</height>
         <top>$PARAM[top]</top>
@@ -844,7 +845,8 @@
           <param name="font" value="font_tiny_hintlabel"/>
           <param name="divider" value="false"/>
           <param name="visible" value="$PARAM[visible_infoline]"/>
-          <param name="width" value="auto" />
+          <param name="autoscroll" value="false"/>
+          <param name="width" value="720" />
         </include>
       </control>
     </definition>
