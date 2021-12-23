@@ -141,6 +141,8 @@
         <height>200</height>
         <control type="grouplist" id="5999">
           <orientation>horizontal</orientation>
+          <onup>Dialog.Close(all)</onup>
+          <ondown>Dialog.Close(all)</ondown>
           <include content="SpotlightButton">
             <param name="id" value="6002"/>
             <param name="icon" value="special://skin/extras/icons/collection.png"/>
