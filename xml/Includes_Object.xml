@@ -484,7 +484,7 @@
     <param name="mediaflags_line_top" default="250"/>
     <param name="videoinfo_line_top" default="460"/>
     <param name="plot_top" default="320"/>
-    <param name="plot_height" default="120"/>
+    <param name="plot_height" default="125"/>
     <param name="title_top" default="70"/>
     <param name="title_visible" default="true" />
     <param name="clearlogo_top_margin" default="-940" />
