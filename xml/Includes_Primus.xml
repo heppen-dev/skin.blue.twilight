@@ -139,6 +139,10 @@
 
                 <ondown>PlayerControl(Stop)</ondown>
                 <ondown>AlarmClock(closeDialogs,SetFocus(3000),00:01,silent)</ondown>
+
+                <onback>PlayerControl(Stop)</onback>
+                <onback>AlarmClock(closeDialogs,SetFocus(3000),00:01,silent)</onback>
+
                 <onright>6001</onright>
                 <onleft>6002</onleft>
                 <width>300</width>
@@ -191,6 +195,10 @@
 
                 <ondown>PlayerControl(Stop)</ondown>
                 <ondown>AlarmClock(closeDialogs,SetFocus(3000),00:01,silent)</ondown>
+
+                <onback>PlayerControl(Stop)</onback>
+                <onback>AlarmClock(closeDialogs,SetFocus(3000),00:01,silent)</onback>
+
                 <onleft>6000</onleft>
                 <onright>6002</onright>
                 <left>320</left>
@@ -222,6 +230,10 @@
 
                 <ondown>PlayerControl(Stop)</ondown>
                 <ondown>AlarmClock(closeDialogs,SetFocus(3000),00:01,silent)</ondown>
+
+                <onback>PlayerControl(Stop)</onback>
+                <onback>AlarmClock(closeDialogs,SetFocus(3000),00:01,silent)</onback>
+
                 <onleft>6001</onleft>
                 <onright>6000</onright>
                 <left>405</left>
