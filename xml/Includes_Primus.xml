@@ -263,7 +263,7 @@
       </control>
       <!-- spotlight 2 -->
       <control type="group">
-        <visible>$EXP[flix_spotlight_level2]</visible>
+        <visible>$EXP[flix_spotlight_level2] + !$EXP[flix_spotlight_highlevel]</visible>
         <control type="image">
           <!-- <top>-300</top> -->
           <!-- <left>-300</left> -->
@@ -360,7 +360,7 @@
       </control>
       <!-- buttons area -->
       <control type="group">
-        <visible>$EXP[flix_spotlight_level2]</visible>
+        <visible>$EXP[flix_spotlight_level2] + !$EXP[flix_spotlight_highlevel]</visible>
         <top>490</top>
         <bottom>80</bottom>
         <left>450</left>
@@ -369,6 +369,7 @@
           <orientation>horizontal</orientation>
           <onup>SetFocus(6001)</onup>
           <ondown>SetFocus(6001)</ondown>
+          <onback>SetFocus(6001)</onback>
           <include content="SpotlightButton">
             <param name="id" value="6003"/>
             <param name="icon" value="special://skin/extras/icons/collection.png"/>
