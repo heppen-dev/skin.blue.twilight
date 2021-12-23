@@ -286,14 +286,6 @@
             <include>DialogSettingButton</include>
             <visible>!String.EndsWith(Window.Property(groupname),.1)</visible>
           </control>
-          <control type="button" id="310" description="Background">
-            <label>$LOCALIZE[31171]</label>
-            <label2>$INFO[Container(211).ListItem.Property(background)]</label2>
-            <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
-            <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
-            <include>DialogSettingButton</include>
-            <visible>![String.EndsWith(Window.Property(groupname),.1) | String.IsEqual(Window.Property(groupname),searchmenu)]</visible>
-          </control>
           <control type="label" id="614">
             <textoffsetx>30</textoffsetx>
             <width>470</width>

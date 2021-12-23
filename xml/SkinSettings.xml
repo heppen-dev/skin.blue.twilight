@@ -70,6 +70,15 @@
           <onup>600</onup>
           <ondown>600</ondown>
           <visible>Container(9000).HasFocus(1)</visible>
+          <control type="label" id="612">
+            <textoffsetx>30</textoffsetx>
+            <width>470</width>
+            <height>80</height>
+            <textcolor>dialog_fg_30</textcolor>
+            <label>General</label>
+            <font>font_small_defaults</font>
+            <aligny>center</aligny>
+          </control>
           <control type="button" id="601" description="Customize main menu">
             <label>$LOCALIZE[31174]</label>
             <include>DefaultSettingButton</include>
@@ -77,22 +86,45 @@
           </control>
           <control type="button" id="4010" description="Global widgets">
             <label>Global Widget Wall</label>
-            <include>DialogSettingButton</include>
+            <include>DefaultSettingButton</include>
             <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=widgets)</onclick>
           </control>
-          <control type="button" id="612" description="Set Fallback Image">
+          <control type="radiobutton" id="613" description="Enable autoscroll for plot and title">
+            <label>$LOCALIZE[20189]</label>
             <include>DefaultSettingButton</include>
-            <label>$LOCALIZE[31340]</label>
-            <label2>$INFO[Skin.String(HomeBackgroundImage)]</label2>
-            <onclick>SetProperty(Dialog.1.Label,$LOCALIZE[16018])</onclick>
-            <onclick>SetProperty(Dialog.1.BuiltIn,Skin.Reset(HomeBackgroundImage))</onclick>
-            <onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31341])</onclick>
-            <onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetImage(HomeBackgroundImage))</onclick>
-            <onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31342])</onclick>
-            <onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetPath(HomeBackgroundImage))</onclick>
-            <onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31340])</onclick>
+            <onclick>Skin.ToggleSetting(autoscroll)</onclick>
+            <selected>Skin.HasSetting(autoscroll)</selected>
           </control>
-          <control type="label" id="614">
+          <control type="radiobutton" id="614" description="Hide plot">
+            <label>$LOCALIZE[31386]</label>
+            <include>DefaultSettingButton</include>
+            <onclick>Skin.ToggleSetting(HidePlot)</onclick>
+            <selected>Skin.HasSetting(HidePlot)</selected>
+          </control>
+          <control type="button" id="615" description="Switch rating icons colour">
+            <include>DefaultSettingButton</include>
+            <label>$LOCALIZE[31293]</label>
+            <label2>$INFO[Skin.String(icons.label)]</label2>
+
+            <onclick condition="String.IsEmpty(Skin.String(Icons)) | String.IsEqual(Skin.String(Icons),colorful)">Skin.SetString(Icons, monochrome)</onclick>
+            <onclick condition="String.IsEmpty(Skin.String(Icons)) | String.IsEqual(Skin.String(Icons),colorful)">Skin.SetString(icons.label, $LOCALIZE[31294])</onclick>
+
+            <onclick condition="!String.IsEqual(Skin.String(Icons),colorful)">Skin.SetString(Icons, colorful)</onclick>
+            <onclick condition="!String.IsEqual(Skin.String(Icons),colorful)">Skin.SetString(icons.label, $LOCALIZE[31295])</onclick>
+          </control>
+          <control type="radiobutton" id="616" description="Landscape art">
+            <label>$LOCALIZE[31351]</label>
+            <include>DefaultSettingButton</include>
+            <selected>Skin.HasSetting(LandscapeArt)</selected>
+            <onclick>Skin.ToggleSetting(LandscapeArt)</onclick>
+          </control>
+          <control type="radiobutton" id="617" description="Clearlogo">
+            <label>$LOCALIZE[31402]</label>
+            <include>DefaultSettingButton</include>
+            <selected>Skin.HasSetting(DisableClearlogo)</selected>
+            <onclick>Skin.ToggleSetting(DisableClearlogo)</onclick>
+          </control>
+          <control type="label" id="618">
             <textoffsetx>30</textoffsetx>
             <width>470</width>
             <height>80</height>
@@ -101,7 +133,7 @@
             <font>font_small_defaults</font>
             <aligny>center</aligny>
           </control>
-          <control type="button" id="615" description="Customize shutdown menu">
+          <control type="button" id="619" description="Customize shutdown menu">
             <label>$LOCALIZE[31180]</label>
             <include>DefaultSettingButton</include>
             <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=shutdown)</onclick>
@@ -165,13 +197,6 @@
             <onclick>Skin.ToggleSetting(TMDbHelper.EnableBlur)</onclick>
             <onclick>Skin.ToggleSetting(BlurEnabledByUser)</onclick>
             <selected>Skin.HasSetting(TMDbHelper.EnableBlur) + Skin.HasSetting(BlurEnabledByUser)</selected>
-          </control>
-          <control type="radiobutton" id="707" description="Enable blur, no home">
-            <label>$LOCALIZE[31252]</label>
-            <include>DefaultSettingButton</include>
-            <enable>Skin.HasSetting(TMDbHelper.EnableBlur)</enable>
-            <onclick>Skin.ToggleSetting(DontBlurHome)</onclick>
-            <selected>Skin.HasSetting(DontBlurHome)</selected>
           </control>
           <control type="radiobutton" id="708" description="Animate background using Ken Burns Effect">
             <label>$LOCALIZE[31247]</label>
@@ -338,57 +363,6 @@
             <selected>Skin.HasSetting(BackgroundPlayingTrailers)</selected>
             <enable>System.AddonIsEnabled(plugin.video.youtube) + System.HasAddon(plugin.video.youtube)</enable>
           </control>
-          <control type="button" id="903" description="Trailers delay">
-            <label>$LOCALIZE[31325]</label>
-            <label2>$VAR[Def_Trailer_Delay]</label2>
-            <include>DefaultSettingButton</include>
-            <enable>Skin.HasSetting(BackgroundPlayingTrailers) + [System.AddonIsEnabled(plugin.video.youtube) + System.HasAddon(plugin.video.youtube)] + !Skin.HasSetting(ManuallyStartTrailer)</enable>
-            <onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31284])</onclick>
-            <onclick>SetProperty(Dialog.1.BuiltIn,Skin.Reset(Trailer_Delay))</onclick>
-            <onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31318])</onclick>
-            <onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(Trailer_Delay,00:01))</onclick>
-            <onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31319])</onclick>
-            <onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(Trailer_Delay,00:04))</onclick>
-            <onclick>SetProperty(Dialog.4.Label,$LOCALIZE[31320])</onclick>
-            <onclick>SetProperty(Dialog.4.BuiltIn,Skin.SetString(Trailer_Delay,00:07))</onclick>
-            <onclick>SetProperty(Dialog.5.Label,$LOCALIZE[31321])</onclick>
-            <onclick>SetProperty(Dialog.5.BuiltIn,Skin.SetString(Trailer_Delay,00:12))</onclick>
-            <onclick>SetProperty(Dialog.6.Label,$LOCALIZE[31322])</onclick>
-            <onclick>SetProperty(Dialog.6.BuiltIn,Skin.SetString(Trailer_Delay,00:17))</onclick>
-            <onclick>SetProperty(Dialog.7.Label,$LOCALIZE[31323])</onclick>
-            <onclick>SetProperty(Dialog.7.BuiltIn,Skin.SetString(Trailer_Delay,00:27))</onclick>
-            <onclick>SetProperty(Dialog.8.Label,$LOCALIZE[31324])</onclick>
-            <onclick>SetProperty(Dialog.8.BuiltIn,Skin.SetString(Trailer_Delay,00:57))</onclick>
-            <onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31325])</onclick>
-          </control>
-          <control type="radiobutton" id="904" description="Manually play trailer">
-            <label>$LOCALIZE[31405]</label>
-            <include>DefaultSettingButton</include>
-            <onclick>Skin.ToggleSetting(ManuallyStartTrailer)</onclick>
-            <selected>Skin.HasSetting(ManuallyStartTrailer)</selected>
-            <enable>Skin.HasSetting(BackgroundPlayingTrailers) + [System.AddonIsEnabled(plugin.video.youtube) + System.HasAddon(plugin.video.youtube)]</enable>
-          </control>
-          <control type="radiobutton" id="905" description="Play trailer fullscreen">
-            <label>$LOCALIZE[31417]</label>
-            <include>DefaultSettingButton</include>
-            <onclick>Skin.ToggleSetting(PlayTrailersFullScreen)</onclick>
-            <selected>Skin.HasSetting(PlayTrailersFullScreen)</selected>
-            <enable>Skin.HasSetting(BackgroundPlayingTrailers) + [System.AddonIsEnabled(plugin.video.youtube) + System.HasAddon(plugin.video.youtube)]</enable>
-          </control>
-          <control type="radiobutton" id="906" description="Dont hide showcase after trailer starts">
-            <label>$LOCALIZE[31403]</label>
-            <include>DefaultSettingButton</include>
-            <onclick>Skin.ToggleSetting(DontHideShowcase)</onclick>
-            <selected>Skin.HasSetting(DontHideShowcase)</selected>
-            <enable>Skin.HasSetting(BackgroundPlayingTrailers) + [System.AddonIsEnabled(plugin.video.youtube) + System.HasAddon(plugin.video.youtube)]</enable>
-          </control>
-          <control type="radiobutton" id="907" description="Animation while playing trailer">
-            <label>$LOCALIZE[31391]</label>
-            <include>DefaultSettingButton</include>
-            <onclick>Skin.ToggleSetting(AnimateClearLogo)</onclick>
-            <selected>Skin.HasSetting(AnimateClearLogo)</selected>
-            <enable>Skin.HasSetting(BackgroundPlayingTrailers) + [System.AddonIsEnabled(plugin.video.youtube) + System.HasAddon(plugin.video.youtube)]</enable>
-          </control>
           <control type="radiobutton" id="908" description="Dont show notification about no trailer">
             <label>$LOCALIZE[31404]</label>
             <include>DefaultSettingButton</include>
@@ -410,23 +384,17 @@
             <label>$LOCALIZE[31366]</label>
             <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=searchmenu)</onclick>
           </control>
-          <control type="radiobutton" id="911" description="Disable watched indicators">
-            <label>$LOCALIZE[31355]</label>
-            <include>DefaultSettingButton</include>
-            <onclick>Skin.ToggleSetting(DisableWatchedOverlay)</onclick>
-            <selected>Skin.HasSetting(DisableWatchedOverlay)</selected>
-          </control>
           <control type="button" id="912" description="Manage watched indicators">
             <label>$LOCALIZE[31361]</label>
             <include>DefaultSettingButton</include>
             <onclick>ActivateWindow(1120)</onclick>
             <enable>!Skin.HasSetting(DisableWatchedOverlay)</enable>
           </control>
-          <control type="radiobutton" id="913" description="Disable extended info">
-            <label>$LOCALIZE[31250]</label>
+          <control type="radiobutton" id="911" description="Disable watched indicators">
+            <label>$LOCALIZE[31355]</label>
             <include>DefaultSettingButton</include>
-            <onclick>Skin.ToggleSetting(DisableExtendedInfo)</onclick>
-            <selected>Skin.HasSetting(DisableExtendedInfo)</selected>
+            <onclick>Skin.ToggleSetting(DisableWatchedOverlay)</onclick>
+            <selected>Skin.HasSetting(DisableWatchedOverlay)</selected>
           </control>
           <control type="button" id="914" description="Manage info dialog list">
             <label>$LOCALIZE[31354]</label>
@@ -434,57 +402,22 @@
             <onclick>ActivateWindow(1119)</onclick>
             <enable>!Skin.HasSetting(DisableExtendedInfo)</enable>
           </control>
+          <control type="radiobutton" id="913" description="Disable extended info">
+            <label>$LOCALIZE[31250]</label>
+            <include>DefaultSettingButton</include>
+            <onclick>Skin.ToggleSetting(DisableExtendedInfo)</onclick>
+            <selected>Skin.HasSetting(DisableExtendedInfo)</selected>
+          </control>
           <control type="button" id="915" description="Enable ratings">
             <label>$LOCALIZE[31339]</label>
             <include>DefaultSettingButton</include>
             <onclick>ActivateWindow(1118)</onclick>
-          </control>
-          <control type="radiobutton" id="916" description="Enable autoscroll for plot and title">
-            <label>$LOCALIZE[20189]</label>
-            <include>DefaultSettingButton</include>
-            <onclick>Skin.ToggleSetting(autoscroll)</onclick>
-            <selected>Skin.HasSetting(autoscroll)</selected>
-          </control>
-          <control type="radiobutton" id="917" description="Hide plot">
-            <label>$LOCALIZE[31386]</label>
-            <include>DefaultSettingButton</include>
-            <onclick>Skin.ToggleSetting(HidePlot)</onclick>
-            <selected>Skin.HasSetting(HidePlot)</selected>
-          </control>
-          <control type="radiobutton" id="918" description="Hide cycling info">
-            <label>$LOCALIZE[31387]</label>
-            <include>DefaultSettingButton</include>
-            <onclick>Skin.ToggleSetting(HideInfoTag)</onclick>
-            <selected>Skin.HasSetting(HideInfoTag)</selected>
           </control>
           <control type="radiobutton" id="919" description="Show music posters instead of thumb">
             <label>$LOCALIZE[31168]</label>
             <include>DefaultSettingButton</include>
             <onclick>Skin.ToggleSetting(show_musicvideoposter)</onclick>
             <selected>Skin.HasSetting(show_musicvideoposter)</selected>
-          </control>
-          <control type="button" id="920" description="Switch rating icons colour">
-            <include>DefaultSettingButton</include>
-            <label>$LOCALIZE[31293]</label>
-            <label2>$INFO[Skin.String(icons.label)]</label2>
-
-            <onclick condition="String.IsEmpty(Skin.String(Icons)) | String.IsEqual(Skin.String(Icons),colorful)">Skin.SetString(Icons, monochrome)</onclick>
-            <onclick condition="String.IsEmpty(Skin.String(Icons)) | String.IsEqual(Skin.String(Icons),colorful)">Skin.SetString(icons.label, $LOCALIZE[31294])</onclick>
-
-            <onclick condition="!String.IsEqual(Skin.String(Icons),colorful)">Skin.SetString(Icons, colorful)</onclick>
-            <onclick condition="!String.IsEqual(Skin.String(Icons),colorful)">Skin.SetString(icons.label, $LOCALIZE[31295])</onclick>
-          </control>
-          <control type="radiobutton" id="921" description="Landscape art">
-            <label>$LOCALIZE[31351]</label>
-            <include>DefaultSettingButton</include>
-            <selected>Skin.HasSetting(LandscapeArt)</selected>
-            <onclick>Skin.ToggleSetting(LandscapeArt)</onclick>
-          </control>
-          <control type="radiobutton" id="922" description="Clearlogo">
-            <label>$LOCALIZE[31402]</label>
-            <include>DefaultSettingButton</include>
-            <selected>Skin.HasSetting(DisableClearlogo)</selected>
-            <onclick>Skin.ToggleSetting(DisableClearlogo)</onclick>
           </control>
         </control>
         <include content="DefaultSettingButtonGradient">
