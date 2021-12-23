@@ -291,7 +291,7 @@
             <width>470</width>
             <height>70</height>
             <textcolor>dialog_fg_30</textcolor>
-            <label>Configure local banner</label>
+            <label>$LOCALIZE[31423]</label>
             <font>font_small_defaults</font>
             <aligny>center</aligny>
             <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
@@ -299,7 +299,7 @@
             <visible>!String.EndsWith(Window.Property(groupname),.1)</visible>
           </control>
           <control type="button" id="3120">
-            <label>Local Banner</label>
+            <label>$LOCALIZE[31424]</label>
             <label2>$INFO[Container(211).ListItem.Property(widgetName.1)]</label2>
             <onclick>SetProperty(widgetID,1)</onclick>
             <onclick>SendClick(312)</onclick>

@@ -819,7 +819,7 @@ msgstr ""
 # Label of customize main menu in skin settings
 #: /xml/SkinSettings.xml
 msgctxt "#31174"
-msgid "Customize main menu & widgets"
+msgid "Customize main menu & local banners"
 msgstr ""
 
 # Label of restoring main menu in script shortcuts
@@ -2059,4 +2059,19 @@ msgstr ""
 #: /xml/SkinSettings.xml
 msgctxt "#31422"
 msgid "Bring me back this F' Classic!"
+msgstr ""
+
+#: /xml/script-skinshortcuts.xml
+msgctxt "#31423"
+msgid "Configure local banner"
+msgstr ""
+
+#: /xml/script-skinshortcuts.xml
+msgctxt "#31424"
+msgid "Set local banner"
+msgstr ""
+
+#: /xml/SkinSettings.xml
+msgctxt "#31425"
+msgid "Enable fullscreen background"
 msgstr ""

@@ -642,8 +642,8 @@ msgstr "Ustaw ikone"
 # Label of customize main menu in skin settings
 #: /xml/SkinSettings.xml
 msgctxt "#31174"
-msgid "Customize main menu & widgets"
-msgstr "Dostosuj menu główne i widgety"
+msgid "Customize main menu & local banners"
+msgstr "Dostosuj menu główne i banery lokalne"
 
 # Label of restoring main menu in script shortcuts
 #: /xml/script-skinshortcuts.xml
@@ -1783,7 +1783,7 @@ msgstr "Włącz scrollowanie Flixed"
 #: /xml/SkinSettings.xml
 msgctxt "#31402"
 msgid "Disable clearlogo"
-msgstr ""
+msgstr "Wyłącz clear logo"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31403"
@@ -1884,3 +1884,18 @@ msgstr "Wyłącz wyszukiwarkę"
 msgctxt "#31422"
 msgid "Bring me back this F' Classic!"
 msgstr "Przywróc do cholery ten klasyczny układ!"
+
+#: /xml/script-skinshortcuts.xml
+msgctxt "#31423"
+msgid "Configure local banner"
+msgstr "Skonfiguruj baner lokalny"
+
+#: /xml/script-skinshortcuts.xml
+msgctxt "#31424"
+msgid "Set local banner"
+msgstr "Ustaw baner lokalny"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31425"
+msgid "Enable fullscreen background"
+msgstr "Rozciągnij tło na pełny ekran"
