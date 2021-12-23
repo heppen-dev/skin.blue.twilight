@@ -135,13 +135,16 @@
                 <include>ClearBoolProps</include>
 
                 <onup>PlayerControl(Stop)</onup>
-                <onup>AlarmClock(closeDialogs,SetFocus(2999),00:01,silent)</onup>
+                <onup condition="Player.HasVideo">AlarmClock(closeDialogs,SetFocus(2999),00:01,silent)</onup>
+                <onup condition="!Player.HasVideo">SetFocus(3000)</onup>
 
                 <ondown>PlayerControl(Stop)</ondown>
-                <ondown>AlarmClock(closeDialogs,SetFocus(3000),00:01,silent)</ondown>
+                <ondown condition="Player.HasVideo">AlarmClock(closeDialogs,SetFocus(3000),00:01,silent)</ondown>
+                <ondown condition="!Player.HasVideo">SetFocus(3000)</ondown>
 
                 <onback>PlayerControl(Stop)</onback>
-                <onback>AlarmClock(closeDialogs,SetFocus(3000),00:01,silent)</onback>
+                <onback condition="Player.HasVideo">AlarmClock(closeDialogs,SetFocus(3000),00:01,silent)</onback>
+                <onback condition="!Player.HasVideo">SetFocus(3000)</onback>
 
                 <onright>6001</onright>
                 <onleft>6002</onleft>
@@ -191,13 +194,16 @@
                 <include>ClearBoolProps</include>
 
                 <onup>PlayerControl(Stop)</onup>
-                <onup>AlarmClock(closeDialogs,SetFocus(2999),00:01,silent)</onup>
+                <onup condition="Player.HasVideo">AlarmClock(closeDialogs,SetFocus(2999),00:01,silent)</onup>
+                <onup condition="!Player.HasVideo">SetFocus(3000)</onup>
 
                 <ondown>PlayerControl(Stop)</ondown>
-                <ondown>AlarmClock(closeDialogs,SetFocus(3000),00:01,silent)</ondown>
+                <ondown condition="Player.HasVideo">AlarmClock(closeDialogs,SetFocus(3000),00:01,silent)</ondown>
+                <ondown condition="!Player.HasVideo">SetFocus(3000)</ondown>
 
                 <onback>PlayerControl(Stop)</onback>
-                <onback>AlarmClock(closeDialogs,SetFocus(3000),00:01,silent)</onback>
+                <onback condition="Player.HasVideo">AlarmClock(closeDialogs,SetFocus(3000),00:01,silent)</onback>
+                <onback condition="!Player.HasVideo">SetFocus(3000)</onback>
 
                 <onclick>RunScript(plugin.video.themoviedb.helper,blur_image=$VAR[MediaFanartVar])</onclick>
 
@@ -228,13 +234,16 @@
                 <include>ClearBoolProps</include>
 
                 <onup>PlayerControl(Stop)</onup>
-                <onup>AlarmClock(closeDialogs,SetFocus(2999),00:01,silent)</onup>
+                <onup condition="Player.HasVideo">AlarmClock(closeDialogs,SetFocus(2999),00:01,silent)</onup>
+                <onup condition="!Player.HasVideo">SetFocus(3000)</onup>
 
                 <ondown>PlayerControl(Stop)</ondown>
-                <ondown>AlarmClock(closeDialogs,SetFocus(3000),00:01,silent)</ondown>
+                <ondown condition="Player.HasVideo">AlarmClock(closeDialogs,SetFocus(3000),00:01,silent)</ondown>
+                <ondown condition="!Player.HasVideo">SetFocus(3000)</ondown>
 
                 <onback>PlayerControl(Stop)</onback>
-                <onback>AlarmClock(closeDialogs,SetFocus(3000),00:01,silent)</onback>
+                <onback condition="Player.HasVideo">AlarmClock(closeDialogs,SetFocus(3000),00:01,silent)</onback>
+                <onback condition="!Player.HasVideo">SetFocus(3000)</onback>
 
                 <onleft>6001</onleft>
                 <onright>6000</onright>
