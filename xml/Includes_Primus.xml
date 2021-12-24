@@ -136,7 +136,7 @@
 
                 <onup>PlayerControl(Stop)</onup>
                 <onup condition="Player.HasVideo">AlarmClock(closeDialogs,SetFocus(2999),00:01,silent)</onup>
-                <onup condition="!Player.HasVideo">SetFocus(3000)</onup>
+                <onup condition="!Player.HasVideo">SetFocus(2999)</onup>
 
                 <ondown>PlayerControl(Stop)</ondown>
                 <ondown condition="Player.HasVideo">AlarmClock(closeDialogs,SetFocus(3000),00:01,silent)</ondown>
@@ -195,7 +195,7 @@
 
                 <onup>PlayerControl(Stop)</onup>
                 <onup condition="Player.HasVideo">AlarmClock(closeDialogs,SetFocus(2999),00:01,silent)</onup>
-                <onup condition="!Player.HasVideo">SetFocus(3000)</onup>
+                <onup condition="!Player.HasVideo">SetFocus(2999)</onup>
 
                 <ondown>PlayerControl(Stop)</ondown>
                 <ondown condition="Player.HasVideo">AlarmClock(closeDialogs,SetFocus(3000),00:01,silent)</ondown>
@@ -235,7 +235,7 @@
 
                 <onup>PlayerControl(Stop)</onup>
                 <onup condition="Player.HasVideo">AlarmClock(closeDialogs,SetFocus(2999),00:01,silent)</onup>
-                <onup condition="!Player.HasVideo">SetFocus(3000)</onup>
+                <onup condition="!Player.HasVideo">SetFocus(2999)</onup>
 
                 <ondown>PlayerControl(Stop)</ondown>
                 <ondown condition="Player.HasVideo">AlarmClock(closeDialogs,SetFocus(3000),00:01,silent)</ondown>
