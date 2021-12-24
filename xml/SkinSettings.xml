@@ -85,7 +85,7 @@
             <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
           </control>
           <control type="button" id="4010" description="Global widgets">
-            <label>Global Widget Wall</label>
+            <label>$LOCALIZE[31426]</label>
             <include>DefaultSettingButton</include>
             <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=widgets)</onclick>
           </control>

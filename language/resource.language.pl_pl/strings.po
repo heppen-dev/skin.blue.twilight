@@ -1899,3 +1899,8 @@ msgstr "Ustaw baner lokalny"
 msgctxt "#31425"
 msgid "Enable fullscreen background"
 msgstr "Rozciągnij tło na pełny ekran"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31426"
+msgid "Global widget wall"
+msgstr "Globalna ściana widgetów"
