@@ -195,8 +195,7 @@
             <label>$LOCALIZE[31251]</label>
             <include>DefaultSettingButton</include>
             <onclick>Skin.ToggleSetting(TMDbHelper.EnableBlur)</onclick>
-            <onclick>Skin.ToggleSetting(BlurEnabledByUser)</onclick>
-            <selected>Skin.HasSetting(TMDbHelper.EnableBlur) + Skin.HasSetting(BlurEnabledByUser)</selected>
+            <selected>Skin.HasSetting(TMDbHelper.EnableBlur)</selected>
           </control>
           <control type="radiobutton" id="708" description="Animate background using Ken Burns Effect">
             <label>$LOCALIZE[31247]</label>
