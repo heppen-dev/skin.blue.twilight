@@ -95,7 +95,7 @@
     </control>
     <!-- spotlight -->
     <control type="group">
-      <!-- <animation effect="fade" start="100" end="0" time="400" tween="linear" condition="$EXP[flix_spotlight_level2]">Conditional</animation> -->
+      <animation effect="fade" start="100" end="0" time="400" tween="linear" condition="$EXP[flix_spotlight_highlevel]">Conditional</animation>
       <control type="image">
         <top>0</top>
         <left>-150</left>
@@ -367,7 +367,7 @@
       </control>
       <!-- buttons area -->
       <control type="group">
-        <visible>$EXP[flix_spotlight_level2] + !$EXP[flix_spotlight_highlevel]</visible>
+        <visible>$EXP[flix_spotlight_level2]</visible>
         <top>490</top>
         <bottom>80</bottom>
         <left>450</left>

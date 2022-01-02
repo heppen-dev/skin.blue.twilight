@@ -915,10 +915,10 @@
     <value condition="!String.IsEmpty(Skin.String(HomeBackgroundImage))">$INFO[Skin.String(HomeBackgroundImage)]</value>
     <value condition="!String.IsEmpty(Container.Art(tvshow.fanart))">$INFO[Container.Art(tvshow.fanart)]</value>
     <value condition="!String.IsEmpty(Container.Art(artist.fanart))">$INFO[Container.Art(artist.fanart)]</value>
-    <!-- home fanart first widget item -->
-    <value condition="Window.IsVisible(home) + String.IsEmpty(Container(3000).ListItem.Property(Background)) + !String.IsEmpty(Container(7501).ListItem.Art(fanart))">$INFO[Container(7501).ListItem.Art(fanart)]</value>
     <!-- flix hub fanart -->
     <value condition="!String.IsEmpty(Window(home).Property(spotlight_Fanart)) + [$EXP[flix_spotlight_level1] | Window.IsActive(1146)]">$INFO[Window(home).Property(spotlight_Fanart)]</value>
+    <!-- home fanart first widget item -->
+    <value condition="Window.IsVisible(home) + String.IsEmpty(Container(3000).ListItem.Property(Background)) + !String.IsEmpty(Container(7501).ListItem.Art(fanart))">$INFO[Container(7501).ListItem.Art(fanart)]</value>
     <value>$INFO[Container.Art(fanart)]</value>
   </variable>
   <variable name="BlurSpotlight">
