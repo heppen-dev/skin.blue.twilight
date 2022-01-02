@@ -20,7 +20,7 @@
       <height>833</height>
       <left>260</left>
       <top>100</top>
-      <include>OpenClose_Right</include>
+      <include>OpenClose_Bottom</include>
       <control type="image">
         <texture colordiffuse="dialog_bg_100" border="5">common/box.png</texture>
         <bordertexture border="24">common/shadow-dialog-24.png</bordertexture>
@@ -37,7 +37,7 @@
         <include>BreadcrumbsLabel</include>
       </control>
       <control type="group">
-        <include>OpenClose_Right</include>
+        <!-- <include>OpenClose_Bottom</include> -->
         <include content="DefaultSettingButtonGradient">
           <param name="id" value="5"/>
           <param name="height" value="80"/>
@@ -95,7 +95,7 @@
       </control>
       <control type="group">
         <depth>DepthContentPanel</depth>
-        <include>OpenClose_Left</include>
+        <!-- <include>OpenClose_Left</include> -->
         <left>-25</left>
         <include content="DefaultSettingButtonGradient">
           <param name="id" value="3"/>
@@ -131,7 +131,7 @@
       </control>
       <control type="group">
         <depth>DepthContentPanel</depth>
-        <include>OpenClose_Left</include>
+        <!-- <include>OpenClose_Left</include> -->
         <top>770</top>
         <left>-25</left>
         <include content="DefaultSettingButtonGradient">
@@ -191,7 +191,7 @@
     </include>
     <include>BottomBar</include> -->
     <control type="group">
-      <include>OpenClose_Right</include>
+      <include>OpenClose_Bottom</include>
       <control type="textbox" id="6">
         <description>description area</description>
         <top>850</top>

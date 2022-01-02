@@ -20,7 +20,7 @@
       <width>1600</width>
       <top>50</top>
       <bottom>0</bottom>
-      <include>OpenClose_Right</include>
+      <include>OpenClose_Bottom</include>
       <control type="label">
         <left>0</left>
         <right>0</right>

@@ -97,6 +97,20 @@
       <effect type="slide" start="0" end="-320" time="300" tween="cubic" easing="out"/>
     </animation>
   </include>
+  <include name="OpenClose_Bottom">
+    <include condition="Skin.HasSetting(no_slide_animations)">OpenClose_Fade</include>
+    <include condition="!Skin.HasSetting(no_slide_animations)">OpenClose_FadeSlide_Bottom</include>
+  </include>
+  <include name="OpenClose_FadeSlide_Bottom">
+    <animation type="WindowOpen">
+      <effect type="fade" start="0" end="100" time="300" tween="sine" easing="out"/>
+      <effect type="slide" start="0,1080" end="0,0" time="350" tween="cubic" easing="out"/>
+    </animation>
+    <animation type="WindowClose">
+      <effect type="fade" start="100" end="0" time="300" tween="sine" easing="out"/>
+      <effect type="slide" start="0,0" end="0,1080" time="350" tween="cubic" easing="out"/>
+    </animation>
+  </include>
   <include name="OpenClose_Left">
     <include condition="Skin.HasSetting(no_slide_animations)">OpenClose_Fade</include>
     <include condition="!Skin.HasSetting(no_slide_animations)">OpenClose_FadeSlide_Left</include>
