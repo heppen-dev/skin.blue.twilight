@@ -355,7 +355,7 @@
           <left>418</left>
           <top>133</top>
           <width>5</width>
-          <height>560</height>
+          <height>723</height>
           <texture colordiffuse="$VAR[ColorHighlight]" border="3">common/separator-grey-vertical.png</texture>
         </control>
         <control type="image">
@@ -363,7 +363,7 @@
           <left>417</left>
           <top>133</top>
           <width>5</width>
-          <height>560</height>
+          <height>723</height>
           <texture colordiffuse="$VAR[ColorGradient]" border="3">common/white-gradient.png</texture>
         </control>
       </control>
