@@ -30,7 +30,7 @@
                 <top>0</top>
                 <height>5</height>
                 <width>274</width>
-                <texture colordiffuse="">common/white.png</texture>
+                <texture colordiffuse="dialog_fg_100">common/white.png</texture>
                 <visible>Control.HasFocus(9000)</visible>
               </control>
             </control>
