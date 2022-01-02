@@ -11,28 +11,33 @@
   <color name="main_bg_70">b3ededed</color>
   <color name="main_bg_30">4dededed</color>
   <color name="main_bg_12">1fededed</color>
-  <color name="main_half">4d9f9f9f</color>
   <!-- Dialogs -->
-  <color name="dialog_bg_100">FFcccccc</color>
-  <color name="dialog_bg_70">B3cccccc</color>
-  <color name="dialog_bg_30">4Dcccccc</color>
-  <color name="dialog_bg_12">1Fcccccc</color>
   <color name="dialog_fg_100">FF181818</color>
   <color name="dialog_fg_70">B3181818</color>
   <color name="dialog_fg_30">4D181818</color>
   <color name="dialog_fg_12">1F181818</color>
+  <color name="dialog_bg_100">FFcccccc</color>
+  <color name="dialog_bg_70">B3cccccc</color>
+  <color name="dialog_bg_30">4Dcccccc</color>
+  <color name="dialog_bg_12">1Fcccccc</color>
   <!-- Background -->
-  <color name="Background">ffffffff</color>
   <color name="HomePanel">e7ffffff</color>
-  <!-- Backing Panels and Furniture -->
-  <color name="PosterBack">ff333333</color>
+  <color name="Background">ffffffff</color>
+  <color name="PosterBack">ff454545</color>
   <color name="AltPosterBack">1fdedede</color>
-  <color name="selected">FF181818</color>
+  <!-- Panels -->
+  <color name="panel_bg">c5000000</color>
+  <color name="panel_fg_100">FFededed</color>
+  <color name="panel_fg_70">B3ededed</color>
+  <color name="panel_fg_30">4Dededed</color>
+  <color name="panel_fg_12">1Fededed</color>
+  <!-- Highlight -->
+  <color name="Highlight">ff00695c</color>
+  <color name="Gradient">ffffe082</color>
+  <color name="selected">ffffffff</color>
+  <!-- Shadows -->
+  <color name="shadow">55ffffff</color>
   <!-- Old references... -->
-  <color name="black">FF000000</color>
-  <color name="white">FFF0F0F0</color>
-  <color name="grey">FFA0A0A0</color>
-  <color name="blue">FF7ACAFE</color>
-  <color name="red">FFCE4421</color>
-  <color name="border_alpha">60FFFFFF</color>
+  <color name="invalid">FFFF0000</color>
+  <color name="text_shadow">22000000</color>
 </colors>
