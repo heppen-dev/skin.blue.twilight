@@ -167,10 +167,6 @@
   <variable name="HighlightOverlay">
     <value condition="!Window.IsVisible(Home)">$VAR[AlphaPercentage]</value>
   </variable>
-  <variable name="HomeBackgroundColor">
-    <value condition="Skin.HasSetting(Vertical_Main)">ff000000</value>
-    <value>Background</value>
-  </variable>
   <variable name="Horizontal_RightTopbar">
     <value condition="Skin.HasSetting(EnableWeatherInHorizontalTopbar)">$INFO[Weather.Temperature, ,] • $INFO[System.Date,[UPPERCASE],[/UPPERCASE]]</value>
     <value>$INFO[System.Date,[UPPERCASE],[/UPPERCASE]]</value>

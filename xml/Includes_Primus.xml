@@ -21,16 +21,15 @@
                 <aligny>center</aligny>
                 <align>center</align>
                 <font>font_menu</font>
-                <textcolor>selected</textcolor>
+                <textcolor>Highlight</textcolor>
                 <label>$INFO[ListItem.Label]</label>
-                <shadowcolor>text_shadow</shadowcolor>
               </control>
               <control type="image">
                 <left>0</left>
                 <top>0</top>
                 <height>5</height>
                 <width>274</width>
-                <texture colordiffuse="dialog_fg_100">common/white.png</texture>
+                <texture colordiffuse="Highlight">common/white.png</texture>
                 <visible>Control.HasFocus(9000)</visible>
               </control>
             </control>
@@ -46,9 +45,8 @@
                 <aligny>center</aligny>
                 <align>center</align>
                 <font>font_menu</font>
-                <textcolor>dialog_fg_70</textcolor>
+                <textcolor>B3ededed</textcolor>
                 <label>$INFO[ListItem.Label]</label>
-                <shadowcolor>text_shadow</shadowcolor>
               </control>
             </control>
           </itemlayout>
