@@ -28,15 +28,6 @@
           <label>$LOCALIZE[31067]</label>
           <include>BreadcrumbsLabel</include>
         </control>
-        <control type="image">
-          <description>Dialog Header image</description>
-          <left>490</left>
-          <top>135</top>
-          <right>0</right>
-          <width>3</width>
-          <height>600</height>
-          <texture colordiffuse="$VAR[ColorHighlight]" border="2">common/separator-grey-vertical.png</texture>
-        </control>
         <control type="group">
           <visible>Control.IsVisible(50)</visible>
           <include>OpenClose_Right</include>
@@ -149,11 +140,12 @@
         <control type="group">
           <depth>DepthContentPanel</depth>
           <include>OpenClose_Left</include>
+          <left>-25</left>
           <include content="DefaultSettingButtonGradient">
             <param name="id" value="9000"/>
             <param name="height" value="110"/>
             <top>120</top>
-            <width>490</width>
+            <width>515</width>
             <height>110</height>
             <!-- <right>0</right> -->
             <visible>ControlGroup(9000).HasFocus()</visible>
@@ -168,7 +160,7 @@
             <onleft>50</onleft>
             <onright>50</onright>
             <usecontrolcoords>true</usecontrolcoords>
-            <width>490</width>
+            <width>515</width>
             <control type="togglebutton" id="4">
               <height>110</height>
               <aligny>top</aligny>
@@ -206,6 +198,24 @@
             </include>
           </control>
         </control>
+        <control type="group">
+          <control type="image">
+            <description>Dialog Header image</description>
+            <left>488</left>
+            <top>120</top>
+            <width>5</width>
+            <height>550</height>
+            <texture colordiffuse="$VAR[ColorHighlight]" border="3">common/separator-grey-vertical.png</texture>
+          </control>
+          <control type="image">
+            <description>Dialog Header image</description>
+            <left>487</left>
+            <top>120</top>
+            <width>5</width>
+            <height>550</height>
+            <texture colordiffuse="$VAR[ColorGradient]" border="3">common/white-gradient.png</texture>
+          </control>
+        </control>
       </control>
       <control type="scrollbar" id="60">
         <right>0</right>
@@ -219,9 +229,9 @@
         <visible>Control.IsVisible(50)</visible>
       </control>
     </control>
-    <include content="TopBar">
-      <!-- <param name="breadcrumbs_label" value="$LOCALIZE[31067]" /> -->
+    <!-- <include content="TopBar">
+      <param name="breadcrumbs_label" value="$LOCALIZE[31067]" />
     </include>
-    <include>BottomBar</include>
+    <include>BottomBar</include> -->
   </controls>
 </window>

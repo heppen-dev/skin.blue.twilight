@@ -51,9 +51,9 @@
         <include>Items_Settings_Main</include>
       </control>
     </control>
-    <include content="TopBar">
+<!--     <include content="TopBar">
       <param name="breadcrumbs_label" value="$LOCALIZE[13000]"/>
     </include>
-    <include>BottomBar</include>
+    <include>BottomBar</include> -->
   </controls>
 </window>

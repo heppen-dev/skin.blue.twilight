@@ -36,15 +36,6 @@
         <label>$INFO[Control.GetLabel(2)]</label>
         <include>BreadcrumbsLabel</include>
       </control>
-      <control type="image">
-        <description>Dialog Header image</description>
-        <left>490</left>
-        <top>135</top>
-        <right>0</right>
-        <width>3</width>
-        <height>600</height>
-        <texture colordiffuse="$VAR[ColorHighlight]" border="2">common/separator-grey-vertical.png</texture>
-      </control>
       <control type="group">
         <include>OpenClose_Right</include>
         <include content="DefaultSettingButtonGradient">
@@ -53,13 +44,13 @@
           <top>133</top>
           <bottom>137</bottom>
           <height>80</height>
-          <left>490</left>
+          <left>445</left>
           <visible>ControlGroup(5).HasFocus()</visible>
         </include>
         <control type="grouplist" id="5">
           <description>control area</description>
           <top>133</top>
-          <left>490</left>
+          <left>445</left>
           <right>0</right>
           <bottom>140</bottom>
           <itemgap>0</itemgap>
@@ -105,6 +96,7 @@
       <control type="group">
         <depth>DepthContentPanel</depth>
         <include>OpenClose_Left</include>
+        <left>-25</left>
         <include content="DefaultSettingButtonGradient">
           <param name="id" value="3"/>
           <param name="height" value="85"/>
@@ -118,7 +110,7 @@
           <left>0</left>
           <top>130</top>
           <width>470</width>
-          <height>510</height>
+          <height>595</height>
           <usecontrolcoords>true</usecontrolcoords>
           <onleft>5</onleft>
           <onright>5</onright>
@@ -140,36 +132,64 @@
       <control type="group">
         <depth>DepthContentPanel</depth>
         <include>OpenClose_Left</include>
-        <control type="radiobutton" id="20">
+        <top>770</top>
+        <left>-25</left>
+        <include content="DefaultSettingButtonGradient">
+          <param name="id" value="8800"/>
+          <param name="height" value="85"/>
+          <top>0</top>
+          <height>85</height>
           <width>470</width>
-          <left>0</left>
-          <bottom>70</bottom>
-          <height>90</height>
-          <aligny>center</aligny>
-          <onclick>SettingsLevelChange</onclick>
-          <textoffsetx>100</textoffsetx>
-          <textoffsety>0</textoffsety>
-          <texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
-          <texturenofocus/>
-          <radioposx>40</radioposx>
-          <radioposy>0</radioposy>
-          <radiowidth>40</radiowidth>
-          <radioheight>40</radioheight>
+          <visible>Control.HasFocus(20)</visible>
+        </include>
+        <control type="grouplist" id="8800">
           <onleft>5</onleft>
           <onright>5</onright>
           <onup>3</onup>
           <ondown>3</ondown>
-          <textureradioonfocus colordiffuse="dialog_fg_70">icons/settings.png</textureradioonfocus>
-          <textureradioonnofocus colordiffuse="dialog_fg_70">icons/settings.png</textureradioonnofocus>
-          <textureradioofffocus colordiffuse="dialog_fg_70">icons/settings.png</textureradioofffocus>
-          <textureradiooffnofocus colordiffuse="dialog_fg_70">icons/settings.png</textureradiooffnofocus>
+          <control type="radiobutton" id="20">
+            <width>470</width>
+            <height>85</height>
+            <aligny>center</aligny>
+            <onclick>SettingsLevelChange</onclick>
+            <textoffsetx>100</textoffsetx>
+            <textoffsety>0</textoffsety>
+            <texturefocus />
+            <texturenofocus/>
+            <radioposx>40</radioposx>
+            <radioposy>0</radioposy>
+            <radiowidth>40</radiowidth>
+            <radioheight>40</radioheight>
+            <textureradioonfocus colordiffuse="dialog_fg_70">icons/settings.png</textureradioonfocus>
+            <textureradioonnofocus colordiffuse="dialog_fg_70">icons/settings.png</textureradioonnofocus>
+            <textureradioofffocus colordiffuse="dialog_fg_70">icons/settings.png</textureradioofffocus>
+            <textureradiooffnofocus colordiffuse="dialog_fg_70">icons/settings.png</textureradiooffnofocus>
+          </control>
+        </control>
+      </control>
+      <control type="group">
+        <control type="image">
+          <description>Dialog Header image</description>
+          <left>443</left>
+          <top>130</top>
+          <width>5</width>
+          <height>725</height>
+          <texture colordiffuse="$VAR[ColorHighlight]" border="3">common/separator-grey-vertical.png</texture>
+        </control>
+        <control type="image">
+          <description>Dialog Header image</description>
+          <left>442</left>
+          <top>130</top>
+          <width>5</width>
+          <height>725</height>
+          <texture colordiffuse="$VAR[ColorGradient]" border="3">common/white-gradient.png</texture>
         </control>
       </control>
     </control>
-    <include content="TopBar">
-      <!-- <param name="breadcrumbs_label" value="$LOCALIZE[5]$INFO[Control.GetLabel(2), / ]" /> -->
+    <!-- <include content="TopBar">
+      <param name="breadcrumbs_label" value="$LOCALIZE[5]$INFO[Control.GetLabel(2), / ]" />
     </include>
-    <include>BottomBar</include>
+    <include>BottomBar</include> -->
     <control type="group">
       <include>OpenClose_Right</include>
       <control type="textbox" id="6">
