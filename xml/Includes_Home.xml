@@ -407,36 +407,8 @@
           </control>
         </focusedlayout>
         <content target="$PARAM[widget_target]" limit="$PARAM[item_limit]">$PARAM[content_path]</content>
-        <include condition="$PARAM[additional_movie_items]" content="MovieSubmenuItems"/>
-        <include condition="$PARAM[additional_tvshow_items]" content="TVShowSubmenuItems"/>
       </control>
     </definition>
-  </include>
-  <include name="MovieSubmenuItems">
-    <content>
-      <item>
-        <label>$LOCALIZE[31146]</label>
-        <onclick>ActivateWindow(videos,plugin://script.embuary.info/movie/now_playing,return)</onclick>
-        <thumb>DefaultStudios.png</thumb>
-        <visible>System.AddonIsEnabled(script.embuary.info)</visible>
-      </item>
-      <item>
-        <label>$LOCALIZE[31147]</label>
-        <onclick>ActivateWindow(videos,plugin://script.embuary.info/movie/upcoming,return)</onclick>
-        <thumb>DefaultYear.png</thumb>
-        <visible>System.AddonIsEnabled(script.embuary.info)</visible>
-      </item>
-    </content>
-  </include>
-  <include name="TVShowSubmenuItems">
-    <content>
-      <item>
-        <label>$LOCALIZE[31027]</label>
-        <onclick>ActivateWindow(videos,plugin://script.embuary.info/nextaired,return)</onclick>
-        <thumb>DefaultYear.png</thumb>
-        <visible>System.AddonIsEnabled(script.embuary.info)</visible>
-      </item>
-    </content>
   </include>
   <include name="WidgetListChannels">
     <param name="item_treshold">0</param>
