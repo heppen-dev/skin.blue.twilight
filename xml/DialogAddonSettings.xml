@@ -4,42 +4,52 @@
   <include>Animation_DialogPopupOpenClose</include>
   <controls>
     <control type="group">
-      <top>90</top>
+      <top>0</top>
       <centerleft>50%</centerleft>
-      <width>1820</width>
+      <width>1920</width>
       <include>Animation_DialogPopupVisible</include>
       <include content="DialogBackgroundCommons">
-        <param name="width" value="1820"/>
-        <param name="height" value="900"/>
+        <param name="width" value="1920"/>
+        <param name="height" value="1080"/>
         <param name="header_label" value=""/>
         <param name="header_id" value="2"/>
       </include>
-      <control type="image">
-        <top>100</top>
-        <left>429</left>
-        <bottom>0</bottom>
-        <width>1</width>
-        <height>560</height>
-        <texture colordiffuse="dialog_bg_70">common/white.png</texture>
+      <control type="group">
+        <control type="image">
+          <description>Dialog Header image</description>
+          <left>425</left>
+          <top>120</top>
+          <width>5</width>
+          <height>980</height>
+          <texture colordiffuse="$VAR[ColorHighlight]" border="3">common/separator-grey-vertical.png</texture>
+        </control>
+        <control type="image">
+          <description>Dialog Header image</description>
+          <left>425</left>
+          <top>120</top>
+          <width>5</width>
+          <height>980</height>
+          <texture colordiffuse="$VAR[ColorGradient]" border="3">common/white-gradient.png</texture>
+        </control>
       </control>
       <include content="DefaultSettingButtonGradient">
         <param name="id" value="3"/>
-        <top>100</top>
-        <left>29</left>
-        <width>400</width>
+        <top>120</top>
+        <left>0</left>
+        <width>427</width>
         <height>80</height>
       </include>
       <control type="grouplist" id="3">
         <description>Categories Area</description>
-        <left>29</left>
-        <top>80</top>
-        <width>400</width>
-        <height>600</height>
+        <left>0</left>
+        <top>100</top>
+        <width>427</width>
+        <height>800</height>
         <itemgap>-40</itemgap>
         <orientation>vertical</orientation>
         <onleft>9000</onleft>
         <onright>5</onright>
-        <onup>20</onup>
+        <onup>noop</onup>
         <ondown>20</ondown>
       </control>
       <control type="button" id="10">
@@ -55,18 +65,18 @@
       </control>
       <include content="DefaultSettingButtonGradient">
         <param name="id" value="5"/>
-        <top>100</top>
+        <top>120</top>
         <left>429</left>
-        <width>1060</width>
+        <width>1480</width>
         <height>80</height>
         <visible>ControlGroup(5).HasFocus()</visible>
       </include>
       <control type="grouplist" id="5">
         <description>control area</description>
         <left>429</left>
-        <top>100</top>
-        <width>1060</width>
-        <height>720</height>
+        <top>120</top>
+        <width>1480</width>
+        <height>800</height>
         <pagecontrol>60</pagecontrol>
         <onleft>3</onleft>
         <onright>60</onright>
@@ -110,14 +120,16 @@
         <include>DefaultSettingLabel</include>
       </control>
       <control type="grouplist" id="9000">
-        <left>1510</left>
-        <top>92</top>
-        <orientation>vertical</orientation>
-        <width>300</width>
+        <left>445</left>
+        <top>1000</top>
+        <orientation>horizontal</orientation>
+        <width>1480</width>
         <height>300</height>
-        <itemgap>10</itemgap>
-        <onleft>5</onleft>
-        <onright>3</onright>
+        <itemgap>15</itemgap>
+        <onup>5</onup>
+        <onleft>20</onleft>
+        <onright>20</onright>
+        <align>left</align>
         <include content="DefaultDialogButton">
           <param name="id" value="28"/>
           <param name="label" value=""/>
@@ -131,36 +143,49 @@
           <param name="label" value=""/>
         </include>
       </control>
-      <control type="radiobutton" id="20">
-        <left>29</left>
-        <top>700</top>
-        <width>390</width>
-        <height>120</height>
-        <font>font25_title</font>
-        <aligny>center</aligny>
-        <onclick>SettingsLevelChange</onclick>
-        <textoffsetx>100</textoffsetx>
-        <textoffsety>0</textoffsety>
-        <radioposx>40</radioposx>
-        <radioposy>0</radioposy>
-        <radiowidth>40</radiowidth>
-        <radioheight>40</radioheight>
-        <onleft>9000</onleft>
-        <onright>5</onright>
-        <onup>3</onup>
-        <ondown>3</ondown>
-        <texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
-        <texturenofocus/>
-        <textureradioonfocus>icons/settings.png</textureradioonfocus>
-        <textureradioonnofocus>icons/settings.png</textureradioonnofocus>
-        <textureradioofffocus>icons/settings.png</textureradioofffocus>
-        <textureradiooffnofocus>icons/settings.png</textureradiooffnofocus>
+      <control type="group">
+        <depth>DepthContentPanel</depth>
+        <!-- <include>OpenClose_Left</include> -->
+        <top>995</top>
+        <!-- <left>-25</left> -->
+        <include content="DefaultSettingButtonGradient">
+          <param name="id" value="8800"/>
+          <param name="height" value="85"/>
+          <top>0</top>
+          <height>85</height>
+          <width>427</width>
+          <visible>Control.HasFocus(20)</visible>
+        </include>
+        <control type="grouplist" id="8800">
+          <onleft>9000</onleft>
+          <onright>9000</onright>
+          <onup>3</onup>
+          <ondown>noop</ondown>
+          <control type="radiobutton" id="20">
+            <width>427</width>
+            <height>85</height>
+            <aligny>center</aligny>
+            <onclick>SettingsLevelChange</onclick>
+            <textoffsetx>100</textoffsetx>
+            <textoffsety>0</textoffsety>
+            <texturefocus />
+            <texturenofocus/>
+            <radioposx>40</radioposx>
+            <radioposy>0</radioposy>
+            <radiowidth>40</radiowidth>
+            <radioheight>40</radioheight>
+            <textureradioonfocus colordiffuse="dialog_fg_70">icons/settings.png</textureradioonfocus>
+            <textureradioonnofocus colordiffuse="dialog_fg_70">icons/settings.png</textureradioonnofocus>
+            <textureradioofffocus colordiffuse="dialog_fg_70">icons/settings.png</textureradioofffocus>
+            <textureradiooffnofocus colordiffuse="dialog_fg_70">icons/settings.png</textureradiooffnofocus>
+          </control>
+        </control>
       </control>
       <control type="scrollbar" id="60">
-        <left>1489</left>
-        <top>100</top>
+        <left>1910</left>
+        <top>120</top>
         <width>12</width>
-        <height>700</height>
+        <height>800</height>
         <orientation>vertical</orientation>
         <onleft>5</onleft>
         <onright>9000</onright>
