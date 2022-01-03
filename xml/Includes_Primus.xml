@@ -204,7 +204,7 @@
                 <onback condition="Player.HasVideo">AlarmClock(closeDialogs,SetFocus(3000),00:01,silent)</onback>
                 <onback condition="!Player.HasVideo">SetFocus(3000)</onback>
 
-                <onclick condition="!Skin.HasSetting(TMDbHelper.EnableBlur)">RunScript(plugin.video.themoviedb.helper,blur_image=$VAR[MediaFanartVar])</onclick>
+                <onclick>RunScript(plugin.video.themoviedb.helper,blur_image=$VAR[MediaFanartVar])</onclick>
 
                 <onleft>6000</onleft>
                 <onright>6002</onright>
