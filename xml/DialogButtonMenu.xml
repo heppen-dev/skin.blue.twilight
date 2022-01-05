@@ -11,6 +11,7 @@
       <include content="DialogBackgroundCommons">
         <param name="width" value="450"/>
         <param name="height" value="80"/>
+        <param name="background_height" value="660"/>
         <param name="header_label" value="$LOCALIZE[31072]"/>
         <param name="header_id" value="2"/>
       </include>

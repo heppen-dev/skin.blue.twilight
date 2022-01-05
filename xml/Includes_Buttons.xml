@@ -620,7 +620,7 @@
         <height>70</height>
         <align>left</align>
         <aligny>center</aligny>
-        <textcolor>dialog_fg_30</textcolor>
+        <textcolor>dialog_fg_70</textcolor>
         <label>$INFO[ListItem.Label]</label>
       </control>
     </itemlayout>
@@ -652,6 +652,7 @@
         <height>70</height>
         <align>left</align>
         <aligny>center</aligny>
+        <textcolor>b3ededed</textcolor>
         <label>$INFO[ListItem.Label]</label>
       </control>
     </focusedlayout>
