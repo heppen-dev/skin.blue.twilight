@@ -941,6 +941,7 @@
     <value condition="!String.IsEmpty(Window(home).Property(spotlight_Fanart)) + [$EXP[flix_spotlight_level1] | Window.IsActive(1146)]">$INFO[Window(home).Property(spotlight_Fanart)]</value>
     <!-- home fanart first widget item -->
     <value condition="Window.IsVisible(home) + String.IsEmpty(Container(3000).ListItem.Property(Background)) + !String.IsEmpty(Container(7501).ListItem.Art(fanart))">$INFO[Container(7501).ListItem.Art(fanart)]</value>
+    <value condition="Window.IsActive(1141)">$INFO[Window(home).Property(spotlight_Fanart)]</value>
     <value>$INFO[Container.Art(fanart)]</value>
   </variable>
   <variable name="BlurSpotlight">
@@ -949,7 +950,6 @@
   <variable name="BlurBackground">
     <value condition="[!ControlGroup(3000).HasFocus + !$EXP[flix_spotlight_level1]] + Skin.HasSetting(TMDbHelper.EnableBlur)">$INFO[Window(Home).Property(TMDbHelper.ListItem.BlurImage)]</value>
     <value condition="!String.IsEmpty(ListItem.Property(background))">$INFO[ListItem.Property(background)]</value>
-    <value condition="$EXP[flix_spotlight_level2] | String.IsEqual(Window(home).Property(pvrWidget),true)">$VAR[BlurSpotlight]</value>
     <value>$VAR[MediaFanartVar]</value>
   </variable>
   <variable name="WeatherFanartVar">
