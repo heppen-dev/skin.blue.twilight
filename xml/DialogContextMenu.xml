@@ -3,7 +3,7 @@
   <defaultcontrol>996</defaultcontrol>
   <include>Animation_DialogPopupOpenClose</include>
   <coordinates>
-    <origin x="0" y="175"/>
+    <origin x="0" y="75"/>
   </coordinates>
   <controls>
     <control type="image">
@@ -25,7 +25,7 @@
       <onclick>Action(close)</onclick>
     </control>
     <control type="group">
-      <animation effect="slide" end="0,225" time="0" condition="Window.IsActive(home)">conditional</animation>
+      <!-- <animation effect="slide" end="0,75" time="0" condition="Window.IsActive(home)">conditional</animation> -->
       <centerleft>50%</centerleft>
       <centertop>50%</centertop>
       <width>506</width>
@@ -43,7 +43,7 @@
       <include content="DefaultSettingButtonGradient">
         <param name="id" value="996"/>
         <param name="height" value="70"/>
-        <top>0</top>
+        <top>15</top>
         <height>70</height>
         <width>458</width>
         <visible>ControlGroup(996).HasFocus()</visible>
@@ -51,7 +51,7 @@
       <control type="grouplist" id="996">
         <description>grouplist for context buttons</description>
         <left>0</left>
-        <top>0</top>
+        <top>15</top>
         <width>506</width>
         <height max="770">auto</height>
         <usecontrolcoords>true</usecontrolcoords>
