@@ -429,6 +429,13 @@
     <value condition="Window.IsActive(musicplaylist) | Window.IsActive(videoplaylist)">$INFO[ListItem.Duration]</value>
     <value>$INFO[ListItem.Label2]</value>
   </variable>
+  <variable name="ListLabelVarExtended">
+    <value condition="Skin.HasSetting(ExtendedList) + String.IsEqual(ListItem.DbType,episode) + Window.IsActive(videoplaylist)">$INFO[ListItem.TVShowtitle,,: ]$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title][CR][LIGHT][I]$INFO[ListItem.Genre][/I][/LIGHT]</value>
+    <value condition="Skin.HasSetting(ExtendedList) + String.IsEqual(ListItem.DbType,musicvideo) + Window.IsActive(videoplaylist)">$INFO[ListItem.Artist,, - ]$INFO[ListItem.Title][CR][LIGHT][I]$INFO[ListItem.Genre][/I][/LIGHT]</value>
+    <value condition="Skin.HasSetting(ExtendedList) + [!String.IsEmpty(ListItem.Season) | !String.IsEmpty(ListItem.Episode) | !String.IsEmpty(ListItem.EpisodeName)] + Window.IsActive(videoplaylist)">$INFO[ListItem.Title,,: ]$VAR[SeasonEpisodeLabel]$INFO[ListItem.EpisodeName][CR][LIGHT][I]$INFO[ListItem.Genre][/I][/LIGHT]</value>
+    <value condition="Skin.HasSetting(ExtendedList)">$INFO[ListItem.Label][CR][LIGHT][I]$INFO[ListItem.Genre][/I][/LIGHT]</value>
+    <value condition="!Skin.HasSetting(ExtendedList)">$VAR[ListLabelVar]</value>
+  </variable>
   <variable name="PlotTextBoxVar">
     <value condition="!String.IsEmpty(ListItem.PlotOutline)">$INFO[ListItem.PlotOutline]</value>
     <value>$INFO[ListItem.Plot]</value>

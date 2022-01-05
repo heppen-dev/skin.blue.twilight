@@ -372,13 +372,14 @@
     <param name="infolabel_prefix">
     </param>
     <param name="resolution_var">$VAR[ResolutionFlagVar]</param>
+    <param name="align" default="left"/>
     <definition>
       <control type="grouplist">
         <orientation>horizontal</orientation>
         <left>20</left>
         <top>0</top>
         <height>70</height>
-        <align>left</align>
+        <align>$PARAM[align]</align>
         <itemgap>10</itemgap>
         <width>1900</width>
         <usecontrolcoords>true</usecontrolcoords>

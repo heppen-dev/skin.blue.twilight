@@ -236,18 +236,19 @@
     <definition>
       <control type="group">
         <depth>DepthContentPanel</depth>
-        <include content="ContentPanel">
+        <!-- <include content="ContentPanel">
           <param name="width" value="650"/>
           <param name="flipx" value="$PARAM[flip_bg]"/>
-        </include>
+        </include> -->
         <control type="image">
-          <left>30</left>
-          <top>110</top>
-          <width>540</width>
-          <height>470</height>
-          <aspectratio aligny="bottom">keep</aspectratio>
+          <left>40</left>
+          <top>15</top>
+          <width>520</width>
+          <height>770</height>
+          <aspectratio scalediffuse="true">keep</aspectratio>
           <fadetime>300</fadetime>
-          <texture fallback="$PARAM[fallback_image]" background="true">$VAR[IconWallThumbVar]</texture>
+          <texture fallback="$PARAM[fallback_image]" background="true" diffuse="diffuse/thumbinfopanel-diffuse.png">$VAR[IconWallThumbVar]</texture>
+          <bordersize>20</bordersize>
           <visible>!String.IsEqual(ListItem.DbType,episode) + !String.IsEqual(ListItem.DBType,song)</visible>
         </control>
         <control type="image">
@@ -261,13 +262,14 @@
           <visible>String.IsEqual(ListItem.DbType,episode)</visible>
         </control>
         <control type="image">
-          <left>30</left>
-          <top>110</top>
-          <width>540</width>
-          <height>470</height>
-          <aspectratio aligny="bottom">keep</aspectratio>
+          <left>40</left>
+          <top>15</top>
+          <width>520</width>
+          <height>770</height>
+          <aspectratio scalediffuse="true">keep</aspectratio>
           <fadetime>300</fadetime>
-          <texture fallback="DefaultAudio.png" background="true">$VAR[IconWallThumbVar]</texture>
+          <texture fallback="DefaultAudio.png" background="true" diffuse="diffuse/thumbinfopanel-diffuse.png">$VAR[IconWallThumbVar]</texture>
+          <bordersize>20</bordersize>
           <visible>String.IsEqual(ListItem.DBType,song)</visible>
         </control>
         <control type="group">
@@ -276,7 +278,7 @@
           <include condition="Skin.HasSetting(circle_rating) | Skin.HasSetting(circle_userrating)">RatingCircle</include>
           <animation effect="slide" end="0,-140" time="0" condition="String.IsEqual(ListItem.DbType,episode)">conditional</animation>
         </control>
-        <control type="group">
+        <!-- <control type="group">
           <visible>!Container.Content() | !String.isempty(ListItem.Plot)</visible>
           <left>30</left>
           <control type="textbox" id="15500">
@@ -303,8 +305,8 @@
             <label>$VAR[ListBoxInfoVar]</label>
             <visible>String.IsEqual(ListItem.DBType,song)</visible>
           </control>
-        </control>
-        <control type="group">
+        </control> -->
+        <!-- <control type="group">
           <left>20</left>
           <top>640</top>
           <visible>ListItem.IsCollection + String.IsEmpty(ListItem.Plot)</visible>
@@ -315,8 +317,8 @@
             <param name="sortorder" value="ascending"/>
             <param name="font" value="font13"/>
           </include>
-        </control>
-        <control type="group">
+        </control> -->
+        <!-- <control type="group">
           <visible>!ListItem.IsCollection + String.IsEmpty(Control.GetLabel(15500)) + Control.IsVisible(15500)</visible>
           <control type="textbox">
             <left>30</left>
@@ -355,7 +357,7 @@
               <param name="visible" value="String.IsEqual(ListItem.DBType,album)"/>
             </include>
           </control>
-        </control>
+        </control> -->
       </control>
     </definition>
   </include>

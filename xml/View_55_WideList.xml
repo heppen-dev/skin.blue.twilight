@@ -2,7 +2,7 @@
 <includes>
   <include name="View_55_WideList">
     <control type="group">
-      <include>OpenClose_Right</include>
+      <include>OpenClose_Bottom</include>
       <visible>Control.IsVisible(55)</visible>
       <include>Visible_Right</include>
       <control type="fixedlist" id="55">
@@ -10,6 +10,7 @@
         <top>list_y_offset</top>
         <bottom>list_y_offset</bottom>
         <right>0</right>
+        <height>800</height>
         <scrolltime tween="cubic" easing="out">500</scrolltime>
         <orientation>vertical</orientation>
         <pagecontrol>531</pagecontrol>
@@ -29,10 +30,10 @@
             <right>0</right>
             <bottom>0</bottom>
             <control type="image">
-              <texture colordiffuse="$VAR[ColorHighlight]" border="10">common/white.png</texture>
+              <texture colordiffuse="$VAR[ColorHighlight]" border="10">common/box.png</texture>
             </control>
             <control type="image">
-              <texture colordiffuse="$VAR[ColorGradient]" border="10">common/white-gradient.png</texture>
+              <texture colordiffuse="$VAR[ColorGradient]" border="10">common/box-gradient.png</texture>
             </control>
             <visible>Control.HasFocus(55)</visible>
           </control>
@@ -50,7 +51,7 @@
             <right>40</right>
             <aligny>center</aligny>
             <scroll>true</scroll>
-            <label>$VAR[ListLabelVar]</label>
+            <label>$VAR[ListLabelVarExtended]</label>
             <shadowcolor>text_shadow</shadowcolor>
           </control>
           <control type="label">
@@ -78,7 +79,7 @@
             <bottom>0</bottom>
             <right>40</right>
             <aligny>center</aligny>
-            <label>$VAR[ListLabelVar]</label>
+            <label>$VAR[ListLabelVarExtended]</label>
             <shadowcolor>text_shadow</shadowcolor>
           </control>
           <control type="label">
@@ -147,7 +148,7 @@
             <bottom>0</bottom>
             <right>40</right>
             <aligny>center</aligny>
-            <label>$VAR[ListLabelVar]</label>
+            <label>$VAR[ListLabelVarExtended]</label>
             <shadowcolor>text_shadow</shadowcolor>
           </control>
           <control type="label">
@@ -237,7 +238,7 @@
         <right>40</right>
         <aligny>center</aligny>
         <scroll>true</scroll>
-        <label>$VAR[ListLabelVar]</label>
+        <label>$VAR[ListLabelVarExtended]</label>
         <shadowcolor>text_shadow</shadowcolor>
       </control>
       <control type="label">
@@ -256,7 +257,7 @@
         <height>80</height>
         <right>40</right>
         <aligny>center</aligny>
-        <label>$VAR[ListLabelVar]</label>
+        <label>$VAR[ListLabelVarExtended]</label>
         <shadowcolor>text_shadow</shadowcolor>
       </control>
       <control type="label">

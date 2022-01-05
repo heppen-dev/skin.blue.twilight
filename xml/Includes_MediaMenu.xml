@@ -280,7 +280,7 @@
     </control>
     <control type="image">
       <left>-20</left>
-      <top>40</top>
+      <top>-25</top>
       <width>520</width>
       <height>680</height>
       <texture border="20" colordiffuse="dialog_bg_100">common/box.png</texture>
