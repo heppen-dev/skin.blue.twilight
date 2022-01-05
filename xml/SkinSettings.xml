@@ -140,6 +140,18 @@
           <pagecontrol>60</pagecontrol>
           <ondown>700</ondown>
           <visible>Container(9000).HasFocus(2)</visible>
+          <control type="button" id="701" description="Set Fallback Image">
+            <include>DefaultSettingButton</include>
+            <label>$LOCALIZE[31340]</label>
+            <label2>$INFO[Skin.String(HomeBackgroundImage)]</label2>
+            <onclick>SetProperty(Dialog.1.Label,$LOCALIZE[16018])</onclick>
+            <onclick>SetProperty(Dialog.1.BuiltIn,Skin.Reset(HomeBackgroundImage))</onclick>
+            <onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31341])</onclick>
+            <onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetImage(HomeBackgroundImage))</onclick>
+            <onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31342])</onclick>
+            <onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetPath(HomeBackgroundImage))</onclick>
+            <onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31340])</onclick>
+          </control>
           <control type="radiobutton" id="702" description="Colored background">
             <label>$LOCALIZE[31353]</label>
             <include>DefaultSettingButton</include>
