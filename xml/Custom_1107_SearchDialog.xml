@@ -5,11 +5,11 @@
   <controls>
     <control type="group">
       <centerleft>50%</centerleft>
-      <width>600</width>
+      <width>450</width>
       <centertop>60%</centertop>
       <height>700</height>
       <include content="DialogBackgroundCommons">
-        <param name="width" value="600"/>
+        <param name="width" value="450"/>
         <param name="height" value="80"/>
         <param name="header_label" value="$LOCALIZE[137]"/>
         <param name="header_id" value=""/>
