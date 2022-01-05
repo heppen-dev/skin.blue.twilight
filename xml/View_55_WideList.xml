@@ -50,7 +50,6 @@
             <bottom>0</bottom>
             <right>40</right>
             <aligny>center</aligny>
-            <scroll>true</scroll>
             <label>$VAR[ListLabelVarExtended]</label>
             <shadowcolor>text_shadow</shadowcolor>
           </control>

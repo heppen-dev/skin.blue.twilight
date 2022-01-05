@@ -430,10 +430,11 @@
     <value>$INFO[ListItem.Label2]</value>
   </variable>
   <variable name="ListLabelVarExtended">
-    <value condition="Skin.HasSetting(ExtendedList) + String.IsEqual(ListItem.DbType,episode) + Window.IsActive(videoplaylist)">$INFO[ListItem.TVShowtitle,,: ]$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title][CR][LIGHT][I]$INFO[ListItem.Genre][/I][/LIGHT]</value>
-    <value condition="Skin.HasSetting(ExtendedList) + String.IsEqual(ListItem.DbType,musicvideo) + Window.IsActive(videoplaylist)">$INFO[ListItem.Artist,, - ]$INFO[ListItem.Title][CR][LIGHT][I]$INFO[ListItem.Genre][/I][/LIGHT]</value>
-    <value condition="Skin.HasSetting(ExtendedList) + [!String.IsEmpty(ListItem.Season) | !String.IsEmpty(ListItem.Episode) | !String.IsEmpty(ListItem.EpisodeName)] + Window.IsActive(videoplaylist)">$INFO[ListItem.Title,,: ]$VAR[SeasonEpisodeLabel]$INFO[ListItem.EpisodeName][CR][LIGHT][I]$INFO[ListItem.Genre][/I][/LIGHT]</value>
-    <value condition="Skin.HasSetting(ExtendedList)">$INFO[ListItem.Label][CR][LIGHT][I]$INFO[ListItem.Genre][/I][/LIGHT]</value>
+    <value condition="Skin.HasSetting(ExtendedList) + String.IsEqual(ListItem.DbType,episode) + Window.IsActive(videoplaylist)">$INFO[ListItem.TVShowtitle,,: ]$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title][CR][LIGHT][I]$INFO[ListItem.Genre][/I][/LIGHT] &#x2022; [LIGHT][I]$INFO[ListItem.Studio][/I][/LIGHT]</value>
+    <value condition="Skin.HasSetting(ExtendedList) + String.IsEqual(ListItem.DbType,musicvideo) + Window.IsActive(videoplaylist)">$INFO[ListItem.Artist,, - ]$INFO[ListItem.Title][CR][LIGHT][I]$INFO[ListItem.Genre][/I][/LIGHT]  &#x2022; [LIGHT][I]$INFO[ListItem.Studio][/I][/LIGHT]</value>
+    <value condition="Skin.HasSetting(ExtendedList) + [!String.IsEmpty(ListItem.Season) | !String.IsEmpty(ListItem.Episode) | !String.IsEmpty(ListItem.EpisodeName)] + Window.IsActive(videoplaylist)">$INFO[ListItem.Title,,: ]$VAR[SeasonEpisodeLabel]$INFO[ListItem.EpisodeName][CR][LIGHT][I]$INFO[ListItem.Genre][/I][/LIGHT]  &#x2022; [LIGHT][I]$INFO[ListItem.Studio][/I][/LIGHT]</value>
+    <value condition="Skin.HasSetting(ExtendedList) + !String.IsEmpty(ListItem.Genre) + !String.IsEmpty(ListItem.Studio)">$INFO[ListItem.Label][CR][LIGHT][I]$INFO[ListItem.Genre][/I][/LIGHT]  &#x2022; [LIGHT][I]$INFO[ListItem.Studio][/I][/LIGHT]</value>
+    <value condition="Skin.HasSetting(ExtendedList)">$INFO[ListItem.Label]</value>
     <value condition="!Skin.HasSetting(ExtendedList)">$VAR[ListLabelVar]</value>
   </variable>
   <variable name="PlotTextBoxVar">
