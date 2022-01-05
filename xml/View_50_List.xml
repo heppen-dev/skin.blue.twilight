@@ -233,6 +233,7 @@
   <include name="ListThumbInfoPanel">
     <param name="fallback_image"/>
     <param name="flip_bg">false</param>
+    <param name="top">15</param>
     <definition>
       <control type="group">
         <depth>DepthContentPanel</depth>
@@ -242,7 +243,7 @@
         </include> -->
         <control type="image">
           <left>40</left>
-          <top>15</top>
+          <top>$PARAM[top]</top>
           <width>520</width>
           <height>770</height>
           <aspectratio scalediffuse="true">keep</aspectratio>
@@ -253,17 +254,18 @@
         </control>
         <control type="image">
           <left>30</left>
-          <top>110</top>
+          <!-- <top>110</top> -->
           <width>540</width>
           <height>330</height>
-          <aspectratio aligny="bottom">keep</aspectratio>
+          <centertop>50%</centertop>
+          <aspectratio aligny="bottom" scalediffuse="true">keep</aspectratio>
           <fadetime>300</fadetime>
-          <texture background="true">$INFO[ListItem.Icon]</texture>
+          <texture background="true" diffuse="common/landscape-diffuse.png">$INFO[ListItem.Icon]</texture>
           <visible>String.IsEqual(ListItem.DbType,episode)</visible>
         </control>
         <control type="image">
           <left>40</left>
-          <top>15</top>
+          <top>$PARAM[top]</top>
           <width>520</width>
           <height>770</height>
           <aspectratio scalediffuse="true">keep</aspectratio>

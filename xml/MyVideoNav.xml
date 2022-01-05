@@ -7,7 +7,6 @@
   <controls>
     <include>DefaultBackground</include>
     <control type="group">
-      <top>120</top>
       <animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
       <include>View_50_List</include>
       <include>View_510_Flix</include>
@@ -26,7 +25,9 @@
         <include>OpenClose_Bottom</include>
         <visible>Control.IsVisible(55)</visible>
         <include>Visible_Left</include>
-        <include>ListThumbInfoPanel</include>
+        <include content="ListThumbInfoPanel">
+          <param name="top" value="135"/>
+        </include>
       </control>
       <control type="group">
         <depth>DepthContentPanel</depth>
