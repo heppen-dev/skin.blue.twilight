@@ -34,17 +34,17 @@
     <font>font_small_defaults</font>
     <textoffsetx>30</textoffsetx>
     <textcolor>dialog_fg_70</textcolor>
-    <focusedcolor>selected</focusedcolor>
     <disabledcolor>dialog_fg_30</disabledcolor>
-    <selectedcolor>selected</selectedcolor>
+    <focusedcolor>FFededed</focusedcolor>
+    <selectedcolor>FFededed</selectedcolor>
     <texturefocus colordiffuse="dialog_bg_12">common/white.png</texturefocus>
     <texturenofocus colordiffuse="dialog_bg_30">common/white.png</texturenofocus>
     <pulseonselect>false</pulseonselect>
   </default>
   <default type="togglebutton">
     <textcolor>dialog_fg_70</textcolor>
-    <focusedcolor>selected</focusedcolor>
-    <selectedcolor>$VAR[ColorHighlight]</selectedcolor>
+    <focusedcolor>FFededed</focusedcolor>
+    <selectedcolor>FFededed</selectedcolor>
     <disabledcolor>dialog_fg_30</disabledcolor>
     <texturefocus colordiffuse="dialog_bg_12">common/white.png</texturefocus>
     <texturenofocus/>
@@ -97,6 +97,8 @@
     <texturedowndisabled colordiffuse="dialog_fg_30">buttons/spinctrl/arrow-light-down.png</texturedowndisabled>
     <font>font_small_defaults</font>
     <textcolor>dialog_fg_70</textcolor>
+    <focusedcolor>FFededed</focusedcolor>
+    <selectedcolor>FFededed</selectedcolor>
     <disabledcolor>dialog_fg_12</disabledcolor>
     <textoffsetx>7</textoffsetx>
     <aligny>center</aligny>
@@ -106,9 +108,9 @@
   <default type="radiobutton">
     <radiowidth>120</radiowidth>
     <radioheight>76</radioheight>
-    <textureradioonfocus colordiffuse="selected">buttons/radio-button-on.png</textureradioonfocus>
+    <textureradioonfocus colordiffuse="FFededed">buttons/radio-button-on.png</textureradioonfocus>
     <textureradioonnofocus colordiffuse="dialog_fg_70">buttons/radio-button-on.png</textureradioonnofocus>
-    <textureradioofffocus colordiffuse="selected">buttons/radio-button-off.png</textureradioofffocus>
+    <textureradioofffocus colordiffuse="FFededed">buttons/radio-button-off.png</textureradioofffocus>
     <textureradiooffnofocus colordiffuse="dialog_fg_70">buttons/radio-button-off.png</textureradiooffnofocus>
     <textureradioondisabled colordiffuse="dialog_fg_12">buttons/radio-button-on.png</textureradioondisabled>
     <textureradiooffdisabled colordiffuse="dialog_fg_12">buttons/radio-button-off.png</textureradiooffdisabled>
@@ -116,6 +118,8 @@
     <texturenofocus border="21">buttons/button-nofo.png</texturenofocus>
     <font>font_small_defaults</font>
     <textcolor>dialog_fg_70</textcolor>
+    <focusedcolor>FFededed</focusedcolor>
+    <selectedcolor>FFededed</selectedcolor>
     <disabledcolor>dialog_fg_12</disabledcolor>
     <textoffsetx>7</textoffsetx>
     <align>left</align>
