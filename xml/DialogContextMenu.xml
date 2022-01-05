@@ -3,7 +3,7 @@
   <defaultcontrol>996</defaultcontrol>
   <include>Animation_DialogPopupOpenClose</include>
   <coordinates>
-    <origin x="0" y="0"/>
+    <origin x="0" y="175"/>
   </coordinates>
   <controls>
     <control type="image">
