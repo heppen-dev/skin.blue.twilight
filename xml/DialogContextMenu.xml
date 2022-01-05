@@ -3,7 +3,7 @@
   <defaultcontrol>996</defaultcontrol>
   <include>Animation_DialogPopupOpenClose</include>
   <coordinates>
-    <origin x="0" y="75"/>
+    <origin x="0" y="150"/>
   </coordinates>
   <controls>
     <control type="image">
@@ -29,13 +29,13 @@
       <centerleft>50%</centerleft>
       <centertop>50%</centertop>
       <width>506</width>
-      <height>844</height>
+      <height>719</height>
       <control type="image" id="999">
         <description>background image</description>
         <top>-24</top>
         <left>-24</left>
         <width>506</width>
-        <height>844</height>
+        <height>719</height>
         <bordersize>24</bordersize>
         <bordertexture border="32">common/shadow-dialog-24.png</bordertexture>
         <texture border="16" colordiffuse="dialog_bg_100">common/dialog.png</texture>
@@ -53,14 +53,14 @@
         <left>0</left>
         <top>15</top>
         <width>506</width>
-        <height max="770">auto</height>
+        <height max="630">auto</height>
         <usecontrolcoords>true</usecontrolcoords>
       </control>
       <include content="UpDownArrows">
         <param name="container_id" value="996"/>
         <param name="posx" value="201"/>
         <param name="up_posy" value="-40"/>
-        <param name="down_posy" value="808"/>
+        <param name="down_posy" value="685"/>
       </include>
     </control>
     <control type="button" id="1000">
