@@ -1129,7 +1129,7 @@
       <visible>$PARAM[visible]</visible>
       <showonepage>true</showonepage>
       <orientation>vertical</orientation>
-      <onleft>50</onleft>
+      <onright>50</onright>
       <texturesliderbackground colordiffuse="main_fg_12" border="4">common/white.png</texturesliderbackground>
       <texturesliderbar colordiffuse="main_fg_30" border="4">scrollbar/scrollv.png</texturesliderbar>
       <texturesliderbarfocus colordiffuse="main_fg_100" border="4">scrollbar/scrollv.png</texturesliderbarfocus>
@@ -1147,7 +1147,7 @@
       <width>40</width>
       <top>15</top>
       <bottom>15</bottom>
-      <onleft>50</onleft>
+      <onright>50</onright>
       <ondown>SetFocus(50)</ondown>
       <ondown>Action(nextletter)</ondown>
       <ondown condition="!Container.HasNext | String.IsEqual(ListItem.SortLetter,Z)">Action(jumpsms2)</ondown>
