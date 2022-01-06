@@ -189,8 +189,8 @@
           <itemgap>0</itemgap>
           <orientation>vertical</orientation>
           <control type="togglebutton" id="313" description="Enable/Disable">
-            <label>$LOCALIZE[24022]</label>
-            <altlabel>$LOCALIZE[24021]</altlabel>
+            <label>$LOCALIZE[24021]</label>
+            <altlabel>$LOCALIZE[24022]</altlabel>
             <include>DialogSettingButton</include>
             <visible>![String.EndsWith(Window.Property(groupname),.1) | String.IsEqual(Window.Property(groupname),searchmenu)] | String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
           </control>
