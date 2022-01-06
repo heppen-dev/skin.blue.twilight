@@ -92,7 +92,7 @@
         </include>
         <visible>!Control.IsVisible(56) + !Control.IsVisible(57) + !Control.IsVisible(510)</visible>
       </control> -->
-      <control type="group">
+<!--       <control type="group">
         <depth>DepthBars</depth>
         <bottom>0</bottom>
         <height>70</height>
@@ -102,7 +102,7 @@
           <param name="align" value="right" />
         </include>
         <visible>!Control.IsVisible(56) + !Control.IsVisible(57) + !Control.IsVisible(510)</visible>
-      </control>
+      </control> -->
       <include>CommonScrollbars</include>
       <include>MediaMenuMouseOverlay</include>
       <control type="group">

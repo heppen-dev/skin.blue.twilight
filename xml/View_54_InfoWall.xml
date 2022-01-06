@@ -656,7 +656,7 @@
           <top>-10</top>
           <width>290</width>
           <height>415</height>
-          <texture background="true">$INFO[ListItem.Art(poster)]</texture>
+          <texture background="true" diffuse="diffuse/poster-diffuse.png">$INFO[ListItem.Art(poster)]</texture>
           <aspectratio>scale</aspectratio>
           <bordersize>20</bordersize>
         </control>

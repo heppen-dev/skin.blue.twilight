@@ -14,20 +14,23 @@
       <centertop>50%</centertop>
       <height>720</height>
       <control type="image">
-        <left>0</left>
+        <left>-50%</left>
         <top>4</top>
-        <width>100%</width>
+        <width>200%</width>
         <height>410</height>
         <animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
         <animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
         <animation effect="fade" time="200">VisibleChange</animation>
-        <texture colordiffuse="E6FFFFFF">dialogs/dialog-bg-nobo.png</texture>
+        <texture colordiffuse="AltPosterBack" border="5">common/box.png</texture>
         <visible>Control.IsVisible(51)</visible>
       </control>
+      <include content="Object_Scrollbars">
+        <param name="bottom" value="840"/>
+      </include>
       <control type="group">
         <visible>Control.IsVisible(51)</visible>
         <include>Visible_Right</include>
-        <include>OpenClose_Right</include>
+        <include>OpenClose_Bottom</include>
         <control type="fixedlist" id="51">
           <left>0</left>
           <top>0</top>
@@ -35,12 +38,12 @@
           <height>704</height>
           <focusposition>1</focusposition>
           <movement>0</movement>
-          <pagecontrol>5199</pagecontrol>
+          <pagecontrol>62</pagecontrol>
           <scrolltime tween="cubic" easing="out">500</scrolltime>
           <orientation>horizontal</orientation>
           <onleft>51</onleft>
-          <onup>9000</onup>
-          <ondown>5199</ondown>
+          <onup>62</onup>
+          <ondown>9000</ondown>
           <onright>51</onright>
           <hitrect x="100" y="0" w="800" h="400"/>
           <visible>Container.Content(movies) | Container.Content(seasons) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(games)</visible>
@@ -91,31 +94,62 @@
               <param name="font" value="font13"/>
             </include>
           </control>
-          <control type="image">
-            <left>645</left>
-            <top>415</top>
-            <width>32</width>
-            <height>32</height>
-            <texture>$VAR[ListWatchedIconVar]</texture>
-          </control>
           <control type="label">
-            <left>695</left>
-            <top>400</top>
+            <left>110</left>
+            <top>-100</top>
             <right>50</right>
             <height>40</height>
-            <label>$INFO[ListItem.Label]$VAR[ListSubLabelVar]</label>
+            <label>$INFO[ListItem.Label]</label>
             <font>font45_title</font>
             <shadowcolor>text_shadow</shadowcolor>
+            <visible>[String.IsEmpty(ListItem.Art(clearlogo)) + String.IsEmpty(ListItem.Art(tvshow.clearlogo))] | Skin.HasSetting(DisableClearlogo)</visible>
           </control>
-          <control type="textbox">
-            <left>645</left>
-            <top>480</top>
-            <height>250</height>
-            <right>115</right>
-            <autoscroll time="3000" delay="7000" repeat="5000">!System.HasActiveModalDialog + Skin.HasSetting(AutoScroll)</autoscroll>
-            <label>$VAR[PlotTextBoxVar]</label>
-            <shadowcolor>text_shadow</shadowcolor>
-            <visible>![ListItem.IsCollection + String.IsEmpty(ListItem.PlotOutline) + String.IsEmpty(ListItem.Plot)]</visible>
+          <control type="group">
+            <top>400</top>
+            <left>615</left>
+            <visible>Control.HasFocus(51)</visible>
+            <control type="group">
+              <top>60</top>
+              <control type="image">
+                <top>-1380</top>
+                <left>-470</left>
+                <width>400</width>
+                <aspectratio>keep</aspectratio>
+                <texture background="true">$VAR[Image_ClearLogo]</texture>
+                <visible>[!String.IsEmpty(ListItem.Art(clearlogo)) | !String.IsEmpty(ListItem.Art(tvshow.clearlogo)) | !String.IsEmpty(ListItem.Art(clearlogo))] + !Skin.HasSetting(DisableClearlogo)</visible>
+              </control>
+            </control>
+            <control type="group">
+              <top>0</top>
+              <include content="Object_Info_First_Line">
+                <param name="visible_condi" value="Control.HasFocus(51)" />
+              </include>
+            </control>
+            <control type="group">
+              <top>60</top>
+              <include content="Object_Info_Line_MediaFlags">
+                <param name="visible_infoline" value="Control.HasFocus(51)" />
+              </include>
+            </control>
+            <control type="group">
+              <top>225</top>
+              <include content="Object_Video_Info_Line">
+                <param name="visible_infoline" value="Control.HasFocus(51)" />
+              </include>
+            </control>
+            <control type="group">
+              <control type="textbox">
+                <top>120</top>
+                <width>720</width>
+                <height>95</height>
+                <textcolor>white</textcolor>
+                <label>$VAR[PlotTextBoxVar]</label>
+                <font>font_plot_normal</font>
+                <shadowcolor>black</shadowcolor>
+                <autoscroll delay="4000" time="4500" repeat="7000">Skin.HasSetting(autoscroll)</autoscroll>
+                <visible>!Skin.HasSetting(HidePlot)</visible>
+              </control>
+            </control>
           </control>
         </control>
       </control>
@@ -126,9 +160,9 @@
       <left>101</left>
       <depth>DepthContentPopout</depth>
       <visible>Control.IsVisible(51)</visible>
-      <include>OpenClose_Left</include>
+      <include>OpenClose_Bottom</include>
       <include>Visible_Left</include>
-      <control type="image">
+<!--       <control type="image">
         <top>-16</top>
         <left>-16</left>
         <width>516</width>
@@ -136,30 +170,40 @@
         <texture>colors/black.png</texture>
         <bordertexture border="21">overlays/shadow.png</bordertexture>
         <bordersize>20</bordersize>
-      </control>
+      </control> -->
       <control type="image">
         <left>4</left>
-        <top>4</top>
+        <top>-5</top>
         <width>476</width>
         <height>716</height>
         <fadetime>200</fadetime>
-        <aspectratio>scale</aspectratio>
-        <texture fallback="DefaultMovies.png" background="true">$VAR[PosterThumbVar]</texture>
-      </control>
-      <control type="image">
-        <left>1</left>
-        <top>1</top>
-        <width>482</width>
-        <height>721</height>
-        <visible>Control.HasFocus(51)</visible>
-        <animation effect="fade" time="100">VisibleChange</animation>
-        <texture border="8" colordiffuse="$VAR[ColorHighlight]">buttons/thumbnail_focused.png</texture>
+        <aspectratio scalediffuse="true">scale</aspectratio>
+        <texture fallback="DefaultMovies.png" background="true" diffuse="diffuse/posterthumb-diffuse.png">$VAR[PosterThumbVar]</texture>
+        <!-- <bordersize>20</bordersize> -->
       </control>
       <control type="group">
         <left>216</left>
         <top>-18</top>
         <include content="RatingCircle">
           <param name="animation" value="True"/>
+        </include>
+      </control>
+      <control type="group">
+        <top>-10</top>
+        <width>500</width>
+        <include content="Selectbox">
+          <param name="pad_top_b" value="-10"/>
+          <param name="pad_bottom_b" value="-60"/>
+          <param name="pad_left_b" value="-20"/>
+          <param name="pad_right_b" value="0"/>
+          <param name="pad_top_t" value="-8"/>
+          <param name="pad_bottom_t" value="-4"/>
+          <param name="pad_left_t" value="17"/>
+          <param name="pad_right_t" value="-32"/>
+          <param name="visible_posters" value="Control.HasFocus(51)"/>
+          <param name="visible_squares" value="false"/>
+          <param name="visible_landscapes" value="false"/>
+          <param name="focusbounce" value="false" />
         </include>
       </control>
     </control>
