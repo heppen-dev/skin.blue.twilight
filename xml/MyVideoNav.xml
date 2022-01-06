@@ -123,7 +123,7 @@
             <label>Extended List</label>
             <selected>Skin.HasSetting(ExtendedList)</selected>
             <onclick>Skin.ToggleSetting(ExtendedList)</onclick>
-            <visible>Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(movies) | Container.Content(musicvideos) | Container.Content(videos) | Container.Content(games) | Window.IsActive(videoplaylist) | Window.IsActive(musicplaylist)</visible>
+            <visible>Control.IsVisible(50) | Control.IsVisible(55)</visible>
           </control>
           <control type="label" id="203">
             <include>MediaMenuLabelCommon</include>

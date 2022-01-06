@@ -361,7 +361,7 @@
         <height>$PARAM[height]</height>
         <fadetime>0</fadetime>
         <aspectratio align="center" aligny="center">keep</aspectratio>
-        <texture>$PARAM[texture]</texture>
+        <texture colordiffuse="main_fg_70">$PARAM[texture]</texture>
         <visible>$PARAM[visible]</visible>
       </control>
     </definition>
@@ -1627,7 +1627,7 @@
         <top>30</top>
         <width>128</width>
         <height>128</height>
-        <texture>$INFO[ListItem.Icon]</texture>
+        <texture colordiffuse="main_fg_70">$INFO[ListItem.Icon]</texture>
         <align>center</align>
         <aspectratio>keep</aspectratio>
       </control>
@@ -1674,6 +1674,7 @@
           <width>350</width>
           <height>400</height>
           <font>font27</font>
+          <textcolor>ffededed</textcolor>
           <label>$INFO[ListItem.Label]</label>
           <align>center</align>
         </control>

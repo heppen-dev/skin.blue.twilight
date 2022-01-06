@@ -46,6 +46,7 @@
             <aligny>center</aligny>
             <height>110</height>
             <font>font32_title</font>
+            <textcolor>main_fg_70</textcolor>
             <label>$INFO[ListItem.Label]</label>
           </control>
           <control type="group">
@@ -59,6 +60,7 @@
             <width>656</width>
             <height>155</height>
             <bottom>100</bottom>
+            <textcolor>main_fg_70</textcolor>
             <visible>![ListItem.IsCollection + String.IsEmpty(ListItem.Plot)]</visible>
             <label>$INFO[ListItem.Tagline,[I],[/I][CR][CR]]$INFO[ListItem.Plot][CR][CR]</label>
             <autoscroll delay="10000" time="3000" repeat="10000">Skin.HasSetting(autoscroll)</autoscroll>
@@ -209,6 +211,7 @@
             <aligny>center</aligny>
             <scroll>true</scroll>
             <font>font27</font>
+            <textcolor>b3ededed</textcolor>
             <label>$INFO[ListItem.Year]</label>
             <shadowcolor>text_shadow</shadowcolor>
           </control>
@@ -219,6 +222,7 @@
             <bottom>0</bottom>
             <aligny>center</aligny>
             <font>font27</font>
+            <textcolor>b3ededed</textcolor>
             <label>$VAR[ListLabelVarExtended]</label>
             <shadowcolor>text_shadow</shadowcolor>
           </control>
@@ -230,6 +234,7 @@
             <align>right</align>
             <aligny>center</aligny>
             <font>font12</font>
+            <textcolor>b3ededed</textcolor>
             <label>$VAR[ListLabel2Var]</label>
             <animation effect="fade" start="70" end="100" time="300" reversible="false">Focus</animation>
             <shadowcolor>text_shadow</shadowcolor>
@@ -239,6 +244,7 @@
             <centertop>50%</centertop>
             <width>32</width>
             <height>32</height>
+            <textcolor>b3ededed</textcolor>
             <texture>$VAR[ListWatchedIconVar]</texture>
             <animation effect="fade" start="30" end="100" time="300" reversible="false">Focus</animation>
           </control>
@@ -247,6 +253,7 @@
             <centertop>50%</centertop>
             <width>32</width>
             <height>32</height>
+            <textcolor>b3ededed</textcolor>
             <texture colordiffuse="$VAR[ColorHighlight]">$VAR[ListWatchedIconVar]</texture>
             <animation effect="fade" start="0" end="100" time="300" reversible="false">Focus</animation>
             <animation effect="fade" time="150">VisibleChange</animation>
@@ -329,7 +336,7 @@
           <height>770</height>
           <aspectratio scalediffuse="true">keep</aspectratio>
           <fadetime>300</fadetime>
-          <texture fallback="$PARAM[fallback_image]" background="true" diffuse="diffuse/thumbinfopanel-diffuse.png">$VAR[IconWallThumbVar]</texture>
+          <texture fallback="$PARAM[fallback_image]" background="true" diffuse="diffuse/thumbinfopanel-diffuse.png" colordiffuse="main_fg_70">$VAR[IconWallThumbVar]</texture>
           <bordersize>20</bordersize>
           <visible>!String.IsEqual(ListItem.DbType,episode) + !String.IsEqual(ListItem.DBType,song)</visible>
         </control>
