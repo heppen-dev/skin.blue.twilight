@@ -43,6 +43,7 @@
           <param name="left" value="100"/>
           <param name="align" value="left"/>
           <param name="directory" value="$INFO[Skin.String(Icons)]"/>
+          <param name="visible" value="Control.HasFocus(510)"/>
         </include>
         <visible>!$EXP[infodialog_active]</visible>
       </control>

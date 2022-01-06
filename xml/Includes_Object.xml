@@ -743,6 +743,7 @@
     <param name="directory" default="colorful"/>
     <param name="top" default="530"/>
     <param name="align" default="right"/>
+    <param name="visible" default="true"/>
     <definition>
       <control type="grouplist">
         <top>$PARAM[top]</top>
@@ -753,6 +754,7 @@
         <align>$PARAM[align]</align>
         <itemgap>6</itemgap>
         <usecontrolcoords>true</usecontrolcoords>
+        <visible>$PARAM[visible]</visible>
         <animation effect="fade" start="100" end="0" time="650" tween="sine" condition="Player.HasVideo + !Skin.HasSetting(DontHideShowcase)">Conditional</animation>
         <control type="image">
           <top>4</top>
