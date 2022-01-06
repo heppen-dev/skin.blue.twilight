@@ -895,9 +895,8 @@
           <top>-10</top>
           <width>290</width>
           <height>400</height>
-          <texture background="true">$INFO[ListItem.Art(poster)]</texture>
-          <aspectratio>scale</aspectratio>
-          <bordertexture border="21">overlays/shadow.png</bordertexture>
+          <aspectratio scalediffuse="false">scale</aspectratio>
+          <texture background="true" diffuse="diffuse/poster-diffuse.png">$INFO[ListItem.Art(poster)]</texture>
           <bordersize>20</bordersize>
         </control>
         <control type="image">

@@ -123,7 +123,7 @@
     <font>
       <name>font_clock</name>
       <filename>AmazonEmberDisplay_Lt.ttf</filename>
-      <size>70</size>
+      <size>40</size>
       <style>lighten</style>
     </font>
     <font>
@@ -329,7 +329,7 @@
     <font>
       <name>font_clock</name>
       <filename>arial.ttf</filename>
-      <size>70</size>
+      <size>40</size>
       <style>lighten</style>
     </font>
     <font>

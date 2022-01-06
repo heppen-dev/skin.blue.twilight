@@ -499,7 +499,7 @@
           <control type="label">
             <top>$PARAM[title_top]</top>
             <bottom>60</bottom>
-            <scroll>true</scroll>
+            <scroll>false</scroll>
             <width>$PARAM[title_width]</width>
             <textcolor>$VAR[TitleColour]</textcolor>
             <shadowcolor>black</shadowcolor>
@@ -1116,9 +1116,9 @@
       <param name="visible" value="Control.IsVisible(50) | Control.IsVisible(55)" />
       <param name="left" value="$PARAM[left]"/>
     </include>
-    <!-- <include content="Object_Scrollbar_Horz">
-        <param name="visible" value="Control.IsVisible(52) | Control.IsVisible(520) | Control.IsVisible(521) | Control.IsVisible(522) | Control.IsVisible(523) | Control.IsVisible(525) | Control.IsVisible(53)" />
-    </include> -->
+    <include content="Object_Scrollbar_Horz">
+        <param name="visible" value="Control.IsVisible(510)" />
+    </include>
   </include>
   <include name="Object_Scrollbar_Vert">
     <control type="scrollbar" id="60">
@@ -1327,5 +1327,148 @@
         <font>font_tiny_match</font>
         <visible>$EXP[Exp_SortLetterIsNumber]</visible>
       </control>
+  </include>
+  <include name="Object_Scrollbar_Horz">
+    <control type="scrollbar" id="62">
+        <onback>50</onback>
+        <height>8</height>
+        <left>80</left>
+        <right>80</right>
+        <width>1680</width>
+        <centerbottom>40</centerbottom>
+        <showonepage>false</showonepage>
+        <orientation>horizontal</orientation>
+        <onup>50</onup>
+        <visible>$PARAM[visible]</visible>
+        <texturesliderbackground colordiffuse="main_fg_12" border="4">common/white.png</texturesliderbackground>
+        <texturesliderbar colordiffuse="main_fg_30" border="4">scrollbar/scrollv.png</texturesliderbar>
+        <texturesliderbarfocus colordiffuse="main_fg_100" border="4">scrollbar/scrollv.png</texturesliderbarfocus>
+        <animation effect="fade" start="100" end="0" time="400" condition="!Control.HasFocus(62)">Conditional</animation>
+        <visible>![String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556]) | String.IsEqual(Container.SortMethod,$LOCALIZE[561])]</visible>
+        <include>Animation_FadeIn</include>
+        <include>Animation_FadeOut</include>
+    </control>
+
+    <control type="button" id="62">
+        <visible>$PARAM[visible]</visible>
+        <visible>[String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556]) | String.IsEqual(Container.SortMethod,$LOCALIZE[561])]</visible>
+        <font />
+        <texturefocus />
+        <texturenofocus />
+        <height>40</height>
+        <left>80</left>
+        <right>80</right>
+        <width>1680</width>
+        <centerbottom>40</centerbottom>
+        <onup>50</onup>
+        <onright>SetFocus(50)</onright>
+        <onright>Action(nextletter)</onright>
+        <onright condition="!Container.HasNext | String.IsEqual(ListItem.SortLetter,Z)">Action(jumpsms2)</onright>
+        <onright condition="!Container.HasNext | String.IsEqual(ListItem.SortLetter,Z)">Action(prevletter)</onright>
+        <onright condition="!Container.HasNext | String.IsEqual(ListItem.SortLetter,Z)">Action(prevletter)</onright>
+        <onright condition="!Container.HasNext | String.IsEqual(ListItem.SortLetter,Z)">Action(prevletter)</onright>
+        <onright>SetFocus(62)</onright>
+        <onleft>SetFocus(50)</onleft>
+        <onleft>Action(prevletter)</onleft>
+        <onleft condition="!Container.HasPrevious | $EXP[Exp_SortLetterIsNumber]">Action(jumpsms9)</onleft>
+        <onleft condition="!Container.HasPrevious | $EXP[Exp_SortLetterIsNumber]">Action(nextletter)</onleft>
+        <onleft condition="!Container.HasPrevious | $EXP[Exp_SortLetterIsNumber]">Action(nextletter)</onleft>
+        <onleft condition="!Container.HasPrevious | $EXP[Exp_SortLetterIsNumber]">Action(nextletter)</onleft>
+        <onleft>SetFocus(62)</onleft>
+    </control>
+
+    <control type="grouplist">
+        <visible>$PARAM[visible]</visible>
+        <centerbottom>40</centerbottom>
+        <height>52</height>
+        <itemgap>0</itemgap>
+        <align>center</align>
+        <left>80</left>
+        <right>80</right>
+        <orientation>horizontal</orientation>
+        <animation effect="fade" start="100" end="0" time="400" condition="!Control.HasFocus(62)">Conditional</animation>
+        <include>Animation_FadeIn</include>
+        <include>Animation_FadeOut</include>
+        <include>Object_AlphabetNumber</include>
+        <include content="Object_AlphabetLetter">
+            <param name="label" value="A" />
+        </include>
+        <include content="Object_AlphabetLetter">
+            <param name="label" value="B" />
+        </include>
+        <include content="Object_AlphabetLetter">
+            <param name="label" value="C" />
+        </include>
+        <include content="Object_AlphabetLetter">
+            <param name="label" value="D" />
+        </include>
+        <include content="Object_AlphabetLetter">
+            <param name="label" value="E" />
+        </include>
+        <include content="Object_AlphabetLetter">
+            <param name="label" value="F" />
+        </include>
+        <include content="Object_AlphabetLetter">
+            <param name="label" value="G" />
+        </include>
+        <include content="Object_AlphabetLetter">
+            <param name="label" value="H" />
+        </include>
+        <include content="Object_AlphabetLetter">
+            <param name="label" value="I" />
+        </include>
+        <include content="Object_AlphabetLetter">
+            <param name="label" value="J" />
+        </include>
+        <include content="Object_AlphabetLetter">
+            <param name="label" value="K" />
+        </include>
+        <include content="Object_AlphabetLetter">
+            <param name="label" value="L" />
+        </include>
+        <include content="Object_AlphabetLetter">
+            <param name="label" value="M" />
+        </include>
+        <include content="Object_AlphabetLetter">
+            <param name="label" value="N" />
+        </include>
+        <include content="Object_AlphabetLetter">
+            <param name="label" value="O" />
+        </include>
+        <include content="Object_AlphabetLetter">
+            <param name="label" value="P" />
+        </include>
+        <include content="Object_AlphabetLetter">
+            <param name="label" value="Q" />
+        </include>
+        <include content="Object_AlphabetLetter">
+            <param name="label" value="R" />
+        </include>
+        <include content="Object_AlphabetLetter">
+            <param name="label" value="S" />
+        </include>
+        <include content="Object_AlphabetLetter">
+            <param name="label" value="T" />
+        </include>
+        <include content="Object_AlphabetLetter">
+            <param name="label" value="U" />
+        </include>
+        <include content="Object_AlphabetLetter">
+            <param name="label" value="V" />
+        </include>
+        <include content="Object_AlphabetLetter">
+            <param name="label" value="W" />
+        </include>
+        <include content="Object_AlphabetLetter">
+            <param name="label" value="X" />
+        </include>
+        <include content="Object_AlphabetLetter">
+            <param name="label" value="Y" />
+        </include>
+        <include content="Object_AlphabetLetter">
+            <param name="label" value="Z" />
+        </include>
+        <visible>[String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556]) | String.IsEqual(Container.SortMethod,$LOCALIZE[561])]</visible>
+    </control>
   </include>
 </includes>

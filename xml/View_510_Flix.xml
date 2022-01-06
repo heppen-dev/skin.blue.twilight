@@ -2,7 +2,7 @@
 <includes>
   <include name="View_510_Flix">
     <control type="group">
-      <include>OpenClose_Right</include>
+      <include>OpenClose_Bottom</include>
       <visible>Control.IsVisible(510)</visible>
       <include>Visible_Right</include>
       <control type="grouplist">
@@ -13,17 +13,17 @@
         <control type="label">
           <top>35</top>
           <right>75</right>
-          <font>font_clock</font>
           <align>right</align>
-          <label>$INFO[System.Time]</label>
+          <font>font_title</font>
+          <label>$VAR[BreadcrumbsVideoVar]</label>
           <visible>!$EXP[infodialog_active]</visible>
         </control>
         <control type="label">
           <top>35</top>
           <right>75</right>
-          <align>right</align>
           <font>font_clock</font>
-          <label>[UPPERCASE]$VAR[BreadcrumbsVideoVar][/UPPERCASE]</label>
+          <align>right</align>
+          <label>$INFO[System.Time]</label>
           <visible>!$EXP[infodialog_active]</visible>
         </control>
         <visible>!Skin.HasSetting(DisableClock)</visible>
@@ -33,14 +33,14 @@
           <param name="title" value="$VAR[Label_Title]"/>
           <param name="title_width" value="930"/>
           <param name="plot" value="$VAR[Label_PlotTextBoxVar]"/>
-          <param name="plot_height" value="200"/>
+          <param name="plot_height" value="95"/>
           <param name="info_line_top" value="180"/>
-          <param name="plot_top" value="300"/>
-          <param name="visible_infoline" value="Control.HasFocus(510)" />
+          <param name="plot_top" value="350"/>
+          <param name="visible_condi" value="Control.HasFocus(510)" />
         </include>
         <include content="Object_Ratings_Content">
-          <param name="top" value="240"/>
-          <param name="left" value="150"/>
+          <param name="top" value="307"/>
+          <param name="left" value="100"/>
           <param name="align" value="left"/>
           <param name="directory" value="$INFO[Skin.String(Icons)]"/>
         </include>
@@ -54,8 +54,8 @@
         <orientation>horizontal</orientation>
         <onleft>9000</onleft>
         <onup>9000</onup>
-        <ondown>511</ondown>
-        <pagecontrol>511</pagecontrol>
+        <ondown>62</ondown>
+        <pagecontrol>62</pagecontrol>
         <focusposition>1</focusposition>
         <animation effect="slide" time="0" start="0" end="-100,0" condition="true">Conditional</animation>
         <viewtype label="$LOCALIZE[31392]">icon</viewtype>
@@ -107,27 +107,7 @@
           <param name="visible" value="true"/>
         </include>
       </control>
-      <control type="group">
-        <top>620</top>
-        <left>0</left>
-        <width>65</width>
-        <height>360</height>
-        <control type="image">
-          <texture colordiffuse="BFFFFFFF">colors/black.png</texture>
-        </control>
-        <animation effect="fade" time="400">VisibleChange</animation>
-        <visible>Integer.IsGreater(Container(510).CurrentItem,1)</visible>
-      </control>
-      <control type="scrollbar" id="511">
-        <onup>510</onup>
-        <left>0</left>
-        <bottom>0</bottom>
-        <height>12</height>
-        <width>100%</width>
-        <orientation>horizontal</orientation>
-        <animation effect="fade" start="100" end="0" time="200" condition="!Control.HasFocus(511)">Conditional</animation>
-        <animation effect="fade" start="0" end="100" time="200" condition="Control.HasFocus(511)">Conditional</animation>
-      </control>
+      <include content="Object_Scrollbars" />
     </control>
   </include>
 </includes>
