@@ -54,6 +54,7 @@
   <expression name="flix_spotlight_level1">Control.HasFocus(6000) | Control.HasFocus(6001) | Control.HasFocus(6002)</expression>
   <expression name="flix_spotlight_level2">Window.IsActive(1141)</expression>
   <expression name="flix_spotlight_highlevel">Window.IsVisible(1142) | Window.IsVisible(1143) | Window.IsVisible(1144) | Window.IsVisible(1145) | Window.IsVisible(1146) | Window.IsVisible(1147) | Window.IsVisible(1148) | Window.IsVisible(1149)</expression>
+  <expression name="Exp_SortLetterIsNumber">[String.IsEqual(ListItem.SortLetter,$NUMBER[0]) | String.IsEqual(ListItem.SortLetter,$NUMBER[1]) | String.IsEqual(ListItem.SortLetter,$NUMBER[2]) | String.IsEqual(ListItem.SortLetter,$NUMBER[3]) | String.IsEqual(ListItem.SortLetter,$NUMBER[4]) | String.IsEqual(ListItem.SortLetter,$NUMBER[5]) | String.IsEqual(ListItem.SortLetter,$NUMBER[6]) | String.IsEqual(ListItem.SortLetter,$NUMBER[7]) | String.IsEqual(ListItem.SortLetter,$NUMBER[8]) | String.IsEqual(ListItem.SortLetter,$NUMBER[9])]</expression>
   <include name="CommonScrollbars">
     <control type="group">
       <animation effect="fade" start="100" end="0" time="150">WindowClose</animation>
