@@ -22,7 +22,7 @@
                 <aligny>center</aligny>
                 <align>center</align>
                 <font>font_menu</font>
-                <textcolor>Highlight</textcolor>
+                <textcolor>ffffffff</textcolor>
                 <label>$INFO[ListItem.Label]</label>
               </control>
               <control type="image">
@@ -30,7 +30,7 @@
                 <top>0</top>
                 <height>5</height>
                 <width>274</width>
-                <texture colordiffuse="Highlight">common/white.png</texture>
+                <texture colordiffuse="ffffffff">common/white.png</texture>
                 <visible>Control.HasFocus(9000)</visible>
               </control>
             </control>
