@@ -295,7 +295,9 @@
           </control>
         </itemlayout>
       </control>
-      <include>Object_Scrollbars</include>
+      <include content="Object_Scrollbars">
+        <param name="left" value="0"/>
+      </include>
       <!-- <control type="scrollbar" id="$PARAM[list_id]600">
         <left>0</left>
         <top>list_y_offset</top>

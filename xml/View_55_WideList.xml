@@ -14,11 +14,11 @@
         <height>800</height>
         <scrolltime tween="cubic" easing="out">500</scrolltime>
         <orientation>vertical</orientation>
-        <pagecontrol>531</pagecontrol>
+        <pagecontrol>60</pagecontrol>
         <movement>3</movement>
-        <focusposition>6</focusposition>
+        <focusposition>0</focusposition>
         <onleft>9000</onleft>
-        <onright>531</onright>
+        <onright>60</onright>
         <onup>55</onup>
         <ondown>55</ondown>
         <viewtype label="$LOCALIZE[31107]">list</viewtype>
@@ -58,7 +58,7 @@
             <left>105</left>
             <top>0</top>
             <bottom>0</bottom>
-            <right>40</right>
+            <right>80</right>
             <align>right</align>
             <aligny>center</aligny>
             <label>$VAR[ListLabel2Var]</label>
@@ -86,7 +86,7 @@
             <left>105</left>
             <top>0</top>
             <bottom>0</bottom>
-            <right>40</right>
+            <right>80</right>
             <align>right</align>
             <aligny>center</aligny>
             <label>$VAR[ListLabel2Var]</label>
@@ -127,7 +127,7 @@
             <left>105</left>
             <top>0</top>
             <bottom>0</bottom>
-            <right>40</right>
+            <right>80</right>
             <align>right</align>
             <aligny>center</aligny>
             <label>$VAR[ListLabel2Var]</label>
@@ -155,7 +155,7 @@
             <left>105</left>
             <top>0</top>
             <bottom>0</bottom>
-            <right>40</right>
+            <right>80</right>
             <align>right</align>
             <aligny>center</aligny>
             <label>$VAR[ListLabel2Var]</label>
@@ -216,6 +216,9 @@
         <include condition="Window.IsActive(music)">SongsListLayout</include>
         <include>AddonsListLayout</include>
       </control>
+      <include content="Object_Scrollbars">
+        <param name="left" value="1860"/>
+      </include>
     </control>
   </include>
   <include name="SongsListLayout">
@@ -244,7 +247,7 @@
       <control type="label">
         <left>35</left>
         <height>80</height>
-        <right>40</right>
+        <right>80</right>
         <align>right</align>
         <aligny>center</aligny>
         <label>$VAR[ListLabel2Var]</label>
@@ -263,7 +266,7 @@
       <control type="label">
         <left>35</left>
         <height>80</height>
-        <right>40</right>
+        <right>80</right>
         <align>right</align>
         <aligny>center</aligny>
         <label>$VAR[ListLabel2Var]</label>

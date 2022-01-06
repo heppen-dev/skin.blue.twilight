@@ -1114,6 +1114,7 @@
   <include name="Object_Scrollbars">
     <include content="Object_Scrollbar_Vert">
       <param name="visible" value="Control.IsVisible(50) | Control.IsVisible(55)" />
+      <param name="left" value="$PARAM[left]"/>
     </include>
     <!-- <include content="Object_Scrollbar_Horz">
         <param name="visible" value="Control.IsVisible(52) | Control.IsVisible(520) | Control.IsVisible(521) | Control.IsVisible(522) | Control.IsVisible(523) | Control.IsVisible(525) | Control.IsVisible(53)" />
@@ -1122,7 +1123,7 @@
   <include name="Object_Scrollbar_Vert">
     <control type="scrollbar" id="60">
       <onback>50</onback>
-      <left>0</left>
+      <left>$PARAM[left]</left>
       <width>8</width>
       <top>15</top>
       <bottom>15</bottom>
@@ -1130,6 +1131,7 @@
       <showonepage>true</showonepage>
       <orientation>vertical</orientation>
       <onright>50</onright>
+      <onleft>50</onleft>
       <texturesliderbackground colordiffuse="main_fg_12" border="4">common/white.png</texturesliderbackground>
       <texturesliderbar colordiffuse="main_fg_30" border="4">scrollbar/scrollv.png</texturesliderbar>
       <texturesliderbarfocus colordiffuse="main_fg_100" border="4">scrollbar/scrollv.png</texturesliderbarfocus>
@@ -1143,11 +1145,12 @@
       <font />
       <texturefocus />
       <texturenofocus />
-      <left>0</left>
+      <left>$PARAM[left]</left>
       <width>40</width>
       <top>15</top>
       <bottom>15</bottom>
       <onright>50</onright>
+      <onleft>50</onleft>
       <ondown>SetFocus(50)</ondown>
       <ondown>Action(nextletter)</ondown>
       <ondown condition="!Container.HasNext | String.IsEqual(ListItem.SortLetter,Z)">Action(jumpsms2)</ondown>
@@ -1168,7 +1171,7 @@
       <visible>$PARAM[visible]</visible>
       <top>15</top>
       <bottom>15</bottom>
-      <left>0</left>
+      <left>$PARAM[left]</left>
       <width>64</width>
       <height>800</height>
       <itemgap>0</itemgap>
@@ -1225,7 +1228,7 @@
       <visible>$PARAM[visible]</visible>
       <top>15</top>
       <bottom>15</bottom>
-      <left>0</left>
+      <left>$PARAM[left]</left>
       <width>64</width>
       <height>800</height>
       <itemgap>0</itemgap>
