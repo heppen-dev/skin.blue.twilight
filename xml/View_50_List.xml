@@ -340,24 +340,27 @@
           <param name="flipx" value="$PARAM[flip_bg]"/>
         </include> -->
         <control type="image">
-          <left>10</left>
-          <top>105</top>
-          <width>580</width>
-          <height>830</height>
+          <left>40</left>
+          <top>$PARAM[top]</top>
+          <width>520</width>
+          <height>770</height>
+          <aspectratio scalediffuse="true">keep</aspectratio>
           <fadetime>300</fadetime>
-          <texture background="true">common/posterthumb-diffuse-shadow.png</texture>
-          <bordersize>20</bordersize>
-          <visible>!String.IsEqual(ListItem.DbType,episode) + !String.IsEqual(ListItem.DBType,song)</visible>
+          <texture fallback="$PARAM[fallback_image]" background="true" diffuse="diffuse/thumbinfopanel-diffuse.png">$VAR[IconWallThumbVar]</texture>
+          <bordertexture border="72">common/dark-shadow-24-2.png</bordertexture>
+          <bordersize>18</bordersize>
+          <visible>!String.IsEmpty(ListItem.Thumb) | !String.IsEmpty(Listitem.Art(poster))</visible>
         </control>
         <control type="image">
           <left>40</left>
           <top>$PARAM[top]</top>
           <width>520</width>
           <height>770</height>
-          <aspectratio scalediffuse="false">scale</aspectratio>
+          <aspectratio scalediffuse="true">keep</aspectratio>
           <fadetime>300</fadetime>
-          <texture fallback="$PARAM[fallback_image]" background="true" diffuse="diffuse/thumbinfopanel-diffuse.png">$VAR[IconWallThumbVar]</texture>
-          <bordersize>20</bordersize>
+          <texture background="true" diffuse="diffuse/thumbinfopanel-diffuse.png">$VAR[IconWallThumbVar]</texture>
+          <!-- <bordertexture border="36">common/dark-shadow-24.png</bordertexture> -->
+          <bordersize>18</bordersize>
           <visible>!String.IsEqual(ListItem.DbType,episode) + !String.IsEqual(ListItem.DBType,song)</visible>
         </control>
         <control type="image">
