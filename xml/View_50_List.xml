@@ -314,7 +314,7 @@
   <include name="ListThumbInfoPanel">
     <param name="fallback_image"/>
     <param name="flip_bg">false</param>
-    <param name="top">15</param>
+    <param name="top">105</param>
     <definition>
       <control type="group">
         <depth>DepthContentPanel</depth>

@@ -13,7 +13,7 @@
       <include>View_55_WideList</include>
       <include>CommonScrollbars</include>
       <control type="group">
-        <include>OpenClose_Left</include>
+        <include>OpenClose_Bottom</include>
         <visible>Control.IsVisible(55)</visible>
         <visible>Container.Content(addons) | Container.Content()</visible>
         <include>Visible_Left</include>
@@ -41,12 +41,12 @@
           </control>
         </control>
       </control>
-      <include content="TopBar">
+      <!-- <include content="TopBar">
         <param name="breadcrumbs_label" value="$LOCALIZE[24001]"/>
       </include>
       <include content="BottomBar">
         <param name="info_visible" value="true"/>
-      </include>
+      </include> -->
       <include>MediaMenuMouseOverlay</include>
       <control type="group">
         <include>MediaMenuCommon</include>
