@@ -174,7 +174,7 @@
         <top>list_y_offset</top>
         <bottom>list_y_offset</bottom>
         <movement>3</movement>
-        <focusposition>0</focusposition>
+        <focusposition>4</focusposition>
         <scrolltime tween="cubic" easing="out">500</scrolltime>
         <orientation>vertical</orientation>
         <pagecontrol>60</pagecontrol>

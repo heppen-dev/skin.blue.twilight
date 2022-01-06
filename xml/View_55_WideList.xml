@@ -16,7 +16,7 @@
         <orientation>vertical</orientation>
         <pagecontrol>60</pagecontrol>
         <movement>3</movement>
-        <focusposition>0</focusposition>
+        <focusposition>4</focusposition>
         <onleft>9000</onleft>
         <onright>60</onright>
         <onup>55</onup>
