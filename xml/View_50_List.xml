@@ -102,6 +102,7 @@
         <control type="group">
           <visible>!Container.Content(songs)</visible>
           <control type="image">
+            <top>300</top>
             <right>74</right>
             <width>761.44</width>
             <fadetime>200</fadetime>
