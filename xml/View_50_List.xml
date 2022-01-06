@@ -105,12 +105,22 @@
           <visible>!Container.Content(songs)</visible>
           <control type="image">
             <top>300</top>
+            <right>72</right>
+            <width>764.88</width>
+            <fadetime>200</fadetime>
+            <aspectratio aligny="center" scalediffuse="false">keep</aspectratio>
+            <texture fallback="DefaultVideo.png" background="true" colordiffuse="PosterBack">diffuse/rightlistpanel-diffuse.png</texture>
+            <bordertexture>common/rightlistpanel-diffuse-shadow.png</bordertexture>
+            <bordersize>30</bordersize>
+          </control>
+          <control type="image">
+            <top>300</top>
             <right>74</right>
             <width>761.44</width>
             <fadetime>200</fadetime>
-            <aspectratio aligny="bottom" scalediffuse="true">keep</aspectratio>
+            <aspectratio aligny="center" scalediffuse="true">keep</aspectratio>
             <texture fallback="DefaultVideo.png" background="true" diffuse="diffuse/rightlistpanel-diffuse.png">$VAR[Image_Landscape]</texture>
-            <bordersize>5</bordersize>
+            <bordersize>27</bordersize>
           </control>
           <control type="group">
             <left>291</left>
@@ -330,13 +340,23 @@
           <param name="flipx" value="$PARAM[flip_bg]"/>
         </include> -->
         <control type="image">
+          <left>10</left>
+          <top>105</top>
+          <width>580</width>
+          <height>830</height>
+          <fadetime>300</fadetime>
+          <texture background="true">common/posterthumb-diffuse-shadow.png</texture>
+          <bordersize>20</bordersize>
+          <visible>!String.IsEqual(ListItem.DbType,episode) + !String.IsEqual(ListItem.DBType,song)</visible>
+        </control>
+        <control type="image">
           <left>40</left>
           <top>$PARAM[top]</top>
           <width>520</width>
           <height>770</height>
-          <aspectratio scalediffuse="true">keep</aspectratio>
+          <aspectratio scalediffuse="false">scale</aspectratio>
           <fadetime>300</fadetime>
-          <texture fallback="$PARAM[fallback_image]" background="true" diffuse="diffuse/thumbinfopanel-diffuse.png" colordiffuse="main_fg_70">$VAR[IconWallThumbVar]</texture>
+          <texture fallback="$PARAM[fallback_image]" background="true" diffuse="diffuse/thumbinfopanel-diffuse.png">$VAR[IconWallThumbVar]</texture>
           <bordersize>20</bordersize>
           <visible>!String.IsEqual(ListItem.DbType,episode) + !String.IsEqual(ListItem.DBType,song)</visible>
         </control>
