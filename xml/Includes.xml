@@ -15,9 +15,6 @@
   <include file="Includes_OSD.xml"/>
   <include file="Includes_Primus.xml"/>
   <include file="Includes_PVR.xml"/>
-  <include file="Includes_Classic_Home.xml"/>
-  <include file="Includes_Horizontal_Home.xml"/>
-  <include file="Includes_Vertical_Home.xml"/>
   <include file="Includes_View.xml"/>
   <include file="script-skinshortcuts-includes.xml"/>
   <include file="View_50_List.xml"/>
