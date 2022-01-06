@@ -636,7 +636,7 @@
       </control>
       <control type="group">
         <visible>!String.IsEmpty(ListItem.Art(poster))</visible>
-        <control type="group">
+        <!-- <control type="group">
           <left>30</left>
           <top>5</top>
           <width>260</width>
@@ -650,7 +650,7 @@
           <bordersize>20</bordersize>
           <visible>$PARAM[focused]</visible>
           <include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
-        </control>
+        </control> -->
         <control type="image">
           <left>15</left>
           <top>-10</top>
@@ -668,6 +668,19 @@
           <texture>overlays/overlay-bg.png</texture>
           <visible>Listitem.IsCollection | ListItem.IsPlaying | Integer.IsGreater(ListItem.Playcount,0)</visible>
         </control>
+        <include content="Selectbox">
+          <param name="pad_top_b" value="-10"/>
+          <param name="pad_bottom_b" value="-80"/>
+          <param name="pad_left_b" value="15"/>
+          <param name="pad_right_b" value="-5"/>
+          <param name="pad_top_t" value="-10"/>
+          <param name="pad_bottom_t" value="-16"/>
+          <param name="pad_left_t" value="-10"/>
+          <param name="pad_right_t" value="0"/>
+          <param name="visible_posters" value="$PARAM[focused]"/>
+          <param name="visible_squares" value="false"/>
+          <param name="visible_landscapes" value="false"/>
+        </include>
       </control>
       <control type="group">
         <visible>String.IsEqual(ListItem.DBtype,tvshow)</visible>
