@@ -345,7 +345,7 @@
           <width>520</width>
           <height>770</height>
           <aspectratio scalediffuse="true">keep</aspectratio>
-          <fadetime>300</fadetime>
+          <fadetime>150</fadetime>
           <texture fallback="$PARAM[fallback_image]" background="true" diffuse="diffuse/thumbinfopanel-diffuse.png">$VAR[IconWallThumbVar]</texture>
           <bordertexture border="72">common/dark-shadow-24-2.png</bordertexture>
           <bordersize>18</bordersize>
@@ -357,7 +357,7 @@
           <width>520</width>
           <height>770</height>
           <aspectratio scalediffuse="true">keep</aspectratio>
-          <fadetime>300</fadetime>
+          <fadetime>150</fadetime>
           <texture background="true" diffuse="diffuse/thumbinfopanel-diffuse.png">$VAR[IconWallThumbVar]</texture>
           <!-- <bordertexture border="36">common/dark-shadow-24.png</bordertexture> -->
           <bordersize>18</bordersize>
