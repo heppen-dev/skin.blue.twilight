@@ -57,7 +57,7 @@
             <left>-160</left>
             <top>140</top>
             <width>656</width>
-            <height>215</height>
+            <height>155</height>
             <bottom>100</bottom>
             <visible>![ListItem.IsCollection + String.IsEmpty(ListItem.Plot)]</visible>
             <label>$INFO[ListItem.Tagline,[I],[/I][CR][CR]]$INFO[ListItem.Plot][CR][CR]</label>
