@@ -1001,7 +1001,7 @@
       <nested/>
     </control>
   </include>
-  <!-- <include name="Object_Scrollbars">
+  <include name="Object_Scrollbars">
     <include content="Object_Scrollbar_Vert">
       <param name="visible" value="Control.IsVisible(50) | Control.IsVisible(55)" />
       <param name="left" value="$PARAM[left]"/>
@@ -1010,7 +1010,7 @@
         <param name="visible" value="Control.IsVisible(510) | Control.IsVisible(51)" />
         <param name="bottom" value="$PARAM[bottom]"/>
     </include>
-  </include> -->
+  </include>
   <include name="Object_Scrollbar_Vert">
     <control type="scrollbar" id="60">
       <onback>50</onback>

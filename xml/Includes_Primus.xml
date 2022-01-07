@@ -2,7 +2,7 @@
 <includes>
   <include name="Primus_Main">
     <control type="group">
-      <include>Animation_TopSlide</include>
+      <include>Animation_TopSlide_Home</include>
       <control type="group">
         <control type="list" id="9000">
           <height>100</height>
