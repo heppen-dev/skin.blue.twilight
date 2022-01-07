@@ -349,7 +349,7 @@
           <texture fallback="$PARAM[fallback_image]" background="true" diffuse="diffuse/thumbinfopanel-diffuse.png">$VAR[IconWallThumbVar]</texture>
           <bordertexture border="72">common/dark-shadow-24-2.png</bordertexture>
           <bordersize>18</bordersize>
-          <visible>!String.IsEmpty(ListItem.Thumb) | !String.IsEmpty(Listitem.Art(poster))</visible>
+          <visible>!String.IsEqual(ListItem.DbType,episode) + !String.IsEqual(ListItem.DBType,song)</visible>
         </control>
         <control type="image">
           <left>40</left>
