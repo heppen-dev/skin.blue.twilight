@@ -39,7 +39,6 @@
       <control type="group">
         <left>25</left>
         <top>100</top>
-        <include>OpenClose_Bottom</include>
         <control type="grouplist">
           <left>420</left>
           <top>30</top>
@@ -143,7 +142,6 @@
         <left>0</left>
         <top>0</top>
         <depth>DepthContentPanel</depth>
-        <include>OpenClose_Bottom</include>
         <include content="DefaultSettingButtonGradient">
           <param name="id" value="9000"/>
           <top>133</top>
@@ -223,7 +221,6 @@
         <bottom>0</bottom>
         <left>25</left>
         <height>370</height>
-        <include>OpenClose_Bottom</include>
         <control type="grouplist">
           <left>420</left>
           <orientation>vertical</orientation>

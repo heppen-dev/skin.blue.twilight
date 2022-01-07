@@ -8,33 +8,32 @@
     <control type="group">
       <animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
       <control type="group">
-        <width>1400</width>
-        <height>833</height>
-        <left>260</left>
-        <top>100</top>
-        <include>OpenClose_Right</include>
+        <width>1700</width>
+        <height>850</height>
+        <left>110</left>
+        <top>115</top>
+        <include>OpenClose_Bottom</include>
         <control type="image">
+          <width>1700</width>
+          <height>850</height>
+          <left>0</left>
+          <top>0</top>
           <texture colordiffuse="dialog_bg_100" border="5">common/box.png</texture>
           <bordertexture border="24">common/shadow-dialog-24.png</bordertexture>
           <bordersize>24</bordersize>
-          <width>1500</width>
-          <height>900</height>
-          <top>-20</top>
-          <left>-50</left>
         </control>
         <control type="label">
-          <top>30</top>
-          <left>10</left>
+          <top>60</top>
+          <left>60</left>
           <label>$LOCALIZE[31067]</label>
           <include>BreadcrumbsLabel</include>
         </control>
         <control type="group">
           <visible>Control.IsVisible(50)</visible>
-          <include>OpenClose_Right</include>
           <control type="fixedlist" id="50">
-            <left>490</left>
+            <left>535</left>
             <top>list_y_offset</top>
-            <right>0</right>
+            <right>25</right>
             <bottom>list_y_offset</bottom>
             <onleft>9000</onleft>
             <onright>60</onright>
@@ -115,6 +114,7 @@
                 <height>35</height>
                 <aligny>center</aligny>
                 <font>font37</font>
+                <textcolor>main_fg_70</textcolor>
                 <label>$INFO[ListItem.Label]</label>
               </control>
               <control type="textbox">
@@ -139,8 +139,7 @@
         </control>
         <control type="group">
           <depth>DepthContentPanel</depth>
-          <include>OpenClose_Left</include>
-          <left>-25</left>
+          <left>20</left>
           <include content="DefaultSettingButtonGradient">
             <param name="id" value="9000"/>
             <param name="height" value="110"/>
@@ -201,18 +200,18 @@
         <control type="group">
           <control type="image">
             <description>Dialog Header image</description>
-            <left>488</left>
+            <left>530</left>
             <top>120</top>
             <width>5</width>
-            <height>735</height>
+            <height>705</height>
             <texture colordiffuse="$VAR[ColorHighlight]" border="3">common/fancy-line.png</texture>
           </control>
           <control type="image">
             <description>Dialog Header image</description>
-            <left>487</left>
+            <left>530</left>
             <top>120</top>
             <width>5</width>
-            <height>735</height>
+            <height>705</height>
             <texture colordiffuse="$VAR[ColorGradient]" border="3">common/white-gradient.png</texture>
           </control>
         </control>
