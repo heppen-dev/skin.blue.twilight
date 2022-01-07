@@ -35,8 +35,8 @@
       </control>
       <control type="panel" id="11">
         <left>0</left>
-        <top>154</top>
-        <bottom>154</bottom>
+        <top>104</top>
+        <bottom>104</bottom>
         <width>970</width>
         <height>900</height>
         <onleft>PreviousChannelGroup</onleft>
@@ -44,7 +44,7 @@
         <onup>11</onup>
         <ondown>11</ondown>
         <scrolltime tween="cubic" easing="out">500</scrolltime>
-        <itemlayout width="1200" height="154">
+        <itemlayout width="1200" height="104">
           <control type="group">
             <left>32</left>
             <top>-22</top>
@@ -117,7 +117,7 @@
             </control>
           </control>
         </itemlayout>
-        <focusedlayout width="1200" height="154">
+        <focusedlayout width="1200" height="104">
           <control type="group">
             <left>32</left>
             <top>-22</top>
