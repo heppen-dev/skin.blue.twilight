@@ -356,7 +356,7 @@
           <top>133</top>
           <width>5</width>
           <height>723</height>
-          <texture colordiffuse="$VAR[ColorHighlight]" border="3">common/separator-grey-vertical.png</texture>
+          <texture colordiffuse="$VAR[ColorHighlight]" border="3">common/fancy-line.png</texture>
         </control>
         <control type="image">
           <description>Dialog Header image</description>
