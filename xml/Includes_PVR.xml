@@ -4,32 +4,52 @@
   <expression name="listitem_has_epg_event_info">!String.IsEmpty(ListItem.EpgEventTitle) | $EXP[listitem_has_episode_info]</expression>
   <include name="PVRChannelsOSDLayout_Modern">
     <control type="group">
-      <include>Animation_DialogPopupOpenClose</include>
+      <include>OpenClose_Left</include>
       <control type="image">
-        <top>-540</top>
-        <width>1920</width>
-        <height>2160</height>
-        <texture background="true">common/channelguide-modern-bg.png</texture>
+        <top>-15</top>
+        <left>-15</left>
+        <width>540</width>
+        <height>1110</height>
+        <texture background="true" colordiffuse="$VAR[ColorHighlight]" border="20">common/pvrchannels-bg.png</texture>
+        <animation effect="fade" time="200" end="0" condition="String.IsEqual(Skin.String(HomeAlphaValue),100)">Conditional</animation>
+        <animation effect="fade" time="200" end="5" condition="String.IsEqual(Skin.String(HomeAlphaValue),95)">Conditional</animation>
+        <animation effect="fade" time="200" end="10" condition="String.IsEqual(Skin.String(HomeAlphaValue),90)">Conditional</animation>
+        <animation effect="fade" time="200" end="15" condition="String.IsEqual(Skin.String(HomeAlphaValue),85)">Conditional</animation>
+        <animation effect="fade" time="200" end="20" condition="String.IsEqual(Skin.String(HomeAlphaValue),80)">Conditional</animation>
+        <animation effect="fade" time="200" end="25" condition="String.IsEqual(Skin.String(HomeAlphaValue),75)">Conditional</animation>
+        <animation effect="fade" time="200" end="30" condition="String.IsEqual(Skin.String(HomeAlphaValue),70)">Conditional</animation>
+        <animation effect="fade" time="200" end="35" condition="String.IsEqual(Skin.String(HomeAlphaValue),65)">Conditional</animation>
+        <animation effect="fade" time="200" end="40" condition="String.IsEqual(Skin.String(HomeAlphaValue),60)">Conditional</animation>
+        <animation effect="fade" time="200" end="45" condition="String.IsEqual(Skin.String(HomeAlphaValue),55)">Conditional</animation>
+        <animation effect="fade" time="200" end="50" condition="String.IsEqual(Skin.String(HomeAlphaValue),50)">Conditional</animation>
+        <animation effect="fade" time="200" end="55" condition="String.IsEqual(Skin.String(HomeAlphaValue),45)">Conditional</animation>
+        <animation effect="fade" time="200" end="60" condition="String.IsEqual(Skin.String(HomeAlphaValue),40)">Conditional</animation>
+        <animation effect="fade" time="200" end="65" condition="String.IsEqual(Skin.String(HomeAlphaValue),35)">Conditional</animation>
+        <animation effect="fade" time="200" end="70" condition="String.IsEqual(Skin.String(HomeAlphaValue),30)">Conditional</animation>
+        <animation effect="fade" time="200" end="75" condition="String.IsEqual(Skin.String(HomeAlphaValue),25)">Conditional</animation>
+        <animation effect="fade" time="200" end="80" condition="String.IsEqual(Skin.String(HomeAlphaValue),20)">Conditional</animation>
+        <animation effect="fade" time="200" end="85" condition="String.IsEqual(Skin.String(HomeAlphaValue),15)">Conditional</animation>
+        <animation effect="fade" time="200" end="90" condition="String.IsEqual(Skin.String(HomeAlphaValue),10)">Conditional</animation>
+        <animation effect="fade" time="200" end="95" condition="String.IsEqual(Skin.String(HomeAlphaValue),5)">Conditional</animation>
+        <animation effect="fade" time="200" end="100" condition="String.IsEqual(Skin.String(HomeAlphaValue),0)">Conditional</animation>
       </control>
       <control type="panel" id="11">
-        <left>475</left>
+        <left>0</left>
         <top>154</top>
         <bottom>154</bottom>
         <width>970</width>
-        <height>880</height>
+        <height>900</height>
         <onleft>PreviousChannelGroup</onleft>
         <onright>NextChannelGroup</onright>
         <onup>11</onup>
         <ondown>11</ondown>
-        <movement>4</movement>
-        <focusposition>4</focusposition>
         <scrolltime tween="cubic" easing="out">500</scrolltime>
         <itemlayout width="1200" height="154">
           <control type="group">
-            <left>64</left>
+            <left>32</left>
             <top>-22</top>
             <height>128</height>
-            <width max="160">160</width>
+            <width max="92">92</width>
             <control type="image">
               <aspectratio>keep</aspectratio>
               <texture background="true">$INFO[ListItem.Icon]</texture>
@@ -37,159 +57,135 @@
           </control>
           <control type="group">
             <control type="label">
-              <top>-8</top>
-              <left>0</left>
+              <top>14</top>
+              <left>168</left>
               <height>100</height>
-              <font>font_small_pvr_channels_bold</font>
+              <font>font_small_pvr_channels</font>
               <aligny>center</aligny>
               <textcolor>FFededed</textcolor>
               <label>$INFO[VideoPlayer.ChannelNumberLabel]</label>
             </control>
           </control>
           <control type="group">
-            <left>115.5</left>
+            <left>165.5</left>
             <width>878</width>
-            <top>4</top>
+            <top>12</top>
             <bottom>0</bottom>
             <control type="group">
-              <left>30</left>
-              <right>30</right>
+              <left>0</left>
               <top>15</top>
               <bottom>20</bottom>
               <control type="label">
-                <font>font_small_pvr_channels_bold</font>
-                <left>92</left>
+                <font>font_small_pvr_channels</font>
+                <left>0</left>
                 <top>-25</top>
                 <aligny>top</aligny>
-                <width max="128">auto</width>
-                <textcolor>panel_fg_100</textcolor>
-                <selectedcolor>panel_fg_100</selectedcolor>
-                <label>$INFO[ListItem.StartTime]</label>
-              </control>
-              <control type="label">
-                <font>font_small_pvr_channels_bold</font>
-                <left>200</left>
-                <top>-25</top>
-                <aligny>top</aligny>
-                <width max="660">auto</width>
-                <textcolor>panel_fg_100</textcolor>
-                <selectedcolor>panel_fg_100</selectedcolor>
+                <width max="280">auto</width>
+                <textcolor>main_fg_70</textcolor>
                 <label>$INFO[ListItem.Title]</label>
               </control>
-              <control type="progress">
-                <top>20</top>
-                <height>12</height>
-                <left>92</left>
-                <width>640</width>
-                <visible>ListItem.HasEpg</visible>
-                <info>ListItem.Progress</info>
-                <lefttexture colordiffuse="$VAR[ColorHighlight]" border="4">diffuse/progress-left.png</lefttexture>
-                <righttexture colordiffuse="$VAR[ColorHighlight]" border="4">diffuse/progress-right.png</righttexture>
-                <texturebg colordiffuse="panel_fg_30" border="4">diffuse/progress-256-bg.png</texturebg>
-              </control>
               <control type="label">
-                <font>font_small_pvr_channels_bold</font>
-                <left>92</left>
-                <top>42</top>
+                <font>font_small_pvr_channels</font>
+                <left>0</left>
+                <top>0</top>
                 <aligny>top</aligny>
                 <width max="128">auto</width>
-                <textcolor>panel_fg_100</textcolor>
-                <selectedcolor>panel_fg_100</selectedcolor>
+                <textcolor>main_fg_70</textcolor>
                 <label>$INFO[ListItem.NextStartTime]</label>
               </control>
               <control type="label">
-                <font>font_small_pvr_channels_bold</font>
-                <left>200</left>
-                <top>42</top>
+                <font>font_small_pvr_channels_italic</font>
+                <left>66</left>
+                <top>0</top>
                 <aligny>top</aligny>
-                <width max="660">auto</width>
-                <textcolor>panel_fg_100</textcolor>
-                <selectedcolor>panel_fg_100</selectedcolor>
+                <width max="280">auto</width>
+                <textcolor>main_fg_70</textcolor>
                 <label>$INFO[ListItem.NextTitle]</label>
+              </control>
+              <control type="progress">
+                <top>42</top>
+                <height>8</height>
+                <left>50</left>
+                <width>260</width>
+                <visible>ListItem.HasEpg</visible>
+                <info>ListItem.Progress</info>
+                <lefttexture colordiffuse="B3ededed" border="4">diffuse/progress-left.png</lefttexture>
+                <midtexture colordiffuse="B3ededed" border="4">diffuse/progress-end.png</midtexture>
+                <righttexture colordiffuse="B3ededed" border="4">diffuse/progress-right.png</righttexture>
+                <texturebg colordiffuse="panel_fg_30" border="4">diffuse/progress-256-bg.png</texturebg>
               </control>
             </control>
           </control>
         </itemlayout>
         <focusedlayout width="1200" height="154">
           <control type="group">
-            <left>64</left>
+            <left>32</left>
             <top>-22</top>
             <height>128</height>
-            <width max="160">160</width>
+            <width max="92">92</width>
             <control type="image">
               <aspectratio>keep</aspectratio>
-              <texture background="true" colordiffuse="ffffd700">$INFO[ListItem.Icon]</texture>
+              <texture background="true">$INFO[ListItem.Icon]</texture>
             </control>
           </control>
           <control type="group">
             <control type="label">
-              <top>-8</top>
-              <left>0</left>
+              <top>14</top>
+              <left>168</left>
               <height>100</height>
-              <font>font_small_pvr_channels_bold</font>
+              <font>font_small_pvr_channels</font>
               <aligny>center</aligny>
-              <textcolor>ffffd700</textcolor>
+              <textcolor>FFededed</textcolor>
               <label>$INFO[VideoPlayer.ChannelNumberLabel]</label>
             </control>
           </control>
           <control type="group">
-            <left>115.5</left>
+            <left>165.5</left>
             <width>878</width>
-            <top>4</top>
+            <top>12</top>
             <bottom>0</bottom>
             <control type="group">
-              <left>30</left>
-              <right>30</right>
+              <left>0</left>
               <top>15</top>
               <bottom>20</bottom>
               <control type="label">
-                <font>font_small_pvr_channels_bold</font>
-                <left>92</left>
+                <font>font_small_pvr_channels</font>
+                <left>0</left>
                 <top>-25</top>
                 <aligny>top</aligny>
-                <width max="128">auto</width>
-                <textcolor>ffffd700</textcolor>
-                <label>$INFO[ListItem.StartTime]</label>
-              </control>
-              <control type="label">
-                <font>font_small_pvr_channels_bold</font>
-                <left>200</left>
-                <top>-25</top>
-                <aligny>top</aligny>
-                <width max="660">auto</width>
-                <textcolor>ffffd700</textcolor>
+                <width max="280">auto</width>
+                <textcolor>main_fg_100</textcolor>
                 <label>$INFO[ListItem.Title]</label>
               </control>
-              <control type="progress">
-                <top>20</top>
-                <height>12</height>
-                <left>92</left>
-                <width>640</width>
-                <visible>ListItem.HasEpg</visible>
-                <info>ListItem.Progress</info>
-                <lefttexture colordiffuse="ffffd700" border="4">diffuse/progress-left.png</lefttexture>
-                <midtexture colordiffuse="ffffd700" border="4">diffuse/progress-end.png</midtexture>
-                <righttexture colordiffuse="ffffd700" border="4">diffuse/progress-right.png</righttexture>
-                <overlaytexture/>
-                <texturebg colordiffuse="panel_fg_30" border="4">diffuse/progress-256-bg.png</texturebg>
-              </control>
               <control type="label">
-                <font>font_small_pvr_channels_bold</font>
-                <left>92</left>
-                <top>42</top>
+                <font>font_small_pvr_channels</font>
+                <left>0</left>
+                <top>0</top>
                 <aligny>top</aligny>
                 <width max="128">auto</width>
-                <textcolor>ffffd700</textcolor>
+                <textcolor>main_fg_100</textcolor>
                 <label>$INFO[ListItem.NextStartTime]</label>
               </control>
               <control type="label">
-                <font>font_small_pvr_channels_bold</font>
-                <left>200</left>
-                <top>42</top>
+                <font>font_small_pvr_channels_italic</font>
+                <left>66</left>
+                <top>0</top>
                 <aligny>top</aligny>
-                <width max="660">auto</width>
-                <textcolor>ffffd700</textcolor>
+                <width max="280">auto</width>
+                <textcolor>main_fg_100</textcolor>
                 <label>$INFO[ListItem.NextTitle]</label>
+              </control>
+              <control type="progress">
+                <top>42</top>
+                <height>8</height>
+                <left>50</left>
+                <width>260</width>
+                <visible>ListItem.HasEpg</visible>
+                <info>ListItem.Progress</info>
+                <lefttexture colordiffuse="$VAR[ColorHighlight]" border="4">diffuse/progress-left.png</lefttexture>
+                <midtexture colordiffuse="$VAR[ColorHighlight]" border="4">diffuse/progress-end.png</midtexture>
+                <righttexture colordiffuse="$VAR[ColorHighlight]" border="4">diffuse/progress-right.png</righttexture>
+                <texturebg colordiffuse="panel_fg_30" border="4">diffuse/progress-256-bg.png</texturebg>
               </control>
             </control>
           </control>
@@ -209,19 +205,18 @@
         <description>header label</description>
         <textoffsetx>40</textoffsetx>
         <width>1920</width>
-        <height>154</height>
-        <font>font45</font>
+        <height>120</height>
+        <font>font32</font>
         <aligny>center</aligny>
-        <align>center</align>
-        <label>$VAR[BreadcrumbsPVRChannelsOSDVar]</label>
-        <shadowcolor>black</shadowcolor>
+        <align>left</align>
+        <label>$INFO[VideoPlayer.ChannelGroup]</label>
       </control>
       <control type="label" id="2">
         <description>header label</description>
         <textoffsetx>40</textoffsetx>
-        <width>1920</width>
-        <height>154</height>
-        <font>font_clock</font>
+        <width>520</width>
+        <height>120</height>
+        <font>font32</font>
         <aligny>center</aligny>
         <align>right</align>
         <label>$INFO[System.Time]</label>
@@ -286,7 +281,7 @@
                 <label>$INFO[VideoPlayer.ChannelNumberLabel] • $INFO[ListItem.Label]</label>
               </control>
               <control type="label">
-                <font>font_small_pvr_channels_bold</font>
+                <font>font_small_pvr_channels</font>
                 <top>35</top>
                 <aligny>top</aligny>
                 <width max="660">auto</width>
@@ -806,7 +801,7 @@
               <top>15</top>
               <bottom>20</bottom>
               <control type="label">
-                <font>font_small_pvr_channels_bold</font>
+                <font>font_small_pvr_channels</font>
                 <left>92</left>
                 <top>-25</top>
                 <aligny>top</aligny>
@@ -816,7 +811,7 @@
                 <label>$INFO[ListItem.StartTime]</label>
               </control>
               <control type="label">
-                <font>font_small_pvr_channels_bold</font>
+                <font>font_small_pvr_channels</font>
                 <left>200</left>
                 <top>-25</top>
                 <aligny>top</aligny>
@@ -855,7 +850,7 @@
               <top>-8</top>
               <left>0</left>
               <height>100</height>
-              <font>font_small_pvr_channels_bold</font>
+              <font>font_small_pvr_channels</font>
               <aligny>center</aligny>
               <textcolor>ffffd700</textcolor>
               <label>$INFO[VideoPlayer.ChannelNumberLabel]</label>
@@ -872,7 +867,7 @@
               <top>15</top>
               <bottom>20</bottom>
               <control type="label">
-                <font>font_small_pvr_channels_bold</font>
+                <font>font_small_pvr_channels</font>
                 <left>92</left>
                 <top>-25</top>
                 <aligny>top</aligny>
@@ -881,7 +876,7 @@
                 <label>$INFO[ListItem.StartTime]</label>
               </control>
               <control type="label">
-                <font>font_small_pvr_channels_bold</font>
+                <font>font_small_pvr_channels</font>
                 <left>200</left>
                 <top>-25</top>
                 <aligny>top</aligny>
@@ -991,7 +986,7 @@
               <top>15</top>
               <bottom>20</bottom>
               <control type="label">
-                <font>font_small_pvr_channels_bold</font>
+                <font>font_small_pvr_channels</font>
                 <aligny>center</aligny>
                 <align>left</align>
                 <width>auto</width>
@@ -1000,7 +995,7 @@
                 <label>$INFO[ListItem.StartTime,,  ]</label>
               </control>
               <control type="label">
-                <font>font_small_pvr_channels_bold</font>
+                <font>font_small_pvr_channels</font>
                 <aligny>center</aligny>
                 <align>right</align>
                 <width max="820">auto</width>
