@@ -9,7 +9,7 @@
     <control type="group">
       <animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
       <control type="group">
-        <include>OpenClose_Left</include>
+        <include>OpenClose_Bottom</include>
         <control type="fixedlist" id="50">
           <left>0</left>
           <top>100</top>
@@ -158,7 +158,7 @@
       </control>
       <control type="group">
         <depth>DepthContentPanel</depth>
-        <include>OpenClose_Right</include>
+        <include>OpenClose_Bottom</include>
         <width>870</width>
         <right>0</right>
         <include content="ContentPanel">
@@ -187,7 +187,7 @@
       </include>
       <control type="label">
         <right>20</right>
-        <include>OpenClose_Right</include>
+        <include>OpenClose_Bottom</include>
         <bottom>10</bottom>
         <width>850</width>
         <height>60</height>
