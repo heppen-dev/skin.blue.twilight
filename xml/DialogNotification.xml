@@ -4,6 +4,7 @@
     <control type="group">
       <visible>!Window.IsVisible(Startup.xml)</visible>
       <control type="group">
+        <include>Animation_TopSlide</include>
         <include content="Dialog_Notification_Group" condition="![Window.IsVisible(SkinSettings.xml) | Window.IsVisible(SettingsCategory.xml) | Window.IsVisible(SettingsProfile.xml) | Window.IsVisible(SettingsSystemInfo.xml)]">
           <param name="main_id" value="9401"/>
           <param name="sub_id" value="9402"/>

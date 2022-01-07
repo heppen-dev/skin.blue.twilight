@@ -9,44 +9,28 @@
     <param name="icon" default="buttons/info.png"/>
     <param name="fgcolor" default="main_fg"/>
     <definition>
-      <top>80</top>
-      <left>80</left>
-      <right>80</right>
+      <top>45</top>
+      <!-- <left>80</left> -->
+      <!-- <right>80</right> -->
       <height>40</height>
       <control type="group">
-        <include>OpenClose_Fade</include>
-        <right>-225</right>
+        <include>Animation_TopSlide</include>
+        <centerleft>50%</centerleft>
         <top>0</top>
         <width>700</width>
         <height>50</height>
         <control type="image">
-          <left>-300</left>
-          <right>-300</right>
-          <top>-300</top>
-          <bottom>-300</bottom>
-          <aspectratio>stretch</aspectratio>
-          <texture flipx="true">common/shadowspot.png</texture>
-        </control>
-        <control type="image">
-          <left>-300</left>
-          <right>-300</right>
-          <top>-300</top>
-          <bottom>-300</bottom>
-          <aspectratio>stretch</aspectratio>
-          <texture flipx="true">common/shadowspot.png</texture>
-        </control>
-        <control type="image">
-          <left>-300</left>
-          <right>-300</right>
-          <top>-300</top>
-          <bottom>-300</bottom>
-          <aspectratio>stretch</aspectratio>
-          <texture flipx="true">common/shadowspot.png</texture>
+          <width>100%</width>
+          <height>140</height>
+          <aspectratio scalediffuse="false">stretch</aspectratio>
+          <texture colordiffuse="main_bg_70" border="5">common/dialog.png</texture>
+          <bordertexture border="24">common/shadow-20.png</bordertexture>
+          <bordersize>18</bordersize>
         </control>
       </control>
       <control type="image" description="Back">
-        <right>-16</right>
-        <centertop>50%</centertop>
+        <left>630</left>
+        <top>25</top>
         <width>80</width>
         <height>80</height>
         <aspectratio align="center" aligny="center">keep</aspectratio>
@@ -54,8 +38,8 @@
         <colordiffuse>$VAR[ColorHighlight]</colordiffuse>
       </control>
       <control type="group">
-        <right>-16</right>
-        <centertop>50%</centertop>
+        <left>630</left>
+        <top>25</top>
         <width>80</width>
         <height>80</height>
         <visible>[Window.IsVisible(DialogExtendedProgressBar.xml) + Control.IsVisible(32)] | $PARAM[nowplaying]</visible>
@@ -73,43 +57,45 @@
         </control>
       </control>
       <control type="image">
-        <right>8</right>
-        <centertop>50%</centertop>
+        <left>654</left>
+        <top>49</top>
         <height>32</height>
-        <width>42</width>
+        <width>32</width>
         <aspectratio align="right">keep</aspectratio>
         <texture colordiffuse="$PARAM[fgcolor]_100">$PARAM[icon]</texture>
       </control>
       <control type="group">
-        <right>64</right>
-        <centertop>50%</centertop>
+        <left>720</left>
+        <top>25</top>
         <height>72</height>
         <control type="label" id="$PARAM[main_id]">
-          <right>0</right>
           <centertop>33%</centertop>
           <height>26</height>
           <label>$PARAM[label]</label>
-          <align>right</align>
-          <width max="500">auto</width>
+          <align>left</align>
+          <width max="475">auto</width>
           <font>font_small_notify_main_bold</font>
           <textcolor>$PARAM[fgcolor]_100</textcolor>
         </control>
         <control type="grouplist">
-          <align>right</align>
+          <top>0</top>
+          <left>0</left>
+          <align>left</align>
           <usecontrolcoords>true</usecontrolcoords>
           <orientation>horizontal</orientation>
-          <itemgap>10</itemgap>
+          <itemgap>32</itemgap>
           <control type="label" id="$PARAM[sub_id]">
             <centerbottom>33%</centerbottom>
             <height>26</height>
             <label>$PARAM[label2]</label>
-            <width max="500">auto</width>
+            <width max="475">auto</width>
             <scroll>true</scroll>
             <font>font13</font>
             <textcolor>$PARAM[fgcolor]_100</textcolor>
           </control>
           <control type="label">
-            <centerbottom>33%</centerbottom>
+            <left>455</left>
+            <top>20</top>
             <height>26</height>
             <width>auto</width>
             <textcolor>$PARAM[fgcolor]_100</textcolor>
