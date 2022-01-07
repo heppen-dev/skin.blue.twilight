@@ -444,7 +444,7 @@
         <animation effect="fade" start="0" end="100" time="400" condition="ControlGroup(201).HasFocus">Conditional</animation>
         <control type="grouplist" id="201">
           <top>92</top>
-          <left>102</left>
+          <left>185</left>
           <width>100%</width>
           <height>135</height>
           <itemgap>64</itemgap>
