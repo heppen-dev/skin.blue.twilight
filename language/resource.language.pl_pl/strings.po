@@ -1904,3 +1904,13 @@ msgstr "Rozciągnij tło na pełny ekran"
 msgctxt "#31426"
 msgid "Global widget wall"
 msgstr "Globalna ściana widgetów"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31427"
+msgid "Enable transparent notification dialog"
+msgstr "Przełącz tło powiadomień na przezroczyste"
+
+#: /xml/MyVideoNav.xml
+msgctxt "#31428"
+msgid "Extended List"
+msgstr "Lista rozszerzona"

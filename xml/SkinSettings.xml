@@ -106,6 +106,12 @@
             <selected>Skin.HasSetting(DisableClearlogo)</selected>
             <onclick>Skin.ToggleSetting(DisableClearlogo)</onclick>
           </control>
+          <control type="radiobutton" id="620" description="Notification dialog">
+            <label>$LOCALIZE[31427]</label>
+            <include>DefaultSettingButton</include>
+            <selected>Skin.HasSetting(TransparentNotification)</selected>
+            <onclick>Skin.ToggleSetting(TransparentNotification)</onclick>
+          </control>
           <control type="label" id="618">
             <textoffsetx>30</textoffsetx>
             <width>470</width>

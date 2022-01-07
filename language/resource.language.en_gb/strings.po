@@ -2080,3 +2080,13 @@ msgstr ""
 msgctxt "#31426"
 msgid "Global widget wall"
 msgstr ""
+
+#: /xml/SkinSettings.xml
+msgctxt "#31427"
+msgid "Enable transparent notification dialog"
+msgstr ""
+
+#: /xml/MyVideoNav.xml
+msgctxt "#31428"
+msgid "Extended List"
+msgstr ""

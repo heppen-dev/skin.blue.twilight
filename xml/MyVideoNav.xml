@@ -120,7 +120,7 @@
           <control type="radiobutton" id="6061">
             <description>Show second line on the list item</description>
             <include>MediaMenuItemsCommon</include>
-            <label>Extended List</label>
+            <label>$LOCALIZE[31428]</label>
             <selected>Skin.HasSetting(ExtendedList)</selected>
             <onclick>Skin.ToggleSetting(ExtendedList)</onclick>
             <visible>Control.IsVisible(50) | Control.IsVisible(55)</visible>
