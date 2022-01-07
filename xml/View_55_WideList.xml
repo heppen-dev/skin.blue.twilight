@@ -216,7 +216,8 @@
         <include condition="Window.IsActive(music)">SongsListLayout</include>
         <include>AddonsListLayout</include>
       </control>
-      <include content="Object_Scrollbars">
+      <include content="Object_Scrollbar_Vert">
+        <param name="visible" value="Control.IsVisible(55)" />
         <param name="left" value="1860"/>
       </include>
     </control>

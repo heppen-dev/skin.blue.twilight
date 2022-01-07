@@ -24,7 +24,8 @@
         <texture colordiffuse="AltPosterBack" border="5">common/box.png</texture>
         <visible>Control.IsVisible(51)</visible>
       </control>
-      <include content="Object_Scrollbars">
+      <include content="Object_Scrollbar_Horz">
+        <param name="visible" value="Control.IsVisible(51)" />
         <param name="bottom" value="840"/>
       </include>
       <control type="group">

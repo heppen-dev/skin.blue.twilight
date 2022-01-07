@@ -108,9 +108,10 @@
           <param name="visible" value="true"/>
         </include>
       </control>
-      <include content="Object_Scrollbars">
+      <include content="Object_Scrollbar_Horz">
+        <param name="visible" value="Control.IsVisible(510)" />
         <param name="bottom" value="20"/>
-      </include>
+    </include>
     </control>
   </include>
 </includes>
