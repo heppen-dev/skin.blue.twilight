@@ -16,30 +16,30 @@
       <visible>!Player.HasMedia + !String.IsEmpty(Skin.String(HomeFanart.path))</visible>
     </control>
     <control type="group">
-      <width>1400</width>
-      <height>833</height>
-      <left>260</left>
-      <top>100</top>
-      <include>OpenClose_Right</include>
+      <width>1700</width>
+      <height>850</height>
+      <left>110</left>
+      <top>115</top>
+      <include>OpenClose_Bottom</include>
       <control type="image">
+        <width>1700</width>
+        <height>850</height>
+        <left>0</left>
+        <top>0</top>
         <texture colordiffuse="dialog_bg_100" border="5">common/box.png</texture>
         <bordertexture border="24">common/shadow-dialog-24.png</bordertexture>
         <bordersize>24</bordersize>
-        <width>1500</width>
-        <height>900</height>
-        <top>-20</top>
-        <left>-50</left>
       </control>
       <control type="label">
-        <top>30</top>
-        <left>10</left>
-        <label>$LOCALIZE[130]</label>
+        <top>60</top>
+        <left>60</left>
+        <label>$INFO[Control.GetLabel(2)]</label>
         <include>BreadcrumbsLabel</include>
       </control>
       <control type="group">
         <left>25</left>
         <top>100</top>
-        <include>OpenClose_Right</include>
+        <include>OpenClose_Bottom</include>
         <control type="grouplist">
           <left>420</left>
           <top>30</top>
@@ -117,12 +117,13 @@
           <left>420</left>
           <right>50</right>
           <top>30</top>
-          <bottom>307</bottom>
+          <bottom>360</bottom>
           <pagecontrol>60</pagecontrol>
+          <textcolor>main_fg_70</textcolor>
           <autoscroll delay="5000" repeat="7500" time="5000">!Control.HasFocus(60)</autoscroll>
         </control>
         <control type="scrollbar" id="60">
-          <right>0</right>
+          <right>30</right>
           <top>0</top>
           <width>12</width>
           <bottom>340</bottom>
@@ -142,19 +143,19 @@
         <left>0</left>
         <top>0</top>
         <depth>DepthContentPanel</depth>
-        <include>OpenClose_Left</include>
+        <include>OpenClose_Bottom</include>
         <include content="DefaultSettingButtonGradient">
           <param name="id" value="9000"/>
           <top>133</top>
-          <width>445</width>
+          <width>398</width>
           <height>80</height>
-          <left>-25</left>
+          <left>24</left>
           <visible>ControlGroup(9000).HasFocus()</visible>
         </include>
         <control type="grouplist" id="9000">
-          <left>-25</left>
+          <left>24</left>
           <top>130</top>
-          <width>445</width>
+          <width>398</width>
           <height>100%</height>
           <onup>9000</onup>
           <ondown>9000</ondown>
@@ -219,42 +220,40 @@
         </control>
       </control>
       <control type="group">
-        <bottom>-60</bottom>
+        <bottom>0</bottom>
         <left>25</left>
         <height>370</height>
-        <include>OpenClose_Right</include>
+        <include>OpenClose_Bottom</include>
         <control type="grouplist">
           <left>420</left>
           <orientation>vertical</orientation>
           <control type="label">
             <description>Memory Text</description>
-            <width>auto</width>
+            <width>95%</width>
             <height>80</height>
             <label>$LOCALIZE[31030]: $INFO[system.memory(used)] [B]/[/B] $INFO[system.memory(total)] [B]-[/B] $INFO[system.memory(used.percent)]</label>
             <aligny>top</aligny>
             <textoffsety>40</textoffsety>
-            <shadowcolor>black</shadowcolor>
             <font>font12</font>
           </control>
           <control type="progress" id="400">
             <description>Memory BAR</description>
-            <width>730</width>
+            <width>95%</width>
             <height>16</height>
             <info>system.memory(used)</info>
           </control>
           <control type="label">
             <description>CPU Text</description>
-            <width>auto</width>
+            <width>95%</width>
             <height>40</height>
             <label>$LOCALIZE[13271] $INFO[System.CPUUsage]</label>
             <aligny>center</aligny>
-            <shadowcolor>black</shadowcolor>
             <font>font12</font>
             <visible>System.SupportsCPUUsage</visible>
           </control>
           <control type="progress">
             <description>CPU BAR</description>
-            <width>730</width>
+            <width>95%</width>
             <height>16</height>
             <info>System.CPUUsage</info>
             <visible>System.SupportsCPUUsage</visible>
@@ -270,7 +269,6 @@
             <aligny>bottom</aligny>
             <textoffsety>10</textoffsety>
             <label>$LOCALIZE[31031]:</label>
-            <shadowcolor>black</shadowcolor>
             <font>font25_title</font>
           </control>
           <control type="grouplist">
@@ -286,7 +284,6 @@
               <height>40</height>
               <font>font12</font>
               <label>$LOCALIZE[144]</label>
-              <shadowcolor>black</shadowcolor>
             </control>
             <control type="label">
               <description>Kodi Build Version</description>
@@ -295,7 +292,6 @@
               <font>font12</font>
               <label>$INFO[System.BuildVersionShort]$INFO[System.BuildVersionCode, (,)]</label>
               <textcolor>$VAR[ColorHighlight]</textcolor>
-              <shadowcolor>black</shadowcolor>
             </control>
           </control>
           <control type="grouplist">
@@ -311,7 +307,6 @@
               <height>40</height>
               <font>font12</font>
               <label>Git:</label>
-              <shadowcolor>black</shadowcolor>
             </control>
             <control type="label">
               <description>Git version</description>
@@ -320,7 +315,6 @@
               <font>font12</font>
               <label>$INFO[System.BuildVersionGit]</label>
               <textcolor>$VAR[ColorHighlight]</textcolor>
-              <shadowcolor>black</shadowcolor>
             </control>
           </control>
           <control type="grouplist">
@@ -336,7 +330,6 @@
               <height>40</height>
               <font>font12</font>
               <label>$LOCALIZE[174]</label>
-              <shadowcolor>black</shadowcolor>
             </control>
             <control type="label" id="53">
               <description>Kodi Build Date</description>
@@ -344,7 +337,6 @@
               <height>40</height>
               <font>font12</font>
               <textcolor>$VAR[ColorHighlight]</textcolor>
-              <shadowcolor>black</shadowcolor>
             </control>
           </control>
         </control>
@@ -355,7 +347,7 @@
           <left>418</left>
           <top>133</top>
           <width>5</width>
-          <height>723</height>
+          <height>693</height>
           <texture colordiffuse="$VAR[ColorHighlight]" border="3">common/fancy-line.png</texture>
         </control>
         <control type="image">
@@ -363,7 +355,7 @@
           <left>417</left>
           <top>133</top>
           <width>5</width>
-          <height>723</height>
+          <height>693</height>
           <texture colordiffuse="$VAR[ColorGradient]" border="3">common/white-gradient.png</texture>
         </control>
       </control>
