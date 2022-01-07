@@ -105,12 +105,12 @@
         <scrolltime>0</scrolltime>
         <itemlayout width="550" height="70">
           <control type="label">
-            <left>0</left>
+            <left>30</left>
             <top>12</top>
             <right>0</right>
             <info>ListItem.Label</info>
             <animation effect="fade" start="100" end="50" condition="String.IsEqual(ListItem.Property(skinshortcuts-disabled),True)">Conditional</animation>
-            <animation effect="slide" end="48" condition="!String.IsEqual(Window.Property(groupname),shutdown)">Conditional</animation>
+            <!-- <animation effect="slide" end="48" condition="!String.IsEqual(Window.Property(groupname),shutdown)">Conditional</animation> -->
           </control>
         </itemlayout>
         <focusedlayout width="550" height="70">
@@ -121,14 +121,14 @@
             <texture colordiffuse="$VAR[ColorGradient]" border="5">common/white-gradient.png</texture>
           </control>
           <control type="label">
-            <left>0</left>
+            <left>30</left>
             <top>12</top>
             <right>260</right>
             <scroll>false</scroll>
             <info>ListItem.Label</info>
             <textcolor>dialog_fg_100</textcolor>
             <animation effect="fade" start="100" end="50" condition="String.IsEqual(ListItem.Property(skinshortcuts-disabled),True)">Conditional</animation>
-            <animation effect="slide" end="48" condition="!String.IsEqual(Window.Property(groupname),shutdown)">Conditional</animation>
+            <!-- <animation effect="slide" end="48" condition="!String.IsEqual(Window.Property(groupname),shutdown)">Conditional</animation> -->
           </control>
         </focusedlayout>
       </control>

@@ -19,22 +19,23 @@
       <visible>!Player.HasMedia + !String.IsEmpty(Skin.String(HomeFanart.path))</visible>
     </control>
     <control type="group">
-      <width>1400</width>
-      <height>833</height>
-      <left>260</left>
-      <top>100</top>
+      <width>1700</width>
+      <height>850</height>
+      <left>110</left>
+      <top>115</top>
       <include>OpenClose_Bottom</include>
       <control type="image">
-        <texture colordiffuse="dialog_bg_100" border="21">common/box.png</texture>
+        <width>1700</width>
+        <height>850</height>
+        <left>0</left>
+        <top>0</top>
+        <texture colordiffuse="dialog_bg_100" border="5">common/box.png</texture>
         <bordertexture border="24">common/shadow-dialog-24.png</bordertexture>
-        <width>1500</width>
-        <height>935</height>
-        <top>-20</top>
-        <left>-50</left>
+        <bordersize>24</bordersize>
       </control>
       <control type="label">
-        <top>30</top>
-        <left>10</left>
+        <top>60</top>
+        <left>60</left>
         <label>$LOCALIZE[20077]</label>
         <include>BreadcrumbsLabel</include>
       </control>
@@ -45,15 +46,15 @@
           <param name="id" value="600"/>
           <top>133</top>
           <height>80</height>
-          <right>0</right>
+          <right>20</right>
           <visible>ControlGroup(600).HasFocus()</visible>
         </include>
         <!-- Start -->
         <control type="grouplist" id="600">
           <top>133</top>
           <left>0</left>
-          <right>0</right>
-          <bottom>140</bottom>
+          <right>20</right>
+          <bottom>155</bottom>
           <pagecontrol>60</pagecontrol>
           <onleft>9000</onleft>
           <onright>60</onright>
@@ -124,15 +125,15 @@
           <param name="id" value="700"/>
           <top>133</top>
           <height>80</height>
-          <right>0</right>
+          <right>20</right>
           <visible>ControlGroup(700).HasFocus()</visible>
         </include>
         <!-- Background -->
         <control type="grouplist" id="700">
           <top>133</top>
           <left>0</left>
-          <right>0</right>
-          <bottom>140</bottom>
+          <right>20</right>
+          <bottom>155</bottom>
           <onleft>9000</onleft>
           <onright>60</onright>
           <onup>700</onup>
@@ -211,15 +212,15 @@
           <param name="id" value="800"/>
           <top>133</top>
           <height>80</height>
-          <right>0</right>
+          <right>20</right>
           <visible>ControlGroup(800).HasFocus()</visible>
         </include>
         <!-- Miscellaneous -->
         <control type="grouplist" id="800">
           <top>133</top>
           <left>0</left>
-          <right>0</right>
-          <bottom>140</bottom>
+          <right>20</right>
+          <bottom>155</bottom>
           <onleft>9000</onleft>
           <onright>60</onright>
           <onup>800</onup>
@@ -306,15 +307,15 @@
           <param name="id" value="900"/>
           <top>133</top>
           <height>80</height>
-          <right>0</right>
+          <right>20</right>
           <visible>ControlGroup(900).HasFocus()</visible>
         </include>
         <!-- Library -->
         <control type="grouplist" id="900">
           <top>133</top>
           <left>0</left>
-          <right>0</right>
-          <bottom>140</bottom>
+          <right>20</right>
+          <bottom>155</bottom>
           <onleft>9000</onleft>
           <onright>60</onright>
           <onup>900</onup>
@@ -398,15 +399,15 @@
           <param name="id" value="1000"/>
           <top>133</top>
           <height>80</height>
-          <right>0</right>
+          <right>20</right>
           <visible>ControlGroup(1000).HasFocus()</visible>
         </include>
         <!-- Video / Music OSD -->
         <control type="grouplist" id="1000">
           <top>133</top>
           <left>0</left>
-          <right>0</right>
-          <bottom>140</bottom>
+          <right>20</right>
+          <bottom>155</bottom>
           <onleft>9000</onleft>
           <onright>60</onright>
           <onup>1000</onup>
@@ -443,15 +444,15 @@
           <param name="id" value="1100"/>
           <top>133</top>
           <height>80</height>
-          <right>0</right>
+          <right>20</right>
           <visible>ControlGroup(1100).HasFocus()</visible>
         </include>
         <!-- Live TV -->
         <control type="grouplist" id="1100">
           <top>133</top>
           <left>0</left>
-          <right>0</right>
-          <bottom>140</bottom>
+          <right>20</right>
+          <bottom>155</bottom>
           <onleft>9000</onleft>
           <onright>60</onright>
           <onup>1100</onup>
@@ -475,15 +476,15 @@
           <param name="id" value="1200"/>
           <top>133</top>
           <height>80</height>
-          <right>0</right>
+          <right>20</right>
           <visible>ControlGroup(1200).HasFocus()</visible>
         </include>
         <!-- Manage -->
         <control type="grouplist" id="1200">
           <top>133</top>
           <left>0</left>
-          <right>0</right>
-          <bottom>140</bottom>
+          <right>20</right>
+          <bottom>155</bottom>
           <onleft>9000</onleft>
           <onright>60</onright>
           <onup>1200</onup>
@@ -570,15 +571,15 @@
           <param name="id" value="1300"/>
           <top>613</top>
           <height>80</height>
-          <right>0</right>
+          <right>20</right>
           <visible>ControlGroup(1300).HasFocus()</visible>
         </include>
         <!-- Primus -->
         <control type="grouplist" id="1300">
           <top>613</top>
           <left>0</left>
-          <right>0</right>
-          <bottom>140</bottom>
+          <right>20</right>
+          <bottom>155</bottom>
           <onleft>9000</onleft>
           <onright>60</onright>
           <onup>1300</onup>
@@ -597,27 +598,27 @@
         <!-- <include>OpenClose_Left</include> -->
         <control type="list" id="9000">
           <description>button area</description>
-          <left>-50</left>
+          <left>23</left>
           <top>133</top>
-          <width>540</width>
-          <height>720</height>
+          <width>467</width>
+          <height>640</height>
           <onleft>10000</onleft>
           <onright>10000</onright>
           <onup>9000</onup>
           <ondown>9000</ondown>
-          <itemlayout height="80" width="540">
+          <itemlayout height="80" width="467">
             <control type="label">
               <textoffsetx>30</textoffsetx>
-              <width>540</width>
+              <width>467</width>
               <height>80</height>
               <label>$INFO[ListItem.Label]</label>
               <font>font_small_defaults</font>
               <aligny>center</aligny>
             </control>
           </itemlayout>
-          <focusedlayout height="80" width="540">
+          <focusedlayout height="80" width="467">
             <control type="group">
-              <width>540</width>
+              <width>467</width>
               <height>80</height>
               <control type="image">
                 <texture colordiffuse="$VAR[ColorHighlight]" border="10">common/white.png</texture>
@@ -629,7 +630,7 @@
             </control>
             <control type="label">
               <textoffsetx>30</textoffsetx>
-              <width>540</width>
+              <width>467</width>
               <height>80</height>
               <textcolor>FFededed</textcolor>
               <font>font_small_defaults</font>
@@ -679,7 +680,7 @@
         <bottom>137</bottom>
         <width>60</width>
         <control type="scrollbar" id="60">
-          <right>0</right>
+          <right>40</right>
           <top>0</top>
           <bottom>0</bottom>
           <width>12</width>
@@ -701,7 +702,7 @@
           <left>488</left>
           <top>133</top>
           <width>5</width>
-          <height>782</height>
+          <height>694</height>
           <texture colordiffuse="$VAR[ColorHighlight]" border="3">common/fancy-line.png</texture>
         </control>
         <control type="image">
@@ -709,7 +710,7 @@
           <left>487</left>
           <top>133</top>
           <width>5</width>
-          <height>782</height>
+          <height>694</height>
           <texture colordiffuse="$VAR[ColorGradient]" border="3">common/white-gradient.png</texture>
         </control>
       </control>
@@ -721,8 +722,8 @@
     <control type="textbox" id="6">
       <include>OpenClose_Bottom</include>
       <description>description area</description>
-      <left>790</left>
-      <bottom>120</bottom>
+      <left>650</left>
+      <bottom>100</bottom>
       <width>1400</width>
       <height>100</height>
       <font>font12</font>
