@@ -432,7 +432,7 @@
               <param name="id" value="29999"/>
               <param name="top" value="0"/>
               <width>1200</width>
-              <height>16</height>
+              <height>8</height>
               <left>0</left>
               <info>PVR.EpgEventProgress</info>
             </include>
