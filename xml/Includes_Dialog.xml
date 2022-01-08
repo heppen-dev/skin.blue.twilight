@@ -83,7 +83,7 @@
           <height>26</height>
           <label>$PARAM[label]</label>
           <align>left</align>
-          <width max="475">auto</width>
+          <width max="455">auto</width>
           <font>font_small_notify_main_bold</font>
           <textcolor>$PARAM[fgcolor]_100</textcolor>
         </control>
@@ -98,21 +98,21 @@
             <centerbottom>33%</centerbottom>
             <height>26</height>
             <label>$PARAM[label2]</label>
-            <width max="475">auto</width>
+            <width max="455">auto</width>
             <scroll>true</scroll>
             <font>font13</font>
             <textcolor>$PARAM[fgcolor]_100</textcolor>
           </control>
-          <control type="label">
-            <left>455</left>
-            <top>20</top>
-            <height>26</height>
-            <width>auto</width>
-            <textcolor>$PARAM[fgcolor]_100</textcolor>
-            <font>font13</font>
-            <label>$INFO[Control.GetLabel(32),,%]</label>
-            <visible>Window.IsVisible(DialogExtendedProgressBar.xml) + Control.IsVisible(32)</visible>
-          </control>
+        </control>
+        <control type="label">
+          <left>495</left>
+          <top>20</top>
+          <height>26</height>
+          <width>auto</width>
+          <textcolor>$PARAM[fgcolor]_100</textcolor>
+          <font>font13</font>
+          <label>$INFO[Control.GetLabel(32),,%]</label>
+          <visible>Window.IsVisible(DialogExtendedProgressBar.xml) + Control.IsVisible(32)</visible>
         </control>
       </control>
     </definition>
