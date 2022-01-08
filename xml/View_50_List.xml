@@ -93,21 +93,12 @@
           <visible>!Container.Content(songs)</visible>
           <control type="image">
             <top>300</top>
-            <right>72</right>
-            <width>764.88</width>
-            <fadetime>200</fadetime>
-            <aspectratio aligny="center" scalediffuse="false">keep</aspectratio>
-            <texture fallback="DefaultVideo.png" background="true" colordiffuse="PosterBack">diffuse/rightlistpanel-diffuse.png</texture>
-            <bordertexture>common/rightlistpanel-diffuse-shadow.png</bordertexture>
-            <bordersize>30</bordersize>
-          </control>
-          <control type="image">
-            <top>300</top>
             <right>74</right>
             <width>761.44</width>
             <fadetime>200</fadetime>
             <aspectratio aligny="center" scalediffuse="true">keep</aspectratio>
             <texture fallback="DefaultVideo.png" background="true" diffuse="diffuse/rightlistpanel-diffuse.png">$VAR[Image_Landscape]</texture>
+            <bordertexture border="24">common/rightlistpanel-diffuse-shadow.png</bordertexture>
             <bordersize>27</bordersize>
           </control>
           <control type="group">
