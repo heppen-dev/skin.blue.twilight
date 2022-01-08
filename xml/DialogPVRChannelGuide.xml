@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
   <defaultcontrol always="true">11</defaultcontrol>
-  <onload>AlarmClock(test,ActivateWindow(pvrosdchannels),00:01)</onload>
   <controls>
     <control type="group">
       <animation effect="fade" start="0" end="100" time="100">WindowOpen</animation>
