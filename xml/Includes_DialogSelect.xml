@@ -152,7 +152,7 @@
         <orientation>vertical</orientation>
       </control>
       <control type="label">
-        <left>925</left>
+        <left>1100</left>
         <bottom>10</bottom>
         <width>275</width>
         <height>35</height>
