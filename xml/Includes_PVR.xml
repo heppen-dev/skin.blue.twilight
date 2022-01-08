@@ -8,7 +8,7 @@
       <control type="image">
         <top>-15</top>
         <left>-15</left>
-        <width>540</width>
+        <width>640</width>
         <height>1110</height>
         <texture background="true" colordiffuse="$VAR[ColorHighlight]" border="20">common/pvrchannels-bg.png</texture>
         <animation effect="fade" time="200" end="0" condition="String.IsEqual(Skin.String(HomeAlphaValue),100)">Conditional</animation>
@@ -38,7 +38,7 @@
         <top>104</top>
         <bottom>104</bottom>
         <width>970</width>
-        <height>900</height>
+        <height>920</height>
         <onleft>PreviousChannelGroup</onleft>
         <onright>NextChannelGroup</onright>
         <onup>11</onup>
@@ -57,7 +57,7 @@
           </control>
           <control type="group">
             <control type="label">
-              <top>14</top>
+              <top>24</top>
               <left>168</left>
               <height>100</height>
               <font>font_small_pvr_channels</font>
@@ -80,7 +80,7 @@
                 <left>0</left>
                 <top>-25</top>
                 <aligny>top</aligny>
-                <width max="280">auto</width>
+                <width max="420">auto</width>
                 <textcolor>main_fg_70</textcolor>
                 <label>$INFO[ListItem.Title]</label>
               </control>
@@ -96,17 +96,17 @@
               <control type="label">
                 <font>font_small_pvr_channels_italic</font>
                 <left>66</left>
-                <top>0</top>
+                <top>2</top>
                 <aligny>top</aligny>
-                <width max="280">auto</width>
+                <width max="380">auto</width>
                 <textcolor>main_fg_70</textcolor>
                 <label>$INFO[ListItem.NextTitle]</label>
               </control>
               <control type="progress">
-                <top>42</top>
+                <top>44</top>
                 <height>8</height>
                 <left>50</left>
-                <width>260</width>
+                <width>360</width>
                 <visible>ListItem.HasEpg</visible>
                 <info>ListItem.Progress</info>
                 <lefttexture colordiffuse="B3ededed" border="4">diffuse/progress-left.png</lefttexture>
@@ -130,8 +130,8 @@
           </control>
           <control type="group">
             <control type="label">
-              <top>14</top>
-              <left>168</left>
+              <top>24</top>
+              <left>188</left>
               <height>100</height>
               <font>font_small_pvr_channels</font>
               <aligny>center</aligny>
@@ -145,7 +145,7 @@
             <top>12</top>
             <bottom>0</bottom>
             <control type="group">
-              <left>0</left>
+              <left>20</left>
               <top>15</top>
               <bottom>20</bottom>
               <control type="label">
@@ -153,8 +153,8 @@
                 <left>0</left>
                 <top>-25</top>
                 <aligny>top</aligny>
-                <width max="280">auto</width>
-                <textcolor>main_fg_100</textcolor>
+                <width max="420">auto</width>
+                <textcolor>fff1c40f</textcolor>
                 <label>$INFO[ListItem.Title]</label>
               </control>
               <control type="label">
@@ -169,22 +169,22 @@
               <control type="label">
                 <font>font_small_pvr_channels_italic</font>
                 <left>66</left>
-                <top>0</top>
+                <top>2</top>
                 <aligny>top</aligny>
-                <width max="280">auto</width>
+                <width max="360">auto</width>
                 <textcolor>main_fg_100</textcolor>
                 <label>$INFO[ListItem.NextTitle]</label>
               </control>
               <control type="progress">
-                <top>42</top>
+                <top>44</top>
                 <height>8</height>
                 <left>50</left>
-                <width>260</width>
+                <width>360</width>
                 <visible>ListItem.HasEpg</visible>
                 <info>ListItem.Progress</info>
-                <lefttexture colordiffuse="$VAR[ColorHighlight]" border="4">diffuse/progress-left.png</lefttexture>
-                <midtexture colordiffuse="$VAR[ColorHighlight]" border="4">diffuse/progress-end.png</midtexture>
-                <righttexture colordiffuse="$VAR[ColorHighlight]" border="4">diffuse/progress-right.png</righttexture>
+                <lefttexture colordiffuse="fff1c40f" border="4">diffuse/progress-left.png</lefttexture>
+                <midtexture colordiffuse="fff1c40f" border="4">diffuse/progress-end.png</midtexture>
+                <righttexture colordiffuse="fff1c40f" border="4">diffuse/progress-right.png</righttexture>
                 <texturebg colordiffuse="panel_fg_30" border="4">diffuse/progress-256-bg.png</texturebg>
               </control>
             </control>
@@ -283,7 +283,7 @@
                 <label>$INFO[ListItem.Title]</label>
               </control>
               <control type="progress">
-                <top>48</top>
+                <top>44</top>
                 <height>12</height>
                 <right>0</right>
                 <width>128</width>
