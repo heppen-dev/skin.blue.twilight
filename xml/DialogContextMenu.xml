@@ -2,6 +2,7 @@
 <window>
   <defaultcontrol>996</defaultcontrol>
   <include>Animation_DialogPopupOpenClose</include>
+  <onload>SendClick(1004)</onload>
   <coordinates>
     <origin x="0" y="150"/>
   </coordinates>

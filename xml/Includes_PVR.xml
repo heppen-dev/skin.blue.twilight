@@ -40,7 +40,8 @@
         <width>970</width>
         <height>920</height>
         <onleft>PreviousChannelGroup</onleft>
-        <onright>ActivateWindow(pvrchannelguide)</onright>
+        <!-- <onright>NextChannelGroup</onright> -->
+        <onright>Action(contextmenu)</onright>
         <onup>11</onup>
         <ondown>11</ondown>
         <scrolltime tween="cubic" easing="out">500</scrolltime>
