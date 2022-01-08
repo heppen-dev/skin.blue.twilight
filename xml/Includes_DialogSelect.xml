@@ -5,9 +5,9 @@
       <centertop>50%</centertop>
       <centerleft>50%</centerleft>
       <height>750</height>
-      <width>1240</width>
+      <width>1440</width>
       <include content="DialogBackgroundCommons">
-        <param name="width" value="1220"/>
+        <param name="width" value="1420"/>
         <param name="height" value="750"/>
         <param name="header_label" value=""/>
         <param name="header_id" value="1"/>
@@ -15,7 +15,7 @@
       <control type="list" id="3">
         <left>0</left>
         <top>100</top>
-        <width>890</width>
+        <width>1100</width>
         <bottom>20</bottom>
         <onup>3</onup>
         <ondown>3</ondown>
@@ -24,14 +24,14 @@
         <pagecontrol>61</pagecontrol>
         <scrolltime>200</scrolltime>
         <include content="DefaultSimpleListLayout">
-          <param name="width" value="890"/>
+          <param name="width" value="1100"/>
           <param name="list_id" value="3"/>
         </include>
       </control>
       <control type="list" id="6">
         <left>0</left>
         <top>100</top>
-        <width>890</width>
+        <width>1100</width>
         <bottom>20</bottom>
         <onup>6</onup>
         <ondown>6</ondown>
@@ -39,9 +39,25 @@
         <onright>61</onright>
         <pagecontrol>61</pagecontrol>
         <scrolltime>200</scrolltime>
-        <itemlayout height="125" width="890">
+        <itemlayout height="125" width="1100">
           <control type="image">
-            <left>32</left>
+            <left>64</left>
+            <centertop>50%</centertop>
+            <width>24</width>
+            <height>24</height>
+            <texture colordiffuse="$VAR[ColorHighlight]">buttons/check-on.png</texture>
+            <visible>ListItem.IsSelected</visible>
+          </control>
+          <control type="image">
+            <left>64</left>
+            <centertop>50%</centertop>
+            <width>24</width>
+            <height>24</height>
+            <texture colordiffuse="dialog_fg_70">buttons/check-off.png</texture>
+            <visible>!ListItem.IsSelected</visible>
+          </control>
+          <control type="image">
+            <left>150</left>
             <top>7</top>
             <width>110</width>
             <height>110</height>
@@ -49,7 +65,7 @@
             <aspectratio>keep</aspectratio>
           </control>
           <control type="label">
-            <left>155</left>
+            <left>300</left>
             <top>0</top>
             <right>20</right>
             <height>60</height>
@@ -58,16 +74,16 @@
             <label>$INFO[ListItem.Label]</label>
           </control>
           <control type="textbox">
-            <left>155</left>
+            <left>300</left>
             <top>50</top>
             <right>20</right>
             <height>67</height>
             <font>font12</font>
-            <textcolor>grey</textcolor>
+            <textcolor>dialog_fg_70</textcolor>
             <label>$INFO[ListItem.Label2]</label>
           </control>
         </itemlayout>
-        <focusedlayout height="125" width="890">
+        <focusedlayout height="125" width="1100">
           <control type="group">
             <left>0</left>
             <top>0</top>
@@ -82,7 +98,23 @@
             <visible>Control.HasFocus(6)</visible>
           </control>
           <control type="image">
-            <left>32</left>
+            <left>64</left>
+            <centertop>50%</centertop>
+            <width>24</width>
+            <height>24</height>
+            <texture colordiffuse="dialog_fg_70">buttons/check-on.png</texture>
+            <visible>ListItem.IsSelected</visible>
+          </control>
+          <control type="image">
+            <left>64</left>
+            <centertop>50%</centertop>
+            <width>24</width>
+            <height>24</height>
+            <texture colordiffuse="dialog_fg_70">buttons/check-off.png</texture>
+            <visible>!ListItem.IsSelected</visible>
+          </control>
+          <control type="image">
+            <left>150</left>
             <top>7</top>
             <width>110</width>
             <height>110</height>
@@ -90,27 +122,27 @@
             <aspectratio>keep</aspectratio>
           </control>
           <control type="label">
-            <left>155</left>
+            <left>300</left>
             <top>0</top>
             <right>20</right>
             <height>60</height>
-            <aligny>center</aligny>
-            <scroll>true</scroll>
             <font>font27</font>
+            <aligny>center</aligny>
             <label>$INFO[ListItem.Label]</label>
           </control>
           <control type="textbox">
-            <left>155</left>
+            <left>300</left>
             <top>50</top>
             <right>20</right>
             <height>67</height>
             <font>font12</font>
+            <textcolor>dialog_fg_70</textcolor>
             <label>$INFO[ListItem.Label2]</label>
           </control>
         </focusedlayout>
       </control>
       <control type="scrollbar" id="61">
-        <left>890</left>
+        <left>1100</left>
         <top>100</top>
         <width>12</width>
         <bottom>20</bottom>
@@ -130,7 +162,7 @@
         <label>$VAR[SelectLabel]</label>
       </control>
       <control type="grouplist" id="9001">
-        <left>920</left>
+        <left>1120</left>
         <top>100</top>
         <onleft>61</onleft>
         <itemgap>20</itemgap>
@@ -198,7 +230,7 @@
               <top>250</top>
               <width>444</width>
               <height>80</height>
-              <label>$INFO[ListItem.Label][CR][COLOR grey]$INFO[ListItem.Label2][/COLOR]</label>
+              <label>$INFO[ListItem.Label][CR][COLOR dialog_fg_70]$INFO[ListItem.Label2][/COLOR]</label>
               <font>font37</font>
               <shadowcolor>text_shadow</shadowcolor>
               <align>center</align>
@@ -229,7 +261,7 @@
               <top>250</top>
               <width>444</width>
               <height>80</height>
-              <label>$INFO[ListItem.Label][CR][COLOR grey]$INFO[ListItem.Label2][/COLOR]</label>
+              <label>$INFO[ListItem.Label][CR][COLOR dialog_fg_70]$INFO[ListItem.Label2][/COLOR]</label>
               <font>font37</font>
               <shadowcolor>text_shadow</shadowcolor>
               <align>center</align>
@@ -304,7 +336,7 @@
               <top>250</top>
               <width>444</width>
               <height>40</height>
-              <label>$INFO[ListItem.Label][CR][COLOR grey]$INFO[ListItem.Label2][/COLOR]</label>
+              <label>$INFO[ListItem.Label][CR][COLOR dialog_fg_70]$INFO[ListItem.Label2][/COLOR]</label>
               <font>font37</font>
               <shadowcolor>text_shadow</shadowcolor>
               <align>center</align>
@@ -335,7 +367,7 @@
               <top>250</top>
               <width>444</width>
               <height>40</height>
-              <label>$INFO[ListItem.Label][CR][COLOR grey]$INFO[ListItem.Label2][/COLOR]</label>
+              <label>$INFO[ListItem.Label][CR][COLOR dialog_fg_70]$INFO[ListItem.Label2][/COLOR]</label>
               <font>font37</font>
               <shadowcolor>text_shadow</shadowcolor>
               <align>center</align>

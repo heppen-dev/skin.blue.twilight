@@ -256,8 +256,24 @@
         </control>
         <control type="group">
           <visible>!ListItem.Property(PVR.IsRecordingTimer) + !ListItem.Property(PVR.IsRemindingTimer)</visible>
+          <control type="image">
+            <left>32</left>
+            <centertop>50%</centertop>
+            <width>24</width>
+            <height>24</height>
+            <texture colordiffuse="$VAR[ColorHighlight]">buttons/check-on.png</texture>
+            <visible>ListItem.IsSelected</visible>
+          </control>
+          <control type="image">
+            <left>32</left>
+            <centertop>50%</centertop>
+            <width>24</width>
+            <height>24</height>
+            <texture colordiffuse="dialog_fg_70">buttons/check-off.png</texture>
+            <visible>!ListItem.IsSelected</visible>
+          </control>
           <control type="label">
-            <left>40</left>
+            <left>92</left>
             <top>0</top>
             <right>20</right>
             <bottom>0</bottom>
@@ -315,16 +331,32 @@
         </control>
         <control type="group">
           <visible>!ListItem.Property(PVR.IsRecordingTimer) + !ListItem.Property(PVR.IsRemindingTimer)</visible>
+          <control type="image">
+            <left>32</left>
+            <centertop>50%</centertop>
+            <width>24</width>
+            <height>24</height>
+            <texture colordiffuse="dialog_fg_70">buttons/check-on.png</texture>
+            <visible>ListItem.IsSelected</visible>
+          </control>
+          <control type="image">
+            <left>32</left>
+            <centertop>50%</centertop>
+            <width>24</width>
+            <height>24</height>
+            <texture colordiffuse="dialog_fg_70">buttons/check-off.png</texture>
+            <visible>!ListItem.IsSelected</visible>
+          </control>
           <control type="label">
-            <left>40</left>
+            <left>92</left>
             <top>0</top>
             <right>20</right>
             <bottom>0</bottom>
             <align>$PARAM[align]</align>
             <font>$PARAM[font]</font>
             <aligny>center</aligny>
+            <textcolor>$PARAM[fontcolor]</textcolor>
             <label>$INFO[ListItem.Label]</label>
-            <scroll>true</scroll>
           </control>
         </control>
       </focusedlayout>
