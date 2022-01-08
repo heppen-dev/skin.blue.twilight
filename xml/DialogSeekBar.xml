@@ -248,15 +248,13 @@
         </control>
       </control>
       <control type="label">
-        <centerleft>50%</centerleft>
-        <centertop>125</centertop>
-        <top>-10</top>
+        <top>140</top>
+        <left>280</left>
         <width>50%</width>
         <height>60</height>
-        <align>center</align>
-        <aligny>top</aligny>
+        <align>left</align>
         <label>$VAR[SeekTimeLabelVar]</label>
-        <font>font45</font>
+        <font>font25_title</font>
         <shadowcolor>black</shadowcolor>
         <visible>!Player.ChannelPreviewActive | VideoPlayer.HasEpg</visible>
       </control>
@@ -272,45 +270,33 @@
         <shadowcolor>black</shadowcolor>
       </control>
       <control type="group">
-        <visible>Window.IsVisible(videoosd)</visible>
+        <visible>Window.IsVisible(videoosd) + !Window.IsVisible(playerprocessinfo) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(osdsubtitlesettings) + !Window.IsVisible(1101)</visible>
         <control type="image">
-          <left>60</left>
-          <top>-400</top>
-          <width>270</width>
-          <height>382.5</height>
+          <left>40</left>
+          <top>-350</top>
+          <width>200</width>
           <aspectratio>keep</aspectratio>
           <texture>$VAR[SeekbarPoster]</texture>
         </control>
         <control type="label">
-          <left>380</left>
-          <top>-380</top>
+          <top>-220</top>
+          <left>280</left>
           <right>20</right>
           <height>160</height>
           <font>font52_title</font>
           <label>$INFO[Player.Title]</label>
-          <visible>String.IsEmpty(Player.Art(clearlogo)) + String.IsEmpty(Player.Art(tvshow.clearlogo))</visible>
-        </control>
-        <control type="image">
-          <left>380</left>
-          <top>-880</top>
-          <right>20</right>
-          <width>480</width>
-          <aspectratio>keep</aspectratio>
-          <texture background="true">$VAR[Image_ClearLogo]</texture>
-          <visible>!String.IsEmpty(Player.Art(clearlogo)) | !String.IsEmpty(Player.Art(tvshow.clearlogo))</visible>
         </control>
         <control type="group">
-          <left>380</left>
-          <top>-250</top>
-          <width>66%</width>
-          <include>Object_Info_Line</include>
+          <left>280</left>
+          <top>22</top>
+          <include>Object_Info_First_Line_OSD</include>
         </control>
         <control type="textbox">
-          <left>380</left>
-          <top>-180</top>
+          <left>280</left>
+          <top>-120</top>
           <right>20</right>
-          <height>150</height>
-          <width>66%</width>
+          <height>90</height>
+          <width>78%</width>
           <label fallback="19055">$INFO[VideoPlayer.Plot]</label>
           <align>justify</align>
           <autoscroll delay="5000" repeat="7500" time="5000">Skin.HasSetting(autoscroll)</autoscroll>
@@ -461,11 +447,11 @@
       </control>
       <control type="group">
         <visible>!VideoPlayer.Content(LiveTV)</visible>
-        <left>260</left>
+        <left>280</left>
         <control type="progress" description="cache">
-          <top>70</top>
-          <width>1400</width>
-          <height>16</height>
+          <top>115</top>
+          <width>1500</width>
+          <height>12</height>
           <info>Player.ProgressCache</info>
           <texturebg colordiffuse="00ffffff" border="6">diffuse/progress-bg.png</texturebg>
           <lefttexture colordiffuse="main_fg_12" border="6">diffuse/progress-left.png</lefttexture>
@@ -476,16 +462,16 @@
           <visible>Player.HasMedia</visible>
         </control>
         <control type="progress" id="400">
-          <width>1400</width>
-          <top>70</top>
-          <height>16</height>
+          <width>1500</width>
+          <top>115</top>
+          <height>12</height>
           <info>Player.Progress</info>
         </control>
         <control type="progress">
           <left>0</left>
-          <top>70</top>
-          <width>1400</width>
-          <height>16</height>
+          <top>115</top>
+          <width>1500</width>
+          <height>12</height>
           <info>Player.Progress</info>
           <texturebg colordiffuse="00ffffff" border="6">diffuse/progress-bg.png</texturebg>
           <lefttexture colordiffuse="00ffffff" border="6">diffuse/progress-left.png</lefttexture>

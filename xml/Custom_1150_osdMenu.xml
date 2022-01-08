@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="1150">
+  <defaultcontrol>202</defaultcontrol>
+  <include>Animation_DialogPopupOpenClose</include>
+  <coordinates>
+    <origin x="770" y="175"/>
+  </coordinates>
+  <controls>
+    <control type="image">
+      <left>-1920</left>
+      <top>-1080</top>
+      <width>5760</width>
+      <height>3240</height>
+      <animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
+      <animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+      <texture colordiffuse="B0FFFFFF">colors/black.png</texture>
+    </control>
+    <control type="button">
+      <left>-1920</left>
+      <top>-1080</top>
+      <width>5760</width>
+      <height>3240</height>
+      <texturefocus/>
+      <texturenofocus/>
+      <onclick>Action(close)</onclick>
+    </control>
+    <include content="DialogBackgroundCommons">
+      <param name="width" value="480"/>
+      <param name="height" value="560"/>
+      <param name="header_label" value="Video Settings"/>
+      <param name="header_id" value="999"/>
+    </include>
+    <control type="group">
+      <include content="DefaultSettingButtonGradient">
+        <param name="id" value="202"/>
+        <top>80</top>
+        <left>0</left>
+        <height>80</height>
+        <width>480</width>
+        <visible>ControlGroup(202).HasFocus()</visible>
+      </include>
+      <control type="grouplist" id="202">
+        <left>0</left>
+        <top>80</top>
+        <width>480</width>
+        <height>560</height>
+        <align>left</align>
+        <scrolltime tween="sine">200</scrolltime>
+        <orientation>vertical</orientation>
+        <control type="button" id="803">
+          <width>480</width>
+          <height>80</height>
+          <include>DialogSettingButton</include>
+          <label>About video</label>
+          <onclick>Dialog.Close(1150)</onclick>
+          <onclick>ActivateWindow(playerprocessinfo)</onclick>
+          <visible>!VideoPlayer.Content(livetv)</visible>
+        </control>
+        <control type="button" id="804">
+          <width>480</width>
+          <height>80</height>
+          <include>DialogSettingButton</include>
+          <label>Video menu</label>
+          <onclick>Dialog.Close(1150)</onclick>
+          <onclick>PlayerControl(ShowVideoMenu)</onclick>
+          <visible>VideoPlayer.HasMenu</visible>
+        </control>
+        <control type="button" id="70042">
+          <width>480</width>
+          <height>80</height>
+          <include>DialogSettingButton</include>
+          <label>Video playlist</label>
+          <onclick>Dialog.Close(all, true)</onclick>
+          <onclick>ActivateWindow(videoplaylist)</onclick>
+          <visible>Integer.IsGreater(Playlist.Length(video),1)</visible>
+        </control>
+        <control type="button" id="70044">
+          <width>480</width>
+          <height>80</height>
+          <include>DialogSettingButton</include>
+          <label>Bookmarks</label>
+          <onclick>Dialog.Close(1150)</onclick>
+          <onclick>ActivateWindow(videobookmarks)</onclick>
+          <visible>!VideoPlayer.Content(livetv)</visible>
+        </control>
+        <control type="button" id="70046">
+          <width>480</width>
+          <height>80</height>
+          <include>DialogSettingButton</include>
+          <onclick>Dialog.Close(1150)</onclick>
+          <onclick>ActivateWindow(osdsubtitlesettings)</onclick>
+          <label>Subtitle settings</label>
+          <visible>!VideoPlayer.Content(LiveTV) | VideoPlayer.HasSubtitles</visible>
+        </control>
+        <control type="button" id="70047">
+          <width>480</width>
+          <height>80</height>
+          <include>DialogSettingButton</include>
+          <visible>VideoPlayer.IsStereoscopic</visible>
+          <onclick>Dialog.Close(1150)</onclick>
+          <onclick>SetProperty(settingslist_content,3d,home)</onclick>
+          <label>3D</label>
+          <onclick>SetProperty(settingslist_header,$LOCALIZE[36501],home)</onclick>
+          <onclick>ActivateWindow(1101)</onclick>
+        </control>
+        <control type="button" id="70048">
+          <width>480</width>
+          <height>80</height>
+          <include>DialogSettingButton</include>
+          <onclick>Dialog.Close(1150)</onclick>
+          <onclick>SetProperty(settingslist_content,osd,home)</onclick>
+          <label>More settings</label>
+          <onclick>SetProperty(settingslist_header,$LOCALIZE[5],home)</onclick>
+          <onclick>ActivateWindow(1101)</onclick>
+        </control>
+      </control>
+    </control>
+  </controls>
+</window>
