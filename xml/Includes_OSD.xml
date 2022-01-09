@@ -61,7 +61,7 @@
               <left>100</left>
               <width>59%</width>
               <font>font32</font>
-              <label>$INFO[Player.Title]</label>
+              <label fallback="19055">$INFO[Player.Title]</label>
             </control>
             <control type="grouplist">
               <top>62</top>
@@ -108,7 +108,7 @@
               <control type="label">
                 <font>font27</font>
                 <width>680</width>
-                <label>$INFO[VideoPlayer.NextTitle]</label>
+                <label fallback="19055">$INFO[VideoPlayer.NextTitle]</label>
               </control>
             </control>
           </control>
@@ -408,14 +408,14 @@
             <left>256</left>
             <font>font45</font>
             <width max="1000">auto</width>
-            <label>$INFO[VideoPlayer.Title]</label>
+            <label fallback="19055">$INFO[VideoPlayer.Title]</label>
           </control>
           <control type="label">
             <top>64</top>
             <left>256</left>
             <font>font27</font>
             <width max="1000">auto</width>
-            <label>$INFO[VideoPlayer.StartTime,, - ]$INFO[VideoPlayer.EndTime,, / ]$INFO[VideoPlayer.NextTitle, $LOCALIZE[19031]: ]</label>
+            <label fallback="19055">$INFO[VideoPlayer.StartTime,, - ]$INFO[VideoPlayer.EndTime,, / ]$INFO[VideoPlayer.NextTitle, $LOCALIZE[19031]: ]</label>
             <visible>!Pvr.IsTimeShift</visible>
           </control>
           <control type="label">
@@ -423,7 +423,7 @@
             <left>256</left>
             <font>font27</font>
             <width max="1000">auto</width>
-            <label>$INFO[System.Time] (-$INFO[PVR.TimeshiftOffset]) - $INFO[VideoPlayer.EndTime,, / ]$INFO[VideoPlayer.NextTitle, $LOCALIZE[19031]: ]</label>
+            <label fallback="19055">$INFO[System.Time] (-$INFO[PVR.TimeshiftOffset]) - $INFO[VideoPlayer.EndTime,, / ]$INFO[VideoPlayer.NextTitle, $LOCALIZE[19031]: ]</label>
             <visible>Pvr.IsTimeShift</visible>
           </control>
           <control type="group">

@@ -82,7 +82,7 @@
                 <aligny>top</aligny>
                 <width max="420">auto</width>
                 <textcolor>main_fg_70</textcolor>
-                <label>$INFO[ListItem.Title]</label>
+                <label fallback="19055">$INFO[ListItem.Title]</label>
               </control>
               <control type="label">
                 <font>font_small_pvr_channels</font>
@@ -155,7 +155,7 @@
                 <aligny>top</aligny>
                 <width max="420">auto</width>
                 <textcolor>fff1c40f</textcolor>
-                <label>$INFO[ListItem.Title]</label>
+                <label fallback="19055">$INFO[ListItem.Title]</label>
               </control>
               <control type="label">
                 <font>font_small_pvr_channels</font>
