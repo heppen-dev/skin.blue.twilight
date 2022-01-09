@@ -6,7 +6,7 @@
     <param name="topbar_visible">true</param>
     <definition>
       <control type="group">
-        <animation effect="slide" end="0,-112" time="300" tween="sine" easing="inout" condition="$EXP[infodialog_active]">conditional</animation>
+        <animation effect="slide" end="0,-224" time="300" tween="sine" easing="inout" condition="$EXP[infodialog_active] | Window.IsVisible(contextmenu) | ControlGroup(9000).HasFocus">conditional</animation>
         <depth>DepthBars</depth>
         <animation effect="fade" start="0" end="100" time="300" condition="[Window.Previous(fullscreenvideo) | Window.Previous(startup)] + !Window.IsVisible(1109)">WindowOpen</animation>
         <visible>$PARAM[topbar_visible]</visible>
@@ -126,7 +126,7 @@
             <width>auto</width>
             <aligny>center</aligny>
             <label>$INFO[Window(Weather).Property(Current.Temperature)]$INFO[System.TemperatureUnits]</label>
-            <!-- <visible>Skin.HasSetting(show_weatherinfo) + Weather.IsFetched + ![String.IsEqual(Weather.FanartCode,na)]</visible> -->
+            <visible>Skin.HasSetting(show_weatherinfo) + Weather.IsFetched + ![String.IsEqual(Weather.FanartCode,na)]</visible>
           </control>
           <control type="image">
             <top>1</top>
@@ -135,7 +135,7 @@
             <fadetime>300</fadetime>
             <aspectratio aligny="center" align="left">keep</aspectratio>
             <texture>$INFO[Weather.FanartCode,weather/small/,.png]</texture>
-            <!-- <visible>Skin.HasSetting(show_weatherinfo) + Weather.IsFetched + ![String.IsEqual(Weather.FanartCode,na)]</visible> -->
+            <visible>Skin.HasSetting(show_weatherinfo) + Weather.IsFetched + ![String.IsEqual(Weather.FanartCode,na)]</visible>
           </control>
           <control type="image">
             <top>8</top>
