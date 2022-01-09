@@ -1065,6 +1065,95 @@
       <animation effect="slide" start="0" end="0,-150" time="200" condition="Window.IsActive(1140)">Conditional</animation>
     </definition>
   </include>
+  <include name="ColoredBackgroundImages">
+    <definition>
+      <control type="image">
+        <depth>DepthBackground</depth>
+        <include>FullScreenDimensions</include>
+        <aspectratio>scale</aspectratio>
+        <texture colordiffuse="$VAR[ColorHighlight]">special://skin/extras/backgrounds/primary.jpg</texture>
+      </control>
+      <control type="image">
+        <depth>DepthBackground</depth>
+        <include>FullScreenDimensions</include>
+        <aspectratio>scale</aspectratio>
+        <texture colordiffuse="$VAR[ColorsOverlay]" fallback="special://skin/extras/backgrounds/pattern1.jpg">$INFO[Skin.String(background_overlay),special://skin/extras/backgrounds/pattern,.jpg]</texture>
+      </control>
+      <visible>Skin.HasSetting(EnableColoredBackground) | Player.HasVideo | [Window.IsVisible(10600) | Window.IsVisible(10609)]</visible>
+    </definition>
+  </include>
+  <include name="DefaultBackground">
+    <definition>
+      <control type="videowindow">
+        <depth>DepthBackground</depth>
+        <include>FullScreenDimensions</include>
+        <visible>Player.HasVideo</visible>
+        <visible>!Slideshow.IsActive</visible>
+      </control>
+      <!-- <control type="videowindow">
+        <include>TrailerWindowDimensions</include>
+        <visible>[Player.HasVideo + Skin.HasSetting(BackgroundPlayingTrailers) | [Window.IsActive(1140) | Window.IsAtive(1141)]] + !Skin.HasSetting(PlayTrailersFullScreen)</visible>
+        <visible>!Slideshow.IsActive</visible>
+      </control> -->
+      <control type="visualisation">
+        <include>FullScreenDimensions</include>
+        <visible>!Slideshow.IsActive</visible>
+        <visible>Player.HasAudio + String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia)) + Visualisation.Enabled</visible>
+      </control>
+      <control type="group">
+        <include>FullScreenDimensions</include>
+        <animation effect="zoom" center="auto" end="102,102" time="0" condition="Integer.IsGreater(System.StereoscopicMode,0)">conditional</animation>
+        <control type="group">
+          <animation effect="fade" start="100" end="0" time="300" condition="String.IsEqual(Window(home).Property(hasTrailer),true)">Conditional</animation>
+          <animation effect="fade" start="100" end="bg_alpha" time="0" condition="!Control.IsVisible(31111)">Conditional</animation>
+          <animation effect="fade" start="0" end="100" time="300" condition="Window.Previous(fullscreenvideo) | Window.Previous(FullscreenGame) | Window.Previous(startup)">WindowOpen</animation>
+          <include>ColoredBackgroundImages</include>
+        </control>
+        <control type="group" id="31111">
+          <visible>![Player.HasVideo | [Player.HasAudio + Visualisation.Enabled + !String.IsEmpty(Visualisation.Name)]] | !String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))</visible>
+          <depth>DepthBackground</depth>
+          <include>OpenClose_Fade</include>
+          <animation effect="fade" time="100">VisibleChange</animation>
+          <control type="multiimage" id="32111">
+            <include>FullScreenDimensions</include>
+            <!-- <include condition="Window.IsActive(home)">FanartDimensions</include> -->
+            <animation effect="zoom" end="75" center="360,288" time="200" condition="ControlGroup(3000).HasFocus + !Skin.HasSetting(FullScreenHomeBackground)">Conditional</animation>
+            <animation effect="slide" start="0" end="650,-100" time="200" condition="ControlGroup(3000).HasFocus + !Skin.HasSetting(FullScreenHomeBackground)">Conditional</animation>
+            <aspectratio aligny="top">scale</aspectratio>
+            <fadetime>600</fadetime>
+            <timeperimage>6000</timeperimage>
+            <randomize>true</randomize>
+            <loop>yes</loop>
+            <imagepath background="true" colordiffuse="$VAR[BackgroundOverlay]">$VAR[BlurBackground]</imagepath>
+            <visible>!Control.IsVisible(502) | $EXP[infodialog_active]</visible>
+            <animation effect="fade" end="0" start="100" time="50" reversible="true" condition="$EXP[infodialog_active]">Conditional</animation>
+            <animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(KenBurnsEffect)">Conditional</animation>
+            <animation effect="slide" start="-30,-30" end="30,30" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(KenBurnsEffect)">Conditional</animation>
+            <include>OpenClose_Fade</include>
+          </control>
+          <control type="image">
+            <left>-3</left>
+            <top>0</top>
+            <right>1193</right>
+            <height>100%</height>
+            <aspectratio aligny="center">scale</aspectratio>
+            <fadetime>400</fadetime>
+            <include>OpenClose_Left</include>
+            <animation effect="fade" time="400">VisibleChange</animation>
+            <texture background="true" colordiffuse="$VAR[HighlightOverlay]">$VAR[PosterVar]</texture>
+            <visible>!Control.IsVisible(32111)</visible>
+          </control>
+          <control type="image">
+            <include>FullScreenDimensions</include>
+            <aspectratio aligny="center">scale</aspectratio>
+            <animation effect="fade" time="200" delay="200">Hidden</animation>
+            <texture background="true">common/vignette.png</texture>
+            <visible>[ControlGroup(3000).HasFocus | Window.IsVisible(1146)] + !$EXP[flix_spotlight_level2] + !Skin.HasSetting(FullScreenHomeBackground)</visible>
+          </control>
+        </control>
+      </control>
+    </definition>
+  </include>
   <include name="FocusableProgressBar">
     <param name="width">100%</param>
     <param name="onunfocus_id">200</param>
