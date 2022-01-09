@@ -46,14 +46,14 @@
           <param name="id" value="600"/>
           <top>133</top>
           <height>80</height>
-          <right>20</right>
+          <right>25</right>
           <visible>ControlGroup(600).HasFocus()</visible>
         </include>
         <!-- Start -->
         <control type="grouplist" id="600">
           <top>133</top>
           <left>0</left>
-          <right>20</right>
+          <right>25</right>
           <bottom>155</bottom>
           <pagecontrol>60</pagecontrol>
           <onleft>9000</onleft>
@@ -131,14 +131,14 @@
           <param name="id" value="700"/>
           <top>133</top>
           <height>80</height>
-          <right>20</right>
+          <right>25</right>
           <visible>ControlGroup(700).HasFocus()</visible>
         </include>
         <!-- Background -->
         <control type="grouplist" id="700">
           <top>133</top>
           <left>0</left>
-          <right>20</right>
+          <right>25</right>
           <bottom>155</bottom>
           <onleft>9000</onleft>
           <onright>60</onright>
@@ -218,14 +218,14 @@
           <param name="id" value="800"/>
           <top>133</top>
           <height>80</height>
-          <right>20</right>
+          <right>25</right>
           <visible>ControlGroup(800).HasFocus()</visible>
         </include>
         <!-- Miscellaneous -->
         <control type="grouplist" id="800">
           <top>133</top>
           <left>0</left>
-          <right>20</right>
+          <right>25</right>
           <bottom>155</bottom>
           <onleft>9000</onleft>
           <onright>60</onright>
@@ -313,14 +313,14 @@
           <param name="id" value="900"/>
           <top>133</top>
           <height>80</height>
-          <right>20</right>
+          <right>25</right>
           <visible>ControlGroup(900).HasFocus()</visible>
         </include>
         <!-- Library -->
         <control type="grouplist" id="900">
           <top>133</top>
           <left>0</left>
-          <right>20</right>
+          <right>25</right>
           <bottom>155</bottom>
           <onleft>9000</onleft>
           <onright>60</onright>
@@ -405,14 +405,14 @@
           <param name="id" value="1000"/>
           <top>133</top>
           <height>80</height>
-          <right>20</right>
+          <right>25</right>
           <visible>ControlGroup(1000).HasFocus()</visible>
         </include>
         <!-- Video / Music OSD -->
         <control type="grouplist" id="1000">
           <top>133</top>
           <left>0</left>
-          <right>20</right>
+          <right>25</right>
           <bottom>155</bottom>
           <onleft>9000</onleft>
           <onright>60</onright>
@@ -450,14 +450,14 @@
           <param name="id" value="1100"/>
           <top>133</top>
           <height>80</height>
-          <right>20</right>
+          <right>25</right>
           <visible>ControlGroup(1100).HasFocus()</visible>
         </include>
         <!-- Live TV -->
         <control type="grouplist" id="1100">
           <top>133</top>
           <left>0</left>
-          <right>20</right>
+          <right>25</right>
           <bottom>155</bottom>
           <onleft>9000</onleft>
           <onright>60</onright>
@@ -482,14 +482,14 @@
           <param name="id" value="1200"/>
           <top>133</top>
           <height>80</height>
-          <right>20</right>
+          <right>25</right>
           <visible>ControlGroup(1200).HasFocus()</visible>
         </include>
         <!-- Manage -->
         <control type="grouplist" id="1200">
           <top>133</top>
           <left>0</left>
-          <right>20</right>
+          <right>25</right>
           <bottom>155</bottom>
           <onleft>9000</onleft>
           <onright>60</onright>
@@ -577,14 +577,14 @@
           <param name="id" value="1300"/>
           <top>613</top>
           <height>80</height>
-          <right>20</right>
+          <right>25</right>
           <visible>ControlGroup(1300).HasFocus()</visible>
         </include>
         <!-- Primus -->
         <control type="grouplist" id="1300">
           <top>613</top>
           <left>0</left>
-          <right>20</right>
+          <right>25</right>
           <bottom>155</bottom>
           <onleft>9000</onleft>
           <onright>60</onright>
@@ -604,7 +604,7 @@
         <!-- <include>OpenClose_Left</include> -->
         <control type="list" id="9000">
           <description>button area</description>
-          <left>23</left>
+          <left>25</left>
           <top>133</top>
           <width>467</width>
           <height>640</height>
@@ -688,7 +688,7 @@
         <control type="scrollbar" id="60">
           <right>40</right>
           <top>0</top>
-          <bottom>0</bottom>
+          <bottom>20</bottom>
           <width>12</width>
           <orientation>vertical</orientation>
           <texturesliderbackground/>
