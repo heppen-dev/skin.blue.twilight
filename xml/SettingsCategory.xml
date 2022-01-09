@@ -45,7 +45,7 @@
           <bottom>137</bottom>
           <width>1232</width>
           <height>85</height>
-          <left>445</left>
+          <right>24</right>
           <visible>ControlGroup(5).HasFocus()</visible>
         </include>
         <control type="grouplist" id="5">
@@ -111,6 +111,7 @@
           <top>130</top>
           <height>85</height>
           <width>423</width>
+          <left>1</left>
           <visible>!Control.HasFocus(20)</visible>
         </include>
         <control type="grouplist" id="3">
