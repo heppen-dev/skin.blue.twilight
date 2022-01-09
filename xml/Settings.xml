@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-  <defaultcontrol>9000</defaultcontrol>
+  <defaultcontrol>9001</defaultcontrol>
   <backgroundcolor>Background</backgroundcolor>
+  <include>Defs_Settings_OnLoad</include>
   <controls>
     <include>DefaultBackground</include>
     <control type="multiimage">

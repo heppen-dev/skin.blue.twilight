@@ -65,7 +65,7 @@
   </include>
   <include name="DefaultSettingButtonGradient">
     <param name="id" default=""/>
-    <param name="height" default="80"/>
+    <param name="height" default="75"/>
     <definition>
       <control type="group">
         <nested/>
@@ -91,7 +91,7 @@
     </definition>
   </include>
   <include name="DefaultSettingButton">
-    <param name="height">80</param>
+    <param name="height">75</param>
     <param name="textoffsetx">40</param>
     <param name="textwidth">
     </param>

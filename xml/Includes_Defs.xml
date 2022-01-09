@@ -80,4 +80,152 @@
       <top>$PARAM[pad]</top>
     </definition>
   </include>
+  <include name="Defs_Settings_OnLoad">
+        <onload condition="Window.IsActive(skinsettings)">SetFocus(300,0)</onload>
+        <onload condition="Window.IsActive(interfacesettings)">SetFocus(300,1)</onload>
+        <onload condition="Window.IsActive(mediasettings)">SetFocus(300,2)</onload>
+        <onload condition="Window.IsActive(playersettings)">SetFocus(300,3)</onload>
+        <onload condition="Window.IsActive(systemsettings)">SetFocus(300,4)</onload>
+        <onload condition="Window.IsActive(servicesettings)">SetFocus(300,5)</onload>
+        <onload condition="Window.IsActive(pvrsettings)">SetFocus(300,6)</onload>
+        <onload condition="Window.IsActive(systeminfo)">SetFocus(300,7)</onload>
+        <onload condition="Window.IsActive(profiles)">SetFocus(300,8)</onload>
+    </include>
+
+    <include name="Defs_Settings_OnLeft">
+        <onleft condition="Window.IsActive(skinsettings)">SetFocus(300,0)</onleft>
+        <onleft condition="Window.IsActive(interfacesettings)">SetFocus(300,1)</onleft>
+        <onleft condition="Window.IsActive(mediasettings)">SetFocus(300,2)</onleft>
+        <onleft condition="Window.IsActive(playersettings)">SetFocus(300,3)</onleft>
+        <onleft condition="Window.IsActive(systemsettings)">SetFocus(300,4)</onleft>
+        <onleft condition="Window.IsActive(servicesettings)">SetFocus(300,5)</onleft>
+        <onleft condition="Window.IsActive(pvrsettings)">SetFocus(300,6)</onleft>
+        <onleft condition="Window.IsActive(systeminfo)">SetFocus(300,7)</onleft>
+        <onleft condition="Window.IsActive(profiles)">SetFocus(300,8)</onleft>
+    </include>
+  <include name="Defs_SettingsTrick">
+    <control type="button">
+      <visible allowhiddenfocus="true">false</visible>
+      <onfocus condition="!Window.IsActive(appearancesettings) + String.IsEqual(Container(300).ListItem.Property(path),ReplaceWindow(appearancesettings))">ReplaceWindow(appearancesettings)</onfocus>
+      <onfocus condition="!Window.IsActive(skinsettings) + String.IsEqual(Container(300).ListItem.Property(path),ReplaceWindow(skinsettings))">ReplaceWindow(skinsettings)</onfocus>
+      <onfocus condition="!Window.IsActive(mediasettings) + String.IsEqual(Container(300).ListItem.Property(path),ReplaceWindow(mediasettings))">ReplaceWindow(mediasettings)</onfocus>
+      <onfocus condition="!Window.IsActive(playersettings) + String.IsEqual(Container(300).ListItem.Property(path),ReplaceWindow(playersettings))">ReplaceWindow(playersettings)</onfocus>
+      <onfocus condition="!Window.IsActive(systemsettings) + String.IsEqual(Container(300).ListItem.Property(path),ReplaceWindow(systemsettings))">ReplaceWindow(systemsettings)</onfocus>
+      <onfocus condition="!Window.IsActive(servicesettings) + String.IsEqual(Container(300).ListItem.Property(path),ReplaceWindow(servicesettings))">ReplaceWindow(servicesettings)</onfocus>
+      <onfocus condition="!Window.IsActive(pvrsettings) + String.IsEqual(Container(300).ListItem.Property(path),ReplaceWindow(pvrsettings))">ReplaceWindow(pvrsettings)</onfocus>
+      <onfocus condition="!Window.IsActive(systeminfo) + String.IsEqual(Container(300).ListItem.Property(path),ReplaceWindow(systeminfo))">ReplaceWindow(systeminfo)</onfocus>
+      <onfocus condition="!Window.IsActive(profiles) + String.IsEqual(Container(300).ListItem.Property(path),ReplaceWindow(profiles))">ReplaceWindow(profiles)</onfocus>
+    </control>
+  </include>
+  <include name="Defs_Settings_Changer">
+    <definition>
+      <control type="list" id="300">
+        <nested />
+        <left>28</left>
+        <top>100</top>
+        <bottom>75</bottom>
+        <width>75</width>
+        <orientation>vertical</orientation>
+        <itemlayout height="75" width="75">
+          <control type="group">
+            <width>75</width>
+            <control type="image">
+              <centerleft>50%</centerleft>
+              <centertop>50%</centertop>
+              <width>60</width>
+              <height>60</height>
+              <texture colordiffuse="dialog_fg_70">$INFO[ListItem.Icon]</texture>
+            </control>
+          </control>
+          <control type="label">
+            <left>75</left>
+            <label>$INFO[ListItem.Label]</label>
+            <font>font_tiny_hintlabel</font>
+            <textcolor>dialog_fg_70</textcolor>
+          </control>
+        </itemlayout>
+        <focusedlayout height="75" width="75">
+          <include>Defs_SettingsTrick</include>
+          <control type="image">
+            <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+          </control>
+          <control type="image">
+            <texture colordiffuse="$VAR[ColorGradient]">common/white-gradient.png</texture>
+          </control>
+          <control type="group">
+            <width>75</width>
+            <control type="image">
+              <centerleft>50%</centerleft>
+              <centertop>50%</centertop>
+              <width>60</width>
+              <height>60</height>
+              <texture colordiffuse="b3ededed">$INFO[ListItem.Icon]</texture>
+            </control>
+          </control>
+          <control type="label">
+            <left>75</left>
+            <label>$INFO[ListItem.Label]</label>
+            <font>font_tiny_hintlabel</font>
+            <textcolor>b3ededed</textcolor>
+          </control>
+        </focusedlayout>
+        <content>
+          <item id="4">
+            <label>[CAPITALIZE]$LOCALIZE[20077][/CAPITALIZE]</label>
+            <icon>special://skin/extras/icons/paintbrush.png</icon>
+            <onclick>ReplaceWindow(skinsettings)</onclick>
+            <property name="path">ReplaceWindow(skinsettings)</property>
+          </item>
+          <item id="1">
+            <label>[CAPITALIZE]$LOCALIZE[14207][/CAPITALIZE]</label>
+            <icon>special://skin/extras/icons/skinsettings.png</icon>
+            <onclick>ReplaceWindow(appearancesettings)</onclick>
+            <property name="path">ReplaceWindow(appearancesettings)</property>
+          </item>
+          <item id="2">
+            <label>[CAPITALIZE]$LOCALIZE[14212][/CAPITALIZE]</label>
+            <icon>special://skin/extras/icons/tags.png</icon>
+            <onclick>ReplaceWindow(mediasettings)</onclick>
+            <property name="path">ReplaceWindow(mediasettings)</property>
+          </item>
+          <item id="3">
+            <label>[CAPITALIZE]$LOCALIZE[14201][/CAPITALIZE]</label>
+            <icon>special://skin/extras/icons/equalizer.png</icon>
+            <onclick>ReplaceWindow(playersettings)</onclick>
+            <property name="path">ReplaceWindow(playersettings)</property>
+          </item>
+          <item id="5">
+            <label>[CAPITALIZE]$LOCALIZE[14209][/CAPITALIZE]</label>
+            <icon>special://skin/extras/icons/configure.png</icon>
+            <onclick>ReplaceWindow(systemsettings)</onclick>
+            <property name="path">ReplaceWindow(systemsettings)</property>
+          </item>
+          <item id="6">
+            <label>[CAPITALIZE]$LOCALIZE[14208][/CAPITALIZE]</label>
+            <icon>special://skin/extras/icons/network.png</icon>
+            <onclick>ReplaceWindow(servicesettings)</onclick>
+            <property name="path">ReplaceWindow(servicesettings)</property>
+          </item>
+          <item id="10">
+            <label>[CAPITALIZE]$LOCALIZE[14205][/CAPITALIZE]</label>
+            <icon>special://skin/extras/icons/livetv.png</icon>
+            <onclick>ReplaceWindow(pvrsettings)</onclick>
+            <property name="path">ReplaceWindow(pvrsettings)</property>
+          </item>
+          <item id="9">
+            <label>[CAPITALIZE]$LOCALIZE[10007][/CAPITALIZE]</label>
+            <icon>special://skin/extras/icons/sysinfo.png</icon>
+            <onclick>ReplaceWindow(systeminfo)</onclick>
+            <property name="path">ReplaceWindow(systeminfo)</property>
+          </item>
+          <item id="7">
+            <label>[CAPITALIZE]$LOCALIZE[14210][/CAPITALIZE]</label>
+            <icon>special://skin/extras/icons/actor.png</icon>
+            <onclick>ReplaceWindow(profiles)</onclick>
+            <property name="path">ReplaceWindow(profiles)</property>
+          </item>
+        </content>
+      </control>
+    </definition>
+  </include>
 </includes>
