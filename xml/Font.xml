@@ -68,6 +68,12 @@
       <style>uppercase bold</style>
     </font>
     <font>
+      <name>font25</name>
+      <filename>AmazonEmberDisplay_Rg.ttf</filename>
+      <size>25</size>
+      <style>uppercase</style>
+    </font>
+    <font>
       <name>font27</name>
       <filename>AmazonEmberDisplay_Rg.ttf</filename>
       <size>27</size>

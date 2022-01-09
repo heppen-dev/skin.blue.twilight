@@ -83,15 +83,15 @@
           </control>
         </control>
       </control>
-<!--       <control type="group">
+      <control type="group">
         <include content="TopBar">
           <param name="breadcrumbs_label" value="$VAR[BreadcrumbsVideoVar]"/>
         </include>
-        <include content="BottomBar">
+        <!-- <include content="BottomBar">
           <param name="info_visible" value="true"/>
-        </include>
-        <visible>!Control.IsVisible(56) + !Control.IsVisible(57) + !Control.IsVisible(510)</visible>
-      </control> -->
+        </include> -->
+        <!-- <visible>!Control.IsVisible(56) + !Control.IsVisible(57) + !Control.IsVisible(510)</visible> -->
+      </control>
 <!--       <control type="group">
         <depth>DepthBars</depth>
         <bottom>0</bottom>
