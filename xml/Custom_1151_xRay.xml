@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="1151">
+  <defaultcontrol>11051</defaultcontrol>
+  <coordinates>
+    <origin x="0" y="128"/>
+  </coordinates>
+  <controls>
+    <control type="group">
+      <visible>!$EXP[infodialog_active]</visible>
+      <include>Animation_TopSlide</include>
+      <control type="group">
+        <top>-100</top>
+        <control type="label">
+          <font>font27</font>
+          <label>$INFO[ListItem.Label]</label>
+        </control>
+      </control>
+      <control type="group">
+        <control type="fixedlist" id="11051">
+          <top>0</top>
+          <left>-120</left>
+          <width>2400</width>
+          <onup>Dialog.Close(1151)</onup>
+          <ondown>11052</ondown>
+          <scrolltime tween="linear" easing="inout">400</scrolltime>
+          <orientation>horizontal</orientation>
+          <focusposition>1</focusposition>
+          <animation effect="slide" time="0" start="0" end="-100,0" condition="true">Conditional</animation>
+          <viewtype>icon</viewtype>
+          <focusedlayout height="130" width="108">
+            <control type="group">
+              <include content="View_xRay_Poster_Layout" />
+            </control>
+          </focusedlayout>
+          <itemlayout height="130" width="108">
+            <control type="group">
+              <include content="View_xRay_Poster_Layout" />
+            </control>
+          </itemlayout>
+          <content limit="50">plugin://plugin.video.themoviedb.helper?info=cast&amp;type=movie&amp;imdb_id=$INFO[VideoPlayer.IMDBNumber]</content>
+        </control>
+      </control>
+      <control type="group">
+        <control type="fixedlist" id="11052">
+          <top>140</top>
+          <left>-120</left>
+          <width>2400</width>
+          <onup>11051</onup>
+          <ondown>11053</ondown>
+          <scrolltime tween="linear" easing="inout">400</scrolltime>
+          <orientation>horizontal</orientation>
+          <focusposition>1</focusposition>
+          <animation effect="slide" time="0" start="0" end="-100,0" condition="true">Conditional</animation>
+          <viewtype>icon</viewtype>
+          <focusedlayout height="130" width="108">
+            <control type="group">
+              <include content="View_xRay_Poster_Layout" />
+            </control>
+          </focusedlayout>
+          <itemlayout height="130" width="108">
+            <control type="group">
+              <include content="View_xRay_Poster_Layout" />
+            </control>
+          </itemlayout>
+          <content limit="50">plugin://plugin.video.themoviedb.helper?info=crew&amp;type=movie&amp;imdb_id=$INFO[VideoPlayer.IMDBNumber]</content>
+        </control>
+      </control>
+      <control type="group">
+        <control type="fixedlist" id="11053">
+          <top>280</top>
+          <left>-120</left>
+          <width>2400</width>
+          <onup>11052</onup>
+          <ondown>11054</ondown>
+          <scrolltime tween="linear" easing="inout">400</scrolltime>
+          <orientation>horizontal</orientation>
+          <focusposition>1</focusposition>
+          <animation effect="slide" time="0" start="0" end="-100,0" condition="true">Conditional</animation>
+          <viewtype>icon</viewtype>
+          <focusedlayout height="130" width="108">
+            <control type="group">
+              <include content="View_xRay_Poster_Layout" />
+            </control>
+          </focusedlayout>
+          <itemlayout height="130" width="108">
+            <control type="group">
+              <include content="View_xRay_Poster_Layout" />
+            </control>
+          </itemlayout>
+          <content limit="50">plugin://plugin.video.themoviedb.helper?info=recommendations&amp;type=movie&amp;imdb_id=$INFO[VideoPlayer.IMDBNumber]</content>
+        </control>
+      </control>
+      <control type="group">
+        <control type="fixedlist" id="11054">
+          <top>420</top>
+          <left>-120</left>
+          <width>2400</width>
+          <onup>11053</onup>
+          <ondown>11055</ondown>
+          <scrolltime tween="linear" easing="inout">400</scrolltime>
+          <orientation>horizontal</orientation>
+          <focusposition>1</focusposition>
+          <animation effect="slide" time="0" start="0" end="-100,0" condition="true">Conditional</animation>
+          <viewtype>icon</viewtype>
+          <focusedlayout height="130" width="108">
+            <control type="group">
+              <include content="View_xRay_Poster_Layout" />
+            </control>
+          </focusedlayout>
+          <itemlayout height="130" width="108">
+            <control type="group">
+              <include content="View_xRay_Poster_Layout" />
+            </control>
+          </itemlayout>
+          <content limit="50">plugin://plugin.video.themoviedb.helper?info=similar&amp;type=movie&amp;imdb_id=$INFO[VideoPlayer.IMDBNumber]</content>
+        </control>
+      </control>
+      <control type="group">
+        <control type="fixedlist" id="11055">
+          <top>560</top>
+          <left>-120</left>
+          <width>2400</width>
+          <onup>11054</onup>
+          <ondown>11056</ondown>
+          <scrolltime tween="linear" easing="inout">400</scrolltime>
+          <orientation>horizontal</orientation>
+          <focusposition>1</focusposition>
+          <animation effect="slide" time="0" start="0" end="-100,0" condition="true">Conditional</animation>
+          <viewtype>icon</viewtype>
+          <focusedlayout height="130" width="108">
+            <control type="group">
+              <include content="View_xRay_Poster_Layout" />
+            </control>
+          </focusedlayout>
+          <itemlayout height="130" width="108">
+            <control type="group">
+              <include content="View_xRay_Poster_Layout" />
+            </control>
+          </itemlayout>
+          <content limit="50">plugin://plugin.video.themoviedb.helper?info=posters&amp;type=movie&amp;imdb_id=$INFO[VideoPlayer.IMDBNumber]</content>
+        </control>
+      </control>
+      <control type="group">
+        <control type="fixedlist" id="11056">
+          <top>700</top>
+          <left>-120</left>
+          <width>2400</width>
+          <onup>11055</onup>
+          <scrolltime tween="linear" easing="inout">400</scrolltime>
+          <orientation>horizontal</orientation>
+          <focusposition>1</focusposition>
+          <animation effect="slide" time="0" start="0" end="-100,0" condition="true">Conditional</animation>
+          <viewtype>icon</viewtype>
+          <focusedlayout height="130" width="108">
+            <control type="group">
+              <include content="View_xRay_Poster_Layout" />
+            </control>
+          </focusedlayout>
+          <itemlayout height="130" width="108">
+            <control type="group">
+              <include content="View_xRay_Poster_Layout" />
+            </control>
+          </itemlayout>
+          <content limit="50">plugin://plugin.video.themoviedb.helper?info=fanart&amp;type=movie&amp;imdb_id=$INFO[VideoPlayer.IMDBNumber]</content>
+        </control>
+      </control>
+    </control>
+    <control type="group">
+      <control type="image">
+        <texture>colors/black.png</texture>
+        <include>FullScreenDimensions</include>
+        <animation effect="fade" start="100" end="70" time="0" condition="true">Conditional</animation>
+      </control>
+      <include>DialogBusy</include>
+      <visible>Container(11043).IsUpdating</visible>
+    </control>
+  </controls>
+</window>
