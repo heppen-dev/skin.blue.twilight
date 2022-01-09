@@ -313,8 +313,8 @@
           <aspectratio scalediffuse="true">keep</aspectratio>
           <fadetime>150</fadetime>
           <texture background="true" diffuse="diffuse/thumbinfopanel-diffuse.png">$VAR[IconWallThumbVar]</texture>
-          <bordertexture border="72">common/dark-shadow-24-2.png</bordertexture>
-          <bordersize>18</bordersize>
+          <bordertexture border="72" colordiffuse="AltPosterBack">common/dark-shadow-24-2.png</bordertexture>
+          <bordersize>22</bordersize>
           <visible>!String.IsEqual(ListItem.DbType,episode) + !String.IsEqual(ListItem.DBType,song)</visible>
         </control>
         <control type="image">
@@ -325,8 +325,8 @@
           <aspectratio scalediffuse="true">keep</aspectratio>
           <fadetime>300</fadetime>
           <texture background="true" diffuse="common/landscape-diffuse.png">$INFO[ListItem.Icon]</texture>
-          <bordertexture border="72">common/dark-shadow-24-2.png</bordertexture>
-          <bordersize>18</bordersize>
+          <bordertexture border="72" colordiffuse="AltPosterBack">common/dark-shadow-24-2.png</bordertexture>
+          <bordersize>22</bordersize>
           <visible>String.IsEqual(ListItem.DbType,episode)</visible>
         </control>
         <control type="image">
