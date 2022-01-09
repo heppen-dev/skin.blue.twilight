@@ -82,7 +82,18 @@
                 <aligny>top</aligny>
                 <width max="420">auto</width>
                 <textcolor>main_fg_70</textcolor>
-                <label fallback="19055">$INFO[ListItem.Title]</label>
+                <label>$INFO[ListItem.Title]</label>
+                <visible>!String.IsEmpty(ListItem.Title)</visible>
+              </control>
+              <control type="label">
+                <font>font_small_pvr_channels</font>
+                <left>0</left>
+                <top>-25</top>
+                <aligny>top</aligny>
+                <width max="420">auto</width>
+                <textcolor>main_fg_70</textcolor>
+                <label>$INFO[ListItem.ChannelName]</label>
+                <visible>String.IsEmpty(ListItem.Title)</visible>
               </control>
               <control type="label">
                 <font>font_small_pvr_channels</font>
@@ -109,9 +120,20 @@
                 <width>360</width>
                 <visible>ListItem.HasEpg</visible>
                 <info>ListItem.Progress</info>
-                <lefttexture colordiffuse="B3ededed" border="4">diffuse/progress-left.png</lefttexture>
-                <midtexture colordiffuse="B3ededed" border="4">diffuse/progress-end.png</midtexture>
-                <righttexture colordiffuse="B3ededed" border="4">diffuse/progress-right.png</righttexture>
+                <lefttexture colordiffuse="ffededed" border="4">diffuse/progress-left.png</lefttexture>
+                <midtexture colordiffuse="ffededed" border="4">diffuse/progress-end.png</midtexture>
+                <righttexture colordiffuse="ffededed" border="4">diffuse/progress-right.png</righttexture>
+                <texturebg colordiffuse="panel_fg_30" border="4">diffuse/progress-256-bg.png</texturebg>
+              </control>
+              <control type="progress">
+                <top>44</top>
+                <height>8</height>
+                <left>50</left>
+                <width>360</width>
+                <visible>!ListItem.HasEpg</visible>
+                <lefttexture colordiffuse="ffededed" border="4">diffuse/progress-left.png</lefttexture>
+                <midtexture colordiffuse="ffededed" border="4">diffuse/progress-end.png</midtexture>
+                <righttexture colordiffuse="ffededed" border="4">diffuse/progress-right.png</righttexture>
                 <texturebg colordiffuse="panel_fg_30" border="4">diffuse/progress-256-bg.png</texturebg>
               </control>
             </control>
@@ -154,8 +176,19 @@
                 <top>-25</top>
                 <aligny>top</aligny>
                 <width max="420">auto</width>
-                <textcolor>fff1c40f</textcolor>
-                <label fallback="19055">$INFO[ListItem.Title]</label>
+                <textcolor>main_fg_70</textcolor>
+                <label>$INFO[ListItem.Title]</label>
+                <visible>!String.IsEmpty(ListItem.Title)</visible>
+              </control>
+              <control type="label">
+                <font>font_small_pvr_channels</font>
+                <left>0</left>
+                <top>-25</top>
+                <aligny>top</aligny>
+                <width max="420">auto</width>
+                <textcolor>main_fg_70</textcolor>
+                <label>$INFO[ListItem.ChannelName]</label>
+                <visible>String.IsEmpty(ListItem.Title)</visible>
               </control>
               <control type="label">
                 <font>font_small_pvr_channels</font>
@@ -182,6 +215,17 @@
                 <width>360</width>
                 <visible>ListItem.HasEpg</visible>
                 <info>ListItem.Progress</info>
+                <lefttexture colordiffuse="fff1c40f" border="4">diffuse/progress-left.png</lefttexture>
+                <midtexture colordiffuse="fff1c40f" border="4">diffuse/progress-end.png</midtexture>
+                <righttexture colordiffuse="fff1c40f" border="4">diffuse/progress-right.png</righttexture>
+                <texturebg colordiffuse="panel_fg_30" border="4">diffuse/progress-256-bg.png</texturebg>
+              </control>
+              <control type="progress">
+                <top>44</top>
+                <height>8</height>
+                <left>50</left>
+                <width>360</width>
+                <visible>!ListItem.HasEpg</visible>
                 <lefttexture colordiffuse="fff1c40f" border="4">diffuse/progress-left.png</lefttexture>
                 <midtexture colordiffuse="fff1c40f" border="4">diffuse/progress-end.png</midtexture>
                 <righttexture colordiffuse="fff1c40f" border="4">diffuse/progress-right.png</righttexture>
