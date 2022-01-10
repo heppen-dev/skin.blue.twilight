@@ -326,6 +326,7 @@
             <align>$PARAM[align]</align>
             <font>$PARAM[font]</font>
             <aligny>center</aligny>
+            <textcolor>b3ededed</textcolor>
             <label>$INFO[ListItem.Label]</label>
             <scroll>true</scroll>
           </control>
@@ -337,7 +338,7 @@
             <centertop>50%</centertop>
             <width>24</width>
             <height>24</height>
-            <texture colordiffuse="dialog_fg_70">buttons/check-on.png</texture>
+            <texture colordiffuse="b3ededed">buttons/check-on.png</texture>
             <visible>ListItem.IsSelected</visible>
           </control>
           <control type="image">
@@ -345,7 +346,7 @@
             <centertop>50%</centertop>
             <width>24</width>
             <height>24</height>
-            <texture colordiffuse="dialog_fg_70">buttons/check-off.png</texture>
+            <texture colordiffuse="b3ededed">buttons/check-off.png</texture>
             <visible>!ListItem.IsSelected</visible>
           </control>
           <control type="label">
@@ -356,7 +357,7 @@
             <align>$PARAM[align]</align>
             <font>$PARAM[font]</font>
             <aligny>center</aligny>
-            <textcolor>$PARAM[fontcolor]</textcolor>
+            <textcolor>b3ededed</textcolor>
             <label>$INFO[ListItem.Label]</label>
           </control>
         </control>

@@ -6,23 +6,23 @@
     <control type="group">
       <centerleft>50%</centerleft>
       <centertop>50%</centertop>
-      <width>1300</width>
-      <height>850</height>
+      <width>1920</width>
+      <height>1080</height>
       <include content="DialogBackgroundCommons">
-        <param name="width" value="1300"/>
-        <param name="height" value="850"/>
+        <param name="width" value="1920"/>
+        <param name="height" value="1080"/>
         <param name="header_label" value=""/>
         <param name="header_id" value="411"/>
       </include>
       <control type="grouplist" id="9000">
-        <left>990</left>
+        <left>1580</left>
         <top>105</top>
-        <width>400</width>
+        <width>300</width>
         <height>400</height>
         <itemgap>10</itemgap>
         <orientation>vertical</orientation>
         <onleft>450</onleft>
-        <onright>450</onright>
+        <onright>60</onright>
         <onup>9000</onup>
         <ondown>9000</ondown>
         <include content="DefaultDialogButton">
@@ -45,34 +45,34 @@
         </include>
       </control>
       <control type="image">
-        <left>1010</left>
+        <left>1580</left>
         <top>420</top>
         <width>260</width>
         <height>380</height>
-        <aspectratio aligny="bottom">keep</aspectratio>
-        <bordertexture colordiffuse="border_alpha">colors/black.png</bordertexture>
-        <bordersize>4</bordersize>
-        <texture border="4" background="true">$INFO[ListItem.Icon]</texture>
+        <aspectratio aligny="center">keep</aspectratio>
+        <texture background="true" diffuse="diffuse/thumbinfopanel-diffuse.png" colordiffuse="dialog_fg_70">$INFO[ListItem.Icon]</texture>
+        <bordertexture border="72" colordiffuse="AltPosterBack">common/dark-shadow-24-2.png</bordertexture>
+        <bordersize>22</bordersize>
       </control>
       <control type="panel" id="450">
-        <left>20</left>
+        <left>0</left>
         <top>100</top>
-        <width>940</width>
-        <height>700</height>
-        <onleft>9000</onleft>
-        <onright>60</onright>
+        <width>1550</width>
+        <height>840</height>
+        <onright>9000</onright>
+        <onleft>60</onleft>
         <onup>450</onup>
         <ondown>450</ondown>
         <pagecontrol>60</pagecontrol>
         <scrolltime>200</scrolltime>
-        <itemlayout height="140" width="960">
+        <itemlayout height="140" width="1550">
           <control type="image">
             <top>24</top>
             <left>24</left>
             <width>92</width>
             <height>92</height>
             <aligny>center</aligny>
-            <texture>$INFO[ListItem.Icon]</texture>
+            <texture colordiffuse="dialog_fg_70">$INFO[ListItem.Icon]</texture>
             <aspectratio>keep</aspectratio>
           </control>
           <control type="label">
@@ -81,11 +81,11 @@
             <right>20</right>
             <height>140</height>
             <aligny>center</aligny>
-            <selectedcolor>selected</selectedcolor>
+            <selectedcolor>dialog_fg_70</selectedcolor>
             <label>$INFO[ListItem.Label]</label>
           </control>
         </itemlayout>
-        <focusedlayout height="140" width="960">
+        <focusedlayout height="140" width="1550">
           <control type="group">
             <left>0</left>
             <top>0</top>
@@ -105,7 +105,7 @@
             <width>92</width>
             <height>92</height>
             <aligny>center</aligny>
-            <texture>$INFO[ListItem.Icon]</texture>
+            <texture colordiffuse="b3ededed">$INFO[ListItem.Icon]</texture>
             <aspectratio>keep</aspectratio>
           </control>
           <control type="label">
@@ -114,18 +114,19 @@
             <right>20</right>
             <height>140</height>
             <aligny>center</aligny>
-            <selectedcolor>selected</selectedcolor>
+            <selectedcolor>dialog_fg_70</selectedcolor>
+            <textcolor>b3ededed</textcolor>
             <label>$INFO[ListItem.Label]</label>
           </control>
         </focusedlayout>
       </control>
       <control type="panel" id="451">
-        <left>20</left>
+        <left>0</left>
         <top>100</top>
-        <width>960</width>
-        <height>700</height>
-        <onleft>9000</onleft>
-        <onright>60</onright>
+        <width>1580</width>
+        <height>930</height>
+        <onleft>60</onleft>
+        <onright>9000</onright>
         <onup>451</onup>
         <ondown>451</ondown>
         <pagecontrol>60</pagecontrol>
@@ -160,12 +161,12 @@
         </focusedlayout>
       </control>
       <control type="scrollbar" id="60">
-        <left>965</left>
+        <left>0</left>
         <top>100</top>
         <width>12</width>
         <height>698</height>
-        <onleft>450</onleft>
-        <onright>9000</onright>
+        <onleft>9000</onleft>
+        <onright>450</onright>
         <orientation>vertical</orientation>
       </control>
       <control type="label" id="412">
@@ -177,18 +178,36 @@
         <haspath>true</haspath>
         <font>font12</font>
         <aligny>bottom</aligny>
-        <textcolor>grey</textcolor>
+        <textcolor>dialog_fg_70</textcolor>
       </control>
       <control type="label">
-        <left>0</left>
-        <bottom>10</bottom>
+        <right>60</right>
+        <bottom>30</bottom>
         <width>1270</width>
         <height>30</height>
         <align>right</align>
         <aligny>bottom</aligny>
-        <textcolor>grey</textcolor>
+        <textcolor>dialog_fg_70</textcolor>
         <font>font12</font>
         <label>$VAR[FileBrowserSelectLabel]</label>
+      </control>
+    </control>
+    <control type="group">
+      <control type="image">
+        <description>Dialog Header image</description>
+        <right>370</right>
+        <top>100</top>
+        <width>4</width>
+        <height>100%</height>
+        <texture colordiffuse="$VAR[ColorHighlight]" border="3">common/light-separator.png</texture>
+      </control>
+      <control type="image">
+        <description>Dialog Header image</description>
+        <right>370</right>
+        <top>100</top>
+        <width>4</width>
+        <height>100%</height>
+        <texture colordiffuse="$VAR[ColorGradient]" border="3">common/light-separator-gradient.png</texture>
       </control>
     </control>
     <include content="UpDownArrows">

@@ -170,7 +170,6 @@
         <textoffsetx>20</textoffsetx>
         <onclick>$PARAM[onclick]</onclick>
         <wrapmultiline>$PARAM[wrapmultiline]</wrapmultiline>
-        <texturenofocus colordiffuse="dialog_bg_30">$PARAM[texturenofocus]</texturenofocus>
         <align>center</align>
         <aligny>center</aligny>
         <include content="ButtonType">
@@ -179,7 +178,7 @@
         <include content="ButtonType">
           <param name="alttexturefocus" value="true"/>
         </include>
-        <!-- <texturenofocus colordiffuse="main_bg_30" border="5">common/box.png</texturenofocus> -->
+        <texturenofocus colordiffuse="dialog_bg_30" border="5">common/box.png</texturenofocus>
         <visible>$PARAM[visible]</visible>
       </control>
     </definition>

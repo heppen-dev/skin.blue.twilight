@@ -19,8 +19,8 @@
         <bottom>20</bottom>
         <onup>3</onup>
         <ondown>3</ondown>
-        <onleft>9001</onleft>
-        <onright>61</onright>
+        <onleft>61</onleft>
+        <onright>9001</onright>
         <pagecontrol>61</pagecontrol>
         <scrolltime>200</scrolltime>
         <include content="DefaultSimpleListLayout">
@@ -35,8 +35,8 @@
         <bottom>20</bottom>
         <onup>6</onup>
         <ondown>6</ondown>
-        <onleft>9001</onleft>
-        <onright>61</onright>
+        <onleft>61</onleft>
+        <onright>9001</onright>
         <pagecontrol>61</pagecontrol>
         <scrolltime>200</scrolltime>
         <itemlayout height="125" width="1100">
@@ -128,6 +128,7 @@
             <height>60</height>
             <font>font27</font>
             <aligny>center</aligny>
+            <textcolor>dialog_fg_70</textcolor>
             <label>$INFO[ListItem.Label]</label>
           </control>
           <control type="textbox">
@@ -142,13 +143,13 @@
         </focusedlayout>
       </control>
       <control type="scrollbar" id="61">
-        <left>1100</left>
+        <left>0</left>
         <top>100</top>
         <width>12</width>
         <bottom>20</bottom>
         <onleft condition="Control.IsVisible(3)">3</onleft>
         <onleft condition="Control.IsVisible(6)">6</onleft>
-        <onright>9001</onright>
+        <onright>6</onright>
         <orientation>vertical</orientation>
       </control>
       <control type="label">
@@ -164,9 +165,9 @@
       <control type="grouplist" id="9001">
         <left>1120</left>
         <top>100</top>
-        <onleft>61</onleft>
+        <onleft>6</onleft>
         <itemgap>20</itemgap>
-        <onright>3</onright>
+        <onright>61</onright>
         <include content="DefaultDialogButton">
           <param name="id" value="5"/>
           <param name="label" value="$LOCALIZE[21452]"/>
@@ -179,6 +180,24 @@
           <param name="id" value="7"/>
           <param name="label" value="$LOCALIZE[222]"/>
         </include>
+      </control>
+    </control>
+    <control type="group">
+      <control type="image">
+        <description>Dialog Header image</description>
+        <left>1340</left>
+        <top>265</top>
+        <width>4</width>
+        <height>650</height>
+        <texture colordiffuse="$VAR[ColorHighlight]" border="3">common/light-separator.png</texture>
+      </control>
+      <control type="image">
+        <description>Dialog Header image</description>
+        <left>1340</left>
+        <top>265</top>
+        <width>4</width>
+        <height>650</height>
+        <texture colordiffuse="$VAR[ColorGradient]" border="3">common/light-separator-gradient.png</texture>
       </control>
     </control>
   </include>
