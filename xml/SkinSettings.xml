@@ -688,37 +688,37 @@
       <control type="group">
         <control type="image">
           <description>Dialog Header image</description>
-          <left>488</left>
+          <left>487</left>
           <top>100</top>
-          <width>5</width>
+          <width>4</width>
           <height>711</height>
-          <texture colordiffuse="$VAR[ColorHighlight]" border="3">common/fancy-line.png</texture>
+          <texture colordiffuse="$VAR[ColorHighlight]" border="3">common/light-separator.png</texture>
         </control>
         <control type="image">
           <description>Dialog Header image</description>
           <left>487</left>
           <top>100</top>
-          <width>5</width>
+          <width>4</width>
           <height>711</height>
-          <texture colordiffuse="$VAR[ColorGradient]" border="3">common/white-gradient.png</texture>
+          <texture colordiffuse="$VAR[ColorGradient]" border="3">common/light-separator-gradient.png</texture>
         </control>
       </control>
       <control type="group">
         <control type="image">
           <description>Dialog Header image</description>
-          <left>101</left>
+          <left>103</left>
           <top>100</top>
-          <width>5</width>
+          <width>4</width>
           <height>711</height>
-          <texture colordiffuse="$VAR[ColorHighlight]" border="3">common/fancy-line.png</texture>
+          <texture colordiffuse="$VAR[ColorHighlight]" border="3">common/light-separator.png</texture>
         </control>
         <control type="image">
           <description>Dialog Header image</description>
-          <left>101</left>
+          <left>103</left>
           <top>100</top>
-          <width>5</width>
+          <width>4</width>
           <height>711</height>
-          <texture colordiffuse="$VAR[ColorGradient]" border="3">common/white-gradient.png</texture>
+          <texture colordiffuse="$VAR[ColorGradient]" border="3">common/light-separator-gradient.png</texture>
         </control>
       </control>
       <include content="Defs_Settings_Changer">
@@ -731,14 +731,15 @@
     <include>BottomBar</include> -->
     <control type="textbox" id="6">
       <description>description area</description>
-      <left>650</left>
-      <bottom>100</bottom>
-      <width>1400</width>
-      <height>100</height>
-      <font>font12</font>
-      <align>justify</align>
-      <textcolor>$VAR[ColorHighlight]</textcolor>
+      <top>865</top>
+      <left>625</left>
+      <width>1155</width>
+      <height>75</height>
+      <font>font_tiny_hintlabel</font>
+      <align>left</align>
+      <aligny>center</aligny>
       <label>$VAR[SkinSettingsHelpTextVar]</label>
+      <textcolor>$VAR[ColorHighlight]</textcolor>
       <autoscroll time="3000" delay="5000" repeat="5000">true</autoscroll>
     </control>
   </controls>

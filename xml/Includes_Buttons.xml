@@ -125,7 +125,7 @@
   <include name="DefaultSettingLabel">
     <left>0</left>
     <top>0</top>
-    <height>80</height>
+    <height>75</height>
     <label/>
     <textoffsetx>40</textoffsetx>
     <aligny>center</aligny>
@@ -135,7 +135,7 @@
   <include name="SettingsItemCommon">
     <align>left</align>
     <aligny>center</aligny>
-    <height>80</height>
+    <height>75</height>
     <texturenofocus />
     <texturefocus />
     <texturefocus colordiffuse="$VAR[ColorHighlight]">common/white.png</texturefocus>

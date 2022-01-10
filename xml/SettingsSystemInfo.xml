@@ -328,37 +328,37 @@
       <control type="group">
         <control type="image">
           <description>Dialog Header image</description>
-          <left>488</left>
+          <left>487</left>
           <top>100</top>
-          <width>5</width>
+          <width>4</width>
           <height>711</height>
-          <texture colordiffuse="$VAR[ColorHighlight]" border="3">common/fancy-line.png</texture>
+          <texture colordiffuse="$VAR[ColorHighlight]" border="3">common/light-separator.png</texture>
         </control>
         <control type="image">
           <description>Dialog Header image</description>
           <left>487</left>
           <top>100</top>
-          <width>5</width>
+          <width>4</width>
           <height>711</height>
-          <texture colordiffuse="$VAR[ColorGradient]" border="3">common/white-gradient.png</texture>
+          <texture colordiffuse="$VAR[ColorGradient]" border="3">common/light-separator-gradient.png</texture>
         </control>
       </control>
       <control type="group">
         <control type="image">
           <description>Dialog Header image</description>
-          <left>101</left>
+          <left>103</left>
           <top>100</top>
-          <width>5</width>
+          <width>4</width>
           <height>711</height>
-          <texture colordiffuse="$VAR[ColorHighlight]" border="3">common/fancy-line.png</texture>
+          <texture colordiffuse="$VAR[ColorHighlight]" border="3">common/light-separator.png</texture>
         </control>
         <control type="image">
           <description>Dialog Header image</description>
-          <left>101</left>
+          <left>103</left>
           <top>100</top>
-          <width>5</width>
+          <width>4</width>
           <height>711</height>
-          <texture colordiffuse="$VAR[ColorGradient]" border="3">common/white-gradient.png</texture>
+          <texture colordiffuse="$VAR[ColorGradient]" border="3">common/light-separator-gradient.png</texture>
         </control>
       </control>
       <include content="Defs_Settings_Changer">
