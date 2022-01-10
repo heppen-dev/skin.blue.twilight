@@ -5,29 +5,7 @@
       <include>OpenClose_Bottom</include>
       <visible>Control.IsVisible(510)</visible>
       <include>Visible_Right</include>
-      <control type="grouplist">
-        <left>1500</left>
-        <orientation>vertical</orientation>
-        <itemgap>30</itemgap>
-        <usecontrolcoords>true</usecontrolcoords>
-        <control type="label">
-          <top>35</top>
-          <right>75</right>
-          <align>right</align>
-          <font>font_title</font>
-          <label>$VAR[BreadcrumbsVideoVar]</label>
-          <visible>!$EXP[infodialog_active]</visible>
-        </control>
-        <control type="label">
-          <top>35</top>
-          <right>75</right>
-          <font>font_clock</font>
-          <align>right</align>
-          <label>$INFO[System.Time]</label>
-          <visible>!$EXP[infodialog_active]</visible>
-        </control>
-        <visible>!Skin.HasSetting(DisableClock)</visible>
-      </control>
+      
       <control type="group" id="5600">
         <include content="Object_Item_Showcase">
           <param name="title" value="$VAR[Label_Title]"/>
@@ -111,7 +89,7 @@
       <include content="Object_Scrollbar_Horz">
         <param name="visible" value="Control.IsVisible(510)" />
         <param name="bottom" value="20"/>
-    </include>
+      </include>
     </control>
   </include>
 </includes>

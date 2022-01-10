@@ -86,6 +86,7 @@
       <control type="group">
         <include content="TopBar">
           <param name="breadcrumbs_label" value="$VAR[BreadcrumbsVideoVar]"/>
+          <param name="topbar_visible" value="Control.HasFocus(50) | [Control.HasFocus(51) + Skin.HasSetting(DisableClearlogo)] | Control.HasFocus(55) | [Control.HasFocus(510) + Skin.HasSetting(DisableClearlogo)]" />
         </include>
         <!-- <include content="BottomBar">
           <param name="info_visible" value="true"/>

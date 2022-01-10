@@ -24,10 +24,6 @@
         <texture colordiffuse="AltPosterBack" border="5">common/box.png</texture>
         <visible>Control.IsVisible(51)</visible>
       </control>
-      <include content="Object_Scrollbar_Horz">
-        <param name="visible" value="Control.IsVisible(51)" />
-        <param name="bottom" value="840"/>
-      </include>
       <control type="group">
         <visible>Control.IsVisible(51)</visible>
         <include>Visible_Right</include>
@@ -43,8 +39,8 @@
           <scrolltime tween="cubic" easing="out">500</scrolltime>
           <orientation>horizontal</orientation>
           <onleft>51</onleft>
-          <onup>62</onup>
-          <ondown>9000</ondown>
+          <ondown>62</ondown>
+          <onup>9000</onup>
           <onright>51</onright>
           <hitrect x="100" y="0" w="800" h="400"/>
           <visible>Container.Content(movies) | Container.Content(seasons) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(games)</visible>
@@ -208,5 +204,9 @@
         </include>
       </control>
     </control>
+    <include content="Object_Scrollbar_Horz">
+      <param name="visible" value="Control.IsVisible(51)" />
+      <param name="bottom" value="20"/>
+    </include>
   </include>
 </includes>
