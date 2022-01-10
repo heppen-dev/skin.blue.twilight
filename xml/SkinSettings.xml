@@ -28,14 +28,14 @@
         <left>490</left>
         <include content="DefaultSettingButtonGradient">
           <param name="id" value="600"/>
-          <top>100</top>
+          <top>80</top>
           <height>75</height>
           <right>28</right>
           <visible>ControlGroup(600).HasFocus()</visible>
         </include>
         <!-- Start -->
         <control type="grouplist" id="600">
-          <top>100</top>
+          <top>80</top>
           <height>600</height>
           <left>0</left>
           <right>28</right>
@@ -114,13 +114,13 @@
         <include content="DefaultSettingButtonGradient">
           <param name="id" value="700"/>
           <height>75</height>
-          <top>100</top>
+          <top>80</top>
           <right>28</right>
           <visible>ControlGroup(700).HasFocus()</visible>
         </include>
         <!-- Background -->
         <control type="grouplist" id="700">
-          <top>100</top>
+          <top>80</top>
           <height>600</height>
           <left>0</left>
           <right>28</right>
@@ -200,14 +200,14 @@
         </control>
         <include content="DefaultSettingButtonGradient">
           <param name="id" value="800"/>
-          <top>100</top>
+          <top>80</top>
           <height>75</height>
           <right>28</right>
           <visible>ControlGroup(800).HasFocus()</visible>
         </include>
         <!-- Miscellaneous -->
         <control type="grouplist" id="800">
-          <top>100</top>
+          <top>80</top>
           <height>600</height>
           <left>0</left>
           <right>28</right>
@@ -295,14 +295,14 @@
         </control>
         <include content="DefaultSettingButtonGradient">
           <param name="id" value="900"/>
-          <top>100</top>
+          <top>80</top>
           <height>75</height>
           <right>28</right>
           <visible>ControlGroup(900).HasFocus()</visible>
         </include>
         <!-- Library -->
         <control type="grouplist" id="900">
-          <top>100</top>
+          <top>80</top>
           <height>600</height>
           <left>0</left>
           <right>28</right>
@@ -387,14 +387,14 @@
         </control>
         <include content="DefaultSettingButtonGradient">
           <param name="id" value="1000"/>
-          <top>100</top>
+          <top>80</top>
           <height>75</height>
           <right>28</right>
           <visible>ControlGroup(1000).HasFocus()</visible>
         </include>
         <!-- Video / Music OSD -->
         <control type="grouplist" id="1000">
-          <top>100</top>
+          <top>80</top>
           <height>600</height>
           <left>0</left>
           <right>28</right>
@@ -432,14 +432,14 @@
         </control>
         <include content="DefaultSettingButtonGradient">
           <param name="id" value="1100"/>
-          <top>100</top>
+          <top>80</top>
           <height>75</height>
           <right>28</right>
           <visible>ControlGroup(1100).HasFocus()</visible>
         </include>
         <!-- Live TV -->
         <control type="grouplist" id="1100">
-          <top>100</top>
+          <top>80</top>
           <height>600</height>
           <left>0</left>
           <right>28</right>
@@ -464,14 +464,14 @@
         </control>
         <include content="DefaultSettingButtonGradient">
           <param name="id" value="1200"/>
-          <top>100</top>
+          <top>80</top>
           <height>75</height>
           <right>28</right>
           <visible>ControlGroup(1200).HasFocus()</visible>
         </include>
         <!-- Manage -->
         <control type="grouplist" id="1200">
-          <top>100</top>
+          <top>80</top>
           <height>600</height>
           <left>0</left>
           <right>28</right>
@@ -588,7 +588,7 @@
         <control type="list" id="9000">
           <description>button area</description>
           <left>105</left>
-          <top>100</top>
+          <top>80</top>
           <width>385</width>
           <height>640</height>
           <include>Defs_Settings_OnLeft</include>
@@ -665,7 +665,7 @@
       </control>
       <control type="group">
         <right>-6</right>
-        <top>100</top>
+        <top>80</top>
         <bottom>137</bottom>
         <width>60</width>
         <control type="scrollbar" id="60">
@@ -689,17 +689,17 @@
         <control type="image">
           <description>Dialog Header image</description>
           <left>487</left>
-          <top>100</top>
+          <top>80</top>
           <width>4</width>
-          <height>711</height>
+          <height>732</height>
           <texture colordiffuse="$VAR[ColorHighlight]" border="3">common/light-separator.png</texture>
         </control>
         <control type="image">
           <description>Dialog Header image</description>
           <left>487</left>
-          <top>100</top>
+          <top>80</top>
           <width>4</width>
-          <height>711</height>
+          <height>732</height>
           <texture colordiffuse="$VAR[ColorGradient]" border="3">common/light-separator-gradient.png</texture>
         </control>
       </control>
@@ -707,17 +707,17 @@
         <control type="image">
           <description>Dialog Header image</description>
           <left>103</left>
-          <top>100</top>
+          <top>80</top>
           <width>4</width>
-          <height>711</height>
+          <height>732</height>
           <texture colordiffuse="$VAR[ColorHighlight]" border="3">common/light-separator.png</texture>
         </control>
         <control type="image">
           <description>Dialog Header image</description>
           <left>103</left>
-          <top>100</top>
+          <top>80</top>
           <width>4</width>
-          <height>711</height>
+          <height>732</height>
           <texture colordiffuse="$VAR[ColorGradient]" border="3">common/light-separator-gradient.png</texture>
         </control>
       </control>

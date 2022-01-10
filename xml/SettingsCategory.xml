@@ -23,7 +23,7 @@
         <include content="DefaultSettingButtonGradient">
           <param name="id" value="5"/>
           <param name="height" value="75"/>
-          <top>100</top>
+          <top>80</top>
           <bottom>137</bottom>
           <width>1203</width>
           <height>75</height>
@@ -32,7 +32,7 @@
         </include>
         <control type="grouplist" id="5">
           <description>control area</description>
-          <top>100</top>
+          <top>80</top>
           <left>485</left>
           <right>0</right>
           <width>1203</width>
@@ -89,7 +89,7 @@
         <include content="DefaultSettingButtonGradient">
           <param name="id" value="3"/>
           <param name="height" value="75"/>
-          <top>100</top>
+          <top>80</top>
           <height>75</height>
           <width>385</width>
           <left>1</left>
@@ -98,7 +98,7 @@
         <control type="grouplist" id="3">
           <description>button area</description>
           <left>0</left>
-          <top>100</top>
+          <top>80</top>
           <width>385</width>
           <height>600</height>
           <usecontrolcoords>true</usecontrolcoords>
@@ -120,7 +120,7 @@
       </control>
       <control type="group">
         <depth>DepthContentPanel</depth>
-        <top>700</top>
+        <top>680</top>
         <left>105</left>
         <include content="DefaultSettingButtonGradient">
           <param name="id" value="8800"/>
@@ -180,17 +180,17 @@
         <control type="image">
           <description>Dialog Header image</description>
           <left>487</left>
-          <top>100</top>
+          <top>80</top>
           <width>4</width>
-          <height>711</height>
+          <height>732</height>
           <texture colordiffuse="$VAR[ColorHighlight]" border="3">common/light-separator.png</texture>
         </control>
         <control type="image">
           <description>Dialog Header image</description>
           <left>487</left>
-          <top>100</top>
+          <top>80</top>
           <width>4</width>
-          <height>711</height>
+          <height>732</height>
           <texture colordiffuse="$VAR[ColorGradient]" border="3">common/light-separator-gradient.png</texture>
         </control>
       </control>
@@ -198,17 +198,17 @@
         <control type="image">
           <description>Dialog Header image</description>
           <left>103</left>
-          <top>100</top>
+          <top>80</top>
           <width>4</width>
-          <height>711</height>
+          <height>732</height>
           <texture colordiffuse="$VAR[ColorHighlight]" border="3">common/light-separator.png</texture>
         </control>
         <control type="image">
           <description>Dialog Header image</description>
           <left>103</left>
-          <top>100</top>
+          <top>80</top>
           <width>4</width>
-          <height>711</height>
+          <height>732</height>
           <texture colordiffuse="$VAR[ColorGradient]" border="3">common/light-separator-gradient.png</texture>
         </control>
       </control>

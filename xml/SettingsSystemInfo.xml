@@ -130,7 +130,7 @@
         <depth>DepthContentPanel</depth>
         <include content="DefaultSettingButtonGradient">
           <param name="id" value="9000"/>
-          <top>100</top>
+          <top>80</top>
           <width>385</width>
           <height>75</height>
           <left>100</left>
@@ -138,7 +138,7 @@
         </include>
         <control type="grouplist" id="9000">
           <left>100</left>
-          <top>100</top>
+          <top>80</top>
           <width>385</width>
           <height>100%</height>
           <onup>9000</onup>
@@ -329,17 +329,17 @@
         <control type="image">
           <description>Dialog Header image</description>
           <left>487</left>
-          <top>100</top>
+          <top>80</top>
           <width>4</width>
-          <height>711</height>
+          <height>732</height>
           <texture colordiffuse="$VAR[ColorHighlight]" border="3">common/light-separator.png</texture>
         </control>
         <control type="image">
           <description>Dialog Header image</description>
           <left>487</left>
-          <top>100</top>
+          <top>80</top>
           <width>4</width>
-          <height>711</height>
+          <height>732</height>
           <texture colordiffuse="$VAR[ColorGradient]" border="3">common/light-separator-gradient.png</texture>
         </control>
       </control>
@@ -347,17 +347,17 @@
         <control type="image">
           <description>Dialog Header image</description>
           <left>103</left>
-          <top>100</top>
+          <top>80</top>
           <width>4</width>
-          <height>711</height>
+          <height>732</height>
           <texture colordiffuse="$VAR[ColorHighlight]" border="3">common/light-separator.png</texture>
         </control>
         <control type="image">
           <description>Dialog Header image</description>
           <left>103</left>
-          <top>100</top>
+          <top>80</top>
           <width>4</width>
-          <height>711</height>
+          <height>732</height>
           <texture colordiffuse="$VAR[ColorGradient]" border="3">common/light-separator-gradient.png</texture>
         </control>
       </control>
@@ -365,9 +365,5 @@
         <onright>9000</onright>
       </include>
     </control>
-    <!-- <include content="TopBar">
-      <param name="breadcrumbs_label" value="$LOCALIZE[130]" />
-    </include>
-    <include>BottomBar</include> -->
   </controls>
 </window>
