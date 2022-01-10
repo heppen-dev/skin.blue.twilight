@@ -41,10 +41,10 @@
           </control>
         </control>
       </control>
-      <!-- <include content="TopBar">
+      <include content="TopBar">
         <param name="breadcrumbs_label" value="$LOCALIZE[24001]"/>
       </include>
-      <include content="BottomBar">
+      <!-- <include content="BottomBar">
         <param name="info_visible" value="true"/>
       </include> -->
       <include>MediaMenuMouseOverlay</include>

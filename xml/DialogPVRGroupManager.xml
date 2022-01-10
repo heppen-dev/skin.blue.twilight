@@ -16,14 +16,14 @@
       </include>
       <include content="DefaultSettingButtonGradient">
         <param name="id" value="9000"/>
-        <top>70</top>
-        <height>80</height>
+        <top>100</top>
+        <height>75</height>
         <width>370</width>
         <visible>ControlGroup(9000).HasFocus()</visible>
       </include>
       <control type="grouplist" id="9000">
         <left>0</left>
-        <top>50</top>
+        <top>60</top>
         <width>370</width>
         <height>600</height>
         <align>center</align>
