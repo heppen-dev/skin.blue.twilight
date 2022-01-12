@@ -74,7 +74,7 @@
           <align>center</align>
           <ondown>50</ondown>
           <orientation>horizontal</orientation>
-          <animation effect="slide" start="0" end="0,-340" time="0" condition="Skin.HasSetting(PVRChannelsExtendedInfo)">Conditional</animation>
+          <animation effect="slide" start="0" end="0,-340" time="0" condition="!Skin.HasSetting(PVRChannelsExtendedInfo)">Conditional</animation>
           <scrolltime tween="cubic" easing="out">500</scrolltime>
           <itemlayout width="170">
             <control type="label">
