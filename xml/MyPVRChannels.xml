@@ -18,7 +18,7 @@
         <visible>Control.IsVisible(50)</visible>
       </control>
       <control type="image">
-        <top>200</top>
+        <top>520</top>
         <left>100</left>
         <width>1720</width>
         <height>500</height>
@@ -26,16 +26,55 @@
         <brodersize>20</brodersize>
         <visible>Control.IsVisible(51)</visible>
       </control>
+      <control type="group">
+        <top>120</top>
+        <left>100</left>
+        <visible>Control.IsVisible(51)</visible>
+        <control type="label">
+          <font>font_tiny_title_uppercase</font>
+          <label>$INFO[ListItem.Title]</label>
+        </control>
+        <control type="label">
+          <right>100</right>
+          <align>right</align>
+          <font>font_tiny_title_uppercase</font>
+          <label>$INFO[ListItem.ChannelName]</label>
+        </control>
+        <control type="image">
+          <top>70</top>
+          <left>0</left>
+          <width>1720</width>
+          <height>1</height>
+          <texture colordiffuse="AltPosterBack">common/white.png</texture>
+          <brodersize>20</brodersize>
+        </control>
+        <control type="group">
+          <top>100</top>
+          <include content="Object_Info_First_Line">
+            <param name="visible_condi" value="true" />
+          </include>
+        </control>
+        <control type="textbox">
+          <top>160</top>
+          <left>0</left>
+          <width>1720</width>
+          <height>145</height>
+          <align>justify</align>
+          <font>font13</font>
+          <scroll>Skin.HasSetting(autoscroll)</scroll>
+          <label>$INFO[ListItem.Plot]</label>
+        </control>
+      </control>
       <animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
       <control type="group">
-        <include>OpenClose_Bottom</include>
         <control type="list" id="11">
-          <top>120</top>
+          <top>460</top>
           <left>110</left>
           <width>1700</width>
           <align>center</align>
           <ondown>50</ondown>
           <orientation>horizontal</orientation>
+          <animation effect="slide" start="0" end="0,-340" time="0" condition="Skin.HasSetting(PVRChannelsExtendedInfo)">Conditional</animation>
           <scrolltime tween="cubic" easing="out">500</scrolltime>
           <itemlayout width="170">
             <control type="label">
@@ -81,7 +120,7 @@
         <control type="fixedlist" id="51">
           <left>100</left>
           <height>500</height>
-          <top>200</top>
+          <top>520</top>
           <right>100</right>
           <bottom>80</bottom>
           <onleft>9000</onleft>
@@ -95,7 +134,7 @@
           <include content="PVRListItemLayouts"/>
         </control>
         <control type="image">
-          <centerleft>50%</centerleft>
+          <left>683</left>
           <top>200</top>
           <width>1</width>
           <height>800</height>
@@ -103,51 +142,12 @@
           <visible>Control.IsVisible(50)</visible>
         </control>
         <control type="image">
-          <centerleft>50%</centerleft>
-          <top>200</top>
+          <left>683</left>
+          <top>520</top>
           <width>1</width>
           <height>500</height>
           <texture colordiffuse="dialog_fg_30">common/white.png</texture>
           <visible>Control.IsVisible(51)</visible>
-        </control>
-      </control>
-      <control type="group">
-        <top>740</top>
-        <left>100</left>
-        <visible>Control.IsVisible(51)</visible>
-        <control type="label">
-          <font>font_tiny_title_uppercase</font>
-          <label>$INFO[ListItem.Title]</label>
-        </control>
-        <control type="label">
-          <right>100</right>
-          <align>right</align>
-          <font>font_tiny_title_uppercase</font>
-          <label>$INFO[ListItem.ChannelName]</label>
-        </control>
-        <control type="image">
-          <top>70</top>
-          <left>0</left>
-          <width>1720</width>
-          <height>1</height>
-          <texture colordiffuse="AltPosterBack">common/white.png</texture>
-          <brodersize>20</brodersize>
-        </control>
-        <control type="group">
-          <top>100</top>
-          <include content="Object_Info_First_Line">
-            <param name="visible_condi" value="true" />
-          </include>
-        </control>
-        <control type="textbox">
-          <top>160</top>
-          <left>0</left>
-          <width>1720</width>
-          <height>145</height>
-          <align>justify</align>
-          <font>font13</font>
-          <scroll>Skin.HasSetting(autoscroll)</scroll>
-          <label>$INFO[ListItem.Plot]</label>
         </control>
       </control>
       <include content="TopBar">

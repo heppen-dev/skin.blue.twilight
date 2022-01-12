@@ -645,7 +645,7 @@
             <right>120</right>
             <top>0</top>
             <height>100</height>
-            <width>680</width>
+            <width>420</width>
             <font>font_small_pvr_channels</font>
             <aligny>center</aligny>
             <label>$PARAM[label3]</label>
@@ -662,14 +662,14 @@
         </control>
       </control>
       <control type="group">
-        <left>800</left>
+        <left>573</left>
         <control type="group">
           <control type="label">
             <left>105</left>
             <right>120</right>
             <top>0</top>
             <height>100</height>
-            <width>680</width>
+            <width>420</width>
             <font>font_small_pvr_channels</font>
             <aligny>center</aligny>
             <label>$PARAM[label4]</label>
@@ -702,7 +702,7 @@
         <top>1</top>
         <left>1</left>
         <bottom>1</bottom>
-        <width>860</width>
+        <width>573</width>
         <texturebg>pvr/progressline-back.png</texturebg>
         <lefttexture border="2" colordiffuse="bf777777">pvr/progressline-left2.png</lefttexture>
         <midtexture border="2" colordiffuse="bf777777">pvr/progressline-mid2.png</midtexture>
@@ -736,7 +736,7 @@
         <top>0</top>
         <left>0</left>
         <bottom>0</bottom>
-        <width>860</width>
+        <width>573</width>
         <texturebg>pvr/progressline-back.png</texturebg>
         <lefttexture border="2" colordiffuse="bf777777">pvr/progressline-left2.png</lefttexture>
         <midtexture border="2" colordiffuse="bf777777">pvr/progressline-mid2.png</midtexture>
