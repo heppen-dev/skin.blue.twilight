@@ -5,19 +5,19 @@
       <include>Animation_TopSlide_Home</include>
       <control type="group">
         <control type="list" id="9000">
+          <width>1920</width>
+          <centerleft>50%</centerleft>
           <height>100</height>
           <top>3</top>
-          <!-- <left>92</left> -->
           <ondown>2999</ondown>
           <orientation>horizontal</orientation>
-          <scrolltime tween="cubic" easing="out">500</scrolltime>
-          <focusedlayout height="95" width="274">
+          <focusedlayout height="95" width="240">
             <control type="group">
               <control type="label">
                 <left>0</left>
                 <top>0</top>
                 <height>95</height>
-                <width>274</width>
+                <width>240</width>
                 <scroll>true</scroll>
                 <aligny>center</aligny>
                 <align>center</align>
@@ -29,19 +29,19 @@
                 <left>0</left>
                 <top>0</top>
                 <height>5</height>
-                <width>274</width>
+                <width>240</width>
                 <texture colordiffuse="ffffffff">common/white.png</texture>
                 <visible>Control.HasFocus(9000)</visible>
               </control>
             </control>
           </focusedlayout>
-          <itemlayout height="95" width="274">
+          <itemlayout height="95" width="240">
             <control type="group">
               <control type="label">
                 <left>0</left>
                 <top>0</top>
                 <height>95</height>
-                <width>274</width>
+                <width>240</width>
                 <scroll>true</scroll>
                 <aligny>center</aligny>
                 <align>center</align>
@@ -167,7 +167,7 @@
                 <textureradiooffdisabled colordiffuse="dialog_fg_30">special://skin/extras/icons/play3.png</textureradiooffdisabled>
                 <textureradioondisabled colordiffuse="dialog_fg_30">special://skin/extras/icons/play3.png</textureradioondisabled>
                 <onclick>Dialog.Close(all,true)</onclick>
-                
+
                 <!-- playing folders/collections -->
                 <include content="PlayFolderCollection">
                   <param name="includecondition" value="String.IsEqual(Window(home).Property(spotlight_isFolder),true) | String.IsEqual(Window(home).Property(spotlight_isCollection),true)" />
@@ -190,7 +190,7 @@
             </control>
             <control type="group">
               <control type="radiobutton" id="6001">
-                
+
                 <include>ClearBoolProps</include>
 
                 <onup>PlayerControl(Stop)</onup>
@@ -228,7 +228,7 @@
             </control>
             <control type="group">
               <control type="radiobutton" id="6002">
-                
+
                 <include>ClearBoolProps</include>
 
                 <onup>PlayerControl(Stop)</onup>

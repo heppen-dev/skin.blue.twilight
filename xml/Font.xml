@@ -58,6 +58,13 @@
       <linespacing>0.8</linespacing>
     </font>
     <font>
+      <name>font_menu</name>
+      <filename>AmazonEmberDisplay_Bd.ttf</filename>
+      <size>24</size>
+      <style>uppercase lighten</style>
+      <aspect>0.75</aspect>
+    </font>
+    <font>
       <name>font_small_defaults</name>
       <filename>AmazonEmberDisplay_Rg.ttf</filename>
       <size>25</size>
