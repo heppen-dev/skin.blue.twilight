@@ -4,6 +4,13 @@
     <control type="group">
       <include>Animation_TopSlide_Home</include>
       <control type="group">
+        <control type="image">
+          <left>0</left>
+          <top>0</top>
+          <height>95</height>
+          <width>1920</width>
+          <texture colordiffuse="dialog_bg_30">common/white.png</texture>
+        </control>
         <control type="list" id="9000">
           <width>1920</width>
           <centerleft>50%</centerleft>
