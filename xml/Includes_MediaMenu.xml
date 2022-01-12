@@ -143,6 +143,14 @@
           <onclick>Skin.ToggleSetting(ShowChannelIcon)</onclick>
           <visible>Window.IsActive(MyPVRChannels.xml)</visible>
         </control>
+        <control type="radiobutton" id="6071">
+          <include>MediaMenuItemsCommon</include>
+          <label>Extended Info</label>
+          <selected>Control.IsVisible(51)</selected>
+          <onclick>Skin.ToggleSetting(PVRChannelsExtendedInfo)</onclick>
+          <onclick>Container.NextViewMode</onclick>
+          <visible>Window.IsActive(MyPVRChannels.xml)</visible>
+        </control>
         <control type="button" id="6053">
           <include>MediaMenuItemsCommon</include>
           <label>$LOCALIZE[31022]</label>

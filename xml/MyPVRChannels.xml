@@ -15,6 +15,16 @@
         <height>800</height>
         <texture colordiffuse="AltPosterBack" border="20">diffuse/poster-wall.png</texture>
         <brodersize>20</brodersize>
+        <visible>Control.IsVisible(50)</visible>
+      </control>
+      <control type="image">
+        <top>200</top>
+        <left>100</left>
+        <width>1720</width>
+        <height>500</height>
+        <texture colordiffuse="AltPosterBack" border="20">diffuse/poster-wall.png</texture>
+        <brodersize>20</brodersize>
+        <visible>Control.IsVisible(51)</visible>
       </control>
       <animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
       <control type="group">
@@ -66,11 +76,23 @@
           <focusposition>3</focusposition>
           <scrolltime tween="cubic" easing="out">500</scrolltime>
           <viewtype label="535">list</viewtype>
-          <include content="PVRListItemLayouts">
-            <param name="list_id" value="50"/>
-            <param name="label1" value="$INFO[ListItem.Label]"/>
-            <param name="has_status_icon" value="true"/>
-          </include>
+          <include content="PVRListItemLayouts"/>
+        </control>
+        <control type="fixedlist" id="51">
+          <left>100</left>
+          <height>500</height>
+          <top>200</top>
+          <right>100</right>
+          <bottom>80</bottom>
+          <onleft>9000</onleft>
+          <onright>11</onright>
+          <onup>51</onup>
+          <ondown>51</ondown>
+          <movement>1</movement>
+          <focusposition>1</focusposition>
+          <scrolltime tween="cubic" easing="out">500</scrolltime>
+          <viewtype label="listextendedinfo">list</viewtype>
+          <include content="PVRListItemLayouts"/>
         </control>
         <control type="image">
           <centerleft>50%</centerleft>
@@ -78,6 +100,54 @@
           <width>1</width>
           <height>800</height>
           <texture colordiffuse="dialog_fg_30">common/white.png</texture>
+          <visible>Control.IsVisible(50)</visible>
+        </control>
+        <control type="image">
+          <centerleft>50%</centerleft>
+          <top>200</top>
+          <width>1</width>
+          <height>500</height>
+          <texture colordiffuse="dialog_fg_30">common/white.png</texture>
+          <visible>Control.IsVisible(51)</visible>
+        </control>
+      </control>
+      <control type="group">
+        <top>740</top>
+        <left>100</left>
+        <visible>Control.IsVisible(51)</visible>
+        <control type="label">
+          <font>font_tiny_title_uppercase</font>
+          <label>$INFO[ListItem.Title]</label>
+        </control>
+        <control type="label">
+          <right>100</right>
+          <align>right</align>
+          <font>font_tiny_title_uppercase</font>
+          <label>$INFO[ListItem.ChannelName]</label>
+        </control>
+        <control type="image">
+          <top>70</top>
+          <left>0</left>
+          <width>1720</width>
+          <height>1</height>
+          <texture colordiffuse="AltPosterBack">common/white.png</texture>
+          <brodersize>20</brodersize>
+        </control>
+        <control type="group">
+          <top>100</top>
+          <include content="Object_Info_First_Line">
+            <param name="visible_condi" value="true" />
+          </include>
+        </control>
+        <control type="textbox">
+          <top>160</top>
+          <left>0</left>
+          <width>1720</width>
+          <height>145</height>
+          <align>justify</align>
+          <font>font13</font>
+          <scroll>Skin.HasSetting(autoscroll)</scroll>
+          <label>$INFO[ListItem.Plot]</label>
         </control>
       </control>
       <include content="TopBar">

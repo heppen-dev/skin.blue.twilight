@@ -31,6 +31,12 @@
       <size>20</size>
       <style>bold</style>
     </font>
+    <font>
+      <name>font_tiny_title_uppercase</name>
+      <filename>AmazonEmberDisplay_Rg.ttf</filename>
+      <size>27</size>
+      <style>uppercase bold</style>
+    </font>
     <!-- Small Fonts -->
     <font>
       <name>font_small_pvr_channels</name>

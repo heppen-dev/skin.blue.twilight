@@ -650,17 +650,6 @@
             <aligny>center</aligny>
             <label>$PARAM[label3]</label>
           </control>
-          <control type="label">
-            <left>105</left>
-            <right>120</right>
-            <top>0</top>
-            <height>100</height>
-            <width>680</width>
-            <font>font_small_pvr_channels</font>
-            <align>right</align>
-            <aligny>center</aligny>
-            <label>$PARAM[label4]</label>
-          </control>
         </control>
         <control type="image">
           <right>110</right>
@@ -682,17 +671,6 @@
             <height>100</height>
             <width>680</width>
             <font>font_small_pvr_channels</font>
-            <aligny>center</aligny>
-            <label>$PARAM[label3]</label>
-          </control>
-          <control type="label">
-            <left>105</left>
-            <right>120</right>
-            <top>0</top>
-            <height>100</height>
-            <width>680</width>
-            <font>font_small_pvr_channels</font>
-            <align>right</align>
             <aligny>center</aligny>
             <label>$PARAM[label4]</label>
           </control>
@@ -718,69 +696,81 @@
       </control>
     </definition>
   </include>
+  <include name="PVRListItemSimpleLayout">
+    <itemlayout height="100">
+      <control type="progress">
+        <top>1</top>
+        <left>1</left>
+        <bottom>1</bottom>
+        <width>860</width>
+        <texturebg>pvr/progressline-back.png</texturebg>
+        <lefttexture border="2" colordiffuse="bf777777">pvr/progressline-left2.png</lefttexture>
+        <midtexture border="2" colordiffuse="bf777777">pvr/progressline-mid2.png</midtexture>
+        <righttexture border="2" colordiffuse="bf777777">pvr/progressline-right2.png</righttexture>
+        <info>ListItem.Progress</info>
+      </control>
+      <include content="PVRListItemLayout">
+        <param name="only_label_condition" value="$PARAM[only_label_condition]"/>
+        <param name="info_icon" value="$PARAM[info_icon]"/>
+        <param name="has_info_icon" value="$PARAM[has_info_icon]"/>
+        <param name="has_status_icon" value="$PARAM[has_status_icon]"/>
+        <param name="label0" value="[COLOR grey]$INFO[ListItem.ChannelNumberLabel][/COLOR]"/>
+        <param name="label1" value="$PARAM[label1]"/>
+        <param name="label2" value="$PARAM[label2]"/>
+        <param name="label3" value="$VAR[PVRListItemSubLabel]"/>
+        <param name="label4" value="[COLOR grey]$INFO[ListItem.NextStartTime][/COLOR]   $INFO[ListItem.NextTitle]"/>
+      </include>
+    </itemlayout>
+    <focusedlayout height="100">
+      <control type="group">
+        <left>0</left>
+        <top>0</top>
+        <right>0</right>
+        <animation effect="fade" start="100" end="0" time="0">UnFocus</animation>
+        <control type="image">
+          <texture colordiffuse="main_bg_30" border="10">common/white.png</texture>
+        </control>
+        <visible>true</visible>
+      </control>
+      <control type="progress">
+        <top>0</top>
+        <left>0</left>
+        <bottom>0</bottom>
+        <width>860</width>
+        <texturebg>pvr/progressline-back.png</texturebg>
+        <lefttexture border="2" colordiffuse="bf777777">pvr/progressline-left2.png</lefttexture>
+        <midtexture border="2" colordiffuse="bf777777">pvr/progressline-mid2.png</midtexture>
+        <righttexture border="2" colordiffuse="bf777777">pvr/progressline-right2.png</righttexture>
+        <info>ListItem.Progress</info>
+      </control>
+      <include content="PVRListItemLayout">
+        <param name="only_label_condition" value="$PARAM[only_label_condition]"/>
+        <param name="info_icon" value="$PARAM[info_icon]"/>
+        <param name="has_info_icon" value="$PARAM[has_info_icon]"/>
+        <param name="has_status_icon" value="$PARAM[has_status_icon]"/>
+        <param name="label0" value="$INFO[ListItem.ChannelNumberLabel]"/>
+        <param name="label1" value="$PARAM[label1]"/>
+        <param name="label2" value="$PARAM[label2]"/>
+        <param name="label3" value="$VAR[PVRListItemSubLabelFocused]"/>
+        <param name="label4" value="[COLOR grey]$INFO[ListItem.NextStartTime][/COLOR]   $INFO[ListItem.NextTitle]"/>
+      </include>
+    </focusedlayout>
+  </include>
   <include name="PVRListItemLayouts">
     <param name="only_label_condition">false</param>
     <param name="has_info_icon">false</param>
     <param name="has_status_icon">false</param>
     <definition>
-      <itemlayout height="100">
-        <control type="progress">
-          <top>0</top>
-          <left>0</left>
-          <bottom>0</bottom>
-          <width>860</width>
-          <texturebg>pvr/progressline-back.png</texturebg>
-          <lefttexture border="2" colordiffuse="bf777777">pvr/progressline-left2.png</lefttexture>
-          <midtexture border="2" colordiffuse="bf777777">pvr/progressline-mid2.png</midtexture>
-          <righttexture border="2" colordiffuse="bf777777">pvr/progressline-right2.png</righttexture>
-          <info>ListItem.Progress</info>
-        </control>
-        <include content="PVRListItemLayout">
-          <param name="only_label_condition" value="$PARAM[only_label_condition]"/>
-          <param name="info_icon" value="$PARAM[info_icon]"/>
-          <param name="has_info_icon" value="$PARAM[has_info_icon]"/>
-          <param name="has_status_icon" value="$PARAM[has_status_icon]"/>
-          <param name="label0" value="[COLOR grey]$INFO[ListItem.ChannelNumberLabel][/COLOR]"/>
-          <param name="label1" value="$PARAM[label1]"/>
-          <param name="label2" value="$PARAM[label2]"/>
-          <param name="label3" value="$VAR[PVRListItemSubLabel]"/>
-          <param name="label4" value="[COLOR grey]$INFO[ListItem.Comment][/COLOR]"/>
-        </include>
-      </itemlayout>
-      <focusedlayout height="100">
-        <control type="group">
-          <left>0</left>
-          <top>0</top>
-          <right>0</right>
-          <animation effect="fade" start="100" end="0" time="0">UnFocus</animation>
-          <control type="image">
-            <texture colordiffuse="dialog_bg_70" border="10">common/white.png</texture>
-          </control>
-          <visible>Control.HasFocus($PARAM[list_id])</visible>
-        </control>
-        <control type="progress">
-          <top>0</top>
-          <left>0</left>
-          <bottom>0</bottom>
-          <width>860</width>
-          <texturebg>pvr/progressline-back.png</texturebg>
-          <lefttexture border="2" colordiffuse="bf777777">pvr/progressline-left2.png</lefttexture>
-          <midtexture border="2" colordiffuse="bf777777">pvr/progressline-mid2.png</midtexture>
-          <righttexture border="2" colordiffuse="bf777777">pvr/progressline-right2.png</righttexture>
-          <info>ListItem.Progress</info>
-        </control>
-        <include content="PVRListItemLayout">
-          <param name="only_label_condition" value="$PARAM[only_label_condition]"/>
-          <param name="info_icon" value="$PARAM[info_icon]"/>
-          <param name="has_info_icon" value="$PARAM[has_info_icon]"/>
-          <param name="has_status_icon" value="$PARAM[has_status_icon]"/>
-          <param name="label0" value="$INFO[ListItem.ChannelNumberLabel]"/>
-          <param name="label1" value="$PARAM[label1]"/>
-          <param name="label2" value="$PARAM[label2]"/>
-          <param name="label3" value="$VAR[PVRListItemSubLabelFocused]"/>
-          <param name="label4" value="$INFO[ListItem.Comment]"/>
-        </include>
-      </focusedlayout>
+      <include content="PVRListItemSimpleLayout" condition="!Skin.HasSetting(PVRChannelsExtendedInfo)">
+        <param name="list_id" value="50"/>
+        <param name="label1" value="$INFO[ListItem.Label]"/>
+        <param name="has_status_icon" value="true"/>
+      </include>
+      <include content="PVRListItemSimpleLayout" condition="Skin.HasSetting(PVRChannelsExtendedInfo)">
+        <param name="list_id" value="51"/>
+        <param name="label1" value="$INFO[ListItem.Label]"/>
+        <param name="has_status_icon" value="true"/>
+      </include>
     </definition>
   </include>
   <include name="PVRChannelGuideModern">
