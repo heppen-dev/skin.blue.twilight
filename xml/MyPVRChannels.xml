@@ -115,7 +115,10 @@
           <focusposition>3</focusposition>
           <scrolltime tween="cubic" easing="out">500</scrolltime>
           <viewtype label="535">list</viewtype>
-          <include content="PVRListItemLayouts"/>
+          <include content="PVRListItemLayouts">
+            <param name="width" value="400"/>
+            <param name="width_next" value="960"/>
+          </include>
         </control>
         <control type="fixedlist" id="51">
           <left>100</left>
@@ -131,7 +134,10 @@
           <focusposition>1</focusposition>
           <scrolltime tween="cubic" easing="out">500</scrolltime>
           <viewtype label="listextendedinfo">list</viewtype>
-          <include content="PVRListItemLayouts"/>
+          <include content="PVRListItemLayouts">
+              <param name="width" value="400"/>
+              <param name="width_next" value="960"/>
+          </include>
         </control>
         <control type="image">
           <left>683</left>

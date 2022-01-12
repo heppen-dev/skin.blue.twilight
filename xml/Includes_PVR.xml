@@ -645,7 +645,7 @@
             <right>120</right>
             <top>0</top>
             <height>100</height>
-            <width>420</width>
+            <width>$PARAM[width]</width>
             <font>font_small_pvr_channels</font>
             <aligny>center</aligny>
             <label>$PARAM[label3]</label>
@@ -662,14 +662,14 @@
         </control>
       </control>
       <control type="group">
-        <left>573</left>
+        <left>513</left>
         <control type="group">
           <control type="label">
             <left>105</left>
             <right>120</right>
             <top>0</top>
             <height>100</height>
-            <width>420</width>
+            <width>$PARAM[width_next]</width>
             <font>font_small_pvr_channels</font>
             <aligny>center</aligny>
             <label>$PARAM[label4]</label>
@@ -719,6 +719,8 @@
         <param name="label2" value="$PARAM[label2]"/>
         <param name="label3" value="$VAR[PVRListItemSubLabel]"/>
         <param name="label4" value="[COLOR grey]$INFO[ListItem.NextStartTime][/COLOR]   $INFO[ListItem.NextTitle]"/>
+        <param name="width" value="$PARAM[width]"/>
+        <param name="width_next" value="$PARAM[width_next]"/>
       </include>
     </itemlayout>
     <focusedlayout height="100">
@@ -753,6 +755,8 @@
         <param name="label2" value="$PARAM[label2]"/>
         <param name="label3" value="$VAR[PVRListItemSubLabelFocused]"/>
         <param name="label4" value="[COLOR grey]$INFO[ListItem.NextStartTime][/COLOR]   $INFO[ListItem.NextTitle]"/>
+        <param name="width" value="$PARAM[width]"/>
+        <param name="width_next" value="$PARAM[width_next]"/>
       </include>
     </focusedlayout>
   </include>
@@ -765,11 +769,15 @@
         <param name="list_id" value="50"/>
         <param name="label1" value="$INFO[ListItem.Label]"/>
         <param name="has_status_icon" value="true"/>
+        <param name="width" value="$PARAM[width]"/>
+        <param name="width_next" value="$PARAM[width_next]"/>
       </include>
       <include content="PVRListItemSimpleLayout" condition="Skin.HasSetting(PVRChannelsExtendedInfo)">
         <param name="list_id" value="51"/>
         <param name="label1" value="$INFO[ListItem.Label]"/>
         <param name="has_status_icon" value="true"/>
+        <param name="width" value="$PARAM[width]"/>
+        <param name="width_next" value="$PARAM[width_next]"/>
       </include>
     </definition>
   </include>
