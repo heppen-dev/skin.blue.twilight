@@ -632,8 +632,17 @@
     <definition>
       <control type="group">
         <control type="group">
+          <control type="image">
+            <left>20</left>
+            <top>0</top>
+            <width>80</width>
+            <aligny>center</aligny>
+            <aspectratio align="center">keep</aspectratio>
+            <visible>ListItem.IsParentFolder | Skin.HasSetting(ShowChannelIcon)</visible>
+            <texture>$INFO[ListItem.ActualIcon]</texture>
+          </control>
           <control type="label">
-            <left>64</left>
+            <left>164</left>
             <top>0</top>
             <height>100</height>
             <font>font_small_pvr_channels</font>
@@ -641,7 +650,7 @@
             <label>$INFO[ListItem.ChannelNumberLabel,,   ]</label>
           </control>
           <control type="label">
-            <left>160</left>
+            <left>260</left>
             <right>120</right>
             <top>0</top>
             <height>100</height>
@@ -662,10 +671,10 @@
         </control>
       </control>
       <control type="group">
-        <left>513</left>
+        <left>800</left>
         <control type="group">
           <control type="label">
-            <left>105</left>
+            <left>64</left>
             <right>120</right>
             <top>0</top>
             <height>100</height>
@@ -683,15 +692,6 @@
           <aspectratio align="center">keep</aspectratio>
           <texture>$VAR[PVRStatusImageVar]</texture>
           <visible>$PARAM[has_status_icon]</visible>
-        </control>
-        <control type="image">
-          <right>20</right>
-          <top>0</top>
-          <width>80</width>
-          <aligny>center</aligny>
-          <aspectratio align="center">keep</aspectratio>
-          <visible>ListItem.IsParentFolder | Skin.HasSetting(ShowChannelIcon)</visible>
-          <texture>$INFO[ListItem.ActualIcon]</texture>
         </control>
       </control>
     </definition>

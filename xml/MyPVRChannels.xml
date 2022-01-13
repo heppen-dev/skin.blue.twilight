@@ -116,8 +116,8 @@
           <scrolltime tween="cubic" easing="out">500</scrolltime>
           <viewtype label="535">list</viewtype>
           <include content="PVRListItemLayouts">
-            <param name="width" value="400"/>
-            <param name="width_next" value="960"/>
+            <param name="width" value="520"/>
+            <param name="width_next" value="820"/>
           </include>
         </control>
         <control type="fixedlist" id="51">
@@ -135,12 +135,12 @@
           <scrolltime tween="cubic" easing="out">500</scrolltime>
           <viewtype label="listextendedinfo">list</viewtype>
           <include content="PVRListItemLayouts">
-              <param name="width" value="400"/>
-              <param name="width_next" value="960"/>
+              <param name="width" value="520"/>
+              <param name="width_next" value="820"/>
           </include>
         </control>
         <control type="image">
-          <left>683</left>
+          <left>920</left>
           <top>200</top>
           <width>1</width>
           <height>800</height>
@@ -148,7 +148,7 @@
           <visible>Control.IsVisible(50)</visible>
         </control>
         <control type="image">
-          <left>683</left>
+          <left>920</left>
           <top>520</top>
           <width>1</width>
           <height>500</height>
