@@ -2,6 +2,20 @@
 <includes>
   <include name="View_53_Shift">
     <control type="group">
+      <top>50</top>
+      <centerleft>50%</centerleft>
+      <height>155</height>
+      <width>400</width>
+      <visible>Control.HasFocus(53)</visible>
+      <control type="image">
+        <top>0</top>
+        <height>155</height>
+        <aspectratio>keep</aspectratio>
+        <texture background="true">$VAR[Image_ClearLogo]</texture>
+        <visible>[!String.IsEmpty(ListItem.Art(clearlogo)) | !String.IsEmpty(ListItem.Art(tvshow.clearlogo)) | !String.IsEmpty(ListItem.Art(clearlogo))] + !Skin.HasSetting(DisableClearlogo)</visible>
+      </control>
+    </control>
+    <control type="group">
       <description>Poster Viewtype</description>
       <centertop>50%</centertop>
       <left>0</left>
@@ -25,19 +39,6 @@
           <width>100%</width>
           <height>190</height>
           <texture colordiffuse="AltPosterBack">common/white.png</texture>
-        </control>
-        <control type="group">
-          <top>-800</top>
-          <left>760</left>
-          <visible>Control.HasFocus(53)</visible>
-          <control type="image">
-            <top>0</top>
-            <left>0</left>
-            <width>400</width>
-            <aspectratio>keep</aspectratio>
-            <texture background="true">$VAR[Image_ClearLogo]</texture>
-            <visible>[!String.IsEmpty(ListItem.Art(clearlogo)) | !String.IsEmpty(ListItem.Art(tvshow.clearlogo)) | !String.IsEmpty(ListItem.Art(clearlogo))] + !Skin.HasSetting(DisableClearlogo)</visible>
-          </control>
         </control>
       </control>
       <control type="group">
