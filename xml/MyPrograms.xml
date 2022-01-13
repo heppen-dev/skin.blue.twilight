@@ -21,9 +21,6 @@
       <include content="TopBar">
         <param name="breadcrumbs_label" value="$LOCALIZE[10001]"/>
       </include>
-      <include content="BottomBar">
-        <param name="info_visible" value="true"/>
-      </include>
       <include>CommonScrollbars</include>
       <include>MediaMenuMouseOverlay</include>
       <control type="group">

@@ -60,9 +60,6 @@
       <include content="TopBar">
         <param name="breadcrumbs_label" value="$VAR[BreadcrumbsPVRRecordingsVar]"/>
       </include>
-      <include content="BottomBar">
-        <param name="info_visible" value="true"/>
-      </include>
       <control type="group">
         <depth>DepthBars</depth>
         <right>20</right>

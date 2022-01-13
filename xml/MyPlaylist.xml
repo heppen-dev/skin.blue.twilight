@@ -24,9 +24,6 @@
         <param name="breadcrumbs_label" value="$LOCALIZE[31066]"/>
         <param name="sublabel">$LOCALIZE[31074] - $INFO[Container.TotalTime]</param>
       </include>
-      <include content="BottomBar">
-        <param name="info_visible" value="true"/>
-      </include>
       <control type="group">
         <visible>!Container.Content(songs)</visible>
         <depth>DepthBars</depth>
