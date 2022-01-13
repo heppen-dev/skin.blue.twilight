@@ -1091,11 +1091,6 @@
         <visible>Player.HasVideo</visible>
         <visible>!Slideshow.IsActive</visible>
       </control>
-      <!-- <control type="videowindow">
-        <include>TrailerWindowDimensions</include>
-        <visible>[Player.HasVideo + Skin.HasSetting(BackgroundPlayingTrailers) | [Window.IsActive(1140) | Window.IsAtive(1141)]] + !Skin.HasSetting(PlayTrailersFullScreen)</visible>
-        <visible>!Slideshow.IsActive</visible>
-      </control> -->
       <control type="visualisation">
         <include>FullScreenDimensions</include>
         <visible>!Slideshow.IsActive</visible>
@@ -1117,11 +1112,10 @@
           <animation effect="fade" time="100">VisibleChange</animation>
           <control type="multiimage" id="32111">
             <include>FullScreenDimensions</include>
-            <!-- <include condition="Window.IsActive(home)">FanartDimensions</include> -->
             <animation effect="zoom" end="75" center="360,288" time="200" condition="ControlGroup(3000).HasFocus + !Skin.HasSetting(FullScreenHomeBackground)">Conditional</animation>
             <animation effect="slide" start="0" end="650,-100" time="200" condition="ControlGroup(3000).HasFocus + !Skin.HasSetting(FullScreenHomeBackground)">Conditional</animation>
             <aspectratio aligny="top">scale</aspectratio>
-            <fadetime>600</fadetime>
+            <fadetime>300</fadetime>
             <timeperimage>6000</timeperimage>
             <randomize>true</randomize>
             <loop>yes</loop>
@@ -1138,7 +1132,7 @@
             <right>1193</right>
             <height>100%</height>
             <aspectratio aligny="center">scale</aspectratio>
-            <fadetime>400</fadetime>
+            <fadetime>300</fadetime>
             <include>OpenClose_Left</include>
             <animation effect="fade" time="400">VisibleChange</animation>
             <texture background="true" colordiffuse="$VAR[HighlightOverlay]">$VAR[PosterVar]</texture>
