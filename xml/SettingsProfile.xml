@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <window>
   <defaultcontrol always="true">300</defaultcontrol>
   <backgroundcolor>Background</backgroundcolor>
@@ -183,7 +183,7 @@
       <control type="group">
         <depth>DepthContentPanel</depth>
         <control type="list" id="9000">
-          <left>105</left>
+          <left>103</left>
           <top>80</top>
           <width>385</width>
           <height>567</height>
@@ -238,37 +238,21 @@
       <control type="group">
         <control type="image">
           <description>Dialog Header image</description>
-          <left>489</left>
+          <left>488</left>
           <top>80</top>
-          <width>4</width>
-          <height>732</height>
-          <texture colordiffuse="$VAR[ColorHighlight]" border="3">common/light-separator.png</texture>
+          <width>1</width>
+          <height>675</height>
+          <texture colordiffuse="main_fg_30">common/white.png</texture>
         </control>
-        <control type="image">
-          <description>Dialog Header image</description>
-          <left>489</left>
-          <top>80</top>
-          <width>4</width>
-          <height>732</height>
-          <texture colordiffuse="$VAR[ColorGradient]" border="3">common/light-separator-gradient.png</texture>
-        </control>
-      </control>
-      <control type="group">
-        <control type="image">
-          <description>Dialog Header image</description>
-          <left>103</left>
-          <top>80</top>
-          <width>4</width>
-          <height>732</height>
-          <texture colordiffuse="$VAR[ColorHighlight]" border="3">common/light-separator.png</texture>
-        </control>
-        <control type="image">
-          <description>Dialog Header image</description>
-          <left>103</left>
-          <top>80</top>
-          <width>4</width>
-          <height>732</height>
-          <texture colordiffuse="$VAR[ColorGradient]" border="3">common/light-separator-gradient.png</texture>
+        <control type="group">
+          <control type="image">
+            <description>Dialog Header image</description>
+            <left>103</left>
+            <top>80</top>
+            <width>1</width>
+            <height>675</height>
+            <texture colordiffuse="main_fg_30">common/white.png</texture>
+          </control>
         </control>
       </control>
       <include content="Defs_Settings_Changer">

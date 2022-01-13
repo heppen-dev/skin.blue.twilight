@@ -133,11 +133,11 @@
           <top>80</top>
           <width>385</width>
           <height>75</height>
-          <left>100</left>
+          <left>98</left>
           <visible>ControlGroup(9000).HasFocus()</visible>
         </include>
         <control type="grouplist" id="9000">
-          <left>100</left>
+          <left>98</left>
           <top>80</top>
           <width>385</width>
           <height>100%</height>
@@ -330,17 +330,9 @@
           <description>Dialog Header image</description>
           <left>487</left>
           <top>80</top>
-          <width>4</width>
-          <height>732</height>
-          <texture colordiffuse="$VAR[ColorHighlight]" border="3">common/light-separator.png</texture>
-        </control>
-        <control type="image">
-          <description>Dialog Header image</description>
-          <left>487</left>
-          <top>80</top>
-          <width>4</width>
-          <height>732</height>
-          <texture colordiffuse="$VAR[ColorGradient]" border="3">common/light-separator-gradient.png</texture>
+          <width>1</width>
+          <height>675</height>
+          <texture colordiffuse="main_fg_30">common/white.png</texture>
         </control>
       </control>
       <control type="group">
@@ -348,17 +340,9 @@
           <description>Dialog Header image</description>
           <left>103</left>
           <top>80</top>
-          <width>4</width>
-          <height>732</height>
-          <texture colordiffuse="$VAR[ColorHighlight]" border="3">common/light-separator.png</texture>
-        </control>
-        <control type="image">
-          <description>Dialog Header image</description>
-          <left>103</left>
-          <top>80</top>
-          <width>4</width>
-          <height>732</height>
-          <texture colordiffuse="$VAR[ColorGradient]" border="3">common/light-separator-gradient.png</texture>
+          <width>1</width>
+          <height>675</height>
+          <texture colordiffuse="main_fg_30">common/white.png</texture>
         </control>
       </control>
       <include content="Defs_Settings_Changer">

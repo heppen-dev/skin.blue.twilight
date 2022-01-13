@@ -17,19 +17,11 @@
       <control type="group">
         <control type="image">
           <description>Dialog Header image</description>
-          <left>425</left>
+          <left>427</left>
           <top>120</top>
-          <width>4</width>
-          <height>980</height>
-          <texture colordiffuse="$VAR[ColorHighlight]" border="3">common/light-separator.png</texture>
-        </control>
-        <control type="image">
-          <description>Dialog Header image</description>
-          <left>425</left>
-          <top>120</top>
-          <width>4</width>
-          <height>980</height>
-          <texture colordiffuse="$VAR[ColorGradient]" border="3">common/light-separator-gradient.png</texture>
+          <width>1</width>
+          <height>950</height>
+          <texture colordiffuse="main_fg_30">common/white.png</texture>
         </control>
       </control>
       <include content="DefaultSettingButtonGradient">
@@ -66,16 +58,16 @@
       <include content="DefaultSettingButtonGradient">
         <param name="id" value="5"/>
         <top>120</top>
-        <left>429</left>
-        <width>1480</width>
+        <left>427</left>
+        <width>1500</width>
         <height>75</height>
         <visible>ControlGroup(5).HasFocus()</visible>
       </include>
       <control type="grouplist" id="5">
         <description>control area</description>
-        <left>429</left>
+        <left>427</left>
         <top>120</top>
-        <width>1480</width>
+        <width>1500</width>
         <height>825</height>
         <pagecontrol>60</pagecontrol>
         <onleft>3</onleft>

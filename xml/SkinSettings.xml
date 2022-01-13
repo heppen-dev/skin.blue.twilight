@@ -587,7 +587,7 @@
         <left>0</left>
         <control type="list" id="9000">
           <description>button area</description>
-          <left>105</left>
+          <left>103</left>
           <top>80</top>
           <width>385</width>
           <height>640</height>
@@ -688,19 +688,11 @@
       <control type="group">
         <control type="image">
           <description>Dialog Header image</description>
-          <left>487</left>
+          <left>488</left>
           <top>80</top>
-          <width>4</width>
-          <height>732</height>
-          <texture colordiffuse="$VAR[ColorHighlight]" border="3">common/light-separator.png</texture>
-        </control>
-        <control type="image">
-          <description>Dialog Header image</description>
-          <left>487</left>
-          <top>80</top>
-          <width>4</width>
-          <height>732</height>
-          <texture colordiffuse="$VAR[ColorGradient]" border="3">common/light-separator-gradient.png</texture>
+          <width>1</width>
+          <height>675</height>
+          <texture colordiffuse="main_fg_30">common/white.png</texture>
         </control>
       </control>
       <control type="group">
@@ -708,17 +700,9 @@
           <description>Dialog Header image</description>
           <left>103</left>
           <top>80</top>
-          <width>4</width>
-          <height>732</height>
-          <texture colordiffuse="$VAR[ColorHighlight]" border="3">common/light-separator.png</texture>
-        </control>
-        <control type="image">
-          <description>Dialog Header image</description>
-          <left>103</left>
-          <top>80</top>
-          <width>4</width>
-          <height>732</height>
-          <texture colordiffuse="$VAR[ColorGradient]" border="3">common/light-separator-gradient.png</texture>
+          <width>1</width>
+          <height>675</height>
+          <texture colordiffuse="main_fg_30">common/white.png</texture>
         </control>
       </control>
       <include content="Defs_Settings_Changer">

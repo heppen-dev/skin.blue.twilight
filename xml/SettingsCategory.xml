@@ -85,7 +85,7 @@
       </control>
       <control type="group">
         <depth>DepthContentPanel</depth>
-        <left>105</left>
+        <left>103</left>
         <include content="DefaultSettingButtonGradient">
           <param name="id" value="3"/>
           <param name="height" value="75"/>
@@ -121,7 +121,7 @@
       <control type="group">
         <depth>DepthContentPanel</depth>
         <top>680</top>
-        <left>105</left>
+        <left>103</left>
         <include content="DefaultSettingButtonGradient">
           <param name="id" value="8800"/>
           <top>0</top>
@@ -179,19 +179,11 @@
       <control type="group">
         <control type="image">
           <description>Dialog Header image</description>
-          <left>487</left>
+          <left>488</left>
           <top>80</top>
-          <width>4</width>
-          <height>732</height>
-          <texture colordiffuse="$VAR[ColorHighlight]" border="3">common/light-separator.png</texture>
-        </control>
-        <control type="image">
-          <description>Dialog Header image</description>
-          <left>487</left>
-          <top>80</top>
-          <width>4</width>
-          <height>732</height>
-          <texture colordiffuse="$VAR[ColorGradient]" border="3">common/light-separator-gradient.png</texture>
+          <width>1</width>
+          <height>675</height>
+          <texture colordiffuse="main_fg_30">common/white.png</texture>
         </control>
       </control>
       <control type="group">
@@ -199,17 +191,9 @@
           <description>Dialog Header image</description>
           <left>103</left>
           <top>80</top>
-          <width>4</width>
-          <height>732</height>
-          <texture colordiffuse="$VAR[ColorHighlight]" border="3">common/light-separator.png</texture>
-        </control>
-        <control type="image">
-          <description>Dialog Header image</description>
-          <left>103</left>
-          <top>80</top>
-          <width>4</width>
-          <height>732</height>
-          <texture colordiffuse="$VAR[ColorGradient]" border="3">common/light-separator-gradient.png</texture>
+          <width>1</width>
+          <height>675</height>
+          <texture colordiffuse="main_fg_30">common/white.png</texture>
         </control>
       </control>
       <include content="Defs_Settings_Changer">

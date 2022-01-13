@@ -81,28 +81,27 @@
     </definition>
   </include>
   <include name="Defs_Settings_OnLoad">
-        <onload condition="Window.IsActive(skinsettings)">SetFocus(300,0)</onload>
-        <onload condition="Window.IsActive(interfacesettings)">SetFocus(300,1)</onload>
-        <onload condition="Window.IsActive(mediasettings)">SetFocus(300,2)</onload>
-        <onload condition="Window.IsActive(playersettings)">SetFocus(300,3)</onload>
-        <onload condition="Window.IsActive(systemsettings)">SetFocus(300,4)</onload>
-        <onload condition="Window.IsActive(servicesettings)">SetFocus(300,5)</onload>
-        <onload condition="Window.IsActive(pvrsettings)">SetFocus(300,6)</onload>
-        <onload condition="Window.IsActive(systeminfo)">SetFocus(300,7)</onload>
-        <onload condition="Window.IsActive(profiles)">SetFocus(300,8)</onload>
-    </include>
-
-    <include name="Defs_Settings_OnLeft">
-        <onleft condition="Window.IsActive(skinsettings)">SetFocus(300,0)</onleft>
-        <onleft condition="Window.IsActive(interfacesettings)">SetFocus(300,1)</onleft>
-        <onleft condition="Window.IsActive(mediasettings)">SetFocus(300,2)</onleft>
-        <onleft condition="Window.IsActive(playersettings)">SetFocus(300,3)</onleft>
-        <onleft condition="Window.IsActive(systemsettings)">SetFocus(300,4)</onleft>
-        <onleft condition="Window.IsActive(servicesettings)">SetFocus(300,5)</onleft>
-        <onleft condition="Window.IsActive(pvrsettings)">SetFocus(300,6)</onleft>
-        <onleft condition="Window.IsActive(systeminfo)">SetFocus(300,7)</onleft>
-        <onleft condition="Window.IsActive(profiles)">SetFocus(300,8)</onleft>
-    </include>
+    <onload condition="Window.IsActive(skinsettings)">SetFocus(300,0)</onload>
+    <onload condition="Window.IsActive(interfacesettings)">SetFocus(300,1)</onload>
+    <onload condition="Window.IsActive(mediasettings)">SetFocus(300,2)</onload>
+    <onload condition="Window.IsActive(playersettings)">SetFocus(300,3)</onload>
+    <onload condition="Window.IsActive(systemsettings)">SetFocus(300,4)</onload>
+    <onload condition="Window.IsActive(servicesettings)">SetFocus(300,5)</onload>
+    <onload condition="Window.IsActive(pvrsettings)">SetFocus(300,6)</onload>
+    <onload condition="Window.IsActive(systeminfo)">SetFocus(300,7)</onload>
+    <onload condition="Window.IsActive(profiles)">SetFocus(300,8)</onload>
+  </include>
+  <include name="Defs_Settings_OnLeft">
+    <onleft condition="Window.IsActive(skinsettings)">SetFocus(300,0)</onleft>
+    <onleft condition="Window.IsActive(interfacesettings)">SetFocus(300,1)</onleft>
+    <onleft condition="Window.IsActive(mediasettings)">SetFocus(300,2)</onleft>
+    <onleft condition="Window.IsActive(playersettings)">SetFocus(300,3)</onleft>
+    <onleft condition="Window.IsActive(systemsettings)">SetFocus(300,4)</onleft>
+    <onleft condition="Window.IsActive(servicesettings)">SetFocus(300,5)</onleft>
+    <onleft condition="Window.IsActive(pvrsettings)">SetFocus(300,6)</onleft>
+    <onleft condition="Window.IsActive(systeminfo)">SetFocus(300,7)</onleft>
+    <onleft condition="Window.IsActive(profiles)">SetFocus(300,8)</onleft>
+  </include>
   <include name="Defs_SettingsTrick">
     <control type="button">
       <visible allowhiddenfocus="true">false</visible>

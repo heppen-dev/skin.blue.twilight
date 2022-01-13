@@ -187,17 +187,9 @@
         <description>Dialog Header image</description>
         <left>1340</left>
         <top>265</top>
-        <width>4</width>
-        <height>650</height>
-        <texture colordiffuse="$VAR[ColorHighlight]" border="3">common/light-separator.png</texture>
-      </control>
-      <control type="image">
-        <description>Dialog Header image</description>
-        <left>1340</left>
-        <top>265</top>
-        <width>4</width>
-        <height>650</height>
-        <texture colordiffuse="$VAR[ColorGradient]" border="3">common/light-separator-gradient.png</texture>
+        <width>1</width>
+        <height>625</height>
+        <texture colordiffuse="main_fg_30">common/white.png</texture>
       </control>
     </control>
   </include>
