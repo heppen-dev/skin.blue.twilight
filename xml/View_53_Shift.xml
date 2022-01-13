@@ -8,37 +8,51 @@
       <height>880</height>
       <control type="group">
         <visible>Control.IsVisible(53)</visible>
+        <width>1920</width>
         <animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
         <animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
         <animation effect="fade" time="200">VisibleChange</animation>
         <control type="image">
           <left>0</left>
-          <top>760</top>
+          <top>860</top>
           <width>100%</width>
           <height>110</height>
-          <texture colordiffuse="E6FFFFFF">dialogs/dialog-bg-nobo.png</texture>
+          <texture colordiffuse="AltPosterBack">common/white.png</texture>
         </control>
         <control type="image">
           <left>0</left>
-          <top>35</top>
+          <top>135</top>
           <width>100%</width>
           <height>190</height>
-          <texture colordiffuse="E6FFFFFF">dialogs/dialog-bg-nobo.png</texture>
+          <texture colordiffuse="AltPosterBack">common/white.png</texture>
+        </control>
+        <control type="group">
+          <top>-800</top>
+          <left>760</left>
+          <visible>Control.HasFocus(53)</visible>
+          <control type="image">
+            <top>0</top>
+            <left>0</left>
+            <width>400</width>
+            <aspectratio>keep</aspectratio>
+            <texture background="true">$VAR[Image_ClearLogo]</texture>
+            <visible>[!String.IsEmpty(ListItem.Art(clearlogo)) | !String.IsEmpty(ListItem.Art(tvshow.clearlogo)) | !String.IsEmpty(ListItem.Art(clearlogo))] + !Skin.HasSetting(DisableClearlogo)</visible>
+          </control>
         </control>
       </control>
       <control type="group">
         <visible>Control.IsVisible(53)</visible>
         <include>Visible_Right</include>
         <include>OpenClose_Right</include>
-        <top>160</top>
+        <top>260</top>
         <control type="image">
-          <left>600</left>
+          <left>510</left>
           <top>600</top>
-          <width>340</width>
+          <width>280</width>
           <height>110</height>
           <visible>Control.HasFocus(53)</visible>
           <animation effect="fade" time="200">VisibleChange</animation>
-          <texture colordiffuse="$VAR[ColorHighlight]">colors/grey.png</texture>
+          <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
           <animation effect="slide" start="0,0" end="-364,0" time="300" tween="sine" easing="inout" condition="Integer.IsEqual(Container.Position,1) | Integer.IsEqual(Container.Position,0)">Conditional</animation>
           <animation effect="slide" start="0,0" end="-364,0" time="300" tween="sine" easing="inout" condition="Integer.IsEqual(Container.Position,0)">Conditional</animation>
           <animation effect="slide" start="0,0" end="364,0" time="300" tween="sine" easing="inout" condition="Integer.IsEqual(Container.Position,3) | Integer.IsEqual(Container.Position,4)">Conditional</animation>
@@ -51,98 +65,73 @@
           <height>695</height>
           <focusposition>1</focusposition>
           <movement>0</movement>
-          <pagecontrol>5199</pagecontrol>
+          <pagecontrol>62</pagecontrol>
           <scrolltime tween="cubic" easing="out">500</scrolltime>
           <orientation>horizontal</orientation>
           <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(musicvideos) | Container.Content(artists) | Container.Content(albums) |						Container.Content(mixed) | Container.Content(images) | Container.Content(videos) | Container.Content(games)</visible>
           <onleft>53</onleft>
-          <onup>9000</onup>
-          <ondown>5199</ondown>
+          <ondown>9000</ondown>
+          <onup>62</onup>
           <onright>53</onright>
           <preloaditems>1</preloaditems>
           <viewtype label="31100">icon</viewtype>
           <include content="View_Forced">
             <param name="string" value="$LOCALIZE[31100]"/>
           </include>
-          <itemlayout width="370">
-            <control type="image">
-              <depth>DepthContentPopout</depth>
+          <focusedlayout height="382.5" width="280" condition="Container.Content(videos) | Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | [Container.Content(musicvideos) + Skin.HasSetting(show_musicvideoposter)]">
+            <control type="group">
               <left>0</left>
-              <top>90</top>
-              <width>370</width>
+              <top>140</top>
+              <width>280</width>
               <height>480</height>
-              <aspectratio aligny="center">keep</aspectratio>
-              <texture fallback="DefaultVideo.png">$VAR[ShiftThumbVar]</texture>
-              <bordertexture border="21">overlays/shadow.png</bordertexture>
-              <bordersize>20</bordersize>
+              <include content="View_56_Posters_Layout">
+                <param name="WallWatchedIconVar_visible" value="false"/>
+              </include>
             </control>
             <control type="textbox">
               <left>20</left>
               <top>603</top>
-              <width>330</width>
+              <width>260</width>
               <height>105</height>
               <align>center</align>
               <aligny>center</aligny>
+              <font>font_tiny_uppercase</font>
               <label>$INFO[ListItem.Label]</label>
-            </control>
-            <control type="image">
-              <left>169</left>
-              <top>560</top>
-              <width>32</width>
-              <height>32</height>
-              <texture>$VAR[WallWatchedIconVar]</texture>
-            </control>
-            <control type="group">
-              <left>158</left>
-              <top>92</top>
-              <include condition="Skin.HasSetting(circle_rating) | Skin.HasSetting(circle_userrating)">RatingCircle</include>
-            </control>
-          </itemlayout>
-          <focusedlayout width="370">
-            <control type="image">
-              <depth>DepthContentPopout</depth>
-              <left>0</left>
-              <top>90</top>
-              <width>370</width>
-              <height>480</height>
-              <aspectratio aligny="center">keep</aspectratio>
-              <texture fallback="DefaultVideo.png">$VAR[ShiftThumbVar]</texture>
-              <bordertexture border="21">overlays/shadow.png</bordertexture>
-              <bordersize>20</bordersize>
-            </control>
-            <control type="textbox">
-              <left>20</left>
-              <top>603</top>
-              <width>330</width>
-              <height>105</height>
-              <align>center</align>
-              <aligny>center</aligny>
-              <label>$INFO[ListItem.Label]</label>
-              <autoscroll time="3000" delay="3000" repeat="3000">Skin.HasSetting(autoscroll)</autoscroll>
-            </control>
-            <control type="image">
-              <left>169</left>
-              <top>560</top>
-              <width>32</width>
-              <height>32</height>
-              <texture>$VAR[WallWatchedIconVar]</texture>
-            </control>
-            <control type="group">
-              <left>158</left>
-              <top>92</top>
-              <include condition="Skin.HasSetting(circle_rating) | Skin.HasSetting(circle_userrating)">RatingCircle</include>
             </control>
           </focusedlayout>
+          <itemlayout height="382.5" width="280" condition="Container.Content(videos) | Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | [Container.Content(musicvideos) + Skin.HasSetting(show_musicvideoposter)]">
+            <control type="group">
+              <left>0</left>
+              <top>140</top>
+              <width>280</width>
+              <height>480</height>
+              <include content="View_56_Posters_Layout">
+                <param name="WallWatchedIconVar_visible" value="false"/>
+              </include>
+            </control>
+            <control type="textbox">
+              <left>20</left>
+              <top>603</top>
+              <width>260</width>
+              <height>105</height>
+              <align>center</align>
+              <aligny>center</aligny>
+              <font>font_tiny_uppercase</font>
+              <label>$INFO[ListItem.Label]</label>
+            </control>
+          </itemlayout>
         </control>
       </control>
       <control type="group">
         <visible>Control.IsVisible(53)</visible>
         <include>Visible_Right</include>
         <include>OpenClose_Right</include>
+        <top>100</top>
         <control type="group">
           <width>50%</width>
           <include content="ShiftTextbox">
             <param name="textbox_id" value="53200"/>
+            <param name="font" value="font_tiny_uppercase"/>
             <param name="textbox_content" value="$VAR[ShiftLeftTextBoxVar]"/>
           </include>
         </control>
@@ -150,7 +139,8 @@
           <left>50%</left>
           <width>50%</width>
           <include content="ShiftTextbox">
-            <param name="textbox_id" value="53300"/>
+            <param name="textbox_id" value="52800"/>
+            <param name="font" value="font_small_defaults"/>
             <param name="textbox_content" value="$VAR[ShiftRightTextBoxVar]"/>
           </include>
         </control>
@@ -185,6 +175,10 @@
           <content sortby="year" sortorder="ascending">$VAR[InfoListPathVar]</content>
         </control>
       </control>
+      <include content="Object_Scrollbar_Horz">
+        <param name="visible" value="Control.IsVisible(53)" />
+        <param name="bottom" value="920"/>
+      </include>
     </control>
   </include>
   <include name="ShiftTextbox">
@@ -195,10 +189,10 @@
         <left>30</left>
         <top>45</top>
         <right>30</right>
-        <height>163</height>
+        <height>156</height>
+        <font>$PARAM[font]</font>
         <autoscroll delay="7000" time="3500" repeat="10000">Skin.HasSetting(autoscroll)</autoscroll>
         <label>$PARAM[textbox_content]</label>
-        <shadowcolor>text_shadow</shadowcolor>
       </control>
     </control>
   </include>

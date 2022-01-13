@@ -737,8 +737,7 @@
     <value condition="Window.IsActive(pictures)">[COLOR $VAR[ColorHighlight]]$LOCALIZE[289]: [/COLOR]$INFO[ListItem.Size][CR][COLOR $VAR[ColorHighlight]]$LOCALIZE[21826]: [/COLOR]$INFO[ListItem.PictureAperture][CR][COLOR $VAR[ColorHighlight]]$LOCALIZE[21827]: [/COLOR]$INFO[ListItem.PictureFocalLen][CR][COLOR $VAR[ColorHighlight]]$LOCALIZE[21830]: [/COLOR]$INFO[ListItem.PictureExpTime][CR][COLOR $VAR[ColorHighlight]]$LOCALIZE[552]: [/COLOR]$INFO[ListItem.Date][CR]</value>
     <value condition="String.IsEqual(listitem.dbtype,artist)">$INFO[ListItem.Property(artist_description)]</value>
     <value condition="String.IsEqual(listitem.dbtype,album)">$INFO[ListItem.Property(album_description)]</value>
-    <value condition="!String.IsEmpty(ListItem.PlotOutline)">$INFO[ListItem.PlotOutline]</value>
-    <value>$INFO[ListItem.Plot]</value>
+    <value>$VAR[Label_PlotTextBoxVar]</value>
   </variable>
   <variable name="SelectLabel">
     <value condition="Control.IsVisible(3)">[COLOR $VAR[ColorHighlight]]$INFO[Container(3).NumItems][/COLOR] $LOCALIZE[31036] - [COLOR $VAR[ColorHighlight]]$INFO[Container(3).CurrentPage]/$INFO[Container(3).NumPages][/COLOR]</value>

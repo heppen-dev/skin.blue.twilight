@@ -138,21 +138,16 @@
             <orientation>horizontal</orientation>
             <control type="group">
               <control type="radiobutton" id="6000">
-
                 <include>ClearBoolProps</include>
-
                 <onup>PlayerControl(Stop)</onup>
                 <onup condition="Player.HasVideo">AlarmClock(closeDialogs,SetFocus(2999),00:01,silent)</onup>
                 <onup condition="!Player.HasVideo">SetFocus(2999)</onup>
-
                 <ondown>PlayerControl(Stop)</ondown>
                 <ondown condition="Player.HasVideo">AlarmClock(closeDialogs,SetFocus(3000),00:01,silent)</ondown>
                 <ondown condition="!Player.HasVideo">SetFocus(3000)</ondown>
-
                 <onback>PlayerControl(Stop)</onback>
                 <onback condition="Player.HasVideo">AlarmClock(closeDialogs,SetFocus(3000),00:01,silent)</onback>
                 <onback condition="!Player.HasVideo">SetFocus(3000)</onback>
-
                 <onright>6001</onright>
                 <onleft>6002</onleft>
                 <width>300</width>
@@ -174,7 +169,6 @@
                 <textureradiooffdisabled colordiffuse="dialog_fg_30">special://skin/extras/icons/play3.png</textureradiooffdisabled>
                 <textureradioondisabled colordiffuse="dialog_fg_30">special://skin/extras/icons/play3.png</textureradioondisabled>
                 <onclick>Dialog.Close(all,true)</onclick>
-
                 <!-- playing folders/collections -->
                 <include content="PlayFolderCollection">
                   <param name="includecondition" value="String.IsEqual(Window(home).Property(spotlight_isFolder),true) | String.IsEqual(Window(home).Property(spotlight_isCollection),true)" />
@@ -183,7 +177,6 @@
                 <include content="PlaySingleItem">
                   <param name="includecondition" value="!String.IsEqual(Window(home).Property(spotlight_isFolder),true) + !String.IsEqual(Window(home).Property(spotlight_isCollection),true)" />
                 </include>
-
                 <visible>Control.IsVisible(6000)</visible>
               </control>
               <control type="label">
@@ -197,21 +190,16 @@
             </control>
             <control type="group">
               <control type="radiobutton" id="6001">
-
                 <include>ClearBoolProps</include>
-
                 <onup>PlayerControl(Stop)</onup>
                 <onup condition="Player.HasVideo">AlarmClock(closeDialogs,SetFocus(2999),00:01,silent)</onup>
                 <onup condition="!Player.HasVideo">SetFocus(2999)</onup>
-
                 <ondown>PlayerControl(Stop)</ondown>
                 <ondown condition="Player.HasVideo">AlarmClock(closeDialogs,SetFocus(3000),00:01,silent)</ondown>
                 <ondown condition="!Player.HasVideo">SetFocus(3000)</ondown>
-
                 <onback>PlayerControl(Stop)</onback>
                 <onback condition="Player.HasVideo">AlarmClock(closeDialogs,SetFocus(3000),00:01,silent)</onback>
                 <onback condition="!Player.HasVideo">SetFocus(3000)</onback>
-
                 <onleft>6000</onleft>
                 <onright>6002</onright>
                 <left>320</left>
@@ -235,21 +223,16 @@
             </control>
             <control type="group">
               <control type="radiobutton" id="6002">
-
                 <include>ClearBoolProps</include>
-
                 <onup>PlayerControl(Stop)</onup>
                 <onup condition="Player.HasVideo">AlarmClock(closeDialogs,SetFocus(2999),00:01,silent)</onup>
                 <onup condition="!Player.HasVideo">SetFocus(2999)</onup>
-
                 <ondown>PlayerControl(Stop)</ondown>
                 <ondown condition="Player.HasVideo">AlarmClock(closeDialogs,SetFocus(3000),00:01,silent)</ondown>
                 <ondown condition="!Player.HasVideo">SetFocus(3000)</ondown>
-
                 <onback>PlayerControl(Stop)</onback>
                 <onback condition="Player.HasVideo">AlarmClock(closeDialogs,SetFocus(3000),00:01,silent)</onback>
                 <onback condition="!Player.HasVideo">SetFocus(3000)</onback>
-
                 <onleft>6001</onleft>
                 <onright>6000</onright>
                 <left>405</left>

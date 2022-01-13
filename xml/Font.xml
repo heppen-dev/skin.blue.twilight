@@ -32,6 +32,12 @@
       <style>bold</style>
     </font>
     <font>
+      <name>font_tiny_uppercase</name>
+      <filename>AmazonEmberDisplay_Rg.ttf</filename>
+      <size>22</size>
+      <style>uppercase bold</style>
+    </font>
+    <font>
       <name>font_tiny_title_uppercase</name>
       <filename>AmazonEmberDisplay_Rg.ttf</filename>
       <size>27</size>

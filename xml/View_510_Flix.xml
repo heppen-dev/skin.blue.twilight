@@ -5,7 +5,6 @@
       <include>OpenClose_Bottom</include>
       <visible>Control.IsVisible(510)</visible>
       <include>Visible_Right</include>
-      
       <control type="group" id="5600">
         <include content="Object_Item_Showcase">
           <param name="title" value="$VAR[Label_Title]"/>
@@ -53,11 +52,6 @@
             <include content="View_56_Posters_Layout">
               <param name="WallWatchedIconVar_visible" value="false"/>
             </include>
-            <!-- <include content="View_WatchedOverlay">
-              <param name="bottom" value="-12"/>
-              <param name="right" value="20"/>
-              <param name="visible" value="false"/>
-            </include> -->
           </control>
         </itemlayout>
       </control>
