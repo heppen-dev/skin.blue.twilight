@@ -8,6 +8,13 @@
     <include>DefaultBackground</include>
     <control type="group">
       <include>OpenClose_Bottom</include>
+      <control type="label">
+        <top>30</top>
+        <left>60</left>
+        <font>font_tiny_title_uppercase</font>
+        <label>$INFO[ListItem.Label]</label>
+        <visible>Control.HasFocus(50) + !Skin.HasSetting(PVRChannelsExtendedInfo)</visible>
+      </control>
       <control type="image">
         <top>200</top>
         <left>100</left>
