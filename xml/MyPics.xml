@@ -205,6 +205,14 @@
       <include>MediaMenuMouseOverlay</include>
       <control type="group">
         <include>MediaMenuCommon</include>
+        <include content="DefaultSettingButtonGradient">
+          <param name="id" value="9000"/>
+          <top>50</top>
+          <width>530</width>
+          <height>75</height>
+          <left>-20</left>
+          <visible>ControlGroup(9000).HasFocus()</visible>
+        </include>
         <control type="grouplist" id="9000">
           <top>50</top>
           <include>MediaMenuListCommon</include>

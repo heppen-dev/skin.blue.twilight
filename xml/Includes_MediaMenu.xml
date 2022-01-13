@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <includes>
   <include name="MediaMenuItemsCommon">
     <width>470</width>
     <textoffsetx>20</textoffsetx>
     <top>0</top>
-    <height>80</height>
+    <height>75</height>
     <radioposx>370</radioposx>
     <aligny>center</aligny>
     <invalidcolor>invalid</invalidcolor>
-    <texturefocus border="5" colordiffuse="$VAR[ColorHighlight]">common/box.png</texturefocus>
+    <texturefocus />
     <texturenofocus/>
     <alttexturefocus/>
     <alttexturenofocus/>
@@ -17,22 +17,22 @@
     <param name="height">110</param>
     <definition>
       <control type="radiobutton" id="$PARAM[control_id]">
-        <width>92</width>
-        <height>92</height>
+        <width>75</width>
+        <height>75</height>
         <align>center</align>
         <aligny>center</aligny>
         <font/>
-        <texturefocus colordiffuse="$VAR[ColorHighlight]">buttons/roundbutton-fo.png</texturefocus>
+        <texturefocus colordiffuse="dialog_bg_30">common/white.png</texturefocus>
         <texturenofocus/>
-        <radioposx>26</radioposx>
+        <radioposx>16</radioposx>
         <radioposy>0</radioposy>
-        <radiowidth>40</radiowidth>
-        <radioheight>40</radioheight>
+        <radiowidth>42</radiowidth>
+        <radioheight>42</radioheight>
         <textureradioonfocus>$PARAM[icon]</textureradioonfocus>
         <textureradioonnofocus>$PARAM[icon]</textureradioonnofocus>
         <textureradioofffocus>$PARAM[icon]</textureradioofffocus>
         <textureradiooffnofocus>$PARAM[icon]</textureradiooffnofocus>
-        <textureradiooffdisabled colordiffuse="$VAR[ColorHighlight]">$PARAM[icon]</textureradiooffdisabled>
+        <textureradiooffdisabled colordiffuse="b3ededed">$PARAM[icon]</textureradiooffdisabled>
         <onclick condition="String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TV$PARAM[area])</onclick>
         <onclick condition="!String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(Radio$PARAM[area])</onclick>
         <enable>!Window.IsActive(TV$PARAM[area]) + !Window.IsActive(Radio$PARAM[area])</enable>
@@ -46,6 +46,14 @@
         <label/>
         <include>HiddenObject</include>
       </control>
+      <include content="DefaultSettingButtonGradient">
+        <param name="id" value="9000"/>
+        <top>50</top>
+        <width>530</width>
+        <height>75</height>
+        <left>-20</left>
+        <visible>ControlGroup(9000).HasFocus()</visible>
+      </include>
       <control type="grouplist" id="9000">
         <top>50</top>
         <left>0</left>
@@ -57,7 +65,7 @@
         <ondown>14100</ondown>
         <onback>50</onback>
         <control type="group" id="60520">
-          <height>50</height>
+          <height>75</height>
           <control type="label">
             <include>MediaMenuLabelCommon</include>
             <label>$LOCALIZE[31148]</label>
@@ -66,7 +74,7 @@
             <width>470</width>
             <textoffsetx>20</textoffsetx>
             <textoffsety>15</textoffsety>
-            <height>50</height>
+            <height>75</height>
             <font>font12</font>
             <align>right</align>
             <aligny>top</aligny>
@@ -75,12 +83,12 @@
           </control>
         </control>
         <control type="group" id="60560">
-          <height>95</height>
+          <height>75</height>
           <control type="grouplist" id="6056">
             <orientation>horizontal</orientation>
-            <itemgap>-18</itemgap>
+            <itemgap>0</itemgap>
             <left>0</left>
-            <height>120</height>
+            <height>75</height>
             <onleft>6056</onleft>
             <onright>50</onright>
             <onup>14100</onup>
@@ -261,10 +269,10 @@
   <include name="MediaMenuLabelCommon">
     <width>470</width>
     <textoffsetx>20</textoffsetx>
-    <textoffsety>15</textoffsety>
-    <height>50</height>
+    <textoffsety>30</textoffsety>
+    <height>75</height>
     <radioposx>300</radioposx>
-    <font>font25_title</font>
+    <font>font_tiny_hintlabel</font>
     <aligny>top</aligny>
     <textcolor>$VAR[ColorHighlight]</textcolor>
   </include>
@@ -287,11 +295,13 @@
       <animation effect="fade" time="200">VisibleChange</animation>
     </control>
     <control type="image">
-      <left>-20</left>
+      <left>-45</left>
       <top>30</top>
-      <width>520</width>
-      <height>680</height>
-      <texture border="20" colordiffuse="dialog_bg_100">common/box.png</texture>
+      <width>580</width>
+      <height>800</height>
+      <texture border="24" colordiffuse="dialog_bg_100">common/box.png</texture>
+      <bordertexture border="42" colordiffuse="dialog_fg_30">common/dark-shadow-24-2.png</bordertexture>
+      <bordersize>24</bordersize>
     </control>
     <control type="button" id="6131">
       <left>0</left>
