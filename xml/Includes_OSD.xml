@@ -676,9 +676,9 @@
         <include>Animation_BottomSlide</include>
         <visible>!VideoPlayer.Content(livetv)</visible>
       <control type="grouplist" id="201">
-        <left>-1640</left>
+        <left>0</left>
         <top>87</top>
-        <!-- <width>100%</width> -->
+        <width>360</width>
         <height>135</height>
         <itemgap>10</itemgap>
         <align>center</align>

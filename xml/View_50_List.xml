@@ -95,7 +95,6 @@
             <top>300</top>
             <right>74</right>
             <width>761.44</width>
-            <fadetime>200</fadetime>
             <aspectratio aligny="center" scalediffuse="true">keep</aspectratio>
             <texture fallback="DefaultVideo.png" background="true" diffuse="diffuse/rightlistpanel-diffuse.png">$VAR[Image_Landscape]</texture>
             <bordertexture border="24">common/rightlistpanel-diffuse-shadow.png</bordertexture>

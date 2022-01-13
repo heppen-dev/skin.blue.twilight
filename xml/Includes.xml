@@ -457,7 +457,7 @@
     <definition>
       <control type="grouplist">
         <orientation>horizontal</orientation>
-        <left>20</left>
+        <left>320</left>
         <top>0</top>
         <height>70</height>
         <align>$PARAM[align]</align>
@@ -552,9 +552,9 @@
         <left>0</left>
         <top>0</top>
         <height>70</height>
+        <width>1000</width>
         <align>left</align>
         <itemgap>10</itemgap>
-        <width>100%</width>
         <usecontrolcoords>true</usecontrolcoords>
         <include content="MediaFlag">
           <param name="texture" value="$INFO[ListItem.VideoCodec,flags/videocodec/,.png]"/>

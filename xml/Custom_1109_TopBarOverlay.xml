@@ -233,26 +233,22 @@
       <control type="group">
         <visible>!Window.IsVisible(extendedprogressdialog)</visible>
         <animation effect="fade" time="150">VisibleChange</animation>
-        <control type="label">
-          <font>font_clock</font>
-          <shadowcolor>text_shadow</shadowcolor>
-          <top>0</top>
-          <right>20</right>
-          <height>200</height>
-          <width>600</width>
-          <align>right</align>
-          <label>$INFO[System.Time]</label>
-        </control>
         <control type="grouplist">
-          <right>24</right>
-          <top>74</top>
-          <width>800</width>
+          <left>48</left>
+          <top>48</top>
+          <width>1920</width>
           <height>100</height>
-          <align>right</align>
-          <itemgap>5</itemgap>
+          <align>left</align>
+          <itemgap>0</itemgap>
           <orientation>horizontal</orientation>
           <usecontrolcoords>true</usecontrolcoords>
           <control type="label">
+            <top>0</top>
+            <font>font_clock</font>
+            <label>$INFO[System.Time]</label>
+          </control>
+          <control type="label">
+            <top>40</top>
             <label>$INFO[Player.FinishTime,$LOCALIZE[31080]: ]</label>
             <shadowcolor>text_shadow</shadowcolor>
             <height>100</height>
@@ -261,6 +257,7 @@
             <visible>Player.HasVideo + ![Player.HasGame | VideoPlayer.HasEpg]</visible>
           </control>
           <control type="label">
+            <top>40</top>
             <label>$INFO[PVR.EpgEventFinishTime,$LOCALIZE[31080]: ]</label>
             <shadowcolor>text_shadow</shadowcolor>
             <height>100</height>
