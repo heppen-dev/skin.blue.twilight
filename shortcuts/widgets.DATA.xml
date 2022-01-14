@@ -1,45 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <shortcuts>
-    <shortcut>
-        <label>$LOCALIZE[20386]</label>
-        <label2 />
-        <icon />
-        <thumb />
-        <action>ActivateWindow(Videos,special://skin/playlists/new_movies.xsp,return)</action>
-    </shortcut>
-    <shortcut>
-        <label>$LOCALIZE[590]</label>
-        <label2 />
-        <icon />
-        <thumb />
-        <action>ActivateWindow(Videos,special://skin/playlists/random_movies.xsp,return)</action>
-    </shortcut>
-    <shortcut>
-        <label>$LOCALIZE[20387]</label>
-        <label2 />
-        <icon />
-        <thumb />
-        <action>ActivateWindow(Videos,special://skin/playlists/new_tvshows.xsp,return)</action>
-    </shortcut>
-    <shortcut>
-        <label>$LOCALIZE[590]</label>
-        <label2 />
-        <icon />
-        <thumb />
-        <action>ActivateWindow(Videos,special://skin/playlists/random_tvshows.xsp,return)</action>
-    </shortcut>
-    <shortcut>
-        <label>Popular TMDB Movies</label>
-        <label2 />
-        <icon />
-        <thumb />
-        <action>ActivateWindow(Videos,"plugin://plugin.video.themoviedb.helper/?info=popular&amp;tmdb_type=movie&amp;widget=true",return)</action>
-    </shortcut>
-    <shortcut>
-        <label>Popular TMDB TV</label>
-        <label2 />
-        <icon />
-        <thumb />
-        <action>ActivateWindow(Videos,"plugin://plugin.video.themoviedb.helper/?info=popular&amp;tmdb_type=tv&amp;widget=true",return)</action>
-    </shortcut>
+  <shortcut>
+    <label>Popular TMDB Movies</label>
+    <label2 />
+    <icon />
+    <thumb />
+    <action>ActivateWindow(Videos,"plugin://plugin.video.themoviedb.helper/?info=popular&amp;tmdb_type=movie&amp;widget=true",return)</action>
+  </shortcut>
+  <shortcut>
+    <label>Popular TMDB TV</label>
+    <label2 />
+    <icon />
+    <thumb />
+    <action>ActivateWindow(Videos,"plugin://plugin.video.themoviedb.helper/?info=popular&amp;tmdb_type=tv&amp;widget=true",return)</action>
+  </shortcut>
+  <shortcut>
+    <label>$LOCALIZE[20386]</label>
+    <label2 />
+    <icon />
+    <thumb />
+    <action>ActivateWindow(Videos,special://skin/playlists/new_movies.xsp,return)</action>
+  </shortcut>
+  <shortcut>
+    <label>$LOCALIZE[590]</label>
+    <label2 />
+    <icon />
+    <thumb />
+    <action>ActivateWindow(Videos,special://skin/playlists/random_movies.xsp,return)</action>
+  </shortcut>
+  <shortcut>
+    <label>$LOCALIZE[20387]</label>
+    <label2 />
+    <icon />
+    <thumb />
+    <action>ActivateWindow(Videos,special://skin/playlists/new_tvshows.xsp,return)</action>
+  </shortcut>
+  <shortcut>
+    <label>$LOCALIZE[590]</label>
+    <label2 />
+    <icon />
+    <thumb />
+    <action>ActivateWindow(Videos,special://skin/playlists/random_tvshows.xsp,return)</action>
+  </shortcut>
 </shortcuts>
