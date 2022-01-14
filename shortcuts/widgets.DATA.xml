@@ -28,4 +28,18 @@
         <thumb />
         <action>ActivateWindow(Videos,special://skin/playlists/random_tvshows.xsp,return)</action>
     </shortcut>
+    <shortcut>
+        <label>Popular TMDB Movies</label>
+        <label2 />
+        <icon />
+        <thumb />
+        <action>ActivateWindow(Videos,"plugin://plugin.video.themoviedb.helper/?info=popular&amp;tmdb_type=movie&amp;widget=true",return)</action>
+    </shortcut>
+    <shortcut>
+        <label>Popular TMDB TV</label>
+        <label2 />
+        <icon />
+        <thumb />
+        <action>ActivateWindow(Videos,"plugin://plugin.video.themoviedb.helper/?info=popular&amp;tmdb_type=tv&amp;widget=true",return)</action>
+    </shortcut>
 </shortcuts>
