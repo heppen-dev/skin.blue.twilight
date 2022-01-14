@@ -1043,7 +1043,8 @@
     <!-- home fanart first widget item -->
     <value condition="Window.IsVisible(home) + String.IsEmpty(Container(3000).ListItem.Property(Background)) + !String.IsEmpty(Container(7501).ListItem.Art(fanart))">$INFO[Container(7501).ListItem.Art(fanart)]</value>
     <value condition="Window.IsActive(1141)">$INFO[Window(home).Property(spotlight_Fanart)]</value>
-    <value>$INFO[Container.Art(fanart)]</value>
+    <value condition="!String.IsEmpty(Container.Art(fanart))">$INFO[Container.Art(fanart)]</value>
+    <value>common/background.jpg</value>
   </variable>
   <variable name="BlurSpotlight">
     <value>$INFO[Window(Home).Property(TMDbHelper.ListItem.BlurImage)]</value>
