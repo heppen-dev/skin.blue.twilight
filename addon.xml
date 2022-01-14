@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.primus" version="1.0.0~alpha" name="Primus" provider-name="heppen (nfm886)">
+<addon id="skin.blue.twilight" version="1.0.0~alpha" name="Blue Twilight" provider-name="heppen">
   <requires>
     <import addon="xbmc.gui" version="5.15.0"/>
     <import addon="script.skinshortcuts" version="1.1.5"/>
@@ -20,7 +20,7 @@
     <platform>all</platform>
     <license>Creative Commons Attribution Non-Commercial Share-Alike 4.0</license>
     <forum />
-    <source>https://github.com/nfm886/skin.primus</source>
+    <source>https://github.com/nfm886/skin.blue.twilight</source>
     <assets>
       <icon>resources/icon.png</icon>
       <fanart>resources/fanart.jpg</fanart>
@@ -29,7 +29,6 @@
       <screenshot>resources/screenshot-03.jpg</screenshot>
       <screenshot>resources/screenshot-04.jpg</screenshot>
       <screenshot>resources/screenshot-05.jpg</screenshot>
-      <screenshot>resources/screenshot-06.jpg</screenshot>
     </assets>
   </extension>
 </addon>

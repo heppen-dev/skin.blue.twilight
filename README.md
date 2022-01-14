@@ -1,4 +1,4 @@
-# Skin Primus
+# Skin Blue Twilight by heppen
 
 _The skin is designed to allow the user to focus on media consumption. It provides many innovative solutions that every movie lover will appreciate._
 
@@ -12,7 +12,7 @@ _You can install it via repository to provide automatic updates_
 
 _or install it manually (updates should be installed manually)_
 
-- [skin.primus](https://github.com/nfm886/skin.primus/archive/refs/heads/master.zip)
+- [skin.blue.twilight](https://github.com/nfm886/skin.blue.twilight/archive/refs/heads/master.zip)
 
 # License
 

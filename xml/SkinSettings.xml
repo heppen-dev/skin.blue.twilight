@@ -547,10 +547,10 @@
           <visible>Container(9000).HasFocus(8)</visible>
         </control>
         <control type="textbox" id="1302">
-          <left>60</left>
+          <centerleft>50%</centerleft>
           <top>360</top>
-          <width>800</width>
-          <height>440</height>
+          <width>1000</width>
+          <height>400</height>
           <font>font32</font>
           <textcolor>dialog_fg_100</textcolor>
           <label>31278</label>
@@ -559,14 +559,14 @@
         </control>
         <include content="DefaultSettingButtonGradient">
           <param name="id" value="1300"/>
-          <top>613</top>
+          <top>605</top>
           <height>75</height>
           <right>28</right>
           <visible>ControlGroup(1300).HasFocus()</visible>
         </include>
-        <!-- Primus -->
+        <!-- Blue Twilight -->
         <control type="grouplist" id="1300">
-          <top>613</top>
+          <top>605</top>
           <height>600</height>
           <left>0</left>
           <right>28</right>

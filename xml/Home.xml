@@ -51,7 +51,7 @@
     </control> -->
     <control type="group">
       <include>Visible_Fade</include>
-      <include>Primus_Main</include>
+      <include>BlueTwilight_Main</include>
     </control>
   </controls>
 </window>

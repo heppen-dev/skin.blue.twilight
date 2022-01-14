@@ -1,7 +1,7 @@
 # Kodi Media Center language file
-# Addon Name: Primus
-# Addon id: skin.primus
-# Addon Provider: heppen (nfm886)
+# Addon Name: Blue Twilight
+# Addon id: skin.blue.twilight
+# Addon Provider: heppen
 msgid ""
 msgstr ""
 "Project-Id-Version: KODI Main\n"
@@ -1303,8 +1303,8 @@ msgstr "Ξεκλείδωτη προβολή"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31271"
-msgid "Primus"
-msgstr "Primus"
+msgid "Blue Twilight"
+msgstr "Blue Twilight"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31272"

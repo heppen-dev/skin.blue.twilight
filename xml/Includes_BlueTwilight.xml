@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-  <include name="Primus_Main">
+  <include name="BlueTwilight_Main">
     <control type="group">
       <include>Animation_TopSlide_Home</include>
       <control type="group">

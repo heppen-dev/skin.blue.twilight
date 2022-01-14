@@ -13,7 +13,7 @@
   <include file="Includes_MusicInfo.xml"/>
   <include file="Includes_Object.xml"/>
   <include file="Includes_OSD.xml"/>
-  <include file="Includes_Primus.xml"/>
+  <include file="Includes_BlueTwilight.xml"/>
   <include file="Includes_PVR.xml"/>
   <include file="Includes_TopBottomBar.xml"/>
   <include file="Includes_View.xml"/>
