@@ -1121,7 +1121,7 @@
             <loop>yes</loop>
             <imagepath background="true" colordiffuse="$VAR[BackgroundOverlay]">$VAR[BlurBackground]</imagepath>
             <visible>!Control.IsVisible(502) | $EXP[infodialog_active]</visible>
-            <animation effect="fade" end="0" start="100" time="50" reversible="true" condition="$EXP[infodialog_active]">Conditional</animation>
+            <!-- <animation effect="fade" end="0" start="100" time="50" reversible="true" condition="$EXP[infodialog_active]">Conditional</animation> -->
             <animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(KenBurnsEffect)">Conditional</animation>
             <animation effect="slide" start="-30,-30" end="30,30" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(KenBurnsEffect)">Conditional</animation>
             <include>OpenClose_Fade</include>

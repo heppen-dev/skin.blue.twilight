@@ -76,6 +76,13 @@
       <size>25</size>
     </font>
     <font>
+      <name>font_small_plot</name>
+      <filename>AmazonEmberDisplay_Rg.ttf</filename>
+      <size>28</size>
+      <style>lighten</style>
+      <!-- <aspect>0.75</aspect> -->
+    </font>
+    <font>
       <name>font12</name>
       <filename>AmazonEmberDisplay_Rg.ttf</filename>
       <size>25</size>

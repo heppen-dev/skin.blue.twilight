@@ -22,12 +22,6 @@
           <bordertexture border="24">common/shadow-dialog-24.png</bordertexture>
           <bordersize>24</bordersize>
         </control>
-        <control type="label">
-          <top>60</top>
-          <left>60</left>
-          <label>$LOCALIZE[31067]</label>
-          <include>BreadcrumbsLabel</include>
-        </control>
         <control type="group">
           <visible>Control.IsVisible(50)</visible>
           <control type="fixedlist" id="50">

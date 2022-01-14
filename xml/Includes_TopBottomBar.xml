@@ -182,33 +182,28 @@
     <control type="label">
       <label>$PARAM[breadcrumbs_label]$INFO[Container.ShowTitle, &#8226; ]</label>
       <font>font25</font>
-      <include>BreadcrumbsLabel</include>
       <visible>!String.IsEmpty(Container.ShowTitle) + !String.IsEqual(Container.ShowTitle,Container.FolderName)</visible>
     </control>
     <control type="label">
       <label>$PARAM[breadcrumbs_label]$INFO[Container.FolderName, &#8226; ]</label>
       <font>font25</font>
-      <include>BreadcrumbsLabel</include>
       <visible>![Container.Content() + Window.IsActive(videos)]</visible>
       <visible>![Window.IsActive(MyPVRChannels.xml) | Window.IsActive(MyPVRTimers.xml) | Window.IsActive(MyPVRRecordings.xml) | Window.IsActive(MyPVRSearch.xml)] + String.IsEmpty(Container.PluginCategory)</visible>
     </control>
     <control type="label">
       <label>$PARAM[breadcrumbs_label]$INFO[Container.PluginCategory, &#8226; ]</label>
       <font>font25</font>
-      <include>BreadcrumbsLabel</include>
       <visible>!String.isempty(Container.PluginCategory)</visible>
     </control>
     <control type="label">
       <label>$PARAM[breadcrumbs_label]$INFO[Control.GetLabel(10),: ]</label>
       <font>font25</font>
-      <include>BreadcrumbsLabel</include>
       <visible>!String.IsEqual(Control.GetLabel(10),$LOCALIZE[16100]) + Window.IsActive(videos)</visible>
     </control>
     <control type="label">
       <left>10</left>
       <label>($LOCALIZE[31052])</label>
       <font>font25</font>
-      <include>BreadcrumbsLabel</include>
       <visible>Container.Filtered</visible>
     </control>
   </include>
