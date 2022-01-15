@@ -13,7 +13,7 @@
         <left>60</left>
         <font>font_tiny_title_uppercase</font>
         <label>$INFO[ListItem.Label]</label>
-        <visible>Control.HasFocus(50) + !Skin.HasSetting(PVRChannelsExtendedInfo)</visible>
+        <visible>Control.HasFocus(50)</visible>
       </control>
       <control type="image">
         <top>200</top>
@@ -75,13 +75,13 @@
       <animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
       <control type="group">
         <control type="list" id="11">
-          <top>460</top>
+          <top>120</top>
           <left>110</left>
           <width>1700</width>
           <align>center</align>
           <ondown>50</ondown>
           <orientation>horizontal</orientation>
-          <animation effect="slide" start="0" end="0,-340" time="0" condition="!Skin.HasSetting(PVRChannelsExtendedInfo)">Conditional</animation>
+          <animation effect="slide" start="0" end="0,340" time="0" condition="Control.IsVisible(51)">Conditional</animation>
           <scrolltime tween="cubic" easing="out">500</scrolltime>
           <itemlayout width="170">
             <control type="label">
@@ -114,7 +114,7 @@
           <top>200</top>
           <right>100</right>
           <bottom>80</bottom>
-          <onleft>9000</onleft>
+          <onleft>SetFocus(9000)</onleft>
           <onright>11</onright>
           <onup>50</onup>
           <ondown>50</ondown>
@@ -133,14 +133,14 @@
           <top>520</top>
           <right>100</right>
           <bottom>80</bottom>
-          <onleft>9000</onleft>
+          <onleft>SetFocus(9000)</onleft>
           <onright>11</onright>
           <onup>51</onup>
           <ondown>51</ondown>
           <movement>1</movement>
           <focusposition>1</focusposition>
           <scrolltime tween="cubic" easing="out">500</scrolltime>
-          <viewtype label="listextendedinfo">list</viewtype>
+          <viewtype label="List extended Info">list</viewtype>
           <include content="PVRListItemLayouts">
               <param name="width" value="520"/>
               <param name="width_next" value="820"/>
@@ -170,9 +170,17 @@
       <include>MediaMenuMouseOverlay</include>
       <control type="group">
         <include content="MediaMenuCommon">
-          <include>PVRSideBar</include>
+          <param name="visible">$EXP[sidebar_visible]</param>
+          <param name="onleft">50</param>
+          <param name="onright">50</param>
+          <param name="onback">50</param>
         </include>
+        <!-- <include>MediaMenuNowPlaying</include> -->
       </control>
+    </control>
+    <include>Defs_MediaMenuCommon</include>
+    <control type="button" id="28">
+      <include>HiddenObject</include>
     </control>
     <control type="label" id="29">
       <font/>

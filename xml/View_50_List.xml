@@ -168,7 +168,7 @@
         <scrolltime tween="cubic" easing="out">500</scrolltime>
         <orientation>vertical</orientation>
         <pagecontrol>60</pagecontrol>
-        <onright>9000</onright>
+        <onright>SetFocus(9000)</onright>
         <onleft>60</onleft>
         <onup>$PARAM[list_id]</onup>
         <ondown>$PARAM[list_id]</ondown>

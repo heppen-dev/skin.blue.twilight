@@ -227,4 +227,28 @@
       </control>
     </definition>
   </include>
+  <include name="Defs_MediaMenuCommon">
+    <control type="button" id="2">
+      <description>Viewmode</description>
+      <include>HiddenObject</include>
+    </control>
+    <control type="button" id="3">
+      <description>Sortby</description>
+      <include>HiddenObject</include>
+    </control>
+    <control type="button" id="6003">
+      <description>Sort By</description>
+      <label>$INFO[Control.GetLabel(3)]</label>
+      <onclick>SendClick(3)</onclick>
+      <visible>Control.IsVisible(3)</visible>
+      <visible>Control.IsEnabled(3)</visible>
+      <include>HiddenObject</include>
+    </control>
+    <control type="togglebutton" id="4">
+      <label>$LOCALIZE[584]</label>
+      <altlabel>$LOCALIZE[585]</altlabel>
+      <usealttexture>Container.SortDirection(Descending)</usealttexture>
+      <include>HiddenObject</include>
+    </control>
+  </include>
 </includes>

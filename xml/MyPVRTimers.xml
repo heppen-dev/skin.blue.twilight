@@ -76,8 +76,17 @@
     </control>
     <control type="group">
       <include content="MediaMenuCommon">
-        <include>PVRSideBar</include>
+        <param name="visible">$EXP[sidebar_visible]</param>
+        <param name="onleft">50</param>
+        <param name="onright">50</param>
+        <param name="onback">50</param>
       </include>
+      <!-- <include>MediaMenuNowPlaying</include> -->
+    </control>
+    <include>Defs_MediaMenuCommon</include>
+    <control type="button" id="28">
+      <description>Groups</description>
+      <include>HiddenObject</include>
     </control>
     <control type="label" id="29">
       <font/>

@@ -17,7 +17,7 @@
         <pagecontrol>60</pagecontrol>
         <movement>3</movement>
         <focusposition>4</focusposition>
-        <onleft>9000</onleft>
+        <onleft>SetFocus(9000)</onleft>
         <onright>60</onright>
         <onup>55</onup>
         <ondown>55</ondown>

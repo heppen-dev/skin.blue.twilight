@@ -92,98 +92,33 @@
       <include>MediaMenuMouseOverlay</include>
       <control type="group">
         <include content="MediaMenuCommon">
-          <include content="DefaultSettingButtonGradient">
-            <param name="id" value="9000"/>
-            <top>50</top>
-            <width>530</width>
-            <height>75</height>
-            <left>-20</left>
-            <visible>ControlGroup(9000).HasFocus()</visible>
-          </include>
-          <control type="grouplist" id="9000">
-            <top>50</top>
-            <height>525</height>
-            <include>MediaMenuListCommon</include>
-            <control type="button" id="10">
-              <description>Watched Toggle</description>
-              <include>MediaMenuItemsCommon</include>
-              <label>$LOCALIZE[20367]</label>
-              <label2>[B]$INFO[Container.NumItems][/B]</label2>
-              <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.content(seasons) | Container.Content(episodes) | Container.Content(MusicVideos)</visible>
-            </control>
-            <control type="radiobutton" id="6061">
-              <description>Show second line on the list item</description>
-              <include>MediaMenuItemsCommon</include>
-              <label>$LOCALIZE[31428]</label>
-              <selected>Skin.HasSetting(ExtendedList)</selected>
-              <onclick>Skin.ToggleSetting(ExtendedList)</onclick>
-              <visible>Control.IsVisible(50) | Control.IsVisible(55)</visible>
-            </control>
-            <control type="label" id="203">
-              <include>MediaMenuLabelCommon</include>
-              <label>$LOCALIZE[31020]</label>
-            </control>
-            <control type="radiobutton" id="16">
-              <description>PartyMode</description>
-              <label>$LOCALIZE[589]</label>
-              <include>MediaMenuItemsCommon</include>
-              <visible>Container.Content(MusicVideos)</visible>
-            </control>
-            <control type="radiobutton" id="11">
-              <description>Unlock Shares</description>
-              <include>MediaMenuItemsCommon</include>
-              <label>$LOCALIZE[20336]</label>
-              <onclick>mastermode</onclick>
-              <selected>system.ismaster</selected>
-              <visible>system.haslocks</visible>
-            </control>
-            <control type="togglebutton" id="619">
-              <description>Update library</description>
-              <include>MediaMenuItemsCommon</include>
-              <label>$LOCALIZE[653]</label>
-              <onclick>UpdateLibrary(video)</onclick>
-              <visible>!Container.Content(addons)+ String.IsEmpty(Container.PluginName)</visible>
-              <altlabel>$LOCALIZE[13353]</altlabel>
-              <usealttexture>library.isscanningvideo</usealttexture>
-            </control>
-            <control type="button" id="612">
-              <description>Go to playlist</description>
-              <include>MediaMenuItemsCommon</include>
-              <label>$LOCALIZE[31056]</label>
-              <onclick>ActivateWindow(videoplaylist)</onclick>
-              <visible>Integer.IsGreater(Playlist.Length(video),0)</visible>
-            </control>
-            <control type="button" id="621">
-              <description>Get more</description>
-              <include>MediaMenuItemsCommon</include>
-              <label>$LOCALIZE[21452]</label>
-              <onclick>ActivateWindow(addonbrowser,addons://more/video/,return)</onclick>
-              <visible>Container.Content(addons)</visible>
-            </control>
-            <control type="button" id="622">
-              <include>MediaMenuItemsCommon</include>
-              <label>$LOCALIZE[31117]</label>
-              <onclick condition="System.AddonIsEnabled(plugin.library.node.editor)">ActivateWindow(programs,plugin://plugin.library.node.editor/?ltype=video,return)</onclick>
-              <onclick condition="System.HasAddon(plugin.library.node.editor) + !System.AddonIsEnabled(plugin.library.node.editor)">EnableAddon(plugin.library.node.editor)</onclick>
-              <onclick condition="!System.HasAddon(plugin.library.node.editor)">InstallAddon(plugin.library.node.editor)</onclick>
-              <visible>Container.Content() + String.IsEmpty(Container.PluginName)</visible>
-            </control>
-            <control type="button" id="623">
-              <include>MediaMenuItemsCommon</include>
-              <label>$LOCALIZE[31009]</label>
-              <onclick>InstallAddon(resource.images.studios.white)</onclick>
-              <visible>Container.Content(studios) + !System.AddonIsEnabled(resource.images.studios.white)</visible>
-            </control>
-            <control type="button" id="624">
-              <include>MediaMenuItemsCommon</include>
-              <label>$LOCALIZE[10140]</label>
-              <onclick>Addon.OpenSettings($INFO[Container.PluginName])</onclick>
-              <visible>!String.IsEmpty(Container.PluginName)</visible>
-            </control>
-            <include>MediaMenuNowPlaying</include>
-          </control>
+          <param name="visible">$EXP[sidebar_visible]</param>
+          <param name="onleft">50</param>
+          <param name="onright">50</param>
+          <param name="onback">50</param>
         </include>
       </control>
+    </control>
+    <include>Defs_MediaMenuCommon</include>
+    <control type="button" id="8">
+      <label>$LOCALIZE[137]</label>
+      <include>HiddenObject</include>
+    </control>
+    <control type="togglebutton" id="14">
+      <label>$LOCALIZE[20367]: $LOCALIZE[16039]</label>
+      <altlabel>$LOCALIZE[20367]: $LOCALIZE[16041]</altlabel>
+      <usealttexture>System.Setting(hidewatched)</usealttexture>
+      <description>Watched Unwatched</description>
+      <include>HiddenObject</include>
+    </control>
+    <control type="radiobutton" id="19">
+      <description>Filter</description>
+      <include>HiddenObject</include>
+    </control>
+    <control type="button" id="20">
+      <description>Update Library</description>
+      <label>653</label>
+      <include>HiddenObject</include>
     </control>
   </controls>
 </window>

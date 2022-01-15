@@ -47,47 +47,12 @@
       <include>MediaMenuMouseOverlay</include>
       <control type="group">
         <include content="MediaMenuCommon">
-          <include content="DefaultSettingButtonGradient">
-            <param name="id" value="9000"/>
-            <top>50</top>
-            <width>530</width>
-            <height>75</height>
-            <left>-20</left>
-            <visible>ControlGroup(9000).HasFocus()</visible>
-          </include>
-          <control type="grouplist" id="9000">
-            <top>50</top>
-            <height>525</height>
-            <include>MediaMenuListCommon</include>
-            <control type="label" id="201">
-              <include>MediaMenuLabelCommon</include>
-              <label>$LOCALIZE[31021]</label>
-            </control>
-            <control type="radiobutton" id="7">
-              <description>Hide foreign</description>
-              <include>MediaMenuItemsCommon</include>
-              <label>$LOCALIZE[25001]</label>
-              <visible>Control.IsEnabled(7)</visible>
-            </control>
-            <control type="radiobutton" id="8">
-              <description>Hide incompatible</description>
-              <include>MediaMenuItemsCommon</include>
-              <label>$LOCALIZE[24999]</label>
-              <visible>Control.IsEnabled(8)</visible>
-            </control>
-            <control type="button" id="9">
-              <description>Check for repository updates</description>
-              <include>MediaMenuItemsCommon</include>
-              <label>$LOCALIZE[24034]</label>
-            </control>
-            <control type="button" id="5">
-              <description>Addon settings</description>
-              <include>MediaMenuItemsCommon</include>
-              <label>$LOCALIZE[10004]</label>
-            </control>
-            <!-- <include>MediaMenuNowPlaying</include> -->
-          </control>
+          <param name="visible">$EXP[sidebar_visible]</param>
+          <param name="onleft">50</param>
+          <param name="onright">50</param>
+          <param name="onback">50</param>
         </include>
+        <!-- <include>MediaMenuNowPlaying</include> -->
       </control>
       <control type="group">
         <height>78</height>
@@ -99,6 +64,28 @@
           <param name="sub_label" value="$LOCALIZE[31069]"/>
         </include>
       </control>
+    </control>
+    <!-- hidden buttons -->
+    <include>Defs_MediaMenuCommon</include>
+    <control type="button" id="5">
+      <description>Settings</description>
+      <label>5</label>
+      <include>HiddenObject</include>
+    </control>
+    <control type="button" id="9">
+      <description>Check for updates</description>
+      <label>24034</label>
+      <include>HiddenObject</include>
+    </control>
+    <control type="radiobutton" id="7">
+      <description>Hide Foriegn</description>
+      <label>25001</label>
+      <include>HiddenObject</include>
+    </control>
+    <control type="radiobutton" id="8">
+      <description>Hide incompat</description>
+      <label>24999</label>
+      <include>HiddenObject</include>
     </control>
   </controls>
 </window>

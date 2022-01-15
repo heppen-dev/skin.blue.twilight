@@ -276,51 +276,180 @@
     <aligny>top</aligny>
     <textcolor>$VAR[ColorHighlight]</textcolor>
   </include>
-  <include name="MediaMenuCommon">
-    <include>Animation_DialogPopupOpenClose</include>
-    <top>-2000</top>
-    <left>-700</left>
-    <animation type="Conditional" condition="$EXP[sidebar_visible]" reversible="true">
-      <effect type="slide" start="0" end="0,2180" time="200" tween="cubic" easing="out"/>
-      <effect type="slide" start="0" end="1400,0" time="0" tween="cubic" easing="out"/>
-    </animation>
+  <include name="MediaMenuBackground">
     <control type="image">
-      <width>8000</width>
-      <height>120%</height>
-      <top>-20%</top>
-      <left>-2000</left>
-      <aspectratio>scale</aspectratio>
-      <texture colordiffuse="80FFFFFF">colors/black.png</texture>
-      <visible>$EXP[sidebar_visible] + !System.HasActiveModalDialog</visible>
-      <animation effect="fade" time="200">VisibleChange</animation>
-    </control>
-    <control type="image">
-      <left>-45</left>
-      <top>30</top>
-      <width>580</width>
-      <height>580</height>
-      <texture border="24" colordiffuse="dialog_bg_100">common/box.png</texture>
-      <bordertexture border="42" colordiffuse="dialog_fg_30">common/dark-shadow-24-2.png</bordertexture>
+      <top>-24</top>
+      <bottom>-24</bottom>
+      <left>-24</left>
+      <right>-24</right>
+      <bordertexture border="32">common/shadow-dialog-24.png</bordertexture>
       <bordersize>24</bordersize>
+      <texture border="16" colordiffuse="dialog_bg_100">common/dialog.png</texture>
     </control>
-    <control type="button" id="6131">
-      <left>0</left>
-      <top>0</top>
-      <width>500</width>
-      <height>100%</height>
-      <label/>
-      <texturefocus/>
-      <texturenofocus/>
-    </control>
-    <control type="button" id="3">
-      <description>Viewtype Toggle</description>
-      <include>HiddenObject</include>
-    </control>
-    <control type="button" id="4">
-      <description>Order Toggle</description>
-      <include>HiddenObject</include>
-    </control>
-    <nested />
+  </include>
+  <include name="MediaMenuCommon">
+    <definition>
+      <control type="group">
+        <nested />
+        <top>130</top>
+        <centerleft>50%</centerleft>
+        <height>680</height>
+        <width>450</width>
+        <visible>$PARAM[visible]</visible>
+        <include>Animation_DialogPopupVisible</include>
+        <animation effect="slide" end="0,75" condition="Integer.IsLess(Container(9000).NumItems,9)">Conditional</animation>
+        <animation effect="slide" end="0,75" condition="Integer.IsLess(Container(9000).NumItems,8)">Conditional</animation>
+        <animation effect="slide" end="0,75" condition="Integer.IsLess(Container(9000).NumItems,7)">Conditional</animation>
+        <animation effect="slide" end="0,75" condition="Integer.IsLess(Container(9000).NumItems,6)">Conditional</animation>
+        <animation effect="slide" end="0,75" condition="Integer.IsLess(Container(9000).NumItems,5)">Conditional</animation>
+        <animation effect="slide" end="0,75" condition="Integer.IsLess(Container(9000).NumItems,4)">Conditional</animation>
+        <animation effect="slide" end="0,75" condition="Integer.IsLess(Container(9000).NumItems,3)">Conditional</animation>
+        <animation effect="slide" end="0,75" condition="Integer.IsLess(Container(9000).NumItems,2)">Conditional</animation>
+        <control type="group">
+          <include>MediaMenuBackground</include>
+          <visible>Integer.IsEqual(Container(9000).NumItems,8)</visible>
+          <bottom>20</bottom>
+        </control>
+        <control type="group">
+          <include>MediaMenuBackground</include>
+          <bottom>100</bottom>
+          <visible>Integer.IsEqual(Container(9000).NumItems,7)</visible>
+        </control>
+        <control type="group">
+          <include>MediaMenuBackground</include>
+          <bottom>180</bottom>
+          <visible>Integer.IsEqual(Container(9000).NumItems,6)</visible>
+        </control>
+        <control type="group">
+          <include>MediaMenuBackground</include>
+          <bottom>260</bottom>
+          <visible>Integer.IsEqual(Container(9000).NumItems,5)</visible>
+        </control>
+        <control type="group">
+          <include>MediaMenuBackground</include>
+          <bottom>340</bottom>
+          <visible>Integer.IsEqual(Container(9000).NumItems,4)</visible>
+        </control>
+        <control type="group">
+          <include>MediaMenuBackground</include>
+          <bottom>420</bottom>
+          <visible>Integer.IsEqual(Container(9000).NumItems,3)</visible>
+        </control>
+        <control type="group">
+          <include>MediaMenuBackground</include>
+          <bottom>500</bottom>
+          <visible>Integer.IsEqual(Container(9000).NumItems,2)</visible>
+        </control>
+        <control type="group">
+          <include>MediaMenuBackground</include>
+          <bottom>580</bottom>
+          <visible>Integer.IsEqual(Container(9000).NumItems,1)</visible>
+        </control>
+        <include content="DefaultSettingButtonGradient">
+          <param name="id" value="9000"/>
+          <top>25</top>
+          <height>75</height>
+          <left>0</left>
+          <visible>Control.HasFocus(9000)</visible>
+        </include>
+        <control type="panel" id="9000">
+          <top>25</top>
+          <orientation>vertical</orientation>
+          <onleft>$PARAM[onleft]</onleft>
+          <onright>$PARAM[onright]</onright>
+          <onback>$PARAM[onback]</onback>
+          <itemlayout width="450" height="75">
+            <control type="label">
+              <font>font_tiny_hintlabel</font>
+              <align>left</align>
+              <left>30</left>
+              <right>30</right>
+              <aligny>center</aligny>
+              <textcolor>dialog_fg_70</textcolor>
+              <label>$INFO[ListItem.Label]</label>
+            </control>
+            <control type="image">
+              <bordersize>10</bordersize>
+              <aspectratio align="right">keep</aspectratio>
+              <texture colordiffuse="dialog_fg_70">$INFO[ListItem.Icon]</texture>
+            </control>
+          </itemlayout>
+          <focusedlayout width="450" height="75">
+            <control type="image">
+              <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+            </control>
+            <control type="image">
+              <texture colordiffuse="$VAR[ColorGradient]">common/white-gradient.png</texture>
+            </control>
+            <control type="label">
+              <font>font_tiny_hintlabel</font>
+              <align>left</align>
+              <left>30</left>
+              <right>30</right>
+              <aligny>center</aligny>
+              <label>$INFO[ListItem.Label]</label>
+            </control>
+            <control type="image">
+              <bordersize>10</bordersize>
+              <aspectratio align="right">keep</aspectratio>
+              <texture colordiffuse="Selected">$INFO[ListItem.Icon]</texture>
+            </control>
+          </focusedlayout>
+          <include>MediaMenuItems</include>
+        </control>
+      </control>
+    </definition>
+  </include>
+  <include name="MediaMenuCommonLegacy">
+    <definition>
+      <include>Animation_DialogPopupOpenClose</include>
+      <top>-2000</top>
+      <left>-700</left>
+      <animation type="Conditional" condition="$EXP[sidebar_visible]" reversible="true">
+        <effect type="slide" start="0" end="0,2180" time="200" tween="cubic" easing="out"/>
+        <effect type="slide" start="0" end="1400,0" time="0" tween="cubic" easing="out"/>
+      </animation>
+      <control type="image">
+        <width>8000</width>
+        <height>120%</height>
+        <top>-20%</top>
+        <left>-2000</left>
+        <aspectratio>scale</aspectratio>
+        <texture colordiffuse="80FFFFFF">colors/black.png</texture>
+        <visible>$EXP[sidebar_visible] + !System.HasActiveModalDialog</visible>
+        <animation effect="fade" time="200">VisibleChange</animation>
+      </control>
+      <control type="group">
+        <height max="580">200</height>
+        <control type="image">
+          <left>-45</left>
+          <top>30</top>
+          <width>580</width>
+          <height>100%</height>
+          <texture border="24" colordiffuse="dialog_bg_100">common/box.png</texture>
+          <bordertexture border="42" colordiffuse="dialog_fg_30">common/dark-shadow-24-2.png</bordertexture>
+          <bordersize>24</bordersize>
+        </control>
+        <control type="button" id="6131">
+          <left>0</left>
+          <top>0</top>
+          <width>500</width>
+          <height>100%</height>
+          <label/>
+          <texturefocus/>
+          <texturenofocus/>
+        </control>
+        <control type="button" id="3">
+          <description>Viewtype Toggle</description>
+          <include>HiddenObject</include>
+        </control>
+        <control type="button" id="4">
+          <description>Order Toggle</description>
+          <include>HiddenObject</include>
+        </control>
+        <nested />
+      </control>
+    </definition>
   </include>
   <include name="MediaMenuNowPlaying">
     <param name="left">5</param>

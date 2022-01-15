@@ -291,6 +291,26 @@
   <variable name="Label_InfoLine_Spotlight">
     <value>$INFO[Window(home).Property(spotlight_Duration),[COLOR=main_fg_100],[/COLOR]]$INFO[Window(home).Property(spotlight_Genre),   |   [COLOR=main_fg_100],[/COLOR]]$INFO[Window(home).Property(spotlight_Year),   |   [COLOR=main_fg_100],[/COLOR]]$INFO[Window(home).Property(spotlight_MPAA),   |   [COLOR=main_fg_100],[/COLOR]]$INFO[Window(home).Property(spotlight_Resolution),   |   [COLOR=main_fg_100],[/COLOR]]</value>
   </variable>
+  <variable name="Image_Watched">
+    <value condition="System.Setting(hidewatched)">special://skin/extras/icons/watched-hide.png</value>
+    <value>special://skin/extras/icons/watched-show.png</value>
+  </variable>
+  <variable name="Image_GroupRecordings">
+    <value condition="String.Contains(Control.GetLabel(5),*)">special://skin/extras/icons/antenna-on.png</value>
+    <value>special://skin/extras/icons/antenna.png</value>
+  </variable>
+  <variable name="Label_ExtraFanart">
+    <value condition="Skin.HasSetting(ArtworkHelper.EnableExtraFanart)">$LOCALIZE[31014]: $LOCALIZE[16041]</value>
+    <value>$LOCALIZE[31014]: $LOCALIZE[16039]</value>
+  </variable>
+  <variable name="Label_Filtered">
+    <value condition="Container.Filtered">$LOCALIZE[16041]</value>
+    <value>$LOCALIZE[351]</value>
+  </variable>
+  <variable name="Image_Filtered">
+    <value condition="Container.Filtered">special://skin/extras/icons/filter-on.png</value>
+    <value>special://skin/extras/icons/filter-off.png</value>
+  </variable>
   <variable name="Image_ClearLogo">
     <value condition="!String.IsEmpty(ListItem.Art(clearlogo))">$INFO[ListItem.Art(clearlogo)]</value>
     <value condition="!String.IsEmpty(ListItem.Art(tvshow.clearlogo)) + !String.IsEqual(Container.ShowTitle,ListItem.TvShowTitle)">$INFO[ListItem.Art(tvshow.clearlogo)]</value>

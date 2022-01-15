@@ -36,64 +36,40 @@
       <include>MediaMenuMouseOverlay</include>
       <control type="group">
         <include content="MediaMenuCommon">
-          <include content="DefaultSettingButtonGradient">
-            <param name="id" value="9000"/>
-            <top>50</top>
-            <width>530</width>
-            <height>75</height>
-            <left>-20</left>
-            <visible>ControlGroup(9000).HasFocus()</visible>
-          </include>
-          <control type="grouplist" id="9000">
-            <top>50</top>
-            <height>525</height>
-            <include>MediaMenuListCommon</include>
-            <control type="label" id="203">
-              <description>Actions</description>
-              <include>MediaMenuLabelCommon</include>
-              <label>$LOCALIZE[31020]</label>
-            </control>
-            <control type="radiobutton" id="20">
-              <height>80</height>
-              <align>left</align>
-              <aligny>center</aligny>
-              <texturefocus colordiffuse="$VAR[ColorHighlight]">lists/focus.png</texturefocus>
-              <texturenofocus/>
-              <radioposx>280</radioposx>
-              <textoffsetx>20</textoffsetx>
-              <label>$LOCALIZE[191]</label>
-            </control>
-            <control type="button" id="26">
-              <height>80</height>
-              <align>left</align>
-              <aligny>center</aligny>
-              <texturefocus colordiffuse="$VAR[ColorHighlight]">lists/focus.png</texturefocus>
-              <texturenofocus/>
-              <textoffsetx>20</textoffsetx>
-              <label/>
-            </control>
-            <control type="button" id="21">
-              <height>80</height>
-              <align>left</align>
-              <aligny>center</aligny>
-              <texturefocus colordiffuse="$VAR[ColorHighlight]">lists/focus.png</texturefocus>
-              <texturenofocus/>
-              <textoffsetx>20</textoffsetx>
-              <label>$LOCALIZE[190]</label>
-            </control>
-            <control type="button" id="22">
-              <height>80</height>
-              <align>left</align>
-              <aligny>center</aligny>
-              <texturefocus colordiffuse="$VAR[ColorHighlight]">lists/focus.png</texturefocus>
-              <texturenofocus/>
-              <textoffsetx>20</textoffsetx>
-              <label>$LOCALIZE[192]</label>
-            </control>
-            <!-- <include>MediaMenuNowPlaying</include> -->
-          </control>
+          <param name="visible">$EXP[sidebar_visible]</param>
+          <param name="onleft">55</param>
+          <param name="onright">55</param>
+          <param name="onback">55</param>
         </include>
+        <!-- <include>MediaMenuNowPlaying</include> -->
       </control>
+    </control>
+    <include>Defs_MediaMenuCommon</include>
+    <control type="button" id="21">
+      <description>Save</description>
+      <label>$LOCALIZE[190]</label>
+      <include>HiddenObject</include>
+    </control>
+    <control type="button" id="22">
+      <description>Clear</description>
+      <label>$LOCALIZE[192]</label>
+      <include>HiddenObject</include>
+    </control>
+    <control type="button" id="23">
+      <label>$LOCALIZE[208]</label>
+      <description>Play</description>
+      <include>HiddenObject</include>
+    </control>
+    <control type="button" id="26">
+      <description>Repeat</description>
+      <include>HiddenObject</include>
+    </control>
+    <control type="togglebutton" id="20">
+      <description>Shuffle</description>
+      <label>$LOCALIZE[191]: $LOCALIZE[351]</label>
+      <altlabel>$LOCALIZE[191]: $LOCALIZE[16041]</altlabel>
+      <usealttexture>Playlist.IsRandom</usealttexture>
+      <include>HiddenObject</include>
     </control>
   </controls>
 </window>
