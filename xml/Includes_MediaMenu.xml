@@ -291,7 +291,7 @@
     <definition>
       <control type="group">
         <nested />
-        <top>130</top>
+        <top>75</top>
         <centerleft>50%</centerleft>
         <height>720</height>
         <width>450</width>

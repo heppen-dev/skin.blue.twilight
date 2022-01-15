@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+  <include name="View_511_MediaInfo">
+    <control type="group">
+      <include>OpenClose_Bottom</include>
+      <top>120</top>
+      <left>0</left>
+      <height>800</height>
+      <visible>Control.IsVisible(511)</visible>
+      <include content="ListContainer">
+        <param name="list_id" value="511"/>
+        <param name="right" value="836"/>
+        <param name="viewtype_label" value="Media Info"/>
+      </include>
+    </control>
+    <control type="group">
+      <top>120</top>
+      <include>OpenClose_Bottom</include>
+      <visible>Control.IsVisible(511)</visible>
+      <control type="group">
+        <left>1100</left>
+        <width>800</width>
+        <include content="RightListContentMediaInfo">
+          <param name="list_id" value="511"/>
+        </include>
+      </control>
+      <include content="Object_Scrollbar_Vert">
+        <param name="visible" value="Control.IsVisible(511)" />
+        <param name="left" value="0"/>
+      </include>
+    </control>
+  </include>
+  <include name="RightListContentMediaInfo">
+    <visible>Control.IsVisible(511)</visible>
+    <control type="group">
+      <control type="group">
+        <control type="group">
+          <visible>!Container.Content(songs)</visible>
+          <height>441.435</height>
+          <width>761.44</width>
+          <control type="image">
+            <aspectratio aligny="center" scalediffuse="true">keep</aspectratio>
+            <texture fallback="DefaultVideo.png" background="true" diffuse="diffuse/rightlistpanel-diffuse.png">$VAR[Image_Landscape]</texture>
+            <bordertexture border="24">common/rightlistpanel-diffuse-shadow.png</bordertexture>
+            <bordersize>27</bordersize>
+          </control>
+        </control>
+      </control>
+    </control>
+    <control type="group">
+      <top>450</top>
+      <left>40</left>
+      <control type="label">
+        <left>0</left>
+        <top>0</top>
+        <width>700</width>
+        <height>40</height>
+        <label>$INFO[ListItem.Label]</label>
+        <font>font45_title</font>
+      </control>
+      <control type="group">
+        <control type="group">
+          <top>60</top>
+          <include content="Object_Info_First_Line">
+            <param name="visible_condi" value="true" />
+          </include>
+        </control>
+        <control type="group">
+          <top>120</top>
+          <include content="Object_Info_Line_MediaFlags">
+            <param name="visible_infoline" value="true" />
+          </include>
+        </control>
+        <control type="group">
+          <top>300</top>
+          <include content="Object_Video_Info_Line">
+            <param name="visible_infoline" value="true" />
+          </include>
+        </control>
+        <control type="group">
+          <control type="textbox">
+            <top>185</top>
+            <width>720</width>
+            <height>95</height>
+            <textcolor>white</textcolor>
+            <label>$VAR[Label_PlotTextBoxVar]</label>
+            <font>font_plot_normal</font>
+            <shadowcolor>black</shadowcolor>
+            <autoscroll delay="4000" time="4500" repeat="7000">Skin.HasSetting(autoscroll)</autoscroll>
+            <visible>!Skin.HasSetting(HidePlot)</visible>
+          </control>
+        </control>
+      </control>
+    </control>
+  </include>
+</includes>

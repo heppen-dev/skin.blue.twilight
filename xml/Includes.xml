@@ -31,6 +31,7 @@
   <include file="View_501_Banner.xml"/>
   <include file="View_502_FanArt.xml"/>
   <include file="View_510_Flix.xml"/>
+  <include file="View_511_MediaInfo.xml"/>
   <include file="Variables.xml"/>
   <constant name="DepthDialog">0.50</constant>
   <constant name="DepthDialog+">0.52</constant>
@@ -440,10 +441,18 @@
           </include>
         </control>
         <control type="group">
-          <width>150</width>
-          <visible>System.AddonIsEnabled(resource.images.studios.white) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Studio)</visible>
+          <width>115</width>
+          <visible>!String.IsEmpty($PARAM[infolabel_prefix]ListItem.EndTime)</visible>
+          <control type="label">
+            <width>115</width>
+            <height>60</height>
+            <align>center</align>
+            <aligny>center</aligny>
+            <label>$INFO[$PARAM[infolabel_prefix]ListItem.EndTime]</label>
+            <font>font_flag</font>
+          </control>
           <include content="MediaFlag">
-            <param name="texture" value="$INFO[$PARAM[infolabel_prefix]ListItem.Studio,resource://resource.images.studios.white/,.png]"/>
+            <param name="texture" value="flags/flag.png"/>
           </include>
         </control>
       </control>
@@ -539,6 +548,13 @@
           <param name="texture" value="$INFO[$PARAM[infolabel_prefix]ListItem.AudioChannels,flags/audiochannel/,.png]"/>
           <param name="visible" value="!String.IsEmpty($PARAM[infolabel_prefix]ListItem.AudioChannels)"/>
         </include>
+        <control type="group">
+          <width>150</width>
+          <visible>System.AddonIsEnabled(resource.images.studios.white) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Studio)</visible>
+          <include content="MediaFlag">
+            <param name="texture" value="$INFO[$PARAM[infolabel_prefix]ListItem.Studio,resource://resource.images.studios.white/,.png]"/>
+          </include>
+        </control>
       </control>
     </definition>
   </include>
