@@ -293,7 +293,7 @@
         <nested />
         <top>130</top>
         <centerleft>50%</centerleft>
-        <height>680</height>
+        <height>720</height>
         <width>450</width>
         <visible>$PARAM[visible]</visible>
         <include>Animation_DialogPopupVisible</include>
@@ -307,42 +307,46 @@
         <animation effect="slide" end="0,75" condition="Integer.IsLess(Container(9000).NumItems,2)">Conditional</animation>
         <control type="group">
           <include>MediaMenuBackground</include>
-          <visible>Integer.IsEqual(Container(9000).NumItems,8)</visible>
-          <bottom>20</bottom>
+          <visible>Integer.IsEqual(Container(9000).NumItems,9)</visible>
         </control>
         <control type="group">
           <include>MediaMenuBackground</include>
-          <bottom>100</bottom>
+          <visible>Integer.IsEqual(Container(9000).NumItems,8)</visible>
+          <bottom>70</bottom>
+        </control>
+        <control type="group">
+          <include>MediaMenuBackground</include>
+          <bottom>145</bottom>
           <visible>Integer.IsEqual(Container(9000).NumItems,7)</visible>
         </control>
         <control type="group">
           <include>MediaMenuBackground</include>
-          <bottom>180</bottom>
+          <bottom>210</bottom>
           <visible>Integer.IsEqual(Container(9000).NumItems,6)</visible>
         </control>
         <control type="group">
           <include>MediaMenuBackground</include>
-          <bottom>260</bottom>
+          <bottom>285</bottom>
           <visible>Integer.IsEqual(Container(9000).NumItems,5)</visible>
         </control>
         <control type="group">
           <include>MediaMenuBackground</include>
-          <bottom>340</bottom>
+          <bottom>360</bottom>
           <visible>Integer.IsEqual(Container(9000).NumItems,4)</visible>
         </control>
         <control type="group">
           <include>MediaMenuBackground</include>
-          <bottom>420</bottom>
+          <bottom>445</bottom>
           <visible>Integer.IsEqual(Container(9000).NumItems,3)</visible>
         </control>
         <control type="group">
           <include>MediaMenuBackground</include>
-          <bottom>500</bottom>
+          <bottom>530</bottom>
           <visible>Integer.IsEqual(Container(9000).NumItems,2)</visible>
         </control>
         <control type="group">
           <include>MediaMenuBackground</include>
-          <bottom>580</bottom>
+          <bottom>605</bottom>
           <visible>Integer.IsEqual(Container(9000).NumItems,1)</visible>
         </control>
         <include content="DefaultSettingButtonGradient">

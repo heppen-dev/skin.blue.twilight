@@ -1624,13 +1624,6 @@
         <visible>Window.IsVisible(AddonBrowser.xml)</visible>
         <visible>Control.IsEnabled(8)</visible>
       </item>
-      <!-- Extra Fanart -->
-      <item>
-        <label>$VAR[Label_ExtraFanart]</label>
-        <icon>special://skin/extras/icons/filebox.png</icon>
-        <onclick>Skin.ToggleSetting(ArtworkHelper.EnableExtraFanart)</onclick>
-        <visible>System.HasAddon(script.artwork.helper)</visible>
-      </item>
       <item>
         <label>$LOCALIZE[19270]</label>
         <icon>$VAR[Image_GroupRecordings]</icon>
@@ -1677,7 +1670,7 @@
       <!-- Fullscreen -->
       <item>
         <icon>special://skin/extras/icons/fullscreen.png</icon>
-        <label>$LOCALIZE[31023]</label>
+        <label>$LOCALIZE[12005]</label>
         <visible>Player.HasMedia</visible>
         <onclick>Fullscreen</onclick>
       </item>
