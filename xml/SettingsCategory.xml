@@ -74,14 +74,14 @@
       </control>
       <control type="label" id="14">
         <description>Default Label</description>
-        <textoffsetx>90</textoffsetx>
+        <textoffsetx>0</textoffsetx>
         <top>0</top>
         <height>75</height>
         <label/>
-        <align>left</align>
+        <align>center</align>
         <aligny>center</aligny>
-        <font>font12</font>
-        <textcolor>dialog_fg_70</textcolor>
+        <font>font_tiny_hintlabel</font>
+        <textcolor>dialog_fg_30</textcolor>
       </control>
       <control type="group">
         <depth>DepthContentPanel</depth>
@@ -156,8 +156,8 @@
       </control>
       <control type="group">
         <right>35</right>
-        <top>133</top>
-        <bottom>137</bottom>
+        <top>153</top>
+        <bottom>157</bottom>
         <width>60</width>
         <control type="scrollbar" id="60">
           <right>0</right>

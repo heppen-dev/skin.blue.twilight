@@ -260,12 +260,13 @@
           </control>
           <control type="label" id="808">
             <textoffsetx>40</textoffsetx>
-            <width>470</width>
+            <width>100%</width>
             <height>75</height>
             <textcolor>dialog_fg_30</textcolor>
             <label>$LOCALIZE[31299]</label>
-            <font>font_small_defaults</font>
+            <font>font_tiny_hintlabel</font>
             <aligny>center</aligny>
+            <align>center</align>
           </control>
           <control type="radiobutton" id="809" description="Disable slide animations">
             <label>$LOCALIZE[31095]</label>
@@ -336,13 +337,14 @@
             <enable>Skin.HasSetting(BackgroundPlayingTrailers) + [System.AddonIsEnabled(plugin.video.youtube) + System.HasAddon(plugin.video.youtube)]</enable>
           </control>
           <control type="label" id="909">
-            <textoffsetx>40</textoffsetx>
-            <width>470</width>
+            <textoffsetx>0</textoffsetx>
+            <width>100%</width>
             <height>75</height>
             <textcolor>dialog_fg_30</textcolor>
             <label>$LOCALIZE[31299]</label>
-            <font>font_small_defaults</font>
+            <font>font_tiny_hintlabel</font>
             <aligny>center</aligny>
+            <align>center</align>
           </control>
           <control type="button" id="910" description="Search lists">
             <include>DefaultSettingButton</include>

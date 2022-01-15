@@ -127,8 +127,9 @@
     <top>0</top>
     <height>75</height>
     <label/>
-    <textoffsetx>40</textoffsetx>
+    <textoffsetx>0</textoffsetx>
     <aligny>center</aligny>
+    <align>center</align>
     <font>font_tiny_hintlabel</font>
     <textcolor>dialog_fg_30</textcolor>
   </include>
