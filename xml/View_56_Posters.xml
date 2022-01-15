@@ -4,6 +4,7 @@
     <control type="group">
       <top>25</top>
       <visible>Control.IsVisible(56)</visible>
+      <include>OpenClose_Bottom</include>
       <control type="group">
         <left>635</left>
         <top>0</top>
@@ -17,101 +18,24 @@
         </include>
       </control>
       <control type="group">
-        <control type="label">
-          <left>695</left>
-          <top>100</top>
-          <right>50</right>
-          <height>40</height>
-          <label>$INFO[ListItem.Label]$VAR[ListSubLabelVar]</label>
-          <font>font45_title</font>
-          <shadowcolor>text_shadow</shadowcolor>
-          <visible>[String.IsEmpty(ListItem.Art(clearlogo)) + String.IsEmpty(ListItem.Art(tvshow.clearlogo))] | Skin.HasSetting(DisableClearlogo)</visible>
-        </control>
-        <control type="image">
-          <left>695</left>
-          <top>-900</top>
-          <right>50</right>
-          <width>480</width>
-          <aspectratio>keep</aspectratio>
-          <texture background="true">$VAR[Image_ClearLogo]</texture>
-          <visible>[!String.IsEmpty(ListItem.Art(clearlogo)) | !String.IsEmpty(ListItem.Art(tvshow.clearlogo))] + !Skin.HasSetting(DisableClearlogo)</visible>
-        </control>
-      </control>
-      <control type="group">
         <visible>!String.IsEmpty(Container(56).ListItem.Title)</visible>
-        <include content="Object_Ratings_Content">
-          <param name="directory" value="$INFO[Skin.String(Icons)]"/>
-          <param name="align" value="left"/>
-          <param name="top" value="180"/>
-          <param name="left" value="695"/>
-        </include>
-      </control>
-      <control type="textbox">
-        <left>695</left>
-        <top>235</top>
-        <height>145</height>
-        <right>115</right>
-        <autoscroll time="3000" delay="7000" repeat="5000">Skin.HasSetting(autoscroll)</autoscroll>
-        <label>$VAR[Label_PlotTextBoxVar]</label>
-        <shadowcolor>text_shadow</shadowcolor>
-        <visible>![ListItem.IsCollection + String.IsEmpty(ListItem.PlotOutline) + String.IsEmpty(ListItem.Plot)]</visible>
-      </control>
-      <control type="group">
-        <visible>!String.IsEmpty(Container(56).ListItem.Title)</visible>
-        <control type="label">
-          <top>400</top>
-          <left>695</left>
-          <font>font32_title</font>
-          <label>$LOCALIZE[31256]</label>
+        <control type="group">
+          <left>600</left>
+          <include content="Object_Item_Showcase">
+            <param name="title" value="$VAR[Label_Title]"/>
+            <param name="title_width" value="1000" />
+            <param name="plot" value="$VAR[Label_PlotTextBoxVar]"/>
+            <param name="videoinfo_line_top" value="520"/>
+            <param name="visible_condi" value="Control.IsVisible(56)"/>
+          </include>
         </control>
-        <control type="label">
-          <top>440</top>
-          <left>695</left>
-          <width>500</width>
-          <scroll>true</scroll>
-          <label fallback="-">$INFO[Container(56).ListItem.Studio]</label>
-        </control>
-        <control type="label">
-          <top>480</top>
-          <left>695</left>
-          <font>font32_title</font>
-          <label>$LOCALIZE[31257]</label>
-        </control>
-        <control type="label">
-          <top>520</top>
-          <left>695</left>
-          <width>500</width>
-          <height>20</height>
-          <scroll>true</scroll>
-          <label fallback="-">$INFO[Container(56).ListItem.Director]</label>
-        </control>
-        <control type="label">
-          <top>400</top>
-          <left>1245</left>
-          <font>font32_title</font>
-          <label>$LOCALIZE[31255]</label>
-        </control>
-        <control type="label">
-          <top>440</top>
-          <left>1245</left>
-          <width>500</width>
-          <height>20</height>
-          <scroll>true</scroll>
-          <label fallback="-">$INFO[Container(56).ListItem.Genre]</label>
-        </control>
-        <control type="label">
-          <top>480</top>
-          <left>1245</left>
-          <font>font32_title</font>
-          <label>$LOCALIZE[31258]</label>
-        </control>
-        <control type="label">
-          <top>520</top>
-          <left>1245</left>
-          <width>500</width>
-          <height>20</height>
-          <scroll>true</scroll>
-          <label fallback="-">$INFO[Container(56).ListItem.Country]</label>
+        <control type="group">
+          <include content="Object_Ratings_Content">
+            <param name="directory" value="$INFO[Skin.String(Icons)]"/>
+            <param name="align" value="left"/>
+            <param name="top" value="460"/>
+            <param name="left" value="695"/>
+          </include>
         </control>
       </control>
       <control type="group">
@@ -120,8 +44,6 @@
         <height>720</height>
         <control type="group">
           <visible>Control.IsVisible(56)</visible>
-          <include>Visible_Right</include>
-          <include>OpenClose_Right</include>
           <control type="fixedlist" id="56">
             <top>466</top>
             <left>630</left>

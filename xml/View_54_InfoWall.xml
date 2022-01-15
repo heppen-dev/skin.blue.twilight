@@ -701,345 +701,329 @@
       </control>
       <control type="group">
         <visible>!String.IsEmpty(ListItem.Art(poster))</visible>
-        <!-- <control type="group">
-        <left>30</left>
-        <top>5</top>
-        <width>260</width>
-        <height>385</height>
         <control type="image">
-          <texture colordiffuse="$VAR[ColorHighlight]" border="10">common/white.png</texture>
+          <left>15</left>
+          <top>-10</top>
+          <width>290</width>
+          <height>415</height>
+          <texture background="true" diffuse="diffuse/poster-diffuse.png">$INFO[ListItem.Art(poster)]</texture>
+          <aspectratio scalediffuse="false">scale</aspectratio>
+          <bordersize>20</bordersize>
         </control>
         <control type="image">
-          <texture colordiffuse="$VAR[ColorGradient]" border="10">common/white-gradient.png</texture>
+          <left>35</left>
+          <top>290</top>
+          <width>80</width>
+          <height>80</height>
+          <texture>overlays/overlay-bg.png</texture>
+          <visible>Listitem.IsCollection | ListItem.IsPlaying | Integer.IsGreater(ListItem.Playcount,0)</visible>
         </control>
-        <bordersize>20</bordersize>
-        <visible>$PARAM[focused]</visible>
-        <include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
-      </control> -->
-      <control type="image">
-        <left>15</left>
-        <top>-10</top>
-        <width>290</width>
-        <height>415</height>
-        <texture background="true" diffuse="diffuse/poster-diffuse.png">$INFO[ListItem.Art(poster)]</texture>
-        <aspectratio scalediffuse="false">scale</aspectratio>
-        <bordersize>20</bordersize>
+        <include content="Selectbox">
+          <param name="pad_top_b" value="-10"/>
+          <param name="pad_bottom_b" value="-80"/>
+          <param name="pad_left_b" value="15"/>
+          <param name="pad_right_b" value="-15"/>
+          <param name="pad_top_t" value="-10"/>
+          <param name="pad_bottom_t" value="-16"/>
+          <param name="pad_left_t" value="-10"/>
+          <param name="pad_right_t" value="0"/>
+          <param name="visible_posters" value="$PARAM[focused]"/>
+          <param name="visible_squares" value="false"/>
+          <param name="visible_landscapes" value="false"/>
+        </include>
+      </control>
+      <control type="group">
+        <visible>String.IsEqual(ListItem.DBtype,tvshow)</visible>
+        <top>320</top>
+        <control type="image">
+          <left>35</left>
+          <top>0</top>
+          <width>250</width>
+          <height>50</height>
+          <texture colordiffuse="CCFFFFFF">overlays/overlayfade.png</texture>
+          <visible>!String.IsEmpty(ListItem.Art(poster))</visible>
+        </control>
+        <control type="label">
+          <left>0</left>
+          <top>20</top>
+          <width>244</width>
+          <label>$INFO[ListItem.Property(WatchedEpisodes)]$INFO[ListItem.Property(TotalEpisodes), / ,]</label>
+          <font>font20_title</font>
+          <shadowcolor>text_shadow</shadowcolor>
+          <align>right</align>
+        </control>
+        <control type="image">
+          <left>254</left>
+          <top>23</top>
+          <width>24</width>
+          <height>24</height>
+          <texture>lists/played-total.png</texture>
+        </control>
       </control>
       <control type="image">
         <left>35</left>
-        <top>290</top>
-        <width>80</width>
-        <height>80</height>
-        <texture>overlays/overlay-bg.png</texture>
-        <visible>Listitem.IsCollection | ListItem.IsPlaying | Integer.IsGreater(ListItem.Playcount,0)</visible>
+        <top>338</top>
+        <width>32</width>
+        <height>32</height>
+        <texture>$VAR[WallWatchedIconVar]</texture>
       </control>
-      <include content="Selectbox">
-        <param name="pad_top_b" value="-10"/>
-        <param name="pad_bottom_b" value="-80"/>
-        <param name="pad_left_b" value="15"/>
-        <param name="pad_right_b" value="-5"/>
-        <param name="pad_top_t" value="-10"/>
-        <param name="pad_bottom_t" value="-16"/>
-        <param name="pad_left_t" value="-10"/>
-        <param name="pad_right_t" value="0"/>
-        <param name="visible_posters" value="$PARAM[focused]"/>
-        <param name="visible_squares" value="false"/>
-        <param name="visible_landscapes" value="false"/>
-      </include>
-    </control>
-    <control type="group">
-      <visible>String.IsEqual(ListItem.DBtype,tvshow)</visible>
-      <top>320</top>
-      <control type="image">
+      <control type="group">
+        <left>135</left>
+        <top>-8</top>
+        <include condition="Skin.HasSetting(circle_rating) | Skin.HasSetting(circle_userrating)">RatingCircle</include>
+      </control>
+      <control type="progress">
         <left>35</left>
-        <top>0</top>
+        <top>350</top>
         <width>250</width>
-        <height>50</height>
-        <texture colordiffuse="CCFFFFFF">overlays/overlayfade.png</texture>
-        <visible>!String.IsEmpty(ListItem.Art(poster))</visible>
+        <height>1</height>
+        <texturebg>
+        </texturebg>
+        <midtexture colordiffuse="$VAR[ColorHighlight]" border="3">progress/texturebg_alt_white.png</midtexture>
+        <info>ListItem.PercentPlayed</info>
+        <visible>!Integer.IsEqual(ListItem.PercentPlayed,0)</visible>
       </control>
-      <control type="label">
-        <left>0</left>
-        <top>20</top>
-        <width>244</width>
-        <label>$INFO[ListItem.Property(WatchedEpisodes)]$INFO[ListItem.Property(TotalEpisodes), / ,]</label>
-        <font>font20_title</font>
-        <shadowcolor>text_shadow</shadowcolor>
-        <align>right</align>
-      </control>
-      <control type="image">
-        <left>254</left>
-        <top>23</top>
-        <width>24</width>
-        <height>24</height>
-        <texture>lists/played-total.png</texture>
-      </control>
-    </control>
-    <control type="image">
-      <left>35</left>
-      <top>338</top>
-      <width>32</width>
-      <height>32</height>
-      <texture>$VAR[WallWatchedIconVar]</texture>
-    </control>
+    </definition>
+  </include>
+  <include name="View_54_InfoWall">
     <control type="group">
-      <left>135</left>
-      <top>-8</top>
-      <include condition="Skin.HasSetting(circle_rating) | Skin.HasSetting(circle_userrating)">RatingCircle</include>
-    </control>
-    <control type="progress">
-      <left>35</left>
-      <top>350</top>
-      <width>250</width>
-      <height>1</height>
-      <texturebg>
-      </texturebg>
-      <midtexture colordiffuse="$VAR[ColorHighlight]" border="3">progress/texturebg_alt_white.png</midtexture>
-      <info>ListItem.PercentPlayed</info>
-      <visible>!Integer.IsEqual(ListItem.PercentPlayed,0)</visible>
-    </control>
-  </definition>
-</include>
-<include name="View_54_InfoWall">
-  <control type="group">
-    <include>OpenClose_Right</include>
-    <left>100</left>
-    <top>0</top>
-    <visible>Control.IsVisible(54)</visible>
-    <include>Visible_Right</include>
-    <control type="panel" id="54">
-      <left>490</left>
+      <include>OpenClose_Bottom</include>
+      <left>100</left>
       <top>0</top>
-      <right>15</right>
-      <height>100%</height>
-      <onleft>SetFocus(9000)</onleft>
-      <onright>531</onright>
-      <onup condition="Integer.IsGreater(Container.NumPages,1)">54</onup>
-      <onup condition="!Integer.IsGreater(Container.NumPages,1)">SetFocus(9000)</onup>
-      <ondown>54</ondown>
-      <viewtype label="31101">icon</viewtype>
-      <include content="View_Forced">
-        <param name="string" value="$LOCALIZE[31101]"/>
-      </include>
-      <preloaditems>2</preloaditems>
-      <pagecontrol>531</pagecontrol>
-      <scrolltime tween="cubic" easing="out">500</scrolltime>
-      <visible>Container.Content(artists) | Container.Content(albums) | Container.Content(sets) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) |					Container.Content(musicvideos) | Container.Content(images) | Container.Content(videos) | Container.Content(games)</visible>
-      <itemlayout height="445" width="320" condition="Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | [Container.Content(musicvideos) + Skin.HasSetting(show_musicvideoposter)]">
-        <control type="group">
-          <left>30</left>
-          <top>120</top>
-          <include>InfoWallMovieLayout</include>
-        </control>
-      </itemlayout>
-      <focusedlayout height="445" width="320" condition="Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | [Container.Content(musicvideos) + Skin.HasSetting(show_musicvideoposter)]">
-        <control type="group">
-          <depth>DepthContentPopout</depth>
-          <left>30</left>
-          <animation effect="zoom" start="100" end="110" time="200" tween="sine" easing="inout" center="190,300">Focus</animation>
-          <animation effect="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="190,300">UnFocus</animation>
-          <top>120</top>
-          <include content="InfoWallMovieLayout">
-            <param name="focused" value="true"/>
-          </include>
-        </control>
-      </focusedlayout>
-      <itemlayout height="301" width="300" condition="Container.Content(episodes) | Container.Content(videos) | [Container.Content(musicvideos) + !Skin.HasSetting(show_musicvideoposter)]">
-        <control type="group">
-          <left>64</left>
-          <top>110</top>
-          <include content="InfoWallEpisodeLayout">
-            <param name="focused" value="false"/>
-            <param name="thumb_label" value="$INFO[ListItem.Label2]"/>
-          </include>
-        </control>
-      </itemlayout>
-      <focusedlayout height="301" width="300" condition="Container.Content(episodes) | Container.Content(videos) | [Container.Content(musicvideos) + !Skin.HasSetting(show_musicvideoposter)]">
-        <control type="group">
-          <depth>DepthContentPopout</depth>
-          <animation effect="zoom" start="100" end="110" time="200" tween="sine" easing="inout" center="220,250">Focus</animation>
-          <animation effect="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="220,250">UnFocus</animation>
-          <left>64</left>
-          <top>110</top>
-          <include content="InfoWallEpisodeLayout">
-            <param name="focused" value="true"/>
-            <param name="thumb_label" value="$INFO[ListItem.Label2]"/>
-          </include>
-        </control>
-      </focusedlayout>
-      <itemlayout height="410" width="310" condition="Container.Content(artists) | Container.Content(albums)">
-        <control type="group">
-          <top>150</top>
-          <left>40</left>
-          <include>InfoWallMusicLayout</include>
-        </control>
-      </itemlayout>
-      <focusedlayout height="410" width="310" condition="Container.Content(artists) | Container.Content(albums)">
-        <control type="group">
-          <depth>DepthContentPopout</depth>
-          <animation effect="zoom" start="100" end="115" time="200" tween="sine" easing="inout" center="200,350">Focus</animation>
-          <animation effect="zoom" start="115" end="100" time="200" tween="sine" easing="inout" center="200,350">UnFocus</animation>
-          <top>150</top>
-          <left>40</left>
-          <include content="InfoWallMusicLayout">
-            <param name="focused" value="true"/>
-          </include>
-        </control>
-      </focusedlayout>
-      <itemlayout height="401" width="378" condition="Container.Content(images)">
-        <control type="group">
-          <left>0</left>
-          <top>150</top>
-          <include>InfoWallPictureLayout</include>
-        </control>
-      </itemlayout>
-      <focusedlayout height="401" width="378" condition="Container.Content(images)">
-        <control type="group">
-          <depth>DepthContentPopout</depth>
-          <left>0</left>
-          <top>150</top>
-          <animation effect="zoom" start="100" end="110" time="200" tween="sine" easing="inout" center="180,330">Focus</animation>
-          <animation effect="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="180,330">UnFocus</animation>
-          <include content="InfoWallPictureLayout">
-            <param name="focused" value="true"/>
-          </include>
-        </control>
-      </focusedlayout>
-    </control>
-  </control>
-</include>
-<include name="View_56_Posters_Layout">
-  <param name="focused">false</param>
-  <param name="WallWatchedIconVar_visible" default="true"/>
-  <definition>
-    <control type="group">
-      <visible>String.IsEmpty(ListItem.Art(poster))</visible>
-      <control type="image">
-        <left>15</left>
-        <top>-10</top>
-        <width>290</width>
-        <height>400</height>
-        <texture>dialogs/dialog-bg-nobo.png</texture>
-        <bordertexture border="21">overlays/shadow.png</bordertexture>
-        <bordersize>20</bordersize>
-      </control>
-      <control type="image">
-        <left>15</left>
-        <top>-10</top>
-        <width>290</width>
-        <height>400</height>
-        <texture colordiffuse="$VAR[ColorHighlight]">colors/grey.png</texture>
-        <bordersize>20</bordersize>
-        <visible>$PARAM[focused]</visible>
-        <include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
-      </control>
-      <control type="textbox">
-        <left>40</left>
-        <top>244</top>
-        <width>242</width>
-        <height>120</height>
-        <font>font27</font>
-        <align>center</align>
-        <aligny>center</aligny>
-        <label>$INFO[ListItem.Label]</label>
-        <autoscroll time="2000" delay="3000" repeat="5000">$PARAM[focused]</autoscroll>
-        <visible>!ListItem.IsParentFolder</visible>
-      </control>
-      <control type="image">
-        <left>24</left>
-        <top>-1</top>
-        <width>272</width>
-        <height>270</height>
-        <texture fallback="DefaultMovies.png" background="true">$INFO[ListItem.Icon]</texture>
-        <aspectratio>scale</aspectratio>
-        <bordersize>20</bordersize>
-      </control>
-    </control>
-    <control type="group">
-      <visible>!String.IsEmpty(ListItem.Art(poster))</visible>
-      <control type="image">
-        <left>11</left>
-        <top>-14</top>
-        <width>298</width>
-        <height>408</height>
-        <texture colordiffuse="$VAR[ColorHighlight]">colors/grey.png</texture>
-        <bordertexture border="21">overlays/shadow.png</bordertexture>
-        <bordersize>20</bordersize>
-        <visible>$PARAM[focused]</visible>
-        <include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
-      </control>
-      <control type="image">
-        <left>15</left>
-        <top>-10</top>
-        <width>290</width>
-        <height>400</height>
-        <aspectratio scalediffuse="false">scale</aspectratio>
-        <texture background="true" diffuse="diffuse/poster-diffuse.png">$INFO[ListItem.Art(poster)]</texture>
-        <bordersize>20</bordersize>
-      </control>
-      <control type="image">
-        <left>35</left>
-        <top>290</top>
-        <width>80</width>
-        <height>80</height>
-        <texture>overlays/overlay-bg.png</texture>
-        <visible>Listitem.IsCollection | ListItem.IsPlaying | Integer.IsGreater(ListItem.Playcount,0)</visible>
-      </control>
-    </control>
-    <control type="group">
-      <visible>String.IsEqual(ListItem.DBtype,tvshow)</visible>
-      <top>320</top>
-      <control type="image">
-        <left>35</left>
+      <visible>Control.IsVisible(54)</visible>
+      <control type="panel" id="54">
+        <left>490</left>
         <top>0</top>
-        <width>250</width>
-        <height>50</height>
-        <texture colordiffuse="CCFFFFFF">overlays/overlayfade.png</texture>
-        <visible>!String.IsEmpty(ListItem.Art(poster))</visible>
+        <right>15</right>
+        <height>100%</height>
+        <onleft>SetFocus(9000)</onleft>
+        <onright>531</onright>
+        <onup condition="Integer.IsGreater(Container.NumPages,1)">54</onup>
+        <onup condition="!Integer.IsGreater(Container.NumPages,1)">SetFocus(9000)</onup>
+        <ondown>54</ondown>
+        <viewtype label="31101">icon</viewtype>
+        <include content="View_Forced">
+          <param name="string" value="$LOCALIZE[31101]"/>
+        </include>
+        <preloaditems>2</preloaditems>
+        <pagecontrol>531</pagecontrol>
+        <scrolltime tween="cubic" easing="out">500</scrolltime>
+        <visible>Container.Content(artists) | Container.Content(albums) | Container.Content(sets) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) |					Container.Content(musicvideos) | Container.Content(images) | Container.Content(videos) | Container.Content(games)</visible>
+        <itemlayout height="445" width="320" condition="Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | [Container.Content(musicvideos) + Skin.HasSetting(show_musicvideoposter)]">
+          <control type="group">
+            <left>30</left>
+            <top>120</top>
+            <include>InfoWallMovieLayout</include>
+          </control>
+        </itemlayout>
+        <focusedlayout height="445" width="320" condition="Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | [Container.Content(musicvideos) + Skin.HasSetting(show_musicvideoposter)]">
+          <control type="group">
+            <depth>DepthContentPopout</depth>
+            <left>30</left>
+            <animation effect="zoom" start="100" end="110" time="200" tween="sine" easing="inout" center="190,300">Focus</animation>
+            <animation effect="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="190,300">UnFocus</animation>
+            <top>120</top>
+            <include content="InfoWallMovieLayout">
+              <param name="focused" value="true"/>
+            </include>
+          </control>
+        </focusedlayout>
+        <itemlayout height="301" width="300" condition="Container.Content(episodes) | Container.Content(videos) | [Container.Content(musicvideos) + !Skin.HasSetting(show_musicvideoposter)]">
+          <control type="group">
+            <left>64</left>
+            <top>110</top>
+            <include content="InfoWallEpisodeLayout">
+              <param name="focused" value="false"/>
+              <param name="thumb_label" value="$INFO[ListItem.Label2]"/>
+            </include>
+          </control>
+        </itemlayout>
+        <focusedlayout height="301" width="300" condition="Container.Content(episodes) | Container.Content(videos) | [Container.Content(musicvideos) + !Skin.HasSetting(show_musicvideoposter)]">
+          <control type="group">
+            <depth>DepthContentPopout</depth>
+            <animation effect="zoom" start="100" end="110" time="200" tween="sine" easing="inout" center="220,250">Focus</animation>
+            <animation effect="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="220,250">UnFocus</animation>
+            <left>64</left>
+            <top>110</top>
+            <include content="InfoWallEpisodeLayout">
+              <param name="focused" value="true"/>
+              <param name="thumb_label" value="$INFO[ListItem.Label2]"/>
+            </include>
+          </control>
+        </focusedlayout>
+        <itemlayout height="410" width="310" condition="Container.Content(artists) | Container.Content(albums)">
+          <control type="group">
+            <top>150</top>
+            <left>40</left>
+            <include>InfoWallMusicLayout</include>
+          </control>
+        </itemlayout>
+        <focusedlayout height="410" width="310" condition="Container.Content(artists) | Container.Content(albums)">
+          <control type="group">
+            <depth>DepthContentPopout</depth>
+            <animation effect="zoom" start="100" end="115" time="200" tween="sine" easing="inout" center="200,350">Focus</animation>
+            <animation effect="zoom" start="115" end="100" time="200" tween="sine" easing="inout" center="200,350">UnFocus</animation>
+            <top>150</top>
+            <left>40</left>
+            <include content="InfoWallMusicLayout">
+              <param name="focused" value="true"/>
+            </include>
+          </control>
+        </focusedlayout>
+        <itemlayout height="401" width="378" condition="Container.Content(images)">
+          <control type="group">
+            <left>0</left>
+            <top>150</top>
+            <include>InfoWallPictureLayout</include>
+          </control>
+        </itemlayout>
+        <focusedlayout height="401" width="378" condition="Container.Content(images)">
+          <control type="group">
+            <depth>DepthContentPopout</depth>
+            <left>0</left>
+            <top>150</top>
+            <animation effect="zoom" start="100" end="110" time="200" tween="sine" easing="inout" center="180,330">Focus</animation>
+            <animation effect="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="180,330">UnFocus</animation>
+            <include content="InfoWallPictureLayout">
+              <param name="focused" value="true"/>
+            </include>
+          </control>
+        </focusedlayout>
       </control>
-      <control type="label">
-        <left>0</left>
-        <top>20</top>
-        <width>244</width>
-        <label>$INFO[ListItem.Property(WatchedEpisodes)]$INFO[ListItem.Property(TotalEpisodes), / ,]</label>
-        <font>font20_title</font>
-        <shadowcolor>text_shadow</shadowcolor>
-        <align>right</align>
-        <visible>!Control.HasFocus(510)</visible>
+    </control>
+  </include>
+  <include name="View_56_Posters_Layout">
+    <param name="focused">false</param>
+    <param name="WallWatchedIconVar_visible" default="true"/>
+    <definition>
+      <control type="group">
+        <visible>String.IsEmpty(ListItem.Art(poster))</visible>
+        <control type="image">
+          <left>15</left>
+          <top>-10</top>
+          <width>290</width>
+          <height>400</height>
+          <texture>dialogs/dialog-bg-nobo.png</texture>
+          <bordertexture border="21">overlays/shadow.png</bordertexture>
+          <bordersize>20</bordersize>
+        </control>
+        <control type="image">
+          <left>15</left>
+          <top>-10</top>
+          <width>290</width>
+          <height>400</height>
+          <texture colordiffuse="$VAR[ColorHighlight]">colors/grey.png</texture>
+          <bordersize>20</bordersize>
+          <visible>$PARAM[focused]</visible>
+          <include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
+        </control>
+        <control type="textbox">
+          <left>40</left>
+          <top>244</top>
+          <width>242</width>
+          <height>120</height>
+          <font>font27</font>
+          <align>center</align>
+          <aligny>center</aligny>
+          <label>$INFO[ListItem.Label]</label>
+          <autoscroll time="2000" delay="3000" repeat="5000">$PARAM[focused]</autoscroll>
+          <visible>!ListItem.IsParentFolder</visible>
+        </control>
+        <control type="image">
+          <left>24</left>
+          <top>-1</top>
+          <width>272</width>
+          <height>270</height>
+          <texture fallback="DefaultMovies.png" background="true">$INFO[ListItem.Icon]</texture>
+          <aspectratio>scale</aspectratio>
+          <bordersize>20</bordersize>
+        </control>
+      </control>
+      <control type="group">
+        <visible>!String.IsEmpty(ListItem.Art(poster))</visible>
+        <control type="image">
+          <left>11</left>
+          <top>-14</top>
+          <width>298</width>
+          <height>408</height>
+          <texture colordiffuse="$VAR[ColorHighlight]">colors/grey.png</texture>
+          <bordertexture border="21">overlays/shadow.png</bordertexture>
+          <bordersize>20</bordersize>
+          <visible>$PARAM[focused]</visible>
+          <include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
+        </control>
+        <control type="image">
+          <left>15</left>
+          <top>-10</top>
+          <width>290</width>
+          <height>400</height>
+          <aspectratio scalediffuse="false">scale</aspectratio>
+          <texture background="true" diffuse="diffuse/poster-diffuse.png">$INFO[ListItem.Art(poster)]</texture>
+          <bordersize>20</bordersize>
+        </control>
+        <control type="image">
+          <left>35</left>
+          <top>290</top>
+          <width>80</width>
+          <height>80</height>
+          <texture>overlays/overlay-bg.png</texture>
+          <visible>Listitem.IsCollection | ListItem.IsPlaying | Integer.IsGreater(ListItem.Playcount,0)</visible>
+        </control>
+      </control>
+      <control type="group">
+        <visible>String.IsEqual(ListItem.DBtype,tvshow)</visible>
+        <top>320</top>
+        <control type="image">
+          <left>35</left>
+          <top>0</top>
+          <width>250</width>
+          <height>50</height>
+          <texture colordiffuse="CCFFFFFF">overlays/overlayfade.png</texture>
+          <visible>!String.IsEmpty(ListItem.Art(poster))</visible>
+        </control>
+        <control type="label">
+          <left>0</left>
+          <top>20</top>
+          <width>244</width>
+          <label>$INFO[ListItem.Property(WatchedEpisodes)]$INFO[ListItem.Property(TotalEpisodes), / ,]</label>
+          <font>font20_title</font>
+          <shadowcolor>text_shadow</shadowcolor>
+          <align>right</align>
+          <visible>!Control.HasFocus(510)</visible>
+        </control>
+        <control type="image">
+          <left>254</left>
+          <top>23</top>
+          <width>24</width>
+          <height>24</height>
+          <texture>lists/played-total.png</texture>
+          <visible>!Control.HasFocus(510)</visible>
+        </control>
       </control>
       <control type="image">
-        <left>254</left>
-        <top>23</top>
-        <width>24</width>
-        <height>24</height>
-        <texture>lists/played-total.png</texture>
-        <visible>!Control.HasFocus(510)</visible>
+        <left>35</left>
+        <top>338</top>
+        <width>32</width>
+        <height>32</height>
+        <texture>$VAR[WallWatchedIconVar]</texture>
+        <visible>$PARAM[WallWatchedIconVar_visible]</visible>
       </control>
-    </control>
-    <control type="image">
-      <left>35</left>
-      <top>338</top>
-      <width>32</width>
-      <height>32</height>
-      <texture>$VAR[WallWatchedIconVar]</texture>
-      <visible>$PARAM[WallWatchedIconVar_visible]</visible>
-    </control>
-    <control type="group">
-      <left>135</left>
-      <top>-8</top>
-      <include condition="Skin.HasSetting(circle_rating) | Skin.HasSetting(circle_userrating)">RatingCircle</include>
-    </control>
-    <control type="progress">
-      <left>35</left>
-      <top>350</top>
-      <width>250</width>
-      <height>1</height>
-      <texturebg>
-      </texturebg>
-      <midtexture colordiffuse="$VAR[ColorHighlight]" border="3">progress/texturebg_alt_white.png</midtexture>
-      <info>ListItem.PercentPlayed</info>
-      <visible>!Integer.IsEqual(ListItem.PercentPlayed,0)</visible>
-    </control>
-  </definition>
-</include>
+      <control type="group">
+        <left>135</left>
+        <top>-8</top>
+        <include condition="Skin.HasSetting(circle_rating) | Skin.HasSetting(circle_userrating)">RatingCircle</include>
+      </control>
+      <control type="progress">
+        <left>35</left>
+        <top>350</top>
+        <width>250</width>
+        <height>1</height>
+        <texturebg>
+        </texturebg>
+        <midtexture colordiffuse="$VAR[ColorHighlight]" border="3">progress/texturebg_alt_white.png</midtexture>
+        <info>ListItem.PercentPlayed</info>
+        <visible>!Integer.IsEqual(ListItem.PercentPlayed,0)</visible>
+      </control>
+    </definition>
+  </include>
 </includes>
