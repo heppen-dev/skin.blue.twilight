@@ -34,10 +34,10 @@
       <control type="grouplist" id="3">
         <description>Categories Area</description>
         <left>0</left>
-        <top>100</top>
+        <top>120</top>
         <width>427</width>
         <height>825</height>
-        <itemgap>-40</itemgap>
+        <itemgap>0</itemgap>
         <orientation>vertical</orientation>
         <onleft>9000</onleft>
         <onright>5</onright>
@@ -46,7 +46,7 @@
       </control>
       <control type="button" id="10">
         <description>Default Category Button</description>
-        <height>115</height>
+        <height>75</height>
         <width>390</width>
         <textoffsetx>20</textoffsetx>
         <align>center</align>
