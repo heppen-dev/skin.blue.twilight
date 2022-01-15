@@ -104,7 +104,7 @@
           <control type="group">
             <top>400</top>
             <left>615</left>
-            <visible>Control.HasFocus(51)</visible>
+            <visible>Control.IsVisible(51)</visible>
             <control type="group">
               <top>60</top>
               <control type="image">
@@ -119,19 +119,19 @@
             <control type="group">
               <top>0</top>
               <include content="Object_Info_First_Line">
-                <param name="visible_condi" value="Control.HasFocus(51)" />
+                <param name="visible_condi" value="Control.IsVisible(51)" />
               </include>
             </control>
             <control type="group">
               <top>60</top>
               <include content="Object_Info_Line_MediaFlags">
-                <param name="visible_infoline" value="Control.HasFocus(51)" />
+                <param name="visible_infoline" value="Control.IsVisible(51)" />
               </include>
             </control>
             <control type="group">
               <top>225</top>
               <include content="Object_Video_Info_Line">
-                <param name="visible_infoline" value="Control.HasFocus(51)" />
+                <param name="visible_infoline" value="Control.IsVisible(51)" />
               </include>
             </control>
             <control type="group">
@@ -197,7 +197,7 @@
         <param name="pad_bottom_t" value="-4"/>
         <param name="pad_left_t" value="17"/>
         <param name="pad_right_t" value="-32"/>
-        <param name="visible_posters" value="Control.HasFocus(51)"/>
+        <param name="visible_posters" value="Control.IsVisible(51)"/>
         <param name="visible_squares" value="false"/>
         <param name="visible_landscapes" value="false"/>
         <param name="focusbounce" value="false" />

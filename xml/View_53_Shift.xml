@@ -6,7 +6,7 @@
       <centerleft>50%</centerleft>
       <height>155</height>
       <width>400</width>
-      <visible>Control.HasFocus(53)</visible>
+      <visible>Control.IsVisible(53)</visible>
       <control type="image">
         <top>0</top>
         <height>155</height>
@@ -51,7 +51,7 @@
           <top>600</top>
           <width>280</width>
           <height>110</height>
-          <visible>Control.HasFocus(53)</visible>
+          <visible>Control.IsVisible(53)</visible>
           <animation effect="fade" time="200">VisibleChange</animation>
           <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
           <animation effect="slide" start="0,0" end="-364,0" time="300" tween="sine" easing="inout" condition="Integer.IsEqual(Container.Position,1) | Integer.IsEqual(Container.Position,0)">Conditional</animation>
