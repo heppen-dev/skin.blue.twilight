@@ -60,8 +60,9 @@
         <param name="breadcrumbs_label" value="$VAR[BreadcrumbsPVRSearchVar]"/>
       </include>
       <control type="group">
-        <include>MediaMenuCommon</include>
-        <include>PVRSideBar</include>
+        <include content="MediaMenuCommon">
+          <include>PVRSideBar</include>
+        </include>
       </control>
     </control>
   </controls>

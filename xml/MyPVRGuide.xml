@@ -216,9 +216,10 @@
       </control>
       <include>PVRChannelNumberInput</include>
       <control type="group">
-        <include>MediaMenuCommon</include>
-        <include content="PVRSideBar">
-          <param name="group_label2" value="$INFO[Control.GetLabel(30)]"/>
+        <include content="MediaMenuCommon">
+          <include content="PVRSideBar">
+            <param name="group_label2" value="$INFO[Control.GetLabel(30)]"/>
+          </include>
         </include>
       </control>
     </control>

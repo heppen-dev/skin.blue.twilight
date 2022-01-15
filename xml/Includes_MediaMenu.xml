@@ -58,7 +58,7 @@
         <top>50</top>
         <left>0</left>
         <width>470</width>
-        <height>100%</height>
+        <height>525</height>
         <onleft>9000</onleft>
         <onup>9000</onup>
         <onright>50</onright>
@@ -298,7 +298,7 @@
       <left>-45</left>
       <top>30</top>
       <width>580</width>
-      <height>800</height>
+      <height>580</height>
       <texture border="24" colordiffuse="dialog_bg_100">common/box.png</texture>
       <bordertexture border="42" colordiffuse="dialog_fg_30">common/dark-shadow-24-2.png</bordertexture>
       <bordersize>24</bordersize>
@@ -320,6 +320,7 @@
       <description>Order Toggle</description>
       <include>HiddenObject</include>
     </control>
+    <nested />
   </include>
   <include name="MediaMenuNowPlaying">
     <param name="left">5</param>

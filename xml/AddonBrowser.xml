@@ -46,46 +46,48 @@
       </include>
       <include>MediaMenuMouseOverlay</include>
       <control type="group">
-        <include>MediaMenuCommon</include>
-        <include content="DefaultSettingButtonGradient">
-          <param name="id" value="9000"/>
-          <top>50</top>
-          <width>530</width>
-          <height>75</height>
-          <left>-20</left>
-          <visible>ControlGroup(9000).HasFocus()</visible>
+        <include content="MediaMenuCommon">
+          <include content="DefaultSettingButtonGradient">
+            <param name="id" value="9000"/>
+            <top>50</top>
+            <width>530</width>
+            <height>75</height>
+            <left>-20</left>
+            <visible>ControlGroup(9000).HasFocus()</visible>
+          </include>
+          <control type="grouplist" id="9000">
+            <top>50</top>
+            <height>525</height>
+            <include>MediaMenuListCommon</include>
+            <control type="label" id="201">
+              <include>MediaMenuLabelCommon</include>
+              <label>$LOCALIZE[31021]</label>
+            </control>
+            <control type="radiobutton" id="7">
+              <description>Hide foreign</description>
+              <include>MediaMenuItemsCommon</include>
+              <label>$LOCALIZE[25001]</label>
+              <visible>Control.IsEnabled(7)</visible>
+            </control>
+            <control type="radiobutton" id="8">
+              <description>Hide incompatible</description>
+              <include>MediaMenuItemsCommon</include>
+              <label>$LOCALIZE[24999]</label>
+              <visible>Control.IsEnabled(8)</visible>
+            </control>
+            <control type="button" id="9">
+              <description>Check for repository updates</description>
+              <include>MediaMenuItemsCommon</include>
+              <label>$LOCALIZE[24034]</label>
+            </control>
+            <control type="button" id="5">
+              <description>Addon settings</description>
+              <include>MediaMenuItemsCommon</include>
+              <label>$LOCALIZE[10004]</label>
+            </control>
+            <!-- <include>MediaMenuNowPlaying</include> -->
+          </control>
         </include>
-        <control type="grouplist" id="9000">
-          <top>50</top>
-          <include>MediaMenuListCommon</include>
-          <control type="label" id="201">
-            <include>MediaMenuLabelCommon</include>
-            <label>$LOCALIZE[31021]</label>
-          </control>
-          <control type="radiobutton" id="7">
-            <description>Hide foreign</description>
-            <include>MediaMenuItemsCommon</include>
-            <label>$LOCALIZE[25001]</label>
-            <visible>Control.IsEnabled(7)</visible>
-          </control>
-          <control type="radiobutton" id="8">
-            <description>Hide incompatible</description>
-            <include>MediaMenuItemsCommon</include>
-            <label>$LOCALIZE[24999]</label>
-            <visible>Control.IsEnabled(8)</visible>
-          </control>
-          <control type="button" id="9">
-            <description>Check for repository updates</description>
-            <include>MediaMenuItemsCommon</include>
-            <label>$LOCALIZE[24034]</label>
-          </control>
-          <control type="button" id="5">
-            <description>Addon settings</description>
-            <include>MediaMenuItemsCommon</include>
-            <label>$LOCALIZE[10004]</label>
-          </control>
-          <include>MediaMenuNowPlaying</include>
-        </control>
       </control>
       <control type="group">
         <height>78</height>

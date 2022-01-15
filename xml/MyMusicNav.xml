@@ -26,63 +26,65 @@
       </include>
       <include>MediaMenuMouseOverlay</include>
       <control type="group">
-        <include>MediaMenuCommon</include>
-        <include content="DefaultSettingButtonGradient">
-          <param name="id" value="9000"/>
-          <top>50</top>
-          <width>530</width>
-          <height>75</height>
-          <left>-20</left>
-          <visible>ControlGroup(9000).HasFocus()</visible>
+        <include content="MediaMenuCommon">
+          <include content="DefaultSettingButtonGradient">
+            <param name="id" value="9000"/>
+            <top>50</top>
+            <width>530</width>
+            <height>75</height>
+            <left>-20</left>
+            <visible>ControlGroup(9000).HasFocus()</visible>
+          </include>
+          <control type="grouplist" id="9000">
+            <top>50</top>
+            <height>525</height>
+            <include>MediaMenuListCommon</include>
+            <control type="label" id="203">
+              <description>Actions</description>
+              <include>MediaMenuLabelCommon</include>
+              <label>$LOCALIZE[31020]</label>
+            </control>
+            <control type="togglebutton" id="619">
+              <include>MediaMenuItemsCommon</include>
+              <label>$LOCALIZE[653]</label>
+              <onclick>UpdateLibrary(music)</onclick>
+              <visible>!Container.Content(addons)+ String.IsEmpty(Container.PluginName)</visible>
+              <altlabel>$LOCALIZE[13353]</altlabel>
+              <usealttexture>library.isscanningmusic</usealttexture>
+            </control>
+            <control type="radiobutton" id="16">
+              <label>$LOCALIZE[589]</label>
+              <include>MediaMenuItemsCommon</include>
+            </control>
+            <control type="button" id="612">
+              <include>MediaMenuItemsCommon</include>
+              <label>$LOCALIZE[31056]</label>
+              <onclick>ActivateWindow(musicplaylist)</onclick>
+              <visible>Integer.IsGreater(Playlist.Length(music),0)</visible>
+            </control>
+            <control type="button" id="621">
+              <include>MediaMenuItemsCommon</include>
+              <label>$LOCALIZE[21452]</label>
+              <onclick>ActivateWindow(addonbrowser,addons://more/audio/,return)</onclick>
+              <visible>Container.Content(addons)</visible>
+            </control>
+            <control type="button" id="624">
+              <include>MediaMenuItemsCommon</include>
+              <label>$LOCALIZE[10140]</label>
+              <onclick>Addon.OpenSettings($INFO[Container.PluginName])</onclick>
+              <visible>!String.IsEmpty(Container.PluginName)</visible>
+            </control>
+            <control type="button" id="622">
+              <include>MediaMenuItemsCommon</include>
+              <label>$LOCALIZE[31117]</label>
+              <onclick condition="System.AddonIsEnabled(plugin.library.node.editor)">ActivateWindow(programs,plugin://plugin.library.node.editor/?ltype=music,return)</onclick>
+              <onclick condition="System.HasAddon(plugin.library.node.editor) + !System.AddonIsEnabled(plugin.library.node.editor)">EnableAddon(plugin.library.node.editor)</onclick>
+              <onclick condition="!System.HasAddon(plugin.library.node.editor)">InstallAddon(plugin.library.node.editor)</onclick>
+              <visible>String.IsEmpty(Container.FolderPath) + String.IsEmpty(Container.PluginName)</visible>
+            </control>
+            <!-- <include>MediaMenuNowPlaying</include> -->
+          </control>
         </include>
-        <control type="grouplist" id="9000">
-          <top>50</top>
-          <include>MediaMenuListCommon</include>
-          <control type="label" id="203">
-            <description>Actions</description>
-            <include>MediaMenuLabelCommon</include>
-            <label>$LOCALIZE[31020]</label>
-          </control>
-          <control type="togglebutton" id="619">
-            <include>MediaMenuItemsCommon</include>
-            <label>$LOCALIZE[653]</label>
-            <onclick>UpdateLibrary(music)</onclick>
-            <visible>!Container.Content(addons)+ String.IsEmpty(Container.PluginName)</visible>
-            <altlabel>$LOCALIZE[13353]</altlabel>
-            <usealttexture>library.isscanningmusic</usealttexture>
-          </control>
-          <control type="radiobutton" id="16">
-            <label>$LOCALIZE[589]</label>
-            <include>MediaMenuItemsCommon</include>
-          </control>
-          <control type="button" id="612">
-            <include>MediaMenuItemsCommon</include>
-            <label>$LOCALIZE[31056]</label>
-            <onclick>ActivateWindow(musicplaylist)</onclick>
-            <visible>Integer.IsGreater(Playlist.Length(music),0)</visible>
-          </control>
-          <control type="button" id="621">
-            <include>MediaMenuItemsCommon</include>
-            <label>$LOCALIZE[21452]</label>
-            <onclick>ActivateWindow(addonbrowser,addons://more/audio/,return)</onclick>
-            <visible>Container.Content(addons)</visible>
-          </control>
-          <control type="button" id="624">
-            <include>MediaMenuItemsCommon</include>
-            <label>$LOCALIZE[10140]</label>
-            <onclick>Addon.OpenSettings($INFO[Container.PluginName])</onclick>
-            <visible>!String.IsEmpty(Container.PluginName)</visible>
-          </control>
-          <control type="button" id="622">
-            <include>MediaMenuItemsCommon</include>
-            <label>$LOCALIZE[31117]</label>
-            <onclick condition="System.AddonIsEnabled(plugin.library.node.editor)">ActivateWindow(programs,plugin://plugin.library.node.editor/?ltype=music,return)</onclick>
-            <onclick condition="System.HasAddon(plugin.library.node.editor) + !System.AddonIsEnabled(plugin.library.node.editor)">EnableAddon(plugin.library.node.editor)</onclick>
-            <onclick condition="!System.HasAddon(plugin.library.node.editor)">InstallAddon(plugin.library.node.editor)</onclick>
-            <visible>String.IsEmpty(Container.FolderPath) + String.IsEmpty(Container.PluginName)</visible>
-          </control>
-          <include>MediaMenuNowPlaying</include>
-        </control>
       </control>
     </control>
   </controls>

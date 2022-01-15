@@ -75,8 +75,9 @@
       <font>font27</font>
     </control>
     <control type="group">
-      <include>MediaMenuCommon</include>
-      <include>PVRSideBar</include>
+      <include content="MediaMenuCommon">
+        <include>PVRSideBar</include>
+      </include>
     </control>
     <control type="label" id="29">
       <font/>
