@@ -30,8 +30,8 @@
         <width>2400</width>
         <scrolltime tween="linear" easing="inout">400</scrolltime>
         <orientation>horizontal</orientation>
-        <onleft>9000</onleft>
-        <onup>9000</onup>
+        <onleft>SetFocus(9000)</onleft>
+        <onup>SetFocus(9000)</onup>
         <ondown>62</ondown>
         <pagecontrol>62</pagecontrol>
         <focusposition>1</focusposition>

@@ -300,7 +300,6 @@
     <value>special://skin/extras/icons/antenna.png</value>
   </variable>
   <variable name="Label_ExtraFanart">
-    <value condition="Skin.HasSetting(ArtworkHelper.EnableExtraFanart)">$LOCALIZE[31014]: $LOCALIZE[16041]</value>
     <value>$LOCALIZE[31014]: $LOCALIZE[16039]</value>
   </variable>
   <variable name="Label_Filtered">

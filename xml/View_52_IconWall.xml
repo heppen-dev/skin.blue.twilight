@@ -10,7 +10,7 @@
         <top>0</top>
         <width>92%</width>
         <height>100%</height>
-        <onleft>9000</onleft>
+        <onleft>SetFocus(9000)</onleft>
         <onright>531</onright>
         <pagecontrol>531</pagecontrol>
         <preloaditems>2</preloaditems>

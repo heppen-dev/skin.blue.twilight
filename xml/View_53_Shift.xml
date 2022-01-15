@@ -71,7 +71,7 @@
           <orientation>horizontal</orientation>
           <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(musicvideos) | Container.Content(artists) | Container.Content(albums) |						Container.Content(mixed) | Container.Content(images) | Container.Content(videos) | Container.Content(games)</visible>
           <onleft>53</onleft>
-          <ondown>9000</ondown>
+          <ondown>SetFocus(9000)</ondown>
           <onup>62</onup>
           <onright>53</onright>
           <preloaditems>1</preloaditems>

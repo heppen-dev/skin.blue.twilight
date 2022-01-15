@@ -40,7 +40,7 @@
           <orientation>horizontal</orientation>
           <onleft>51</onleft>
           <ondown>62</ondown>
-          <onup>9000</onup>
+          <onup>SetFocus(9000)</onup>
           <onright>51</onright>
           <hitrect x="100" y="0" w="800" h="400"/>
           <visible>Container.Content(movies) | Container.Content(seasons) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(games)</visible>
