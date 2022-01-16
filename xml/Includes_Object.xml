@@ -432,11 +432,10 @@
         <onclick condition="[String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE, tvshow)] + Control.HasFocus($PARAM[id]) + Skin.HasSetting(BackgroundPlayingTrailers) + !Player.HasVideo + String.IsEmpty(ListItem.Trailer) + !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Trailer))">SetProperty(hasTrailer,true,home)</onclick>
         <!-- flix spotlight -->
         <include content="Flix_Spotlight_Properties">
-          <param name="include_condition" value="!String.StartsWith(ListItem.FolderPath,favourites://) + !String.IsEqual(Listitem.DBTYPE,music) + !String.IsEqual(Listitem.DBTYPE,song) + !String.IsEqual(Listitem.DBTYPE,album) + !String.IsEqual(Listitem.DBTYPE,artist)" />
+          <param name="include_condition" value="[!String.StartsWith(ListItem.FolderPath,favourites://) + !String.IsEqual(Listitem.DBTYPE,song) + !String.IsEqual(Listitem.DBTYPE,album) + !String.IsEqual(Listitem.DBTYPE,artist)] + Skin.HasSetting(FlixSpotlight)" />
         </include>
-        <onclick condition="String.StartsWith(ListItem.FolderPath,pvr://)">SetProperty(pvrWidget,true,home)</onclick>
-        <onclick condition="!String.StartsWith(ListItem.FolderPath,favourites://) + !String.IsEqual(Listitem.DBTYPE,song) + !String.IsEqual(Listitem.DBTYPE,album) + !String.IsEqual(Listitem.DBTYPE,artist)">SetProperty(activateSpotlight,true,home)</onclick>
-        <onclick condition="!String.StartsWith(ListItem.FolderPath,favourites://) + !String.IsEqual(Listitem.DBTYPE,song) + !String.IsEqual(Listitem.DBTYPE,album) + !String.IsEqual(Listitem.DBTYPE,artist)">SetFocus(6000)</onclick>
+        <onclick condition="[!String.StartsWith(ListItem.FolderPath,favourites://) + !String.IsEqual(Listitem.DBTYPE,song) + !String.IsEqual(Listitem.DBTYPE,album) + !String.IsEqual(Listitem.DBTYPE,artist)] + [Skin.HasSetting(FlixSpotlight) + !Skin.HasSetting(SkipLevel1)]">SetFocus(6000)</onclick>
+        <onclick condition="[!String.StartsWith(ListItem.FolderPath,favourites://) + !String.IsEqual(Listitem.DBTYPE,song) + !String.IsEqual(Listitem.DBTYPE,album) + !String.IsEqual(Listitem.DBTYPE,artist)] + [Skin.HasSetting(FlixSpotlight) + Skin.HasSetting(SkipLevel1)]">ActivateWindow(1141)</onclick>
         <itemlayout height="185" width="1120" condition="$PARAM[postercondition]">
           <include content="ViewBannerItemLayout">
             <param name="bg_visible" value="false" />
