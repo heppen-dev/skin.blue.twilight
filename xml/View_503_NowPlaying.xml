@@ -10,6 +10,7 @@
         <param name="list_id" value="503"/>
         <param name="right" value="594"/>
         <param name="viewtype_label" value="$LOCALIZE[31000]"/>
+        <param name="visible" value="Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(games) | Window.IsActive(videoplaylist) | Window.IsActive(musicplaylist)"/>
       </include>
       <control type="group">
         <depth>DepthContentPanel</depth>

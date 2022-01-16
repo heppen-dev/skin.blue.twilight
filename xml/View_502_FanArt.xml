@@ -10,6 +10,7 @@
         <param name="right" value="1195"/>
         <param name="list_id" value="502"/>
         <param name="viewtype_label" value="$LOCALIZE[20445]"/>
+        <param name="visible" value="Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(games) | Window.IsActive(videoplaylist) | Window.IsActive(musicplaylist)"/>
       </include>
       <include content="View_Forced">
         <param name="string" value="$LOCALIZE[20445]"/>

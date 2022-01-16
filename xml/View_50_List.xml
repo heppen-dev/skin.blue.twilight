@@ -12,6 +12,7 @@
         <param name="list_id" value="50"/>
         <param name="right" value="836"/>
         <param name="viewtype_label" value="$LOCALIZE[535]"/>
+        <param name="visible" value="Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(games) | Window.IsActive(videoplaylist) | Window.IsActive(musicplaylist)"/>
       </include>
       <control type="group">
         <depth>DepthContentPanel</depth>
@@ -176,7 +177,7 @@
         <include content="View_Forced">
           <param name="string" value="$PARAM[viewtype_label]"/>
         </include>
-        <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(games) | Window.IsActive(videoplaylist) | Window.IsActive(musicplaylist)</visible>
+        <visible>$PARAM[visible]</visible>
         <focusedlayout height="list_item_height">
           <control type="group">
             <left>0</left>
