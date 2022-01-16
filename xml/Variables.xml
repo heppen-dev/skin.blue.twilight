@@ -32,8 +32,8 @@
     <value>$LOCALIZE[31375]</value>
   </variable>
   <variable name="posterHighlightValue">
-    <value condition="String.IsEqual(Skin.String(PosterHighlight),Highlight)">$LOCALIZE[31376]</value>
-    <value>$LOCALIZE[31377]</value>
+    <value condition="!String.IsEqual(Skin.String(PosterHighlight),Highlight)">$LOCALIZE[31377]</value>
+    <value>$LOCALIZE[31376]</value>
   </variable>
   <variable name="AlphaPercentage">
     <value condition="String.IsEqual(Skin.String(AlphaValue),100)">FFFFFFFF</value>
