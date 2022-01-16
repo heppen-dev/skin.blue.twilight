@@ -55,6 +55,12 @@
             <include>DefaultSettingButton</include>
             <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=widgets)</onclick>
           </control>
+          <control type="radiobutton" id="623" description="Enable labels in widget wall">
+            <label>$LOCALIZE[31430]</label>
+            <include>DefaultSettingButton</include>
+            <onclick>Skin.ToggleSetting(ShowWidgetLabels)</onclick>
+            <selected>Skin.HasSetting(ShowWidgetLabels)</selected>
+          </control>
           <control type="radiobutton" id="621" description="Flix spotlight">
             <label>$LOCALIZE[31407]</label>
             <include>DefaultSettingButton</include>

@@ -1919,3 +1919,8 @@ msgstr "Lista rozszerzona"
 msgctxt "#31429"
 msgid "Skip Flix Spotlight first level"
 msgstr "Pomiń spotlight poziomu pierwszego"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31430"
+msgid "Show widget labels above"
+msgstr "Pokaż nazwę widgetu"

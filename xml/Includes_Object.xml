@@ -76,19 +76,20 @@
     </control>
   </include>
   <include name="Object_Widget_Label">
-    <param name="top" default="0"/>
     <param name="font" default="font27_bold"/>
     <definition>
       <control type="group" id="$PARAM[groupid]">
-        <top>$PARAM[top]</top>
-        <height>52</height>
-        <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,0) | Container($PARAM[id]).IsUpdating</visible>
         <nested/>
+        <top>$PARAM[top]</top>
+        <left>$PARAM[left]</left>
+        <height>52</height>
+        <visible>true</visible>
+        <include content="Animation_Widget_Slide_withLabels">
+          <param name="container" value="3000" />
+        </include>
+        <animation effect="fade" start="100" end="0" time="0" reversible="true" condition="Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[id])">Conditional</animation>
         <control type="grouplist">
-          <height>52</height>
           <orientation>horizontal</orientation>
-          <usecontrolcoords>true</usecontrolcoords>
-          <itemgap>10</itemgap>
           <control type="label">
             <top>20</top>
             <left>15</left>
@@ -98,8 +99,6 @@
             <textcolor>dialog_fg_100</textcolor>
             <font>$PARAM[font]</font>
             <height>24</height>
-            <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,0) | Container($PARAM[id]).IsUpdating</visible>
-            <visible>Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])</visible>
           </control>
           <control type="label">
             <top>3</top>
@@ -131,43 +130,6 @@
             <left>18</left>
             <visible>Container($PARAM[id]).IsUpdating</visible>
             <visible>Control.HasFocus($PARAM[id])</visible>
-          </control>
-        </control>
-      </control>
-    </definition>
-  </include>
-  <include name="Object_WidgetHorizontal_Label">
-    <param name="top" default="0"/>
-    <definition>
-      <control type="group" id="$PARAM[groupid]">
-        <top>$PARAM[top]</top>
-        <height>52</height>
-        <width>$PARAM[width]</width>
-        <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,0) | Container($PARAM[id]).IsUpdating</visible>
-        <nested/>
-        <control type="grouplist">
-          <height>52</height>
-          <orientation>horizontal</orientation>
-          <usecontrolcoords>true</usecontrolcoords>
-          <itemgap>22</itemgap>
-          <control type="group">
-            <include>SmallBusySpinner</include>
-            <left>18</left>
-            <visible>Container($PARAM[id]).IsUpdating</visible>
-            <visible>Control.HasFocus($PARAM[id])</visible>
-          </control>
-          <control type="label">
-            <top>0</top>
-            <left>0</left>
-            <width>$PARAM[width]</width>
-            <label>$PARAM[label]</label>
-            <aligny>center</aligny>
-            <textcolor>dialog_fg_100</textcolor>
-            <font>font27_bold</font>
-            <height>42</height>
-            <!-- <scroll>true</scroll> -->
-            <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,0) | Container($PARAM[id]).IsUpdating</visible>
-            <visible>Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])</visible>
           </control>
         </control>
       </control>
@@ -232,6 +194,83 @@
       </control>
     </definition>
   </include>
+  <include name="Object_WidgetsWall_Content_withLabels">
+    <param name="id" default="5610"/>
+    <param name="target" default=""/>
+    <param name="sortby" default=""/>
+    <param name="sortdirection" default=""/>
+    <param name="limit" default=""/>
+    <param name="path" default=""/>
+    <param name="landscapecondition" default="true"/>
+    <definition>
+      <control type="group" id="$PARAM[groupid]">
+        <nested/>
+        <control type="fixedlist" id="$PARAM[id]">
+          <orientation>horizontal</orientation>
+          <top>20</top>
+          <height>195</height>
+          <focusposition>3</focusposition>
+          <onup>SetFocus(2999)</onup>
+          <onup>$PARAM[onup]</onup>
+          <ondown>$PARAM[ondown]</ondown>
+          <onback>9000</onback>
+          <animation effect="slide" time="0" start="0" end="-120,0" reversible="true" condition="true">Conditional</animation>
+          <!-- movement -->
+          <include content="Animation_Widget_Slide_withLabels">
+            <param name="container" value="3000" />
+          </include>
+          <onfocus>SetProperty(TMDbHelper.WidgetContainer,$PARAM[id],home)</onfocus>
+          <onfocus>SetProperty(widgetMovementId,$PARAM[id],home)</onfocus>
+          <animation effect="fade" start="100" end="0" time="0" reversible="true" condition="Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[idtofade])">Conditional</animation>
+          <!-- trailers -->
+          <onclick condition="[String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE, tvshow)] + Control.HasFocus($PARAM[id]) + Skin.HasSetting(BackgroundPlayingTrailers) + !Player.HasVideo + !String.IsEmpty(ListItem.Trailer)">AlarmClock(trailerdelay,PlayMedia($ESCINFO[ListItem.Trailer],1),00:01,silent)</onclick>
+          <onclick condition="[String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE, tvshow)] + Control.HasFocus($PARAM[id]) + Skin.HasSetting(BackgroundPlayingTrailers) + !Player.HasVideo + String.IsEmpty(ListItem.Trailer) + !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Trailer))">AlarmClock(trailerdelay,PlayMedia($ESCINFO[Window(Home).Property(TMDbHelper.ListItem.Trailer)],1),00:01,silent)</onclick>
+          <onclick condition="[[String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE, tvshow)] + Skin.HasSetting(BackgroundPlayingTrailers) + String.IsEmpty(ListItem.Trailer) + String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Trailer))] + !Skin.HasSetting(DontShowNotificationANT)">Notification($LOCALIZE[31389], $LOCALIZE[31390])</onclick>
+          <onclick condition="[String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE, tvshow)] + Control.HasFocus($PARAM[id]) + Skin.HasSetting(BackgroundPlayingTrailers) + !Player.HasVideo + !String.IsEmpty(ListItem.Trailer)">SetProperty(hasTrailer,true,home)</onclick>
+          <onclick condition="[String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE, tvshow)] + Control.HasFocus($PARAM[id]) + Skin.HasSetting(BackgroundPlayingTrailers) + !Player.HasVideo + String.IsEmpty(ListItem.Trailer) + !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Trailer))">SetProperty(hasTrailer,true,home)</onclick>
+          <!-- flix spotlight -->
+          <include content="Flix_Spotlight_Properties">
+            <param name="include_condition" value="[!String.StartsWith(ListItem.FolderPath,favourites://) + !String.IsEqual(Listitem.DBTYPE,song) + !String.IsEqual(Listitem.DBTYPE,album) + !String.IsEqual(Listitem.DBTYPE,artist)] + Skin.HasSetting(FlixSpotlight)" />
+          </include>
+          <onclick condition="[!String.StartsWith(ListItem.FolderPath,favourites://) + !String.IsEqual(Listitem.DBTYPE,song) + !String.IsEqual(Listitem.DBTYPE,album) + !String.IsEqual(Listitem.DBTYPE,artist)] + [Skin.HasSetting(FlixSpotlight) + !Skin.HasSetting(SkipLevel1)]">SetFocus(6000)</onclick>
+          <onclick condition="[!String.StartsWith(ListItem.FolderPath,favourites://) + !String.IsEqual(Listitem.DBTYPE,song) + !String.IsEqual(Listitem.DBTYPE,album) + !String.IsEqual(Listitem.DBTYPE,artist)] + [Skin.HasSetting(FlixSpotlight) + Skin.HasSetting(SkipLevel1)]">ActivateWindow(1141)</onclick>
+          <!-- Landscapes -->
+          <itemlayout height="225" width="315" condition="$PARAM[landscapecondition]">
+            <include content="ViewLandscapeItemLayout">
+              <param name="firstrow_fade" value="Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[id])" />
+            </include>
+          </itemlayout>
+          <focusedlayout height="225" width="315" condition="$PARAM[landscapecondition]">
+            <include content="ViewLandscapeItemLayout">
+              <param name="firstrow_fade" value="Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[id])" />
+            </include>
+            <control type="group">
+              <width>315</width>
+              <height>225</height>
+              <include content="Selectbox">
+                <param name="visible" value="$PARAM[landscapecondition] + Control.HasFocus($PARAM[id])"/>
+              </include>
+            </control>
+            <control type="button">
+              <include>HiddenObject</include>
+              <onfocus condition="ListItem.IsFolder">SetProperty(spotlight_isFolder,true,home)</onfocus>
+              <onfocus condition="ListItem.IsCollection">SetProperty(spotlight_isCollection,true,home)</onfocus>
+              <onfocus condition="!ListItem.IsFolder">ClearProperty(spotlight_isFolder)</onfocus>
+              <onfocus condition="!ListItem.IsCollection">ClearProperty(spotlight_isCollection)</onfocus>
+              <onfocus>SetProperty(spotlight_Title,$INFO[ListItem.Title],home)</onfocus>
+            </control>
+          </focusedlayout>
+          <include content="Object_Widget_Content_Path">
+            <param name="target" value="$PARAM[target]"/>
+            <param name="sortby" value="$PARAM[sortby]"/>
+            <param name="sortdirection" value="$PARAM[sortdirection]"/>
+            <param name="limit" value="$PARAM[limit]"/>
+            <param name="path" value="$PARAM[path]"/>
+          </include>
+        </control>
+      </control>
+    </definition>
+  </include>
   <include name="Object_WidgetsWall_Content">
     <param name="id" default="5610"/>
     <param name="target" default=""/>
@@ -242,10 +281,14 @@
     <param name="landscapecondition" default="true"/>
     <definition>
       <control type="fixedlist" id="$PARAM[id]">
-        <nested/>
         <orientation>horizontal</orientation>
+        <top>20</top>
         <height>195</height>
         <focusposition>3</focusposition>
+        <onup>SetFocus(2999)</onup>
+        <onup>$PARAM[onup]</onup>
+        <ondown>$PARAM[ondown]</ondown>
+        <onback>9000</onback>
         <animation effect="slide" time="0" start="0" end="-120,0" reversible="true" condition="true">Conditional</animation>
         <!-- movement -->
         <include content="Animation_Widget_Slide">

@@ -2351,8 +2351,14 @@
       <param name="width" value="210" />
     </include>
   </include>
-  <include name="submenuFont">
-    <font>font32</font>
+  <include name="itemgap">
+    <itemgap>240</itemgap>
+  </include>
+  <include name="showcasemargin">
+    <top>-80</top>
+  </include>
+  <include name="pushbuttonsarea">
+    <top>160</top>
   </include>
   <include name="submenuVerticalParams">
     <definition>
