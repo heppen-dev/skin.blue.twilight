@@ -176,7 +176,7 @@
         <include content="View_Forced">
           <param name="string" value="$PARAM[viewtype_label]"/>
         </include>
-        <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(games) | Window.IsActive(videoplaylist) | Window.IsActive(musicplaylist)</visible>
+        <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(games) | Window.IsActive(videoplaylist) | Window.IsActive(musicplaylist)</visible>
         <focusedlayout height="list_item_height">
           <control type="group">
             <left>0</left>

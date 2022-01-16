@@ -35,7 +35,6 @@
     <control type="group">
       <control type="group">
         <control type="group">
-          <visible>!Container.Content(songs)</visible>
           <height>441.435</height>
           <width>761.44</width>
           <control type="image">
