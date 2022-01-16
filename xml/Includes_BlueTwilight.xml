@@ -140,7 +140,7 @@
           <animation effect="slide" time="0" start="0" end="-100,0" reversible="false" condition="true">Conditional</animation>
           <animation effect="slide" time="0" start="0" end="0,195" reversible="false" condition="!ControlGroup(3000).HasFocus + Integer.IsGreater(Container(3000).Position,0)">Conditional</animation>
           <animation effect="slide" time="200" start="0" end="0,500" reversible="true" condition="[ControlGroup(3000).HasFocus | $EXP[flix_spotlight_level1] | $EXP[flix_spotlight_level2]] + !Skin.HasSetting(ShowWidgetLabels) + !String.StartsWith(ListItem.FolderPath,favourites://)">Conditional</animation>
-          <animation effect="slide" time="200" start="0" end="0,400" reversible="true" condition="[ControlGroup(3000).HasFocus | $EXP[flix_spotlight_level1] | $EXP[flix_spotlight_level2]] + Skin.HasSetting(ShowWidgetLabels)">Conditional</animation>
+          <animation effect="slide" time="200" start="0" end="0,400" reversible="true" condition="[[ControlGroup(3000).HasFocus | $EXP[flix_spotlight_level1] | $EXP[flix_spotlight_level2]] + Skin.HasSetting(ShowWidgetLabels)] + !String.StartsWith(ListItem.FolderPath,favourites://)">Conditional</animation>
           <animation effect="slide" time="200" start="0" end="0,340" reversible="true" condition="$EXP[flix_spotlight_level1] | $EXP[flix_spotlight_level2]">Conditional</animation>
           <animation effect="slide" time="200" start="0" end="0,780" reversible="true" condition="String.IsEqual(Window(home).Property(activateSpotlight),true)">Conditional</animation>
         </control>

@@ -259,6 +259,19 @@
               <onfocus condition="!ListItem.IsCollection">ClearProperty(spotlight_isCollection)</onfocus>
               <onfocus>SetProperty(spotlight_Title,$INFO[ListItem.Title],home)</onfocus>
             </control>
+            <control type="group">
+              <visible>String.StartsWith(ListItem.FolderPath,favourites://) + Control.HasFocus($PARAM[id])</visible>
+              <top>80</top>
+              <left>30</left>
+              <width>255</width>
+              <control type="label">
+                <font>font_tiny_title_uppercase</font>
+                <textcolor>ffffffff</textcolor>
+                <shadowcolor>ff000000</shadowcolor>
+                <align>center</align>
+                <label>$INFO[ListItem.Label]</label>
+              </control>
+            </control>
           </focusedlayout>
           <include content="Object_Widget_Content_Path">
             <param name="target" value="$PARAM[target]"/>
@@ -333,6 +346,19 @@
             <onfocus condition="!ListItem.IsFolder">ClearProperty(spotlight_isFolder)</onfocus>
             <onfocus condition="!ListItem.IsCollection">ClearProperty(spotlight_isCollection)</onfocus>
             <onfocus>SetProperty(spotlight_Title,$INFO[ListItem.Title],home)</onfocus>
+          </control>
+          <control type="group">
+            <visible>String.StartsWith(ListItem.FolderPath,favourites://) + Control.HasFocus($PARAM[id])</visible>
+            <top>80</top>
+            <left>30</left>
+            <width>255</width>
+            <control type="label">
+              <font>font_tiny_title_uppercase</font>
+              <textcolor>ffffffff</textcolor>
+              <shadowcolor>ff000000</shadowcolor>
+              <align>center</align>
+              <label>$INFO[ListItem.Label]</label>
+            </control>
           </control>
         </focusedlayout>
         <include content="Object_Widget_Content_Path">
