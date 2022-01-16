@@ -310,6 +310,10 @@
     <value condition="Container.Filtered">special://skin/extras/icons/filter-on.png</value>
     <value>special://skin/extras/icons/filter-off.png</value>
   </variable>
+  <variable name="Label_ShowChannelIcon">
+    <value condition="Skin.HasSetting(ShowChannelIcon)">ON</value>
+    <value>OFF</value>
+  </variable>
   <variable name="Image_ClearLogo">
     <value condition="!String.IsEmpty(ListItem.Art(clearlogo))">$INFO[ListItem.Art(clearlogo)]</value>
     <value condition="!String.IsEmpty(ListItem.Art(tvshow.clearlogo)) + !String.IsEqual(Container.ShowTitle,ListItem.TvShowTitle)">$INFO[ListItem.Art(tvshow.clearlogo)]</value>

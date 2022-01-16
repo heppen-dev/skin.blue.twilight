@@ -1526,7 +1526,6 @@
       <!-- Common -->
       <item>
         <label>$LOCALIZE[31023]: $INFO[Container.Viewmode]</label>
-        <label2>[B]$INFO[Container.Viewmode][/B]</label2>
         <visible>Integer.IsGreater(Container.ViewCount,1)</visible>
         <onclick>Container.NextViewMode</onclick>
       </item>
@@ -1605,6 +1604,7 @@
       </item>
       <item>
         <label>$LOCALIZE[31127]</label>
+        <label2>$VAR[Label_ShowChannelIcon]</label2>
         <onclick>Skin.ToggleSetting(ShowChannelIcon)</onclick>
         <visible>Window.IsActive(MyPVRChannels.xml)</visible>
       </item>
