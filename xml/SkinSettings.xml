@@ -55,6 +55,12 @@
             <include>DefaultSettingButton</include>
             <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=widgets)</onclick>
           </control>
+          <control type="radiobutton" id="613" description="Flix spotlight">
+            <label>$LOCALIZE[31407]</label>
+            <include>DefaultSettingButton</include>
+            <onclick>Skin.ToggleSetting(FlixSpotlight)</onclick>
+            <selected>Skin.HasSetting(FlixSpotlight)</selected>
+          </control>
           <control type="radiobutton" id="613" description="Enable autoscroll for plot and title">
             <label>$LOCALIZE[20189]</label>
             <include>DefaultSettingButton</include>
