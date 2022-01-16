@@ -10,7 +10,7 @@
       <centerleft>50%</centerleft>
       <width>1920</width>
       <control type="group">
-        <include>OpenClose_Left</include>
+        <include>OpenClose_Bottom</include>
         <top>159</top>
         <left>40</left>
         <control type="image">
@@ -33,7 +33,7 @@
         </control>
       </control>
       <control type="group">
-        <include>OpenClose_Left</include>
+        <include>OpenClose_Bottom</include>
         <include>Visible_Right</include>
         <left>705</left>
         <visible>![Window.Is(songinformation) + Window.IsActive(musicinformation)]</visible>
@@ -176,7 +176,7 @@
         </control>
       </control>
       <control type="group">
-        <include>OpenClose_Right</include>
+        <include>OpenClose_Bottom</include>
         <include>Visible_Right</include>
         <left>80</left>
         <visible>![Window.Is(songinformation) + Window.IsActive(musicinformation)]</visible>

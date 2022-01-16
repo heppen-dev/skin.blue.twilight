@@ -2,7 +2,7 @@
 <includes>
   <include name="View_500_Wall">
     <control type="group">
-      <include>OpenClose_Right</include>
+      <include>OpenClose_Bottom</include>
       <left>50</left>
       <top>0</top>
       <visible>Control.IsVisible(500)</visible>

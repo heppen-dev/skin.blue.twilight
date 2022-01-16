@@ -2,7 +2,7 @@
 <includes>
   <include name="View_501_Banner">
     <control type="group">
-      <include>OpenClose_Right</include>
+      <include>OpenClose_Bottom</include>
       <left>80</left>
       <top>0</top>
       <visible>Control.IsVisible(501)</visible>

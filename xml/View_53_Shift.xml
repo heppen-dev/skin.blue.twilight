@@ -44,7 +44,7 @@
       <control type="group">
         <visible>Control.IsVisible(53)</visible>
         <include>Visible_Right</include>
-        <include>OpenClose_Right</include>
+        <include>OpenClose_Bottom</include>
         <top>260</top>
         <control type="image">
           <left>510</left>
@@ -126,7 +126,7 @@
       <control type="group">
         <visible>Control.IsVisible(53)</visible>
         <include>Visible_Right</include>
-        <include>OpenClose_Right</include>
+        <include>OpenClose_Bottom</include>
         <top>100</top>
         <control type="group">
           <width>50%</width>

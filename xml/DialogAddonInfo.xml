@@ -11,7 +11,7 @@
       <centerleft>50%</centerleft>
       <width>1920</width>
       <control type="group">
-        <include>OpenClose_Right</include>
+        <include>OpenClose_Bottom</include>
         <control type="button" id="5000">
           <left>606</left>
           <top>400</top>
@@ -196,7 +196,7 @@
         </control>
       </control>
       <control type="group">
-        <include>OpenClose_Left</include>
+        <include>OpenClose_Bottom</include>
         <top>158</top>
         <left>80</left>
         <control type="image">

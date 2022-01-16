@@ -28,7 +28,7 @@
       <control type="group">
         <visible>Control.IsVisible(57)</visible>
         <include>Visible_Right</include>
-        <include>OpenClose_Right</include>
+        <include>OpenClose_Bottom</include>
         <top>160</top>
         <control type="list" id="57">
           <left>0</left>

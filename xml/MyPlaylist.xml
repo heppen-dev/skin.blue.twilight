@@ -12,7 +12,7 @@
       <include condition="Window.IsActive(musicplaylist)">View_503_NowPlaying</include>
       <include>CommonScrollbars</include>
       <control type="group">
-        <include>OpenClose_Left</include>
+        <include>OpenClose_Bottom</include>
         <include>Visible_Left</include>
         <include>ListThumbInfoPanel</include>
       </control>

@@ -76,7 +76,7 @@
         </animation>
         <animation effect="slide" start="0" end="0,280" time="400" tween="quadratic" condition="Window.IsActive(1140) + !Skin.HasSetting(PlayTrailersFullScreen)">Conditional</animation>
         <animation effect="slide" start="0" end="0,560" time="400" tween="quadratic" condition="Window.IsActive(1140) + Skin.HasSetting(PlayTrailersFullScreen)">Conditional</animation>
-        <include>OpenClose_Right</include>
+        <include>OpenClose_Bottom</include>
         <left>122</left>
         <control type="group">
           <include content="WidgetVerticalLabel">
@@ -209,7 +209,7 @@
           <top>0</top>
           <left>350</left>
           <bottom>0</bottom>
-          <include>OpenClose_Right</include>
+          <include>OpenClose_Bottom</include>
           <control type="label">
             <left>0</left>
             <right>0</right>
@@ -230,7 +230,7 @@
       </control>
       <control type="group">
         <depth>DepthContentPanel</depth>
-        <include>OpenClose_Left</include>
+        <include>OpenClose_Bottom</include>
         <control type="group">
           <animation effect="slide" start="0,0" end="-714,0" time="250" reversible="true" tween="cubic" easing="inout" condition="!Control.HasFocus(9000) + !Control.HasFocus(9001) + !Control.HasFocus(303)">Conditional</animation>
           <control type="image">

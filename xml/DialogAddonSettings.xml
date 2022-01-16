@@ -137,7 +137,7 @@
       </control>
       <control type="group">
         <depth>DepthContentPanel</depth>
-        <!-- <include>OpenClose_Left</include> -->
+        <!-- <include>OpenClose_Bottom</include> -->
         <top>995</top>
         <!-- <left>-25</left> -->
         <include content="DefaultSettingButtonGradient">

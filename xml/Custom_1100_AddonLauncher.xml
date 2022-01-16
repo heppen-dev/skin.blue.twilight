@@ -19,7 +19,7 @@
     <control type="group">
       <animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
       <control type="group" id="400">
-        <include>OpenClose_Right</include>
+        <include>OpenClose_Bottom</include>
         <include content="AddonLauncherPanel">
           <param name="group_id" value="500"/>
           <param name="id" value="video"/>
@@ -75,7 +75,7 @@
         </include>
       </control>
       <control type="group">
-        <include>OpenClose_Left</include>
+        <include>OpenClose_Bottom</include>
         <include content="ContentPanel">
           <param name="width" value="523"/>
         </include>
@@ -231,7 +231,7 @@
         <height>120</height>
         <onup>SetFocus(9000,99,absolute)</onup>
         <ondown>SetFocus(9000,0,absolute)</ondown>
-        <include>OpenClose_Left</include>
+        <include>OpenClose_Bottom</include>
         <onright>400</onright>
         <usecontrolcoords>true</usecontrolcoords>
         <control type="radiobutton" id="801">

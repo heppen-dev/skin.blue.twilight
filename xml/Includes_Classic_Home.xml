@@ -128,7 +128,7 @@
           <effect type="slide" end="0,-20" time="60" tween="sine"/>
           <effect type="slide" end="0,20" time="180" tween="sine" delay="80"/>
         </animation>
-        <include>OpenClose_Right</include>
+        <include>OpenClose_Bottom</include>
         <animation effect="slide" start="0" end="0,280" time="200" tween="quadratic" condition="Window.IsActive(1140) + !Skin.HasSetting(PlayTrailersFullScreen)">Conditional</animation>
         <animation effect="slide" start="0" end="0,560" time="200" tween="quadratic" condition="Window.IsActive(1140) + Skin.HasSetting(PlayTrailersFullScreen)">Conditional</animation>
         <left>470</left>
@@ -258,7 +258,7 @@
           <left>70</left>
           <top>0</top>
           <bottom>0</bottom>
-          <include>OpenClose_Right</include>
+          <include>OpenClose_Bottom</include>
           <control type="label">
             <left>0</left>
             <right>0</right>
@@ -294,7 +294,7 @@
       </control>
       <control type="group">
         <depth>DepthContentPanel</depth>
-        <!-- <include>OpenClose_Left</include> -->
+        <!-- <include>OpenClose_Bottom</include> -->
         <control type="fixedlist" id="9000">
           <top>180</top>
           <width>462</width>

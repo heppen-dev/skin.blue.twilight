@@ -16,7 +16,7 @@
       <include>View_500_Wall</include>
       <include>CommonScrollbars</include>
       <control type="group">
-        <include>OpenClose_Left</include>
+        <include>OpenClose_Bottom</include>
         <visible>Control.Isvisible(54) | Control.IsVisible(55)</visible>
         <include>Visible_Left</include>
         <include>ListThumbInfoPanel</include>

@@ -196,7 +196,7 @@
           <effect type="slide" end="0,-20" time="60" tween="sine"/>
           <effect type="slide" end="0,20" time="180" tween="sine" delay="80"/>
         </animation>
-        <include>OpenClose_Right</include>
+        <include>OpenClose_Bottom</include>
         <control type="image">
           <bottom>360</bottom>
           <left>-25%</left>

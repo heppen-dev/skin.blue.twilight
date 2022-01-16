@@ -12,7 +12,7 @@
       <width>1920</width>
       <control type="group">
         <visible>!Window.IsActive(Slideshow)</visible>
-        <include>OpenClose_Left</include>
+        <include>OpenClose_Bottom</include>
         <top>160</top>
         <control type="image">
           <left>70</left>
@@ -32,7 +32,7 @@
         </control>
       </control>
       <control type="group">
-        <include>OpenClose_Right</include>
+        <include>OpenClose_Bottom</include>
         <top>160</top>
         <control type="image">
           <description>background image</description>

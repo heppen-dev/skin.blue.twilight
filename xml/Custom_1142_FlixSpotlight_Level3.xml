@@ -10,7 +10,7 @@
     <include>DefaultBackground</include>
     <control type="group">
       <visible>!$EXP[infodialog_active]</visible>
-      <include>OpenClose_Right</include>
+      <include>OpenClose_Bottom</include>
       <include>Visible_Right</include>
       <control type="grouplist">
         <left>1500</left>

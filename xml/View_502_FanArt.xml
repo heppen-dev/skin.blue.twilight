@@ -2,7 +2,7 @@
 <includes>
   <include name="View_502_FanArt">
     <control type="group">
-      <include>OpenClose_Left</include>
+      <include>OpenClose_Bottom</include>
       <visible>Control.IsVisible(502)</visible>
       <include>Visible_Left</include>
       <include content="ListContainer">
@@ -17,7 +17,7 @@
     </control>
     <control type="group">
       <depth>DepthContentPanel</depth>
-      <include>OpenClose_Right</include>
+      <include>OpenClose_Bottom</include>
       <visible>Control.IsVisible(502)</visible>
       <include>Visible_Right</include>
       <control type="group">

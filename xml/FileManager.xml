@@ -15,7 +15,7 @@
     </control>
     <control type="group">
       <left>0</left>
-      <include>OpenClose_Left</include>
+      <include>OpenClose_Bottom</include>
       <include content="ContentPanel">
         <param name="width" value="872"/>
       </include>
@@ -41,7 +41,7 @@
     <control type="group">
       <width>818</width>
       <right>0</right>
-      <include>OpenClose_Right</include>
+      <include>OpenClose_Bottom</include>
       <include content="ContentPanel">
         <param name="width" value="878"/>
         <param name="flipx" value="true"/>

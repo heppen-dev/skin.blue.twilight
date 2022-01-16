@@ -6,7 +6,7 @@
   <controls>
     <include>DefaultBackground</include>
     <control type="group">
-      <include>OpenClose_Left</include>
+      <include>OpenClose_Bottom</include>
       <left>302</left>
       <include content="FileManagerPanel">
         <param name="list_id" value="50"/>
@@ -18,7 +18,7 @@
       </include>
     </control>
     <control type="group">
-      <include>OpenClose_Left</include>
+      <include>OpenClose_Bottom</include>
       <include content="ContentPanel">
         <param name="width" value="360"/>
       </include>
@@ -60,7 +60,7 @@
       </control>
     </control>
     <control type="group">
-      <include>OpenClose_Right</include>
+      <include>OpenClose_Bottom</include>
       <width>845</width>
       <right>0</right>
       <include content="ContentPanel">

@@ -1150,7 +1150,7 @@
             <height>100%</height>
             <aspectratio aligny="center">scale</aspectratio>
             <fadetime>300</fadetime>
-            <include>OpenClose_Left</include>
+            <include>OpenClose_Bottom</include>
             <animation effect="fade" time="400">VisibleChange</animation>
             <texture background="true" colordiffuse="$VAR[HighlightOverlay]">$VAR[PosterVar]</texture>
             <visible>!Control.IsVisible(32111)</visible>

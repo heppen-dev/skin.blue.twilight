@@ -4,7 +4,7 @@
   <expression name="listitem_has_epg_event_info">!String.IsEmpty(ListItem.EpgEventTitle) | $EXP[listitem_has_episode_info]</expression>
   <include name="PVRChannelsOSDLayout_Modern">
     <control type="group">
-      <include>OpenClose_Left</include>
+      <include>OpenClose_Bottom</include>
       <control type="image">
         <top>-15</top>
         <left>-15</left>
@@ -237,7 +237,7 @@
       </control>
     </control>
     <control type="group">
-      <include>OpenClose_Left</include>
+      <include>OpenClose_Bottom</include>
       <control type="label" id="2">
         <description>header label</description>
         <textoffsetx>40</textoffsetx>
@@ -557,7 +557,7 @@
   <include name="PVRChannelsOSDLayout_Legacy">
     <control type="group">
       <depth>DepthOSD</depth>
-      <include>OpenClose_Left</include>
+      <include>OpenClose_Bottom</include>
       <control type="image">
         <width>970</width>
         <texture background="true">lists/panel.png</texture>
@@ -1115,7 +1115,7 @@
       <depth>DepthOSD</depth>
       <animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
       <control type="group">
-        <include>OpenClose_Left</include>
+        <include>OpenClose_Bottom</include>
         <control type="image">
           <width>780</width>
           <texture background="true">lists/panel.png</texture>

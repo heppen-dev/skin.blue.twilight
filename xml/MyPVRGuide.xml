@@ -11,7 +11,7 @@
       <control type="group">
         <description>Guide Timeline</description>
         <visible>Control.IsVisible(50) | Control.IsVisible(51) | Control.IsVisible(52) | Control.IsVisible(53)</visible>
-        <include>OpenClose_Right</include>
+        <include>OpenClose_Bottom</include>
         <include>Visible_Right</include>
         <control type="group">
           <depth>DepthContentPanel</depth>
