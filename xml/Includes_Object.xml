@@ -377,19 +377,13 @@
           <include content="ViewLandscapeItemLayout">
             <param name="firstrow_fade" value="Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[id])" />
           </include>
-          <include content="Selectbox">
-            <param name="pad_top_b" value="0"/>
-            <param name="pad_bottom_b" value="20"/>
-            <param name="pad_left_b" value="-12"/>
-            <param name="pad_right_b" value="-12"/>
-            <param name="pad_top_t" value="-10"/>
-            <param name="pad_bottom_t" value="-16"/>
-            <param name="pad_left_t" value="-10"/>
-            <param name="pad_right_t" value="0"/>
-            <param name="visible_posters" value="$PARAM[landscapecondition] + Control.HasFocus($PARAM[id])"/>
-            <param name="visible_squares" value="false"/>
-            <param name="visible_landscapes" value="false"/>
-          </include>
+          <control type="group">
+            <width>315</width>
+            <height>225</height>
+            <include content="Selectbox">
+              <param name="visible" value="$PARAM[landscapecondition] + Control.HasFocus($PARAM[id])"/>
+            </include>
+          </control>
           <control type="button">
             <include>HiddenObject</include>
             <onfocus condition="ListItem.IsFolder">SetProperty(spotlight_isFolder,true,home)</onfocus>

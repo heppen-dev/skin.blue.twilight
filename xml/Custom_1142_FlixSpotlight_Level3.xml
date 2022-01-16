@@ -53,6 +53,21 @@
               <param name="WallWatchedIconVar_visible" value="false"/>
             </include>
           </control>
+          <control type="group">
+            <top>-10</top>
+            <left>25</left>
+            <width>270</width>
+            <height>420</height>
+            <include content="Selectbox">
+              <param name="visible" value="Control.IsVisible(11042)"/>
+              <param name="focusbounce" value="false" />
+            </include>
+            <include content="View_WatchedOverlay">
+              <param name="bottom" value="-12"/>
+              <param name="right" value="20"/>
+              <param name="visible" value="true"/>
+            </include>
+          </control>
         </focusedlayout>
         <itemlayout height="382.5" width="270">
           <control type="group">
@@ -62,31 +77,6 @@
           </control>
         </itemlayout>
         <content limit="50" target="videos">plugin://plugin.video.themoviedb.helper?info=similar&amp;type=movie&amp;imdb_id=$INFO[Window(home).Property(spotlight_SimilarIMDB)]</content>
-      </control>
-      <control type="group">
-        <top>610</top>
-        <left>50</left>
-        <width>270</width>
-        <height>382.5</height>
-        <include content="Selectbox">
-          <param name="pad_top_b" value="-13"/>
-          <param name="pad_bottom_b" value="-10"/>
-          <param name="pad_left_b" value="17"/>
-          <param name="pad_right_b" value="-32"/>
-          <param name="pad_top_t" value="-8"/>
-          <param name="pad_bottom_t" value="-4"/>
-          <param name="pad_left_t" value="17"/>
-          <param name="pad_right_t" value="-32"/>
-          <param name="visible_posters" value="Control.IsVisible(11042)"/>
-          <param name="visible_squares" value="false"/>
-          <param name="visible_landscapes" value="false"/>
-          <param name="focusbounce" value="false" />
-        </include>
-        <include content="View_WatchedOverlay">
-          <param name="bottom" value="-12"/>
-          <param name="right" value="20"/>
-          <param name="visible" value="true"/>
-        </include>
       </control>
       <include content="Object_Scrollbar_Horz">
         <param name="visible" value="Control.IsVisible(11042)" />

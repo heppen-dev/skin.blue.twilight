@@ -53,24 +53,21 @@
         <focusedlayout height="382.5" width="270" condition="$PARAM[postercondition]">
           <include content="ViewPosterItemLayout">
           </include>
-          <include content="Selectbox">
-            <param name="pad_top_b" value="-15"/>
-            <param name="pad_bottom_b" value="-22"/>
-            <param name="pad_left_b" value="-15"/>
-            <param name="pad_right_b" value="-5"/>
-            <param name="pad_top_t" value="-10"/>
-            <param name="pad_bottom_t" value="-16"/>
-            <param name="pad_left_t" value="-10"/>
-            <param name="pad_right_t" value="0"/>
-            <param name="visible_posters" value="true"/>
-            <param name="visible_squares" value="false"/>
-            <param name="visible_landscapes" value="false"/>
-          </include>
-          <include content="View_WatchedOverlay">
-            <param name="bottom" value="-25"/>
-            <param name="right" value="44"/>
-            <param name="visible" value="true"/>
-          </include>
+          <control type="group">
+            <top>-15</top>
+            <left>-5</left>
+            <width>270</width>
+            <height>440</height>
+            <include content="Selectbox">
+              <param name="visible" value="true"/>
+              <param name="focusbounce" value="true" />
+            </include>
+            <include content="View_WatchedOverlay">
+              <param name="bottom" value="-12"/>
+              <param name="right" value="20"/>
+              <param name="visible" value="true"/>
+            </include>
+          </control>
         </focusedlayout>
       </control>
       <control type="textbox">

@@ -123,22 +123,12 @@
         <bordersize>20</bordersize>
       </control>
       <control type="group">
-        <left>0</left>
-        <top>-14</top>
-        <width>297</width>
-        <height>407</height>
+        <left>13</left>
+        <top>-10</top>
+        <width>270</width>
+        <height>430</height>
         <include content="Selectbox">
-          <param name="pad_top_b" value="2"/>
-          <param name="pad_bottom_b" value="1"/>
-          <param name="pad_left_b" value="1"/>
-          <param name="pad_right_b" value="1"/>
-          <param name="pad_top_t" value="6"/>
-          <param name="pad_bottom_t" value="6"/>
-          <param name="pad_left_t" value="6"/>
-          <param name="pad_right_t" value="6"/>
-          <param name="visible_posters" value="true"/>
-          <param name="visible_squares" value="false"/>
-          <param name="visible_landscapes" value="false"/>
+          <param name="visible" value="$PARAM[focused]"/>
         </include>
         <animation effect="fade" start="0" end="100" time="200" tween="sine">Focus</animation>
         <animation effect="fade" start="100" end="0" time="0">UnFocus</animation>
@@ -663,20 +653,6 @@
           <bordertexture border="21">overlays/shadow.png</bordertexture>
           <bordersize>20</bordersize>
         </control>
-        <control type="group">
-          <left>15</left>
-          <top>-10</top>
-          <width>290</width>
-          <height>400</height>
-          <control type="image">
-            <texture colordiffuse="$VAR[ColorHighlight]" border="10">common/white.png</texture>
-          </control>
-          <control type="image">
-            <texture colordiffuse="$VAR[ColorGradient]" border="10">common/white-gradient.png</texture>
-          </control>
-          <bordersize>20</bordersize>
-          <visible>$PARAM[focused]</visible>
-        </control>
         <control type="textbox">
           <left>40</left>
           <top>244</top>
@@ -698,6 +674,13 @@
           <aspectratio>scale</aspectratio>
           <bordersize>20</bordersize>
         </control>
+        <control type="group">
+          <width>272</width>
+          <height>270</height>
+          <include content="Selectbox">
+            <param name="visible" value="$PARAM[focused]"/>
+          </include>
+        </control>
       </control>
       <control type="group">
         <visible>!String.IsEmpty(ListItem.Art(poster))</visible>
@@ -718,19 +701,15 @@
           <texture>overlays/overlay-bg.png</texture>
           <visible>Listitem.IsCollection | ListItem.IsPlaying | Integer.IsGreater(ListItem.Playcount,0)</visible>
         </control>
-        <include content="Selectbox">
-          <param name="pad_top_b" value="-10"/>
-          <param name="pad_bottom_b" value="-80"/>
-          <param name="pad_left_b" value="15"/>
-          <param name="pad_right_b" value="-15"/>
-          <param name="pad_top_t" value="-10"/>
-          <param name="pad_bottom_t" value="-16"/>
-          <param name="pad_left_t" value="-10"/>
-          <param name="pad_right_t" value="0"/>
-          <param name="visible_posters" value="$PARAM[focused]"/>
-          <param name="visible_squares" value="false"/>
-          <param name="visible_landscapes" value="false"/>
-        </include>
+        <control type="group">
+          <top>-10</top>
+          <left>25</left>
+          <width>270</width>
+          <height>435</height>
+          <include content="Selectbox">
+            <param name="visible" value="$PARAM[focused]"/>
+          </include>
+        </control>
       </control>
       <control type="group">
         <visible>String.IsEqual(ListItem.DBtype,tvshow)</visible>

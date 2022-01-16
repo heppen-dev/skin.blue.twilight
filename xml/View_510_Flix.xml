@@ -60,20 +60,15 @@
         <left>50</left>
         <width>270</width>
         <height>382.5</height>
-        <include content="Selectbox">
-          <param name="pad_top_b" value="-13"/>
-          <param name="pad_bottom_b" value="-10"/>
-          <param name="pad_left_b" value="17"/>
-          <param name="pad_right_b" value="-32"/>
-          <param name="pad_top_t" value="-8"/>
-          <param name="pad_bottom_t" value="-4"/>
-          <param name="pad_left_t" value="17"/>
-          <param name="pad_right_t" value="-32"/>
-          <param name="visible_posters" value="Control.IsVisible(510)"/>
-          <param name="visible_squares" value="false"/>
-          <param name="visible_landscapes" value="false"/>
-          <param name="focusbounce" value="false" />
-        </include>
+        <control type="group">
+          <top>-10</top>
+          <left>25</left>
+          <right>-25</right>
+          <bottom>-30</bottom>
+          <include content="Selectbox">
+            <param name="visible" value="$PARAM[focused]"/>
+          </include>
+        </control>
         <include content="View_WatchedOverlay">
           <param name="bottom" value="-12"/>
           <param name="right" value="20"/>
