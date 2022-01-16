@@ -68,7 +68,7 @@
             <left>300</left>
             <top>0</top>
             <right>20</right>
-            <height>60</height>
+            <height>125</height>
             <font>font27</font>
             <aligny>center</aligny>
             <label>$INFO[ListItem.Label]</label>
@@ -77,8 +77,9 @@
             <left>300</left>
             <top>50</top>
             <right>20</right>
-            <height>67</height>
+            <height>125</height>
             <font>font12</font>
+            <aligny>center</aligny>
             <textcolor>dialog_fg_70</textcolor>
             <label>$INFO[ListItem.Label2]</label>
           </control>
@@ -125,7 +126,7 @@
             <left>300</left>
             <top>0</top>
             <right>20</right>
-            <height>60</height>
+            <height>125</height>
             <font>font27</font>
             <aligny>center</aligny>
             <textcolor>dialog_fg_70</textcolor>
@@ -135,8 +136,9 @@
             <left>300</left>
             <top>50</top>
             <right>20</right>
-            <height>67</height>
+            <height>125</height>
             <font>font12</font>
+            <aligny>center</aligny>
             <textcolor>dialog_fg_70</textcolor>
             <label>$INFO[ListItem.Label2]</label>
           </control>
