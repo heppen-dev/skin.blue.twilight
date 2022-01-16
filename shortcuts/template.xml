@@ -185,6 +185,18 @@
       </controls>
     </items>
   </submenu>
+  <submenu include="submenu">
+    <controls>
+      <include content="Object_Submenu_Content">
+        <param name="icon" value="$INFO[ListItem.Icon]"/>
+        <param name="label" value="$INFO[ListItem.Label]"/>
+        <content>
+          <skinshortcuts>items</skinshortcuts>
+        </content>
+        <skinshortcuts>visibility</skinshortcuts>
+      </include>
+    </controls>
+  </submenu>
   <propertyGroup name="mainmenuWidgets">
     <property name="id" tag="mainmenuid"/>
     <property name="name" tag="property" attribute="name|widgetName"/>
