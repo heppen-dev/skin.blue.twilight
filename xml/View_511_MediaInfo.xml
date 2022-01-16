@@ -11,7 +11,7 @@
         <param name="list_id" value="511"/>
         <param name="right" value="836"/>
         <param name="viewtype_label" value="Media Info"/>
-        <param name="Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(videos)"/>
+        <param name="visible" value="Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(videos)"/>
       </include>
     </control>
     <control type="group">
