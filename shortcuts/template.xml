@@ -185,7 +185,7 @@
       </controls>
     </items>
   </submenu>
-  <submenu include="submenu">
+  <other include="submenu">
     <controls>
       <include content="Object_Submenu_Content">
         <param name="icon" value="$INFO[ListItem.Icon]"/>
@@ -196,7 +196,7 @@
         <skinshortcuts>visibility</skinshortcuts>
       </include>
     </controls>
-  </submenu>
+  </other>
   <propertyGroup name="mainmenuWidgets">
     <property name="id" tag="mainmenuid"/>
     <property name="name" tag="property" attribute="name|widgetName"/>
