@@ -387,6 +387,17 @@
             <param name="bg_visible" value="true" />
           </include>
           <control type="group">
+            <visible>Skin.HasSetting(ShowLabelOnBanner)</visible>
+            <top>35</top>
+            <left>80</left>
+            <control type="label">
+              <font>font_tiny_title_uppercase</font>
+              <textcolor>ffffffff</textcolor>
+              <shadowcolor>ff000000</shadowcolor>
+              <label>$INFO[ListItem.Label]</label>
+            </control>
+          </control>
+          <control type="group">
             <top>-15</top>
             <left>30</left>
             <width>1025</width>

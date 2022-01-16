@@ -1924,3 +1924,8 @@ msgstr "Pomiń spotlight poziomu pierwszego"
 msgctxt "#31430"
 msgid "Show widget labels above"
 msgstr "Pokaż nazwę widgetu"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31431"
+msgid "Show title on banner"
+msgstr "Pokaż nazwę pozycji na lokalnym banerze"
