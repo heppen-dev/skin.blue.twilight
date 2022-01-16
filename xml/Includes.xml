@@ -1700,16 +1700,16 @@
           <effect type="fade" start="20" end="100" time="150" tween="back" easing="out"/>
         </animation>
         <control type="group">
-          <top>5</top>
-          <left>-5</left>
-          <bottom>25</bottom>
-          <right>-5</right>
+          <top>3</top>
+          <left>-8</left>
+          <bottom>23</bottom>
+          <right>-8</right>
           <visible>$PARAM[visible]</visible>
           <control type="group">
             <control type="image">
               <bordersize>15</bordersize>
               <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
-              <texture colordiffuse="$VAR[ColorHighlight]" border="10">common/selectbox2.png</texture>
+              <texture colordiffuse="$VAR[ColorHighlight]" border="10">common/selectbox-thin.png</texture>
             </control>
             <control type="image">
               <bordersize>15</bordersize>
@@ -1722,7 +1722,7 @@
             <control type="image">
               <bordersize>15</bordersize>
               <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
-              <texture colordiffuse="ffffffff" border="10">common/selectbox2.png</texture>
+              <texture colordiffuse="ffffffff" border="10">common/selectbox-thin.png</texture>
             </control>
             <visible>String.IsEqual(Skin.String(PosterHighlight),White)</visible>
           </control>
