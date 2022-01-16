@@ -181,148 +181,46 @@
     <param name="sortdirection" default=""/>
     <param name="limit" default=""/>
     <param name="path" default=""/>
-    <param name="postercondition" default="!String.IsEmpty(Container(302).ListItem.Property(widgetPath)) + String.IsEqual(Container(302).ListItem.Property(widgetAspect),Poster)] | [String.IsEmpty(Container(302).ListItem.Property(widgetPath)) + String.IsEqual(Container(301).ListItem.Property(widgetAspect),Poster)]"/>
-    <param name="squarecondition" default="!String.IsEmpty(Container(302).ListItem.Property(widgetPath)) + String.IsEqual(Container(302).ListItem.Property(widgetAspect),Square)] | [String.IsEmpty(Container(302).ListItem.Property(widgetPath)) + String.IsEqual(Container(301).ListItem.Property(widgetAspect),Square)]"/>
-    <param name="landscapecondition" default="!String.IsEmpty(Container(302).ListItem.Property(widgetPath)) + String.IsEqual(Container(302).ListItem.Property(widgetAspect),Landscape)] | [String.IsEmpty(Container(302).ListItem.Property(widgetPath)) + String.IsEqual(Container(301).ListItem.Property(widgetAspect),Landscape)]"/>
-    <param name="fanartcondition" default="!String.IsEmpty(Container(302).ListItem.Property(widgetPath)) + String.IsEqual(Container(302).ListItem.Property(widgetAspect),Fanart)] | [String.IsEmpty(Container(302).ListItem.Property(widgetPath)) + String.IsEqual(Container(301).ListItem.Property(widgetAspect),Fanart)]"/>
+    <param name="landscapecondition" default="true"/>
     <definition>
       <control type="$PARAM[controltype]" id="$PARAM[id]">
-        <nested/>
+        <orientation>horizontal</orientation>
+        <height>195</height>
+        <focusposition>3</focusposition>
+        <animation effect="slide" time="0" start="0" end="-120,0" reversible="true" condition="true">Conditional</animation>
+        <!-- movement -->
+        <include content="Animation_Widget_Slide_Searchlist">
+          <param name="container" value="4100" />
+        </include>
+        <onfocus>SetProperty(TMDbHelper.WidgetContainer,$PARAM[id],home)</onfocus>
         <onfocus>SetProperty(widgetNameLabel,$PARAM[label],home)</onfocus>
         <onfocus>SetProperty(widgetMovementId,$PARAM[id],home)</onfocus>
-        <orientation>horizontal</orientation>
-        <height>460</height>
-        <animation effect="fade" start="100" end="0" time="300" reversible="true" easing="inout" condition="Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[id])">Conditional</animation>
-        <!-- Posters aspect ratio -->
-        <itemlayout height="382.5" width="270" condition="$PARAM[postercondition]">
-          <include content="ViewPosterItemLayout" />
-          <include content="View_WatchedOverlay">
-            <param name="bottom" value="-25"/>
-            <param name="right" value="44"/>
-            <param name="visible" value="false"/>
-          </include>
-        </itemlayout>
-        <focusedlayout height="382.5" width="270" condition="$PARAM[postercondition]">
-          <include content="ViewPosterItemLayout">
-          </include>
-          <include content="Selectbox">
-            <param name="pad_top_b" value="-15"/>
-            <param name="pad_bottom_b" value="-22"/>
-            <param name="pad_left_b" value="-15"/>
-            <param name="pad_right_b" value="-5"/>
-            <param name="pad_top_t" value="-10"/>
-            <param name="pad_bottom_t" value="-16"/>
-            <param name="pad_left_t" value="-10"/>
-            <param name="pad_right_t" value="0"/>
-            <param name="visible_posters" value="$PARAM[postercondition] + Control.HasFocus($PARAM[id])"/>
-            <param name="visible_squares" value="false"/>
-            <param name="visible_landscapes" value="false"/>
-          </include>
-          <include content="View_WatchedOverlay">
-            <param name="bottom" value="-25"/>
-            <param name="right" value="44"/>
-            <param name="visible" value="$PARAM[postercondition] + Control.HasFocus($PARAM[id])"/>
-          </include>
-        </focusedlayout>
-        <!-- Square aspect ratio -->
-        <itemlayout height="382.5" width="360" condition="$PARAM[squarecondition]">
-          <include content="ViewSquareItemLayout">
-          </include>
-          <include content="View_WatchedOverlay">
-            <param name="bottom" value="-25"/>
-            <param name="right" value="72"/>
-            <param name="visible" value="false"/>
-          </include>
-        </itemlayout>
-        <focusedlayout height="382.5" width="360" condition="$PARAM[squarecondition]">
-          <include content="ViewSquareItemLayout">
-          </include>
-          <include content="Selectbox">
-            <param name="pad_top_b" value="-15"/>
-            <param name="pad_bottom_b" value="-23"/>
-            <param name="pad_left_b" value="-15"/>
-            <param name="pad_right_b" value="17"/>
-            <param name="pad_top_t" value="-8"/>
-            <param name="pad_bottom_t" value="-18"/>
-            <param name="pad_left_t" value="-10"/>
-            <param name="pad_right_t" value="22"/>
-            <param name="visible_posters" value="false"/>
-            <param name="visible_squares" value="$PARAM[squarecondition] + Control.HasFocus($PARAM[id])"/>
-            <param name="visible_landscapes" value="false"/>
-          </include>
-          <include content="View_WatchedOverlay">
-            <param name="bottom" value="-25"/>
-            <param name="right" value="72"/>
-            <param name="visible" value="$PARAM[squarecondition] + Control.HasFocus($PARAM[id])"/>
-          </include>
-        </focusedlayout>
-        <!-- Landscape aspect ratio -->
-        <itemlayout height="375.5" width="600" condition="$PARAM[landscapecondition]">
+        <animation effect="fade" start="100" end="0" time="200" reversible="true" condition="Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[idtofade])">Conditional</animation>
+        <!-- Landscapes -->
+        <itemlayout height="225" width="315" condition="$PARAM[landscapecondition]">
           <include content="ViewLandscapeItemLayout">
-            <param name="clearlogo" value="[!String.IsEmpty(ListItem.Art(clearlogo)) | !String.IsEmpty(ListItem.Art(tvshow.clearlogo))] + [[String.IsEmpty(ListItem.Art(landscape)) + String.IsEmpty(ListItem.Art(tvshow.landscape))] | [[!String.IsEmpty(ListItem.Art(tvshow.landscape)) | !String.IsEmpty(ListItem.Art(landscape))] + !Skin.HasSetting(LandscapeArt)] | [!String.IsEmpty(ListItem.Art(thumb)) + [String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,video)] + String.IsEmpty(ListItem.Property(airday))]]"/>
-          </include>
-          <include content="View_WatchedOverlay">
-            <param name="bottom" value="18"/>
-            <param name="right" value="72"/>
-            <param name="visible" value="false"/>
+            <param name="firstrow_fade" value="Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[id])" />
           </include>
         </itemlayout>
-        <focusedlayout height="375.5" width="600" condition="$PARAM[landscapecondition]">
+        <focusedlayout height="225" width="315" condition="$PARAM[landscapecondition]">
           <include content="ViewLandscapeItemLayout">
-            <param name="clearlogo" value="[!String.IsEmpty(ListItem.Art(clearlogo)) | !String.IsEmpty(ListItem.Art(tvshow.clearlogo))] + [[String.IsEmpty(ListItem.Art(landscape)) + String.IsEmpty(ListItem.Art(tvshow.landscape))] | [[!String.IsEmpty(ListItem.Art(tvshow.landscape)) | !String.IsEmpty(ListItem.Art(landscape))] + !Skin.HasSetting(LandscapeArt)] | [!String.IsEmpty(ListItem.Art(thumb)) + [String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,video)] + String.IsEmpty(ListItem.Property(airday))]]"/>
+            <param name="firstrow_fade" value="Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[id])" />
           </include>
-          <include content="Selectbox">
-            <param name="pad_top_b" value="-8"/>
-            <param name="pad_bottom_b" value="18"/>
-            <param name="pad_left_b" value="-8"/>
-            <param name="pad_right_b" value="10"/>
-            <param name="pad_top_t" value="-3"/>
-            <param name="pad_bottom_t" value="23"/>
-            <param name="pad_left_t" value="-3"/>
-            <param name="pad_right_t" value="15"/>
-            <param name="visible_posters" value="false"/>
-            <param name="visible_squares" value="false"/>
-            <param name="visible_landscapes" value="$PARAM[landscapecondition] + Control.HasFocus($PARAM[id])"/>
-          </include>
-          <include content="View_WatchedOverlay">
-            <param name="bottom" value="18"/>
-            <param name="right" value="72"/>
-            <param name="visible" value="$PARAM[landscapecondition] + Control.HasFocus($PARAM[id])"/>
-          </include>
-        </focusedlayout>
-        <!-- Fanart aspect ratio -->
-        <itemlayout height="375.5" width="600" condition="$PARAM[fanartcondition]">
-          <include content="ViewFanartItemLayout">
-            <param name="clearlogo" value="[!String.IsEmpty(ListItem.Art(clearlogo)) | !String.IsEmpty(ListItem.Art(tvshow.clearlogo))] + [[String.IsEmpty(ListItem.Art(landscape)) + String.IsEmpty(ListItem.Art(tvshow.landscape))] | [[!String.IsEmpty(ListItem.Art(tvshow.landscape)) | !String.IsEmpty(ListItem.Art(landscape))] + !Skin.HasSetting(LandscapeArt)] | [!String.IsEmpty(ListItem.Art(thumb)) + [String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,video)] + String.IsEmpty(ListItem.Property(airday))]]"/>
-          </include>
-          <include content="View_WatchedOverlay">
-            <param name="bottom" value="18"/>
-            <param name="right" value="72"/>
-            <param name="visible" value="false"/>
-          </include>
-        </itemlayout>
-        <focusedlayout height="375.5" width="600" condition="$PARAM[fanartcondition]">
-          <include content="ViewFanartItemLayout">
-            <param name="clearlogo" value="[!String.IsEmpty(ListItem.Art(clearlogo)) | !String.IsEmpty(ListItem.Art(tvshow.clearlogo))] + [[String.IsEmpty(ListItem.Art(landscape)) + String.IsEmpty(ListItem.Art(tvshow.landscape))] | [[!String.IsEmpty(ListItem.Art(tvshow.landscape)) | !String.IsEmpty(ListItem.Art(landscape))] + !Skin.HasSetting(LandscapeArt)] | [!String.IsEmpty(ListItem.Art(thumb)) + [String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,video)] + String.IsEmpty(ListItem.Property(airday))]]"/>
-          </include>
-          <include content="Selectbox">
-            <param name="pad_top_b" value="-8"/>
-            <param name="pad_bottom_b" value="18"/>
-            <param name="pad_left_b" value="-8"/>
-            <param name="pad_right_b" value="10"/>
-            <param name="pad_top_t" value="-3"/>
-            <param name="pad_bottom_t" value="23"/>
-            <param name="pad_left_t" value="-3"/>
-            <param name="pad_right_t" value="15"/>
-            <param name="visible_posters" value="false"/>
-            <param name="visible_squares" value="false"/>
-            <param name="visible_landscapes" value="$PARAM[fanartcondition] + Control.HasFocus($PARAM[id])"/>
-          </include>
-          <include content="View_WatchedOverlay">
-            <param name="bottom" value="18"/>
-            <param name="right" value="72"/>
-            <param name="visible" value="$PARAM[fanartcondition] + Control.HasFocus($PARAM[id])"/>
-          </include>
+          <control type="group">
+            <width>315</width>
+            <height>225</height>
+            <include content="Selectbox">
+              <param name="visible" value="$PARAM[landscapecondition] + Control.HasFocus($PARAM[id])"/>
+            </include>
+          </control>
+          <control type="button">
+            <include>HiddenObject</include>
+            <onfocus condition="ListItem.IsFolder">SetProperty(spotlight_isFolder,true,home)</onfocus>
+            <onfocus condition="ListItem.IsCollection">SetProperty(spotlight_isCollection,true,home)</onfocus>
+            <onfocus condition="!ListItem.IsFolder">ClearProperty(spotlight_isFolder)</onfocus>
+            <onfocus condition="!ListItem.IsCollection">ClearProperty(spotlight_isCollection)</onfocus>
+            <onfocus>SetProperty(spotlight_Title,$INFO[ListItem.Title],home)</onfocus>
+          </control>
         </focusedlayout>
         <include content="Object_Widget_Content_Path">
           <param name="target" value="$PARAM[target]"/>
