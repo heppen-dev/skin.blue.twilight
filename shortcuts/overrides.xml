@@ -5,8 +5,6 @@
   <widgetPlaylists>True</widgetPlaylists>
   <backgroundBrowse>True</backgroundBrowse>
   <widgetRename>True</widgetRename>
-  <widget label="8">Weather</widget>
-  <widget label="5">Settings</widget>
   <!-- Trick for shutdown menu -->
   <groupoverride group="shutdown" condition="Window.IsActive(DialogButtonMenu.xml)">Close</groupoverride>
   <!-- Warning to Remove Settings -->
