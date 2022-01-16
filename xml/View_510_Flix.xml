@@ -7,7 +7,7 @@
       <include>Visible_Right</include>
       <control type="group" id="5600">
         <include content="Object_Item_Showcase">
-          <param name="title" value="$VAR[Label_Title]"/>
+          <param name="title" value="$INFO[ListItem.Label]"/>
           <param name="title_width" value="930"/>
           <param name="plot" value="$VAR[Label_PlotTextBoxVar]"/>
           <param name="plot_height" value="95"/>
