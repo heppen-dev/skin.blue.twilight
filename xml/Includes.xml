@@ -1714,7 +1714,7 @@
             <control type="image">
               <bordersize>15</bordersize>
               <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
-              <texture colordiffuse="$VAR[ColorGradient]" border="10">common/selectbox2-gradient.png</texture>
+              <texture colordiffuse="$VAR[ColorGradient]" border="10">common/selectbox-thin-gradient.png</texture>
             </control>
             <visible>String.IsEqual(Skin.String(PosterHighlight),Highlight)</visible>
           </control>
