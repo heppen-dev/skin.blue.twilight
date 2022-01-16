@@ -40,14 +40,14 @@
         <include content="View_Forced">
           <param name="string" value="$LOCALIZE[31392]"/>
         </include>
-        <focusedlayout height="382.5" width="270" condition="Container.Content(videos) | Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | [Container.Content(musicvideos) + Skin.HasSetting(show_musicvideoposter)]">
+        <focusedlayout height="382.5" width="270" condition="Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(videos)">
           <control type="group">
             <include content="View_56_Posters_Layout">
               <param name="WallWatchedIconVar_visible" value="false"/>
             </include>
           </control>
         </focusedlayout>
-        <itemlayout height="382.5" width="270" condition="Container.Content(videos) | Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | [Container.Content(musicvideos) + Skin.HasSetting(show_musicvideoposter)]">
+        <itemlayout height="382.5" width="270" condition="Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(videos)">
           <control type="group">
             <include content="View_56_Posters_Layout">
               <param name="WallWatchedIconVar_visible" value="false"/>
