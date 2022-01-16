@@ -366,7 +366,8 @@
         <include content="Flix_Spotlight_Properties">
           <param name="include_condition" value="[!String.StartsWith(ListItem.FolderPath,favourites://) + !String.IsEqual(Listitem.DBTYPE,song) + !String.IsEqual(Listitem.DBTYPE,album) + !String.IsEqual(Listitem.DBTYPE,artist)] + Skin.HasSetting(FlixSpotlight)" />
         </include>
-        <onclick condition="[!String.StartsWith(ListItem.FolderPath,favourites://) + !String.IsEqual(Listitem.DBTYPE,song) + !String.IsEqual(Listitem.DBTYPE,album) + !String.IsEqual(Listitem.DBTYPE,artist)] + Skin.HasSetting(FlixSpotlight)">SetFocus(6000)</onclick>
+        <onclick condition="[!String.StartsWith(ListItem.FolderPath,favourites://) + !String.IsEqual(Listitem.DBTYPE,song) + !String.IsEqual(Listitem.DBTYPE,album) + !String.IsEqual(Listitem.DBTYPE,artist)] + [Skin.HasSetting(FlixSpotlight) + !Skin.HasSetting(SkipLevel1)]">SetFocus(6000)</onclick>
+        <onclick condition="[!String.StartsWith(ListItem.FolderPath,favourites://) + !String.IsEqual(Listitem.DBTYPE,song) + !String.IsEqual(Listitem.DBTYPE,album) + !String.IsEqual(Listitem.DBTYPE,artist)] + [Skin.HasSetting(FlixSpotlight) + Skin.HasSetting(SkipLevel1)]">ActivateWindow(1141)</onclick>
         <!-- Landscapes -->
         <itemlayout height="225" width="315" condition="$PARAM[landscapecondition]">
           <include content="ViewLandscapeItemLayout">

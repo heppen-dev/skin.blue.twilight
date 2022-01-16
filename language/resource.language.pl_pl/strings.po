@@ -1914,3 +1914,8 @@ msgstr "Przełącz tło powiadomień na przezroczyste"
 msgctxt "#31428"
 msgid "Extended List"
 msgstr "Lista rozszerzona"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31429"
+msgid "Skip Flix Spotlight first level"
+msgstr "Pomiń spotlight poziomu pierwszego"
