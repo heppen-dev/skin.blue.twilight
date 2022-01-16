@@ -297,6 +297,7 @@
         <width>450</width>
         <visible>$PARAM[visible]</visible>
         <include>Animation_DialogPopupVisible</include>
+        <animation effect="slide" end="0,75" condition="Integer.IsLess(Container(9000).NumItems,10)">Conditional</animation>
         <animation effect="slide" end="0,75" condition="Integer.IsLess(Container(9000).NumItems,9)">Conditional</animation>
         <animation effect="slide" end="0,75" condition="Integer.IsLess(Container(9000).NumItems,8)">Conditional</animation>
         <animation effect="slide" end="0,75" condition="Integer.IsLess(Container(9000).NumItems,7)">Conditional</animation>
