@@ -445,19 +445,15 @@
           <include content="ViewBannerItemLayout">
             <param name="bg_visible" value="true" />
           </include>
-          <include content="Selectbox">
-            <param name="pad_top_b" value="-15"/>
-            <param name="pad_bottom_b" value="-25"/>
-            <param name="pad_left_b" value="20"/>
-            <param name="pad_right_b" value="60"/>
-            <param name="pad_top_t" value="-10"/>
-            <param name="pad_bottom_t" value="-16"/>
-            <param name="pad_left_t" value="-10"/>
-            <param name="pad_right_t" value="0"/>
-            <param name="visible_posters" value="$PARAM[postercondition] + Control.HasFocus($PARAM[id])"/>
-            <param name="visible_squares" value="false"/>
-            <param name="visible_landscapes" value="false"/>
-          </include>
+          <control type="group">
+            <top>-15</top>
+            <left>30</left>
+            <width>1025</width>
+            <height>250</height>
+            <include content="Selectbox">
+              <param name="visible" value="$PARAM[postercondition] + Control.HasFocus($PARAM[id])"/>
+            </include>
+          </control>
         </focusedlayout>
         <include content="Object_Widget_Content_Path">
           <param name="target" value="$PARAM[target]"/>
