@@ -265,7 +265,7 @@
               <left>30</left>
               <width>255</width>
               <control type="label">
-                <font>font_tiny_title_uppercase</font>
+                <font>font_tiny_uppercase</font>
                 <textcolor>ffffffff</textcolor>
                 <shadowcolor>ff000000</shadowcolor>
                 <align>center</align>
@@ -353,7 +353,7 @@
             <left>30</left>
             <width>255</width>
             <control type="label">
-              <font>font_tiny_title_uppercase</font>
+              <font>font_tiny_uppercase</font>
               <textcolor>ffffffff</textcolor>
               <shadowcolor>ff000000</shadowcolor>
               <align>center</align>
