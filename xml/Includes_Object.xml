@@ -420,15 +420,8 @@
               <font>font_tiny_title_uppercase</font>
               <textcolor>ffffffff</textcolor>
               <shadowcolor>ff000000</shadowcolor>
-              <label>$INFO[ListItem.Label]</label>
-              <visible>!String.StartsWith(ListItem.FolderPath,pvr://)</visible>
-            </control>
-            <control type="label">
-              <font>font_tiny_title_uppercase</font>
-              <textcolor>ffffffff</textcolor>
-              <shadowcolor>ff000000</shadowcolor>
-              <label>$INFO[ListItem.Label] &#8226; $INFO[ListItem.Title]</label>
-              <visible>String.StartsWith(ListItem.FolderPath,pvr://)</visible>
+              <label>$INFO[ListItem.Title]</label>
+              <visible>Control.HasFocus($PARAM[id])</visible>
             </control>
           </control>
           <control type="group">
