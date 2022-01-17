@@ -122,12 +122,13 @@
           </control>
           <control type="label" id="618">
             <textoffsetx>40</textoffsetx>
-            <width>470</width>
+            <width>100%</width>
             <height>75</height>
             <textcolor>dialog_fg_30</textcolor>
             <label>$LOCALIZE[31300]</label>
-            <font>font_small_defaults</font>
+            <font>font_tiny_hintlabel</font>
             <aligny>center</aligny>
+            <align>center</align>
           </control>
           <control type="button" id="619" description="Customize shutdown menu">
             <label>$LOCALIZE[31180]</label>
