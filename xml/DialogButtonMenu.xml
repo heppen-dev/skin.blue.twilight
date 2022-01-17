@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="buttonMenu" id="111">
-  <defaultcontrol>9000</defaultcontrol>
+  <defaultcontrol>111</defaultcontrol>
   <include>Animation_DialogPopupOpenClose</include>
   <controls>
     <control type="group">
@@ -10,67 +10,59 @@
       <height>720</height>
       <width>450</width>
       <include>Animation_DialogPopupVisible</include>
-      <animation effect="slide" end="0,75" condition="Integer.IsLess(Container(9000).NumItems,10)">Conditional</animation>
-      <animation effect="slide" end="0,75" condition="Integer.IsLess(Container(9000).NumItems,9)">Conditional</animation>
-      <animation effect="slide" end="0,75" condition="Integer.IsLess(Container(9000).NumItems,8)">Conditional</animation>
-      <animation effect="slide" end="0,75" condition="Integer.IsLess(Container(9000).NumItems,7)">Conditional</animation>
-      <animation effect="slide" end="0,75" condition="Integer.IsLess(Container(9000).NumItems,6)">Conditional</animation>
-      <animation effect="slide" end="0,75" condition="Integer.IsLess(Container(9000).NumItems,5)">Conditional</animation>
-      <animation effect="slide" end="0,75" condition="Integer.IsLess(Container(9000).NumItems,4)">Conditional</animation>
-      <animation effect="slide" end="0,75" condition="Integer.IsLess(Container(9000).NumItems,3)">Conditional</animation>
-      <animation effect="slide" end="0,75" condition="Integer.IsLess(Container(9000).NumItems,2)">Conditional</animation>
+      <animation effect="slide" end="0,200" condition="Integer.IsGreater(Container(111).NumItems,0)">Conditional</animation>
       <control type="group">
         <include>MediaMenuBackground</include>
-        <visible>Integer.IsEqual(Container(9000).NumItems,9)</visible>
+        <visible>Integer.IsEqual(Container(111).NumItems,9)</visible>
       </control>
       <control type="group">
         <include>MediaMenuBackground</include>
-        <visible>Integer.IsEqual(Container(9000).NumItems,8)</visible>
+        <visible>Integer.IsEqual(Container(111).NumItems,8)</visible>
         <bottom>70</bottom>
       </control>
       <control type="group">
         <include>MediaMenuBackground</include>
         <bottom>145</bottom>
-        <visible>Integer.IsEqual(Container(9000).NumItems,7)</visible>
+        <visible>Integer.IsEqual(Container(111).NumItems,7)</visible>
       </control>
       <control type="group">
         <include>MediaMenuBackground</include>
         <bottom>210</bottom>
-        <visible>Integer.IsEqual(Container(9000).NumItems,6)</visible>
+        <visible>Integer.IsEqual(Container(111).NumItems,6)</visible>
       </control>
       <control type="group">
         <include>MediaMenuBackground</include>
         <bottom>285</bottom>
-        <visible>Integer.IsEqual(Container(9000).NumItems,5)</visible>
+        <visible>Integer.IsEqual(Container(111).NumItems,5)</visible>
       </control>
       <control type="group">
         <include>MediaMenuBackground</include>
         <bottom>360</bottom>
-        <visible>Integer.IsEqual(Container(9000).NumItems,4)</visible>
+        <visible>Integer.IsEqual(Container(111).NumItems,4)</visible>
       </control>
       <control type="group">
         <include>MediaMenuBackground</include>
         <bottom>445</bottom>
-        <visible>Integer.IsEqual(Container(9000).NumItems,3)</visible>
+        <visible>Integer.IsEqual(Container(111).NumItems,3)</visible>
       </control>
       <control type="group">
         <include>MediaMenuBackground</include>
         <bottom>530</bottom>
-        <visible>Integer.IsEqual(Container(9000).NumItems,2)</visible>
+        <visible>Integer.IsEqual(Container(111).NumItems,2)</visible>
       </control>
       <control type="group">
         <include>MediaMenuBackground</include>
         <bottom>605</bottom>
-        <visible>Integer.IsEqual(Container(9000).NumItems,1)</visible>
+        <visible>Integer.IsEqual(Container(111).NumItems,1)</visible>
       </control>
       <include content="DefaultSettingButtonGradient">
-        <param name="id" value="9000"/>
+        <param name="id" value="111"/>
         <top>25</top>
         <height>75</height>
         <left>0</left>
-        <visible>Control.HasFocus(9000)</visible>
+        <visible>Control.HasFocus(111)</visible>
       </include>
-      <control type="panel" id="9000">
+      <control type="panel" id="111">
         <top>25</top>
         <orientation>vertical</orientation>
         <itemlayout width="450" height="75">
