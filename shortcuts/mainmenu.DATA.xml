@@ -4,8 +4,7 @@
     <label>137</label>
     <label2>Common Shortcut</label2>
     <defaultID>search</defaultID>
-    <icon>special://skin/extras/icons/film.png</icon>
-    <thumb>special://skin/extras/icons/film.png</thumb>
+    <icon>special://skin/extras/icons/search.png</icon>
     <action>Skin.SetString(SearchTerm)</action>
     <action>ActivateWindow(1138)</action>
   </shortcut>
@@ -14,7 +13,6 @@
     <label2>Common Shortcut</label2>
     <defaultID>movies</defaultID>
     <icon>special://skin/extras/icons/film.png</icon>
-    <thumb>special://skin/extras/icons/film.png</thumb>
     <action>ActivateWindow(Videos,MovieTitles,return)</action>
   </shortcut>
   <shortcut>
@@ -22,7 +20,6 @@
     <label2>Common Shortcut</label2>
     <defaultID>tvshows</defaultID>
     <icon>special://skin/extras/icons/tv.png</icon>
-    <thumb>special://skin/extras/icons/tv.png</thumb>
     <action>ActivateWindow(Videos,TVShowTitles,return)</action>
   </shortcut>
   <shortcut>
@@ -30,14 +27,12 @@
     <label2>Common Shortcut</label2>
     <defaultID>music</defaultID>
     <icon>special://skin/extras/icons/songs.png</icon>
-    <thumb>special://skin/extras/icons/songs.png</thumb>
     <action>ActivateWindow(Music)</action>
   </shortcut>
   <shortcut>
     <label>3</label>
     <label2>32034</label2>
     <icon>special://skin/extras/icons/videoplay.png</icon>
-    <thumb>special://skin/extras/icons/videoplay.png</thumb>
     <action>ActivateWindow(Videos)</action>
   </shortcut>
   <shortcut>
@@ -45,7 +40,6 @@
     <label2>Common Shortcut</label2>
     <defaultID>livetv</defaultID>
     <icon>special://skin/extras/icons/livetv.png</icon>
-    <thumb>special://skin/extras/icons/livetv.png</thumb>
     <action>ActivateWindow(TVChannels)</action>
     <visible>PVR.HasTVChannels</visible>
   </shortcut>
@@ -54,7 +48,6 @@
     <label2>Common Shortcut</label2>
     <defaultID>addons</defaultID>
     <icon>special://skin/extras/icons/addons.png</icon>
-    <thumb>special://skin/extras/icons/addons.png</thumb>
     <action>ActivateWindow(AddonBrowser)</action>
   </shortcut>
   <shortcut>
@@ -62,14 +55,12 @@
     <label2>Common Shortcut</label2>
     <defaultID>settings</defaultID>
     <icon>special://skin/extras/icons/settings.png</icon>
-    <thumb>special://skin/extras/icons/settings.png</thumb>
     <action>ActivateWindow(Settings)</action>
   </shortcut>
   <shortcut>
     <label>13012</label>
     <label2>Common Shortcut</label2>
     <icon>special://skin/extras/icons/power.png</icon>
-    <thumb>special://skin/extras/icons/power.png</thumb>
     <action>Quit()</action>
   </shortcut>
 </shortcuts>
