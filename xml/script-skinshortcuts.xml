@@ -69,7 +69,7 @@
       <control type="group">
         <control type="image">
           <description>Dialog Header image</description>
-          <left>648</left>
+          <left>650</left>
           <top>110</top>
           <width>1</width>
           <height>910</height>
