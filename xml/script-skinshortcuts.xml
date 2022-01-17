@@ -242,13 +242,6 @@
             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
             <include>DialogSettingButton</include>
           </control>
-          <!-- <control type="button" id="306" description="Icon">
-            <label>$LOCALIZE[31173]</label>
-            <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
-            <include>DialogSettingButton</include>
-            <visible>!String.IsEqual(Window.Property(groupname),shutdown)</visible>
-            <visible>![String.EndsWith(Window.Property(groupname),.1) | String.IsEqual(Window.Property(groupname),searchmenu)]</visible>
-          </control> -->
           <control type="button" id="405" description="Submenu">
             <label>$LOCALIZE[31170]</label>
             <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
@@ -285,15 +278,6 @@
             <visible>[String.EndsWith(Window.Property(groupname),.1) | String.IsEqual(Window.Property(groupname),searchmenu) | String.IsEqual(Window.Property(groupname),widgets)]</visible>
             <include>DialogSettingButton</include>
           </control>
-          <!-- Widget aspect -->
-          <!-- <control type="button" id="505">
-            <label>$LOCALIZE[31253]</label>
-            <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
-            <label2>$INFO[Container(211).ListItem.Property(widgetAspect)]</label2>
-            <visible>[String.EndsWith(Window.Property(groupname),.1) | String.IsEqual(Window.Property(groupname),searchmenu)]</visible>
-            <include>DialogSettingButton</include>
-            <onclick>SendClick(404)</onclick>
-          </control> -->
           <!-- Widget sort by -->
           <control type="button" id="502">
             <label>$LOCALIZE[31177]</label>
@@ -347,7 +331,13 @@
       <control type="button" id="111">
         <visible>false</visible>
       </control>
+      <control type="button" id="306">
+        <visible>false</visible>
+      </control>
       <control type="button" id="309">
+        <visible>false</visible>
+      </control>
+      <control type="button" id="310">
         <visible>false</visible>
       </control>
       <control type="button" id="312">
