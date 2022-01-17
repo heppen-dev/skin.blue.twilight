@@ -150,6 +150,7 @@
         <include content="Object_Item_Showcase">
           <param name="title" value="$VAR[Label_Title]"/>
           <param name="title_width" value="1000" />
+          <param name="clearlogo_top_margin" value="200"/>
           <param name="plot" value="$VAR[Label_PlotTextBoxVar]"/>
           <param name="visible_condi" value="[[!ControlGroup(2999).HasFocus + ControlGroup(3000).HasFocus] | [String.IsEqual(Window(home).Property(activateSpotlight),true) + ControlGroup(2999).HasFocus] | $EXP[flix_spotlight_level1]] + !String.StartsWith(ListItem.FolderPath,favourites://)"/>
         </include>

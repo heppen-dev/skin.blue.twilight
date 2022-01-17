@@ -456,8 +456,8 @@
     <param name="plot_height" default="125"/>
     <param name="title_top" default="70"/>
     <param name="title_visible" default="true" />
-    <param name="clearlogo_top_margin" default="-940" />
-    <param name="clearlogo_width" default="480" />
+    <param name="clearlogo_bottom" default="970" />
+    <param name="clearlogo_height" default="100" />
     <definition>
       <control type="group">
         <top>$PARAM[top]</top>
@@ -465,22 +465,23 @@
         <visible>$PARAM[visible_condi]</visible>
         <control type="group">
           <top>60</top>
+          <orientation>vertical</orientation>
+          <width>$PARAM[title_width]</width>
           <control type="label">
             <top>$PARAM[title_top]</top>
             <bottom>60</bottom>
             <scroll>false</scroll>
-            <width>$PARAM[title_width]</width>
             <textcolor>$VAR[TitleColour]</textcolor>
             <shadowcolor>black</shadowcolor>
             <label>$PARAM[title]</label>
             <font>font_title</font>
-            <visible>[[String.IsEmpty(ListItem.Art(clearlogo)) + String.IsEmpty(ListItem.Art(tvshow.clearlogo))] | Skin.HasSetting(DisableClearlogo)] + [!Control.HasFocus(9000) + !Control.HasFocus(9001) + !String.IsEqual(Container(9989).ListItemAbsolute(0).Property(list),Settings) + !String.IsEqual(Container(9989).ListItemAbsolute(0).Property(list),Weather)]</visible>
+            <visible>[[String.IsEmpty(ListItem.Art(clearlogo)) + String.IsEmpty(ListItem.Art(tvshow.clearlogo))] | Skin.HasSetting(DisableClearlogo)] + [!Control.HasFocus(9000) + !Control.HasFocus(9001)]</visible>
             <visible>$PARAM[title_visible]</visible>
           </control>
           <control type="image">
-            <top>$PARAM[clearlogo_top_margin]</top>
-            <width>$PARAM[clearlogo_width]</width>
-            <aspectratio>keep</aspectratio>
+            <bottom>$PARAM[clearlogo_bottom]</bottom>
+            <height>$PARAM[clearlogo_height]</height>
+            <aspectratio align="left">keep</aspectratio>
             <texture background="true">$VAR[Image_ClearLogo]</texture>
             <visible>[!String.IsEmpty(ListItem.Art(clearlogo)) | !String.IsEmpty(ListItem.Art(tvshow.clearlogo))] + !Skin.HasSetting(DisableClearlogo)</visible>
           </control>
