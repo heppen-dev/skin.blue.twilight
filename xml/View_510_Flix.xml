@@ -13,14 +13,14 @@
           <param name="plot_height" value="95"/>
           <param name="info_line_top" value="180"/>
           <param name="plot_top" value="350"/>
-          <param name="visible_condi" value="Control.IsVisible(510)" />
+          <param name="visible_condi" value="Control.HasFocus(510)" />
         </include>
         <include content="Object_Ratings_Content">
           <param name="top" value="307"/>
           <param name="left" value="100"/>
           <param name="align" value="left"/>
           <param name="directory" value="$INFO[Skin.String(Icons)]"/>
-          <param name="visible" value="Control.IsVisible(510)"/>
+          <param name="visible" value="Control.HasFocus(510)"/>
         </include>
         <visible>!$EXP[infodialog_active]</visible>
       </control>
@@ -66,7 +66,7 @@
           <right>-25</right>
           <bottom>-30</bottom>
           <include content="Selectbox">
-            <param name="visible" value="$PARAM[focused]"/>
+            <param name="visible" value="Control.HasFocus(510)"/>
           </include>
         </control>
         <include content="View_WatchedOverlay">
