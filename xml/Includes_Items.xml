@@ -1565,7 +1565,7 @@
         <label>$LOCALIZE[31428]</label>
         <icon>special://skin/extras/icons/list.png</icon>
         <onclick>Skin.ToggleSetting(ExtendedList)</onclick>
-        <visible>Control.IsVisible(50) | Control.IsVisible(55)</visible>
+        <visible>[Control.IsVisible(50) | Control.IsVisible(55)] + Window.IsActive(MyVideoNav.xml)</visible>
       </item>
       <!-- Sort -->
       <item>
