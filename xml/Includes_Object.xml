@@ -90,6 +90,7 @@
         <animation effect="fade" start="100" end="0" time="0" reversible="true" condition="Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[id])">Conditional</animation>
         <control type="grouplist">
           <orientation>horizontal</orientation>
+          <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,0)</visible>
           <control type="label">
             <top>20</top>
             <left>15</left>
