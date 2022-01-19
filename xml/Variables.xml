@@ -773,7 +773,7 @@
     <value>[COLOR $VAR[ColorHighlight]]$INFO[Container(6).NumItems][/COLOR] $LOCALIZE[31036] - [COLOR $VAR[ColorHighlight]]$INFO[Container(6).CurrentPage]/$INFO[Container(6).NumPages][/COLOR]</value>
   </variable>
   <variable name="FileBrowserSelectLabel">
-    <value condition="Control.IsVisible(450)">[COLOR $VAR[ColorHighlight]]$INFO[Container(450).NumItems][/COLOR] $LOCALIZE[31036] - [COLOR $VAR[ColorHighlight]]$INFO[Container(450).CurrentPage]/$INFO[Container(450).NumPages][/COLOR]</value>
+    <value condition="Control.IsVisible(450)">[COLOR $VAR[ColorHighlight]]$INFO[Container(450).CurrentItem][/COLOR] - [COLOR $VAR[ColorHighlight]]$INFO[Container(450).NumItems][/COLOR] $LOCALIZE[31036] - [COLOR $VAR[ColorHighlight]]$INFO[Container(450).CurrentPage]/$INFO[Container(450).NumPages][/COLOR]</value>
     <value>[COLOR $VAR[ColorHighlight]]$INFO[Container(451).NumItems][/COLOR] $LOCALIZE[31036] - [COLOR $VAR[ColorHighlight]]$INFO[Container(451).CurrentPage]/$INFO[Container(451).NumPages][/COLOR]</value>
   </variable>
   <variable name="BannerArtVar">

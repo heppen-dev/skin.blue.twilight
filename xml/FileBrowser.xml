@@ -58,49 +58,16 @@
         <left>0</left>
         <top>100</top>
         <width>1550</width>
-        <height>840</height>
+        <height>920</height>
         <onright>9000</onright>
         <onleft>60</onleft>
         <onup>450</onup>
         <ondown>450</ondown>
         <pagecontrol>60</pagecontrol>
         <scrolltime>200</scrolltime>
-        <itemlayout height="140" width="1550">
+        <itemlayout height="92" width="1550">
           <control type="image">
-            <top>24</top>
-            <left>24</left>
-            <width>92</width>
-            <height>92</height>
-            <aligny>center</aligny>
-            <texture colordiffuse="dialog_fg_70">$INFO[ListItem.Icon]</texture>
-            <aspectratio>keep</aspectratio>
-          </control>
-          <control type="label">
-            <left>120</left>
             <top>0</top>
-            <right>20</right>
-            <height>140</height>
-            <aligny>center</aligny>
-            <selectedcolor>dialog_fg_70</selectedcolor>
-            <label>$INFO[ListItem.Label]</label>
-          </control>
-        </itemlayout>
-        <focusedlayout height="140" width="1550">
-          <control type="group">
-            <left>0</left>
-            <top>0</top>
-            <right>0</right>
-            <height>140</height>
-            <visible>Control.HasFocus(450)</visible>
-            <control type="image">
-              <texture colordiffuse="$VAR[ColorHighlight]" border="10">common/white.png</texture>
-            </control>
-            <control type="image">
-              <texture colordiffuse="$VAR[ColorGradient]" border="10">common/white-gradient.png</texture>
-            </control>
-          </control>
-          <control type="image">
-            <top>24</top>
             <left>24</left>
             <width>92</width>
             <height>92</height>
@@ -112,7 +79,40 @@
             <left>120</left>
             <top>0</top>
             <right>20</right>
-            <height>140</height>
+            <height>92</height>
+            <aligny>center</aligny>
+            <selectedcolor>dialog_fg_70</selectedcolor>
+            <label>$INFO[ListItem.Label]</label>
+          </control>
+        </itemlayout>
+        <focusedlayout height="92" width="1550">
+          <control type="group">
+            <left>0</left>
+            <top>0</top>
+            <right>0</right>
+            <height>92</height>
+            <visible>Control.HasFocus(450)</visible>
+            <control type="image">
+              <texture colordiffuse="$VAR[ColorHighlight]" border="10">common/white.png</texture>
+            </control>
+            <control type="image">
+              <texture colordiffuse="$VAR[ColorGradient]" border="10">common/white-gradient.png</texture>
+            </control>
+          </control>
+          <control type="image">
+            <top>0</top>
+            <left>24</left>
+            <width>92</width>
+            <height>92</height>
+            <aligny>center</aligny>
+            <texture colordiffuse="b3ededed">$INFO[ListItem.Icon]</texture>
+            <aspectratio>keep</aspectratio>
+          </control>
+          <control type="label">
+            <left>120</left>
+            <top>0</top>
+            <right>20</right>
+            <height>92</height>
             <aligny>center</aligny>
             <selectedcolor>dialog_fg_70</selectedcolor>
             <textcolor>b3ededed</textcolor>
@@ -133,14 +133,14 @@
         <scrolltime>200</scrolltime>
         <itemlayout height="155" width="155">
           <control type="image">
-            <bordersize>15</bordersize>
+            <bordersize>5</bordersize>
             <aspectratio scalediffuse="false">keep</aspectratio>
             <texture fallback="DefaultAddonNone.png" background="true">$INFO[Listitem.Icon]</texture>
             <visible>!String.StartsWith(ListItem.Path,special://skin/extras/icons) + !String.StartsWith(ListItem.Icon,Default)</visible>
           </control>
           <control type="image">
             <colordiffuse>dialog_fg_70</colordiffuse>
-            <bordersize>15</bordersize>
+            <bordersize>5</bordersize>
             <aspectratio scalediffuse="false">keep</aspectratio>
             <texture fallback="DefaultAddonNone.png" background="true">$INFO[Listitem.Icon]</texture>
             <visible>String.StartsWith(ListItem.Path,special://skin/extras/icons) | String.StartsWith(ListItem.Icon,Default)</visible>
@@ -154,7 +154,7 @@
             <texture colordiffuse="$VAR[ColorGradient]" border="10">common/box-gradient.png</texture>
           </control>
           <control type="image">
-            <bordersize>15</bordersize>
+            <bordersize>5</bordersize>
             <aspectratio scalediffuse="false">keep</aspectratio>
             <texture fallback="DefaultAddonNone.png" background="true">$INFO[Listitem.Icon]</texture>
           </control>
@@ -164,7 +164,7 @@
         <left>0</left>
         <top>100</top>
         <width>12</width>
-        <height>840</height>
+        <height>920</height>
         <onleft>9000</onleft>
         <onright>450</onright>
         <orientation>vertical</orientation>
@@ -194,11 +194,10 @@
     </control>
     <control type="group">
       <control type="image">
-        <description>Dialog Header image</description>
         <right>370</right>
         <top>100</top>
         <width>1</width>
-        <height>840</height>
+        <height>920</height>
         <texture colordiffuse="main_fg_30">common/white.png</texture>
       </control>
     </control>
