@@ -83,7 +83,7 @@
       <include>MediaMenuMouseOverlay</include>
       <control type="group">
         <include content="MediaMenuCommon">
-          <param name="visible">$EXP[sidebar_visible]</param>
+          <param name="visible">$EXP[MediaMenu]</param>
           <param name="onleft">50</param>
           <param name="onright">50</param>
           <param name="onback">50</param>

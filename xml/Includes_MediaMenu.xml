@@ -237,7 +237,7 @@
             <onleft>14100</onleft>
             <onup>302</onup>
             <ondown>6056</ondown>
-            <visible>Player.HasMedia + [$EXP[sidebar_visible]]</visible>
+            <visible>Player.HasMedia + [$EXP[MediaMenu]]</visible>
             <visible>!System.HasActiveModalDialog</visible>
             <include content="BottomMainMenuToggleItem">
               <param name="control_id" value="14101"/>
@@ -428,7 +428,7 @@
       <include>Animation_DialogPopupOpenClose</include>
       <top>-2000</top>
       <left>-700</left>
-      <animation type="Conditional" condition="$EXP[sidebar_visible]" reversible="true">
+      <animation type="Conditional" condition="$EXP[MediaMenu]" reversible="true">
         <effect type="slide" start="0" end="0,2180" time="200" tween="cubic" easing="out"/>
         <effect type="slide" start="0" end="1400,0" time="0" tween="cubic" easing="out"/>
       </animation>
@@ -439,7 +439,7 @@
         <left>-2000</left>
         <aspectratio>scale</aspectratio>
         <texture colordiffuse="80FFFFFF">colors/black.png</texture>
-        <visible>$EXP[sidebar_visible] + !System.HasActiveModalDialog</visible>
+        <visible>$EXP[MediaMenu] + !System.HasActiveModalDialog</visible>
         <animation effect="fade" time="200">VisibleChange</animation>
       </control>
       <control type="group">
@@ -487,7 +487,7 @@
         <left>$PARAM[left]</left>
         <onleft>14100</onleft>
         <width>450</width>
-        <visible>Player.HasMedia + [$EXP[sidebar_visible]]</visible>
+        <visible>Player.HasMedia + [$EXP[MediaMenu]]</visible>
         <visible>!System.HasActiveModalDialog</visible>
         <include content="BottomMainMenuToggleItem">
           <param name="control_id" value="14101"/>

@@ -22,9 +22,9 @@
             <param name="title" value="$INFO[Window(home).Property(spotlight_Title)]"/>
             <param name="title_top" value="200"/>
             <param name="title_width" value="1000" />
-            <param name="title_visible" value="$EXP[flix_spotlight_level2] | String.IsEqual(Window(home).Property(activateSpotlight),true)"/>
+            <param name="title_visible" value="$EXP[SecondExpose] | String.IsEqual(Window(home).Property(activateSpotlight),true)"/>
             <param name="plot" value="$INFO[Window(home).Property(spotlight_Plot)]"/>
-            <param name="visible_condi" value="$EXP[flix_spotlight_level2]"/>
+            <param name="visible_condi" value="$EXP[SecondExpose]"/>
           </include>
         </control>
         <control type="image">

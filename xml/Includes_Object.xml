@@ -449,34 +449,33 @@
     <content target="$PARAM[target]" sortby="$PARAM[sortby]" sortorder="$PARAM[sortdirection]" limit="$PARAM[limit]">$PARAM[path]</content>
   </include>
   <include name="Object_Item_Showcase">
-    <param name="top" default="0"/>
+    <param name="top" default="30"/>
+    <param name="left" default="100"/>
     <param name="percentageinfo_line_top" default="200"/>
     <param name="mediaflags_line_top" default="250"/>
     <param name="videoinfo_line_top" default="460"/>
     <param name="plot_top" default="320"/>
     <param name="plot_height" default="125"/>
-    <param name="title_top" default="70"/>
     <param name="title_visible" default="true" />
     <param name="clearlogo_bottom_wolabels" default="920" />
     <param name="clearlogo_bottom_wlabels" default="970" />
-    <param name="clearlogo_height" default="100" />
+    <param name="clearlogo_height" default="160" />
     <definition>
       <control type="group">
         <top>$PARAM[top]</top>
-        <left>100</left>
-        <visible>$PARAM[visible_condi]</visible>
-        <control type="group">
-          <top>60</top>
+        <left>$PARAM[left]</left>
+        <visible>$PARAM[visible]</visible>
+        <control type="grouplist">
+          <itemgap>12</itemgap>
           <orientation>vertical</orientation>
           <width>$PARAM[title_width]</width>
           <control type="label">
-            <top>$PARAM[title_top]</top>
-            <bottom>60</bottom>
-            <scroll>false</scroll>
             <textcolor>$VAR[TitleColour]</textcolor>
-            <shadowcolor>black</shadowcolor>
             <label>$PARAM[title]</label>
             <font>font_title</font>
+            <width>700</width>
+            <height>160</height>
+            <aligny>center</aligny>
             <visible>[[String.IsEmpty(ListItem.Art(clearlogo)) + String.IsEmpty(ListItem.Art(tvshow.clearlogo))] | Skin.HasSetting(DisableClearlogo)] + [!Control.HasFocus(9000) + !Control.HasFocus(9001)]</visible>
             <visible>$PARAM[title_visible]</visible>
           </control>
@@ -496,29 +495,13 @@
             <texture background="true">$VAR[Image_ClearLogo]</texture>
             <visible>[[!String.IsEmpty(ListItem.Art(clearlogo)) | !String.IsEmpty(ListItem.Art(tvshow.clearlogo))] + !Skin.HasSetting(DisableClearlogo)] + Skin.HasSetting(ShowWidgetLabels)</visible>
           </control>
-        </control>
-        <control type="group">
-          <left>5</left>
-          <top>$PARAM[percentageinfo_line_top]</top>
           <include content="Object_Info_First_Line">
-            <param name="visible_condi" value="$PARAM[visible_condi] + !$EXP[flix_spotlight_level1]" />
+            <param name="visible" value="$PARAM[visible]" />
           </include>
-        </control>
-        <control type="group">
-          <top>$PARAM[mediaflags_line_top]</top>
           <include content="Object_Info_Line_MediaFlags">
-            <param name="visible_infoline" value="$PARAM[visible_infoline]" />
+            <param name="visible" value="$EXP[MediaFlags]" />
           </include>
-        </control>
-        <control type="group">
-          <top>$PARAM[videoinfo_line_top]</top>
-          <include content="Object_Video_Info_Line">
-            <param name="visible_infoline" value="$PARAM[visible_infoline]" />
-          </include>
-        </control>
-        <control type="group">
           <control type="textbox">
-            <top>$PARAM[plot_top]</top>
             <width>720</width>
             <height>$PARAM[plot_height]</height>
             <textcolor>white</textcolor>
@@ -528,12 +511,136 @@
             <autoscroll delay="4000" time="4500" repeat="7000">Skin.HasSetting(autoscroll)</autoscroll>
             <visible>!Skin.HasSetting(HidePlot)</visible>
           </control>
+          <include content="Object_Video_Info_Line">
+            <param name="visible_infoline" value="$PARAM[visible_infoline]" />
+          </include>
+          <control type="grouplist" id="8008">
+            <orientation>horizontal</orientation>
+            <control type="group">
+              <control type="radiobutton" id="6000">
+                <include>ClearBoolProps</include>
+                <onup>PlayerControl(Stop)</onup>
+                <onup condition="Player.HasVideo">AlarmClock(closeDialogs,SetFocus(2999),00:01,silent)</onup>
+                <onup condition="!Player.HasVideo">SetFocus(2999)</onup>
+                <ondown>PlayerControl(Stop)</ondown>
+                <ondown condition="Player.HasVideo">AlarmClock(closeDialogs,SetFocus(3000),00:01,silent)</ondown>
+                <ondown condition="!Player.HasVideo">SetFocus(3000)</ondown>
+                <onback>PlayerControl(Stop)</onback>
+                <onback condition="Player.HasVideo">AlarmClock(closeDialogs,SetFocus(3000),00:01,silent)</onback>
+                <onback condition="!Player.HasVideo">SetFocus(3000)</onback>
+                <onright>6001</onright>
+                <onleft>6002</onleft>
+                <width>300</width>
+                <height>68</height>
+                <align>left</align>
+                <aligny>top</aligny>
+                <texturefocus border="5" colordiffuse="ff1399de">common/box.png</texturefocus>
+                <texturenofocus border="5" colordiffuse="ff0f79af">common/box.png</texturenofocus>
+                <radioposx>-20</radioposx>
+                <radioposy>-5</radioposy>
+                <radiowidth>108</radiowidth>
+                <radioheight>72</radioheight>
+                <textwidth>180</textwidth>
+                <font>font_tiny_hintlabel</font>
+                <textureradioonfocus colordiffuse="D0FFFFFF">special://skin/extras/icons/play3.png</textureradioonfocus>
+                <textureradioonnofocus colordiffuse="D0FFFFFF">special://skin/extras/icons/play3.png</textureradioonnofocus>
+                <textureradioofffocus colordiffuse="D0FFFFFF">special://skin/extras/icons/play3.png</textureradioofffocus>
+                <textureradiooffnofocus colordiffuse="D0FFFFFF">special://skin/extras/icons/play3.png</textureradiooffnofocus>
+                <textureradiooffdisabled colordiffuse="dialog_fg_30">special://skin/extras/icons/play3.png</textureradiooffdisabled>
+                <textureradioondisabled colordiffuse="dialog_fg_30">special://skin/extras/icons/play3.png</textureradioondisabled>
+                <onclick>Dialog.Close(all,true)</onclick>
+                <!-- playing folders/collections -->
+                <include content="PlayFolderCollection">
+                  <param name="includecondition" value="String.IsEqual(Window(home).Property(spotlight_isFolder),true) | String.IsEqual(Window(home).Property(spotlight_isCollection),true)" />
+                </include>
+                <!-- movies playing -->
+                <include content="PlaySingleItem">
+                  <param name="includecondition" value="!String.IsEqual(Window(home).Property(spotlight_isFolder),true) + !String.IsEqual(Window(home).Property(spotlight_isCollection),true)" />
+                </include>
+                <visible>Control.IsVisible(6000)</visible>
+              </control>
+              <control type="label">
+                <left>75</left>
+                <top>21</top>
+                <width>200</width>
+                <label>$INFO[Window(home).Property(spotlight_Title)]</label>
+                <font>font_tiny_hintlabel</font>
+                <scroll>false</scroll>
+              </control>
+            </control>
+            <control type="group">
+              <control type="radiobutton" id="6001">
+                <include>ClearBoolProps</include>
+                <onup>PlayerControl(Stop)</onup>
+                <onup condition="Player.HasVideo">AlarmClock(closeDialogs,SetFocus(2999),00:01,silent)</onup>
+                <onup condition="!Player.HasVideo">SetFocus(2999)</onup>
+                <ondown>PlayerControl(Stop)</ondown>
+                <ondown condition="Player.HasVideo">AlarmClock(closeDialogs,SetFocus(3000),00:01,silent)</ondown>
+                <ondown condition="!Player.HasVideo">SetFocus(3000)</ondown>
+                <onback>PlayerControl(Stop)</onback>
+                <onback condition="Player.HasVideo">AlarmClock(closeDialogs,SetFocus(3000),00:01,silent)</onback>
+                <onback condition="!Player.HasVideo">SetFocus(3000)</onback>
+                <onleft>6000</onleft>
+                <onright>6002</onright>
+                <left>320</left>
+                <width>70</width>
+                <height>70</height>
+                <align>center</align>
+                <aligny>center</aligny>
+                <radioposx>-24</radioposx>
+                <radioposy>-4</radioposy>
+                <texturefocus border="5" colordiffuse="ff566b84">common/circle.png</texturefocus>
+                <texturenofocus border="5" colordiffuse="ff425265">common/circle.png</texturenofocus>
+                <textureradioonfocus colordiffuse="D0FFFFFF">special://skin/extras/icons/info.png</textureradioonfocus>
+                <textureradioonnofocus colordiffuse="D0FFFFFF">special://skin/extras/icons/info.png</textureradioonnofocus>
+                <textureradioofffocus colordiffuse="D0FFFFFF">special://skin/extras/icons/info.png</textureradioofffocus>
+                <textureradiooffnofocus colordiffuse="D0FFFFFF">special://skin/extras/icons/info.png</textureradiooffnofocus>
+                <textureradiooffdisabled colordiffuse="dialog_fg_30">special://skin/extras/icons/info.png</textureradiooffdisabled>
+                <textureradioondisabled colordiffuse="dialog_fg_30">special://skin/extras/icons/info.png</textureradioondisabled>
+                <onclick>ActivateWindow(1141)</onclick>
+                <visible>Control.IsVisible(6001)</visible>
+              </control>
+            </control>
+            <control type="group">
+              <control type="radiobutton" id="6002">
+                <include>ClearBoolProps</include>
+                <onup>PlayerControl(Stop)</onup>
+                <onup condition="Player.HasVideo">AlarmClock(closeDialogs,SetFocus(2999),00:01,silent)</onup>
+                <onup condition="!Player.HasVideo">SetFocus(2999)</onup>
+                <ondown>PlayerControl(Stop)</ondown>
+                <ondown condition="Player.HasVideo">AlarmClock(closeDialogs,SetFocus(3000),00:01,silent)</ondown>
+                <ondown condition="!Player.HasVideo">SetFocus(3000)</ondown>
+                <onback>PlayerControl(Stop)</onback>
+                <onback condition="Player.HasVideo">AlarmClock(closeDialogs,SetFocus(3000),00:01,silent)</onback>
+                <onback condition="!Player.HasVideo">SetFocus(3000)</onback>
+                <onleft>6001</onleft>
+                <onright>6000</onright>
+                <left>405</left>
+                <width>70</width>
+                <height>70</height>
+                <align>center</align>
+                <aligny>center</aligny>
+                <radioposx>-25</radioposx>
+                <radioposy>-5</radioposy>
+                <texturefocus border="5" colordiffuse="ff566b84">common/circle.png</texturefocus>
+                <texturenofocus border="5" colordiffuse="ff425265">common/circle.png</texturenofocus>
+                <textureradioonfocus colordiffuse="D0FFFFFF">special://skin/extras/icons/watchlist.png</textureradioonfocus>
+                <textureradioonnofocus colordiffuse="D0FFFFFF">special://skin/extras/icons/watchlist.png</textureradioonnofocus>
+                <textureradioofffocus colordiffuse="D0FFFFFF">special://skin/extras/icons/watchlist.png</textureradioofffocus>
+                <textureradiooffnofocus colordiffuse="D0FFFFFF">special://skin/extras/icons/watchlist.png</textureradiooffnofocus>
+                <textureradiooffdisabled colordiffuse="dialog_fg_30">special://skin/extras/icons/watchlist.png</textureradiooffdisabled>
+                <textureradioondisabled colordiffuse="dialog_fg_30">special://skin/extras/icons/watchlist.png</textureradioondisabled>
+                <onclick condition="!String.IsEmpty(Window(home).Property(spotlight_TMDBid))">RunScript(plugin.video.themoviedb.helper,sync_trakt=watchlist,tmdb_id=$INFO[Window(home).Property(spotlight_TMDBid)],type=$INFO[Window(home).Property(spotlight_TMDBTYPE)],cache_refresh)</onclick>
+                <onclick condition="String.IsEmpty(Window(home).Property(spotlight_TMDBid))">RunScript(plugin.video.themoviedb.helper,sync_trakt=watchlist,tmdb_id=$INFO[Window(home).Property(spotlight_TMDBid2)],type=$INFO[Window(home).Property(spotlight_TMDBTYPE)],cache_refresh)</onclick>
+                <visible>Control.IsVisible(6001)</visible>
+              </control>
+            </control>
+          </control>
         </control>
       </control>
     </definition>
   </include>
   <include name="Object_Info_Line_Label">
-    <param name="divider" default="true"/>
     <param name="visible" default="true"/>
     <param name="fallback" default=""/>
     <param name="font" default="font32"/>
@@ -541,17 +648,6 @@
     <definition>
       <control type="group">
         <top>$PARAM[top]</top>
-        <control type="label">
-          <width>auto</width>
-          <label> | </label>
-          <height>72</height>
-          <aligny>bottom</aligny>
-          <font>$PARAM[font]</font>
-          <textcolor>$VAR[ColorHighlight]</textcolor>
-          <visible>!String.IsEmpty(Control.GetLabel($PARAM[id]))</visible>
-          <visible>$PARAM[divider]</visible>
-          <visible>$PARAM[visible]</visible>
-        </control>
         <control type="label" id="$PARAM[id]">
           <width>$PARAM[width]</width>
           <scroll>$PARAM[autoscroll]</scroll>
@@ -575,7 +671,6 @@
     <param name="container" default=""/>
     <param name="uid" default="661"/>
     <param name="green" default="ff27ae60"/>
-    <param name="visible_infoline" default="!Container(7501).IsUpdating + [!Control.HasFocus(9000) + !Control.HasFocus(9001) + !Control.HasFocus(303)] + !String.StartsWith(ListItem.FolderPath,favourites://)" />
     <definition>
       <control type="grouplist">
         <height>48</height>
@@ -594,7 +689,7 @@
             <height>32</height>
             <aspectratio align="left">scale</aspectratio>
             <texture background="true" colordiffuse="ff0fafff">common/badge.png</texture>
-            <visible>$PARAM[visible_condi]</visible>
+            <visible>$PARAM[visible]</visible>
           </control>
           <include content="Object_Info_Line_Label">
             <param name="label" value="$VAR[PercentageRating]% $LOCALIZE[31384]"/>
@@ -602,7 +697,7 @@
             <param name="textcolor" value="dialog_fg_100"/>
             <param name="divider" value="false"/>
             <param name="fallback" value="N/A"/>
-            <param name="visible" value="$PARAM[visible_condi]"/>
+            <param name="visible" value="$PARAM[visible]"/>
             <param name="width" value="100%" />
             <param name="top" value="4" />
             <param name="left" value="12" />
@@ -634,7 +729,7 @@
     <param name="container" default=""/>
     <param name="uid" default="661"/>
     <param name="green" default="ff27ae60"/>
-    <param name="visible_infoline" default="!String.IsEqual(Container(9989).ListItemAbsolute(0).Property(list),Settings) + !String.IsEqual(Container(9989).ListItemAbsolute(0).Property(list),Weather) + !Container(7502).IsUpdating + [!Control.HasFocus(9000) + !Control.HasFocus(9001) + !Control.HasFocus(303)] + !String.StartsWith(ListItem.FolderPath,favourites://)" />
+    <param name="visible" default="$EXP[MediaFlags]" />
     <definition>
       <control type="grouplist">
         <height>72</height>
@@ -643,6 +738,7 @@
         <itemgap>0</itemgap>
         <left>0</left>
         <right>0</right>
+        <visible>$PARAM[visible]</visible>
         <control type="group">
           <width>1000</width>
           <include>MediaFlags_NewLine</include>
@@ -808,18 +904,12 @@
       </control>
     </definition>
   </include>
-  <!--  -->
   <include name="Object_Video_Info_Line">
-    <param name="label" default=""/>
-    <param name="nextaired" default="true"/>
     <param name="textcolor" default="main_fg_100"/>
-    <param name="container" default=""/>
-    <param name="uid" default="661"/>
     <param name="green" default="ff27ae60"/>
-    <param name="visible_infoline" default="!Container(7502).IsUpdating + !$EXP[flix_spotlight_level1] + [!Control.HasFocus(9000) + !Control.HasFocus(9001) + !Control.HasFocus(303)] + !String.StartsWith(ListItem.FolderPath,favourites://)" />
     <definition>
       <control type="grouplist">
-        <height>200</height>
+        <height>100</height>
         <orientation>horizontal</orientation>
         <usecontrolcoords>true</usecontrolcoords>
         <itemgap>0</itemgap>
@@ -830,7 +920,7 @@
           <param name="textcolor" value="main_fg_100"/>
           <param name="font" value="font_tiny_hintlabel"/>
           <param name="divider" value="false"/>
-          <param name="visible" value="$PARAM[visible_infoline]"/>
+          <param name="visible" value="$EXP[LabelVideoInfo]"/>
           <param name="autoscroll" value="false"/>
           <param name="width" value="720" />
         </include>

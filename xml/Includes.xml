@@ -49,11 +49,13 @@
   <constant name="list_y_offset">0</constant>
   <constant name="list_item_height">80</constant>
   <expression name="infodialog_active">Window.IsActive(musicinformation) | Window.IsActive(songinformation) | Window.IsActive(movieinformation) | Window.IsActive(addoninformation) | Window.IsActive(pvrguideinfo) | Window.IsActive(pvrrecordinginfo) | Window.IsActive(pictureinfo)</expression>
-  <expression name="sidebar_visible">Control.HasFocus(9000) | Control.HasFocus(6130) | Control.HasFocus(6131)</expression>
-  <expression name="flix_spotlight_level1">Control.HasFocus(6000) | Control.HasFocus(6001) | Control.HasFocus(6002)</expression>
-  <expression name="flix_spotlight_level2">Window.IsActive(1141)</expression>
-  <expression name="flix_spotlight_highlevel">Window.IsVisible(1142) | Window.IsVisible(1143) | Window.IsVisible(1144) | Window.IsVisible(1145) | Window.IsVisible(1146) | Window.IsVisible(1147) | Window.IsVisible(1148) | Window.IsVisible(1149)</expression>
+  <expression name="MediaMenu">Control.HasFocus(9000) | Control.HasFocus(6130) | Control.HasFocus(6131)</expression>
+  <expression name="FirstExpose">ControlGroup(8008).HasFocus</expression>
+  <expression name="SecondExpose">Window.IsActive(1141)</expression>
+  <expression name="CustomWindowVisible">Window.IsVisible(1142) | Window.IsVisible(1143) | Window.IsVisible(1144) | Window.IsVisible(1145) | Window.IsVisible(1146) | Window.IsVisible(1147) | Window.IsVisible(1148) | Window.IsVisible(1149)</expression>
   <expression name="Exp_SortLetterIsNumber">[String.IsEqual(ListItem.SortLetter,$NUMBER[0]) | String.IsEqual(ListItem.SortLetter,$NUMBER[1]) | String.IsEqual(ListItem.SortLetter,$NUMBER[2]) | String.IsEqual(ListItem.SortLetter,$NUMBER[3]) | String.IsEqual(ListItem.SortLetter,$NUMBER[4]) | String.IsEqual(ListItem.SortLetter,$NUMBER[5]) | String.IsEqual(ListItem.SortLetter,$NUMBER[6]) | String.IsEqual(ListItem.SortLetter,$NUMBER[7]) | String.IsEqual(ListItem.SortLetter,$NUMBER[8]) | String.IsEqual(ListItem.SortLetter,$NUMBER[9])]</expression>
+  <expression name="MediaFlags">!String.IsEmpty($PARAM[infolabel_prefix]ListItem.VideoCodec) | !String.IsEmpty($PARAM[infolabel_prefix]ListItem.VideoResolution) | !String.IsEmpty($PARAM[infolabel_prefix]ListItem.VideoAspect) | !String.IsEmpty($PARAM[infolabel_prefix]ListItem.AudioCodec) | !String.IsEmpty($PARAM[infolabel_prefix]ListItem.AudioChannels)</expression>
+  <expression name="LabelVideoInfo">!String.IsEmpty(ListItem.Writer) | !String.IsEmpty(ListItem.Genre) | !String.IsEmpty(ListItem.AudioLanguage) | !String.IsEmpty(ListItem.SubtitleLanguage)</expression>
   <include name="CommonScrollbars">
     <control type="group">
       <animation effect="fade" start="100" end="0" time="150">WindowClose</animation>
@@ -1160,7 +1162,7 @@
             <aspectratio aligny="center">scale</aspectratio>
             <animation effect="fade" time="200" delay="200">Hidden</animation>
             <texture background="true">common/vignette.png</texture>
-            <visible>[[ControlGroup(3000).HasFocus | Window.IsVisible(1146)] + !$EXP[flix_spotlight_level2] + !Skin.HasSetting(FullScreenHomeBackground)] + !String.StartsWith(ListItem.FolderPath,favourites://)</visible>
+            <visible>[[ControlGroup(3000).HasFocus | Window.IsVisible(1146)] + !$EXP[SecondExpose] + !Skin.HasSetting(FullScreenHomeBackground)] + !String.StartsWith(ListItem.FolderPath,favourites://)</visible>
           </control>
         </control>
       </control>
