@@ -638,7 +638,7 @@
             <width>80</width>
             <aligny>center</aligny>
             <aspectratio align="center">keep</aspectratio>
-            <visible>ListItem.IsParentFolder | Skin.HasSetting(ShowChannelIcon)</visible>
+            <visible>ListItem.IsParentFolder | !Skin.HasSetting(ShowChannelIcon)</visible>
             <texture>$INFO[ListItem.ActualIcon]</texture>
           </control>
           <control type="label">

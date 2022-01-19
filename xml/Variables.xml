@@ -311,7 +311,7 @@
     <value>special://skin/extras/icons/filter-off.png</value>
   </variable>
   <variable name="Label_ShowChannelIcon">
-    <value condition="Skin.HasSetting(ShowChannelIcon)">ON</value>
+    <value condition="!Skin.HasSetting(ShowChannelIcon)">ON</value>
     <value>OFF</value>
   </variable>
   <variable name="Image_ClearLogo">
