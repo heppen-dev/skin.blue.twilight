@@ -185,11 +185,11 @@
     </control>
     <control type="group">
       <include content="pushbuttonsarea" condition="Skin.HasSetting(ShowWidgetLabels)"/>
-        <top>560</top>
-        <left>100</left>
-        <visible>[ControlGroup(3000).HasFocus | [$EXP[FirstExpose] + String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))]] + !String.StartsWith(ListItem.FolderPath,favourites://)</visible>
-        <animation effect="slide" start="0" end="0,-80" time="400" tween="linear" condition="[$EXP[FirstExpose] | $EXP[SecondExpose]] + !Skin.HasSetting(SkipLevel1)">Conditional</animation>
-        <animation effect="fade" start="100" end="0" time="400" tween="linear" condition="$EXP[SecondExpose]">Conditional</animation>
+      <top>560</top>
+      <left>100</left>
+      <visible>[ControlGroup(3000).HasFocus | [$EXP[FirstExpose] + String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))]] + !String.StartsWith(ListItem.FolderPath,favourites://)</visible>
+      <animation effect="slide" start="0" end="0,-80" time="400" tween="linear" condition="[$EXP[FirstExpose] | $EXP[SecondExpose]] + !Skin.HasSetting(SkipLevel1)">Conditional</animation>
+      <animation effect="fade" start="100" end="0" time="400" tween="linear" condition="$EXP[SecondExpose]">Conditional</animation>
       <control type="grouplist" id="8008">
         <orientation>horizontal</orientation>
         <control type="group">
@@ -240,6 +240,7 @@
             <top>21</top>
             <width>200</width>
             <label>$INFO[Window(home).Property(spotlight_Title)]</label>
+            <textcolor>b3ededed</textcolor>
             <font>font_tiny_hintlabel</font>
             <scroll>false</scroll>
           </control>
