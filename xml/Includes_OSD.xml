@@ -383,7 +383,7 @@
         <top>-200</top>
         <control type="label">
           <font>font32</font>
-          <label>$INFO[VideoPlayer.ChannelName]$INFO[VideoPlayer.ChannelGroup, / ,]</label>
+          <label>$INFO[System.Time,, &#8226; ]$INFO[VideoPlayer.ChannelName]$INFO[VideoPlayer.ChannelGroup, / ,]</label>
         </control>
       </control>
       <control type="group">
