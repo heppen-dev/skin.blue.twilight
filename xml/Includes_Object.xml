@@ -147,40 +147,49 @@
         <onup>9000</onup>
         <onback>9000</onback>
         <width>2800</width>
-        <height>220</height>
+        <height>300</height>
         <focusposition>1</focusposition>
         <onfocus>SetProperty(TMDbHelper.WidgetContainer,$PARAM[id],home)</onfocus>
-        <!-- trailers -->
-        <onclick condition="[String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE, tvshow)] + Control.HasFocus($PARAM[id]) + Skin.HasSetting(BackgroundPlayingTrailers) + !Player.HasVideo + !String.IsEmpty(ListItem.Trailer)">AlarmClock(trailerdelay,PlayMedia($ESCINFO[ListItem.Trailer],1),00:01,silent)</onclick>
-        <onclick condition="[String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE, tvshow)] + Control.HasFocus($PARAM[id]) + Skin.HasSetting(BackgroundPlayingTrailers) + !Player.HasVideo + String.IsEmpty(ListItem.Trailer) + !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Trailer))">AlarmClock(trailerdelay,PlayMedia($ESCINFO[Window(Home).Property(TMDbHelper.ListItem.Trailer)],1),00:01,silent)</onclick>
-        <onclick condition="[[String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE, tvshow)] + Skin.HasSetting(BackgroundPlayingTrailers) + String.IsEmpty(ListItem.Trailer) + String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Trailer))] + !Skin.HasSetting(DontShowNotificationANT)">Notification($LOCALIZE[31389], $LOCALIZE[31390])</onclick>
-        <onclick condition="[String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE, tvshow)] + Control.HasFocus($PARAM[id]) + Skin.HasSetting(BackgroundPlayingTrailers) + !Player.HasVideo + !String.IsEmpty(ListItem.Trailer)">SetProperty(hasTrailer,true,home)</onclick>
-        <onclick condition="[String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE, tvshow)] + Control.HasFocus($PARAM[id]) + Skin.HasSetting(BackgroundPlayingTrailers) + !Player.HasVideo + String.IsEmpty(ListItem.Trailer) + !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Trailer))">SetProperty(hasTrailer,true,home)</onclick>
-        <!-- flix spotlight -->
-        <include content="Flix_Spotlight_Properties">
-          <param name="include_condition" value="[!String.StartsWith(ListItem.FolderPath,favourites://) + !String.IsEqual(Listitem.DBTYPE,song) + !String.IsEqual(Listitem.DBTYPE,album) + !String.IsEqual(Listitem.DBTYPE,artist)] + Skin.HasSetting(FlixSpotlight)" />
+        <!-- Wall events -->
+        <include content="Object_Wall_Events">
+          <param name="id" value="$PARAM[id]"/>
         </include>
-        <onclick condition="[!String.StartsWith(ListItem.FolderPath,favourites://) + !String.IsEqual(Listitem.DBTYPE,song) + !String.IsEqual(Listitem.DBTYPE,album) + !String.IsEqual(Listitem.DBTYPE,artist)] + [Skin.HasSetting(FlixSpotlight) + !Skin.HasSetting(SkipLevel1)]">SetFocus(6000)</onclick>
-        <onclick condition="[!String.StartsWith(ListItem.FolderPath,favourites://) + !String.IsEqual(Listitem.DBTYPE,song) + !String.IsEqual(Listitem.DBTYPE,album) + !String.IsEqual(Listitem.DBTYPE,artist)] + [Skin.HasSetting(FlixSpotlight) + Skin.HasSetting(SkipLevel1)]">ActivateWindow(1141)</onclick>
-        <itemlayout height="185" width="1120" condition="$PARAM[postercondition]">
+        <itemlayout height="270" width="1120" condition="$PARAM[postercondition]">
           <include content="ViewBannerItemLayout">
             <param name="bg_visible" value="false" />
           </include>
         </itemlayout>
-        <focusedlayout height="185" width="1120" condition="$PARAM[postercondition]">
+        <focusedlayout height="270" width="1120" condition="$PARAM[postercondition]">
           <include content="ViewBannerItemLayout">
             <param name="bg_visible" value="true" />
           </include>
           <control type="group">
-            <visible>Skin.HasSetting(ShowLabelOnBanner)</visible>
-            <top>35</top>
-            <left>80</left>
+            <visible>Skin.HasSetting(ShowLabelOnBanner) + Control.HasFocus($PARAM[id])</visible>
+            <animation effect="fade" time="200" end="100" reversible="false">Focus</animation>
+            <control type="image">
+              <top>175</top>
+              <left>42</left>
+              <width>1000</width>
+              <height>55</height>
+              <texture colordiffuse="main_bg_100">common/white.png</texture>
+            </control>
+            <control type="image">
+              <top>175</top>
+              <left>42</left>
+              <width>1000</width>
+              <height>1</height>
+              <texture colordiffuse="80FFFFFF">common/white.png</texture>
+            </control>
             <control type="label">
-              <font>font_tiny_title_uppercase</font>
+              <top>175</top>
+              <left>42</left>
+              <width>1000</width>
+              <height>50</height>
+              <font>font_tiny_hintlabel</font>
               <textcolor>ffffffff</textcolor>
-              <shadowcolor>ff000000</shadowcolor>
+              <align>center</align>
+              <aligny>center</aligny>
               <label>$INFO[ListItem.Title]</label>
-              <visible>Control.HasFocus($PARAM[id])</visible>
             </control>
           </control>
           <control type="group">
@@ -188,6 +197,17 @@
             <left>30</left>
             <width>1025</width>
             <height>250</height>
+            <visible>!Skin.HasSetting(ShowLabelOnBanner)</visible>
+            <include content="Selectbox">
+              <param name="visible" value="$PARAM[postercondition] + Control.HasFocus($PARAM[id])"/>
+            </include>
+          </control>
+          <control type="group">
+            <top>-15</top>
+            <left>30</left>
+            <width>1025</width>
+            <height>285</height>
+            <visible>Skin.HasSetting(ShowLabelOnBanner)</visible>
             <include content="Selectbox">
               <param name="visible" value="$PARAM[postercondition] + Control.HasFocus($PARAM[id])"/>
             </include>
@@ -204,13 +224,6 @@
     </definition>
   </include>
   <include name="Object_Widget_Content_SearchList">
-    <param name="controltype" default="list"/>
-    <param name="id" default=""/>
-    <param name="target" default=""/>
-    <param name="sortby" default=""/>
-    <param name="sortdirection" default=""/>
-    <param name="limit" default=""/>
-    <param name="path" default=""/>
     <param name="condition" default="true"/>
     <definition>
       <control type="$PARAM[controltype]" id="$PARAM[id]">
