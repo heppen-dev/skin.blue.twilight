@@ -2,7 +2,7 @@
 <template>
   <submenu include="widgetsWall" name="widgets">
     <controls>
-        <skinshortcuts insert="wall">items</skinshortcuts>
+      <skinshortcuts insert="wall">items</skinshortcuts>
     </controls>
     <items insert="wall">
       <condition tag="property" attribute="name|path" />
@@ -215,14 +215,10 @@
   </submenu>
   <other include="submenu">
     <controls>
-      <include content="Object_Submenu_Content">
-        <param name="icon" value="$INFO[ListItem.Icon]"/>
-        <param name="label" value="$INFO[ListItem.Label]"/>
-        <content>
-          <skinshortcuts>items</skinshortcuts>
-        </content>
-        <skinshortcuts>visibility</skinshortcuts>
-      </include>
+      <content>
+        <skinshortcuts>items</skinshortcuts>
+      </content>
+      <skinshortcuts>visibility</skinshortcuts>
     </controls>
   </other>
   <propertyGroup name="mainmenuWidgets">

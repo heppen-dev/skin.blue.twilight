@@ -1,80 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-  <include name="Object_Submenu_Content">
-    <control type="fixedlist" id="9001">
-      <nested/>
-      <include content="submenuVerticalParams" condition="Skin.HasSetting(Vertical_Main)"/>
-      <include content="submenuClassicParams" condition="Skin.HasSetting(Classic_Main)"/>
-      <include content="submenuHorizontalParams" condition="Skin.HasSetting(Horizontal_Main)"/>
-      <focusedlayout width="384" height="95">
-        <control type="group">
-          <visible>Control.HasFocus(9001)</visible>
-          <control type="group">
-            <control type="image">
-              <left>0</left>
-              <top>995</top>
-              <width>384</width>
-              <height>95</height>
-              <texture colordiffuse="37FFFFFF">common/white.png</texture>
-              <visible>Skin.HasSetting(Horizontal_Main)</visible>
-            </control>
-            <control type="label">
-              <include content="submenuVerticalLabelLayout" condition="Skin.HasSetting(Vertical_Main)"/>
-              <include content="submenuClassicLabelLayout" condition="Skin.HasSetting(Classic_Main)"/>
-              <include content="submenuHorizontalLabelLayout" condition="Skin.HasSetting(Horizontal_Main)"/>
-              <textcolor>dialog_fg_100</textcolor>
-              <label>$PARAM[label]</label>
-              <scroll>true</scroll>
-              <shadowcolor>text_shadow</shadowcolor>
-            </control>
-            <visible>String.IsEqual(Skin.String(MenuStyle),IconsText) | String.IsEqual(Skin.String(MenuStyle),Text) | String.IsEmpty(Skin.String(MenuStyle))</visible>
-          </control>
-          <control type="group">
-            <control type="image">
-              <include content="submenuVerticalIconLayout" condition="Skin.HasSetting(Vertical_Main)"/>
-              <include content="submenuClassicIconLayout" condition="Skin.HasSetting(Classic_Main) + !String.IsEqual(Skin.String(MenuStyle),Icons)"/>
-              <include content="submenuClassicIconsOnlyLayout" condition="Skin.HasSetting(Classic_Main) + String.IsEqual(Skin.String(MenuStyle),Icons)"/>
-              <texture colordiffuse="dialog_fg_100">$PARAM[icon]</texture>
-            </control>
-            <visible>!Skin.HasSetting(Horizontal_Main) + [String.IsEqual(Skin.String(MenuStyle),Icons) | String.IsEqual(Skin.String(MenuStyle),IconsText) | String.IsEmpty(Skin.String(MenuStyle))]</visible>
-          </control>
-        </control>
-      </focusedlayout>
-      <itemlayout width="384" height="95">
-        <control type="group">
-          <visible>Control.HasFocus(9001)</visible>
-          <control type="group">
-            <control type="image">
-              <left>0</left>
-              <top>995</top>
-              <width>384</width>
-              <height>95</height>
-              <texture colordiffuse="44FFFFFF">common/white.png</texture>
-              <visible>Skin.HasSetting(Horizontal_Main)</visible>
-            </control>
-            <control type="label">
-              <label>$PARAM[label]</label>
-              <shadowcolor>text_shadow</shadowcolor>
-              <include content="submenuFont" condition="Skin.HasSetting(Vertical_Main) | Skin.HasSetting(Classic_Main)"/>
-              <include content="submenuVerticalLabelLayout" condition="Skin.HasSetting(Vertical_Main)"/>
-              <include content="submenuClassicLabelLayout" condition="Skin.HasSetting(Classic_Main)"/>
-              <include content="submenuHorizontalLabelLayout" condition="Skin.HasSetting(Horizontal_Main)"/>
-            </control>
-            <visible>String.IsEqual(Skin.String(MenuStyle),IconsText) | String.IsEqual(Skin.String(MenuStyle),Text) | String.IsEmpty(Skin.String(MenuStyle))</visible>
-          </control>
-          <control type="group">
-            <control type="image">
-              <include content="submenuVerticalIconLayout" condition="Skin.HasSetting(Vertical_Main)"/>
-              <include content="submenuClassicIconLayout" condition="Skin.HasSetting(Classic_Main) + !String.IsEqual(Skin.String(MenuStyle),Icons)"/>
-              <include content="submenuClassicIconsOnlyLayout" condition="Skin.HasSetting(Classic_Main) + String.IsEqual(Skin.String(MenuStyle),Icons)"/>
-              <texture colordiffuse="44FFFFFF">$PARAM[icon]</texture>
-            </control>
-            <visible>!Skin.HasSetting(Horizontal_Main) + [String.IsEqual(Skin.String(MenuStyle),Icons) | String.IsEqual(Skin.String(MenuStyle),IconsText) | String.IsEmpty(Skin.String(MenuStyle))]</visible>
-          </control>
-        </control>
-      </itemlayout>
-    </control>
-  </include>
   <include name="Object_Widget_Label">
     <param name="font" default="font27_bold"/>
     <definition>
@@ -119,65 +44,6 @@
             <visible>String.StartsWith(ListItem.FolderPath,pvr://)</visible>
           </control>
         </control>
-      </control>
-    </definition>
-  </include>
-  <include name="Object_Widget_Content_SearchList">
-    <param name="controltype" default="list"/>
-    <param name="id" default=""/>
-    <param name="target" default=""/>
-    <param name="sortby" default=""/>
-    <param name="sortdirection" default=""/>
-    <param name="limit" default=""/>
-    <param name="path" default=""/>
-    <param name="condition" default="true"/>
-    <definition>
-      <control type="$PARAM[controltype]" id="$PARAM[id]">
-        <orientation>horizontal</orientation>
-        <height>195</height>
-        <focusposition>3</focusposition>
-        <animation effect="slide" time="0" start="0" end="-120,0" reversible="true" condition="true">Conditional</animation>
-        <!-- movement -->
-        <include content="Animation_Widget_Slide_Searchlist">
-          <param name="container" value="4100" />
-        </include>
-        <onfocus>SetProperty(TMDbHelper.WidgetContainer,$PARAM[id],home)</onfocus>
-        <onfocus>SetProperty(widgetNameLabel,$PARAM[label],home)</onfocus>
-        <onfocus>SetProperty(widgetMovementId,$PARAM[id],home)</onfocus>
-        <animation effect="fade" start="100" end="0" time="200" reversible="true" condition="Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[idtofade])">Conditional</animation>
-        <!-- Landscapes -->
-        <itemlayout height="225" width="315" condition="$PARAM[condition]">
-          <include content="ViewLandscapeItemLayout">
-            <param name="firstrow_fade" value="Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[id])" />
-          </include>
-        </itemlayout>
-        <focusedlayout height="225" width="315" condition="$PARAM[condition]">
-          <include content="ViewLandscapeItemLayout">
-            <param name="firstrow_fade" value="Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[id])" />
-          </include>
-          <control type="group">
-            <width>315</width>
-            <height>225</height>
-            <include content="Selectbox">
-              <param name="visible" value="$PARAM[condition] + Control.HasFocus($PARAM[id])"/>
-            </include>
-          </control>
-          <control type="button">
-            <include>HiddenObject</include>
-            <onfocus condition="ListItem.IsFolder">SetProperty(spotlight_isFolder,true,home)</onfocus>
-            <onfocus condition="ListItem.IsCollection">SetProperty(spotlight_isCollection,true,home)</onfocus>
-            <onfocus condition="!ListItem.IsFolder">ClearProperty(spotlight_isFolder)</onfocus>
-            <onfocus condition="!ListItem.IsCollection">ClearProperty(spotlight_isCollection)</onfocus>
-            <onfocus>SetProperty(spotlight_Title,$INFO[ListItem.Title],home)</onfocus>
-          </control>
-        </focusedlayout>
-        <include content="Object_Widget_Content_Path">
-          <param name="target" value="$PARAM[target]"/>
-          <param name="sortby" value="$PARAM[sortby]"/>
-          <param name="sortdirection" value="$PARAM[sortdirection]"/>
-          <param name="limit" value="$PARAM[limit]"/>
-          <param name="path" value="$PARAM[path]"/>
-        </include>
       </control>
     </definition>
   </include>
@@ -325,6 +191,65 @@
             <include content="Selectbox">
               <param name="visible" value="$PARAM[postercondition] + Control.HasFocus($PARAM[id])"/>
             </include>
+          </control>
+        </focusedlayout>
+        <include content="Object_Widget_Content_Path">
+          <param name="target" value="$PARAM[target]"/>
+          <param name="sortby" value="$PARAM[sortby]"/>
+          <param name="sortdirection" value="$PARAM[sortdirection]"/>
+          <param name="limit" value="$PARAM[limit]"/>
+          <param name="path" value="$PARAM[path]"/>
+        </include>
+      </control>
+    </definition>
+  </include>
+  <include name="Object_Widget_Content_SearchList">
+    <param name="controltype" default="list"/>
+    <param name="id" default=""/>
+    <param name="target" default=""/>
+    <param name="sortby" default=""/>
+    <param name="sortdirection" default=""/>
+    <param name="limit" default=""/>
+    <param name="path" default=""/>
+    <param name="condition" default="true"/>
+    <definition>
+      <control type="$PARAM[controltype]" id="$PARAM[id]">
+        <orientation>horizontal</orientation>
+        <height>195</height>
+        <focusposition>3</focusposition>
+        <animation effect="slide" time="0" start="0" end="-120,0" reversible="true" condition="true">Conditional</animation>
+        <!-- movement -->
+        <include content="Animation_Widget_Slide_Searchlist">
+          <param name="container" value="4100" />
+        </include>
+        <onfocus>SetProperty(TMDbHelper.WidgetContainer,$PARAM[id],home)</onfocus>
+        <onfocus>SetProperty(widgetNameLabel,$PARAM[label],home)</onfocus>
+        <onfocus>SetProperty(widgetMovementId,$PARAM[id],home)</onfocus>
+        <animation effect="fade" start="100" end="0" time="200" reversible="true" condition="Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[idtofade])">Conditional</animation>
+        <!-- Landscapes -->
+        <itemlayout height="225" width="315" condition="$PARAM[condition]">
+          <include content="ViewLandscapeItemLayout">
+            <param name="firstrow_fade" value="Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[id])" />
+          </include>
+        </itemlayout>
+        <focusedlayout height="225" width="315" condition="$PARAM[condition]">
+          <include content="ViewLandscapeItemLayout">
+            <param name="firstrow_fade" value="Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[id])" />
+          </include>
+          <control type="group">
+            <width>315</width>
+            <height>225</height>
+            <include content="Selectbox">
+              <param name="visible" value="$PARAM[condition] + Control.HasFocus($PARAM[id])"/>
+            </include>
+          </control>
+          <control type="button">
+            <include>HiddenObject</include>
+            <onfocus condition="ListItem.IsFolder">SetProperty(spotlight_isFolder,true,home)</onfocus>
+            <onfocus condition="ListItem.IsCollection">SetProperty(spotlight_isCollection,true,home)</onfocus>
+            <onfocus condition="!ListItem.IsFolder">ClearProperty(spotlight_isFolder)</onfocus>
+            <onfocus condition="!ListItem.IsCollection">ClearProperty(spotlight_isCollection)</onfocus>
+            <onfocus>SetProperty(spotlight_Title,$INFO[ListItem.Title],home)</onfocus>
           </control>
         </focusedlayout>
         <include content="Object_Widget_Content_Path">
