@@ -144,7 +144,7 @@
     <param name="sortdirection" default=""/>
     <param name="limit" default=""/>
     <param name="path" default=""/>
-    <param name="landscapecondition" default="true"/>
+    <param name="condition" default="true"/>
     <definition>
       <control type="$PARAM[controltype]" id="$PARAM[id]">
         <orientation>horizontal</orientation>
@@ -160,12 +160,12 @@
         <onfocus>SetProperty(widgetMovementId,$PARAM[id],home)</onfocus>
         <animation effect="fade" start="100" end="0" time="200" reversible="true" condition="Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[idtofade])">Conditional</animation>
         <!-- Landscapes -->
-        <itemlayout height="225" width="315" condition="$PARAM[landscapecondition]">
+        <itemlayout height="225" width="315" condition="$PARAM[condition]">
           <include content="ViewLandscapeItemLayout">
             <param name="firstrow_fade" value="Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[id])" />
           </include>
         </itemlayout>
-        <focusedlayout height="225" width="315" condition="$PARAM[landscapecondition]">
+        <focusedlayout height="225" width="315" condition="$PARAM[condition]">
           <include content="ViewLandscapeItemLayout">
             <param name="firstrow_fade" value="Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[id])" />
           </include>
@@ -173,7 +173,7 @@
             <width>315</width>
             <height>225</height>
             <include content="Selectbox">
-              <param name="visible" value="$PARAM[landscapecondition] + Control.HasFocus($PARAM[id])"/>
+              <param name="visible" value="$PARAM[condition] + Control.HasFocus($PARAM[id])"/>
             </include>
           </control>
           <control type="button">
@@ -196,7 +196,7 @@
     </definition>
   </include>
   <include name="Object_WidgetsWall_Content_withLabels">
-    <param name="landscapecondition" default="true"/>
+    <param name="condition" default="true"/>
     <definition>
       <control type="group" id="$PARAM[groupid]">
         <nested/>
@@ -225,7 +225,7 @@
           <include content="Object_Wall_Layout">
             <param name="id" value="$PARAM[id]"/>
             <param name="widgetMovementId" value="$PARAM[widgetMovementId]"/>
-            <param name="landscapecondition" value="$PARAM[landscapecondition]"/>
+            <param name="condition" value="$PARAM[condition]"/>
           </include>
           <include content="Object_Widget_Content_Path">
             <param name="target" value="$PARAM[target]"/>
@@ -239,7 +239,7 @@
     </definition>
   </include>
   <include name="Object_WidgetsWall_Content">
-    <param name="landscapecondition" default="true"/>
+    <param name="condition" default="true"/>
     <definition>
       <control type="fixedlist" id="$PARAM[id]">
         <orientation>horizontal</orientation>
@@ -266,7 +266,7 @@
         <include content="Object_Wall_Layout">
           <param name="id" value="$PARAM[id]"/>
           <param name="widgetMovementId" value="$PARAM[widgetMovementId]"/>
-          <param name="landscapecondition" value="$PARAM[landscapecondition]"/>
+          <param name="condition" value="$PARAM[condition]"/>
         </include>
         <include content="Object_Widget_Content_Path">
           <param name="target" value="$PARAM[target]"/>

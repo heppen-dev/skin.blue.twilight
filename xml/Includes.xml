@@ -2665,12 +2665,12 @@
   <include name="Object_Wall_Layout">
     <definition>
       <!-- Landscapes -->
-      <itemlayout height="225" width="315" condition="$PARAM[landscapecondition]">
+      <itemlayout height="225" width="315" condition="$PARAM[condition]">
         <include content="ViewLandscapeItemLayout">
           <param name="firstrow_fade" value="Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[id])" />
         </include>
       </itemlayout>
-      <focusedlayout height="225" width="315" condition="$PARAM[landscapecondition]">
+      <focusedlayout height="225" width="315" condition="$PARAM[condition]">
         <include content="ViewLandscapeItemLayout">
           <param name="firstrow_fade" value="Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[id])" />
         </include>
@@ -2678,7 +2678,7 @@
           <width>315</width>
           <height>225</height>
           <include content="Selectbox">
-            <param name="visible" value="$PARAM[landscapecondition] + Control.HasFocus($PARAM[id])"/>
+            <param name="visible" value="$PARAM[condition] + Control.HasFocus($PARAM[id])"/>
           </include>
         </control>
         <control type="button">

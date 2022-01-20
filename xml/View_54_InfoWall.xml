@@ -153,10 +153,10 @@
         <height>$PARAM[itemheight]</height>
         <visible>$PARAM[visible]</visible>
         <top>$PARAM[top]</top>
-        <itemlayout height="225" width="315" condition="$PARAM[landscapecondition]">
+        <itemlayout height="225" width="315" condition="$PARAM[condition]">
           <include content="ViewLandscapeItemLayout"/>
         </itemlayout>
-        <focusedlayout height="225" width="315" condition="$PARAM[landscapecondition]">
+        <focusedlayout height="225" width="315" condition="$PARAM[condition]">
           <include content="ViewLandscapeItemLayout"/>
           <include content="Selectbox">
             <param name="pad_top_b" value="0"/>
@@ -191,10 +191,10 @@
         <scrolltime tween="quadratic">400</scrolltime>
         <orientation>horizontal</orientation>
         <height>375.5</height>
-        <itemlayout height="225" width="315" condition="$PARAM[landscapecondition]">
+        <itemlayout height="225" width="315" condition="$PARAM[condition]">
           <include content="ViewLandscapeItemLayout"/>
         </itemlayout>
-        <focusedlayout height="225" width="315" condition="$PARAM[landscapecondition]">
+        <focusedlayout height="225" width="315" condition="$PARAM[condition]">
           <include content="ViewLandscapeItemLayout"/>
           <include content="Selectbox">
             <param name="pad_top_b" value="0"/>
