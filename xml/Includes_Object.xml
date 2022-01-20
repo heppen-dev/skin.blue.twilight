@@ -90,10 +90,10 @@
         <animation effect="fade" start="100" end="0" time="0" reversible="true" condition="Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[id])">Conditional</animation>
         <control type="grouplist">
           <orientation>horizontal</orientation>
-          <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,0)</visible>
+          <itemgap>32</itemgap>
+          <usecontrolcoords>true</usecontrolcoords>
+          <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,0) | Container($PARAM[id]).IsUpdating</visible>
           <control type="label">
-            <top>20</top>
-            <left>15</left>
             <width>auto</width>
             <label>$PARAM[label]</label>
             <aligny>center</aligny>
@@ -101,19 +101,12 @@
             <font>$PARAM[font]</font>
             <height>24</height>
           </control>
-          <control type="label">
-            <top>3</top>
-            <width>auto</width>
-            <label> | </label>
-            <aligny>center</aligny>
-            <textcolor>$VAR[ColorHighlight]</textcolor>
-            <font>font37</font>
-            <visible>Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])</visible>
-            <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,0) + !Container($PARAM[id]).IsUpdating</visible>
-            <visible>String.StartsWith(ListItem.FolderPath,pvr://)</visible>
+          <control type="group">
+            <top>-10</top>
+            <include>SmallBusySpinner</include>
+            <visible>Container($PARAM[id]).IsUpdating</visible>
           </control>
           <control type="group">
-            <top>24</top>
             <include content="ProgressGradient">
               <param name="id" value="29999"/>
               <param name="top" value="0"/>
@@ -121,16 +114,9 @@
               <height>16</height>
               <info>ListItem.Progress</info>
             </include>
-            <visible>Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])</visible>
+            <visible>Control.HasFocus($PARAM[id])</visible>
             <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,0) + !Container($PARAM[id]).IsUpdating</visible>
             <visible>String.StartsWith(ListItem.FolderPath,pvr://)</visible>
-          </control>
-          <control type="group">
-            <include>SmallBusySpinner</include>
-            <top>10</top>
-            <left>18</left>
-            <visible>Container($PARAM[id]).IsUpdating</visible>
-            <visible>Control.HasFocus($PARAM[id])</visible>
           </control>
         </control>
       </control>
