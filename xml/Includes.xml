@@ -2695,7 +2695,8 @@
           </control>
           <control type="label">
             <top>125</top>
-            <width>315</width>
+            <left>30</left>
+            <width>255</width>
             <height>55</height>
             <align>center</align>
             <aligny>center</aligny>
