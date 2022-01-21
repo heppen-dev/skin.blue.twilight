@@ -135,22 +135,28 @@
           <width>3220</width>
           <height>999999</height>
           <onup>2999</onup>
-          <include content="itemgap" condition="Skin.HasSetting(ShowWidgetLabels)"/>
+          <include content="WidgetsGap" condition="Skin.HasSetting(ShowWidgetLabels)"/>
           <include>skinshortcuts-template-widgetsWall</include>
           <animation effect="slide" time="0" start="0" end="-100,0" reversible="false" condition="true">Conditional</animation>
           <animation effect="slide" time="0" start="0" end="0,195" reversible="false" condition="!ControlGroup(3000).HasFocus + Integer.IsGreater(Container(3000).Position,0)">Conditional</animation>
-          <animation effect="slide" time="200" start="0" end="0,500" reversible="true" condition="[ControlGroup(3000).HasFocus | $EXP[FirstExpose] | $EXP[SecondExpose]] + !Skin.HasSetting(ShowWidgetLabels) + !String.StartsWith(ListItem.FolderPath,favourites://)">Conditional</animation>
+          <animation effect="slide" time="200" start="0" end="0,470" reversible="true" condition="[ControlGroup(3000).HasFocus | $EXP[FirstExpose] | $EXP[SecondExpose]] + !Skin.HasSetting(ShowWidgetLabels) + !String.StartsWith(ListItem.FolderPath,favourites://)">Conditional</animation>
           <animation effect="slide" time="200" start="0" end="0,400" reversible="true" condition="[[ControlGroup(3000).HasFocus | $EXP[FirstExpose] | $EXP[SecondExpose]] + Skin.HasSetting(ShowWidgetLabels)] + !String.StartsWith(ListItem.FolderPath,favourites://)">Conditional</animation>
           <animation effect="slide" time="200" start="0" end="0,340" reversible="true" condition="$EXP[FirstExpose] | $EXP[SecondExpose]">Conditional</animation>
-          <animation effect="slide" time="200" start="0" end="0,780" reversible="true" condition="String.IsEqual(Window(home).Property(activateSpotlight),true)">Conditional</animation>
         </control>
       </control>
       <control type="group">
-        <include content="showcasemargin" condition="Skin.HasSetting(ShowWidgetLabels)"/>
-        <include content="Object_Item_Showcase">
+        <include content="Object_Item_Showcase" condition="!Skin.HasSetting(ShowWidgetLabels)">
           <param name="title" value="$VAR[Label_Title]"/>
           <param name="title_width" value="1000" />
           <param name="clearlogo_top_margin" value="200"/>
+          <param name="plot" value="$VAR[Label_PlotTextBoxVar]"/>
+          <param name="visible" value="ControlGroup(3000).HasFocus + !Container(7501).IsUpdating + !String.StartsWith(ListItem.FolderPath,favourites://)"/>
+        </include>
+        <include content="Object_Item_Showcase" condition="Skin.HasSetting(ShowWidgetLabels)">
+          <param name="title" value="$VAR[Label_Title]"/>
+          <param name="title_width" value="1000" />
+          <param name="clearlogo_top_margin" value="200"/>
+          <param name="clearlogo_height" value="80"/>
           <param name="plot" value="$VAR[Label_PlotTextBoxVar]"/>
           <param name="visible" value="ControlGroup(3000).HasFocus + !Container(7501).IsUpdating + !String.StartsWith(ListItem.FolderPath,favourites://)"/>
         </include>
