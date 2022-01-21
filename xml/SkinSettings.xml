@@ -194,8 +194,8 @@
           <control type="radiobutton" id="706" description="Enable blur">
             <label>$LOCALIZE[31251]</label>
             <include>DefaultSettingButton</include>
-            <onclick>Skin.ToggleSetting(TMDbHelper.EnableBlur)</onclick>
-            <selected>Skin.HasSetting(TMDbHelper.EnableBlur)</selected>
+            <onclick>Skin.ToggleSetting(DisableBlur)</onclick>
+            <selected>!Skin.HasSetting(DisableBlur)</selected>
           </control>
           <control type="radiobutton" id="708" description="Animate background using Ken Burns Effect">
             <label>$LOCALIZE[31247]</label>
