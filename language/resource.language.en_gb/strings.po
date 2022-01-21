@@ -1983,7 +1983,7 @@ msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31407"
-msgid "Enable Flix Spotlight"
+msgid "Enable Expose"
 msgstr ""
 
 #: /xml/Custom_1141_FlixHub.xml

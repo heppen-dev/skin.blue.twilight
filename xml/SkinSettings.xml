@@ -61,17 +61,17 @@
             <onclick>Skin.ToggleSetting(ShowWidgetLabels)</onclick>
             <selected>Skin.HasSetting(ShowWidgetLabels)</selected>
           </control>
-          <control type="radiobutton" id="621" description="Flix spotlight">
-            <label>$LOCALIZE[31407]</label>
-            <include>DefaultSettingButton</include>
-            <onclick>Skin.ToggleSetting(FlixSpotlight)</onclick>
-            <selected>Skin.HasSetting(FlixSpotlight)</selected>
-          </control>
           <control type="radiobutton" id="624" description="Show labels on banners">
             <label>$LOCALIZE[31431]</label>
             <include>DefaultSettingButton</include>
             <onclick>Skin.ToggleSetting(ShowLabelOnBanner)</onclick>
             <selected>Skin.HasSetting(ShowLabelOnBanner)</selected>
+          </control>
+          <control type="radiobutton" id="621" description="Expose">
+            <label>$LOCALIZE[31407]</label>
+            <include>DefaultSettingButton</include>
+            <onclick>Skin.ToggleSetting(Expose)</onclick>
+            <selected>Skin.HasSetting(Expose)</selected>
           </control>
           <control type="radiobutton" id="622" description="Flix spotlight - Skip level 1">
             <label>$LOCALIZE[31429]</label>

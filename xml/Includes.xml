@@ -2650,10 +2650,10 @@
       <onclick condition="[String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE, tvshow)] + Control.HasFocus($PARAM[id]) + Skin.HasSetting(BackgroundPlayingTrailers) + !Player.HasVideo + String.IsEmpty(ListItem.Trailer) + !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Trailer))">SetProperty(hasTrailer,true,home)</onclick>
       <!-- flix spotlight -->
       <include content="Flix_Spotlight_Properties">
-        <param name="include_condition" value="[!String.StartsWith(ListItem.FolderPath,favourites://) + !String.IsEqual(Listitem.DBTYPE,song) + !String.IsEqual(Listitem.DBTYPE,album) + !String.IsEqual(Listitem.DBTYPE,artist)] + Skin.HasSetting(FlixSpotlight)" />
+        <param name="include_condition" value="[!String.StartsWith(ListItem.FolderPath,favourites://) + !String.IsEqual(Listitem.DBTYPE,song) + !String.IsEqual(Listitem.DBTYPE,album) + !String.IsEqual(Listitem.DBTYPE,artist)] + Skin.HasSetting(Expose)" />
       </include>
-      <onclick condition="[!String.StartsWith(ListItem.FolderPath,favourites://) + !String.IsEqual(Listitem.DBTYPE,song) + !String.IsEqual(Listitem.DBTYPE,album) + !String.IsEqual(Listitem.DBTYPE,artist)] + [Skin.HasSetting(FlixSpotlight) + !Skin.HasSetting(SkipLevel1)]">SetFocus(6000)</onclick>
-      <onclick condition="[!String.StartsWith(ListItem.FolderPath,favourites://) + !String.IsEqual(Listitem.DBTYPE,song) + !String.IsEqual(Listitem.DBTYPE,album) + !String.IsEqual(Listitem.DBTYPE,artist)] + [Skin.HasSetting(FlixSpotlight) + Skin.HasSetting(SkipLevel1)]">ActivateWindow(1141)</onclick>
+      <onclick condition="[!String.StartsWith(ListItem.FolderPath,favourites://) + !String.IsEqual(Listitem.DBTYPE,song) + !String.IsEqual(Listitem.DBTYPE,album) + !String.IsEqual(Listitem.DBTYPE,artist)] + [Skin.HasSetting(Expose) + !Skin.HasSetting(SkipLevel1)]">SetFocus(6000)</onclick>
+      <onclick condition="[!String.StartsWith(ListItem.FolderPath,favourites://) + !String.IsEqual(Listitem.DBTYPE,song) + !String.IsEqual(Listitem.DBTYPE,album) + !String.IsEqual(Listitem.DBTYPE,artist)] + [Skin.HasSetting(Expose) + Skin.HasSetting(SkipLevel1)]">ActivateWindow(1141)</onclick>
     </definition>
   </include>
   <include name="Object_Wall_Layout">

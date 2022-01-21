@@ -1807,8 +1807,8 @@ msgstr "Więcej informacji..."
 
 #: /xml/SkinSettings.xml
 msgctxt "#31407"
-msgid "Enable Flix Spotlight"
-msgstr "Włącz Flix Spotlight"
+msgid "Enable Expose"
+msgstr "Włącz widok Expose"
 
 #: /xml/Custom_1141_FlixHub.xml
 msgctxt "#31408"
