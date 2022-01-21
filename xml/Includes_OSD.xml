@@ -475,7 +475,7 @@
               <height>48</height>
               <label/>
               <font/>
-              <texturefocus colordiffuse="$VAR[ColorHighlight]">osd/fullscreen/buttons/button-fo.png</texturefocus>
+              <texturefocus colordiffuse="$VAR[ColorHighlight]" border="24">common/box.png</texturefocus>
               <texturenofocus/>
               <onleft>600</onleft>
               <onright>603</onright>
