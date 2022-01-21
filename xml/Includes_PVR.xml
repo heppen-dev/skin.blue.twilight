@@ -44,7 +44,7 @@
         <onup>11</onup>
         <ondown>11</ondown>
         <scrolltime tween="cubic" easing="out">500</scrolltime>
-        <itemlayout width="1200" height="104">
+        <itemlayout width="970" height="104">
           <control type="group">
             <left>32</left>
             <top>-22</top>
@@ -75,6 +75,7 @@
               <left>0</left>
               <top>15</top>
               <bottom>20</bottom>
+              <width>400</width>
               <control type="label">
                 <font>font_small_pvr_channels</font>
                 <left>0</left>
@@ -99,17 +100,17 @@
                 <font>font_small_pvr_channels</font>
                 <left>0</left>
                 <top>0</top>
+                <align>right</align>
                 <aligny>top</aligny>
-                <width max="128">auto</width>
                 <textcolor>main_fg_70</textcolor>
                 <label>$INFO[ListItem.NextStartTime]</label>
               </control>
               <control type="label">
                 <font>font_small_pvr_channels_italic</font>
-                <left>66</left>
+                <right>0</right>
                 <top>2</top>
+                <align>left</align>
                 <aligny>top</aligny>
-                <width max="380">auto</width>
                 <textcolor>main_fg_70</textcolor>
                 <label>$INFO[ListItem.NextTitle]</label>
               </control>
@@ -139,7 +140,7 @@
             </control>
           </control>
         </itemlayout>
-        <focusedlayout width="1200" height="104">
+        <focusedlayout width="970" height="104">
           <control type="group">
             <left>32</left>
             <top>-22</top>
@@ -153,7 +154,7 @@
           <control type="group">
             <control type="label">
               <top>24</top>
-              <left>188</left>
+              <left>168</left>
               <height>100</height>
               <font>font_small_pvr_channels</font>
               <aligny>center</aligny>
@@ -167,16 +168,17 @@
             <top>12</top>
             <bottom>0</bottom>
             <control type="group">
-              <left>20</left>
+              <left>0</left>
               <top>15</top>
               <bottom>20</bottom>
+              <width>400</width>
               <control type="label">
                 <font>font_small_pvr_channels</font>
                 <left>0</left>
                 <top>-25</top>
                 <aligny>top</aligny>
                 <width max="420">auto</width>
-                <textcolor>main_fg_70</textcolor>
+                <textcolor>fff1c40f</textcolor>
                 <label>$INFO[ListItem.Title]</label>
                 <visible>!String.IsEmpty(ListItem.Title)</visible>
               </control>
@@ -194,18 +196,18 @@
                 <font>font_small_pvr_channels</font>
                 <left>0</left>
                 <top>0</top>
+                <align>right</align>
                 <aligny>top</aligny>
-                <width max="128">auto</width>
-                <textcolor>main_fg_100</textcolor>
+                <textcolor>main_fg_70</textcolor>
                 <label>$INFO[ListItem.NextStartTime]</label>
               </control>
               <control type="label">
                 <font>font_small_pvr_channels_italic</font>
-                <left>66</left>
+                <right>0</right>
                 <top>2</top>
+                <align>left</align>
                 <aligny>top</aligny>
-                <width max="360">auto</width>
-                <textcolor>main_fg_100</textcolor>
+                <textcolor>main_fg_70</textcolor>
                 <label>$INFO[ListItem.NextTitle]</label>
               </control>
               <control type="progress">
