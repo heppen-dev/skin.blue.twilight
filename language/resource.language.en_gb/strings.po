@@ -2093,7 +2093,7 @@ msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31429"
-msgid "Skip Flix Spotlight first level"
+msgid "Skip first level of Expose"
 msgstr ""
 
 #: /xml/SkinSettings.xml

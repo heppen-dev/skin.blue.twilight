@@ -1917,8 +1917,8 @@ msgstr "Lista rozszerzona"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31429"
-msgid "Skip Flix Spotlight first level"
-msgstr "Pomiń spotlight poziomu pierwszego"
+msgid "Skip first level of Expose"
+msgstr "Pomiń widok Expose poziomu pierwszego"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31430"
