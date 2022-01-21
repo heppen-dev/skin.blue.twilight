@@ -160,7 +160,8 @@
         <include content="DefaultSettingButtonGradient">
           <param name="id" value="9100"/>
           <param name="height" value="70"/>
-          <top>0</top>75          <height>70</height>
+          <top>0</top>
+          <height>70</height>
           <right>0</right>
           <visible>ControlGroup(9100).HasFocus()</visible>
         </include>
@@ -252,7 +253,8 @@
           <control type="label" id="614">
             <textoffsetx>30</textoffsetx>
             <width>470</width>
-            <height>70</height>75            <textcolor>dialog_fg_30</textcolor>
+            <height>70</height>
+            <textcolor>dialog_fg_30</textcolor>
             <label>$LOCALIZE[31423]</label>
             <font>font_small_defaults</font>
             <aligny>center</aligny>
