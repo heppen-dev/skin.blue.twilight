@@ -239,32 +239,12 @@
         <onfocus>SetProperty(widgetNameLabel,$PARAM[label],home)</onfocus>
         <onfocus>SetProperty(widgetMovementId,$PARAM[id],home)</onfocus>
         <animation effect="fade" start="100" end="0" time="200" reversible="true" condition="Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[idtofade])">Conditional</animation>
-        <!-- Landscapes -->
-        <itemlayout height="225" width="315" condition="$PARAM[condition]">
-          <include content="ViewLandscapeItemLayout">
-            <param name="firstrow_fade" value="Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[id])" />
-          </include>
-        </itemlayout>
-        <focusedlayout height="225" width="315" condition="$PARAM[condition]">
-          <include content="ViewLandscapeItemLayout">
-            <param name="firstrow_fade" value="Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[id])" />
-          </include>
-          <control type="group">
-            <width>315</width>
-            <height>225</height>
-            <include content="Selectbox">
-              <param name="visible" value="$PARAM[condition] + Control.HasFocus($PARAM[id])"/>
-            </include>
-          </control>
-          <control type="button">
-            <include>HiddenObject</include>
-            <onfocus condition="ListItem.IsFolder">SetProperty(spotlight_isFolder,true,home)</onfocus>
-            <onfocus condition="ListItem.IsCollection">SetProperty(spotlight_isCollection,true,home)</onfocus>
-            <onfocus condition="!ListItem.IsFolder">ClearProperty(spotlight_isFolder)</onfocus>
-            <onfocus condition="!ListItem.IsCollection">ClearProperty(spotlight_isCollection)</onfocus>
-            <onfocus>SetProperty(spotlight_Title,$INFO[ListItem.Title],home)</onfocus>
-          </control>
-        </focusedlayout>
+        <!-- Item Layout -->
+        <include content="Object_Wall_Layout">
+          <param name="id" value="$PARAM[id]"/>
+          <param name="widgetMovementId" value="$PARAM[widgetMovementId]"/>
+          <param name="condition" value="$PARAM[condition]"/>
+        </include>
         <include content="Object_Widget_Content_Path">
           <param name="target" value="$PARAM[target]"/>
           <param name="sortby" value="$PARAM[sortby]"/>
