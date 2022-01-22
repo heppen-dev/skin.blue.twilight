@@ -18,8 +18,8 @@
   <onload condition="String.IsEmpty(Skin.String(TMDbHelper.Colors.Saturation))">Skin.SetString(TMDbHelper.Colors.Saturation,0.75)</onload>
 
   <onload condition="Skin.HasSetting(DisableBlur)">Skin.Reset(TMDbHelper.EnableBlur)</onload>
-  <onload condition="!Skin.HasSetting(DisableBlur)">Skin.ToggleSetting(TMDbHelper.EnableBlur)</onload>
-  
+  <onload condition="!Skin.HasSetting(DisableBlur)">Skin.SetBool(TMDbHelper.EnableBlur)</onload>
+
   <controls>
     <control type="button" id="20000">
       <include>HiddenObject</include>
