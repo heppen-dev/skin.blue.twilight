@@ -1,2 +1,11 @@
+1.0.1
+  Removed: Some garbage code
+  Fixed: DialogVideoInfo layout
+  Show buttons area only when Expose is enabled
+  Removed: Useless button
+  Fixed: Ratings position in Flix view
+  Fixed: Blur onload
+  Some tweaks to main menu
+  Added: Clearlogo over fanart + option to disable this
 1.0.0~alpha
-    - Alpha release.
+  Alpha release.

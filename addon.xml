@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.blue.twilight" version="1.0.0" name="Blue Twilight" provider-name="heppen">
+<addon id="skin.blue.twilight" version="1.0.1" name="Blue Twilight" provider-name="heppen">
   <requires>
     <import addon="xbmc.gui" version="5.15.0"/>
     <import addon="script.skinshortcuts" version="1.1.5"/>
@@ -12,7 +12,7 @@
     <res width="1920" height="1080" aspect="16:9" default="true" folder="xml"/>
   </extension>
   <extension point="xbmc.addon.metadata">
-    <news>1.0.0~alpha[CR]Alpha release.</news>
+    <news>1.0.1[CR]Removed: Some garbage code[CR]Fixed: DialogVideoInfo layout[CR]Show buttons area only when Expose is enabled[CR]Removed: Useless button[CR]Fixed: Ratings position in Flix view[CR]Fixed: Blur onload[CR]Some tweaks to main menu[CR]Added: Clearlogo over fanart + option to disable this[CR]1.0.0~alpha[CR]Alpha release.</news>
     <summary lang="en_GB">Simple. Lightweight. Elegant. That's all you need to enjoy Kodi.</summary>
     <summary lang="pl_PL">Prosto. Lekko. Elegancko. To wszystko czego potrzebujesz do rozrywki z Kodi.</summary>
     <description lang="en_GB">The skin is designed to allow the user to focus on media consumption. It provides many innovative solutions that every movie lover will appreciate.</description>
