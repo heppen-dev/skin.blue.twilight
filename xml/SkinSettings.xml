@@ -102,12 +102,6 @@
             <onclick condition="!String.IsEqual(Skin.String(Icons),colorful)">Skin.SetString(Icons, colorful)</onclick>
             <onclick condition="!String.IsEqual(Skin.String(Icons),colorful)">Skin.SetString(icons.label, $LOCALIZE[31295])</onclick>
           </control>
-          <control type="radiobutton" id="616" description="Landscape art">
-            <label>$LOCALIZE[31351]</label>
-            <include>DefaultSettingButton</include>
-            <selected>Skin.HasSetting(LandscapeArt)</selected>
-            <onclick>Skin.ToggleSetting(LandscapeArt)</onclick>
-          </control>
           <control type="radiobutton" id="617" description="Clearlogo">
             <label>$LOCALIZE[31402]</label>
             <include>DefaultSettingButton</include>
