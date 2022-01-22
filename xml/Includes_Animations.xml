@@ -285,19 +285,4 @@
     <animation effect="slide" end="0,-195" time="450" tween="linear" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,38)">Conditional</animation>
     <animation effect="slide" end="0,-195" time="450" tween="linear" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,39)">Conditional</animation>
   </include>
-  <include name="GenreCycle">
-    <animation effect="fade" start="100" end="0" time="600" delay="3000" reversible="false" condition="System.IdleTime(6)">Conditional</animation>
-  </include>
-  <include name="StudioCycle">
-    <animation effect="slide" start="0" end="0,800" time="0" delay="0" reversible="false" condition="System.IdleTime(9)">Conditional</animation>
-    <animation effect="fade" start="0" end="100" time="600" delay="500" reversible="false" condition="System.IdleTime(9)">Conditional</animation>
-    <animation effect="fade" start="100" end="0" time="600" delay="0" reversible="false" condition="System.IdleTime(18)">Conditional</animation>
-  </include>
-  <include name="CastCycle">
-    <animation effect="slide" start="0" end="0,800" time="0" delay="0" reversible="false" condition="System.IdleTime(18)">Conditional</animation>
-    <animation effect="fade" start="0" end="100" time="600" delay="500" reversible="false" condition="System.IdleTime(18)">Conditional</animation>
-  </include>
-  <include name="Animation_AlarmDelay">
-    <animation effect="slide" end="0,0" time="3000" reversible="false">Focus</animation>
-  </include>
 </includes>
