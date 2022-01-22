@@ -108,6 +108,12 @@
             <selected>Skin.HasSetting(DisableClearlogo)</selected>
             <onclick>Skin.ToggleSetting(DisableClearlogo)</onclick>
           </control>
+          <control type="radiobutton" id="616" description="Clearlogo over fanart">
+            <label>$LOCALIZE[31432]</label>
+            <include>DefaultSettingButton</include>
+            <selected>Skin.HasSetting(DisableCLOverFanart)</selected>
+            <onclick>Skin.ToggleSetting(DisableCLOverFanart)</onclick>
+          </control>
           <control type="radiobutton" id="620" description="Notification dialog">
             <label>$LOCALIZE[31427]</label>
             <include>DefaultSettingButton</include>

@@ -23,11 +23,27 @@
         <include content="ViewLandscapeItemLayout">
           <param name="firstrow_fade" value="Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[id])" />
         </include>
+        <control type="group">
+          <top>30</top>
+          <left>50</left>
+          <animation effect="fade" start="100" end="15" time="450" reversible="true" condition="Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[id])">Conditional</animation>
+          <control type="image">
+            <width>200</width>
+            <height>145</height>
+            <aspectratio align="center" aligny="bottom">keep</aspectratio>
+            <texture background="true">$INFO[Container($PARAM[id]).ListItem(Container($PARAM[id]).CurrentItem).Art(clearlogo)]</texture>
+            <visible>String.IsEmpty(ListItem.Art(tvshow.landscape)) + String.IsEmpty(ListItem.Art(landscape)) + !Skin.HasSetting(DisableCLOverFanart)</visible>
+          </control>
+          <control type="image">
+            <width>200</width>
+            <height>145</height>
+            <aspectratio align="center" aligny="bottom">keep</aspectratio>
+            <texture background="true">$INFO[Container($PARAM[id]).ListItem(Container($PARAM[id]).CurrentItem).Art(tvshow.clearlogo)]</texture>
+            <visible>String.IsEmpty(ListItem.Art(tvshow.landscape)) + String.IsEmpty(ListItem.Art(landscape)) + !Skin.HasSetting(DisableCLOverFanart)</visible>
+          </control>
+        </control>
       </itemlayout>
       <focusedlayout height="225" width="315" condition="$PARAM[condition]">
-        <include content="ViewLandscapeItemLayout">
-          <param name="firstrow_fade" value="Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[id])" />
-        </include>
         <control type="button">
           <include>HiddenObject</include>
           <onfocus condition="ListItem.IsFolder">SetProperty(spotlight_isFolder,true,home)</onfocus>
@@ -35,6 +51,28 @@
           <onfocus condition="!ListItem.IsFolder">ClearProperty(spotlight_isFolder)</onfocus>
           <onfocus condition="!ListItem.IsCollection">ClearProperty(spotlight_isCollection)</onfocus>
           <onfocus>SetProperty(spotlight_Title,$INFO[ListItem.Title],home)</onfocus>
+        </control>
+        <include content="ViewLandscapeItemLayout">
+          <param name="firstrow_fade" value="Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[id])" />
+        </include>
+        <control type="group">
+          <top>30</top>
+          <left>50</left>
+          <animation effect="fade" start="100" end="15" time="450" reversible="true" condition="Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[id])">Conditional</animation>
+          <control type="image">
+            <width>200</width>
+            <height>145</height>
+            <aspectratio align="center" aligny="bottom">keep</aspectratio>
+            <texture background="true">$INFO[Container($PARAM[id]).ListItem(Container($PARAM[id]).CurrentItem).Art(clearlogo)]</texture>
+            <visible>String.IsEmpty(ListItem.Art(tvshow.landscape)) + String.IsEmpty(ListItem.Art(landscape)) + !Skin.HasSetting(DisableCLOverFanart)</visible>
+          </control>
+          <control type="image">
+            <width>200</width>
+            <height>145</height>
+            <aspectratio align="center" aligny="bottom">keep</aspectratio>
+            <texture background="true">$INFO[Container($PARAM[id]).ListItem(Container($PARAM[id]).CurrentItem).Art(tvshow.clearlogo)]</texture>
+            <visible>String.IsEmpty(ListItem.Art(tvshow.landscape)) + String.IsEmpty(ListItem.Art(landscape)) + !Skin.HasSetting(DisableCLOverFanart)</visible>
+          </control>
         </control>
         <control type="group">
           <visible>String.StartsWith(ListItem.FolderPath,favourites://) + Control.HasFocus($PARAM[id])</visible>

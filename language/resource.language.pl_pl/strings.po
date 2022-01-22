@@ -1783,7 +1783,7 @@ msgstr "Włącz scrollowanie Flixed"
 #: /xml/SkinSettings.xml
 msgctxt "#31402"
 msgid "Disable clearlogo"
-msgstr "Wyłącz clear logo"
+msgstr "Wyłącz clearlogo"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31403"
@@ -1929,3 +1929,8 @@ msgstr "Pokaż nazwę widgetu"
 msgctxt "#31431"
 msgid "Show title on banner"
 msgstr "Pokaż nazwę pozycji na lokalnym banerze"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31432"
+msgid "Disable Clearlogo over Fanart"
+msgstr "Wyłącz Clearlogo na Fanarcie"
