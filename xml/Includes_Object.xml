@@ -1,5 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+  <include name="Object_Wall_Events">
+    <definition>
+      <!-- trailers -->
+      <onclick condition="[String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE, tvshow)] + Control.HasFocus($PARAM[id]) + Skin.HasSetting(BackgroundPlayingTrailers) + !Player.HasVideo + !String.IsEmpty(ListItem.Trailer)">AlarmClock(trailerdelay,PlayMedia($ESCINFO[ListItem.Trailer],1),00:01,silent)</onclick>
+      <onclick condition="[String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE, tvshow)] + Control.HasFocus($PARAM[id]) + Skin.HasSetting(BackgroundPlayingTrailers) + !Player.HasVideo + String.IsEmpty(ListItem.Trailer) + !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Trailer))">AlarmClock(trailerdelay,PlayMedia($ESCINFO[Window(Home).Property(TMDbHelper.ListItem.Trailer)],1),00:01,silent)</onclick>
+      <onclick condition="[[String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE, tvshow)] + Skin.HasSetting(BackgroundPlayingTrailers) + String.IsEmpty(ListItem.Trailer) + String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Trailer))] + !Skin.HasSetting(DontShowNotificationANT)">Notification($LOCALIZE[31389], $LOCALIZE[31390])</onclick>
+      <onclick condition="[String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE, tvshow)] + Control.HasFocus($PARAM[id]) + Skin.HasSetting(BackgroundPlayingTrailers) + !Player.HasVideo + !String.IsEmpty(ListItem.Trailer)">SetProperty(hasTrailer,true,home)</onclick>
+      <onclick condition="[String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE, tvshow)] + Control.HasFocus($PARAM[id]) + Skin.HasSetting(BackgroundPlayingTrailers) + !Player.HasVideo + String.IsEmpty(ListItem.Trailer) + !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Trailer))">SetProperty(hasTrailer,true,home)</onclick>
+      <!-- flix spotlight -->
+      <include content="Flix_Spotlight_Properties">
+        <param name="include_condition" value="[!String.StartsWith(ListItem.FolderPath,favourites://) + !String.IsEqual(Listitem.DBTYPE,song) + !String.IsEqual(Listitem.DBTYPE,album) + !String.IsEqual(Listitem.DBTYPE,artist)] + Skin.HasSetting(Expose)" />
+      </include>
+      <onclick condition="[!String.StartsWith(ListItem.FolderPath,favourites://) + !String.IsEqual(Listitem.DBTYPE,song) + !String.IsEqual(Listitem.DBTYPE,album) + !String.IsEqual(Listitem.DBTYPE,artist)] + [Skin.HasSetting(Expose) + !Skin.HasSetting(SkipLevel1)]">SetFocus(6000)</onclick>
+      <onclick condition="[!String.StartsWith(ListItem.FolderPath,favourites://) + !String.IsEqual(Listitem.DBTYPE,song) + !String.IsEqual(Listitem.DBTYPE,album) + !String.IsEqual(Listitem.DBTYPE,artist)] + [Skin.HasSetting(Expose) + Skin.HasSetting(SkipLevel1)]">ActivateWindow(1141)</onclick>
+    </definition>
+  </include>
+  <include name="Object_Wall_Layout">
+    <definition>
+      <!-- Landscapes -->
+      <itemlayout height="225" width="315" condition="$PARAM[condition]">
+        <include content="ViewLandscapeItemLayout">
+          <param name="firstrow_fade" value="Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[id])" />
+        </include>
+      </itemlayout>
+      <focusedlayout height="225" width="315" condition="$PARAM[condition]">
+        <include content="ViewLandscapeItemLayout">
+          <param name="firstrow_fade" value="Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[id])" />
+        </include>
+        <control type="button">
+          <include>HiddenObject</include>
+          <onfocus condition="ListItem.IsFolder">SetProperty(spotlight_isFolder,true,home)</onfocus>
+          <onfocus condition="ListItem.IsCollection">SetProperty(spotlight_isCollection,true,home)</onfocus>
+          <onfocus condition="!ListItem.IsFolder">ClearProperty(spotlight_isFolder)</onfocus>
+          <onfocus condition="!ListItem.IsCollection">ClearProperty(spotlight_isCollection)</onfocus>
+          <onfocus>SetProperty(spotlight_Title,$INFO[ListItem.Title],home)</onfocus>
+        </control>
+        <control type="group">
+          <visible>String.StartsWith(ListItem.FolderPath,favourites://) + Control.HasFocus($PARAM[id])</visible>
+          <animation effect="fade" time="200" end="100" reversible="false">Focus</animation>
+          <control type="image">
+            <top>130</top>
+            <left>15</left>
+            <width>285</width>
+            <height>55</height>
+            <texture colordiffuse="main_bg_100">common/white.png</texture>
+          </control>
+          <control type="image">
+            <top>130</top>
+            <left>15</left>
+            <width>285</width>
+            <height>1</height>
+            <texture colordiffuse="80FFFFFF">common/white.png</texture>
+          </control>
+          <control type="label">
+            <top>125</top>
+            <left>30</left>
+            <width>255</width>
+            <height>55</height>
+            <align>center</align>
+            <aligny>center</aligny>
+            <textcolor>ffffffff</textcolor>
+            <font>font_tiny_hintlabel</font>
+            <label>$INFO[ListItem.Label]</label>
+          </control>
+        </control>
+        <control type="group">
+          <width>315</width>
+          <height>225</height>
+          <include content="Selectbox">
+            <param name="visible" value="$PARAM[condition] + Control.HasFocus($PARAM[id])"/>
+          </include>
+        </control>
+      </focusedlayout>
+    </definition>
+  </include>
   <include name="Object_Widget_Label">
     <param name="font" default="font27_bold"/>
     <definition>

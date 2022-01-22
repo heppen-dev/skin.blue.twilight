@@ -119,40 +119,39 @@
       </control>
       <control type="grouplist" id="100">
         <onup>99</onup>
-        <top>0</top>
         <left>20</left>
-        <height>975</height>
+        <height>1060</height>
         <width>1920</width>
-        <itemgap>42</itemgap>
+        <itemgap>0</itemgap>
+        <orientation>vertical</orientation>
         <animation effect="slide" start="0,0" end="0,1080" time="400" tween="cubic" easing="inout" condition="!ControlGroup(100).HasFocus">Conditional</animation>
         <include content="InfoDialogLabel">
           <param name="groupid" value="1051"/>
           <param name="id" value="50"/>
           <param name="label" value="$INFO[ListItem.Label]"/>
           <param name="altlabel" value="$LOCALIZE[31261]"/>
-          <param name="left" value="20"/>
-          <param name="top" value="0"/>
           <param name="visible" value="true"/>
         </include>
         <control type="list" id="50">
           <scrolltime tween="quadratic">400</scrolltime>
           <orientation>horizontal</orientation>
-          <top>0</top>
-          <height>407</height>
+          <height>350</height>
+          <usecontrolcoords>true</usecontrolcoords>
           <visible>!Skin.HasSetting(InfoDialog.Cast)</visible>
           <scrolltime tween="sine" easing="out">200</scrolltime>
-          <itemlayout width="270" height="427">
+          <itemlayout width="185" height="300">
             <include content="InfoDialogItemLayout">
               <param name="icon" value="$INFO[ListItem.Icon]"/>
               <param name="label" value="$INFO[ListItem.Label]"/>
               <param name="label2" value="$INFO[ListItem.Label2]"/>
             </include>
           </itemlayout>
-          <focusedlayout width="270" height="427">
+          <focusedlayout width="185" height="300">
             <include content="InfoDialogFocusedLayout">
               <param name="icon" value="$INFO[ListItem.Icon]"/>
               <param name="label" value="$INFO[ListItem.Label]"/>
               <param name="label2" value="$INFO[ListItem.Label2]"/>
+              <param name="id" value="50"/>
             </include>
           </focusedlayout>
         </control>
@@ -161,28 +160,27 @@
           <param name="id" value="1056"/>
           <param name="label" value="$INFO[ListItem.Label]"/>
           <param name="altlabel" value="$LOCALIZE[31264]"/>
-          <param name="left" value="20"/>
-          <param name="top" value="0"/>
           <param name="visible" value="true"/>
         </include>
         <control type="list" id="1056">
           <scrolltime tween="quadratic">400</scrolltime>
           <orientation>horizontal</orientation>
-          <top>0</top>
-          <height>407</height>
+          <height>350</height>
+          <usecontrolcoords>true</usecontrolcoords>
           <scrolltime tween="sine" easing="out">200</scrolltime>
-          <itemlayout width="270" height="427">
+          <itemlayout width="185" height="300">
             <include content="InfoDialogItemLayout">
               <param name="icon" value="$INFO[ListItem.Icon]"/>
               <param name="label" value="$INFO[ListItem.Label]"/>
               <param name="label2" value="$INFO[ListItem.Label2]"/>
             </include>
           </itemlayout>
-          <focusedlayout width="270" height="427">
+          <focusedlayout width="185" height="300">
             <include content="InfoDialogFocusedLayout">
               <param name="icon" value="$INFO[ListItem.Icon]"/>
               <param name="label" value="$INFO[ListItem.Label]"/>
               <param name="label2" value="$INFO[ListItem.Label2]"/>
+              <param name="id" value="1056"/>
             </include>
           </focusedlayout>
           <content>$VAR[Def_Crew_List]</content>
@@ -198,8 +196,8 @@
           <param name="content" value="$VAR[Def_Set_List]"/>
           <param name="target" value="videos"/>
           <param name="limit" value="25"/>
-          <param name="itemwidth" value="315"/>
-          <param name="itemheight" value="225"/>
+          <param name="itemwidth" value="185"/>
+          <param name="itemheight" value="350"/>
           <param name="visible" value="true"/>
         </include>
         <include content="InfoDialogWallContainer" condition="!String.IsEmpty(ListItem.IMDBNumber) + Skin.HasSetting(InfoDialog.Similar)">
@@ -212,8 +210,8 @@
           <param name="content" value="$VAR[Def_Similar_List]"/>
           <param name="target" value="videos"/>
           <param name="limit" value="25"/>
-          <param name="itemwidth" value="315"/>
-          <param name="itemheight" value="225"/>
+          <param name="itemwidth" value="185"/>
+          <param name="itemheight" value="350"/>
           <param name="visible" value="true"/>
         </include>
         <include content="InfoDialogWallContainer" condition="!String.IsEmpty(ListItem.Director) + Skin.HasSetting(InfoDialog.Director)">
@@ -226,8 +224,8 @@
           <param name="content" value="$VAR[Def_Director_List]"/>
           <param name="target" value="videos"/>
           <param name="limit" value="25"/>
-          <param name="itemwidth" value="315"/>
-          <param name="itemheight" value="225"/>
+          <param name="itemwidth" value="185"/>
+          <param name="itemheight" value="350"/>
           <param name="visible" value="true"/>
         </include>
         <include content="InfoDialogWallContainer" condition="!String.IsEmpty(ListItem.Studio) + Skin.HasSetting(InfoDialog.Studio)">
@@ -240,8 +238,8 @@
           <param name="content" value="$VAR[Def_Studio_List]"/>
           <param name="target" value="videos"/>
           <param name="limit" value="25"/>
-          <param name="itemwidth" value="315"/>
-          <param name="itemheight" value="225"/>
+          <param name="itemwidth" value="185"/>
+          <param name="itemheight" value="350"/>
           <param name="visible" value="true"/>
         </include>
         <include content="InfoDialogWallContainer" condition="Skin.HasSetting(InfoDialog.Recommended)">
@@ -254,8 +252,8 @@
           <param name="content" value="$VAR[Def_Recommended_List]"/>
           <param name="target" value="videos"/>
           <param name="limit" value="25"/>
-          <param name="itemwidth" value="315"/>
-          <param name="itemheight" value="225"/>
+          <param name="itemwidth" value="185"/>
+          <param name="itemheight" value="350"/>
           <param name="visible" value="true"/>
         </include>
         <include content="InfoDialogWallContainer" condition="Skin.HasSetting(InfoDialog.FromYear) + !String.IsEmpty(ListItem.Year)">
@@ -268,8 +266,8 @@
           <param name="content" value="$VAR[Def_FromYear_List]"/>
           <param name="target" value="videos"/>
           <param name="limit" value="25"/>
-          <param name="itemwidth" value="315"/>
-          <param name="itemheight" value="225"/>
+          <param name="itemwidth" value="185"/>
+          <param name="itemheight" value="350"/>
           <param name="visible" value="true"/>
         </include>
         <include content="InfoDialogWallContainer" condition="Skin.HasSetting(InfoDialog.Genre) + !String.IsEmpty(ListItem.Genre)">
@@ -282,42 +280,26 @@
           <param name="content" value="$VAR[Def_Genre_List]"/>
           <param name="target" value="videos"/>
           <param name="limit" value="25"/>
-          <param name="itemwidth" value="315"/>
-          <param name="itemheight" value="225"/>
-        </include>
-        <include content="InfoDialogYoutubeContainer" condition="Skin.HasSetting(InfoDialog.YouTube) + System.HasAddon(plugin.video.youtube) + [String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,tvshow) | String.IsEqual(ListItem.DBTYPE,season) | String.IsEqual(ListItem.DBTYPE,episode)]" />
-        <include content="InfoDialogLabel">
-          <param name="groupid" value="10061"/>
-          <param name="id" value="1061"/>
-          <param name="label" value="$INFO[ListItem.Label]"/>
-          <param name="altlabel" value="$LOCALIZE[31266]"/>
-          <param name="left" value="20"/>
-          <param name="top" value="0"/>
+          <param name="itemwidth" value="185"/>
+          <param name="itemheight" value="350"/>
           <param name="visible" value="true"/>
         </include>
-        <control type="list" id="1061">
-          <scrolltime tween="quadratic">400</scrolltime>
-          <orientation>horizontal</orientation>
-          <top>0</top>
-          <height>407</height>
-          <scrolltime tween="sine" easing="out">200</scrolltime>
-          <itemlayout width="270" height="427">
-            <include content="InfoDialogItemLayout">
-              <param name="icon" value="$INFO[ListItem.Icon]"/>
-              <param name="label" value="$INFO[ListItem.Label]"/>
-              <param name="label2" value="$INFO[ListItem.Label2]"/>
-            </include>
-          </itemlayout>
-          <focusedlayout width="270" height="427">
-            <include content="InfoDialogFocusedLayout">
-              <param name="icon" value="$INFO[ListItem.Icon]"/>
-              <param name="label" value="$INFO[ListItem.Label]"/>
-              <param name="label2" value="$INFO[ListItem.Label2]"/>
-            </include>
-          </focusedlayout>
-          <content>$VAR[Def_Posters_List]</content>
-          <visible>Skin.HasSetting(InfoDialog.Posters) + [String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,tvshow)]</visible>
-        </control>
+        <include content="InfoDialogWallContainer" condition="Skin.HasSetting(InfoDialog.Posters) + [String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,tvshow)]">
+          <param name="id" value="1060"/>
+          <param name="groupid" value="10060"/>
+          <param name="icon" value="$INFO[ListItem.Icon]"/>
+          <param name="altlabel" value="$LOCALIZE[31266]"/>
+          <param name="label" value="$INFO[ListItem.Label]"/>
+          <param name="label2" value="$INFO[ListItem.Label2]"/>
+          <param name="content" value="$VAR[Def_Posters_List]"/>
+          <param name="target" value="pictures"/>
+          <param name="limit" value="25"/>
+          <param name="itemwidth" value="185"/>
+          <param name="itemheight" value="350"/>
+          <param name="visible" value="true"/>
+        </include>
+        <include content="InfoDialogYoutubeContainer" condition="Skin.HasSetting(InfoDialog.YouTube) + System.HasAddon(plugin.video.youtube) + [String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,tvshow) | String.IsEqual(ListItem.DBTYPE,season) | String.IsEqual(ListItem.DBTYPE,episode)]">
+        </include>
       </control>
       <control type="group" id="8999">
         <visible>ControlGroup(9000).HasFocus()</visible>
