@@ -134,15 +134,18 @@
           <height>24</height>
         </control>
         <control type="group">
-          <include>SmallBusySpinner</include>
+          <include content="SmallBusySpinner">
+            <param name="top" value="-10"/>
+          </include>
           <visible>Container($PARAM[id]).IsUpdating</visible>
         </control>
         <control type="group">
           <include content="ProgressGradient">
             <param name="id" value="29999"/>
-            <param name="top" value="0"/>
-            <width>480</width>
-            <height>16</height>
+            <param name="top" value="8"/>
+            <top>8</top>
+            <width>280</width>
+            <height>8</height>
             <info>ListItem.Progress</info>
           </include>
           <visible>Control.HasFocus($PARAM[id])</visible>

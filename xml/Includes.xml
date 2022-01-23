@@ -1802,6 +1802,7 @@
   </include>
   <!-- Small Busy Spinner -->
   <include name="SmallBusySpinner">
+    <param name="top" default="0"/>
     <definition>
       <control type="group">
         <centerleft>50%</centerleft>
@@ -1809,7 +1810,7 @@
         <control type="group">
           <description>Busy animation</description>
           <centerleft>50%</centerleft>
-          <top>0</top>
+          <top>$PARAM[top]</top>
           <width>42</width>
           <height>42</height>
           <animation effect="rotate" condition="true" start="0" end="360" loop="true" time="1000" center="auto">Conditional</animation>
