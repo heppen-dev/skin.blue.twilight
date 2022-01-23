@@ -286,6 +286,14 @@
               <height>1</height>
               <texture colordiffuse="80FFFFFF">common/white.png</texture>
             </control>
+            <control type="progress" id="12">
+              <top>175</top>
+              <left>42</left>
+              <width>1000</width>
+              <height>55</height>
+              <info>ListItem.Progress</info>
+              <visible>Control.HasFocus($PARAM[id]) + String.StartsWith(ListItem.FolderPath,pvr://)</visible>
+            </control>
             <control type="label">
               <top>175</top>
               <left>42</left>
