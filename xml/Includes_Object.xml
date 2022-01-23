@@ -285,6 +285,7 @@
               <width>1000</width>
               <height>55</height>
               <info>ListItem.Progress</info>
+              <righttexture colordiffuse="$VAR[ColorHighlight]" border="4"/>
               <visible>Control.HasFocus($PARAM[id]) + String.StartsWith(ListItem.FolderPath,pvr://)</visible>
             </control>
             <control type="image">
