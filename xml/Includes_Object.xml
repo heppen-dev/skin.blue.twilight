@@ -288,7 +288,7 @@
               <righttexture/>
               <lefttexture colordiffuse="$VAR[ColorHighlight]" border="4">diffuse/progress-left.png</lefttexture>
               <midtexture colordiffuse="$VAR[ColorHighlight]" border="4">diffuse/progress-end.png</midtexture>
-              <animation effect="fade" time="0" end="15" reversible="false" condition="true">Conditional</animation>
+              <animation effect="fade" time="0" end="50" reversible="false" condition="true">Conditional</animation>
               <visible>Control.HasFocus($PARAM[id]) + String.StartsWith(ListItem.FolderPath,pvr://)</visible>
             </control>
             <control type="image">
