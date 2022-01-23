@@ -116,46 +116,39 @@
   <include name="Object_Widget_Label">
     <param name="font" default="font27_bold"/>
     <definition>
-      <control type="group" id="$PARAM[groupid]">
-        <nested/>
-        <top>$PARAM[top]</top>
-        <left>$PARAM[left]</left>
-        <height>52</height>
-        <visible>true</visible>
+      <control type="grouplist" id="$PARAM[labelid]">
         <include content="Animation_Widget_Slide_withLabels">
           <param name="container" value="3000" />
         </include>
         <animation effect="fade" start="100" end="0" time="0" reversible="true" condition="Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[id])">Conditional</animation>
-        <control type="grouplist">
-          <orientation>horizontal</orientation>
-          <itemgap>32</itemgap>
-          <usecontrolcoords>true</usecontrolcoords>
-          <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,0) | Container($PARAM[id]).IsUpdating</visible>
-          <control type="label">
-            <width>auto</width>
-            <label>$PARAM[label]</label>
-            <aligny>center</aligny>
-            <textcolor>dialog_fg_100</textcolor>
-            <font>$PARAM[font]</font>
-            <height>24</height>
-          </control>
-          <control type="group">
-            <top>-10</top>
-            <include>SmallBusySpinner</include>
-            <visible>Container($PARAM[id]).IsUpdating</visible>
-          </control>
-          <control type="group">
-            <include content="ProgressGradient">
-              <param name="id" value="29999"/>
-              <param name="top" value="0"/>
-              <width>480</width>
-              <height>16</height>
-              <info>ListItem.Progress</info>
-            </include>
-            <visible>Control.HasFocus($PARAM[id])</visible>
-            <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,0) + !Container($PARAM[id]).IsUpdating</visible>
-            <visible>String.StartsWith(ListItem.FolderPath,pvr://)</visible>
-          </control>
+        <animation effect="slide" end="840,0" time="0" reversible="true" condition="true">Conditional</animation>
+        <orientation>horizontal</orientation>
+        <itemgap>32</itemgap>
+        <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,0) | Container($PARAM[id]).IsUpdating</visible>
+        <control type="label">
+          <width>auto</width>
+          <label>$PARAM[label]</label>
+          <aligny>center</aligny>
+          <textcolor>dialog_fg_100</textcolor>
+          <font>$PARAM[font]</font>
+          <height>24</height>
+        </control>
+        <control type="group">
+          <top>-10</top>
+          <include>SmallBusySpinner</include>
+          <visible>Container($PARAM[id]).IsUpdating</visible>
+        </control>
+        <control type="group">
+          <include content="ProgressGradient">
+            <param name="id" value="29999"/>
+            <param name="top" value="0"/>
+            <width>480</width>
+            <height>16</height>
+            <info>ListItem.Progress</info>
+          </include>
+          <visible>Control.HasFocus($PARAM[id])</visible>
+          <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,0) + !Container($PARAM[id]).IsUpdating</visible>
+          <visible>String.StartsWith(ListItem.FolderPath,pvr://)</visible>
         </control>
       </control>
     </definition>
@@ -163,43 +156,42 @@
   <include name="Object_WidgetsWall_Content_withLabels">
     <param name="condition" default="true"/>
     <definition>
-      <control type="group" id="$PARAM[groupid]">
-        <nested/>
-        <control type="fixedlist" id="$PARAM[id]">
-          <orientation>horizontal</orientation>
-          <top>20</top>
-          <height>195</height>
-          <focusposition>3</focusposition>
-          <onup>SetFocus(2999)</onup>
-          <onup>$PARAM[onup]</onup>
-          <ondown>$PARAM[ondown]</ondown>
-          <onback>9000</onback>
-          <animation effect="slide" time="0" start="0" end="-120,0" reversible="true" condition="true">Conditional</animation>
-          <!-- movement -->
-          <include content="Animation_Widget_Slide_withLabels">
-            <param name="container" value="3000" />
-          </include>
-          <onfocus>SetProperty(TMDbHelper.WidgetContainer,$PARAM[id],home)</onfocus>
-          <onfocus>SetProperty(widgetMovementId,$PARAM[id],home)</onfocus>
-          <animation effect="fade" start="100" end="0" time="0" reversible="true" condition="Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[idtofade])">Conditional</animation>
-          <!-- Wall events -->
-          <include content="Object_Wall_Events">
-            <param name="id" value="$PARAM[id]"/>
-          </include>
-          <!-- Item Layout -->
-          <include content="Object_Wall_Layout">
-            <param name="id" value="$PARAM[id]"/>
-            <param name="widgetMovementId" value="$PARAM[widgetMovementId]"/>
-            <param name="condition" value="$PARAM[condition]"/>
-          </include>
-          <include content="Object_Widget_Content_Path">
-            <param name="target" value="$PARAM[target]"/>
-            <param name="sortby" value="$PARAM[sortby]"/>
-            <param name="sortdirection" value="$PARAM[sortdirection]"/>
-            <param name="limit" value="$PARAM[limit]"/>
-            <param name="path" value="$PARAM[path]"/>
-          </include>
-        </control>
+      <include content="Object_Widget_Label">
+        <param name="id" value="$PARAM[id]"/>
+        <param name="labelid" value="$PARAM[labelid]"/>
+        <param name="label" value="$PARAM[label]"/>
+      </include>
+      <control type="fixedlist" id="$PARAM[id]">
+        <orientation>horizontal</orientation>
+        <height>225</height>
+        <focusposition>3</focusposition>
+        <onup>SetFocus(2999)</onup>
+        <onback>9000</onback>
+        <animation effect="slide" time="0" start="0" end="-120,0" reversible="true" condition="true">Conditional</animation>
+        <!-- movement -->
+        <include content="Animation_Widget_Slide_withLabels">
+          <param name="container" value="3000" />
+        </include>
+        <onfocus>SetProperty(TMDbHelper.WidgetContainer,$PARAM[id],home)</onfocus>
+        <onfocus>SetProperty(widgetMovementId,$PARAM[id],home)</onfocus>
+        <animation effect="fade" start="100" end="0" time="0" reversible="true" condition="Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[idtofade])">Conditional</animation>
+        <!-- Wall events -->
+        <include content="Object_Wall_Events">
+          <param name="id" value="$PARAM[id]"/>
+        </include>
+        <!-- Item Layout -->
+        <include content="Object_Wall_Layout">
+          <param name="id" value="$PARAM[id]"/>
+          <param name="widgetMovementId" value="$PARAM[widgetMovementId]"/>
+          <param name="condition" value="$PARAM[condition]"/>
+        </include>
+        <include content="Object_Widget_Content_Path">
+          <param name="target" value="$PARAM[target]"/>
+          <param name="sortby" value="$PARAM[sortby]"/>
+          <param name="sortdirection" value="$PARAM[sortdirection]"/>
+          <param name="limit" value="$PARAM[limit]"/>
+          <param name="path" value="$PARAM[path]"/>
+        </include>
       </control>
     </definition>
   </include>

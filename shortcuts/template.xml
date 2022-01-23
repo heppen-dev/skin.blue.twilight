@@ -5,8 +5,6 @@
       <skinshortcuts insert="wall">items</skinshortcuts>
     </controls>
     <items insert="wall">
-      <condition tag="property" attribute="name|path" />
-      <condition tag="property" attribute="name|list"/>
       <property name="id" tag="mainmenuid"/>
       <property name="path" tag="property" attribute="name|list"/>
       <property name="sortby" tag="property" attribute="name|widgetSortBy"/>
@@ -17,16 +15,10 @@
       <propertyGroup>mainmenuWidgets</propertyGroup>
       <controls>
         <include content="Object_WidgetsWall_Content_withLabels" condition="Skin.HasSetting(ShowWidgetLabels)">
-          <include content="Object_Widget_Label">
-            <param name="top" value="0"/>
-            <param name="left" value="840"/>
-            <param name="id" value="750$SKINSHORTCUTS[id]"/>
-            <param name="groupid" value="760$SKINSHORTCUTS[id]"/>
-            <param name="label" value="$SKINSHORTCUTS[label]"/>
-          </include>
           <param name="controltype" value="list"/>
-          <param name="name" value="$SKINSHORTCUTS[label]"/>
+          <param name="label" value="$SKINSHORTCUTS[label]"/>
           <param name="groupid" value="760$SKINSHORTCUTS[id]"/>
+          <param name="labelid" value="770$SKINSHORTCUTS[id]"/>
           <param name="image" value="$SKINSHORTCUTS[artwork]"/>
           <param name="id" value="750$SKINSHORTCUTS[id]"/>
           <param name="target" value="$SKINSHORTCUTS[target]"/>
@@ -36,8 +28,6 @@
           <param name="path" value="$SKINSHORTCUTS[path]"/>
           <param name="condition" value="true"/>
           <param name="idtofade" value="$PYTHON[750$SKINSHORTCUTS[id] + int(1)]"/>
-          <param name="onup" value="$PYTHON[750$SKINSHORTCUTS[id] - int(1)]"/>
-          <param name="ondown" value="$PYTHON[750$SKINSHORTCUTS[id] + int(1)]"/>
           <onunfocus>ClearProperty(TMDbHelper.WidgetContainer,home)</onunfocus>
         </include>
         <include content="Object_WidgetsWall_Content" condition="!Skin.HasSetting(ShowWidgetLabels)">
