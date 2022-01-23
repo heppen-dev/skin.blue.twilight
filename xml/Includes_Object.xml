@@ -335,7 +335,7 @@
         <focusposition>3</focusposition>
         <animation effect="slide" time="0" start="0" end="-120,0" reversible="true" condition="true">Conditional</animation>
         <!-- movement -->
-        <include content="Animation_Widget_Slide">
+        <include content="Animation_Widget_Slide_Searchlist">
           <param name="container" value="4100" />
         </include>
         <onfocus>SetProperty(TMDbHelper.WidgetContainer,$PARAM[id],home)</onfocus>

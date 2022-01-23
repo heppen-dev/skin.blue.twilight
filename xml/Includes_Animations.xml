@@ -243,4 +243,46 @@
     <animation effect="slide" end="0,-210" time="450" tween="linear" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,38)">Conditional</animation>
     <animation effect="slide" end="0,-210" time="450" tween="linear" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,39)">Conditional</animation>
   </include>
+  <include name="Animation_Widget_Slide_Searchlist">
+    <animation effect="slide" end="0,-225" time="450" tween="linear" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,0)">Conditional</animation>
+    <animation effect="slide" end="0,-225" time="450" tween="linear" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,1)">Conditional</animation>
+    <animation effect="slide" end="0,-225" time="450" tween="linear" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,2)">Conditional</animation>
+    <animation effect="slide" end="0,-225" time="450" tween="linear" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,3)">Conditional</animation>
+    <animation effect="slide" end="0,-225" time="450" tween="linear" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,4)">Conditional</animation>
+    <animation effect="slide" end="0,-225" time="450" tween="linear" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,5)">Conditional</animation>
+    <animation effect="slide" end="0,-225" time="450" tween="linear" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,6)">Conditional</animation>
+    <animation effect="slide" end="0,-225" time="450" tween="linear" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,7)">Conditional</animation>
+    <animation effect="slide" end="0,-225" time="450" tween="linear" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,8)">Conditional</animation>
+    <animation effect="slide" end="0,-225" time="450" tween="linear" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,9)">Conditional</animation>
+    <animation effect="slide" end="0,-225" time="450" tween="linear" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,10)">Conditional</animation>
+    <animation effect="slide" end="0,-225" time="450" tween="linear" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,11)">Conditional</animation>
+    <animation effect="slide" end="0,-225" time="450" tween="linear" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,12)">Conditional</animation>
+    <animation effect="slide" end="0,-225" time="450" tween="linear" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,13)">Conditional</animation>
+    <animation effect="slide" end="0,-225" time="450" tween="linear" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,14)">Conditional</animation>
+    <animation effect="slide" end="0,-225" time="450" tween="linear" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,15)">Conditional</animation>
+    <animation effect="slide" end="0,-225" time="450" tween="linear" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,16)">Conditional</animation>
+    <animation effect="slide" end="0,-225" time="450" tween="linear" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,17)">Conditional</animation>
+    <animation effect="slide" end="0,-225" time="450" tween="linear" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,18)">Conditional</animation>
+    <animation effect="slide" end="0,-225" time="450" tween="linear" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,19)">Conditional</animation>
+    <animation effect="slide" end="0,-225" time="450" tween="linear" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,20)">Conditional</animation>
+    <animation effect="slide" end="0,-225" time="450" tween="linear" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,21)">Conditional</animation>
+    <animation effect="slide" end="0,-225" time="450" tween="linear" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,22)">Conditional</animation>
+    <animation effect="slide" end="0,-225" time="450" tween="linear" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,23)">Conditional</animation>
+    <animation effect="slide" end="0,-225" time="450" tween="linear" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,24)">Conditional</animation>
+    <animation effect="slide" end="0,-225" time="450" tween="linear" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,25)">Conditional</animation>
+    <animation effect="slide" end="0,-225" time="450" tween="linear" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,26)">Conditional</animation>
+    <animation effect="slide" end="0,-225" time="450" tween="linear" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,27)">Conditional</animation>
+    <animation effect="slide" end="0,-225" time="450" tween="linear" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,28)">Conditional</animation>
+    <animation effect="slide" end="0,-225" time="450" tween="linear" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,29)">Conditional</animation>
+    <animation effect="slide" end="0,-225" time="450" tween="linear" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,30)">Conditional</animation>
+    <animation effect="slide" end="0,-225" time="450" tween="linear" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,31)">Conditional</animation>
+    <animation effect="slide" end="0,-225" time="450" tween="linear" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,32)">Conditional</animation>
+    <animation effect="slide" end="0,-225" time="450" tween="linear" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,33)">Conditional</animation>
+    <animation effect="slide" end="0,-225" time="450" tween="linear" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,34)">Conditional</animation>
+    <animation effect="slide" end="0,-225" time="450" tween="linear" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,35)">Conditional</animation>
+    <animation effect="slide" end="0,-225" time="450" tween="linear" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,36)">Conditional</animation>
+    <animation effect="slide" end="0,-225" time="450" tween="linear" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,37)">Conditional</animation>
+    <animation effect="slide" end="0,-225" time="450" tween="linear" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,38)">Conditional</animation>
+    <animation effect="slide" end="0,-225" time="450" tween="linear" reversible="true" condition="Integer.IsGreater(Container($PARAM[container]).Position,39)">Conditional</animation>
+  </include>
 </includes>
