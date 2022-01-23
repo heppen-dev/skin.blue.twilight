@@ -1,3 +1,8 @@
+1.0.2
+  Some fixes to Template.xml
+  Fixed: Searchlist widget animation
+  Fixed: Object_Widget_Label
+  Added: Progressbar to Local banners when PVR widget is focused
 1.0.1
   Removed: Some garbage code
   Fixed: DialogVideoInfo layout
