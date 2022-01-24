@@ -1,3 +1,8 @@
+1.0.3
+  Fixed: PVR progressbar transparency
+  Improved home screen animations
+  Improved: Mouse support on Home screen
+  Changed: font_menu style and aspect
 1.0.2
   Some fixes to Template.xml
   Fixed: Searchlist widget animation
