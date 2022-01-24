@@ -368,7 +368,8 @@
     <definition>
       <control type="group">
         <control type="group">
-          <animation effect="fade" start="100" end="15" time="450" reversible="true" condition="$PARAM[firstrow_fade]">Conditional</animation>
+          <animation effect="fade" start="100" end="15" time="300" reversible="true" condition="$PARAM[firstrow_fade] + ControlGroup(3000).HasFocus">Conditional</animation>
+          <animation effect="fade" start="100" end="0" time="100" reversible="true" condition="$PARAM[firstrow_fade] + [Control.HasFocus(9000) | ControlGroup(2999).HasFocus]">Conditional</animation>
           <control type="image">
             <top>0</top>
             <left>-10</left>

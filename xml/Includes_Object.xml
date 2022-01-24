@@ -27,6 +27,7 @@
           <top>30</top>
           <left>50</left>
           <animation effect="fade" start="100" end="15" time="450" reversible="true" condition="Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[id])">Conditional</animation>
+          <animation effect="fade" start="100" end="0" time="450" reversible="true" condition="Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[id]) + [Control.HasFocus(9000) | ControlGroup(2999).HasFocus]">Conditional</animation>
           <control type="image">
             <width>200</width>
             <height>145</height>
@@ -167,6 +168,7 @@
         <orientation>horizontal</orientation>
         <height>225</height>
         <focusposition>3</focusposition>
+        <scrolltime>200</scrolltime>
         <onup>SetFocus(2999)</onup>
         <onback>9000</onback>
         <animation effect="slide" time="0" start="0" end="-120,0" reversible="true" condition="true">Conditional</animation>
@@ -205,9 +207,8 @@
         <top>20</top>
         <height>195</height>
         <focusposition>3</focusposition>
+        <scrolltime>200</scrolltime>
         <onup>SetFocus(2999)</onup>
-        <onup>$PARAM[onup]</onup>
-        <ondown>$PARAM[ondown]</ondown>
         <onback>9000</onback>
         <animation effect="slide" time="0" start="0" end="-120,0" reversible="true" condition="true">Conditional</animation>
         <!-- movement -->
