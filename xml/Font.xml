@@ -67,7 +67,7 @@
       <name>font_menu</name>
       <filename>AmazonEmberDisplay_Bd.ttf</filename>
       <size>24</size>
-      <style>uppercase lighten</style>
+      <style>uppercase</style>
       <aspect>0.75</aspect>
     </font>
     <font>
