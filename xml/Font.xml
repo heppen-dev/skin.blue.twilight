@@ -68,7 +68,7 @@
       <filename>AmazonEmberDisplay_Bd.ttf</filename>
       <size>24</size>
       <style>uppercase</style>
-      <aspect>0.75</aspect>
+      <aspect>0.8</aspect>
     </font>
     <font>
       <name>font_small_defaults</name>
