@@ -122,7 +122,7 @@
           <param name="container" value="3000" />
         </include>
         <animation effect="fade" start="100" end="0" time="0" reversible="true" condition="Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[id])">Conditional</animation>
-        <animation effect="slide" end="840,0" time="0" reversible="true" condition="true">Conditional</animation>
+        <animation effect="slide" end="15,0" time="0" reversible="true" condition="true">Conditional</animation>
         <orientation>horizontal</orientation>
         <itemgap>32</itemgap>
         <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,0) | Container($PARAM[id]).IsUpdating</visible>
@@ -164,14 +164,12 @@
         <param name="labelid" value="$PARAM[labelid]"/>
         <param name="label" value="$PARAM[label]"/>
       </include>
-      <control type="fixedlist" id="$PARAM[id]">
+      <control type="list" id="$PARAM[id]">
         <orientation>horizontal</orientation>
         <height>225</height>
-        <focusposition>3</focusposition>
         <scrolltime>200</scrolltime>
         <onup>SetFocus(2999)</onup>
         <onback>9000</onback>
-        <animation effect="slide" time="0" start="0" end="-120,0" reversible="true" condition="true">Conditional</animation>
         <!-- movement -->
         <include content="Animation_Widget_Slide_withLabels">
           <param name="container" value="3000" />
@@ -202,11 +200,10 @@
   <include name="Object_WidgetsWall_Content">
     <param name="condition" default="true"/>
     <definition>
-      <control type="fixedlist" id="$PARAM[id]">
+      <control type="list" id="$PARAM[id]">
         <orientation>horizontal</orientation>
         <top>20</top>
         <height>195</height>
-        <focusposition>3</focusposition>
         <scrolltime>200</scrolltime>
         <onup>SetFocus(2999)</onup>
         <onback>9000</onback>

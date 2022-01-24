@@ -4,12 +4,13 @@
     <control type="group">
       <visible>!$EXP[infodialog_active]</visible>
       <include>Animation_TopSlide_Home</include>
-      <control type="group">
+      <control type="group" id="5610">
+        <height>120</height>
+        <width>1920</width>
         <control type="image">
           <left>0</left>
           <top>0</top>
           <height>95</height>
-          <width>1920</width>
           <texture colordiffuse="dialog_bg_30">common/white.png</texture>
         </control>
         <control type="list" id="9000">
@@ -131,16 +132,16 @@
           <animation effect="slide" time="200" start="0" end="0,-400" reversible="true" condition="[ControlGroup(3000).HasFocus | $EXP[FirstExpose] | $EXP[SecondExpose] | String.IsEqual(Window(home).Property(activateSpotlight),true)] + !String.StartsWith(ListItem.FolderPath,favourites://)">Conditional</animation>
         </control>
         <control type="grouplist" id="3000">
-          <centerleft>50%</centerleft>
           <top>400</top>
-          <width>3220</width>
+          <left>90</left>
+          <width>1880</width>
           <height>999999</height>
           <onup>2999</onup>
           <itemgap>15</itemgap>
           <include>skinshortcuts-template-widgetsWall</include>
-          <animation effect="slide" time="0" start="0" end="-90,0" reversible="false" condition="true">Conditional</animation>
-          <animation effect="slide" time="200" start="0" end="0,225" reversible="true" condition="[ControlGroup(3000).HasFocus | $EXP[FirstExpose] | $EXP[SecondExpose]] + !Skin.HasSetting(ShowWidgetLabels) + !String.StartsWith(ListItem.FolderPath,favourites://)">Conditional</animation>
-          <animation effect="slide" time="200" start="0" end="0,360" reversible="true" condition="[[ControlGroup(3000).HasFocus | $EXP[FirstExpose] | $EXP[SecondExpose]] + Skin.HasSetting(ShowWidgetLabels)] + !String.StartsWith(ListItem.FolderPath,favourites://)">Conditional</animation>
+          <animation effect="slide" time="200" start="0" end="120,0" reversible="true" condition="!Skin.HasSetting(ShowWidgetLabels)">Conditional</animation>
+          <animation effect="slide" time="200" start="0" end="0,225" reversible="true" condition="[$EXP[widgetwall_active] | $EXP[FirstExpose] | $EXP[SecondExpose]] + !Skin.HasSetting(ShowWidgetLabels) + !String.StartsWith(ListItem.FolderPath,favourites://)">Conditional</animation>
+          <animation effect="slide" time="200" start="0" end="0,360" reversible="true" condition="[$EXP[widgetwall_active] | $EXP[FirstExpose] | $EXP[SecondExpose]] + Skin.HasSetting(ShowWidgetLabels) + !String.StartsWith(ListItem.FolderPath,favourites://)">Conditional</animation>
           <animation effect="slide" time="200" start="0" end="0,540" reversible="true" condition="$EXP[FirstExpose] | $EXP[SecondExpose]">Conditional</animation>
         </control>
       </control>
