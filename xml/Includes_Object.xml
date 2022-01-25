@@ -118,14 +118,11 @@
     <param name="font" default="font27_bold"/>
     <definition>
       <control type="grouplist" id="$PARAM[labelid]">
-        <include content="Animation_Widget_Slide_withLabels">
-          <param name="container" value="3000" />
-        </include>
-        <animation effect="fade" start="100" end="0" time="0" reversible="true" condition="Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[id])">Conditional</animation>
-        <animation effect="slide" end="15,0" time="0" reversible="true" condition="true">Conditional</animation>
         <orientation>horizontal</orientation>
         <itemgap>32</itemgap>
         <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,0) | Container($PARAM[id]).IsUpdating</visible>
+        <animation effect="fade" start="100" end="10" time="300" reversible="true" condition="Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[id]) + ControlGroup(3000).HasFocus">Conditional</animation>
+        <animation effect="slide" end="15,-15" time="0" reversible="true" condition="true">Conditional</animation>
         <control type="label">
           <width>auto</width>
           <label>$PARAM[label]</label>
@@ -170,13 +167,8 @@
         <scrolltime>200</scrolltime>
         <onup>SetFocus(2999)</onup>
         <onback>9000</onback>
-        <!-- movement -->
-        <include content="Animation_Widget_Slide_withLabels">
-          <param name="container" value="3000" />
-        </include>
         <onfocus>SetProperty(TMDbHelper.WidgetContainer,$PARAM[id],home)</onfocus>
         <onfocus>SetProperty(widgetMovementId,$PARAM[id],home)</onfocus>
-        <animation effect="fade" start="100" end="0" time="0" reversible="true" condition="Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[idtofade])">Conditional</animation>
         <!-- Wall events -->
         <include content="Object_Wall_Events">
           <param name="id" value="$PARAM[id]"/>
@@ -207,14 +199,8 @@
         <scrolltime>200</scrolltime>
         <onup>SetFocus(2999)</onup>
         <onback>9000</onback>
-        <animation effect="slide" time="0" start="0" end="-120,0" reversible="true" condition="true">Conditional</animation>
-        <!-- movement -->
-        <include content="Animation_Widget_Slide">
-          <param name="container" value="3000" />
-        </include>
         <onfocus>SetProperty(TMDbHelper.WidgetContainer,$PARAM[id],home)</onfocus>
         <onfocus>SetProperty(widgetMovementId,$PARAM[id],home)</onfocus>
-        <animation effect="fade" start="100" end="0" time="0" reversible="true" condition="Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[idtofade])">Conditional</animation>
         <!-- Wall events -->
         <include content="Object_Wall_Events">
           <param name="id" value="$PARAM[id]"/>
