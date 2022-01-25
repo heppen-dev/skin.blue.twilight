@@ -42,7 +42,7 @@
       <include content="DefaultSettingButtonGradient">
         <param name="id" value="9000"/>
         <param name="height" value="70"/>
-        <top>0</top>
+        <top>30</top>
         <height>70</height>
         <width>458</width>
         <visible>ControlGroup(9000).HasFocus()</visible>
@@ -50,7 +50,7 @@
       <control type="grouplist" id="9000">
         <description>grouplist for context buttons</description>
         <left>0</left>
-        <top>0</top>
+        <top>30</top>
         <width>506</width>
         <height max="780">auto</height>
         <usecontrolcoords>true</usecontrolcoords>
@@ -149,18 +149,6 @@
           <texturenofocus/>
           <onclick>Skin.ToggleSetting(Ratings.Top250)</onclick>
           <selected>Skin.HasSetting(Ratings.Top250)</selected>
-        </control>
-        <control type="radiobutton" id="9009">
-          <label>$LOCALIZE[31338]</label>
-          <right>190</right>
-          <width>458</width>
-          <height>70</height>
-          <align>right</align>
-          <radioposx>470</radioposx>
-          <texturefocus/>
-          <texturenofocus/>
-          <onclick>Skin.ToggleSetting(Ratings.User)</onclick>
-          <selected>Skin.HasSetting(Ratings.User)</selected>
         </control>
       </control>
       <include content="UpDownArrows">
