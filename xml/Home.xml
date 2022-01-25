@@ -36,24 +36,6 @@
       <visible allowhiddenfocus="true">Control.HasFocus(20001)</visible>
     </control>
     <include>DefaultBackground</include>
-<!--     <control type="list" id="9989">
-      <posx>-20</posx>
-      <posy>-20</posy>
-      <width>1</width>
-      <height>1</height>
-      <visible>true</visible>
-      <onup>50</onup>
-      <ondown>50</ondown>
-      <onleft>50</onleft>
-      <onright>50</onright>
-      <itemlayout width="1" height="1">
-      </itemlayout>
-      <focusedlayout height="1" width="1">
-      </focusedlayout>
-      <content>
-        <include>skinshortcuts-submenu-1</include>
-      </content>
-    </control> -->
     <control type="group">
       <include>Visible_Fade</include>
       <include>BlueTwilight_Main</include>

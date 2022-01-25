@@ -118,7 +118,7 @@
         <orientation>horizontal</orientation>
         <itemgap>32</itemgap>
         <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,0) | Container($PARAM[id]).IsUpdating</visible>
-        <animation effect="slide" end="15,0" time="0" reversible="true" condition="true">Conditional</animation>
+        <animation effect="slide" end="185,0" time="0" reversible="true" condition="true">Conditional</animation>
         <control type="label">
           <width>auto</width>
           <label>$PARAM[label]</label>
@@ -157,12 +157,22 @@
         <param name="labelid" value="$PARAM[labelid]"/>
         <param name="label" value="$PARAM[label]"/>
       </include>
+      <include content="LeftRightArrows">
+        <param name="list_id" value="$PARAM[id]"/>
+        <param name="altid" value="$PARAM[groupid]"/>
+        <param name="left_posx" value="80"/>
+        <param name="right_posx" value="1820"/>
+        <param name="posy" value="100"/>
+        <param name="visible" value="true"/>
+      </include>
       <control type="list" id="$PARAM[id]">
         <orientation>horizontal</orientation>
+        <width>1580</width>
         <height>225</height>
         <scrolltime>200</scrolltime>
         <onup>SetFocus(2999)</onup>
         <onback>9000</onback>
+        <centerleft>50%</centerleft>
         <onfocus>SetProperty(TMDbHelper.WidgetContainer,$PARAM[id],home)</onfocus>
         <onfocus>SetProperty(widgetMovementId,$PARAM[id],home)</onfocus>
         <animation effect="slide" end="0,15" time="0" reversible="true" condition="true">Conditional</animation>

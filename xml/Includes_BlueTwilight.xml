@@ -133,8 +133,8 @@
         </control>
         <control type="grouplist" id="3000">
           <top>600</top>
-          <left>90</left>
           <height>450</height>
+          <width>1920</width>
           <onup>2999</onup>
           <include condition="!Skin.HasSetting(ShowWidgetLabels)">widgetswolabels_gap</include>
           <usecontrolcoords>true</usecontrolcoords>
@@ -143,6 +143,7 @@
         </control>
       </control>
       <control type="group">
+        <left>90</left>
         <include content="Object_Item_Showcase">
           <param name="title" value="$VAR[Label_Title]"/>
           <param name="title_width" value="1000" />

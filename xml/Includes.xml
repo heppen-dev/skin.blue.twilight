@@ -987,31 +987,33 @@
     <param name="posy">936</param>
     <param name="visible">!System.HasActiveModalDialog</param>
     <definition>
-      <control type="image">
-        <left>$PARAM[left_posx]</left>
-        <top>$PARAM[posy]</top>
-        <width>28</width>
-        <height>28</height>
-        <texture flipx="true" colordiffuse="$VAR[ColorHighlight]">overlays/arrowright.png</texture>
-        <animation effect="zoom" start="0,100" end="100,100" center="auto" time="200">VisibleChange</animation>
-        <animation effect="zoom" start="0,100" end="100,100" delay="500" center="auto" time="200">WindowOpen</animation>
-        <animation effect="zoom" start="100,100" end="0,100" center="auto" time="200">WindowClose</animation>
-        <visible>Control.IsVisible($PARAM[list_id]) + Container($PARAM[list_id]).HasPrevious</visible>
-        <visible>$PARAM[visible]</visible>
+      <control type="group" id="$PARAM[altid]">
+        <control type="image">
+          <left>$PARAM[left_posx]</left>
+          <top>$PARAM[posy]</top>
+          <width>28</width>
+          <height>28</height>
+          <texture flipx="true" colordiffuse="$VAR[ColorHighlight]">overlays/arrowright.png</texture>
+          <animation effect="zoom" start="0,100" end="100,100" center="auto" time="50">VisibleChange</animation>
+          <animation effect="zoom" start="0,100" end="100,100" delay="500" center="auto" time="50">WindowOpen</animation>
+          <animation effect="zoom" start="100,100" end="0,100" center="auto" time="50">WindowClose</animation>
+          <visible>Control.IsVisible($PARAM[list_id]) + Container($PARAM[list_id]).HasPrevious</visible>
+          <visible>$PARAM[visible]</visible>
+        </control>
+        <control type="image">
+          <left>$PARAM[right_posx]</left>
+          <top>$PARAM[posy]</top>
+          <width>28</width>
+          <height>28</height>
+          <texture colordiffuse="$VAR[ColorHighlight]">overlays/arrowright.png</texture>
+          <animation effect="zoom" start="0,100" end="100,100" center="auto" time="50">VisibleChange</animation>
+          <animation effect="zoom" start="0,100" end="100,100" delay="500" center="auto" time="50">WindowOpen</animation>
+          <animation effect="zoom" start="100,100" end="0,100" center="auto" time="50">WindowClose</animation>
+          <visible>Control.IsVisible($PARAM[list_id]) + Container($PARAM[list_id]).HasNext</visible>
+          <visible>$PARAM[visible]</visible>
+        </control>
       </control>
-      <control type="image">
-        <left>$PARAM[right_posx]</left>
-        <top>$PARAM[posy]</top>
-        <width>28</width>
-        <height>28</height>
-        <texture colordiffuse="$VAR[ColorHighlight]">overlays/arrowright.png</texture>
-        <animation effect="zoom" start="0,100" end="100,100" center="auto" time="200">VisibleChange</animation>
-        <animation effect="zoom" start="0,100" end="100,100" delay="500" center="auto" time="200">WindowOpen</animation>
-        <animation effect="zoom" start="100,100" end="0,100" center="auto" time="200">WindowClose</animation>
-        <visible>Control.IsVisible($PARAM[list_id]) + Container($PARAM[list_id]).HasNext</visible>
-        <visible>$PARAM[visible]</visible>
-      </control>
-      <control type="button" id="$PARAM[list_id]500">
+      <!-- <control type="button" id="$PARAM[list_id]500">
         <left>$PARAM[left_posx]</left>
         <top>$PARAM[posy]</top>
         <width>28</width>
@@ -1030,7 +1032,7 @@
         <texturenofocus/>
         <onclick>Control.Move($PARAM[list_id],1)</onclick>
         <visible allowhiddenfocus="true">Container($PARAM[list_id]).HasNext + [Control.HasFocus($PARAM[list_id]) | Control.HasFocus($PARAM[list_id]501)]</visible>
-      </control>
+      </control> -->
     </definition>
   </include>
   <include name="DialogBackgroundCommons">
