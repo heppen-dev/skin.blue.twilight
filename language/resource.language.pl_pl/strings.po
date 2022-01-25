@@ -1692,8 +1692,8 @@ msgstr "Ostatnio emitowany"
 
 #: /xml/Includes_Object.xml
 msgctxt "#31384"
-msgid "Match"
-msgstr "Trafność"
+msgid "Rating"
+msgstr "Ocen"
 
 #: /xml/Variables.xml
 msgctxt "#31385"

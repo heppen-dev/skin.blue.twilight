@@ -1868,7 +1868,7 @@ msgstr ""
 
 #: /xml/Includes_Object.xml
 msgctxt "#31384"
-msgid "Match"
+msgid "Rating"
 msgstr ""
 
 #: /xml/Variables.xml
