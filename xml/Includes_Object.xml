@@ -121,7 +121,7 @@
         <orientation>horizontal</orientation>
         <itemgap>32</itemgap>
         <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,0) | Container($PARAM[id]).IsUpdating</visible>
-        <animation effect="slide" end="15,-15" time="0" reversible="true" condition="true">Conditional</animation>
+        <animation effect="slide" end="15,0" time="0" reversible="true" condition="true">Conditional</animation>
         <control type="label">
           <width>auto</width>
           <label>$PARAM[label]</label>
@@ -168,6 +168,7 @@
         <onback>9000</onback>
         <onfocus>SetProperty(TMDbHelper.WidgetContainer,$PARAM[id],home)</onfocus>
         <onfocus>SetProperty(widgetMovementId,$PARAM[id],home)</onfocus>
+        <animation effect="slide" end="0,15" time="0" reversible="true" condition="true">Conditional</animation>
         <!-- Wall events -->
         <include content="Object_Wall_Events">
           <param name="id" value="$PARAM[id]"/>

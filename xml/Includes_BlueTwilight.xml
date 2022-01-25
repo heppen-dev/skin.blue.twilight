@@ -136,7 +136,7 @@
           <left>90</left>
           <height>450</height>
           <onup>2999</onup>
-          <itemgap>10</itemgap>
+          <include condition="!Skin.HasSetting(ShowWidgetLabels)">widgetswolabels_gap</include>
           <usecontrolcoords>true</usecontrolcoords>
           <include>skinshortcuts-template-widgetsWall</include>
           <animation effect="slide" time="200" start="0" end="0,640" reversible="true" condition="$EXP[FirstExpose] | $EXP[SecondExpose]">Conditional</animation>
