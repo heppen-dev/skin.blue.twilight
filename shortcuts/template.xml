@@ -28,7 +28,7 @@
           <param name="path" value="$SKINSHORTCUTS[path]"/>
           <param name="condition" value="true"/>
           <param name="idtofade" value="$PYTHON[750$SKINSHORTCUTS[id] + int(1)]"/>
-          <onunfocus>ClearProperty(TMDbHelper.WidgetContainer,home)</onunfocus>
+          <!-- <onunfocus>ClearProperty(TMDbHelper.WidgetContainer,home)</onunfocus> -->
         </include>
         <include content="Object_WidgetsWall_Content" condition="!Skin.HasSetting(ShowWidgetLabels)">
           <param name="controltype" value="list"/>
@@ -45,7 +45,7 @@
           <param name="idtofade" value="$PYTHON[750$SKINSHORTCUTS[id] + int(1)]"/>
           <param name="onup" value="$PYTHON[750$SKINSHORTCUTS[id] - int(1)]"/>
           <param name="ondown" value="$PYTHON[750$SKINSHORTCUTS[id] + int(1)]"/>
-          <onunfocus>ClearProperty(TMDbHelper.WidgetContainer,home)</onunfocus>
+          <!-- <onunfocus>ClearProperty(TMDbHelper.WidgetContainer,home)</onunfocus> -->
         </include>
       </controls>
     </items>
@@ -78,7 +78,7 @@
         <param name="limit" value="$SKINSHORTCUTS[limit]"/>
         <param name="path" value="$SKINSHORTCUTS[path]"/>
         <param name="postercondition" value="true"/>
-        <onunfocus>ClearProperty(TMDbHelper.WidgetContainer,home)</onunfocus>
+        <!-- <onunfocus>ClearProperty(TMDbHelper.WidgetContainer,home)</onunfocus> -->
         <skinshortcuts>visibility</skinshortcuts>
       </include>
     </controls>
