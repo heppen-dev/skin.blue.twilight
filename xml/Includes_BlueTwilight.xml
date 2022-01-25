@@ -132,7 +132,7 @@
           <animation effect="slide" time="200" start="0" end="0,-600" reversible="true" condition="[ControlGroup(3000).HasFocus | $EXP[FirstExpose] | $EXP[SecondExpose] | String.IsEqual(Window(home).Property(activateSpotlight),true)] + !String.StartsWith(ListItem.FolderPath,favourites://)">Conditional</animation>
         </control>
         <control type="grouplist" id="3000">
-          <top>600</top>
+          <top>615</top>
           <height>450</height>
           <width>1920</width>
           <onup>2999</onup>
