@@ -474,13 +474,34 @@
               <texture colordiffuse="white">$VAR[PlayerControlsPlayImageVar]</texture>
             </control>
           </control>
-          <control type="radiobutton" id="603">
-            <include content="PVROSDButton">
-              <param name="texture" value="osd/fullscreen/buttons/stop.png"/>
-            </include>
-            <onclick>PlayerControl(Stop)</onclick>
+          <control type="group" id="699">
+            <width>48</width>
+            <height>48</height>
             <visible>ControlGroup(201).HasFocus</visible>
-            <include>OSD_Button_OnFocus</include>
+            <control type="button" id="603">
+              <left>0</left>
+              <top>0</top>
+              <width>48</width>
+              <height>48</height>
+              <label/>
+              <font/>
+              <texturefocus colordiffuse="$VAR[ColorHighlight]" border="24">common/box.png</texturefocus>
+              <texturenofocus/>
+              <onleft>604</onleft>
+              <onright>607</onright>
+              <onup>87</onup>
+              <ondown>noop</ondown>
+              <onclick>PlayerControl(Stop)</onclick>
+              <include>OSD_Button_OnFocus</include>
+            </control>
+            <control type="image">
+              <left>0</left>
+              <top>0</top>
+              <width>48</width>
+              <height>48</height>
+              <animation center="38,38" effect="zoom" end="100" reversible="false" start="95" time="480" tween="back" condition="Control.HasFocus(602)">Conditional</animation>
+              <texture colordiffuse="white">osd/fullscreen/buttons/stop.png</texture>
+            </control>
           </control>
           <control type="radiobutton" id="607">
             <include content="PVROSDButton">
