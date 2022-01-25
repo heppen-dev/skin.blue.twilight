@@ -376,6 +376,7 @@
     <param name="plot_top" default="320"/>
     <param name="plot_height" default="125"/>
     <param name="title_visible" default="true" />
+    <param name="cl_visible" default="true"/>
     <definition>
       <control type="group">
         <top>$PARAM[top]</top>
@@ -401,6 +402,7 @@
             <aspectratio align="left">keep</aspectratio>
             <texture background="true">$VAR[Image_ClearLogo]</texture>
             <visible>[[!String.IsEmpty(ListItem.Art(clearlogo)) | !String.IsEmpty(ListItem.Art(tvshow.clearlogo))] + !Skin.HasSetting(DisableClearlogo)]</visible>
+            <visible>$PARAM[cl_visible]</visible>
           </control>
           <include content="Object_Info_First_Line">
             <param name="visible" value="$PARAM[visible]" />
@@ -453,12 +455,6 @@
     </definition>
   </include>
   <include name="Object_Info_First_Line">
-    <param name="label" default=""/>
-    <param name="nextaired" default="true"/>
-    <param name="textcolor" default="main_fg_100"/>
-    <param name="container" default=""/>
-    <param name="uid" default="661"/>
-    <param name="green" default="ff27ae60"/>
     <definition>
       <control type="grouplist">
         <height>48</height>
@@ -477,7 +473,7 @@
             <height>32</height>
             <aspectratio align="left">scale</aspectratio>
             <texture background="true" colordiffuse="ff0fafff">common/badge.png</texture>
-            <visible>$PARAM[visible]</visible>
+            <visible>$PARAM[visible] + Integer.IsGreater(ListItem.Rating,1)</visible>
           </control>
           <include content="Object_Info_Line_Label">
             <param name="label" value="$VAR[PercentageRating]% $LOCALIZE[31384]"/>
@@ -485,7 +481,7 @@
             <param name="textcolor" value="dialog_fg_100"/>
             <param name="divider" value="false"/>
             <param name="fallback" value="N/A"/>
-            <param name="visible" value="$PARAM[visible]"/>
+            <param name="visible" value="$PARAM[visible] + Integer.IsGreater(ListItem.Rating,1)"/>
             <param name="width" value="100%" />
             <param name="top" value="4" />
             <param name="left" value="12" />

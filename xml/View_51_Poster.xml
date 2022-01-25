@@ -102,51 +102,25 @@
             <visible>[String.IsEmpty(ListItem.Art(clearlogo)) + String.IsEmpty(ListItem.Art(tvshow.clearlogo))] | Skin.HasSetting(DisableClearlogo)</visible>
           </control>
           <control type="group">
-            <top>400</top>
-            <left>615</left>
-            <visible>Control.IsVisible(51)</visible>
-            <control type="group">
-              <top>60</top>
-              <control type="image">
-                <top>-1380</top>
-                <left>-470</left>
-                <width>400</width>
-                <aspectratio>keep</aspectratio>
-                <texture background="true">$VAR[Image_ClearLogo]</texture>
-                <visible>[!String.IsEmpty(ListItem.Art(clearlogo)) | !String.IsEmpty(ListItem.Art(tvshow.clearlogo)) | !String.IsEmpty(ListItem.Art(clearlogo))] + !Skin.HasSetting(DisableClearlogo)</visible>
-              </control>
+            <top>60</top>
+            <control type="image">
+              <top>-980</top>
+              <left>150</left>
+              <width>400</width>
+              <aspectratio>keep</aspectratio>
+              <texture background="true">$VAR[Image_ClearLogo]</texture>
+              <visible>[!String.IsEmpty(ListItem.Art(clearlogo)) | !String.IsEmpty(ListItem.Art(tvshow.clearlogo)) | !String.IsEmpty(ListItem.Art(clearlogo))] + !Skin.HasSetting(DisableClearlogo)</visible>
             </control>
-            <control type="group">
-              <top>0</top>
-              <include content="Object_Info_First_Line">
-                <param name="visible_condi" value="Control.IsVisible(51)" />
-              </include>
-            </control>
-            <control type="group">
-              <top>60</top>
-              <include content="Object_Info_Line_MediaFlags">
-                <param name="visible_infoline" value="Control.IsVisible(51)" />
-              </include>
-            </control>
-            <control type="group">
-              <top>225</top>
-              <include content="Object_Video_Info_Line">
-                <param name="visible_infoline" value="Control.IsVisible(51)" />
-              </include>
-            </control>
-            <control type="group">
-              <control type="textbox">
-                <top>120</top>
-                <width>720</width>
-                <height>95</height>
-                <textcolor>white</textcolor>
-                <label>$VAR[Label_PlotTextBoxVar]</label>
-                <font>font_plot_normal</font>
-                <shadowcolor>black</shadowcolor>
-                <autoscroll delay="4000" time="4500" repeat="7000">Skin.HasSetting(autoscroll)</autoscroll>
-                <visible>!Skin.HasSetting(HidePlot)</visible>
-              </control>
-            </control>
+          </control>
+          <control type="group">
+            <top>360</top>
+            <left>520</left>
+            <include content="Object_Item_Showcase">
+              <param name="title_visible" value="false"/>
+              <param name="cl_visible" value="false"/>
+              <param name="plot" value="$VAR[Label_PlotTextBoxVar]"/>
+              <param name="visible" value="Control.IsVisible(51)"/>
+            </include>
           </control>
         </control>
       </control>
