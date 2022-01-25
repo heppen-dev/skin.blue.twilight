@@ -22,13 +22,6 @@
           <param name="plot_top" value="350"/>
           <param name="visible_condi" value="Control.IsVisible(11044)" />
         </include>
-        <include content="Object_Ratings_Content">
-          <param name="top" value="307"/>
-          <param name="left" value="100"/>
-          <param name="align" value="left"/>
-          <param name="directory" value="$INFO[Skin.String(Icons)]"/>
-          <param name="visible" value="Control.IsVisible(11044)"/>
-        </include>
         <visible>!$EXP[infodialog_active]</visible>
       </control>
       <control type="fixedlist" id="11044">

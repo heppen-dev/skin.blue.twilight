@@ -29,14 +29,6 @@
             <param name="visible_condi" value="Control.IsVisible(56)"/>
           </include>
         </control>
-        <control type="group">
-          <include content="Object_Ratings_Content">
-            <param name="directory" value="$INFO[Skin.String(Icons)]"/>
-            <param name="align" value="left"/>
-            <param name="top" value="460"/>
-            <param name="left" value="695"/>
-          </include>
-        </control>
       </control>
       <control type="group">
         <description>Poster Viewtype</description>

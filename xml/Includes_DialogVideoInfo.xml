@@ -108,14 +108,6 @@
             <param name="top" value="580"/>
           </include>
         </control>
-        <control type="group">
-          <top>270</top>
-          <left>0</left>
-          <include content="Object_Ratings_Content">
-            <param name="align" value="left"/>
-            <param name="left" value="0"/>
-          </include>
-        </control>
       </control>
       <control type="grouplist" id="100">
         <onup>99</onup>

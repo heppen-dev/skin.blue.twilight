@@ -15,13 +15,6 @@
           <param name="plot_top" value="350"/>
           <param name="visible" value="Control.HasFocus(510)" />
         </include>
-        <include content="Object_Ratings_Content">
-          <param name="top" value="520"/>
-          <param name="left" value="100"/>
-          <param name="align" value="left"/>
-          <param name="directory" value="$INFO[Skin.String(Icons)]"/>
-          <param name="visible" value="Control.HasFocus(510)"/>
-        </include>
         <visible>!$EXP[infodialog_active]</visible>
       </control>
       <control type="fixedlist" id="510">
