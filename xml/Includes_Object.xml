@@ -121,7 +121,6 @@
         <orientation>horizontal</orientation>
         <itemgap>32</itemgap>
         <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,0) | Container($PARAM[id]).IsUpdating</visible>
-        <animation effect="fade" start="100" end="10" time="300" reversible="true" condition="Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[id]) + ControlGroup(3000).HasFocus">Conditional</animation>
         <animation effect="slide" end="15,-15" time="0" reversible="true" condition="true">Conditional</animation>
         <control type="label">
           <width>auto</width>
