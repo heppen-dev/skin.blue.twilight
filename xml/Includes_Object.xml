@@ -636,6 +636,7 @@
           <param name="autoscroll" value="false"/>
           <param name="width" value="720" />
           <param name="height" value="120"/>
+          <param name="top" value="-15"/>
         </include>
       </control>
     </definition>
