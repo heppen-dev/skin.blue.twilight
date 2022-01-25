@@ -95,21 +95,25 @@
       </control>
       <control type="group">
         <control type="image">
-          <top>-50</top>
+          <top>-50%</top>
           <left>0</left>
           <width>650</width>
-          <height>130%</height>
+          <height>200%</height>
           <texture colordiffuse="AltPosterBack">diffuse/poster-wall.png</texture>
           <bordertexture border="21">overlays/shadow.png</bordertexture>
           <bordersize>20</bordersize>
         </control>
-        <control type="image">
-          <left>-1280</left>
-          <!-- <top>105</top> -->
-          <height>800</height>
-          <centertop>50%</centertop>
-          <aspectratio>keep</aspectratio>
-          <texture>$INFO[Container(56).ListItem.Art(poster)]</texture>
+        <control type="group">
+          <width>650</width>
+          <control type="image">
+            <height>750</height>
+            <width>500</width>
+            <centertop>50%</centertop>
+            <centerleft>50%</centerleft>
+            <aspectratio scalediffuse="false">scale</aspectratio>
+            <texture diffuse="diffuse/poster-big.png">$INFO[Container(56).ListItem.Art(poster)]</texture>
+            <bordersize>24</bordersize>
+          </control>
         </control>
       </control>
     </control>
