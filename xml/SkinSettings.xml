@@ -352,14 +352,14 @@
             <include>DefaultSettingButton</include>
             <onclick>Skin.ToggleSetting(BackgroundPlayingTrailers)</onclick>
             <selected>Skin.HasSetting(BackgroundPlayingTrailers)</selected>
-            <enable>System.AddonIsEnabled(plugin.video.youtube) + System.HasAddon(plugin.video.youtube)</enable>
+            <enable>Skin.HasSetting(Expose) + System.AddonIsEnabled(plugin.video.youtube) + System.HasAddon(plugin.video.youtube)</enable>
           </control>
           <control type="radiobutton" id="908" description="Dont show notification about no trailer">
             <label>$LOCALIZE[31404]</label>
             <include>DefaultSettingButton</include>
             <onclick>Skin.ToggleSetting(DontShowNotificationANT)</onclick>
             <selected>Skin.HasSetting(DontShowNotificationANT)</selected>
-            <enable>Skin.HasSetting(BackgroundPlayingTrailers) + [System.AddonIsEnabled(plugin.video.youtube) + System.HasAddon(plugin.video.youtube)]</enable>
+            <enable>Skin.HasSetting(Expose) + Skin.HasSetting(BackgroundPlayingTrailers) + [System.AddonIsEnabled(plugin.video.youtube) + System.HasAddon(plugin.video.youtube)]</enable>
           </control>
           <control type="label" id="909">
             <textoffsetx>0</textoffsetx>

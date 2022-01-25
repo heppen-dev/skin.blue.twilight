@@ -1577,7 +1577,7 @@ msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31326"
-msgid "[Experimental] Enable Trailers in background"
+msgid "Enable Trailers in background (you need Expose)"
 msgstr ""
 
 #: /xml/SkinSettings.xml

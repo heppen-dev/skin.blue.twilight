@@ -1401,8 +1401,8 @@ msgstr "Ustaw opóżnienie odtwarzania zwiastunów"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31326"
-msgid "[Experimental] Enable Trailers in background"
-msgstr "[Eksperymentalne] Włącz zwiastuny w tle"
+msgid "Enable Trailers in background (you need Expose)"
+msgstr "Włącz zwiastuny w tle (z widokiem Expose)"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31327"
