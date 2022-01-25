@@ -3,6 +3,7 @@
   <onload condition="!Player.PauseEnabled">SetFocus(603)</onload>
   <defaultcontrol always="true">602</defaultcontrol>
   <depth>DepthOSD</depth>
+  <onload condition="VideoPlayer.Content(livetv)">SetFocus(603)</onload>
   <controls>
     <control type="button">
       <description>background close area</description>

@@ -330,25 +330,6 @@
         <onright condition="Player.Paused">PlayerControl(FrameAdvance(1))</onright>
         <include>OSD_Button_OnFocus</include>
       </control>
-      <!-- Hidden control to trigger buttons to show -->
-      <control type="button" id="602">
-        <top>-1000</top>
-        <left>-1000</left>
-        <width>1</width>
-        <height>1</height>
-        <onclick>SetFocus(201)</onclick>
-        <onclick>SetFocus(604)</onclick>
-        <onup>SetFocus(201)</onup>
-        <onup>SetFocus(604)</onup>
-        <ondown>SetFocus(201)</ondown>
-        <ondown>SetFocus(604)</ondown>
-        <onleft>SetFocus(201)</onleft>
-        <onleft>SetFocus(604)</onleft>
-        <onright>SetFocus(201)</onright>
-        <onright>SetFocus(604)</onright>
-        <visible>VideoPlayer.Content(livetv)</visible>
-        <include>OSD_Button_OnFocus</include>
-      </control>
     </definition>
   </include>
   <include name="LiveTV_OSD">
@@ -647,25 +628,6 @@
         <onleft>StepBack</onleft>
         <onright condition="!Player.Paused">StepForward</onright>
         <onright condition="Player.Paused">PlayerControl(FrameAdvance(1))</onright>
-        <include>OSD_Button_OnFocus</include>
-      </control>
-      <!-- Hidden control to trigger buttons to show -->
-      <control type="button" id="602">
-        <top>-1000</top>
-        <left>-1000</left>
-        <width>1</width>
-        <height>1</height>
-        <onclick>SetFocus(201)</onclick>
-        <onclick>SetFocus(604)</onclick>
-        <onup>SetFocus(201)</onup>
-        <onup>SetFocus(604)</onup>
-        <ondown>SetFocus(201)</ondown>
-        <ondown>SetFocus(604)</ondown>
-        <onleft>SetFocus(201)</onleft>
-        <onleft>SetFocus(604)</onleft>
-        <onright>SetFocus(201)</onright>
-        <onright>SetFocus(604)</onright>
-        <visible>VideoPlayer.Content(livetv)</visible>
         <include>OSD_Button_OnFocus</include>
       </control>
     </control>
