@@ -642,8 +642,8 @@ msgstr "Ustaw ikone"
 # Label of customize main menu in skin settings
 #: /xml/SkinSettings.xml
 msgctxt "#31174"
-msgid "Customize main menu & local banners"
-msgstr "Dostosuj menu główne i banery lokalne"
+msgid "Customize main menu and header widgets"
+msgstr "Dostosuj menu główne i banery"
 
 # Label of restoring main menu in script shortcuts
 #: /xml/script-skinshortcuts.xml
@@ -1887,13 +1887,13 @@ msgstr "Przywróc do cholery ten klasyczny układ!"
 
 #: /xml/script-skinshortcuts.xml
 msgctxt "#31423"
-msgid "Configure local banner"
-msgstr "Skonfiguruj baner lokalny"
+msgid "Configure header widgets"
+msgstr "Konfiguruj widget nagłówka"
 
 #: /xml/script-skinshortcuts.xml
 msgctxt "#31424"
-msgid "Set local banner"
-msgstr "Ustaw baner lokalny"
+msgid "Set header widget"
+msgstr "Ustaw widget nagłówka"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31425"

@@ -819,7 +819,7 @@ msgstr ""
 # Label of customize main menu in skin settings
 #: /xml/SkinSettings.xml
 msgctxt "#31174"
-msgid "Customize main menu & local banners"
+msgid "Customize main menu and header widgets"
 msgstr ""
 
 # Label of restoring main menu in script shortcuts
@@ -2063,12 +2063,12 @@ msgstr ""
 
 #: /xml/script-skinshortcuts.xml
 msgctxt "#31423"
-msgid "Configure local banner"
+msgid "Configure header widgets"
 msgstr ""
 
 #: /xml/script-skinshortcuts.xml
 msgctxt "#31424"
-msgid "Set local banner"
+msgid "Set header widget"
 msgstr ""
 
 #: /xml/SkinSettings.xml
