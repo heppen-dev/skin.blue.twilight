@@ -143,18 +143,10 @@
         </control>
       </control>
       <control type="group">
-        <include content="Object_Item_Showcase" condition="!Skin.HasSetting(ShowWidgetLabels)">
+        <include content="Object_Item_Showcase">
           <param name="title" value="$VAR[Label_Title]"/>
           <param name="title_width" value="1000" />
           <param name="clearlogo_top_margin" value="200"/>
-          <param name="plot" value="$VAR[Label_PlotTextBoxVar]"/>
-          <param name="visible" value="ControlGroup(3000).HasFocus + !Container(7501).IsUpdating + !String.StartsWith(ListItem.FolderPath,favourites://)"/>
-        </include>
-        <include content="Object_Item_Showcase" condition="Skin.HasSetting(ShowWidgetLabels)">
-          <param name="title" value="$VAR[Label_Title]"/>
-          <param name="title_width" value="1000" />
-          <param name="clearlogo_top_margin" value="200"/>
-          <param name="clearlogo_height" value="80"/>
           <param name="plot" value="$VAR[Label_PlotTextBoxVar]"/>
           <param name="visible" value="ControlGroup(3000).HasFocus + !Container(7501).IsUpdating + !String.StartsWith(ListItem.FolderPath,favourites://)"/>
         </include>

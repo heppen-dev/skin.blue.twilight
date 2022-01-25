@@ -369,9 +369,6 @@
     <param name="plot_top" default="320"/>
     <param name="plot_height" default="125"/>
     <param name="title_visible" default="true" />
-    <param name="clearlogo_bottom_wolabels" default="920" />
-    <param name="clearlogo_bottom_wlabels" default="970" />
-    <param name="clearlogo_height" default="160" />
     <definition>
       <control type="group">
         <top>$PARAM[top]</top>
@@ -392,20 +389,11 @@
             <visible>$PARAM[title_visible]</visible>
           </control>
           <control type="image">
-            <bottom>$PARAM[clearlogo_bottom_wolabels]</bottom>
-            <height>$PARAM[clearlogo_height]</height>
             <width>580</width>
+            <height>160</height>
             <aspectratio align="center">keep</aspectratio>
             <texture background="true">$VAR[Image_ClearLogo]</texture>
-            <visible>[[!String.IsEmpty(ListItem.Art(clearlogo)) | !String.IsEmpty(ListItem.Art(tvshow.clearlogo))] + !Skin.HasSetting(DisableClearlogo)] + !Skin.HasSetting(ShowWidgetLabels)</visible>
-          </control>
-          <control type="image">
-            <bottom>$PARAM[clearlogo_bottom_wlabels]</bottom>
-            <height>$PARAM[clearlogo_height]</height>
-            <width>580</width>
-            <aspectratio align="center">keep</aspectratio>
-            <texture background="true">$VAR[Image_ClearLogo]</texture>
-            <visible>[[!String.IsEmpty(ListItem.Art(clearlogo)) | !String.IsEmpty(ListItem.Art(tvshow.clearlogo))] + !Skin.HasSetting(DisableClearlogo)] + Skin.HasSetting(ShowWidgetLabels)</visible>
+            <visible>[[!String.IsEmpty(ListItem.Art(clearlogo)) | !String.IsEmpty(ListItem.Art(tvshow.clearlogo))] + !Skin.HasSetting(DisableClearlogo)]</visible>
           </control>
           <include content="Object_Info_First_Line">
             <param name="visible" value="$PARAM[visible]" />
