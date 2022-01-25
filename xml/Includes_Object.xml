@@ -383,7 +383,7 @@
             <label>$PARAM[title]</label>
             <font>font_title</font>
             <width>700</width>
-            <height>$PARAM[clearlogo_height]</height>
+            <height>160</height>
             <aligny>center</aligny>
             <visible>[[String.IsEmpty(ListItem.Art(clearlogo)) + String.IsEmpty(ListItem.Art(tvshow.clearlogo))] | Skin.HasSetting(DisableClearlogo)] + [!Control.HasFocus(9000) + !Control.HasFocus(9001)]</visible>
             <visible>$PARAM[title_visible]</visible>
