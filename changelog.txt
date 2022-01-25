@@ -1,3 +1,26 @@
+1.0.4
+  Improved: Homescreen performance by reducing some animations
+  Removed: Fade effect from widgets
+  Fixed: Homescreen windowopen/windowclose animations
+  Fixed: Widgets gap
+  Fixed: Object_Item_Showcase
+  Added: Ratings to Object_Item_Showcase
+  Some improvements to Object_Item_Showcase
+  Removed: Old ratings references (+other old chunks)Changed: font_flag to font_tiny_hintlabel
+  Added: Left/Right arrows to widget section
+  Changed: "Local banners" to "Header widgets"
+  Fixed: Poster showcase view
+  Changed: Localization
+  Fixed: Localize for Custom_1150_osdMenu
+  Fixed: Flix view content, visible condition
+  Fixed: DefaultControl in OSD
+  Fixed: View_51_Poster for current Object_Item_Showcase
+  Fixed: Enable Trailers in background only when expose is enabled
+  Fixed: DialogAddonSettings grouplist height
+  Fixed: Play background trailer only with Expose enabled
+  Some fixes to Object_Info_Line
+  Fixed: Object_Video_Info_Line top margin
+  Fixed: Object_Info_First_Line
 1.0.3
   Fixed: PVR progressbar transparency
   Improved home screen animations
