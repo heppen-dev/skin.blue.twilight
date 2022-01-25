@@ -3,10 +3,10 @@
   <include name="BlueTwilight_Main">
     <control type="group">
       <visible>!$EXP[infodialog_active]</visible>
+      <include>Animation_TopSlide_Home</include>
       <control type="group" id="5610">
         <height>120</height>
         <width>1920</width>
-        <include>Animation_TopSlide_Home</include>
         <control type="image">
           <left>0</left>
           <top>0</top>
@@ -125,22 +125,21 @@
         <control type="grouplist" id="2999">
           <onup>9000</onup>
           <ondown>3000</ondown>
-          <top>212</top>
+          <top>250</top>
           <left>-700</left>
           <height>300</height>
           <include>skinshortcuts-template-localWidget</include>
           <animation effect="slide" time="200" start="0" end="0,-600" reversible="true" condition="[ControlGroup(3000).HasFocus | $EXP[FirstExpose] | $EXP[SecondExpose] | String.IsEqual(Window(home).Property(activateSpotlight),true)] + !String.StartsWith(ListItem.FolderPath,favourites://)">Conditional</animation>
-          <include>Animation_TopSlide_Home</include>
         </control>
         <control type="grouplist" id="3000">
-          <top>550</top>
+          <top>600</top>
           <left>90</left>
-          <height>530</height>
+          <height>450</height>
           <onup>2999</onup>
+          <itemgap>10</itemgap>
           <usecontrolcoords>true</usecontrolcoords>
           <include>skinshortcuts-template-widgetsWall</include>
           <animation effect="slide" time="200" start="0" end="0,640" reversible="true" condition="$EXP[FirstExpose] | $EXP[SecondExpose]">Conditional</animation>
-          <include>Animation_BottomSlide</include>
         </control>
       </control>
       <control type="group">
