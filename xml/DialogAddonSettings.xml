@@ -36,7 +36,7 @@
         <left>0</left>
         <top>120</top>
         <width>427</width>
-        <height>825</height>
+        <height>750</height>
         <itemgap>0</itemgap>
         <orientation>vertical</orientation>
         <onleft>9000</onleft>
@@ -68,7 +68,7 @@
         <left>427</left>
         <top>120</top>
         <width>1500</width>
-        <height>825</height>
+        <height>750</height>
         <pagecontrol>60</pagecontrol>
         <onleft>3</onleft>
         <onright>60</onright>
@@ -176,7 +176,7 @@
         <left>1910</left>
         <top>120</top>
         <width>12</width>
-        <height>825</height>
+        <height>750</height>
         <orientation>vertical</orientation>
         <onleft>5</onleft>
         <onright>9000</onright>
