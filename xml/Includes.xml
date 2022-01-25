@@ -438,7 +438,7 @@
             <align>center</align>
             <aligny>center</aligny>
             <label>$INFO[$PARAM[infolabel_prefix]ListItem.Duration]</label>
-            <font>font_flag</font>
+            <font>font_tiny_hintlabel</font>
           </control>
           <include content="MediaFlag">
             <param name="texture" value="flags/flag.png"/>
@@ -453,7 +453,7 @@
             <align>center</align>
             <aligny>center</aligny>
             <label>$INFO[$PARAM[infolabel_prefix]ListItem.EndTime]</label>
-            <font>font_flag</font>
+            <font>font_tiny_hintlabel</font>
           </control>
           <include content="MediaFlag">
             <param name="texture" value="flags/flag.png"/>
@@ -495,7 +495,7 @@
             <align>center</align>
             <aligny>center</aligny>
             <label>$INFO[$PARAM[infolabel_prefix]VideoPlayer.Duration]</label>
-            <font>font_flag</font>
+            <font>font_tiny_hintlabel</font>
           </control>
           <include content="MediaFlag">
             <param name="texture" value="flags/flag.png"/>
@@ -612,7 +612,7 @@
           <align>center</align>
           <aligny>center</aligny>
           <label>$PARAM[label]</label>
-          <font>font_flag</font>
+          <font>font_tiny_hintlabel</font>
         </control>
         <include content="MediaFlag">
           <param name="width" value="125"/>
