@@ -28,6 +28,7 @@
         <ondown>62</ondown>
         <pagecontrol>62</pagecontrol>
         <focusposition>1</focusposition>
+        <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(videos)</visible>
         <animation effect="slide" time="0" start="0" end="-100,0" condition="true">Conditional</animation>
         <viewtype label="$LOCALIZE[31392]">icon</viewtype>
         <include content="View_Forced">
