@@ -77,7 +77,7 @@
         <param name="sortdirection" value="$SKINSHORTCUTS[sortdirection]"/>
         <param name="limit" value="$SKINSHORTCUTS[limit]"/>
         <param name="path" value="$SKINSHORTCUTS[path]"/>
-        <param name="postercondition" value="true"/>
+        <param name="condition" value="true"/>
         <!-- <onunfocus>ClearProperty(TMDbHelper.WidgetContainer,home)</onunfocus> -->
         <skinshortcuts>visibility</skinshortcuts>
       </include>

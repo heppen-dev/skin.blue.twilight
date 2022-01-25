@@ -234,12 +234,7 @@
     </definition>
   </include>
   <include name="Object_LocalWidget_Content">
-    <param name="target" default=""/>
-    <param name="sortby" default=""/>
-    <param name="sortdirection" default=""/>
-    <param name="limit" default=""/>
-    <param name="path" default=""/>
-    <param name="postercondition" default="true"/>
+    <param name="condition" default="true"/>
     <definition>
       <control type="fixedlist" id="$PARAM[id]">
         <nested/>
@@ -256,12 +251,12 @@
         <include content="Object_Wall_Events">
           <param name="id" value="$PARAM[id]"/>
         </include>
-        <itemlayout height="270" width="1120" condition="$PARAM[postercondition]">
+        <itemlayout height="270" width="1120" condition="$PARAM[condition]">
           <include content="ViewBannerItemLayout">
             <param name="bg_visible" value="false" />
           </include>
         </itemlayout>
-        <focusedlayout height="270" width="1120" condition="$PARAM[postercondition]">
+        <focusedlayout height="270" width="1120" condition="$PARAM[condition]">
           <include content="ViewBannerItemLayout">
             <param name="bg_visible" value="true" />
           </include>
@@ -313,7 +308,7 @@
             <height>250</height>
             <visible>!Skin.HasSetting(ShowLabelOnBanner)</visible>
             <include content="Selectbox">
-              <param name="visible" value="$PARAM[postercondition] + Control.HasFocus($PARAM[id])"/>
+              <param name="visible" value="$PARAM[condition] + Control.HasFocus($PARAM[id])"/>
             </include>
           </control>
           <control type="group">
@@ -323,7 +318,7 @@
             <height>285</height>
             <visible>Skin.HasSetting(ShowLabelOnBanner)</visible>
             <include content="Selectbox">
-              <param name="visible" value="$PARAM[postercondition] + Control.HasFocus($PARAM[id])"/>
+              <param name="visible" value="$PARAM[condition] + Control.HasFocus($PARAM[id])"/>
             </include>
           </control>
         </focusedlayout>
