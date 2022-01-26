@@ -1203,8 +1203,8 @@
           <animation effect="fade" time="100">VisibleChange</animation>
           <control type="multiimage" id="32111">
             <include>FullScreenDimensions</include>
-            <animation effect="zoom" end="75" center="360,288" time="200" condition="[ControlGroup(3000).HasFocus + !Skin.HasSetting(FullScreenHomeBackground) + !$EXP[FirstExpose] + !Window.IsActive(1141)] + !String.StartsWith(ListItem.FolderPath,favourites://)">Conditional</animation>
-            <animation effect="slide" start="0" end="650,-100" time="200" condition="[ControlGroup(3000).HasFocus + !Skin.HasSetting(FullScreenHomeBackground) + !$EXP[FirstExpose] + !Window.IsActive(1141)] + !String.StartsWith(ListItem.FolderPath,favourites://)">Conditional</animation>
+            <animation effect="zoom" end="75" center="360,288" time="200" condition="[ControlGroup(3000).HasFocus + !Skin.HasSetting(FullScreenHomeBackground) + !$EXP[FirstExpose] + !Window.IsActive(1141) + !$EXP[infodialog_active]] + !String.StartsWith(ListItem.FolderPath,favourites://)">Conditional</animation>
+            <animation effect="slide" start="0" end="650,-100" time="200" condition="[ControlGroup(3000).HasFocus + !Skin.HasSetting(FullScreenHomeBackground) + !$EXP[FirstExpose] + !Window.IsActive(1141) + !$EXP[infodialog_active]] + !String.StartsWith(ListItem.FolderPath,favourites://)">Conditional</animation>
             <aspectratio aligny="top">scale</aspectratio>
             <fadetime>300</fadetime>
             <timeperimage>6000</timeperimage>
@@ -1234,7 +1234,7 @@
             <aspectratio aligny="center">scale</aspectratio>
             <animation effect="fade" time="200" delay="200">Hidden</animation>
             <texture background="true">common/vignette.png</texture>
-            <visible>[[ControlGroup(3000).HasFocus | Window.IsVisible(1146)] + [!$EXP[FirstExpose] + !$EXP[SecondExpose]] + !Skin.HasSetting(FullScreenHomeBackground)] + !String.StartsWith(ListItem.FolderPath,favourites://)</visible>
+            <visible>[[ControlGroup(3000).HasFocus | Window.IsVisible(1146)] + [!$EXP[FirstExpose] + !$EXP[SecondExpose]] + !Skin.HasSetting(FullScreenHomeBackground)] + !String.StartsWith(ListItem.FolderPath,favourites://) + !$EXP[infodialog_active]</visible>
           </control>
         </control>
       </control>
