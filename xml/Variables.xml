@@ -257,8 +257,8 @@
     <value condition="[!String.IsEmpty(ListItem.ChannelNumberLabel) | Window.IsVisible(DialogPVRInfo.xml)] + [!String.IsEmpty(ListItem.ChannelName) | !String.IsEmpty(ListITem.StartTime)]">$INFO[ListItem.ChannelName,    [COLOR=dialog_fg_70],[/COLOR]]$INFO[ListItem.Season,    [COLOR=dialog_fg_70]S,[/COLOR]]$INFO[ListItem.Episode,    [COLOR=dialog_fg_70]E,[/COLOR]]$VAR[Label_PVR_EpisodeName,    [COLOR=dialog_fg_70],[/COLOR]]$VAR[Label_PVR_EPGEventTitle,    [COLOR=dialog_fg_70],[/COLOR]]$INFO[ListItem.Year,    [COLOR=dialog_fg_70],[/COLOR]]$INFO[ListItem.MPAA,    [COLOR=dialog_fg_70],[/COLOR]]$INFO[ListItem.StartTime,    [COLOR=dialog_fg_70],[/COLOR]]$INFO[ListItem.EndTime,[COLOR=dialog_fg_70] - ,[/COLOR]]</value>
   </variable>
   <variable name="Label_VideoInfoLine">
-    <value condition="!String.IsEmpty(ListItem.Writer) + !String.IsEmpty(ListItem.Genre) + !String.IsEmpty(ListItem.AudioLanguage) + !String.IsEmpty(ListItem.SubtitleLanguage)">Writer: $INFO[ListItem.Writer  ,    [COLOR=dialog_fg_70],[/COLOR]][CR]Genre: $INFO[ListItem.Genre ,    [COLOR=dialog_fg_70],[/COLOR]][CR]Audio Language: $INFO[ListItem.AudioLanguage  ,    [COLOR=dialog_fg_70],[/COLOR]][CR]Subtitle Language: $INFO[ListItem.SubtitleLanguage ,    [COLOR=dialog_fg_70],[/COLOR]]</value>
-    <value condition="!String.IsEmpty(ListItem.Writer) + !String.IsEmpty(ListItem.Genre) + !String.IsEmpty(ListItem.AudioLanguage)">Writer: $INFO[ListItem.Writer  ,    [COLOR=dialog_fg_70],[/COLOR]][CR]Genre: $INFO[ListItem.Genre ,    [COLOR=dialog_fg_70],[/COLOR]][CR]Audio Language: $INFO[ListItem.AudioLanguage  ,    [COLOR=dialog_fg_70],[/COLOR]]</value>
+    <!-- <value condition="!String.IsEmpty(ListItem.Writer) + !String.IsEmpty(ListItem.Genre) + !String.IsEmpty(ListItem.AudioLanguage) + !String.IsEmpty(ListItem.SubtitleLanguage)">Writer: $INFO[ListItem.Writer  ,    [COLOR=dialog_fg_70],[/COLOR]][CR]Genre: $INFO[ListItem.Genre ,    [COLOR=dialog_fg_70],[/COLOR]][CR]Audio Language: $INFO[ListItem.AudioLanguage  ,    [COLOR=dialog_fg_70],[/COLOR]][CR]Subtitle Language: $INFO[ListItem.SubtitleLanguage ,    [COLOR=dialog_fg_70],[/COLOR]]</value>
+    <value condition="!String.IsEmpty(ListItem.Writer) + !String.IsEmpty(ListItem.Genre) + !String.IsEmpty(ListItem.AudioLanguage)">Writer: $INFO[ListItem.Writer  ,    [COLOR=dialog_fg_70],[/COLOR]][CR]Genre: $INFO[ListItem.Genre ,    [COLOR=dialog_fg_70],[/COLOR]][CR]Audio Language: $INFO[ListItem.AudioLanguage  ,    [COLOR=dialog_fg_70],[/COLOR]]</value> -->
     <value condition="!String.IsEmpty(ListItem.Writer) + !String.IsEmpty(ListItem.Genre)">Writer: $INFO[ListItem.Writer  ,    [COLOR=dialog_fg_70],[/COLOR]][CR]Genre: $INFO[ListItem.Genre ,    [COLOR=dialog_fg_70],[/COLOR]]</value>
     <value condition="!String.IsEmpty(ListItem.Writer)">Writer: $INFO[ListItem.Writer  ,    [COLOR=dialog_fg_70],[/COLOR]]</value>
   </variable>
@@ -1075,11 +1075,12 @@
     <value condition="!String.IsEmpty(Container.Art(fanart))">$INFO[Container.Art(fanart)]</value>
     <value>common/background.jpg</value>
   </variable>
-  <variable name="BlurSpotlight">
+  <variable name="BlurExpose">
     <value>$INFO[Window(Home).Property(TMDbHelper.ListItem.BlurImage)]</value>
   </variable>
   <variable name="BlurBackground">
-    <value condition="[!ControlGroup(3000).HasFocus + !$EXP[FirstExpose]] + !Skin.HasSetting(DisableBlur) | String.StartsWith(ListItem.FolderPath,favourites://)">$INFO[Window(Home).Property(TMDbHelper.ListItem.BlurImage)]</value>
+    <value condition="$EXP[FirstExpose] | $EXP[SecondExpose]">$VAR[BlurExpose]</value>
+    <value condition="!ControlGroup(3000).HasFocus + !Skin.HasSetting(DisableBlur) | String.StartsWith(ListItem.FolderPath,favourites://)">$INFO[Window(Home).Property(TMDbHelper.ListItem.BlurImage)]</value>
     <value condition="!String.IsEmpty(ListItem.Property(background))">$INFO[ListItem.Property(background)]</value>
     <value>$VAR[MediaFanartVar]</value>
   </variable>

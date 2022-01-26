@@ -51,7 +51,7 @@
   <expression name="infodialog_active">Window.IsActive(musicinformation) | Window.IsActive(songinformation) | Window.IsActive(movieinformation) | Window.IsActive(addoninformation) | Window.IsActive(pvrguideinfo) | Window.IsActive(pvrrecordinginfo) | Window.IsActive(pictureinfo)</expression>
   <expression name="widgetwall_active">!Control.HasFocus(9000) + !Control.HasFocus(9001) + !ControlGroup(2999).HasFocus</expression>
   <expression name="MediaMenu">Control.HasFocus(9000) | Control.HasFocus(6130) | Control.HasFocus(6131)</expression>
-  <expression name="FirstExpose">ControlGroup(8008).HasFocus</expression>
+  <expression name="FirstExpose">Window.IsActive(1140)</expression>
   <expression name="SecondExpose">Window.IsActive(1141)</expression>
   <expression name="CustomWindowVisible">Window.IsVisible(1142) | Window.IsVisible(1143) | Window.IsVisible(1144) | Window.IsVisible(1145) | Window.IsVisible(1146) | Window.IsVisible(1147) | Window.IsVisible(1148) | Window.IsVisible(1149)</expression>
   <expression name="Exp_SortLetterIsNumber">[String.IsEqual(ListItem.SortLetter,$NUMBER[0]) | String.IsEqual(ListItem.SortLetter,$NUMBER[1]) | String.IsEqual(ListItem.SortLetter,$NUMBER[2]) | String.IsEqual(ListItem.SortLetter,$NUMBER[3]) | String.IsEqual(ListItem.SortLetter,$NUMBER[4]) | String.IsEqual(ListItem.SortLetter,$NUMBER[5]) | String.IsEqual(ListItem.SortLetter,$NUMBER[6]) | String.IsEqual(ListItem.SortLetter,$NUMBER[7]) | String.IsEqual(ListItem.SortLetter,$NUMBER[8]) | String.IsEqual(ListItem.SortLetter,$NUMBER[9])]</expression>
@@ -1203,8 +1203,8 @@
           <animation effect="fade" time="100">VisibleChange</animation>
           <control type="multiimage" id="32111">
             <include>FullScreenDimensions</include>
-            <animation effect="zoom" end="75" center="360,288" time="200" condition="[ControlGroup(3000).HasFocus + !Skin.HasSetting(FullScreenHomeBackground) + !Window.IsActive(1141)] + !String.StartsWith(ListItem.FolderPath,favourites://)">Conditional</animation>
-            <animation effect="slide" start="0" end="650,-100" time="200" condition="[ControlGroup(3000).HasFocus + !Skin.HasSetting(FullScreenHomeBackground) + !Window.IsActive(1141)] + !String.StartsWith(ListItem.FolderPath,favourites://)">Conditional</animation>
+            <animation effect="zoom" end="75" center="360,288" time="200" condition="[ControlGroup(3000).HasFocus + !Skin.HasSetting(FullScreenHomeBackground) + !$EXP[FirstExpose] + !Window.IsActive(1141)] + !String.StartsWith(ListItem.FolderPath,favourites://)">Conditional</animation>
+            <animation effect="slide" start="0" end="650,-100" time="200" condition="[ControlGroup(3000).HasFocus + !Skin.HasSetting(FullScreenHomeBackground) + !$EXP[FirstExpose] + !Window.IsActive(1141)] + !String.StartsWith(ListItem.FolderPath,favourites://)">Conditional</animation>
             <aspectratio aligny="top">scale</aspectratio>
             <fadetime>300</fadetime>
             <timeperimage>6000</timeperimage>
@@ -1234,7 +1234,7 @@
             <aspectratio aligny="center">scale</aspectratio>
             <animation effect="fade" time="200" delay="200">Hidden</animation>
             <texture background="true">common/vignette.png</texture>
-            <visible>[[ControlGroup(3000).HasFocus | Window.IsVisible(1146)] + !$EXP[SecondExpose] + !Skin.HasSetting(FullScreenHomeBackground)] + !String.StartsWith(ListItem.FolderPath,favourites://)</visible>
+            <visible>[[ControlGroup(3000).HasFocus | Window.IsVisible(1146)] + [!$EXP[FirstExpose] + !$EXP[SecondExpose]] + !Skin.HasSetting(FullScreenHomeBackground)] + !String.StartsWith(ListItem.FolderPath,favourites://)</visible>
           </control>
         </control>
       </control>
@@ -2033,44 +2033,6 @@
   <include name="PlayFolderCollection">
     <onclick condition="$PARAM[includecondition]">RunScript(plugin.video.themoviedb.helper,close_dialog=1190,call_path=$INFO[Window(home).Property(spotlight_FolderPath)])</onclick>
   </include>
-  <include name="Flix_Spotlight_Properties_onBack">
-    <onback condition="$PARAM[include_condition]">SetProperty(spotlight_Fanart,"$VAR[MediaFanartVar]",home)</onback>
-    <onback condition="$PARAM[include_condition]">SetProperty(spotlight_ClearLogo,"$VAR[Image_ClearLogo]",home)</onback>
-    <onback condition="$PARAM[include_condition]">SetProperty(spotlight_250,"$INFO[Window(Home).Property(TMDbHelper.ListItem.Top250)]",home)</onback>
-    <onback condition="$PARAM[include_condition]">SetProperty(spotlight_Match,"$VAR[PercentageRating]",home)</onback>
-    <onback condition="$PARAM[include_condition]">SetProperty(spotlight_Title,"$VAR[Label_Title]",home)</onback>
-    <onback condition="$PARAM[include_condition]">SetProperty(spotlight_Season,"$INFO[ListItem.Season]",home)</onback>
-    <onback condition="$PARAM[include_condition]">SetProperty(spotlight_Episode,"$INFO[ListItem.Episode]",home)</onback>
-    <onback condition="$PARAM[include_condition]">SetProperty(spotlight_Plot,"$VAR[Label_OverlayPlot]",home)</onback>
-    <onback condition="$PARAM[include_condition]">SetProperty(spotlight_Path,"$INFO[ListItem.FileNameAndPath]",home)</onback>
-    <onback condition="$PARAM[include_condition] + [String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,tvshow) | String.IsEqual(ListItem.DBTYPE,season) | String.IsEqual(ListItem.DBTYPE,episode)]">SetProperty(spotlight_EnableWatchlist,true,home)</onback>
-    <onback condition="$PARAM[include_condition]">SetProperty(spotlight_TMDBid,"$INFO[ListItem.Property(TMDB_ID)]",home)</onback>
-    <onback condition="$PARAM[include_condition]">SetProperty(spotlight_TMDBid2,"$INFO[Window(home).Property(TMDbHelper.ListItem.TMDB_ID)]",home)</onback>
-    <onback condition="$PARAM[include_condition]">SetProperty(spotlight_TMDBTYPE,"$VAR[TMDB_TYPE]",home)</onback>
-    <onback condition="[$PARAM[include_condition] + ListItem.IsFolder]">SetProperty(spotlight_isFolder,true,home)</onback>
-    <onback condition="$PARAM[include_condition] + [!String.IsEmpty(ListItem.Trailer) | !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Trailer))]">SetProperty(spotlight_isTrailer,true,home)</onback>
-    <onback condition="[$PARAM[include_condition] + !String.IsEmpty(ListItem.Trailer)]">SetProperty(spotlight_Trailer,"$ESCINFO[ListItem.Trailer]",home)</onback>
-    <onback condition="[$PARAM[include_condition] + !String.IsEmpty(ListItem.IMDBNumber)]">SetProperty(spotlight_FindSimilar,true,home)</onback>
-    <onback condition="$PARAM[include_condition] + [String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,tvshow)]">SetProperty(spotlight_EnableRating,true,home)</onback>
-    <onback condition="[$PARAM[include_condition] + String.StartsWith(ListItem.FolderPath,pvr://)]">SetProperty(spotlight_isPVR,true,home)</onback>
-    <onback condition="$PARAM[include_condition]">SetProperty(spotlight_Duration,"$INFO[ListItem.Duration(h),, $LOCALIZE[31380] ]$INFO[ListItem.Duration(mm),, $LOCALIZE[31381]]",home)</onback>
-    <onback condition="$PARAM[include_condition]">SetProperty(spotlight_Genre,"$INFO[ListItem.Genre]",home)</onback>
-    <onback condition="$PARAM[include_condition]">SetProperty(spotlight_Year,"$INFO[ListItem.Year]",home)</onback>
-    <onback condition="$PARAM[include_condition]">SetProperty(spotlight_MPAA,"$INFO[ListItem.MPAA]",home)</onback>
-    <onback condition="$PARAM[include_condition]">SetProperty(spotlight_Resolution,"$INFO[ListItem.VideoResolution]",home)</onback>
-    <onback condition="$PARAM[include_condition]">SetProperty(spotlight_Director,"$INFO[ListItem.Director]",home)</onback>
-    <onback condition="$PARAM[include_condition]">SetProperty(spotlight_Cast,"$INFO[ListItem.Cast]",home)</onback>
-    <onback condition="$PARAM[include_condition]">SetProperty(spotlight_Writer,"$INFO[ListItem.Writer]",home)</onback>
-    <onback condition="$PARAM[include_condition]">SetProperty(spotlight_SimilarLabel,"$INFO[ListItem.Label]",home)</onback>
-    <onback condition="$PARAM[include_condition]">SetProperty(spotlight_SimilarLabel2,"$INFO[ListItem.Label2]",home)</onback>
-    <onback condition="$PARAM[include_condition]">SetProperty(spotlight_SimilarTYPE,"$VAR[TMDB_TYPE]",home)</onback>
-    <onback condition="$PARAM[include_condition]">SetProperty(spotlight_SimilarQUERY,"$VAR[INFO_QUERY]",home)</onback>
-    <onback condition="$PARAM[include_condition]">SetProperty(spotlight_SimilarIMDB,"$INFO[ListItem.IMDBNumber]",home)</onback>
-    <onback condition="$PARAM[include_condition]">SetProperty(spotlight_FolderPath,"$INFO[ListItem.FolderPath]",home)</onback>
-    <onback condition="$PARAM[include_condition]">SetProperty(spotlight_Label,"$INFO[ListItem.Label]",home)</onback>
-    <onback condition="$PARAM[include_condition]">SetProperty(spotlight_DBID,"$INFO[ListItem.DBID]",home)</onback>
-    <onback condition="$PARAM[include_condition]">SetProperty(spotlight_DBType,"$INFO[ListItem.DBType]",home)</onback>
-  </include>
   <include name="Flix_Spotlight_Properties">
     <onclick condition="$PARAM[include_condition]">SetProperty(spotlight_Fanart,"$VAR[MediaFanartVar]",home)</onclick>
     <onclick condition="$PARAM[include_condition]">SetProperty(spotlight_ClearLogo,"$VAR[Image_ClearLogo]",home)</onclick>
@@ -2147,8 +2109,7 @@
     <onunfocus>ClearProperty(spotlight_Label,home)</onunfocus>
     <onunfocus>ClearProperty(spotlight_DBID,home)</onunfocus>
     <onunfocus>ClearProperty(spotlight_DBType,home)</onunfocus>
-  </include>
-  <include name="Flix_Spotlight_ClearProperties_focus">
+    <!-- focus -->
     <onfocus>ClearProperty(spotlight_Fanart,home)</onfocus>
     <onfocus>ClearProperty(spotlight_ClearLogo,home)</onfocus>
     <onfocus>ClearProperty(spotlight_250,home)</onfocus>

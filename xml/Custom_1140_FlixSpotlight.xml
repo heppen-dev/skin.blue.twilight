@@ -1,7 +1,164 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="dialog" id="1140">
+  <defaultcontrol always="true">6000</defaultcontrol>
+  <onload>SetProperty(TMDbHelper.Blur.Fallback,$INFO[Window(home).Property(spotlight_Fanart)],Home)</onload>
   <onunload>PlayerControl(Stop)</onunload>
   <controls>
-    <!-- empty template -->
+    <!-- Expose -->
+    <include>DefaultBackground</include>
+    <control type="group">
+      <visible>!$EXP[infodialog_active]</visible>
+      <animation effect="fade" start="100" end="0" time="400" tween="linear" condition="$EXP[CustomWindowVisible]">Conditional</animation>
+      <control type="image">
+        <top>0</top>
+        <left>-150</left>
+        <width>1920</width>
+        <height>1080</height>
+        <texture background="true">common/flixspotlight-shadowspot.png</texture>
+        <visible>Player.HasVideo + $EXP[FirstExpose]</visible>
+        <animation effect="fade" start="0" end="100" time="1200" tween="linear" condition="Player.HasVideo">Conditional</animation>
+      </control>
+      <control type="group">
+        <include content="Object_Item_Showcase">
+          <param name="title" value="$INFO[Window(home).Property(spotlight_Title)]"/>
+          <param name="title_width" value="1000" />
+          <param name="clearlogo_top_margin" value="200"/>
+          <param name="plot" value="$INFO[Window(home).Property(spotlight_Plot)]"/>
+          <param name="visible" value="$EXP[FirstExpose] + !Container(7501).IsUpdating"/>
+        </include>
+        <animation effect="fade" time="200" end="0" start="100" condition="$EXP[SecondExpose]">Conditional</animation>
+      </control>
+    </control>
+    <control type="group">
+      <top>560</top>
+      <left>100</left>
+      <visible>[$EXP[FirstExpose] + String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))] + !String.StartsWith(ListItem.FolderPath,favourites://) + !$EXP[infodialog_active] + Skin.HasSetting(Expose)</visible>
+      <animation effect="slide" end="0,-100" time="0" condition="Skin.HasSetting(ShowWidgetLabels)">Conditional</animation>
+      <!-- <animation effect="slide" start="0" end="0,-80" time="400" tween="linear" condition="[$EXP[FirstExpose] | $EXP[SecondExpose]] + !Skin.HasSetting(SkipLevel1)">Conditional</animation> -->
+      <animation effect="fade" start="100" end="0" time="400" tween="linear" condition="$EXP[SecondExpose]">Conditional</animation>
+      <control type="grouplist" id="8008">
+        <orientation>horizontal</orientation>
+        <control type="group">
+          <control type="radiobutton" id="6000">
+            <include>ClearBoolProps</include>
+            <onup>PlayerControl(Stop)</onup>
+            <onup condition="Player.HasVideo">AlarmClock(closeDialogs,Dialog.Close(1140),00:01,silent)</onup>
+            <onup condition="!Player.HasVideo">Dialog.Close(1140)</onup>
+            <ondown>PlayerControl(Stop)</ondown>
+            <ondown condition="Player.HasVideo">AlarmClock(closeDialogs,Dialog.Close(1140),00:01,silent)</ondown>
+            <ondown condition="!Player.HasVideo">Dialog.Close(1140)</ondown>
+            <onback>PlayerControl(Stop)</onback>
+            <onback condition="Player.HasVideo">AlarmClock(closeDialogs,Dialog.Close(1140),00:01,silent)</onback>
+            <onback condition="!Player.HasVideo">Dialog.Close(1140)</onback>
+            <onright>6001</onright>
+            <onleft>6002</onleft>
+            <width>300</width>
+            <height>68</height>
+            <align>left</align>
+            <aligny>top</aligny>
+            <texturefocus border="5" colordiffuse="ff1399de">common/box.png</texturefocus>
+            <texturenofocus border="5" colordiffuse="ff0f79af">common/box.png</texturenofocus>
+            <radioposx>-20</radioposx>
+            <radioposy>-5</radioposy>
+            <radiowidth>108</radiowidth>
+            <radioheight>72</radioheight>
+            <textwidth>180</textwidth>
+            <font>font_tiny_hintlabel</font>
+            <textureradioonfocus colordiffuse="D0FFFFFF">special://skin/extras/icons/play3.png</textureradioonfocus>
+            <textureradioonnofocus colordiffuse="D0FFFFFF">special://skin/extras/icons/play3.png</textureradioonnofocus>
+            <textureradioofffocus colordiffuse="D0FFFFFF">special://skin/extras/icons/play3.png</textureradioofffocus>
+            <textureradiooffnofocus colordiffuse="D0FFFFFF">special://skin/extras/icons/play3.png</textureradiooffnofocus>
+            <textureradiooffdisabled colordiffuse="dialog_fg_30">special://skin/extras/icons/play3.png</textureradiooffdisabled>
+            <textureradioondisabled colordiffuse="dialog_fg_30">special://skin/extras/icons/play3.png</textureradioondisabled>
+            <onclick>Dialog.Close(all,true)</onclick>
+            <!-- playing folders/collections -->
+            <include content="PlayFolderCollection">
+              <param name="includecondition" value="String.IsEqual(Window(home).Property(spotlight_isFolder),true) | String.IsEqual(Window(home).Property(spotlight_isCollection),true)" />
+            </include>
+            <!-- movies playing -->
+            <include content="PlaySingleItem">
+              <param name="includecondition" value="!String.IsEqual(Window(home).Property(spotlight_isFolder),true) + !String.IsEqual(Window(home).Property(spotlight_isCollection),true)" />
+            </include>
+            <visible>Control.IsVisible(6000)</visible>
+          </control>
+          <control type="label">
+            <left>75</left>
+            <top>21</top>
+            <width>200</width>
+            <label>$INFO[Window(home).Property(spotlight_Title)]</label>
+            <textcolor>b3ededed</textcolor>
+            <font>font_tiny_hintlabel</font>
+            <scroll>false</scroll>
+          </control>
+        </control>
+        <control type="group">
+          <control type="radiobutton" id="6001">
+            <include>ClearBoolProps</include>
+            <onup>PlayerControl(Stop)</onup>
+            <onup condition="Player.HasVideo">AlarmClock(closeDialogs,Dialog.Close(1140),00:01,silent)</onup>
+            <onup condition="!Player.HasVideo">Dialog.Close(1140)</onup>
+            <ondown>PlayerControl(Stop)</ondown>
+            <ondown condition="Player.HasVideo">AlarmClock(closeDialogs,Dialog.Close(1140),00:01,silent)</ondown>
+            <ondown condition="!Player.HasVideo">Dialog.Close(1140)</ondown>
+            <onback>PlayerControl(Stop)</onback>
+            <onback condition="Player.HasVideo">AlarmClock(closeDialogs,Dialog.Close(1140),00:01,silent)</onback>
+            <onback condition="!Player.HasVideo">Dialog.Close(1140)</onback>
+            <onleft>6000</onleft>
+            <onright>6002</onright>
+            <left>320</left>
+            <width>70</width>
+            <height>70</height>
+            <align>center</align>
+            <aligny>center</aligny>
+            <radioposx>-24</radioposx>
+            <radioposy>-4</radioposy>
+            <texturefocus border="5" colordiffuse="ff566b84">common/circle.png</texturefocus>
+            <texturenofocus border="5" colordiffuse="ff425265">common/circle.png</texturenofocus>
+            <textureradioonfocus colordiffuse="D0FFFFFF">special://skin/extras/icons/info.png</textureradioonfocus>
+            <textureradioonnofocus colordiffuse="D0FFFFFF">special://skin/extras/icons/info.png</textureradioonnofocus>
+            <textureradioofffocus colordiffuse="D0FFFFFF">special://skin/extras/icons/info.png</textureradioofffocus>
+            <textureradiooffnofocus colordiffuse="D0FFFFFF">special://skin/extras/icons/info.png</textureradiooffnofocus>
+            <textureradiooffdisabled colordiffuse="dialog_fg_30">special://skin/extras/icons/info.png</textureradiooffdisabled>
+            <textureradioondisabled colordiffuse="dialog_fg_30">special://skin/extras/icons/info.png</textureradioondisabled>
+            <onclick>ActivateWindow(1141)</onclick>
+            <visible>Control.IsVisible(6001)</visible>
+          </control>
+        </control>
+        <control type="group">
+          <control type="radiobutton" id="6002">
+            <include>ClearBoolProps</include>
+            <onup>PlayerControl(Stop)</onup>
+            <onup condition="Player.HasVideo">AlarmClock(closeDialogs,Dialog.Close(1140),00:01,silent)</onup>
+            <onup condition="!Player.HasVideo">Dialog.Close(1140)</onup>
+            <ondown>PlayerControl(Stop)</ondown>
+            <ondown condition="Player.HasVideo">AlarmClock(closeDialogs,Dialog.Close(1140),00:01,silent)</ondown>
+            <ondown condition="!Player.HasVideo">Dialog.Close(1140)</ondown>
+            <onback>PlayerControl(Stop)</onback>
+            <onback condition="Player.HasVideo">AlarmClock(closeDialogs,Dialog.Close(1140),00:01,silent)</onback>
+            <onback condition="!Player.HasVideo">Dialog.Close(1140)</onback>
+            <onleft>6001</onleft>
+            <onright>6000</onright>
+            <left>405</left>
+            <width>70</width>
+            <height>70</height>
+            <align>center</align>
+            <aligny>center</aligny>
+            <radioposx>-25</radioposx>
+            <radioposy>-5</radioposy>
+            <texturefocus border="5" colordiffuse="ff566b84">common/circle.png</texturefocus>
+            <texturenofocus border="5" colordiffuse="ff425265">common/circle.png</texturenofocus>
+            <textureradioonfocus colordiffuse="D0FFFFFF">special://skin/extras/icons/watchlist.png</textureradioonfocus>
+            <textureradioonnofocus colordiffuse="D0FFFFFF">special://skin/extras/icons/watchlist.png</textureradioonnofocus>
+            <textureradioofffocus colordiffuse="D0FFFFFF">special://skin/extras/icons/watchlist.png</textureradioofffocus>
+            <textureradiooffnofocus colordiffuse="D0FFFFFF">special://skin/extras/icons/watchlist.png</textureradiooffnofocus>
+            <textureradiooffdisabled colordiffuse="dialog_fg_30">special://skin/extras/icons/watchlist.png</textureradiooffdisabled>
+            <textureradioondisabled colordiffuse="dialog_fg_30">special://skin/extras/icons/watchlist.png</textureradioondisabled>
+            <onclick condition="!String.IsEmpty(Window(home).Property(spotlight_TMDBid))">RunScript(plugin.video.themoviedb.helper,sync_trakt=watchlist,tmdb_id=$INFO[Window(home).Property(spotlight_TMDBid)],type=$INFO[Window(home).Property(spotlight_TMDBTYPE)],cache_refresh)</onclick>
+            <onclick condition="String.IsEmpty(Window(home).Property(spotlight_TMDBid))">RunScript(plugin.video.themoviedb.helper,sync_trakt=watchlist,tmdb_id=$INFO[Window(home).Property(spotlight_TMDBid2)],type=$INFO[Window(home).Property(spotlight_TMDBTYPE)],cache_refresh)</onclick>
+            <visible>Control.IsVisible(6001)</visible>
+          </control>
+        </control>
+      </control>
+    </control>
   </controls>
 </window>

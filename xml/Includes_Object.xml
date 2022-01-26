@@ -12,7 +12,8 @@
       <include content="Flix_Spotlight_Properties">
         <param name="include_condition" value="[!String.StartsWith(ListItem.FolderPath,favourites://) + !String.IsEqual(Listitem.DBTYPE,song) + !String.IsEqual(Listitem.DBTYPE,album) + !String.IsEqual(Listitem.DBTYPE,artist)] + Skin.HasSetting(Expose)" />
       </include>
-      <onclick condition="[!String.StartsWith(ListItem.FolderPath,favourites://) + !String.IsEqual(Listitem.DBTYPE,song) + !String.IsEqual(Listitem.DBTYPE,album) + !String.IsEqual(Listitem.DBTYPE,artist)] + [Skin.HasSetting(Expose) + !Skin.HasSetting(SkipLevel1)]">SetFocus(6000)</onclick>
+      <!-- <onclick>RunScript(plugin.video.themoviedb.helper,blur_image=$INFO[Window(home).Property(spotlight_Fanart)])</onclick> -->
+      <onclick condition="[!String.StartsWith(ListItem.FolderPath,favourites://) + !String.IsEqual(Listitem.DBTYPE,song) + !String.IsEqual(Listitem.DBTYPE,album) + !String.IsEqual(Listitem.DBTYPE,artist)] + [Skin.HasSetting(Expose) + !Skin.HasSetting(SkipLevel1)]">ActivateWindow(1140)</onclick>
       <onclick condition="[!String.StartsWith(ListItem.FolderPath,favourites://) + !String.IsEqual(Listitem.DBTYPE,song) + !String.IsEqual(Listitem.DBTYPE,album) + !String.IsEqual(Listitem.DBTYPE,artist)] + [Skin.HasSetting(Expose) + Skin.HasSetting(SkipLevel1)]">ActivateWindow(1141)</onclick>
     </definition>
   </include>
@@ -20,9 +21,7 @@
     <definition>
       <!-- Landscapes -->
       <itemlayout height="225" width="315" condition="$PARAM[condition]">
-        <include content="ViewLandscapeItemLayout">
-          <param name="firstrow_fade" value="Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[id])" />
-        </include>
+        <include content="ViewLandscapeItemLayout" />
         <control type="group">
           <top>30</top>
           <left>50</left>
@@ -42,6 +41,7 @@
           </control>
         </control>
       </itemlayout>
+      <!-- focused -->
       <focusedlayout height="225" width="315" condition="$PARAM[condition]">
         <control type="button">
           <include>HiddenObject</include>
@@ -51,9 +51,7 @@
           <onfocus condition="!ListItem.IsCollection">ClearProperty(spotlight_isCollection)</onfocus>
           <onfocus>SetProperty(spotlight_Title,$INFO[ListItem.Title],home)</onfocus>
         </control>
-        <include content="ViewLandscapeItemLayout">
-          <param name="firstrow_fade" value="Integer.IsGreater(Window(home).Property(widgetMovementId),$PARAM[id])" />
-        </include>
+        <include content="ViewLandscapeItemLayout" />
         <control type="group">
           <top>30</top>
           <left>50</left>
