@@ -12,7 +12,6 @@
       <include content="Flix_Spotlight_Properties">
         <param name="include_condition" value="[!String.StartsWith(ListItem.FolderPath,favourites://) + !String.IsEqual(Listitem.DBTYPE,song) + !String.IsEqual(Listitem.DBTYPE,album) + !String.IsEqual(Listitem.DBTYPE,artist)] + Skin.HasSetting(Expose)" />
       </include>
-      <!-- <onclick>RunScript(plugin.video.themoviedb.helper,blur_image=$INFO[Window(home).Property(spotlight_Fanart)])</onclick> -->
       <onclick condition="[!String.StartsWith(ListItem.FolderPath,favourites://) + !String.IsEqual(Listitem.DBTYPE,song) + !String.IsEqual(Listitem.DBTYPE,album) + !String.IsEqual(Listitem.DBTYPE,artist)] + [Skin.HasSetting(Expose) + !Skin.HasSetting(SkipLevel1)]">ActivateWindow(1140)</onclick>
       <onclick condition="[!String.StartsWith(ListItem.FolderPath,favourites://) + !String.IsEqual(Listitem.DBTYPE,song) + !String.IsEqual(Listitem.DBTYPE,album) + !String.IsEqual(Listitem.DBTYPE,artist)] + [Skin.HasSetting(Expose) + Skin.HasSetting(SkipLevel1)]">ActivateWindow(1141)</onclick>
     </definition>

@@ -1079,7 +1079,7 @@
     <value>$INFO[Window(Home).Property(TMDbHelper.ListItem.BlurImage)]</value>
   </variable>
   <variable name="BlurBackground">
-    <value condition="$EXP[FirstExpose] | $EXP[SecondExpose]">$VAR[BlurExpose]</value>
+    <value condition="[$EXP[FirstExpose] | $EXP[SecondExpose]] + !Skin.HasSetting(DisableBlur)">$VAR[BlurExpose]</value>
     <value condition="!ControlGroup(3000).HasFocus + !Skin.HasSetting(DisableBlur) | String.StartsWith(ListItem.FolderPath,favourites://)">$INFO[Window(Home).Property(TMDbHelper.ListItem.BlurImage)]</value>
     <value condition="!String.IsEmpty(ListItem.Property(background))">$INFO[ListItem.Property(background)]</value>
     <value>$VAR[MediaFanartVar]</value>
