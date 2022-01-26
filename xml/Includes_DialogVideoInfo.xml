@@ -6,7 +6,7 @@
       <control type="group" id="98">
         <control type="group">
           <control type="image">
-            <bottom>-40</bottom>
+            <bottom>-60</bottom>
             <left>-40</left>
             <width>2000</width>
             <height>200</height>
@@ -15,7 +15,7 @@
             <bordersize>20</bordersize>
           </control>
           <control type="image">
-            <bottom>140</bottom>
+            <bottom>120</bottom>
             <left>-40</left>
             <width>2000</width>
             <height>1</height>
@@ -33,7 +33,7 @@
         </control>
         <animation effect="slide" start="0" end="0,-2000" time="400" easing="inout" condition="ControlGroup(100).HasFocus">Conditional</animation>
         <control type="grouplist" id="99">
-          <top>950</top>
+          <top>970</top>
           <align>center</align>
           <height>142</height>
           <ondown>100</ondown>
@@ -76,9 +76,9 @@
             <param name="visible" value="Control.IsVisible(8898)"/>
           </include>
         </control>
-        <control type="button" id="$PARAM[container_id]588">
+        <control type="button" id="5080">
           <centerleft>50%</centerleft>
-          <top>1055</top>
+          <top>900</top>
           <width>32</width>
           <height>12</height>
           <texturefocus colordiffuse="b3ededed">overlays/arrowdown.png</texturefocus>
