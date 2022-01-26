@@ -23,7 +23,7 @@
           <param name="title_width" value="1000" />
           <param name="clearlogo_top_margin" value="200"/>
           <param name="plot" value="$INFO[Window(home).Property(spotlight_Plot)]"/>
-          <param name="visible" value="$EXP[FirstExpose] + !Container(7501).IsUpdating"/>
+          <param name="visible" value="$EXP[FirstExpose]"/>
         </include>
         <animation effect="fade" time="200" end="0" start="100" condition="$EXP[SecondExpose]">Conditional</animation>
       </control>

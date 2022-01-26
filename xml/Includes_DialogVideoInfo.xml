@@ -95,7 +95,7 @@
             <param name="title" value="$VAR[Label_Title]"/>
             <param name="title_width" value="1000" />
             <param name="plot" value="$VAR[Label_PlotTextBoxVar]"/>
-            <param name="visible_condi" value="$EXP[infodialog_active]"/>
+            <param name="visible" value="$EXP[infodialog_active]"/>
           </include>
           <include content="Object_Info_Line_Label">
             <param name="label" value="$VAR[Label_InfoDialog_VideoInfoLine]"/>
@@ -105,7 +105,7 @@
             <param name="visible" value="$PARAM[visible_infoline]"/>
             <param name="autoscroll" value="false"/>
             <param name="width" value="720" />
-            <param name="top" value="580"/>
+            <param name="top" value="660"/>
           </include>
         </control>
       </control>
