@@ -404,11 +404,11 @@
           <include content="Object_Info_First_Line">
             <param name="visible" value="$PARAM[visible]" />
           </include>
-          <include content="Object_Info_Line_MediaFlags">
-            <param name="visible" value="$EXP[MediaFlags]" />
+          <include content="Object_Info_Line_MediaFlags" condition="$EXP[MediaFlags] + !$EXP[FirstExpose] + !$EXP[SecondExpose]">
+            <param name="visible" value="$EXP[MediaFlags] + !$EXP[FirstExpose] + !$EXP[SecondExpose]"/>
           </include>
-          <include content="Object_Info_Line_Ratings">
-            <param name="visible" value="$EXP[Ratings]" />
+          <include content="Object_Info_Line_Ratings" condition="$EXP[Ratings] + !$EXP[FirstExpose] + !$EXP[SecondExpose]">
+            <param name="visible" value="$EXP[Ratings] + !$EXP[FirstExpose] + !$EXP[SecondExpose]" />
           </include>
           <control type="textbox">
             <width>720</width>
@@ -496,10 +496,24 @@
           <textcolor>dialog_fg_100</textcolor>
           <visible>!String.IsEmpty(ListItem.Year)</visible>
         </control>
+        <control type="label" id="$PARAM[id]">
+          <label fallback="N/A">$INFO[Window(home).Property(spotlight_Year)]</label>
+          <width>auto</width>
+          <height>32</height>
+          <top>12</top>
+          <left>-48</left>
+          <align>center</align>
+          <font>font_tiny_hintlabel</font>
+          <textcolor>dialog_fg_100</textcolor>
+          <visible>!String.IsEmpty(Window(home).Property(spotlight_Year)) + [$EXP[FirstExpose] | $EXP[SecondExpose]]</visible>
+        </control>
         <control type="group">
           <top>-6</top>
           <left>0</left>
-          <include>MediaFlags</include>
+          <include content="MediaFlags" condition="!$EXP[FirstExpose] + !$EXP[SecondExpose]"/>
+          <include content="MediaFlags_Expose" condition="$EXP[FirstExpose] | $EXP[SecondExpose]">
+            <param name="visible" value="$EXP[FirstExpose] | $EXP[SecondExpose]"/>
+          </include>
         </control>
       </control>
     </definition>
@@ -523,7 +537,7 @@
         <visible>$PARAM[visible]</visible>
         <control type="group">
           <width>1000</width>
-          <include>MediaFlags_NewLine</include>
+          <include content="MediaFlags_NewLine" condition="!$EXP[FirstExpose] + !$EXP[SecondExpose]"/>
         </control>
       </control>
     </definition>

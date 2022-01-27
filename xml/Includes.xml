@@ -462,6 +462,61 @@
       </control>
     </definition>
   </include>
+  <include name="MediaFlags_Expose">
+    <param name="resolution_var">$VAR[ResolutionFlagVar]</param>
+    <param name="align" default="left"/>
+    <definition>
+      <control type="grouplist">
+        <orientation>horizontal</orientation>
+        <left>20</left>
+        <top>0</top>
+        <height>70</height>
+        <align>$PARAM[align]</align>
+        <itemgap>10</itemgap>
+        <width>1900</width>
+        <usecontrolcoords>true</usecontrolcoords>
+        <control type="group">
+          <top>10</top>
+          <width>200</width>
+          <visible>$PARAM[visible]</visible>
+          <include content="InfoFlag">
+            <param name="icon" value="lists/year.png"/>
+            <param name="label" value="$INFO[Window(home).Property(Expose_ListItem_Premiered)]"/>
+          </include>
+        </control>
+        <control type="group">
+          <width>115</width>
+          <visible>$PARAM[visible]</visible>
+          <control type="label">
+            <width>115</width>
+            <height>60</height>
+            <align>center</align>
+            <aligny>center</aligny>
+            <label>$INFO[Window(home).Property(Expose_ListItem_Duration)]</label>
+            <font>font_tiny_hintlabel</font>
+          </control>
+          <include content="MediaFlag">
+            <param name="texture" value="flags/flag.png"/>
+          </include>
+        </control>
+        <control type="group">
+          <width>115</width>
+          <visible>$PARAM[visible]</visible>
+          <control type="label">
+            <width>115</width>
+            <height>60</height>
+            <align>center</align>
+            <aligny>center</aligny>
+            <label>$INFO[Window(home).Property(Expose_ListItem_EndTime)]</label>
+            <font>font_tiny_hintlabel</font>
+          </control>
+          <include content="MediaFlag">
+            <param name="texture" value="flags/flag.png"/>
+          </include>
+        </control>
+      </control>
+    </definition>
+  </include>
   <include name="MediaFlags_OSD">
     <param name="infolabel_prefix">
     </param>
@@ -557,6 +612,55 @@
           <visible>System.AddonIsEnabled(resource.images.studios.white) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Studio)</visible>
           <include content="MediaFlag">
             <param name="texture" value="$INFO[$PARAM[infolabel_prefix]ListItem.Studio,resource://resource.images.studios.white/,.png]"/>
+          </include>
+        </control>
+      </control>
+    </definition>
+  </include>
+  <include name="MediaFlags_NewLine_Expose">
+    <param name="resolution_var">$VAR[ResolutionFlagVar]</param>
+    <definition>
+      <control type="grouplist">
+        <orientation>horizontal</orientation>
+        <left>0</left>
+        <top>0</top>
+        <height>70</height>
+        <align>left</align>
+        <itemgap>10</itemgap>
+        <width>1900</width>
+        <usecontrolcoords>true</usecontrolcoords>
+        <orientation>horizontal</orientation>
+        <top>0</top>
+        <height>70</height>
+        <align>left</align>
+        <itemgap>10</itemgap>
+        <width>1900</width>
+        <usecontrolcoords>true</usecontrolcoords>
+        <include content="MediaFlag">
+          <param name="texture" value="$INFO[Window(home).Property(Expose_ListItem_VideoCodec),flags/videocodec/,.png]"/>
+          <param name="visible" value="$PARAM[visible]"/>
+        </include>
+        <include content="MediaFlag">
+          <param name="texture" value="$PARAM[resolution_var]"/>
+          <param name="visible" value="$PARAM[visible]"/>
+        </include>
+        <include content="MediaFlag">
+          <param name="texture" value="$INFO[Window(home).Property(Expose_ListItem_VideoAspect),flags/aspectratio/,.png]"/>
+          <param name="visible" value="$PARAM[visible]"/>
+        </include>
+        <include content="MediaFlag">
+          <param name="texture" value="$INFO[Window(home).Property(Expose_ListItem_AudioCodec),flags/audiocodec/,.png]"/>
+          <param name="visible" value="$PARAM[visible]"/>
+        </include>
+        <include content="MediaFlag">
+          <param name="texture" value="$INFO[Window(home).Property(Expose_ListItem_AudioChannels),flags/audiochannel/,.png]"/>
+          <param name="visible" value="$PARAM[visible]"/>
+        </include>
+        <control type="group">
+          <width>150</width>
+          <visible>$PARAM[visible]</visible>
+          <include content="MediaFlag">
+            <param name="texture" value="$INFO[Window(home).Property(Expose_ListItem_Studio),resource://resource.images.studios.white/,.png]"/>
           </include>
         </control>
       </control>
@@ -2071,6 +2175,9 @@
     <onclick condition="$PARAM[include_condition]">SetProperty(spotlight_Label,"$INFO[ListItem.Label]",home)</onclick>
     <onclick condition="$PARAM[include_condition]">SetProperty(spotlight_DBID,"$INFO[ListItem.DBID]",home)</onclick>
     <onclick condition="$PARAM[include_condition]">SetProperty(spotlight_DBType,"$INFO[ListItem.DBType]",home)</onclick>
+    <onclick condition="$PARAM[include_condition]">SetProperty(Expose_ListItem_Premiered,"$INFO[ListItem.Premiered]",home)</onclick>
+    <onclick condition="$PARAM[include_condition]">SetProperty(Expose_ListItem_Duration,"$INFO[ListItem.Duration]",home)</onclick>
+    <onclick condition="$PARAM[include_condition]">SetProperty(Expose_ListItem_EndTime,"$INFO[ListItem.EndTime]",home)</onclick>
   </include>
   <include name="Flix_Spotlight_ClearProperties">
     <onunfocus>ClearProperty(spotlight_Fanart,home)</onunfocus>
