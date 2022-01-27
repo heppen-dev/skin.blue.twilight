@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.blue.twilight" version="1.0.4" name="Blue Twilight" provider-name="heppen">
+<addon id="skin.blue.twilight" version="1.0.5" name="Blue Twilight" provider-name="heppen">
   <requires>
     <import addon="xbmc.gui" version="5.15.0"/>
     <import addon="script.skinshortcuts" version="1.1.5"/>
@@ -12,7 +12,7 @@
     <res width="1920" height="1080" aspect="16:9" default="true" folder="xml"/>
   </extension>
   <extension point="xbmc.addon.metadata">
-    <news>1.0.4[CR]Improved: Homescreen performance by reducing some animations[CR]Removed: Fade effect from widgets[CR]Fixed: Homescreen windowopen/windowclose animations[CR]Fixed: Widgets gap[CR]Fixed: Object_Item_Showcase[CR]Added: Ratings to Object_Item_Showcase[CR]Some improvements to Object_Item_Showcase[CR]Removed: Old ratings references (+other old chunks)Changed: font_flag to font_tiny_hintlabel[CR]Added: Left/Right arrows to widget section[CR]Changed: "Local banners" to "Header widgets"[CR]Fixed: Poster showcase view[CR]Changed: Localization[CR]Fixed: Localize for Custom_1150_osdMenu[CR]Fixed: Flix view content, visible condition[CR]Fixed: DefaultControl in OSD[CR]Fixed: View_51_Poster for current Object_Item_Showcase[CR]Fixed: Enable Trailers in background only when expose is enabled[CR]Fixed: DialogAddonSettings grouplist height[CR]Fixed: Play background trailer only with Expose enabled[CR]Some fixes to Object_Info_Line[CR]Fixed: Object_Video_Info_Line top margin[CR]Fixed: Object_Info_First_Line[CR]1.0.3[CR]Fixed: PVR progressbar transparency[CR]Improved home screen animations[CR]Improved: Mouse support on Home screen[CR]Changed: font_menu style and aspect[CR]1.0.2[CR]Some fixes to Template.xml[CR]Fixed: Searchlist widget animation[CR]Fixed: Object_Widget_Label[CR]Added: Progressbar to Local banners when PVR widget is focused[CR]1.0.1[CR]Removed: Some garbage code[CR]Fixed: DialogVideoInfo layout[CR]Show buttons area only when Expose is enabled[CR]Removed: Useless button[CR]Fixed: Ratings position in Flix view[CR]Fixed: Blur onload[CR]Some tweaks to main menu[CR]Added: Clearlogo over fanart + option to disable this[CR]1.0.0~alpha[CR]Alpha release.</news>
+    <news>1.0.5[CR]Fixed: Stop button trigerring in LiveTV OSD[CR]Rewrite FirstExpose logic and add blur to it[CR]Fixed: Object_Item_Showcase in InfoDialog[CR]Fixed: InfoDialog background[CR]Fixed: Blur in Expose 2[CR]Changed: Animation time in InfoDialog[CR]Changes to First level of Expose[CR]Fixed: ListItem.Rating in Expose view[CR]Small tweaks to SecondExpose</news>
     <summary lang="en_GB">Simple. Lightweight. Elegant. That's all you need to enjoy Kodi.</summary>
     <summary lang="pl_PL">Prosto. Lekko. Elegancko. To wszystko czego potrzebujesz do rozrywki z Kodi.</summary>
     <description lang="en_GB">The skin is designed to allow the user to focus on media consumption. It provides many innovative solutions that every movie lover will appreciate.</description>

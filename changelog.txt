@@ -1,3 +1,13 @@
+1.0.5
+  Fixed: Stop button trigerring in LiveTV OSD
+  Rewrite FirstExpose logic and add blur to it
+  Fixed: Object_Item_Showcase in InfoDialog
+  Fixed: InfoDialog background
+  Fixed: Blur in Expose 2
+  Changed: Animation time in InfoDialog
+  Changes to First level of Expose
+  Fixed: ListItem.Rating in Expose view
+  Small tweaks to SecondExpose
 1.0.4
   Improved: Homescreen performance by reducing some animations
   Removed: Fade effect from widgets
