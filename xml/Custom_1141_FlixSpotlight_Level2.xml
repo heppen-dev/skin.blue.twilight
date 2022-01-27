@@ -2,8 +2,7 @@
 <window type="dialog" id="1141">
   <animation effect="fade" start="0" end="100" time="400" delay="300" tween="quadratic" condition="Window.IsActive(1141)">WindowOpen</animation>
   <defaultcontrol always="true">5999</defaultcontrol>
-  <!-- <onload>RunScript(plugin.video.themoviedb.helper,blur_image=$VAR[MediaFanartVar])</onload> -->
-  <!-- TODO: Add blur later... -->
+  <onload>SetProperty(TMDbHelper.Blur.Fallback,$INFO[Window(home).Property(spotlight_Fanart)],Home)</onload>
   <controls>
     <control type="group">
       <control type="image">
