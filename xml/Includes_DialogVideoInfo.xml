@@ -31,7 +31,7 @@
             <bordersize>22</bordersize>
           </control>
         </control>
-        <animation effect="slide" start="0" end="0,-2000" time="400" easing="inout" condition="ControlGroup(100).HasFocus">Conditional</animation>
+        <animation effect="slide" start="0" end="0,-2000" time="200" easing="inout" condition="ControlGroup(100).HasFocus">Conditional</animation>
         <control type="grouplist" id="99">
           <top>970</top>
           <align>center</align>
@@ -88,7 +88,7 @@
       </control>
       <control type="group">
         <left>620</left>
-        <animation effect="slide" start="0" end="0,-2000" time="400" easing="inout" condition="ControlGroup(100).HasFocus">Conditional</animation>
+        <animation effect="slide" start="0" end="0,-2000" time="200" easing="inout" condition="ControlGroup(100).HasFocus">Conditional</animation>
         <control type="grouplist">
           <orientation>vertical</orientation>
           <include content="Object_Item_Showcase">
@@ -116,7 +116,7 @@
         <width>1920</width>
         <itemgap>0</itemgap>
         <orientation>vertical</orientation>
-        <animation effect="slide" start="0,0" end="0,1080" time="400" tween="cubic" easing="inout" condition="!ControlGroup(100).HasFocus">Conditional</animation>
+        <animation effect="slide" start="0,0" end="0,1080" time="200" tween="cubic" easing="inout" condition="!ControlGroup(100).HasFocus">Conditional</animation>
         <include content="InfoDialogLabel">
           <param name="groupid" value="1051"/>
           <param name="id" value="50"/>
