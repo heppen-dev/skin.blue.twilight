@@ -2175,6 +2175,7 @@
     <onclick condition="$PARAM[include_condition]">SetProperty(spotlight_Label,"$INFO[ListItem.Label]",home)</onclick>
     <onclick condition="$PARAM[include_condition]">SetProperty(spotlight_DBID,"$INFO[ListItem.DBID]",home)</onclick>
     <onclick condition="$PARAM[include_condition]">SetProperty(spotlight_DBType,"$INFO[ListItem.DBType]",home)</onclick>
+    <onclick condition="$PARAM[include_condition]">SetProperty(Expose_ListItem_Rating,"$INFO[ListItem.Rating]",home)</onclick>
     <onclick condition="$PARAM[include_condition]">SetProperty(Expose_ListItem_Premiered,"$INFO[ListItem.Premiered]",home)</onclick>
     <onclick condition="$PARAM[include_condition]">SetProperty(Expose_ListItem_Duration,"$INFO[ListItem.Duration]",home)</onclick>
     <onclick condition="$PARAM[include_condition]">SetProperty(Expose_ListItem_EndTime,"$INFO[ListItem.EndTime]",home)</onclick>
