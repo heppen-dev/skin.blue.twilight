@@ -16,6 +16,7 @@
       </control>
       <control type="group" id="5600">
         <control type="group">
+          <top>90</top>
           <left>350</left>
           <include content="Object_Item_Showcase">
             <param name="title" value="$INFO[Window(home).Property(spotlight_Title)]"/>
@@ -47,13 +48,13 @@
             <align>left</align>
             <aligny>center</aligny>
             <font>font_small_header</font>
-            <visible>!String.IsEmpty(Window(home).Property(spotlight_Director))</visible>
+            <visible>!String.IsEmpty(Window(home).Property(Expose_ListItem_Director))</visible>
           </control>
           <control type="label">
             <width>auto</width>
             <height>35</height>
             <scroll>false</scroll>
-            <label>$INFO[Window(home).Property(spotlight_Director)]</label>
+            <label>$INFO[Window(home).Property(Expose_ListItem_Director)]</label>
             <align>left</align>
             <aligny>center</aligny>
             <font>font_tiny_hintlabel</font>
@@ -66,13 +67,13 @@
             <align>left</align>
             <aligny>center</aligny>
             <font>font_small_header</font>
-            <visible>!String.IsEmpty(Window(home).Property(spotlight_Cast))</visible>
+            <visible>!String.IsEmpty(Window(home).Property(Expose_ListItem_Cast))</visible>
           </control>
           <control type="label">
             <width>auto</width>
             <height>215</height>
             <scroll>false</scroll>
-            <label>$INFO[Window(home).Property(spotlight_Cast)]</label>
+            <label>$INFO[Window(home).Property(Expose_ListItem_Cast)]</label>
             <align>left</align>
             <aligny>center</aligny>
             <font>font_tiny_hintlabel</font>
@@ -85,13 +86,13 @@
             <align>left</align>
             <aligny>center</aligny>
             <font>font_small_header</font>
-            <visible>!String.IsEmpty(Window(home).Property(spotlight_Writer))</visible>
+            <visible>!String.IsEmpty(Window(home).Property(Expose_ListItem_Writer))</visible>
           </control>
           <control type="label">
             <width>auto</width>
             <height>35</height>
             <scroll>false</scroll>
-            <label>$INFO[Window(home).Property(spotlight_Writer)]</label>
+            <label>$INFO[Window(home).Property(Expose_ListItem_Writer)]</label>
             <align>left</align>
             <aligny>center</aligny>
             <font>font_tiny_hintlabel</font>

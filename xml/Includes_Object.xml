@@ -3,6 +3,7 @@
   <include name="Object_Wall_Events">
     <definition>
       <!-- trailers -->
+      <onfocus>SetProperty(TMDbHelper.WidgetContainer,$PARAM[id],Home)</onfocus>
       <onclick condition="[String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE, tvshow)] + Control.HasFocus($PARAM[id]) + [Skin.HasSetting(BackgroundPlayingTrailers) + Skin.HasSetting(Expose)] + !Player.HasVideo + !String.IsEmpty(ListItem.Trailer)">AlarmClock(trailerdelay,PlayMedia($ESCINFO[ListItem.Trailer],1),00:01,silent)</onclick>
       <onclick condition="[String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE, tvshow)] + Control.HasFocus($PARAM[id]) + [Skin.HasSetting(BackgroundPlayingTrailers) + Skin.HasSetting(Expose)] + !Player.HasVideo + String.IsEmpty(ListItem.Trailer) + !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Trailer))">AlarmClock(trailerdelay,PlayMedia($ESCINFO[Window(Home).Property(TMDbHelper.ListItem.Trailer)],1),00:01,silent)</onclick>
       <onclick condition="[[String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE, tvshow)] + [Skin.HasSetting(BackgroundPlayingTrailers) + Skin.HasSetting(Expose)] + String.IsEmpty(ListItem.Trailer) + String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Trailer))] + !Skin.HasSetting(DontShowNotificationANT)">Notification($LOCALIZE[31389], $LOCALIZE[31390])</onclick>
@@ -169,7 +170,6 @@
         <onup>SetFocus(2999)</onup>
         <onback>9000</onback>
         <centerleft>50%</centerleft>
-        <onfocus>SetProperty(TMDbHelper.WidgetContainer,$PARAM[id],home)</onfocus>
         <animation effect="slide" end="0,15" time="0" reversible="true" condition="true">Conditional</animation>
         <!-- Wall events -->
         <include content="Object_Wall_Events">
@@ -209,7 +209,6 @@
         <onup>SetFocus(2999)</onup>
         <onback>9000</onback>
         <centerleft>50%</centerleft>
-        <onfocus>SetProperty(TMDbHelper.WidgetContainer,$PARAM[id],home)</onfocus>
         <!-- Wall events -->
         <include content="Object_Wall_Events">
           <param name="id" value="$PARAM[id]"/>
@@ -243,7 +242,6 @@
         <width>2800</width>
         <height>300</height>
         <focusposition>1</focusposition>
-        <onfocus>SetProperty(TMDbHelper.WidgetContainer,$PARAM[id],home)</onfocus>
         <!-- Wall events -->
         <include content="Object_Wall_Events">
           <param name="id" value="$PARAM[id]"/>
