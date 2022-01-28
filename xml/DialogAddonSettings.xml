@@ -16,11 +16,10 @@
       </include>
       <control type="group">
         <control type="image">
-          <description>Dialog Header image</description>
           <left>427</left>
           <top>120</top>
           <width>1</width>
-          <height>950</height>
+          <height>880</height>
           <texture colordiffuse="main_fg_30">common/white.png</texture>
         </control>
       </control>
@@ -36,7 +35,7 @@
         <left>0</left>
         <top>120</top>
         <width>427</width>
-        <height>750</height>
+        <height>675</height>
         <itemgap>0</itemgap>
         <orientation>vertical</orientation>
         <onleft>9000</onleft>
@@ -68,7 +67,7 @@
         <left>427</left>
         <top>120</top>
         <width>1500</width>
-        <height>750</height>
+        <height>675</height>
         <pagecontrol>60</pagecontrol>
         <onleft>3</onleft>
         <onright>60</onright>
@@ -77,12 +76,13 @@
       </control>
       <control type="textbox" id="6">
         <description>description area</description>
-        <left>450</left>
-        <top>925</top>
-        <right>50</right>
-        <height>60</height>
+        <top>10</top>
+        <right>20</right>
+        <width>1100</width>
+        <height>70</height>
         <font>font12</font>
-        <align>justify</align>
+        <align>right</align>
+        <aligny>center</aligny>
         <textcolor>$VAR[ColorHighlight]</textcolor>
         <autoscroll time="3000" delay="5000" repeat="5000">true</autoscroll>
       </control>
@@ -113,7 +113,7 @@
       </control>
       <control type="grouplist" id="9000">
         <left>445</left>
-        <top>1000</top>
+        <top>925</top>
         <orientation>horizontal</orientation>
         <width>1480</width>
         <height>300</height>
@@ -121,7 +121,7 @@
         <onup>5</onup>
         <onleft>20</onleft>
         <onright>20</onright>
-        <align>left</align>
+        <align>center</align>
         <include content="DefaultDialogButton">
           <param name="id" value="28"/>
           <param name="label" value=""/>
@@ -137,9 +137,7 @@
       </control>
       <control type="group">
         <depth>DepthContentPanel</depth>
-        <!-- <include>OpenClose_Bottom</include> -->
-        <top>995</top>
-        <!-- <left>-25</left> -->
+        <top>925</top>
         <include content="DefaultSettingButtonGradient">
           <param name="id" value="8800"/>
           <top>0</top>
@@ -156,6 +154,7 @@
             <width>427</width>
             <height>75</height>
             <aligny>center</aligny>
+            <align>center</align>
             <onclick>SettingsLevelChange</onclick>
             <textoffsetx>100</textoffsetx>
             <textoffsety>0</textoffsety>
@@ -176,7 +175,7 @@
         <left>1910</left>
         <top>120</top>
         <width>12</width>
-        <height>750</height>
+        <height>675</height>
         <orientation>vertical</orientation>
         <onleft>5</onleft>
         <onright>9000</onright>
