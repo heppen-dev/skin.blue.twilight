@@ -91,17 +91,6 @@
             <onclick>Skin.ToggleSetting(HidePlot)</onclick>
             <selected>Skin.HasSetting(HidePlot)</selected>
           </control>
-          <control type="button" id="615" description="Switch rating icons colour">
-            <include>DefaultSettingButton</include>
-            <label>$LOCALIZE[31293]</label>
-            <label2>$INFO[Skin.String(icons.label)]</label2>
-
-            <onclick condition="String.IsEmpty(Skin.String(Icons)) | String.IsEqual(Skin.String(Icons),colorful)">Skin.SetString(Icons, monochrome)</onclick>
-            <onclick condition="String.IsEmpty(Skin.String(Icons)) | String.IsEqual(Skin.String(Icons),colorful)">Skin.SetString(icons.label, $LOCALIZE[31294])</onclick>
-
-            <onclick condition="!String.IsEqual(Skin.String(Icons),colorful)">Skin.SetString(Icons, colorful)</onclick>
-            <onclick condition="!String.IsEqual(Skin.String(Icons),colorful)">Skin.SetString(icons.label, $LOCALIZE[31295])</onclick>
-          </control>
           <control type="radiobutton" id="617" description="Clearlogo">
             <label>$LOCALIZE[31402]</label>
             <include>DefaultSettingButton</include>
