@@ -278,12 +278,12 @@
   </include>
   <include name="MediaMenuBackground">
     <control type="image">
-      <top>-24</top>
-      <bottom>-24</bottom>
-      <left>-24</left>
-      <right>-24</right>
+      <top>-18</top>
+      <bottom>-18</bottom>
+      <left>-18</left>
+      <right>-18</right>
       <bordertexture border="32">common/shadow-dialog-24.png</bordertexture>
-      <bordersize>24</bordersize>
+      <bordersize>18</bordersize>
       <texture border="16" colordiffuse="dialog_bg_100">common/dialog.png</texture>
     </control>
   </include>
@@ -291,7 +291,7 @@
     <definition>
       <control type="group">
         <nested />
-        <top>75</top>
+        <top>0</top>
         <centerleft>50%</centerleft>
         <height>720</height>
         <width>450</width>
