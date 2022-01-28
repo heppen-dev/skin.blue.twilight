@@ -58,22 +58,20 @@
       </control>
       <control type="group">
         <control type="image">
-          <description>Dialog Header image</description>
           <left>99</left>
           <top>110</top>
           <width>1</width>
           <height>910</height>
-          <texture colordiffuse="main_fg_30">common/white.png</texture>
+          <texture colordiffuse="main_fg_12">common/white.png</texture>
         </control>
       </control>
       <control type="group">
         <control type="image">
-          <description>Dialog Header image</description>
           <left>650</left>
           <top>110</top>
           <width>1</width>
           <height>910</height>
-          <texture colordiffuse="main_fg_30">common/white.png</texture>
+          <texture colordiffuse="main_fg_12">common/white.png</texture>
         </control>
       </control>
       <control type="list" id="211">
