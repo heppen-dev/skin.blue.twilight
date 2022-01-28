@@ -1,3 +1,10 @@
+1.0.6
+    Some small tweaks to DialogAddonSettings
+    Some small tweaks to Object_Item_Showcase
+    Fixed: Width for badge in Object_Info_First_Line
+    Removed: Unused setting from skinsettings (switch ratings colour)
+    Changed: SearchList widgets
+    Added: Marker below submenu
 1.0.5
   Fixed: Stop button trigerring in LiveTV OSD
   Rewrite FirstExpose logic and add blur to it

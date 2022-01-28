@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.blue.twilight" version="1.0.5" name="Blue Twilight" provider-name="heppen">
+<addon id="skin.blue.twilight" version="1.0.6" name="Blue Twilight" provider-name="heppen">
   <requires>
     <import addon="xbmc.gui" version="5.15.0"/>
     <import addon="script.skinshortcuts" version="1.1.5"/>
@@ -12,7 +12,7 @@
     <res width="1920" height="1080" aspect="16:9" default="true" folder="xml"/>
   </extension>
   <extension point="xbmc.addon.metadata">
-    <news>1.0.5[CR]Fixed: Stop button trigerring in LiveTV OSD[CR]Rewrite FirstExpose logic and add blur to it[CR]Fixed: Object_Item_Showcase in InfoDialog[CR]Fixed: InfoDialog background[CR]Fixed: Blur in Expose 2[CR]Changed: Animation time in InfoDialog[CR]Changes to First level of Expose[CR]Fixed: ListItem.Rating in Expose view[CR]Small tweaks to SecondExpose</news>
+    <news>1.0.6[CR]Some small tweaks to DialogAddonSettings[CR]Some small tweaks to Object_Item_Showcase[CR]Fixed: Width for badge in Object_Info_First_Line[CR]Removed: Unused setting from skinsettings (switch ratings colour)[CR]Changed: SearchList widgets[CR]Added: Marker below submenu</news>
     <summary lang="en_GB">Simple. Lightweight. Elegant. That's all you need to enjoy Kodi.</summary>
     <summary lang="pl_PL">Prosto. Lekko. Elegancko. To wszystko czego potrzebujesz do rozrywki z Kodi.</summary>
     <description lang="en_GB">The skin is designed to allow the user to focus on media consumption. It provides many innovative solutions that every movie lover will appreciate.</description>
