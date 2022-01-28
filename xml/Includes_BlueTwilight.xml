@@ -149,7 +149,7 @@
           <param name="title_width" value="1000" />
           <param name="clearlogo_top_margin" value="200"/>
           <param name="plot" value="$VAR[Label_PlotTextBoxVar]"/>
-          <param name="visible" value="ControlGroup(3000).HasFocus + !Container(7501).IsUpdating + !String.StartsWith(ListItem.FolderPath,favourites://)"/>
+          <param name="visible" value="ControlGroup(3000).HasFocus + !String.StartsWith(ListItem.FolderPath,favourites://)"/>
         </include>
         <animation effect="fade" time="200" start="0" end="100" condition="ControlGroup(3000).HasFocus + !ControlGroup(2999).HasFocus">Conditional</animation>
         <animation effect="fade" time="200" end="0" start="100" condition="$EXP[FirstExpose] | $EXP[SecondExpose]">Conditional</animation>

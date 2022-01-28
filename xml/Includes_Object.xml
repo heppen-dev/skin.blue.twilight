@@ -461,14 +461,13 @@
         <control type="group">
           <top>8</top>
           <left>0</left>
-          <width>260</width>
           <control type="image">
             <top>0</top>
-            <width>100%</width>
+            <width>260</width>
             <height>32</height>
             <aspectratio align="left">scale</aspectratio>
             <texture background="true" colordiffuse="ff0fafff">common/badge.png</texture>
-            <visible>$PARAM[visible] + [Integer.IsGreater(ListItem.Rating,1) | Window.IsVisible(home)]</visible>
+            <visible>$PARAM[visible] + Integer.IsGreater(ListItem.Rating,1)</visible>
           </control>
           <include content="Object_Info_Line_Label">
             <param name="label" value="$VAR[PercentageRating]% $LOCALIZE[31384]"/>
@@ -476,14 +475,14 @@
             <param name="textcolor" value="dialog_fg_100"/>
             <param name="divider" value="false"/>
             <param name="fallback" value="N/A"/>
-            <param name="visible" value="$PARAM[visible] + [Integer.IsGreater(ListItem.Rating,1) | Window.IsVisible(home)]"/>
+            <param name="visible" value="$PARAM[visible] + Integer.IsGreater(ListItem.Rating,1)"/>
             <param name="width" value="100%" />
             <param name="height" value="32"/>
             <param name="top" value="0" />
             <param name="left" value="12" />
           </include>
         </control>
-        <control type="label" id="$PARAM[id]">
+        <control type="label">
           <label fallback="N/A">$INFO[ListItem.Year]</label>
           <width>auto</width>
           <height>32</height>
