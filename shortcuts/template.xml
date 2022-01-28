@@ -192,13 +192,13 @@
           <param name="controltype" value="fixedlist"/>
           <param name="label" value="$SKINSHORTCUTS[widgetLabel]"/>
           <param name="groupid" value="$PYTHON[int(id) + 8500]"/>
+          <param name="labelid" value="$PYTHON[int(id) + 7600]"/>
           <param name="image" value="$SKINSHORTCUTS[widgetSourceArt]"/>
           <param name="id" value="$PYTHON[int(id) + 7500]"/>
           <param name="target" value="$SKINSHORTCUTS[widgetTarget]"/>
           <param name="limit" value="$SKINSHORTCUTS[widgetLimit]"/>
           <param name="path" value="$SKINSHORTCUTS[widgetPath]$INFO[Skin.String(SearchTerm)]$SKINSHORTCUTS[widgetPath2]"/>
           <param name="condition" value="true"/>
-          <param name="idtofade" value="$PYTHON[750$SKINSHORTCUTS[id] + int(1)]"/>
         </include>
       </controls>
     </items>
