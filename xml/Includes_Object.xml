@@ -461,6 +461,7 @@
         <control type="group">
           <top>8</top>
           <left>0</left>
+          <width>260</width>
           <control type="image">
             <top>0</top>
             <width>260</width>
