@@ -1337,7 +1337,7 @@
             <include>FullScreenDimensions</include>
             <aspectratio aligny="center">scale</aspectratio>
             <animation effect="fade" time="200" delay="200">Hidden</animation>
-            <texture background="true">common/vignette.png</texture>
+            <texture background="true" colordiffuse="$VAR[vignetteColour]">common/vignette.png</texture>
             <visible>[[ControlGroup(3000).HasFocus | Window.IsVisible(1146)] + [!$EXP[FirstExpose] + !$EXP[SecondExpose]] + !Skin.HasSetting(FullScreenHomeBackground)] + !String.StartsWith(ListItem.FolderPath,favourites://) + !$EXP[infodialog_active]</visible>
           </control>
         </control>

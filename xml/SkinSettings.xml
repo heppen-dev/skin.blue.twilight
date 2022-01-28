@@ -85,6 +85,12 @@
             <onclick>Skin.ToggleSetting(autoscroll)</onclick>
             <selected>Skin.HasSetting(autoscroll)</selected>
           </control>
+          <control type="radiobutton" id="625" description="Black vignette">
+            <label>$LOCALIZE[31433]</label>
+            <include>DefaultSettingButton</include>
+            <onclick>Skin.ToggleSetting(BlackVignette)</onclick>
+            <selected>Skin.HasSetting(BlackVignette)</selected>
+          </control>
           <control type="radiobutton" id="614" description="Hide plot">
             <label>$LOCALIZE[31386]</label>
             <include>DefaultSettingButton</include>

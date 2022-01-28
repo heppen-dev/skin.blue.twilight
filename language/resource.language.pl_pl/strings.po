@@ -1934,3 +1934,8 @@ msgstr "Pokaż nazwę pozycji na lokalnym banerze"
 msgctxt "#31432"
 msgid "Disable Clearlogo over Fanart"
 msgstr "Wyłącz Clearlogo na Fanarcie"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31433"
+msgid "Change vignette colour to black"
+msgstr "Zmień kolor winiety na czarny"

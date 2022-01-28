@@ -35,6 +35,10 @@
     <value condition="!String.IsEqual(Skin.String(PosterHighlight),Highlight)">$LOCALIZE[31377]</value>
     <value>$LOCALIZE[31376]</value>
   </variable>
+  <variable name="vignetteColour">
+    <value condition="Skin.HasSetting(BlackVignette)">ff000000</value>
+    <value></value>
+  </variable>
   <variable name="AlphaPercentage">
     <value condition="String.IsEqual(Skin.String(AlphaValue),100)">FFFFFFFF</value>
     <value condition="String.IsEqual(Skin.String(AlphaValue),95)">F2FFFFFF</value>
