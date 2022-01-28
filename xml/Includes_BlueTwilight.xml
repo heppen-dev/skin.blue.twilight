@@ -91,11 +91,11 @@
               </control>
               <control type="image">
                 <left>0</left>
-                <top>0</top>
+                <top>90</top>
                 <height>5</height>
                 <width>240</width>
                 <texture colordiffuse="ffffffff">common/white.png</texture>
-                <visible>Control.HasFocus(9000)</visible>
+                <visible>Control.HasFocus(9001)</visible>
               </control>
             </control>
           </focusedlayout>
