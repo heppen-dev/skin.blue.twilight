@@ -441,6 +441,60 @@
       </control>
     </definition>
   </include>
+  <include name="Object_Item_Expose">
+    <param name="top" default="30"/>
+    <param name="left" default="100"/>
+    <param name="percentageinfo_line_top" default="200"/>
+    <param name="mediaflags_line_top" default="250"/>
+    <param name="videoinfo_line_top" default="460"/>
+    <param name="plot_top" default="320"/>
+    <param name="plot_height" default="125"/>
+    <param name="title_visible" default="true" />
+    <param name="cl_visible" default="true"/>
+    <definition>
+      <control type="group">
+        <top>$PARAM[top]</top>
+        <left>$PARAM[left]</left>
+        <visible>$PARAM[visible]</visible>
+        <control type="grouplist">
+          <itemgap>6</itemgap>
+          <orientation>vertical</orientation>
+          <width>$PARAM[title_width]</width>
+          <control type="label">
+            <textcolor>$VAR[TitleColour]</textcolor>
+            <label>$PARAM[title]</label>
+            <font>font_title</font>
+            <width>700</width>
+            <height>155</height>
+            <aligny>center</aligny>
+            <visible>[[String.IsEmpty(ListItem.Art(clearlogo)) + String.IsEmpty(ListItem.Art(tvshow.clearlogo))] | Skin.HasSetting(DisableClearlogo)] + [!Control.HasFocus(9000) + !Control.HasFocus(9001)]</visible>
+            <visible>$PARAM[title_visible]</visible>
+          </control>
+          <control type="image">
+            <width>580</width>
+            <height>155</height>
+            <aspectratio align="left">keep</aspectratio>
+            <texture background="true">$VAR[Image_ClearLogo]</texture>
+            <visible>[[!String.IsEmpty(ListItem.Art(clearlogo)) | !String.IsEmpty(ListItem.Art(tvshow.clearlogo))] + !Skin.HasSetting(DisableClearlogo)]</visible>
+            <visible>$PARAM[cl_visible]</visible>
+          </control>
+          <include content="Object_Info_First_Line">
+            <param name="visible" value="$PARAM[visible]" />
+          </include>
+          <control type="textbox">
+            <width>720</width>
+            <height>$PARAM[plot_height]</height>
+            <textcolor>white</textcolor>
+            <label>$PARAM[plot]</label>
+            <font>font_plot_normal</font>
+            <shadowcolor>black</shadowcolor>
+            <autoscroll delay="4000" time="4500" repeat="7000">Skin.HasSetting(autoscroll)</autoscroll>
+            <visible>!Skin.HasSetting(HidePlot)</visible>
+          </control>
+        </control>
+      </control>
+    </definition>
+  </include>
   <include name="Object_Info_Line_Label">
     <param name="visible" default="true"/>
     <param name="fallback" default=""/>
@@ -484,7 +538,7 @@
             <height>32</height>
             <aspectratio align="left">scale</aspectratio>
             <texture background="true" colordiffuse="ff0fafff">common/badge.png</texture>
-            <visible>$PARAM[visible] + Integer.IsGreater(ListItem.Rating,1)</visible>
+            <visible>$PARAM[visible] + [Integer.IsGreater(ListItem.Rating,1) | Integer.IsGreater(Window(home).Property(Expose_ListItem_Rating),1)]</visible>
           </control>
           <include content="Object_Info_Line_Label">
             <param name="label" value="$VAR[PercentageRating]% $LOCALIZE[31384]"/>
@@ -492,7 +546,7 @@
             <param name="textcolor" value="dialog_fg_100"/>
             <param name="divider" value="false"/>
             <param name="fallback" value="N/A"/>
-            <param name="visible" value="$PARAM[visible] + Integer.IsGreater(ListItem.Rating,1)"/>
+            <param name="visible" value="$PARAM[visible] + [Integer.IsGreater(ListItem.Rating,1) | Integer.IsGreater(Window(home).Property(Expose_ListItem_Rating),1)]"/>
             <param name="width" value="100%" />
             <param name="height" value="32"/>
             <param name="top" value="0" />
@@ -508,10 +562,10 @@
           <align>center</align>
           <font>font_tiny_hintlabel</font>
           <textcolor>dialog_fg_100</textcolor>
-          <visible>!String.IsEmpty(ListItem.Year) + $PARAM[visible] + Integer.IsGreater(ListItem.Rating,1)</visible>
+          <visible>!String.IsEmpty(ListItem.Year) + $PARAM[visible] + Integer.IsGreater(ListItem.Rating,1) + ![$EXP[FirstExpose] + $EXP[SecondExpose]]</visible>
         </control>
         <control type="label" id="$PARAM[id]">
-          <label fallback="N/A">$INFO[Window(home).Property(spotlight_Year)]</label>
+          <label fallback="N/A">$INFO[Window(home).Property(Expose_ListItem_Year)]</label>
           <width>auto</width>
           <height>32</height>
           <top>12</top>
@@ -519,13 +573,12 @@
           <align>center</align>
           <font>font_tiny_hintlabel</font>
           <textcolor>dialog_fg_100</textcolor>
-          <visible>!String.IsEmpty(Window(home).Property(spotlight_Year)) + [$EXP[FirstExpose] | $EXP[SecondExpose]]</visible>
-          <animation effect="slide" end="-277,0" time="0" condition="$PARAM[visible] + !Integer.IsGreater(ListItem.Rating,1)">Conditional</animation>
+          <visible>!String.IsEmpty(Window(home).Property(Expose_ListItem_Year)) + $PARAM[visible] + Integer.IsGreater(Window(home).Property(Expose_ListItem_Rating),1)  + [$EXP[FirstExpose] | $EXP[SecondExpose]]</visible>
         </control>
         <control type="group">
           <top>-6</top>
           <left>0</left>
-          <animation effect="slide" end="-277,0" time="0" condition="$PARAM[visible] + !Integer.IsGreater(ListItem.Rating,1)">Conditional</animation>
+          <animation effect="slide" end="-277,0" time="0" condition="$PARAM[visible] + ![Integer.IsGreater(ListItem.Rating,1) | Integer.IsGreater(Window(home).Property(Expose_ListItem_Rating),1)]">Conditional</animation>
           <include content="MediaFlags" condition="!$EXP[FirstExpose] + !$EXP[SecondExpose]"/>
           <include content="MediaFlags_Expose" condition="$EXP[FirstExpose] | $EXP[SecondExpose]">
             <param name="visible" value="$EXP[FirstExpose] | $EXP[SecondExpose]"/>

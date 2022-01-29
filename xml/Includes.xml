@@ -2181,6 +2181,7 @@
     <onclick condition="$PARAM[include_condition]">SetProperty(Expose_ListItem_Cast,"$INFO[ListItem.Cast]",home)</onclick>
     <onclick condition="$PARAM[include_condition]">SetProperty(Expose_ListItem_Writer,"$INFO[ListItem.Writer]",home)</onclick>
     <onclick condition="$PARAM[include_condition]">SetProperty(Expose_ListItem_Rating,"$INFO[ListItem.Rating]",home)</onclick>
+    <onclick condition="$PARAM[include_condition]">SetProperty(Expose_ListItem_Year,"$INFO[ListItem.Year]",home)</onclick>
     <onclick condition="$PARAM[include_condition]">SetProperty(Expose_ListItem_Premiered,"$INFO[ListItem.Premiered]",home)</onclick>
     <onclick condition="$PARAM[include_condition]">SetProperty(Expose_ListItem_Duration,"$INFO[ListItem.Duration]",home)</onclick>
     <onclick condition="$PARAM[include_condition]">SetProperty(Expose_ListItem_EndTime,"$INFO[ListItem.EndTime]",home)</onclick>

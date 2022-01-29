@@ -19,7 +19,7 @@
       </control>
       <control type="group">
         <top>120</top>
-        <include content="Object_Item_Showcase">
+        <include content="Object_Item_Expose">
           <param name="title" value="$INFO[Window(home).Property(Expose_ListItem_Title)]"/>
           <param name="title_width" value="1000" />
           <param name="clearlogo_top_margin" value="200"/>
