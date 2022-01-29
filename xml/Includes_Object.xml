@@ -511,12 +511,12 @@
           <font>font_tiny_hintlabel</font>
           <textcolor>dialog_fg_100</textcolor>
           <visible>!String.IsEmpty(Window(home).Property(spotlight_Year)) + [$EXP[FirstExpose] | $EXP[SecondExpose]]</visible>
-          <animation effect="slide" end="-280,0" time="0" condition="$PARAM[visible] + !Integer.IsGreater(ListItem.Rating,1)">Conditional</animation>
+          <animation effect="slide" end="-277,0" time="0" condition="$PARAM[visible] + !Integer.IsGreater(ListItem.Rating,1)">Conditional</animation>
         </control>
         <control type="group">
           <top>-6</top>
           <left>0</left>
-          <animation effect="slide" end="-280,0" time="0" condition="$PARAM[visible] + !Integer.IsGreater(ListItem.Rating,1)">Conditional</animation>
+          <animation effect="slide" end="-277,0" time="0" condition="$PARAM[visible] + !Integer.IsGreater(ListItem.Rating,1)">Conditional</animation>
           <include content="MediaFlags" condition="!$EXP[FirstExpose] + !$EXP[SecondExpose]"/>
           <include content="MediaFlags_Expose" condition="$EXP[FirstExpose] | $EXP[SecondExpose]">
             <param name="visible" value="$EXP[FirstExpose] | $EXP[SecondExpose]"/>
