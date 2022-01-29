@@ -1,3 +1,21 @@
+1.0.7
+    Added: Option to change vignette colour to black
+    Changed: Dialog separator colordiffuse
+    Changed: Small tweaks to MediaMenu background
+    Fixed: Widgets behavior when empty widgets are between
+    Fixed: SearchList layout
+    Fixed: Empty space when no rating badge is present in Object_Item_Showcase
+    Fixed: Percentage rating on OSD aligny
+    Fixed: Shadow spot in Expose first level
+    Added: Watched indicators to home screen
+    Some tweaks to Expose view
+    Fixed: ClearProperties of Expose view
+    Small visual tweaks to main menu
+    Added: Movies Hub (initial commit - to test it go to customize main menu, set your menu entry to Common > Movies Hub)
+    Some tweaks related to Movies Hub
+    Added: Option to set unique background for each menu category
+    Added: Movies Hub to Common shortcuts list
+    Fixed: Background variable
 1.0.6
     Some small tweaks to DialogAddonSettings
     Some small tweaks to Object_Item_Showcase
@@ -6,56 +24,54 @@
     Changed: SearchList widgets
     Added: Marker below submenu
 1.0.5
-  Fixed: Stop button trigerring in LiveTV OSD
-  Rewrite FirstExpose logic and add blur to it
-  Fixed: Object_Item_Showcase in InfoDialog
-  Fixed: InfoDialog background
-  Fixed: Blur in Expose 2
-  Changed: Animation time in InfoDialog
-  Changes to First level of Expose
-  Fixed: ListItem.Rating in Expose view
-  Small tweaks to SecondExpose
+    Fixed: Stop button trigerring in LiveTV OSD
+    Rewrite FirstExpose logic and add blur to it
+    Fixed: Object_Item_Showcase in InfoDialog
+    Fixed: InfoDialog background
+    Fixed: Blur in Expose 2
+    Changed: Animation time in InfoDialog
+    Changes to First level of Expose
+    Fixed: ListItem.Rating in Expose view
+    Small tweaks to SecondExpose
 1.0.4
-  Improved: Homescreen performance by reducing some animations
-  Removed: Fade effect from widgets
-  Fixed: Homescreen windowopen/windowclose animations
-  Fixed: Widgets gap
-  Fixed: Object_Item_Showcase
-  Added: Ratings to Object_Item_Showcase
-  Some improvements to Object_Item_Showcase
-  Removed: Old ratings references (+other old chunks)Changed: font_flag to font_tiny_hintlabel
-  Added: Left/Right arrows to widget section
-  Changed: "Local banners" to "Header widgets"
-  Fixed: Poster showcase view
-  Changed: Localization
-  Fixed: Localize for Custom_1150_osdMenu
-  Fixed: Flix view content, visible condition
-  Fixed: DefaultControl in OSD
-  Fixed: View_51_Poster for current Object_Item_Showcase
-  Fixed: Enable Trailers in background only when expose is enabled
-  Fixed: DialogAddonSettings grouplist height
-  Fixed: Play background trailer only with Expose enabled
-  Some fixes to Object_Info_Line
-  Fixed: Object_Video_Info_Line top margin
-  Fixed: Object_Info_First_Line
+    Improved: Homescreen performance by reducing some animations
+    Removed: Fade effect from widgets
+    Fixed: Homescreen windowopen/windowclose animations
+    Fixed: Widgets gap
+    Fixed: Object_Item_Showcase
+    Added: Ratings to Object_Item_Showcase
+    Some improvements to Object_Item_Showcase
+    Removed: Old ratings references (+other old chunks)Changed: font_flag to font_tiny_hintlabel
+    Added: Left/Right arrows to widget section
+    Changed: "Local banners" to "Header widgets"
+    Fixed: Poster showcase view
+    Changed: Localization
+    Fixed: Localize for Custom_1150_osdMenu
+    Fixed: Flix view content, visible condition
+    Fixed: DefaultControl in OSD
+    Fixed: View_51_Poster for current Object_Item_Showcase
+    Fixed: Enable Trailers in background only when expose is enabled
+    Fixed: DialogAddonSettings grouplist height
+    Fixed: Play background trailer only with Expose enabled
+    Some fixes to Object_Info_Line
+    Fixed: Object_Video_Info_Line top margin
+    Fixed: Object_Info_First_Line
 1.0.3
-  Fixed: PVR progressbar transparency
-  Improved home screen animations
-  Improved: Mouse support on Home screen
-  Changed: font_menu style and aspect
+    Fixed: PVR progressbar transparency
+    Improved home screen animations
+    Improved: Mouse support on Home screen
+    Changed: font_menu style and aspect
 1.0.2
-  Some fixes to Template.xml
-  Fixed: Searchlist widget animation
-  Fixed: Object_Widget_Label
-  Added: Progressbar to Local banners when PVR widget is focused
+    Some fixes to Template.xml
+    Fixed: Searchlist widget animation
+    Fixed: Object_Widget_Label
+    Added: Progressbar to Local banners when PVR widget is focused
 1.0.1
-  Removed: Some garbage code
-  Fixed: DialogVideoInfo layout
-  Show buttons area only when Expose is enabled
-  Removed: Useless button
-  Fixed: Ratings position in Flix view
-  Fixed: Blur onload
-  Some tweaks to main menu
-  Added: Clearlogo over fanart + option to disable this
-1.0.0~alpha
-  Alpha release.
+    Removed: Some garbage code
+    Fixed: DialogVideoInfo layout
+    Show buttons area only when Expose is enabled
+    Removed: Useless button
+    Fixed: Ratings position in Flix view
+    Fixed: Blur onload
+    Some tweaks to main menu
+    Added: Clearlogo over fanart + option to disable this
