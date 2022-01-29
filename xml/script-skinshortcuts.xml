@@ -248,6 +248,13 @@
             <include>DialogSettingButton</include>
             <visible>!String.EndsWith(Window.Property(groupname),.1)</visible>
           </control>
+          <control type="button" id="310" description="Background">
+            <label>$LOCALIZE[32045]</label>
+            <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+            <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
+            <include>DialogSettingButton</include>
+            <visible>!String.EndsWith(Window.Property(groupname),.1)</visible>
+          </control>
           <control type="label" id="614">
             <textoffsetx>30</textoffsetx>
             <width>470</width>
