@@ -115,7 +115,7 @@
       <control type="grouplist" id="$PARAM[labelid]">
         <orientation>horizontal</orientation>
         <itemgap>32</itemgap>
-        <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,0) | Container($PARAM[id]).IsUpdating</visible>
+        <visible allowhiddenfocus="true">Integer.IsGreater(Container($PARAM[id]).NumItems,0)</visible>
         <animation effect="slide" end="185,0" time="0" reversible="false" condition="true">Conditional</animation>
         <animation effect="slide" end="-90,0" time="0" reversible="false" condition="Window.IsActive(1121)">Conditional</animation>
         <control type="label">
@@ -125,12 +125,6 @@
           <textcolor>dialog_fg_100</textcolor>
           <font>$PARAM[font]</font>
           <height>24</height>
-        </control>
-        <control type="group">
-          <include content="SmallBusySpinner">
-            <param name="top" value="-10"/>
-          </include>
-          <visible>Container($PARAM[id]).IsUpdating</visible>
         </control>
         <control type="group">
           <include content="ProgressGradient">
@@ -172,6 +166,7 @@
         <onback>9000</onback>
         <centerleft>50%</centerleft>
         <animation effect="slide" end="0,15" time="0" reversible="true" condition="true">Conditional</animation>
+        <visible allowhiddenfocus="true">Integer.IsGreater(Container($PARAM[id]).NumItems,0)</visible>
         <!-- Wall events -->
         <include content="Object_Wall_Events">
           <param name="id" value="$PARAM[id]"/>
@@ -210,6 +205,7 @@
         <onup>SetFocus(2999)</onup>
         <onback>9000</onback>
         <centerleft>50%</centerleft>
+        <visible allowhiddenfocus="true">Integer.IsGreater(Container($PARAM[id]).NumItems,0)</visible>
         <!-- Wall events -->
         <include content="Object_Wall_Events">
           <param name="id" value="$PARAM[id]"/>
@@ -342,6 +338,7 @@
         <height>225</height>
         <centerleft>50%</centerleft>
         <animation effect="slide" end="0,15" time="0" reversible="true" condition="true">Conditional</animation>
+        <visible allowhiddenfocus="true">Integer.IsGreater(Container($PARAM[id]).NumItems,0)</visible>
         <!-- Wall events -->
         <include content="Object_Wall_Events">
           <param name="id" value="$PARAM[id]"/>
