@@ -268,7 +268,7 @@
           <include content="Defs_Pad">
             <param name="pad" value="-8"/>
           </include>
-          <texture colordiffuse="$VAR[ColorWatchedProgress]">$VAR[Defs_PercentPlayed$PARAM[affix],progress/circle/p,.png]</texture>
+          <texture colordiffuse="$VAR[ColorHighlight]">$VAR[Defs_PercentPlayed$PARAM[affix],progress/circle/p,.png]</texture>
           <aspectratio align="center" aligny="center">keep</aspectratio>
         </control>
         <control type="image">
@@ -284,7 +284,7 @@
           <include content="Defs_Pad">
             <param name="pad" value="10"/>
           </include>
-          <texture colordiffuse="$VAR[ColorWatchedProgress]">indicator/checkmark.png</texture>
+          <texture colordiffuse="$VAR[ColorHighlight]">indicator/checkmark.png</texture>
           <visible>!Skin.HasSetting(DisableIndicator.Watched)</visible>
           <visible>String.IsEqual($PARAM[listitem].Overlay,OverlayWatched.png) | [!String.IsEmpty($PARAM[listitem].PlayCount) + !Integer.IsEqual($PARAM[listitem].PlayCount,0) + !String.IsEqual($PARAM[listitem].DBType,song) + !String.IsEqual($PARAM[listitem].DBType,album) + !String.IsEqual($PARAM[listitem].DBType,artist) + !String.IsEqual($PARAM[listitem].DBType,image) + !String.IsEqual($PARAM[listitem].DBType,addon)]</visible>
           <visible>Integer.IsEqual($PARAM[listitem].Property(UnWatchedEpisodes),0) | Skin.HasSetting(DisableIndicator.Episodes)</visible>
