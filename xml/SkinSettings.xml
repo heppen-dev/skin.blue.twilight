@@ -55,16 +55,16 @@
             <include>DefaultSettingButton</include>
             <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=widgets)</onclick>
           </control>
+          <control type="button" id="4011" description="Movies Hub">
+            <label>Movies Hub</label>
+            <include>DefaultSettingButton</include>
+            <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=movieshub)</onclick>
+          </control>
           <control type="radiobutton" id="623" description="Enable labels in widget wall">
             <label>$LOCALIZE[31430]</label>
             <include>DefaultSettingButton</include>
             <onclick>Skin.ToggleSetting(ShowWidgetLabels)</onclick>
             <selected>Skin.HasSetting(ShowWidgetLabels)</selected>
-          </control>
-          <control type="button" id="4011" description="Movies Hub">
-            <label>Movies Hub</label>
-            <include>DefaultSettingButton</include>
-            <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=movieshub)</onclick>
           </control>
           <control type="radiobutton" id="624" description="Show labels on banners">
             <label>$LOCALIZE[31431]</label>

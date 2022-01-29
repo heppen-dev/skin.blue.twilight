@@ -161,7 +161,7 @@
   </variable>
   <variable name="BackgroundOverlay">
     <value condition="[Control.HasFocus(57) | [ControlGroup(3000).HasFocus + !String.StartsWith(ListItem.FolderPath,favourites://)]] + !Skin.HasSetting(FullScreenHomeBackground)">FFFFFFFF</value>
-    <value condition="Window.IsVisible(Home) | Window.IsVisible(1170) | Window.IsVisible(1171)">$VAR[HomeAlphaPercentage]</value>
+    <value condition="Window.IsVisible(Home) | Window.IsVisible(1170)">$VAR[HomeAlphaPercentage]</value>
     <value>$VAR[AlphaPercentage]</value>
   </variable>
   <variable name="ColorsOverlay">
@@ -169,7 +169,7 @@
     <value>$VAR[ColorHighlight]</value>
   </variable>
   <variable name="HighlightOverlay">
-    <value condition="!Window.IsVisible(Home) | Window.IsVisible(1170) | Window.IsVisible(1171)">$VAR[AlphaPercentage]</value>
+    <value condition="!Window.IsVisible(Home)">$VAR[AlphaPercentage]</value>
   </variable>
   <variable name="Horizontal_RightTopbar">
     <value condition="Skin.HasSetting(EnableWeatherInHorizontalTopbar)">$INFO[Weather.Temperature, ,] • $INFO[System.Date,[UPPERCASE],[/UPPERCASE]]</value>

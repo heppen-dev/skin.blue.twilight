@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<window type="window" id="1170">
-  <animation effect="fade" start="0" end="100" time="400" delay="300" tween="quadratic" condition="Window.IsActive(1170)">WindowOpen</animation>
+<window id="1170">
+  <animation effect="fade" start="0" end="100" time="1000" delay="50" tween="quadratic" condition="Window.IsActive(1170)">WindowOpen</animation>
+  <animation effect="fade" start="100" end="0" time="200" delay="50" tween="quadratic">WindowClose</animation>
   <defaultcontrol always="true">9000</defaultcontrol>
+  <backgroundcolor>ff0f171e</backgroundcolor>
   <controls>
     <include>DefaultBackground</include>
+    <include>Visible_Fade</include>
     <control type="group">
       <visible>!$EXP[infodialog_active]</visible>
       <include>Animation_TopSlide_Home</include>
@@ -163,6 +166,15 @@
         <animation effect="fade" time="200" start="0" end="100" condition="ControlGroup(3000).HasFocus + !ControlGroup(2999).HasFocus">Conditional</animation>
         <animation effect="fade" time="200" end="0" start="100" condition="$EXP[FirstExpose] | $EXP[SecondExpose]">Conditional</animation>
       </control>
+    </control>
+    <control type="group">
+      <control type="image">
+        <texture>colors/black.png</texture>
+        <include>FullScreenDimensions</include>
+        <animation effect="fade" start="100" end="70" time="0" condition="true">Conditional</animation>
+      </control>
+      <include>DialogBusy</include>
+      <visible>Container(7501).IsUpdating | Container(7502).IsUpdating | Container(7503).IsUpdating | Container(7504).IsUpdating | Container(7505).IsUpdating | Container(7506).IsUpdating | Container(7507).IsUpdating | Container(7508).IsUpdating | Container(7509).IsUpdating | Container(7510).IsUpdating | Container(7511).IsUpdating | Container(7512).IsUpdating | Container(7513).IsUpdating | Container(7514).IsUpdating | Container(7515).IsUpdating | Container(7516).IsUpdating | Container(7517).IsUpdating | Container(7518).IsUpdating | Container(7519).IsUpdating | Container(7520).IsUpdating</visible>
     </control>
   </controls>
 </window>

@@ -21,20 +21,6 @@
   <onload condition="!Skin.HasSetting(DisableBlur)">Skin.SetBool(TMDbHelper.EnableBlur)</onload>
 
   <controls>
-    <control type="button" id="20000">
-      <include>HiddenObject</include>
-      <animation effect="fade" time="300" start="100" end="0">Focus</animation>
-      <onfocus>SetFocus(2000)</onfocus>
-      <onclick>noop</onclick>
-      <visible allowhiddenfocus="true">Control.HasFocus(20000)</visible>
-    </control>
-    <control type="button" id="20001">
-      <include>HiddenObject</include>
-      <animation effect="fade" time="300" start="100" end="0">Focus</animation>
-      <onfocus>SetFocus(2000)</onfocus>
-      <onclick>noop</onclick>
-      <visible allowhiddenfocus="true">Control.HasFocus(20001)</visible>
-    </control>
     <include>DefaultBackground</include>
     <control type="group">
       <include>Visible_Fade</include>
