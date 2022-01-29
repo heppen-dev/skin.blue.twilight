@@ -240,7 +240,7 @@
         <height>44</height>
         <visible>$PARAM[visible]</visible>
         <include content="WatchedOverlay_Focus">
-          <param name="visible" value="$PARAM[visible]"/>
+          <param name="visible" value="$PARAM[visible] + Control.HasFocus($PARAM[id])"/>
         </include>
         <include content="Object_Control" condition="$PARAM[selected]">
           <param name="type" value="group"/>

@@ -40,6 +40,10 @@
             <visible>String.IsEmpty(ListItem.Art(tvshow.landscape)) + String.IsEmpty(ListItem.Art(landscape)) + !Skin.HasSetting(DisableCLOverFanart)</visible>
           </control>
         </control>
+        <include content="View_WatchedOverlay">
+          <param name="bottom" value="22"/>
+          <param name="right" value="44"/>
+        </include>
       </itemlayout>
       <!-- focused -->
       <focusedlayout height="225" width="315" condition="$PARAM[condition]">
@@ -106,6 +110,11 @@
             <param name="visible" value="$PARAM[condition] + Control.HasFocus($PARAM[id])"/>
           </include>
         </control>
+        <include content="View_WatchedOverlay">
+          <param name="bottom" value="22"/>
+          <param name="right" value="44"/>
+          <param name="id" value="$PARAM[id]"/>
+        </include>
       </focusedlayout>
     </definition>
   </include>
