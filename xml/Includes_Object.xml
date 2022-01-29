@@ -54,6 +54,7 @@
           <onfocus condition="!ListItem.IsFolder">ClearProperty(spotlight_isFolder)</onfocus>
           <onfocus condition="!ListItem.IsCollection">ClearProperty(spotlight_isCollection)</onfocus>
           <onfocus>SetProperty(spotlight_Title,$INFO[ListItem.Title],home)</onfocus>
+          <include>Expose_Clear_Props</include>
         </control>
         <include content="ViewLandscapeItemLayout" />
         <control type="group">
@@ -362,7 +363,6 @@
         <!-- Item Layout -->
         <include content="Object_Wall_Layout">
           <param name="id" value="$PARAM[id]"/>
-          <param name="widgetMovementId" value="$PARAM[widgetMovementId]"/>
           <param name="condition" value="$PARAM[condition]"/>
         </include>
         <include content="Object_Widget_Content_Path">
