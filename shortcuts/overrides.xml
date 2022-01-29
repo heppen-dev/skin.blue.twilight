@@ -158,6 +158,7 @@
   <!-- Main grouping -->
   <groupings>
     <node label="32029">
+      <shortcut label="Movies Hub" icon="special://skin/extras/icons/collection.png">ActivateWindow(1170)</shortcut>
       <content>common</content>
       <shortcut label="$LOCALIZE[137]" type="$LOCALIZE[31206]" icon="special://skin/extras/icons/search.png">Skin.SetString(SearchTerm)</shortcut>
       <shortcut label="$LOCALIZE[10821]" type="32021" icon="special://skin/extras/icons/games.png">ActivateWindow(Games)</shortcut>

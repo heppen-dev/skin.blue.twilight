@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window id="1170">
-  <animation effect="fade" start="0" end="100" time="1000" delay="50" tween="quadratic" condition="Window.IsActive(1170)">WindowOpen</animation>
-  <animation effect="fade" start="100" end="0" time="200" delay="50" tween="quadratic">WindowClose</animation>
+  <animation effect="fade" start="0" end="100" time="1300" delay="200" tween="quadratic" condition="Window.IsActive(1170)">WindowOpen</animation>
+  <animation effect="fade" start="100" end="0" time="200" delay="200" tween="quadratic">WindowClose</animation>
   <defaultcontrol always="true">9000</defaultcontrol>
   <backgroundcolor>ff0f171e</backgroundcolor>
   <controls>
