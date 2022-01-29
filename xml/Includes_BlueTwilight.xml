@@ -13,6 +13,12 @@
           <height>95</height>
           <texture colordiffuse="dialog_bg_30">common/white.png</texture>
         </control>
+        <control type="image">
+          <left>0</left>
+          <top>95</top>
+          <height>1</height>
+          <texture colordiffuse="main_fg_30">common/white.png</texture>
+        </control>
         <control type="list" id="9000">
           <top>3</top>
           <onup>9001</onup>
@@ -42,7 +48,7 @@
               </control>
               <control type="image">
                 <left>0</left>
-                <top>0</top>
+                <top>90</top>
                 <height>5</height>
                 <width>240</width>
                 <texture colordiffuse="ffffffff">common/white.png</texture>
@@ -91,7 +97,7 @@
               </control>
               <control type="image">
                 <left>0</left>
-                <top>90</top>
+                <top>0</top>
                 <height>5</height>
                 <width>240</width>
                 <texture colordiffuse="ffffffff">common/white.png</texture>
