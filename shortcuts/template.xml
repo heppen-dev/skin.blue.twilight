@@ -42,11 +42,6 @@
       </controls>
     </items>
   </submenu>
-  <other>
-    <controls>
-      <description>This is a fake template which is needed to trick Skin Shortcuts into building the submenuOther templates</description>
-    </controls>
-  </other>
   <other include="localWidget">
     <condition tag="property" attribute="name|widgetPath.1"/>
     <property name="id" tag="mainmenuid"/>
@@ -191,6 +186,49 @@
           <param name="limit" value="$SKINSHORTCUTS[widgetLimit]"/>
           <param name="path" value="$SKINSHORTCUTS[widgetPath]$INFO[Skin.String(SearchTerm)]$SKINSHORTCUTS[widgetPath2]"/>
           <param name="condition" value="true"/>
+        </include>
+      </controls>
+    </items>
+  </submenu>
+  <!--  movies hub ... -->
+  <submenu include="moviesHub" name="movieshub">
+    <controls>
+      <skinshortcuts insert="wall">items</skinshortcuts>
+    </controls>
+    <items insert="wall">
+      <property name="id" tag="mainmenuid"/>
+      <property name="path" tag="property" attribute="name|list"/>
+      <property name="sortby" tag="property" attribute="name|widgetSortBy"/>
+      <property name="sortdirection" tag="property" attribute="name|widgetSortDirection"/>
+      <property name="limit" tag="property" attribute="name|widgetLimit"/>
+      <property name="aspect" tag="property" attribute="name|widgetAspect"/>
+      <property name="aspect">Poster</property>
+      <propertyGroup>mainmenuWidgets</propertyGroup>
+      <controls>
+        <include content="Object_WidgetsWall_Content_withLabels" condition="Skin.HasSetting(ShowWidgetLabels)">
+          <param name="controltype" value="list"/>
+          <param name="label" value="$SKINSHORTCUTS[label]"/>
+          <param name="groupid" value="760$SKINSHORTCUTS[id]"/>
+          <param name="labelid" value="770$SKINSHORTCUTS[id]"/>
+          <param name="image" value="$SKINSHORTCUTS[artwork]"/>
+          <param name="id" value="750$SKINSHORTCUTS[id]"/>
+          <param name="target" value="$SKINSHORTCUTS[target]"/>
+          <param name="sortby" value="$SKINSHORTCUTS[sortby]"/>
+          <param name="sortdirection" value="$SKINSHORTCUTS[sortdirection]"/>
+          <param name="limit" value="$SKINSHORTCUTS[limit]"/>
+          <param name="path" value="$SKINSHORTCUTS[path]"/>
+        </include>
+        <include content="Object_WidgetsWall_Content" condition="!Skin.HasSetting(ShowWidgetLabels)">
+          <param name="controltype" value="list"/>
+          <param name="name" value="$SKINSHORTCUTS[label]"/>
+          <param name="groupid" value="760$SKINSHORTCUTS[id]"/>
+          <param name="image" value="$SKINSHORTCUTS[artwork]"/>
+          <param name="id" value="750$SKINSHORTCUTS[id]"/>
+          <param name="target" value="$SKINSHORTCUTS[target]"/>
+          <param name="sortby" value="$SKINSHORTCUTS[sortby]"/>
+          <param name="sortdirection" value="$SKINSHORTCUTS[sortdirection]"/>
+          <param name="limit" value="$SKINSHORTCUTS[limit]"/>
+          <param name="path" value="$SKINSHORTCUTS[path]"/>
         </include>
       </controls>
     </items>

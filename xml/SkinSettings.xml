@@ -4,7 +4,7 @@
   <backgroundcolor>Background</backgroundcolor>
   <include>Defs_Settings_OnLoad</include>
   <onload condition="String.IsEmpty(Skin.String(background_overlay))">Skin.SetString(background_overlay,1)</onload>
-  <onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;levels=5&amp;group=mainmenu|widgets|shutdown|searchmenu)</onunload>
+  <onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu|widgets|movieshub|shutdown|searchmenu)</onunload>
   <controls>
     <include>DefaultBackground</include>
     <include content="TopBar">
@@ -60,6 +60,11 @@
             <include>DefaultSettingButton</include>
             <onclick>Skin.ToggleSetting(ShowWidgetLabels)</onclick>
             <selected>Skin.HasSetting(ShowWidgetLabels)</selected>
+          </control>
+          <control type="button" id="4011" description="Movies Hub">
+            <label>Movies Hub</label>
+            <include>DefaultSettingButton</include>
+            <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=movieshub)</onclick>
           </control>
           <control type="radiobutton" id="624" description="Show labels on banners">
             <label>$LOCALIZE[31431]</label>
