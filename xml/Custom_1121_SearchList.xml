@@ -17,10 +17,11 @@
         </control>
       </control>
       <control type="group">
+        <left>90</left>
         <include content="Object_Item_Showcase">
-          <param name="top" value="30"/>
           <param name="title" value="$INFO[ListItem.Label]"/>
           <param name="title_width" value="1000" />
+          <param name="clearlogo_top_margin" value="200"/>
           <param name="plot" value="$VAR[Label_PlotTextBoxVar]"/>
           <param name="visible" value="Window.IsVisible(1121)"/>
         </include>
