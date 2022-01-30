@@ -1092,6 +1092,7 @@
     <param name="visible">!System.HasActiveModalDialog</param>
     <definition>
       <control type="group" id="$PARAM[altid]">
+        <nested/>
         <control type="image">
           <left>$PARAM[left_posx]</left>
           <top>$PARAM[posy]</top>

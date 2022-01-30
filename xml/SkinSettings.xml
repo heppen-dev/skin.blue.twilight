@@ -4,7 +4,7 @@
   <backgroundcolor>Background</backgroundcolor>
   <include>Defs_Settings_OnLoad</include>
   <onload condition="String.IsEmpty(Skin.String(background_overlay))">Skin.SetString(background_overlay,1)</onload>
-  <onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu|widgets|movieshub|shutdown|searchmenu)</onunload>
+  <onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;levels=1&amp;group=mainmenu|widgets|globalhub|movieshub|shutdown|searchmenu)</onunload>
   <controls>
     <include>DefaultBackground</include>
     <include content="TopBar">
@@ -55,10 +55,10 @@
             <include>DefaultSettingButton</include>
             <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=widgets)</onclick>
           </control>
-          <control type="button" id="4011" description="Movies Hub">
-            <label>Movies Hub</label>
+          <control type="button" id="4011" description="Global Hub">
+            <label>$LOCALIZE[31434]</label>
             <include>DefaultSettingButton</include>
-            <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=movieshub)</onclick>
+            <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=globalhub)</onclick>
           </control>
           <control type="radiobutton" id="623" description="Enable labels in widget wall">
             <label>$LOCALIZE[31430]</label>

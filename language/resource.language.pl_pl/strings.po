@@ -1939,3 +1939,13 @@ msgstr "Wyłącz Clearlogo na Fanarcie"
 msgctxt "#31433"
 msgid "Change vignette colour to black"
 msgstr "Zmień kolor winiety na czarny"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31434"
+msgid "Global movies hub"
+msgstr "Globalny hub filmowy"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31435"
+msgid "Movies hub"
+msgstr "Hub filmowy"
