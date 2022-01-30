@@ -41,7 +41,7 @@
           </control>
         </control>
         <include content="View_WatchedOverlay">
-          <param name="bottom" value="22"/>
+          <param name="bottom" value="30"/>
           <param name="right" value="44"/>
         </include>
       </itemlayout>
@@ -112,7 +112,7 @@
           </include>
         </control>
         <include content="View_WatchedOverlay">
-          <param name="bottom" value="22"/>
+          <param name="bottom" value="30"/>
           <param name="right" value="44"/>
           <param name="id" value="$PARAM[id]"/>
         </include>
