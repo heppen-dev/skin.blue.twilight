@@ -8,19 +8,20 @@
     <control type="group">
       <animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
       <control type="group">
-        <width>1700</width>
-        <height>850</height>
-        <left>110</left>
-        <top>115</top>
-        <include>OpenClose_Bottom</include>
+        <width>1720</width>
+        <height>840</height>
+        <centertop>50%</centertop>
+        <centerleft>50%</centerleft>
         <control type="image">
-          <width>1700</width>
-          <height>850</height>
-          <left>0</left>
-          <top>0</top>
+          <width>1703</width>
+          <height>840</height>
+          <top>8</top>
+          <bottom>8</bottom>
+          <left>8</left>
+          <right>8</right>
           <texture colordiffuse="dialog_bg_100" border="5">common/box.png</texture>
           <bordertexture border="24">common/shadow-dialog-24.png</bordertexture>
-          <bordersize>24</bordersize>
+          <bordersize>18</bordersize>
         </control>
         <control type="group">
           <visible>Control.IsVisible(50)</visible>

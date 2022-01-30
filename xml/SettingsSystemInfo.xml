@@ -11,16 +11,18 @@
     <control type="group">
       <width>1720</width>
       <height>840</height>
-      <left>100</left>
-      <top>140</top>
+      <centertop>50%</centertop>
+      <centerleft>50%</centerleft>
       <control type="image">
-        <width>1720</width>
+        <width>1703</width>
         <height>840</height>
-        <left>0</left>
-        <top>0</top>
+        <top>8</top>
+        <bottom>8</bottom>
+        <left>8</left>
+        <right>8</right>
         <texture colordiffuse="dialog_bg_100" border="5">common/box.png</texture>
-        <bordertexture border="28">common/shadow-dialog-24.png</bordertexture>
-        <bordersize>28</bordersize>
+        <bordertexture border="24">common/shadow-dialog-24.png</bordertexture>
+        <bordersize>18</bordersize>
       </control>
       <control type="group">
         <left>25</left>
