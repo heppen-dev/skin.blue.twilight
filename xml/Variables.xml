@@ -87,6 +87,30 @@
     <value condition="String.IsEqual(Skin.String(HomeAlphaValue),0)">00FFFFFF</value>
     <value>37FFFFFF</value>
   </variable>
+  <variable name="DialogBackgroundAlpha">
+    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),0)">FF1A2123</value>
+    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),5)">F21A2123</value>
+    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),10)">E61A2123</value>
+    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),15)">D91A2123</value>
+    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),20)">CC1A2123</value>
+    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),25)">B1A2123F</value>
+    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),30)">B31A2123</value>
+    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),35)">A61A2123</value>
+    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),40)">991A2123</value>
+    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),45)">8C1A2123</value>
+    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),50)">801A2123</value>
+    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),55)">731A2123</value>
+    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),60)">661A2123</value>
+    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),65)">591A2123</value>
+    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),70)">4D1A2123</value>
+    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),75)">401A2123</value>
+    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),80)">331A2123</value>
+    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),85)">261A2123</value>
+    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),90)">1A1A2123</value>
+    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),95)">0D1A2123</value>
+    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),100)">001A2123</value>
+    <value>FF1A2123</value>
+  </variable>
   <variable name="AlphaFadeLevel">
     <value condition="String.IsEqual(Skin.String(AlphaValue),100)">100</value>
     <value condition="String.IsEqual(Skin.String(AlphaValue),95)">95</value>

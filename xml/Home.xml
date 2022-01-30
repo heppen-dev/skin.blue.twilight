@@ -3,7 +3,7 @@
   <defaultcontrol>9000</defaultcontrol>
   <backgroundcolor>ff0f171e</backgroundcolor>
   <onunload>ClearProperty(TMDbHelper.WidgetContainer,home)</onunload>
-  <onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;levels=1&amp;group=mainmenu|widgets|globalhub|movieshub|shutdown|searchmenu)</onunload>
+  <onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;levels=1&amp;group=mainmenu|widgets|globalhub|shutdown|searchmenu)</onload>
   <onload>SetProperty(TMDbHelper.Blur.Fallback,special://skin/media/common/background.jpg,Home)</onload>
   <onload>SetProperty(TMDbHelper.Blur.SourceImage,fanart,Home)</onload>
   <!-- set default selection box -->
@@ -14,6 +14,7 @@
   <!-- load default values for overlay playground -->
   <onload condition="String.IsEmpty(Skin.String(HomeAlphaValue))">Skin.SetString(HomeAlphaValue,15)</onload>
   <onload condition="String.IsEmpty(Skin.String(AlphaValue))">Skin.SetString(AlphaValue,15)</onload>
+  <onload condition="String.IsEmpty(Skin.String(DialogAlphaValue))">Skin.SetString(DialogAlphaValue,0)</onload>
   <onload condition="String.IsEmpty(Skin.String(TMDbHelper.Colors.Luminance))">Skin.SetString(TMDbHelper.Colors.Luminance,0.75)</onload>
   <onload condition="String.IsEmpty(Skin.String(TMDbHelper.Colors.Saturation))">Skin.SetString(TMDbHelper.Colors.Saturation,0.75)</onload>
 

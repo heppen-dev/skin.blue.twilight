@@ -1763,7 +1763,7 @@ msgstr "Opcje nakładki"
 #: /xml/SkinSettings.xml
 msgctxt "#31398"
 msgid "Alpha"
-msgstr "Przezroczystość"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31399"
@@ -1868,7 +1868,7 @@ msgstr "Używaj minimalistycznego OSD"
 #: /xml/SkinSettings.xml
 msgctxt "#31419"
 msgid "Alpha (home)"
-msgstr "Przezroczystość (home)"
+msgstr ""
 
 #: /xml/Font.xml
 msgctxt "#31420"

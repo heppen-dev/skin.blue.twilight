@@ -4,7 +4,7 @@
   <backgroundcolor>Background</backgroundcolor>
   <include>Defs_Settings_OnLoad</include>
   <onload condition="String.IsEmpty(Skin.String(background_overlay))">Skin.SetString(background_overlay,1)</onload>
-  <onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;levels=1&amp;group=mainmenu|widgets|globalhub|movieshub|shutdown|searchmenu)</onunload>
+  <onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;levels=1&amp;group=mainmenu|widgets|globalhub|shutdown|searchmenu)</onload>
   <controls>
     <include>DefaultBackground</include>
     <include content="TopBar">
@@ -183,7 +183,7 @@
           </control>
           <control type="button" id="704" description="Overlay alpha">
             <label>$LOCALIZE[31397]</label>
-            <label2>$INFO[Skin.String(HomeAlphaValue),H: (,%) ]$INFO[Skin.String(AlphaValue),A: (,%) ]$VAR[LuminanceVariable,L: (,) ]$VAR[SaturationVariable,S: (,) ]</label2>
+            <label2>$INFO[Skin.String(HomeAlphaValue),H: (,%) ]$INFO[Skin.String(AlphaValue),A: (,%) ]$INFO[Skin.String(DialogAlphaValue),D: (,%) ]$VAR[LuminanceVariable,L: (,) ]$VAR[SaturationVariable,S: (,) ]</label2>
             <include>DefaultSettingButton</include>
             <onclick>ActivateWindow(1111)</onclick>
           </control>
