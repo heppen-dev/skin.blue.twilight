@@ -144,20 +144,20 @@
           <animation effect="slide" time="200" start="0" end="0,-600" reversible="true" condition="[ControlGroup(3000).HasFocus | $EXP[FirstExpose] | $EXP[SecondExpose] | String.IsEqual(Window(home).Property(activateSpotlight),true)] + !String.StartsWith(ListItem.FolderPath,favourites://)">Conditional</animation>
         </control>
         <control type="grouplist" id="3000">
+          <onup>2999</onup>
           <top>615</top>
           <height>450</height>
           <width>1920</width>
-          <onup>2999</onup>
           <include condition="!Skin.HasSetting(ShowWidgetLabels)">widgetswolabels_gap</include>
           <usecontrolcoords>true</usecontrolcoords>
           <include>skinshortcuts-template-moviesHub</include>
           <animation effect="slide" time="200" start="0" end="0,640" reversible="true" condition="$EXP[FirstExpose] | $EXP[SecondExpose]">Conditional</animation>
         </control>
-        <control type="grouplist" id="3001">
+        <control type="grouplist" id="3000">
+          <onup>2999</onup>
           <top>615</top>
           <height>450</height>
           <width>1920</width>
-          <onup>2999</onup>
           <include condition="!Skin.HasSetting(ShowWidgetLabels)">widgetswolabels_gap</include>
           <usecontrolcoords>true</usecontrolcoords>
           <include>skinshortcuts-template-globalHub</include>
@@ -184,7 +184,7 @@
         <animation effect="fade" start="100" end="70" time="0" condition="true">Conditional</animation>
       </control>
       <include>DialogBusy</include>
-      <visible>Container(7501).IsUpdating | Container(7502).IsUpdating | Container(7503).IsUpdating | Container(7504).IsUpdating | Container(7505).IsUpdating | Container(7506).IsUpdating | Container(7507).IsUpdating | Container(7508).IsUpdating | Container(7509).IsUpdating | Container(7510).IsUpdating | Container(7511).IsUpdating | Container(7512).IsUpdating | Container(7513).IsUpdating | Container(7514).IsUpdating | Container(7515).IsUpdating | Container(7516).IsUpdating | Container(7517).IsUpdating | Container(7518).IsUpdating | Container(7519).IsUpdating | Container(7520).IsUpdating</visible>
+      <visible>Container(7501).IsUpdating</visible>
     </control>
   </controls>
 </window>
