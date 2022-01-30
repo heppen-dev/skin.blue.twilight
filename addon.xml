@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.blue.twilight" version="1.0.7" name="Blue Twilight" provider-name="heppen">
+<addon id="skin.blue.twilight" version="1.0.8" name="Blue Twilight" provider-name="heppen">
   <requires>
     <import addon="xbmc.gui" version="5.15.0"/>
     <import addon="script.skinshortcuts" version="1.1.5"/>
@@ -12,7 +12,7 @@
     <res width="1920" height="1080" aspect="16:9" default="true" folder="xml"/>
   </extension>
   <extension point="xbmc.addon.metadata">
-    <news>1.0.7[CR]Added: Option to change vignette colour to black[CR]Changed: Dialog separator colordiffuse[CR]Changed: Small tweaks to MediaMenu background[CR]Fixed: Widgets behavior when empty widgets are between[CR]Fixed: SearchList layout[CR]Fixed: Empty space when no rating badge is present in Object_Item_Showcase[CR]Fixed: Percentage rating on OSD aligny[CR]Fixed: Shadow spot in Expose first level[CR]Added: Watched indicators to home screen[CR]Some tweaks to Expose view[CR]Fixed: ClearProperties of Expose view[CR]Small visual tweaks to main menu[CR]Added: Movies Hub (initial commit - to test it go to customize main menu, set your menu entry to Common > Movies Hub)[CR]Some tweaks related to Movies Hub[CR]Added: Option to set unique background for each menu category[CR]Added: Movies Hub to Common shortcuts list[CR]Fixed: Background variable</news>
+    <news>1.0.8[CR]Added: Option to set individual widgets for each menu entry in movies hub[CR]Fixed: System settings background and shadows[CR]Added: Option to set Dialog window background opacity[CR]Changed: View_WatchedOverlay bottom margin</news>
     <summary lang="en_GB">Simple. Lightweight. Elegant. That's all you need to enjoy Kodi.</summary>
     <summary lang="pl_PL">Prosto. Lekko. Elegancko. To wszystko czego potrzebujesz do rozrywki z Kodi.</summary>
     <description lang="en_GB">The skin is designed to allow the user to focus on media consumption. It provides many innovative solutions that every movie lover will appreciate.</description>

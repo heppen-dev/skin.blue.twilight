@@ -1,3 +1,8 @@
+1.0.8
+    Added: Option to set individual widgets for each menu entry in movies hub
+    Fixed: System settings background and shadows
+    Added: Option to set Dialog window background opacity
+    Changed: View_WatchedOverlay bottom margin
 1.0.7
     Added: Option to change vignette colour to black
     Changed: Dialog separator colordiffuse
