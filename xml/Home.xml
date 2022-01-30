@@ -3,7 +3,7 @@
   <defaultcontrol>9000</defaultcontrol>
   <backgroundcolor>ff0f171e</backgroundcolor>
   <onunload>ClearProperty(TMDbHelper.WidgetContainer,home)</onunload>
-  <onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;levels=1&amp;group=mainmenu|widgets|globalhub|movieshub|shutdown|searchmenu)</onunload>
+  <onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;levels=1&amp;group=mainmenu|widgets|globalhub|shutdown|searchmenu)</onload>
   <onload>SetProperty(TMDbHelper.Blur.Fallback,special://skin/media/common/background.jpg,Home)</onload>
   <onload>SetProperty(TMDbHelper.Blur.SourceImage,fanart,Home)</onload>
   <!-- set default selection box -->

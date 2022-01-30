@@ -4,7 +4,7 @@
   <backgroundcolor>Background</backgroundcolor>
   <include>Defs_Settings_OnLoad</include>
   <onload condition="String.IsEmpty(Skin.String(background_overlay))">Skin.SetString(background_overlay,1)</onload>
-  <onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;levels=1&amp;group=mainmenu|widgets|globalhub|movieshub|shutdown|searchmenu)</onunload>
+  <onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;levels=1&amp;group=mainmenu|widgets|globalhub|shutdown|searchmenu)</onload>
   <controls>
     <include>DefaultBackground</include>
     <include content="TopBar">
