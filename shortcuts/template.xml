@@ -189,6 +189,14 @@
       </controls>
     </items>
   </submenu>
+  <other include="submenu">
+    <controls>
+      <content>
+        <skinshortcuts>items</skinshortcuts>
+      </content>
+      <skinshortcuts>visibility</skinshortcuts>
+    </controls>
+  </other>
   <!--  movies hub ... -->
   <submenu include="globalHub" name="globalhub">
     <controls>
@@ -261,14 +269,6 @@
       </include>
     </controls>
   </submenuOther>
-  <other include="submenu">
-    <controls>
-      <content>
-        <skinshortcuts>items</skinshortcuts>
-      </content>
-      <skinshortcuts>visibility</skinshortcuts>
-    </controls>
-  </other>
   <propertyGroup name="mainmenuWidgets">
     <property name="id" tag="mainmenuid"/>
     <property name="name" tag="property" attribute="name|widgetName"/>
