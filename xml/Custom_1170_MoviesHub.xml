@@ -21,9 +21,15 @@
         </control>
         <control type="image">
           <left>0</left>
-          <top>95</top>
-          <height>1</height>
-          <texture colordiffuse="main_fg_30">common/white.png</texture>
+          <top>93</top>
+          <height>5</height>
+          <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+        </control>
+        <control type="label">
+          <top>115</top>
+          <align>center</align>
+          <font>font_tiny_hintlabel</font>
+          <label>You are in Movies Hub</label>
         </control>
         <control type="list" id="9000">
           <top>3</top>
