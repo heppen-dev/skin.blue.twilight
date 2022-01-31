@@ -10,6 +10,7 @@
   <include file="Includes_DialogSelect.xml"/>
   <include file="Includes_DialogVideoInfo.xml"/>
   <include file="Includes_Items.xml"/>
+  <include file="Includes_MoviesHub_Main.xml"/>
   <include file="Includes_MusicInfo.xml"/>
   <include file="Includes_Object.xml"/>
   <include file="Includes_OSD.xml"/>
