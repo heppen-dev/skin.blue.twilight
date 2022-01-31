@@ -61,7 +61,7 @@
           <left>99</left>
           <top>110</top>
           <width>1</width>
-          <height>910</height>
+          <height>840</height>
           <texture colordiffuse="main_fg_12">common/white.png</texture>
         </control>
       </control>
@@ -70,7 +70,7 @@
           <left>650</left>
           <top>110</top>
           <width>1</width>
-          <height>910</height>
+          <height>840</height>
           <texture colordiffuse="main_fg_12">common/white.png</texture>
         </control>
       </control>
@@ -79,12 +79,12 @@
         <left>100</left>
         <top>110</top>
         <width>550</width>
-        <height>975</height>
+        <height>840</height>
         <onup>211</onup>
         <onleft>9200</onleft>
         <onright>9100</onright>
         <ondown>211</ondown>
-        <scrolltime>0</scrolltime>
+        <pagecontrol>59</pagecontrol>
         <itemlayout width="550" height="70">
           <control type="label">
             <left>30</left>
@@ -167,8 +167,9 @@
           <onleft>211</onleft>
           <onright>noop</onright>
           <width>1250</width>
-          <height>880</height>
+          <height>840</height>
           <itemgap>0</itemgap>
+          <pagecontrol>60</pagecontrol>
           <orientation>vertical</orientation>
           <control type="togglebutton" id="313" description="Enable/Disable">
             <label>$LOCALIZE[24021]</label>
@@ -324,6 +325,17 @@
             <label>$LOCALIZE[31175]</label>
             <visible>!String.EndsWith(Window.Property(groupname),.1)</visible>
           </control>
+        </control>
+        <control type="scrollbar" id="59">
+          <left>-552</left>
+          <top>0</top>
+          <width>8</width>
+          <height>840</height>
+        </control>
+        <control type="scrollbar" id="60">
+          <left>1260</left>
+          <width>8</width>
+          <height>840</height>
         </control>
       </control>
       <!-- Hidden controls -->
