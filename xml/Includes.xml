@@ -1832,7 +1832,6 @@
   <!-- Selectbox -->
   <include name="Selectbox_Bold">
     <param name="colordiffuse" default=""/>
-    <param name="focusbounce" default="true"/>
     <definition>
       <control type="group">
         <animation type="Focus" condition="$PARAM[focusbounce]">
@@ -1872,7 +1871,6 @@
   </include>
   <include name="Selectbox_Thin">
     <param name="colordiffuse" default=""/>
-    <param name="focusbounce" default="true"/>
     <definition>
       <control type="group">
         <animation type="Focus" condition="$PARAM[focusbounce]">
@@ -1911,14 +1909,17 @@
     </definition>
   </include>
   <include name="Selectbox">
-    <include content="Selectbox_Bold" condition="String.IsEqual(Skin.String(HighlightSize),Bold)">
-      <param name="focusbounce" value="$PARAM[focusbounce]"/>
-      <param name="visible" value="$PARAM[visible]"/>
-    </include>
-    <include content="Selectbox_Thin" condition="String.IsEqual(Skin.String(HighlightSize),Thin)">
-      <param name="focusbounce" value="$PARAM[focusbounce]"/>
-      <param name="visible" value="$PARAM[visible]"/>
-    </include>
+    <param name="focusbounce" default="true"/>
+    <definition>
+      <include content="Selectbox_Bold" condition="String.IsEqual(Skin.String(HighlightSize),Bold)">
+        <param name="focusbounce" value="$PARAM[focusbounce]"/>
+        <param name="visible" value="$PARAM[visible]"/>
+      </include>
+      <include content="Selectbox_Thin" condition="String.IsEqual(Skin.String(HighlightSize),Thin)">
+        <param name="focusbounce" value="$PARAM[focusbounce]"/>
+        <param name="visible" value="$PARAM[visible]"/>
+      </include>
+    </definition>
   </include>
   <include name="DialogBusy">
     <control type="group">
@@ -1978,7 +1979,6 @@
       </control>
     </control>
   </include>
-  <!-- Small Busy Spinner -->
   <include name="SmallBusySpinner">
     <param name="top" default="0"/>
     <definition>
@@ -2008,99 +2008,6 @@
   <include name="View_Forced">
     <visible>[Container.Content(games) + [String.IsEqual(Skin.String(Skin.ForcedView.games),$PARAM[string]) | String.IsEmpty(Skin.String(Skin.ForcedView.games))]] | [Container.Content(movies) + [String.IsEqual(Skin.String(Skin.ForcedView.movies),$PARAM[string]) | String.IsEmpty(Skin.String(Skin.ForcedView.movies))]] | [Container.Content(sets) + [String.IsEqual(Skin.String(Skin.ForcedView.sets),$PARAM[string]) | String.IsEmpty(Skin.String(Skin.ForcedView.sets))]] | [Container.Content(tvshows) + [String.IsEqual(Skin.String(Skin.ForcedView.tvshows),$PARAM[string]) | String.IsEmpty(Skin.String(Skin.ForcedView.tvshows))]] | [Container.Content(seasons) + [String.IsEqual(Skin.String(Skin.ForcedView.seasons),$PARAM[string]) | String.IsEmpty(Skin.String(Skin.ForcedView.seasons))]] | [Container.Content(episodes) + [String.IsEqual(Skin.String(Skin.ForcedView.episodes),$PARAM[string]) | String.IsEmpty(Skin.String(Skin.ForcedView.episodes))]] | [Container.Content(actors) + [String.IsEqual(Skin.String(Skin.ForcedView.actors),$PARAM[string]) | String.IsEmpty(Skin.String(Skin.ForcedView.actors))]] | [Container.Content(artists) + [String.IsEqual(Skin.String(Skin.ForcedView.artists),$PARAM[string]) | String.IsEmpty(Skin.String(Skin.ForcedView.artists))]] | [Container.Content(albums) + [String.IsEqual(Skin.String(Skin.ForcedView.albums),$PARAM[string]) | String.IsEmpty(Skin.String(Skin.ForcedView.albums))]] | [Container.Content(songs) + [String.IsEqual(Skin.String(Skin.ForcedView.songs),$PARAM[string]) | String.IsEmpty(Skin.String(Skin.ForcedView.songs))]] | [Container.Content(addons) + [String.IsEqual(Skin.String(Skin.ForcedView.addons),$PARAM[string]) | String.IsEmpty(Skin.String(Skin.ForcedView.addons))]] | [Container.Content(genres) + [String.IsEqual(Skin.String(Skin.ForcedView.genres),$PARAM[string]) | String.IsEmpty(Skin.String(Skin.ForcedView.genres))]] | [Container.Content(images) + [String.IsEqual(Skin.String(Skin.ForcedView.images),$PARAM[string]) | String.IsEmpty(Skin.String(Skin.ForcedView.images))]] | [Container.Content(videos) + [String.IsEqual(Skin.String(Skin.ForcedView.videos),$PARAM[string]) | String.IsEmpty(Skin.String(Skin.ForcedView.videos))]] | [Container.Content() + [String.IsEqual(Skin.String(Skin.ForcedView.),$PARAM[string]) | String.IsEmpty(Skin.String(Skin.ForcedView.))]] | [Container.Content(tags) + [String.IsEqual(Skin.String(Skin.ForcedView.tags),$PARAM[string]) | String.IsEmpty(Skin.String(Skin.ForcedView.tags))]] | [Container.Content(years) + [String.IsEqual(Skin.String(Skin.ForcedView.years),$PARAM[string]) | String.IsEmpty(Skin.String(Skin.ForcedView.years))]] | [Container.Content(countries) + [String.IsEqual(Skin.String(Skin.ForcedView.countries),$PARAM[string]) | String.IsEmpty(Skin.String(Skin.ForcedView.countries))]] | [Container.Content(studios) + [String.IsEqual(Skin.String(Skin.ForcedView.studios),$PARAM[string]) | String.IsEmpty(Skin.String(Skin.ForcedView.studios))]] | [Container.Content(playlists) + [String.IsEqual(Skin.String(Skin.ForcedView.playlists),$PARAM[string]) | String.IsEmpty(Skin.String(Skin.ForcedView.playlists))]] | [Container.Content(musicvideos) + [String.IsEqual(Skin.String(Skin.ForcedView.musicvideos),$PARAM[string]) | String.IsEmpty(Skin.String(Skin.ForcedView.musicvideos))]] | [Container.Content(directors) + [String.IsEqual(Skin.String(Skin.ForcedView.directors),$PARAM[string]) | String.IsEmpty(Skin.String(Skin.ForcedView.directors))]] | [Container.Content(files) + [String.IsEqual(Skin.String(Skin.ForcedView.files),$PARAM[string]) | String.IsEmpty(Skin.String(Skin.ForcedView.files))]] | [Container.Content(mixed) + [String.IsEqual(Skin.String(Skin.ForcedView.mixed),$PARAM[string]) | String.IsEmpty(Skin.String(Skin.ForcedView.mixed))]] | [Container.Content(unknown) + [String.IsEqual(Skin.String(Skin.ForcedView.unknown),$PARAM[string]) | String.IsEmpty(Skin.String(Skin.ForcedView.unknown))]] | [!Container.Content(games) + !Container.Content(movies) + !Container.Content(sets) + !Container.Content(tvshows) + !Container.Content(seasons) + !Container.Content(episodes) + !Container.Content(actors) + !Container.Content(artists) + !Container.Content(albums) + !Container.Content(songs) + !Container.Content(addons) + !Container.Content(genres) + !Container.Content(images) + !Container.Content(videos) + !Container.Content() + !Container.Content(tags) + !Container.Content(years) + !Container.Content(countries) + !Container.Content(studios) + !Container.Content(playlists) + !Container.Content(musicvideos) + !Container.Content(directors) + !Container.Content(files) + !Container.Content(mixed) + !Container.Content(unknown)] | Window.IsVisible(MyPlaylist.xml)</visible>
   </include>
-  <include name="submenuVerticalParams">
-    <definition>
-      <left>92</left>
-      <top>145</top>
-      <right>0</right>
-      <height>1080</height>
-      <onleft>9000</onleft>
-      <onright>3000</onright>
-      <orientation>vertical</orientation>
-    </definition>
-  </include>
-  <include name="submenuVerticalLabelLayout">
-    <definition>
-      <top>140</top>
-      <left>104</left>
-      <height>95</height>
-      <width>280</width>
-      <aligny>center</aligny>
-      <align>left</align>
-      <font>font_menu</font>
-    </definition>
-  </include>
-  <include name="submenuVerticalIconLayout">
-    <definition>
-      <top>141</top>
-      <align>left</align>
-      <width>95</width>
-      <height>95</height>
-      <font>font_menu</font>
-    </definition>
-  </include>
-  <include name="submenuClassicParams">
-    <definition>
-      <top>180</top>
-      <height>1080</height>
-      <onleft>9000</onleft>
-      <onright>9000</onright>
-      <orientation>vertical</orientation>
-    </definition>
-  </include>
-  <include name="submenuClassicLabelLayout">
-    <definition>
-      <top>0</top>
-      <height>95</height>
-      <width>280</width>
-      <aligny>center</aligny>
-      <align>right</align>
-      <font>font_menu</font>
-    </definition>
-  </include>
-  <include name="submenuClassicIconLayout">
-    <definition>
-      <left>288</left>
-      <top>1</top>
-      <align>right</align>
-      <width>95</width>
-      <height>95</height>
-    </definition>
-  </include>
-  <include name="submenuClassicIconsOnlyLayout">
-    <definition>
-      <left>20</left>
-      <top>1</top>
-      <align>right</align>
-      <width>95</width>
-      <height>95</height>
-    </definition>
-  </include>
-  <include name="submenuHorizontalParams">
-    <definition>
-      <left>0</left>
-      <top>0</top>
-      <right>0</right>
-      <bottom>0</bottom>
-      <height>1080</height>
-      <onup>9000</onup>
-      <ondown>9000</ondown>
-      <onleft>noop</onleft>
-      <onright>noop</onright>
-      <orientation>horizontal</orientation>
-    </definition>
-  </include>
-  <include name="submenuHorizontalLabelLayout">
-    <definition>
-      <left>0</left>
-      <top>995</top>
-      <width>384</width>
-      <height>95</height>
-      <align>center</align>
-      <aligny>center</aligny>
-      <font>font_menu</font>
-    </definition>
-  </include>
   <include name="View_UnwatchedEpisodes_Visible">
     <visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + [String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season)]</visible>
     <visible>!ListItem.IsCollection</visible>
@@ -2110,12 +2017,6 @@
   </include>
   <include name="WatchedOverlay_Focus_bs0">
     <bordersize>0</bordersize>
-  </include>
-  <include name="Horizontal_Menubar_NoSearch_Width">
-    <width>1560</width>
-  </include>
-  <include name="Horizontal_Menubar_wSearch_Width">
-    <width>1300</width>
   </include>
   <include name="ClearBoolProps">
     <!-- reset folder/collection bool -->
@@ -2177,7 +2078,7 @@
     <onclick condition="$PARAM[include_condition]">SetProperty(spotlight_Label,"$INFO[ListItem.Label]",home)</onclick>
     <onclick condition="$PARAM[include_condition]">SetProperty(spotlight_DBID,"$INFO[ListItem.DBID]",home)</onclick>
     <onclick condition="$PARAM[include_condition]">SetProperty(spotlight_DBType,"$INFO[ListItem.DBType]",home)</onclick>
-<!--    expose view ... -->
+    <!--    expose view ... -->
     <onclick condition="$PARAM[include_condition]">SetProperty(Expose_ListItem_Title,"$INFO[ListItem.Title]",home)</onclick>
     <onclick condition="$PARAM[include_condition]">SetProperty(Expose_ListItem_Plot,"$INFO[ListItem.Plot]",home)</onclick>
     <onclick condition="$PARAM[include_condition]">SetProperty(Expose_ListItem_Director,"$INFO[ListItem.Director]",home)</onclick>

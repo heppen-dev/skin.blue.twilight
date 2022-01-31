@@ -187,7 +187,6 @@
         <!-- Item Layout -->
         <include content="Object_Wall_Layout">
           <param name="id" value="$PARAM[id]"/>
-          <param name="widgetMovementId" value="$PARAM[widgetMovementId]"/>
           <param name="condition" value="$PARAM[condition]"/>
         </include>
         <include content="Object_Widget_Content_Path">
@@ -228,7 +227,6 @@
         <!-- Item Layout -->
         <include content="Object_Wall_Layout">
           <param name="id" value="$PARAM[id]"/>
-          <param name="widgetMovementId" value="$PARAM[widgetMovementId]"/>
           <param name="condition" value="$PARAM[condition]"/>
         </include>
         <include content="Object_Widget_Content_Path">
@@ -275,7 +273,6 @@
         <!-- Item Layout -->
         <include content="Object_Wall_Layout">
           <param name="id" value="$PARAM[id]"/>
-          <param name="widgetMovementId" value="$PARAM[widgetMovementId]"/>
           <param name="condition" value="$PARAM[condition]"/>
         </include>
         <include content="Object_Widget_Content_Path">
