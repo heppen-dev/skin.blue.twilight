@@ -352,7 +352,7 @@
               <textcolor>ffffffff</textcolor>
               <align>center</align>
               <aligny>center</aligny>
-              <label>$INFO[ListItem.Title]</label>
+              <label>$VAR[Label_HeaderWidget]</label>
             </control>
           </control>
           <control type="group">
