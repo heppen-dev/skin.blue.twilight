@@ -2125,3 +2125,13 @@ msgstr ""
 msgctxt "#31435"
 msgid "Movies hub"
 msgstr ""
+
+#: /xml/Includes_MoviesHub_Main.xml
+msgctxt "#31436"
+msgid "You are in Movies Hub"
+msgstr ""
+
+#: /xml/SkinSettings.xml
+msgctxt "#31437"
+msgid "Load movies hub first"
+msgstr ""

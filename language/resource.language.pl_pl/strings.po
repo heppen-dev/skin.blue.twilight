@@ -1949,3 +1949,13 @@ msgstr "Globalny hub filmowy"
 msgctxt "#31435"
 msgid "Movies hub"
 msgstr "Hub filmowy"
+
+#: /xml/Includes_MoviesHub_Main.xml
+msgctxt "#31436"
+msgid "You are in Movies Hub"
+msgstr "Jesteś w Hubie Filmowym"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31437"
+msgid "Load movies hub first"
+msgstr "Załaduj hub filmowy zamiast strony głównej"

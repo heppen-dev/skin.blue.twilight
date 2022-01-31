@@ -63,7 +63,7 @@
             <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=globalhub)</onclick>
           </control>
           <control type="radiobutton" id="627" description="Load hub as home screen">
-            <label>Load movies hub first</label>
+            <label>$LOCALIZE[31437]</label>
             <include>DefaultSettingButton</include>
             <onclick>Skin.ToggleSetting(HubFirst)</onclick>
             <selected>Skin.HasSetting(HubFirst)</selected>
