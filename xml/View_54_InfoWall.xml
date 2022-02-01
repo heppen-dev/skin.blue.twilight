@@ -216,79 +216,32 @@
       <control type="image">
         <top>-16</top>
         <left>-16</left>
-        <width>290</width>
-        <height>422.5</height>
-        <aspectratio>scale</aspectratio>
-        <texture diffuse="common/geometric.png" colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+        <width>224</width>
+        <height>324</height>
+        <aspectratio scalediffuse="false">scale</aspectratio>
+        <texture background="true" diffuse="diffuse/poster-std.png">$VAR[Image_Poster]</texture>
         <bordertexture border="32">common/dark-shadow-24.png</bordertexture>
         <bordersize>24</bordersize>
-      </control>
-      <control type="image">
-        <top>8</top>
-        <left>8</left>
-        <right>18</right>
-        <aspectratio>scale</aspectratio>
-        <texture background="true">$VAR[Image_Poster]</texture>
-      </control>
-    </definition>
-  </include>
-  <include name="ViewPosterItemLayoutHorizontal">
-    <definition>
-      <control type="group">
-        <control type="image">
-          <top>-22</top>
-          <left>14</left>
-          <width>272</width>
-          <height>380</height>
-          <aspectratio>scale</aspectratio>
-          <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
-          <bordertexture border="32">common/dark-shadow-24.png</bordertexture>
-          <bordersize>24</bordersize>
-          <visible>$PARAM[bg_visible]</visible>
-          <animation type="Focus">
-            <effect type="zoom" center="0" end="110,110" time="300" tween="sine" easing="out"/>
-            <effect type="slide" start="0" end="0,-50" time="400" tween="cubic" easing="out"/>
-          </animation>
-        </control>
-        <control type="image">
-          <top>-22</top>
-          <left>14</left>
-          <width>272</width>
-          <height>380</height>
-          <aspectratio>scale</aspectratio>
-          <texture colordiffuse="$VAR[ColorGradient]">common/white-gradient.png</texture>
-          <bordersize>24</bordersize>
-          <visible>$PARAM[bg_visible]</visible>
-          <animation type="Focus">
-            <effect type="zoom" center="0" end="110,110" time="300" tween="sine" easing="out"/>
-            <effect type="slide" start="0" end="0,-50" time="400" tween="cubic" easing="out"/>
-          </animation>
-        </control>
-      </control>
-      <control type="image">
-        <top>8</top>
-        <left>42</left>
-        <right>8</right>
-        <width>216</width>
-        <aspectratio>scale</aspectratio>
-        <texture background="true">$VAR[Image_Poster]</texture>
-        <animation type="Focus">
-          <effect type="zoom" center="0" end="110,110" time="300" tween="sine" easing="out"/>
-          <effect type="slide" start="0" end="0,-50" time="400" tween="cubic" easing="out"/>
-        </animation>
         <visible>!String.StartsWith(ListItem.FolderPath,pvr://)</visible>
       </control>
       <control type="image">
-        <top>8</top>
-        <left>42</left>
-        <right>8</right>
-        <width>216</width>
-        <aspectratio>keep</aspectratio>
-        <texture background="true">$VAR[Image_Poster]</texture>
-        <animation type="Focus">
-          <effect type="zoom" center="0" end="110,110" time="300" tween="sine" easing="out"/>
-          <effect type="slide" start="0" end="0,-50" time="400" tween="cubic" easing="out"/>
-        </animation>
+        <top>-16</top>
+        <left>-16</left>
+        <width>224</width>
+        <height>324</height>
+        <aspectratio scalediffuse="false">scale</aspectratio>
+        <texture background="true" colordiffuse="AltPosterBack" diffuse="diffuse/poster-std.png">diffuse/poster-wall.png</texture>
+        <bordersize>24</bordersize>
+        <visible>String.StartsWith(ListItem.FolderPath,pvr://)</visible>
+      </control>
+      <control type="image">
+        <top>-16</top>
+        <left>-16</left>
+        <width>224</width>
+        <height>324</height>
+        <aspectratio scalediffuse="false">keep</aspectratio>
+        <texture background="true" diffuse="diffuse/poster-std.png">$VAR[Image_Poster]</texture>
+        <bordersize>32</bordersize>
         <visible>String.StartsWith(ListItem.FolderPath,pvr://)</visible>
       </control>
     </definition>
@@ -330,47 +283,13 @@
       </control>
     </definition>
   </include>
-  <include name="ViewSquareItemLayout">
-    <definition>
-      <control type="image">
-        <top>-16</top>
-        <left>-16</left>
-        <width>360</width>
-        <height>422.5</height>
-        <aspectratio>scale</aspectratio>
-        <texture diffuse="special://skin/extras/backgrounds/primary.jpg" colordiffuse="$VAR[ColorsOverlay]">common/white.png</texture>
-        <bordertexture border="32">common/dark-shadow-24.png</bordertexture>
-        <bordersize>24</bordersize>
-      </control>
-      <control type="image">
-        <top>8</top>
-        <right>50</right>
-        <height>290</height>
-        <width>290</width>
-        <align>center</align>
-        <aspectratio>keep</aspectratio>
-        <texture background="true">$VAR[Image_Poster]</texture>
-      </control>
-      <control type="label">
-        <top>320</top>
-        <left>20</left>
-        <right>20</right>
-        <width>290</width>
-        <align>center</align>
-        <font>font32_title</font>
-        <scroll>true</scroll>
-        <label>$INFO[ListItem.Label]</label>
-      </control>
-    </definition>
-  </include>
   <include name="ViewLandscapeItemLayout">
-    <param name="iconheight" default="225"/>
     <definition>
       <control type="group">
         <control type="group">
           <control type="image">
             <top>0</top>
-            <left>-10</left>
+            <left>-12</left>
             <width>335</width>
             <height>205</height>
             <aspectratio scalediffuse="false">scale</aspectratio>
@@ -379,7 +298,7 @@
           </control>
           <control type="image">
             <top>0</top>
-            <left>-10</left>
+            <left>-12</left>
             <width>335</width>
             <height>205</height>
             <aspectratio scalediffuse="false">scale</aspectratio>
@@ -391,7 +310,7 @@
         </control>
         <control type="image">
           <top>0</top>
-          <left>-10</left>
+          <left>-12</left>
           <width>335</width>
           <height>205</height>
           <aspectratio scalediffuse="false">keep</aspectratio>

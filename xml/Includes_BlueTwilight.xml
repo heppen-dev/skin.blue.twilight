@@ -131,25 +131,25 @@
         <control type="grouplist" id="2999">
           <onup>9000</onup>
           <ondown>3000</ondown>
-          <top>250</top>
+          <top>150</top>
           <left>-700</left>
           <height>300</height>
           <include>skinshortcuts-template-localWidget</include>
           <animation effect="slide" time="200" start="0" end="0,-600" reversible="true" condition="[ControlGroup(3000).HasFocus | $EXP[FirstExpose] | $EXP[SecondExpose] | String.IsEqual(Window(home).Property(activateSpotlight),true)] + !String.StartsWith(ListItem.FolderPath,favourites://)">Conditional</animation>
         </control>
         <control type="grouplist" id="3000">
-          <top>615</top>
-          <height>450</height>
+          <top>440</top>
+          <height>640</height>
           <width>1920</width>
           <onup>2999</onup>
-          <include condition="!Skin.HasSetting(ShowWidgetLabels)">widgetswolabels_gap</include>
           <usecontrolcoords>true</usecontrolcoords>
           <include>skinshortcuts-template-widgetsWall</include>
-          <animation effect="slide" time="200" start="0" end="0,640" reversible="true" condition="$EXP[FirstExpose] | $EXP[SecondExpose]">Conditional</animation>
+          <animation effect="slide" time="200" start="0" end="0,740" reversible="true" condition="$EXP[FirstExpose] | $EXP[SecondExpose]">Conditional</animation>
         </control>
       </control>
       <control type="group">
-        <left>90</left>
+        <top>-50</top>
+        <left>70</left>
         <include content="Object_Item_Showcase">
           <param name="title" value="$VAR[Label_Title]"/>
           <param name="title_width" value="1000" />

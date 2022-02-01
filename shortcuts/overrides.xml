@@ -61,9 +61,7 @@
   <propertySettings property="widgetLimit" buttonID="504" title="Widget Item Limit"/>
   <!-- Widget Aspect -->
   <property property="widgetAspect">Poster</property>
-  <property property="widgetAspect">Square</property>
   <property property="widgetAspect">Landscape</property>
-  <property property="widgetAspect">Fanart</property>
   <propertySettings property="widgetAspect" buttonID="505" title="Widget Aspect"/>
   <!-- Search Item Default Properties -->
   <propertydefault labelID="artists" group="searchmenu" property="widgetAspect">Square</propertydefault>

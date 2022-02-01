@@ -293,6 +293,15 @@
             <visible>[String.EndsWith(Window.Property(groupname),.1) | String.IsEqual(Window.Property(groupname),searchmenu) | String.IsEqual(Window.Property(groupname),widgets) | String.IsEqual(Window.Property(groupname),globalhub)]</visible>
             <include>DialogSettingButton</include>
           </control>
+          <!-- Widget aspect -->
+          <control type="button" id="505">
+            <label>$LOCALIZE[31253]</label>
+            <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
+            <label2>$INFO[Container(211).ListItem.Property(widgetAspect)]</label2>
+            <visible>[String.EndsWith(Window.Property(groupname),.1) | String.IsEqual(Window.Property(groupname),widgets) | String.IsEqual(Window.Property(groupname),globalhub) | String.IsEqual(Window.Property(groupname),searchmenu)]</visible>
+            <include>DialogSettingButton</include>
+            <onclick>SendClick(404)</onclick>
+          </control>
           <!-- Widget sort by -->
           <control type="button" id="502">
             <label>$LOCALIZE[31177]</label>

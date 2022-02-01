@@ -9,15 +9,17 @@
       <include>OpenClose_Bottom</include>
       <control type="group">
         <control type="grouplist" id="4100">
-          <top>615</top>
-          <height>450</height>
+          <top>440</top>
+          <height>640</height>
           <width>1920</width>
+          <onup>2999</onup>
           <usecontrolcoords>true</usecontrolcoords>
           <include>skinshortcuts-template-search</include>
         </control>
       </control>
       <control type="group">
-        <left>90</left>
+        <top>-50</top>
+        <left>70</left>
         <include content="Object_Item_Showcase">
           <param name="title" value="$INFO[ListItem.Label]"/>
           <param name="title_width" value="1000" />

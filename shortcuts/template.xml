@@ -10,8 +10,6 @@
       <property name="sortby" tag="property" attribute="name|widgetSortBy"/>
       <property name="sortdirection" tag="property" attribute="name|widgetSortDirection"/>
       <property name="limit" tag="property" attribute="name|widgetLimit"/>
-      <property name="aspect" tag="property" attribute="name|widgetAspect"/>
-      <property name="aspect">Poster</property>
       <propertyGroup>mainmenuWidgets</propertyGroup>
       <controls>
         <include content="Object_WidgetsWall_Content_withLabels" condition="Skin.HasSetting(ShowWidgetLabels)">
@@ -26,6 +24,8 @@
           <param name="sortdirection" value="$SKINSHORTCUTS[sortdirection]"/>
           <param name="limit" value="$SKINSHORTCUTS[limit]"/>
           <param name="path" value="$SKINSHORTCUTS[path]"/>
+          <param name="PosterCondition" value="$PYTHON['true' if widgetAspect in 'Poster' else 'false']"/>
+          <param name="LandscapeCondition" value="$PYTHON['true' if widgetAspect in 'Landscape' else 'false']"/>
         </include>
         <include content="Object_WidgetsWall_Content" condition="!Skin.HasSetting(ShowWidgetLabels)">
           <param name="controltype" value="list"/>
@@ -38,6 +38,8 @@
           <param name="sortdirection" value="$SKINSHORTCUTS[sortdirection]"/>
           <param name="limit" value="$SKINSHORTCUTS[limit]"/>
           <param name="path" value="$SKINSHORTCUTS[path]"/>
+          <param name="PosterCondition" value="$PYTHON['true' if widgetAspect in 'Poster' else 'false']"/>
+          <param name="LandscapeCondition" value="$PYTHON['true' if widgetAspect in 'Landscape' else 'false']"/>
         </include>
       </controls>
     </items>
@@ -184,7 +186,8 @@
           <param name="target" value="$SKINSHORTCUTS[widgetTarget]"/>
           <param name="limit" value="$SKINSHORTCUTS[widgetLimit]"/>
           <param name="path" value="$SKINSHORTCUTS[widgetPath]$INFO[Skin.String(SearchTerm)]$SKINSHORTCUTS[widgetPath2]"/>
-          <param name="condition" value="true"/>
+          <param name="PosterCondition" value="$PYTHON['true' if widgetAspect in 'Poster' else 'false']"/>
+          <param name="LandscapeCondition" value="$PYTHON['true' if widgetAspect in 'Landscape' else 'false']"/>
         </include>
       </controls>
     </items>
@@ -225,6 +228,8 @@
           <param name="sortdirection" value="$SKINSHORTCUTS[sortdirection]"/>
           <param name="limit" value="$SKINSHORTCUTS[limit]"/>
           <param name="path" value="$SKINSHORTCUTS[path]"/>
+          <param name="PosterCondition" value="$PYTHON['true' if widgetAspect in 'Poster' else 'false']"/>
+          <param name="LandscapeCondition" value="$PYTHON['true' if widgetAspect in 'Landscape' else 'false']"/>
           <visible>Integer.IsEqual(Container(3000).NumItems,0)</visible>
         </include>
         <include content="Object_WidgetsWall_Content" condition="!Skin.HasSetting(ShowWidgetLabels)">
@@ -238,6 +243,8 @@
           <param name="sortdirection" value="$SKINSHORTCUTS[sortdirection]"/>
           <param name="limit" value="$SKINSHORTCUTS[limit]"/>
           <param name="path" value="$SKINSHORTCUTS[path]"/>
+          <param name="PosterCondition" value="$PYTHON['true' if widgetAspect in 'Poster' else 'false']"/>
+          <param name="LandscapeCondition" value="$PYTHON['true' if widgetAspect in 'Landscape' else 'false']"/>
           <visible>Integer.IsEqual(Container(3000).NumItems,0)</visible>
         </include>
       </controls>
@@ -265,6 +272,8 @@
         <param name="sortdirection" value="$SKINSHORTCUTS[sortdirection]"/>
         <param name="limit" value="$SKINSHORTCUTS[limit]"/>
         <param name="path" value="$SKINSHORTCUTS[path]"/>
+        <param name="PosterCondition" value="$PYTHON['true' if widgetAspect in 'Poster' else 'false']"/>
+        <param name="LandscapeCondition" value="$PYTHON['true' if widgetAspect in 'Landscape' else 'false']"/>
         <skinshortcuts>visibility</skinshortcuts>
       </include>
     </controls>
@@ -285,5 +294,7 @@
     <property name="label" tag="label"/>
     <property name="label">$INFO[ListItem.Label]</property>
     <property name="background" tag="property" attribute="name|background"/>
+    <property name="widgetAspect" tag="property" attribute="name|widgetAspect"/>
+    <property name="widgetAspect">Poster</property>
   </propertyGroup>
 </template>
