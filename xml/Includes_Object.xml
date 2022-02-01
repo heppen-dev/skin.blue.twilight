@@ -151,10 +151,10 @@
       <control type="grouplist" id="$PARAM[labelid]">
         <nested/>
         <orientation>horizontal</orientation>
-        <itemgap>32</itemgap>
-        <visible allowhiddenfocus="true">Integer.IsGreater(Container($PARAM[id]).NumItems,0)</visible>
+        <itemgap>12</itemgap>
+        <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,0)</visible>
         <animation effect="slide" end="170,-10" time="0" reversible="false" condition="true">Conditional</animation>
-        <animation effect="slide" end="0,10" time="0" reversible="true" condition="$PARAM[move_down]">Conditional</animation>
+        <animation effect="slide" end="0,20" time="0" reversible="true" condition="$PARAM[move_down]">Conditional</animation>
         <control type="label">
           <width>auto</width>
           <label>$PARAM[label]</label>
@@ -162,6 +162,24 @@
           <textcolor>dialog_fg_100</textcolor>
           <font>$PARAM[font]</font>
           <height>24</height>
+        </control>
+        <control type="label">
+          <label>&#8226;</label>
+          <height>24</height>
+          <align>center</align>
+          <aligny>center</aligny>
+          <textcolor>$VAR[ColorHighlight]</textcolor>
+          <font>$PARAM[font]</font>
+          <visible>Control.HasFocus($PARAM[id])</visible>
+        </control>
+        <control type="label">
+          <width>auto</width>
+          <label>$VAR[Label_Widgets_Title]</label>
+          <aligny>center</aligny>
+          <textcolor>dialog_fg_100</textcolor>
+          <font>$PARAM[font]</font>
+          <height>24</height>
+          <visible>Control.HasFocus($PARAM[id])</visible>
         </control>
         <control type="group">
           <include content="ProgressGradient">

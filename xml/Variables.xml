@@ -239,6 +239,11 @@
     <value condition="!String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
     <value>$INFO[ListItem.Label]</value>
   </variable>
+  <variable name="Label_Widgets_Title">
+    <value condition="!String.IsEmpty(ListItem.Season) + !String.IsEmpty(ListItem.Episode)">$INFO[ListItem.Season, Season: , ,][COLOR=$VAR[ColorHighlight]]+[/COLOR]$INFO[ListItem.Episode, Episode: ]</value>
+    <value condition="!String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title, ,]</value>
+    <value>$INFO[ListItem.Label, ,]</value>
+  </variable>
   <variable name="Label_Plot">
     <value condition="!String.IsEmpty(ListItem.Property(Artist_Description))">$INFO[ListItem.Property(Artist_Description)]</value>
     <value condition="!String.IsEmpty(ListItem.Property(Album_Description))">$INFO[ListItem.Property(Album_Description)]</value>
