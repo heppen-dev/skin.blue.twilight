@@ -143,6 +143,7 @@
           <width>1920</width>
           <onup>2999</onup>
           <usecontrolcoords>true</usecontrolcoords>
+          <scrolltime>100</scrolltime>
           <include>skinshortcuts-template-widgetsWall</include>
           <animation effect="slide" time="200" start="0" end="0,740" reversible="true" condition="$EXP[FirstExpose] | $EXP[SecondExpose]">Conditional</animation>
         </control>

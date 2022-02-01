@@ -24,6 +24,7 @@
           <param name="sortdirection" value="$SKINSHORTCUTS[sortdirection]"/>
           <param name="limit" value="$SKINSHORTCUTS[limit]"/>
           <param name="path" value="$SKINSHORTCUTS[path]"/>
+          <param name="fade" value="$PYTHON[(int(7500) + int(id)) - int(2)]"/>
           <param name="PosterCondition" value="$PYTHON['true' if widgetAspect in 'Poster' else 'false']"/>
           <param name="LandscapeCondition" value="$PYTHON['true' if widgetAspect in 'Landscape' else 'false']"/>
         </include>
@@ -38,6 +39,7 @@
           <param name="sortdirection" value="$SKINSHORTCUTS[sortdirection]"/>
           <param name="limit" value="$SKINSHORTCUTS[limit]"/>
           <param name="path" value="$SKINSHORTCUTS[path]"/>
+          <param name="fade" value="$PYTHON[(int(7500) + int(id)) - int(2)]"/>
           <param name="PosterCondition" value="$PYTHON['true' if widgetAspect in 'Poster' else 'false']"/>
           <param name="LandscapeCondition" value="$PYTHON['true' if widgetAspect in 'Landscape' else 'false']"/>
         </include>
@@ -66,6 +68,7 @@
         <param name="sortdirection" value="$SKINSHORTCUTS[sortdirection]"/>
         <param name="limit" value="$SKINSHORTCUTS[limit]"/>
         <param name="path" value="$SKINSHORTCUTS[path]"/>
+        <param name="fade" value="$PYTHON[(int(7500) + int(id)) - int(2)]"/>
         <param name="condition" value="true"/>
         <skinshortcuts>visibility</skinshortcuts>
       </include>
@@ -186,6 +189,7 @@
           <param name="target" value="$SKINSHORTCUTS[widgetTarget]"/>
           <param name="limit" value="$SKINSHORTCUTS[widgetLimit]"/>
           <param name="path" value="$SKINSHORTCUTS[widgetPath]$INFO[Skin.String(SearchTerm)]$SKINSHORTCUTS[widgetPath2]"/>
+          <param name="fade" value="$PYTHON[(int(7500) + int(id)) - int(2)]"/>
           <param name="PosterCondition" value="$PYTHON['true' if widgetAspect in 'Poster' else 'false']"/>
           <param name="LandscapeCondition" value="$PYTHON['true' if widgetAspect in 'Landscape' else 'false']"/>
         </include>
@@ -228,6 +232,7 @@
           <param name="sortdirection" value="$SKINSHORTCUTS[sortdirection]"/>
           <param name="limit" value="$SKINSHORTCUTS[limit]"/>
           <param name="path" value="$SKINSHORTCUTS[path]"/>
+          <param name="fade" value="$PYTHON[(int(7500) + int(id)) - int(2)]"/>
           <param name="PosterCondition" value="$PYTHON['true' if widgetAspect in 'Poster' else 'false']"/>
           <param name="LandscapeCondition" value="$PYTHON['true' if widgetAspect in 'Landscape' else 'false']"/>
           <visible>Integer.IsEqual(Container(3000).NumItems,0)</visible>
@@ -243,6 +248,7 @@
           <param name="sortdirection" value="$SKINSHORTCUTS[sortdirection]"/>
           <param name="limit" value="$SKINSHORTCUTS[limit]"/>
           <param name="path" value="$SKINSHORTCUTS[path]"/>
+          <param name="fade" value="$PYTHON[(int(7500) + int(id)) - int(2)]"/>
           <param name="PosterCondition" value="$PYTHON['true' if widgetAspect in 'Poster' else 'false']"/>
           <param name="LandscapeCondition" value="$PYTHON['true' if widgetAspect in 'Landscape' else 'false']"/>
           <visible>Integer.IsEqual(Container(3000).NumItems,0)</visible>
@@ -272,6 +278,7 @@
         <param name="sortdirection" value="$SKINSHORTCUTS[sortdirection]"/>
         <param name="limit" value="$SKINSHORTCUTS[limit]"/>
         <param name="path" value="$SKINSHORTCUTS[path]"/>
+        <param name="fade" value="$PYTHON[(int(7500) + int(id)) - int(2)]"/>
         <param name="PosterCondition" value="$PYTHON['true' if widgetAspect in 'Poster' else 'false']"/>
         <param name="LandscapeCondition" value="$PYTHON['true' if widgetAspect in 'Landscape' else 'false']"/>
         <skinshortcuts>visibility</skinshortcuts>
