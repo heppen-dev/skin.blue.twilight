@@ -1,3 +1,18 @@
+1.0.9
+    Fixed: Header widget label
+    Added: Scrollbars to script-skinshortcuts dialog window
+    Added: Movies hub indicator
+    Added: Option to set Movies Hub as a home screen
+    Added: Localizations
+    Fixed: Thin poster highlight
+    Removed: Some junk code
+    Fixed: Dark overlay in DialogSelect
+    Added: Poster aspect ratio - initial commit
+    Some tweaks to height of widget content
+    Added: Fade effect to widgets while scrolling
+    Fixed: Thin border on landscape art
+    Added: More information about selected item to widget label
+    Improved: Widgets and widgets labels
 1.0.8
     Added: Option to set individual widgets for each menu entry in movies hub
     Fixed: System settings background and shadows
