@@ -2174,7 +2174,10 @@
     <onfocus>ClearProperty(spotlight_DBID,home)</onfocus>
     <onfocus>ClearProperty(spotlight_DBType,home)</onfocus>
   </include>
-  <include name="widgetswolabels_gap">
-    <itemgap>10</itemgap>
+  <include name="PosterHeight">
+    <height>320</height>
+  </include>
+  <include name="LandscapeHeight">
+    <height>225</height>
   </include>
 </includes>
