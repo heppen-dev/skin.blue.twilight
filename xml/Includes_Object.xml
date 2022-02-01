@@ -130,6 +130,7 @@
           </control>
         </control>
         <control type="group">
+          <left>-3</left>
           <width>315</width>
           <height>225</height>
           <include content="Selectbox">
