@@ -138,11 +138,10 @@
           <animation effect="slide" time="200" start="0" end="0,-600" reversible="true" condition="[ControlGroup(3000).HasFocus | $EXP[FirstExpose] | $EXP[SecondExpose] | String.IsEqual(Window(home).Property(activateSpotlight),true)] + !String.StartsWith(ListItem.FolderPath,favourites://)">Conditional</animation>
         </control>
         <control type="grouplist" id="3000">
-          <top>440</top>
-          <height>640</height>
-          <width>1920</width>
+          <top>400</top>
+          <left>160</left>
+          <height>675</height>
           <onup>2999</onup>
-          <usecontrolcoords>true</usecontrolcoords>
           <scrolltime>100</scrolltime>
           <include>skinshortcuts-template-widgetsWall</include>
           <animation effect="slide" time="200" start="0" end="0,740" reversible="true" condition="$EXP[FirstExpose] | $EXP[SecondExpose]">Conditional</animation>
@@ -156,6 +155,7 @@
           <param name="title_width" value="1000" />
           <param name="clearlogo_top_margin" value="200"/>
           <param name="plot" value="$VAR[Label_PlotTextBoxVar]"/>
+          <param name="plot_height" value="95"/>
           <param name="visible" value="ControlGroup(3000).HasFocus + !String.StartsWith(ListItem.FolderPath,favourites://)"/>
         </include>
         <animation effect="fade" time="200" start="0" end="100" condition="ControlGroup(3000).HasFocus + !ControlGroup(2999).HasFocus">Conditional</animation>

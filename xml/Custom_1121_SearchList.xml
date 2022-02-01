@@ -9,12 +9,10 @@
       <include>OpenClose_Bottom</include>
       <control type="group">
         <control type="grouplist" id="4100">
-          <top>440</top>
-          <height>640</height>
-          <width>1920</width>
-          <onup>2999</onup>
+          <top>400</top>
+          <left>160</left>
+          <height>675</height>
           <scrolltime>100</scrolltime>
-          <usecontrolcoords>true</usecontrolcoords>
           <include>skinshortcuts-template-search</include>
         </control>
       </control>
@@ -26,6 +24,7 @@
           <param name="title_width" value="1000" />
           <param name="clearlogo_top_margin" value="200"/>
           <param name="plot" value="$VAR[Label_PlotTextBoxVar]"/>
+          <param name="plot_height" value="95"/>
           <param name="visible" value="Window.IsVisible(1121)"/>
         </include>
       </control>
