@@ -766,7 +766,6 @@
             </include>
             <onclick>ActivateWindow(osdsubtitlesettings)</onclick>
             <visible>!VideoPlayer.Content(LiveTV) | VideoPlayer.HasSubtitles</visible>
-            <visible>ControlGroup(201).HasFocus</visible>
             <include>OSD_Button_OnFocus</include>
           </control>
           <control type="radiobutton" id="609">
