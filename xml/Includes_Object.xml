@@ -502,7 +502,7 @@
     <content target="$PARAM[target]" sortby="$PARAM[sortby]" sortorder="$PARAM[sortdirection]" limit="$PARAM[limit]">$PARAM[path]</content>
   </include>
   <include name="Object_Item_Showcase">
-    <param name="top" default="30"/>
+    <param name="top" default="55"/>
     <param name="left" default="100"/>
     <param name="percentageinfo_line_top" default="200"/>
     <param name="mediaflags_line_top" default="250"/>
@@ -518,7 +518,7 @@
         <left>$PARAM[left]</left>
         <visible>$PARAM[visible]</visible>
         <control type="grouplist">
-          <itemgap>6</itemgap>
+          <itemgap>0</itemgap>
           <orientation>vertical</orientation>
           <width>$PARAM[title_width]</width>
           <control type="label">
@@ -654,7 +654,7 @@
         <right>0</right>
         <control type="group">
           <top>8</top>
-          <left>0</left>
+          <left>4</left>
           <width>260</width>
           <control type="image">
             <top>0</top>
@@ -674,7 +674,7 @@
             <param name="width" value="100%" />
             <param name="height" value="32"/>
             <param name="top" value="0" />
-            <param name="left" value="12" />
+            <param name="left" value="16" />
           </include>
         </control>
         <control type="label">
