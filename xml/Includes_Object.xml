@@ -45,7 +45,7 @@
           <param name="id" value="$PARAM[id]"/>
         </include>
       </focusedlayout>
-      <!--       Landscapes -->
+      <!-- Landscapes -->
       <itemlayout height="200" width="322" condition="$PARAM[LandscapeCondition]">
         <include content="ViewLandscapeItemLayout" />
         <control type="group">
@@ -143,6 +143,31 @@
           <param name="id" value="$PARAM[id]"/>
         </include>
       </focusedlayout>
+      <!-- Square aspect ratio -->
+      <itemlayout height="300" width="300" condition="$PARAM[SquareCondition]">
+        <include content="ViewSquareItemLayout"/>
+        <include content="View_WatchedOverlay">
+          <param name="bottom" value="28"/>
+          <param name="right" value="28"/>
+        </include>
+      </itemlayout>
+      <focusedlayout height="300" width="300" condition="$PARAM[SquareCondition]">
+        <include content="ViewSquareItemLayout"/>
+        <control type="group">
+          <top>-16</top>
+          <left>-6</left>
+          <width>280</width>
+          <height>320</height>
+          <include content="Selectbox">
+            <param name="visible" value="$PARAM[SquareCondition] + Control.HasFocus($PARAM[id])"/>
+          </include>
+        </control>
+        <include content="View_WatchedOverlay">
+          <param name="bottom" value="28"/>
+          <param name="right" value="28"/>
+          <param name="id" value="$PARAM[id]"/>
+        </include>
+      </focusedlayout>
     </definition>
   </include>
   <include name="Object_Widget_Label">
@@ -227,6 +252,7 @@
         <preload>2</preload>
         <include condition="$PARAM[PosterCondition]">PosterHeight</include>
         <include condition="$PARAM[LandscapeCondition]">LandscapeHeight</include>
+        <include condition="$PARAM[SquareCondition]">SquareHeight</include>
         <animation effect="slide" end="0,20" time="0" reversible="true" condition="true">Conditional</animation>
         <onfocus>SetProperty(fade,$PARAM[fade],home)</onfocus>
         <animation effect="fade" start="100" end="0" time="200" condition="Integer.IsEqual(Window(home).Property(fade),$PARAM[id])">Conditional</animation>
@@ -240,6 +266,7 @@
           <param name="id" value="$PARAM[id]"/>
           <param name="PosterCondition" value="$PARAM[PosterCondition]"/>
           <param name="LandscapeCondition" value="$PARAM[LandscapeCondition]"/>
+          <param name="SquareCondition" value="$PARAM[SquareCondition]"/>
         </include>
         <include content="Object_Widget_Content_Path">
           <param name="target" value="$PARAM[target]"/>
@@ -272,6 +299,7 @@
         <preload>2</preload>
         <include condition="$PARAM[PosterCondition]">PosterHeight</include>
         <include condition="$PARAM[LandscapeCondition]">LandscapeHeight</include>
+        <include condition="$PARAM[SquareCondition]">SquareHeight</include>
         <animation effect="slide" end="0,20" time="0" reversible="true" condition="true">Conditional</animation>
         <onfocus>SetProperty(fade,$PARAM[fade],home)</onfocus>
         <animation effect="fade" start="100" end="0" time="200" condition="Integer.IsEqual(Window(home).Property(fade),$PARAM[id])">Conditional</animation>
@@ -285,6 +313,7 @@
           <param name="id" value="$PARAM[id]"/>
           <param name="PosterCondition" value="$PARAM[PosterCondition]"/>
           <param name="LandscapeCondition" value="$PARAM[LandscapeCondition]"/>
+          <param name="SquareCondition" value="$PARAM[SquareCondition]"/>
         </include>
         <include content="Object_Widget_Content_Path">
           <param name="target" value="$PARAM[target]"/>
@@ -326,6 +355,7 @@
         <preload>2</preload>
         <include condition="$PARAM[PosterCondition]">PosterHeight</include>
         <include condition="$PARAM[LandscapeCondition]">LandscapeHeight</include>
+        <include condition="$PARAM[SquareCondition]">SquareHeight</include>
         <animation effect="slide" end="0,20" time="0" reversible="true" condition="true">Conditional</animation>
         <onfocus>SetProperty(fade,$PARAM[fade],home)</onfocus>
         <animation effect="fade" start="100" end="0" time="200" condition="Integer.IsEqual(Window(home).Property(fade),$PARAM[id])">Conditional</animation>
@@ -338,6 +368,7 @@
           <param name="id" value="$PARAM[id]"/>
           <param name="PosterCondition" value="$PARAM[PosterCondition]"/>
           <param name="LandscapeCondition" value="$PARAM[LandscapeCondition]"/>
+          <param name="SquareCondition" value="$PARAM[SquareCondition]"/>
         </include>
         <include content="Object_Widget_Content_Path">
           <param name="target" value="$PARAM[target]"/>
@@ -474,6 +505,7 @@
         <preload>2</preload>
         <include condition="$PARAM[PosterCondition]">PosterHeight</include>
         <include condition="$PARAM[LandscapeCondition]">LandscapeHeight</include>
+        <include condition="$PARAM[SquareCondition]">SquareHeight</include>
         <animation effect="slide" end="0,20" time="0" reversible="true" condition="true">Conditional</animation>
         <onfocus>SetProperty(fade,$PARAM[fade],home)</onfocus>
         <animation effect="fade" start="100" end="0" time="200" condition="Integer.IsEqual(Window(home).Property(fade),$PARAM[id])">Conditional</animation>
@@ -487,6 +519,7 @@
           <param name="id" value="$PARAM[id]"/>
           <param name="PosterCondition" value="$PARAM[PosterCondition]"/>
           <param name="LandscapeCondition" value="$PARAM[LandscapeCondition]"/>
+          <param name="SquareCondition" value="$PARAM[SquareCondition]"/>
         </include>
         <include content="Object_Widget_Content_Path">
           <param name="target" value="$PARAM[target]"/>

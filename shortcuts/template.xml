@@ -27,6 +27,7 @@
           <param name="fade" value="$PYTHON[(int(7500) + int(id)) - int(2)]"/>
           <param name="PosterCondition" value="$PYTHON['true' if widgetAspect in 'Poster' else 'false']"/>
           <param name="LandscapeCondition" value="$PYTHON['true' if widgetAspect in 'Landscape' else 'false']"/>
+          <param name="SquareCondition" value="$PYTHON['true' if widgetAspect in 'Square' else 'false']"/>
           <param name="arrows_posy" value="$PYTHON['110' if widgetAspect in 'Landscape' else '150']"/>
         </include>
         <include content="Object_WidgetsWall_Content" condition="!Skin.HasSetting(ShowWidgetLabels)">
@@ -43,6 +44,7 @@
           <param name="fade" value="$PYTHON[(int(7500) + int(id)) - int(2)]"/>
           <param name="PosterCondition" value="$PYTHON['true' if widgetAspect in 'Poster' else 'false']"/>
           <param name="LandscapeCondition" value="$PYTHON['true' if widgetAspect in 'Landscape' else 'false']"/>
+          <param name="SquareCondition" value="$PYTHON['true' if widgetAspect in 'Square' else 'false']"/>
           <param name="arrows_posy" value="$PYTHON['110' if widgetAspect in 'Landscape' else '150']"/>
         </include>
       </controls>
@@ -140,6 +142,7 @@
           <param name="fade" value="$PYTHON[(int(7500) + int(id)) - int(2)]"/>
           <param name="PosterCondition" value="$PYTHON['true' if widgetAspect in 'Poster' else 'false']"/>
           <param name="LandscapeCondition" value="$PYTHON['true' if widgetAspect in 'Landscape' else 'false']"/>
+          <param name="SquareCondition" value="$PYTHON['true' if widgetAspect in 'Square' else 'false']"/>
           <param name="arrows_posy" value="$PYTHON['110' if widgetAspect in 'Landscape' else '150']"/>
         </include>
       </controls>
@@ -182,6 +185,7 @@
           <param name="fade" value="$PYTHON[(int(7500) + int(id)) - int(2)]"/>
           <param name="PosterCondition" value="$PYTHON['true' if widgetAspect in 'Poster' else 'false']"/>
           <param name="LandscapeCondition" value="$PYTHON['true' if widgetAspect in 'Landscape' else 'false']"/>
+          <param name="SquareCondition" value="$PYTHON['true' if widgetAspect in 'Square' else 'false']"/>
           <param name="arrows_posy" value="$PYTHON['110' if widgetAspect in 'Landscape' else '150']"/>
           <visible>Integer.IsEqual(Container(3000).NumItems,0)</visible>
         </include>
@@ -199,6 +203,7 @@
           <param name="fade" value="$PYTHON[(int(7500) + int(id)) - int(2)]"/>
           <param name="PosterCondition" value="$PYTHON['true' if widgetAspect in 'Poster' else 'false']"/>
           <param name="LandscapeCondition" value="$PYTHON['true' if widgetAspect in 'Landscape' else 'false']"/>
+          <param name="SquareCondition" value="$PYTHON['true' if widgetAspect in 'Square' else 'false']"/>
           <param name="arrows_posy" value="$PYTHON['110' if widgetAspect in 'Landscape' else '150']"/>
           <visible>Integer.IsEqual(Container(3000).NumItems,0)</visible>
         </include>
@@ -228,6 +233,7 @@
         <param name="fade" value="$PYTHON[(int(7500) + int(id)) - int(2)]"/>
         <param name="PosterCondition" value="$PYTHON['true' if widgetAspect in 'Poster' else 'false']"/>
         <param name="LandscapeCondition" value="$PYTHON['true' if widgetAspect in 'Landscape' else 'false']"/>
+        <param name="SquareCondition" value="$PYTHON['true' if widgetAspect in 'Square' else 'false']"/>
         <param name="arrows_posy" value="$PYTHON['110' if widgetAspect in 'Landscape' else '150']"/>
         <skinshortcuts>visibility</skinshortcuts>
       </include>

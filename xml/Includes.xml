@@ -2180,4 +2180,7 @@
   <include name="LandscapeHeight">
     <height>225</height>
   </include>
+  <include name="SquareHeight">
+    <height>320</height>
+  </include>
 </includes>
