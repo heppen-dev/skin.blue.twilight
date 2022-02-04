@@ -211,9 +211,9 @@
       <include content="LeftRightArrows">
         <param name="list_id" value="$PARAM[id]"/>
         <param name="altid" value="$PARAM[groupid]"/>
-        <param name="left_posx" value="80"/>
-        <param name="right_posx" value="1820"/>
-        <param name="posy" value="150"/>
+        <param name="left_posx" value="-200"/>
+        <param name="right_posx" value="1650"/>
+        <param name="posy" value="$PARAM[arrows_posy]"/>
         <param name="visible" value="true"/>
         <animation effect="fade" start="100" end="0" time="200" condition="Integer.IsEqual(Window(home).Property(fade),$PARAM[id])">Conditional</animation>
         <nested/>
@@ -256,9 +256,9 @@
       <include content="LeftRightArrows">
         <param name="list_id" value="$PARAM[id]"/>
         <param name="altid" value="$PARAM[groupid]"/>
-        <param name="left_posx" value="80"/>
-        <param name="right_posx" value="1820"/>
-        <param name="posy" value="100"/>
+        <param name="left_posx" value="-200"/>
+        <param name="right_posx" value="1650"/>
+        <param name="posy" value="$PARAM[arrows_posy]"/>
         <param name="visible" value="true"/>
         <animation effect="fade" start="100" end="0" time="200" condition="Integer.IsEqual(Window(home).Property(fade),$PARAM[id])">Conditional</animation>
         <nested/>
@@ -310,9 +310,9 @@
       <include content="LeftRightArrows">
         <param name="list_id" value="$PARAM[id]"/>
         <param name="altid" value="$PARAM[groupid]"/>
-        <param name="left_posx" value="80"/>
-        <param name="right_posx" value="1820"/>
-        <param name="posy" value="100"/>
+        <param name="left_posx" value="-200"/>
+        <param name="right_posx" value="1650"/>
+        <param name="posy" value="$PARAM[arrows_posy]"/>
         <param name="visible" value="true"/>
         <animation effect="fade" start="100" end="0" time="200" condition="Integer.IsEqual(Window(home).Property(fade),$PARAM[id])">Conditional</animation>
         <nested/>
@@ -462,7 +462,7 @@
         <param name="altid" value="$PARAM[groupid]"/>
         <param name="left_posx" value="80"/>
         <param name="right_posx" value="1820"/>
-        <param name="posy" value="100"/>
+        <param name="posy" value="$PARAM[arrows_posy]"/>
         <param name="visible" value="true"/>
         <animation effect="fade" start="100" end="0" time="200" condition="Integer.IsEqual(Window(home).Property(fade),$PARAM[id])">Conditional</animation>
       </include>

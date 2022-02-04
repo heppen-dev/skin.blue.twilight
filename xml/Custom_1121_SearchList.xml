@@ -12,6 +12,7 @@
           <top>400</top>
           <left>160</left>
           <height>675</height>
+          <width>1920</width>
           <scrolltime>100</scrolltime>
           <include>skinshortcuts-template-search</include>
         </control>

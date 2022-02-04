@@ -27,6 +27,7 @@
           <param name="fade" value="$PYTHON[(int(7500) + int(id)) - int(2)]"/>
           <param name="PosterCondition" value="$PYTHON['true' if widgetAspect in 'Poster' else 'false']"/>
           <param name="LandscapeCondition" value="$PYTHON['true' if widgetAspect in 'Landscape' else 'false']"/>
+          <param name="arrows_posy" value="$PYTHON['110' if widgetAspect in 'Landscape' else '150']"/>
         </include>
         <include content="Object_WidgetsWall_Content" condition="!Skin.HasSetting(ShowWidgetLabels)">
           <param name="controltype" value="list"/>
@@ -42,6 +43,7 @@
           <param name="fade" value="$PYTHON[(int(7500) + int(id)) - int(2)]"/>
           <param name="PosterCondition" value="$PYTHON['true' if widgetAspect in 'Poster' else 'false']"/>
           <param name="LandscapeCondition" value="$PYTHON['true' if widgetAspect in 'Landscape' else 'false']"/>
+          <param name="arrows_posy" value="$PYTHON['110' if widgetAspect in 'Landscape' else '150']"/>
         </include>
       </controls>
     </items>
@@ -53,8 +55,6 @@
     <property name="sortby" tag="property" attribute="name|widgetSortBy"/>
     <property name="sortdirection" tag="property" attribute="name|widgetSortDirection"/>
     <property name="limit" tag="property" attribute="name|widgetLimit"/>
-    <property name="aspect" tag="property" attribute="name|widgetAspect"/>
-    <property name="aspect">Poster</property>
     <propertyGroup>mainmenuWidgets</propertyGroup>
     <controls>
       <include content="Object_LocalWidget_Content">
@@ -68,7 +68,6 @@
         <param name="sortdirection" value="$SKINSHORTCUTS[sortdirection]"/>
         <param name="limit" value="$SKINSHORTCUTS[limit]"/>
         <param name="path" value="$SKINSHORTCUTS[path]"/>
-        <param name="fade" value="$PYTHON[(int(7500) + int(id)) - int(2)]"/>
         <param name="condition" value="true"/>
         <skinshortcuts>visibility</skinshortcuts>
       </include>
@@ -123,8 +122,6 @@
       <property name="widgetTarget" tag="property" attribute="name|list" value="DefaultSearch-Addons">addons</property>
       <property name="widgetTarget" tag="property" attribute="name|widgetTarget" />
       <property name="widgetTarget">videos</property>
-      <property name="widgetAspect" tag="property" attribute="name|widgetAspect"/>
-      <property name="widgetAspect">Poster</property>
       <property name="widgetSourceArt" tag="property" attribute="name|widgetAspect" value="Square">thumb</property>
       <property name="widgetSourceArt" tag="property" attribute="name|widgetAspect" value="Landscape">landscape</property>
       <property name="widgetSourceArt">poster</property>
@@ -143,6 +140,7 @@
           <param name="fade" value="$PYTHON[(int(7500) + int(id)) - int(2)]"/>
           <param name="PosterCondition" value="$PYTHON['true' if widgetAspect in 'Poster' else 'false']"/>
           <param name="LandscapeCondition" value="$PYTHON['true' if widgetAspect in 'Landscape' else 'false']"/>
+          <param name="arrows_posy" value="$PYTHON['110' if widgetAspect in 'Landscape' else '150']"/>
         </include>
       </controls>
     </items>
@@ -167,8 +165,6 @@
       <property name="sortby" tag="property" attribute="name|widgetSortBy"/>
       <property name="sortdirection" tag="property" attribute="name|widgetSortDirection"/>
       <property name="limit" tag="property" attribute="name|widgetLimit"/>
-      <property name="aspect" tag="property" attribute="name|widgetAspect"/>
-      <property name="aspect">Poster</property>
       <propertyGroup>mainmenuWidgets</propertyGroup>
       <controls>
         <include content="Object_WidgetsWall_Content_withLabels" condition="Skin.HasSetting(ShowWidgetLabels)">
@@ -186,6 +182,7 @@
           <param name="fade" value="$PYTHON[(int(7500) + int(id)) - int(2)]"/>
           <param name="PosterCondition" value="$PYTHON['true' if widgetAspect in 'Poster' else 'false']"/>
           <param name="LandscapeCondition" value="$PYTHON['true' if widgetAspect in 'Landscape' else 'false']"/>
+          <param name="arrows_posy" value="$PYTHON['110' if widgetAspect in 'Landscape' else '150']"/>
           <visible>Integer.IsEqual(Container(3000).NumItems,0)</visible>
         </include>
         <include content="Object_WidgetsWall_Content" condition="!Skin.HasSetting(ShowWidgetLabels)">
@@ -202,6 +199,7 @@
           <param name="fade" value="$PYTHON[(int(7500) + int(id)) - int(2)]"/>
           <param name="PosterCondition" value="$PYTHON['true' if widgetAspect in 'Poster' else 'false']"/>
           <param name="LandscapeCondition" value="$PYTHON['true' if widgetAspect in 'Landscape' else 'false']"/>
+          <param name="arrows_posy" value="$PYTHON['110' if widgetAspect in 'Landscape' else '150']"/>
           <visible>Integer.IsEqual(Container(3000).NumItems,0)</visible>
         </include>
       </controls>
@@ -213,8 +211,6 @@
     <property name="sortby" tag="property" attribute="name|widgetSortBy"/>
     <property name="sortdirection" tag="property" attribute="name|widgetSortDirection"/>
     <property name="limit" tag="property" attribute="name|widgetLimit"/>
-    <property name="aspect" tag="property" attribute="name|widgetAspect"/>
-    <property name="aspect">Poster</property>
     <propertyGroup>mainmenuWidgets</propertyGroup>
     <controls>
       <include content="Object_MoviesHub_Content">
@@ -232,6 +228,7 @@
         <param name="fade" value="$PYTHON[(int(7500) + int(id)) - int(2)]"/>
         <param name="PosterCondition" value="$PYTHON['true' if widgetAspect in 'Poster' else 'false']"/>
         <param name="LandscapeCondition" value="$PYTHON['true' if widgetAspect in 'Landscape' else 'false']"/>
+        <param name="arrows_posy" value="$PYTHON['110' if widgetAspect in 'Landscape' else '150']"/>
         <skinshortcuts>visibility</skinshortcuts>
       </include>
     </controls>
@@ -253,6 +250,6 @@
     <property name="label">$INFO[ListItem.Label]</property>
     <property name="background" tag="property" attribute="name|background"/>
     <property name="widgetAspect" tag="property" attribute="name|widgetAspect"/>
-    <property name="widgetAspect">Poster</property>
+    <property name="widgetAspect">Landscape</property>
   </propertyGroup>
 </template>
