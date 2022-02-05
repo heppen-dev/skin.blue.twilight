@@ -2174,6 +2174,21 @@
     <onfocus>ClearProperty(spotlight_DBID,home)</onfocus>
     <onfocus>ClearProperty(spotlight_DBType,home)</onfocus>
   </include>
+  <include name="BannerWidth">
+    <width>2800</width>
+  </include>
+  <include name="SquareWidth">
+    <width>1600</width>
+  </include>
+  <include name="LandscapeWidth">
+    <width>1600</width>
+  </include>
+  <include name="SquareHeight">
+    <height>320</height>
+  </include>
+  <include name="BannerHeight">
+    <height>300</height>
+  </include>
   <include name="PosterHeight">
     <height>320</height>
   </include>

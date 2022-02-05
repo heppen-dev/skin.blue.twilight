@@ -64,6 +64,11 @@
   <property property="widgetAspect">Landscape</property>
   <property property="widgetAspect">Square</property>
   <propertySettings property="widgetAspect" buttonID="505" title="Widget Aspect"/>
+  <!-- Header Widget Aspect -->
+  <property property="headerWidgetAspect">Banner</property>
+  <property property="headerWidgetAspect">Landscape</property>
+  <property property="headerWidgetAspect">Square</property>
+  <propertySettings property="headerWidgetAspect" buttonID="605" title="Widget Aspect"/>
   <!-- Search Item Default Properties -->
   <propertydefault labelID="artists" group="searchmenu" property="widgetAspect">Square</propertydefault>
   <propertydefault labelID="albums" group="searchmenu" property="widgetAspect">Square</propertydefault>

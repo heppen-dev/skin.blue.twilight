@@ -138,7 +138,7 @@
         <control type="grouplist" id="2999">
           <onup>9000</onup>
           <ondown>3000</ondown>
-          <top>150</top>
+          <top>120</top>
           <left>-700</left>
           <height>300</height>
           <include>skinshortcuts-template-localWidget</include>

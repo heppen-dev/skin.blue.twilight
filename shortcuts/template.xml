@@ -60,7 +60,7 @@
     <propertyGroup>mainmenuWidgets</propertyGroup>
     <controls>
       <include content="Object_LocalWidget_Content">
-        <param name="controltype" value="list"/>
+        <param name="controltype" value="$PYTHON['list' if headerWidgetAspect in 'Square|Landscape' else 'fixedlist']"/>
         <param name="name" value="$SKINSHORTCUTS[label]"/>
         <param name="groupid" value="660$SKINSHORTCUTS[id]"/>
         <param name="image" value="$SKINSHORTCUTS[artwork]"/>
@@ -70,7 +70,9 @@
         <param name="sortdirection" value="$SKINSHORTCUTS[sortdirection]"/>
         <param name="limit" value="$SKINSHORTCUTS[limit]"/>
         <param name="path" value="$SKINSHORTCUTS[path]"/>
-        <param name="condition" value="true"/>
+        <param name="BannerCondition" value="$PYTHON['true' if headerWidgetAspect in 'Banner' else 'false']"/>
+        <param name="LandscapeCondition" value="$PYTHON['true' if headerWidgetAspect in 'Landscape' else 'false']"/>
+        <param name="SquareCondition" value="$PYTHON['true' if headerWidgetAspect in 'Square' else 'false']"/>
         <skinshortcuts>visibility</skinshortcuts>
       </include>
     </controls>
@@ -257,5 +259,7 @@
     <property name="background" tag="property" attribute="name|background"/>
     <property name="widgetAspect" tag="property" attribute="name|widgetAspect"/>
     <property name="widgetAspect">Landscape</property>
+    <property name="headerWidgetAspect" tag="property" attribute="name|headerWidgetAspect"/>
+    <property name="headerWidgetAspect">Banner</property>
   </propertyGroup>
 </template>
