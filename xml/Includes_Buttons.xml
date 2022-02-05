@@ -63,6 +63,33 @@
       </control>
     </definition>
   </include>
+  <include name="DefaultAddonSettingButtonGradient">
+    <param name="id" default=""/>
+    <param name="height" default="75"/>
+    <definition>
+      <control type="group">
+        <nested/>
+        <animation effect="fade" start="0" end="100" time="1">Visible</animation>
+        <animation effect="slide" end="0,$PARAM[height]" time="0" condition="Integer.IsGreater(Container($PARAM[id]).Position,0)">Conditional</animation>
+        <animation effect="slide" end="0,$PARAM[height]" time="0" condition="Integer.IsGreater(Container($PARAM[id]).Position,1)">Conditional</animation>
+        <animation effect="slide" end="0,$PARAM[height]" time="0" condition="Integer.IsGreater(Container($PARAM[id]).Position,2)">Conditional</animation>
+        <animation effect="slide" end="0,$PARAM[height]" time="0" condition="Integer.IsGreater(Container($PARAM[id]).Position,3)">Conditional</animation>
+        <animation effect="slide" end="0,$PARAM[height]" time="0" condition="Integer.IsGreater(Container($PARAM[id]).Position,4)">Conditional</animation>
+        <animation effect="slide" end="0,$PARAM[height]" time="0" condition="Integer.IsGreater(Container($PARAM[id]).Position,5)">Conditional</animation>
+        <animation effect="slide" end="0,$PARAM[height]" time="0" condition="Integer.IsGreater(Container($PARAM[id]).Position,6)">Conditional</animation>
+        <animation effect="slide" end="0,$PARAM[height]" time="0" condition="Integer.IsGreater(Container($PARAM[id]).Position,7)">Conditional</animation>
+        <animation effect="slide" end="0,$PARAM[height]" time="0" condition="Integer.IsGreater(Container($PARAM[id]).Position,8)">Conditional</animation>
+        <animation effect="slide" end="0,$PARAM[height]" time="0" condition="Integer.IsGreater(Container($PARAM[id]).Position,9)">Conditional</animation>
+        <animation effect="slide" end="0,$PARAM[height]" time="0" condition="Integer.IsGreater(Container($PARAM[id]).Position,10)">Conditional</animation>
+        <control type="image">
+          <texture colordiffuse="$VAR[ColorHighlight]" border="10">common/box.png</texture>
+        </control>
+        <control type="image">
+          <texture colordiffuse="$VAR[ColorGradient]" border="10">common/box-gradient.png</texture>
+        </control>
+      </control>
+    </definition>
+  </include>
   <include name="DefaultSettingButtonGradient">
     <param name="id" default=""/>
     <param name="height" default="75"/>
@@ -162,6 +189,7 @@
     <param name="onclick" default="" />
     <definition>
       <control type="$PARAM[controltype]" id="$PARAM[id]">
+        <nested/>
         <width>$PARAM[width]</width>
         <height>$PARAM[height]</height>
         <label>$PARAM[label]</label>
