@@ -77,8 +77,8 @@
           <control type="radiobutton" id="624" description="Show labels on banners">
             <label>$LOCALIZE[31431]</label>
             <include>DefaultSettingButton</include>
-            <onclick>Skin.ToggleSetting(ShowLabelOnBanner)</onclick>
-            <selected>Skin.HasSetting(ShowLabelOnBanner)</selected>
+            <onclick>Skin.ToggleSetting(header_widget_label)</onclick>
+            <selected>Skin.HasSetting(header_widget_label)</selected>
           </control>
           <control type="radiobutton" id="621" description="Expose">
             <label>$LOCALIZE[31407]</label>

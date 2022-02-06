@@ -164,6 +164,13 @@
           <include>skinshortcuts-template-globalHub</include>
           <animation effect="slide" time="200" start="0" end="0,640" reversible="true" condition="$EXP[FirstExpose] | $EXP[SecondExpose]">Conditional</animation>
         </control>
+        <include content="LeftRightArrowsHome">
+          <param name="altid" value="3005" />
+          <param name="left_posx" value="60"/>
+          <param name="right_posx" value="1800"/>
+          <param name="posy" value="750"/>
+          <param name="visible" value="true"/>
+        </include>
       </control>
       <control type="group">
         <top>-50</top>

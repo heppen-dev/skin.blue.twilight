@@ -4,6 +4,7 @@
     <definition>
       <!-- trailers -->
       <onfocus>SetProperty(TMDbHelper.WidgetContainer,$PARAM[id],Home)</onfocus>
+      <onfocus>SetProperty(arrow_list_id,$PARAM[id],Home)</onfocus>
       <onclick condition="[String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE, tvshow)] + Control.HasFocus($PARAM[id]) + [Skin.HasSetting(BackgroundPlayingTrailers) + Skin.HasSetting(Expose)] + !Player.HasVideo + !String.IsEmpty(ListItem.Trailer)">AlarmClock(trailerdelay,PlayMedia($ESCINFO[ListItem.Trailer],1),00:01,silent)</onclick>
       <onclick condition="[String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE, tvshow)] + Control.HasFocus($PARAM[id]) + [Skin.HasSetting(BackgroundPlayingTrailers) + Skin.HasSetting(Expose)] + !Player.HasVideo + String.IsEmpty(ListItem.Trailer) + !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Trailer))">AlarmClock(trailerdelay,PlayMedia($ESCINFO[Window(Home).Property(TMDbHelper.ListItem.Trailer)],1),00:01,silent)</onclick>
       <onclick condition="[[String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE, tvshow)] + [Skin.HasSetting(BackgroundPlayingTrailers) + Skin.HasSetting(Expose)] + String.IsEmpty(ListItem.Trailer) + String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Trailer))] + !Skin.HasSetting(DontShowNotificationANT)">Notification($LOCALIZE[31389], $LOCALIZE[31390])</onclick>
@@ -34,14 +35,14 @@
           <param name="bg_visible" value="true" />
         </include>
         <control type="group">
-          <visible>Skin.HasSetting(ShowLabelOnBanner) + Control.HasFocus($PARAM[id])</visible>
+          <visible>Skin.HasSetting(header_widget_label) + Control.HasFocus($PARAM[id])</visible>
           <animation effect="fade" time="200" end="100" reversible="false">Focus</animation>
           <control type="image">
             <top>175</top>
             <left>42</left>
             <width>1000</width>
             <height>55</height>
-            <texture colordiffuse="main_bg_100">common/white.png</texture>
+            <texture colordiffuse="dialog_bg_100">common/white.png</texture>
           </control>
           <control type="progress" id="12">
             <top>175</top>
@@ -79,7 +80,7 @@
           <left>30</left>
           <width>1025</width>
           <height>250</height>
-          <visible>!Skin.HasSetting(ShowLabelOnBanner)</visible>
+          <visible>!Skin.HasSetting(header_widget_label)</visible>
           <include content="Selectbox">
             <param name="visible" value="$PARAM[BannerCondition] + Control.HasFocus($PARAM[id])"/>
           </include>
@@ -89,7 +90,7 @@
           <left>30</left>
           <width>1025</width>
           <height>285</height>
-          <visible>Skin.HasSetting(ShowLabelOnBanner)</visible>
+          <visible>Skin.HasSetting(header_widget_label)</visible>
           <include content="Selectbox">
             <param name="visible" value="$PARAM[BannerCondition] + Control.HasFocus($PARAM[id])"/>
           </include>
@@ -207,7 +208,7 @@
         </control>
         <control type="group">
           <left>-3</left>
-          <width>315</width>
+          <width>318</width>
           <height>225</height>
           <include content="Selectbox">
             <param name="visible" value="$PARAM[LandscapeCondition] + Control.HasFocus($PARAM[id])"/>
@@ -230,9 +231,51 @@
       <focusedlayout height="300" width="300" condition="$PARAM[SquareCondition]">
         <include content="ViewSquareItemLayout"/>
         <control type="group">
-          <top>-16</top>
-          <left>-6</left>
-          <width>280</width>
+          <visible>Skin.HasSetting(header_widget_label) + Control.HasFocus($PARAM[id])</visible>
+          <animation effect="fade" time="200" end="100" reversible="false">Focus</animation>
+          <control type="image">
+            <top>210</top>
+            <left>6</left>
+            <width>255</width>
+            <height>55</height>
+            <texture colordiffuse="dialog_bg_100">common/white.png</texture>
+          </control>
+          <control type="progress" id="12">
+            <top>210</top>
+            <left>6</left>
+            <width>255</width>
+            <height>55</height>
+            <info>ListItem.Progress</info>
+            <righttexture/>
+            <lefttexture colordiffuse="$VAR[ColorHighlight]" border="4">diffuse/progress-left.png</lefttexture>
+            <midtexture colordiffuse="$VAR[ColorHighlight]" border="4">diffuse/progress-end.png</midtexture>
+            <animation effect="fade" time="0" end="50" reversible="false" condition="true">Conditional</animation>
+            <visible>Control.HasFocus($PARAM[id]) + String.StartsWith(ListItem.FolderPath,pvr://)</visible>
+          </control>
+          <control type="image">
+            <top>210</top>
+            <left>6</left>
+            <width>255</width>
+            <height>1</height>
+            <texture colordiffuse="80FFFFFF">common/white.png</texture>
+          </control>
+          <control type="label">
+            <top>210</top>
+            <left>6</left>
+            <width>255</width>
+            <height>50</height>
+            <font>font_tiny_hintlabel</font>
+            <textcolor>ffffffff</textcolor>
+            <align>center</align>
+            <aligny>center</aligny>
+            <scroll>true</scroll>
+            <label>$VAR[Label_HeaderWidget]</label>
+          </control>
+        </control>
+        <control type="group">
+          <top>-15</top>
+          <left>-4</left>
+          <width>275</width>
           <height>320</height>
           <include content="Selectbox">
             <param name="visible" value="$PARAM[SquareCondition] + Control.HasFocus($PARAM[id])"/>
@@ -309,16 +352,6 @@
         <animation effect="fade" start="100" end="0" time="200" condition="Integer.IsEqual(Window(home).Property(fade),$PARAM[id])">Conditional</animation>
         <nested/>
       </include>
-      <include content="LeftRightArrows">
-        <param name="list_id" value="$PARAM[id]"/>
-        <param name="altid" value="$PARAM[groupid]"/>
-        <param name="left_posx" value="-200"/>
-        <param name="right_posx" value="1650"/>
-        <param name="posy" value="$PARAM[arrows_posy]"/>
-        <param name="visible" value="true"/>
-        <animation effect="fade" start="100" end="0" time="200" condition="Integer.IsEqual(Window(home).Property(fade),$PARAM[id])">Conditional</animation>
-        <nested/>
-      </include>
       <control type="list" id="$PARAM[id]">
         <nested/>
         <orientation>horizontal</orientation>
@@ -356,16 +389,6 @@
   </include>
   <include name="Object_WidgetsWall_Content">
     <definition>
-      <include content="LeftRightArrows">
-        <param name="list_id" value="$PARAM[id]"/>
-        <param name="altid" value="$PARAM[groupid]"/>
-        <param name="left_posx" value="-200"/>
-        <param name="right_posx" value="1650"/>
-        <param name="posy" value="$PARAM[arrows_posy]"/>
-        <param name="visible" value="true"/>
-        <animation effect="fade" start="100" end="0" time="200" condition="Integer.IsEqual(Window(home).Property(fade),$PARAM[id])">Conditional</animation>
-        <nested/>
-      </include>
       <control type="list" id="$PARAM[id]">
         <nested/>
         <orientation>horizontal</orientation>
@@ -409,16 +432,6 @@
         <param name="label" value="$PARAM[label]"/>
         <param name="fade" value="$PARAM[fade]"/>
         <param name="move_down_when_landscape" value="$PARAM[LandscapeCondition]"/>
-        <animation effect="fade" start="100" end="0" time="200" condition="Integer.IsEqual(Window(home).Property(fade),$PARAM[id])">Conditional</animation>
-        <nested/>
-      </include>
-      <include content="LeftRightArrows">
-        <param name="list_id" value="$PARAM[id]"/>
-        <param name="altid" value="$PARAM[groupid]"/>
-        <param name="left_posx" value="-200"/>
-        <param name="right_posx" value="1650"/>
-        <param name="posy" value="$PARAM[arrows_posy]"/>
-        <param name="visible" value="true"/>
         <animation effect="fade" start="100" end="0" time="200" condition="Integer.IsEqual(Window(home).Property(fade),$PARAM[id])">Conditional</animation>
         <nested/>
       </include>
@@ -503,15 +516,6 @@
         <param name="label" value="$PARAM[label]"/>
         <param name="fade" value="$PARAM[fade]"/>
         <param name="move_down_when_landscape" value="$PARAM[LandscapeCondition]"/>
-        <animation effect="fade" start="100" end="0" time="200" condition="Integer.IsEqual(Window(home).Property(fade),$PARAM[id])">Conditional</animation>
-      </include>
-      <include content="LeftRightArrows">
-        <param name="list_id" value="$PARAM[id]"/>
-        <param name="altid" value="$PARAM[groupid]"/>
-        <param name="left_posx" value="80"/>
-        <param name="right_posx" value="1820"/>
-        <param name="posy" value="$PARAM[arrows_posy]"/>
-        <param name="visible" value="true"/>
         <animation effect="fade" start="100" end="0" time="200" condition="Integer.IsEqual(Window(home).Property(fade),$PARAM[id])">Conditional</animation>
       </include>
       <control type="list" id="$PARAM[id]">
