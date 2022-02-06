@@ -422,15 +422,6 @@
         <width>1900</width>
         <usecontrolcoords>true</usecontrolcoords>
         <control type="group">
-          <top>10</top>
-          <width>200</width>
-          <visible>!String.IsEmpty($PARAM[infolabel_prefix]ListItem.Premiered)</visible>
-          <include content="InfoFlag">
-            <param name="icon" value="lists/year.png"/>
-            <param name="label" value="$INFO[$PARAM[infolabel_prefix]ListItem.Premiered]"/>
-          </include>
-        </control>
-        <control type="group">
           <width>115</width>
           <visible>!String.IsEmpty($PARAM[infolabel_prefix]ListItem.Duration)</visible>
           <control type="label">
@@ -458,6 +449,14 @@
           </control>
           <include content="MediaFlag">
             <param name="texture" value="flags/flag.png"/>
+          </include>
+        </control>
+        <control type="group">
+          <top>10</top>
+          <visible>!String.IsEmpty($PARAM[infolabel_prefix]ListItem.Premiered)</visible>
+          <include content="InfoFlag">
+            <param name="icon" value="lists/year.png"/>
+            <param name="label" value="$INFO[$PARAM[infolabel_prefix]ListItem.Premiered]"/>
           </include>
         </control>
       </control>
