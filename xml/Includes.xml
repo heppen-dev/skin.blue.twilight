@@ -1085,6 +1085,39 @@
       </control>
     </definition>
   </include>
+  <include name="LeftRightArrowsHome">
+    <param name="left_posx">445</param>
+    <param name="right_posx">1843</param>
+    <param name="posy">936</param>
+    <param name="visible">!System.HasActiveModalDialog</param>
+    <definition>
+      <control type="group" id="$PARAM[altid]">
+        <nested/>
+        <control type="image">
+          <left>$PARAM[left_posx]</left>
+          <top>$PARAM[posy]</top>
+          <width>64</width>
+          <height>64</height>
+          <texture flipx="true" colordiffuse="$VAR[ColorHighlight]">common/right-arrow.png</texture>
+          <animation effect="zoom" start="0,100" end="100,100" center="auto" time="50">VisibleChange</animation>
+          <animation effect="zoom" start="0,100" end="100,100" delay="500" center="auto" time="50">WindowOpen</animation>
+          <animation effect="zoom" start="100,100" end="0,100" center="auto" time="50">WindowClose</animation>
+          <visible>Container(Window(home).Property(arrow_list_id)).HasPrevious</visible>
+        </control>
+        <control type="image">
+          <left>$PARAM[right_posx]</left>
+          <top>$PARAM[posy]</top>
+          <width>64</width>
+          <height>64</height>
+          <texture colordiffuse="$VAR[ColorHighlight]">common/right-arrow.png</texture>
+          <animation effect="zoom" start="0,100" end="100,100" center="auto" time="50">VisibleChange</animation>
+          <animation effect="zoom" start="0,100" end="100,100" delay="500" center="auto" time="50">WindowOpen</animation>
+          <animation effect="zoom" start="100,100" end="0,100" center="auto" time="50">WindowClose</animation>
+          <visible>Container(Window(home).Property(arrow_list_id)).HasNext</visible>
+        </control>
+      </control>
+    </definition>
+  </include>
   <include name="LeftRightArrows">
     <param name="left_posx">445</param>
     <param name="right_posx">1843</param>
@@ -1118,26 +1151,6 @@
           <visible>$PARAM[visible]</visible>
         </control>
       </control>
-      <!-- <control type="button" id="$PARAM[list_id]500">
-        <left>$PARAM[left_posx]</left>
-        <top>$PARAM[posy]</top>
-        <width>28</width>
-        <height>28</height>
-        <texturefocus/>
-        <texturenofocus/>
-        <onclick>Control.Move($PARAM[list_id],-1)</onclick>
-        <visible allowhiddenfocus="true">Container($PARAM[list_id]).HasPrevious + [Control.HasFocus($PARAM[list_id]) | Control.HasFocus($PARAM[list_id]500)]</visible>
-      </control>
-      <control type="button" id="$PARAM[list_id]501">
-        <left>$PARAM[right_posx]</left>
-        <top>$PARAM[posy]</top>
-        <width>28</width>
-        <height>28</height>
-        <texturefocus/>
-        <texturenofocus/>
-        <onclick>Control.Move($PARAM[list_id],1)</onclick>
-        <visible allowhiddenfocus="true">Container($PARAM[list_id]).HasNext + [Control.HasFocus($PARAM[list_id]) | Control.HasFocus($PARAM[list_id]501)]</visible>
-      </control> -->
     </definition>
   </include>
   <include name="DialogBackgroundCommons">

@@ -4,6 +4,7 @@
     <definition>
       <!-- trailers -->
       <onfocus>SetProperty(TMDbHelper.WidgetContainer,$PARAM[id],Home)</onfocus>
+      <onfocus>SetProperty(arrow_list_id,$PARAM[id],Home)</onfocus>
       <onclick condition="[String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE, tvshow)] + Control.HasFocus($PARAM[id]) + [Skin.HasSetting(BackgroundPlayingTrailers) + Skin.HasSetting(Expose)] + !Player.HasVideo + !String.IsEmpty(ListItem.Trailer)">AlarmClock(trailerdelay,PlayMedia($ESCINFO[ListItem.Trailer],1),00:01,silent)</onclick>
       <onclick condition="[String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE, tvshow)] + Control.HasFocus($PARAM[id]) + [Skin.HasSetting(BackgroundPlayingTrailers) + Skin.HasSetting(Expose)] + !Player.HasVideo + String.IsEmpty(ListItem.Trailer) + !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Trailer))">AlarmClock(trailerdelay,PlayMedia($ESCINFO[Window(Home).Property(TMDbHelper.ListItem.Trailer)],1),00:01,silent)</onclick>
       <onclick condition="[[String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE, tvshow)] + [Skin.HasSetting(BackgroundPlayingTrailers) + Skin.HasSetting(Expose)] + String.IsEmpty(ListItem.Trailer) + String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Trailer))] + !Skin.HasSetting(DontShowNotificationANT)">Notification($LOCALIZE[31389], $LOCALIZE[31390])</onclick>
@@ -351,16 +352,6 @@
         <animation effect="fade" start="100" end="0" time="200" condition="Integer.IsEqual(Window(home).Property(fade),$PARAM[id])">Conditional</animation>
         <nested/>
       </include>
-      <include content="LeftRightArrows">
-        <param name="list_id" value="$PARAM[id]"/>
-        <param name="altid" value="$PARAM[groupid]"/>
-        <param name="left_posx" value="-200"/>
-        <param name="right_posx" value="1650"/>
-        <param name="posy" value="$PARAM[arrows_posy]"/>
-        <param name="visible" value="true"/>
-        <animation effect="fade" start="100" end="0" time="200" condition="Integer.IsEqual(Window(home).Property(fade),$PARAM[id])">Conditional</animation>
-        <nested/>
-      </include>
       <control type="list" id="$PARAM[id]">
         <nested/>
         <orientation>horizontal</orientation>
@@ -398,16 +389,6 @@
   </include>
   <include name="Object_WidgetsWall_Content">
     <definition>
-      <include content="LeftRightArrows">
-        <param name="list_id" value="$PARAM[id]"/>
-        <param name="altid" value="$PARAM[groupid]"/>
-        <param name="left_posx" value="-200"/>
-        <param name="right_posx" value="1650"/>
-        <param name="posy" value="$PARAM[arrows_posy]"/>
-        <param name="visible" value="true"/>
-        <animation effect="fade" start="100" end="0" time="200" condition="Integer.IsEqual(Window(home).Property(fade),$PARAM[id])">Conditional</animation>
-        <nested/>
-      </include>
       <control type="list" id="$PARAM[id]">
         <nested/>
         <orientation>horizontal</orientation>
@@ -451,16 +432,6 @@
         <param name="label" value="$PARAM[label]"/>
         <param name="fade" value="$PARAM[fade]"/>
         <param name="move_down_when_landscape" value="$PARAM[LandscapeCondition]"/>
-        <animation effect="fade" start="100" end="0" time="200" condition="Integer.IsEqual(Window(home).Property(fade),$PARAM[id])">Conditional</animation>
-        <nested/>
-      </include>
-      <include content="LeftRightArrows">
-        <param name="list_id" value="$PARAM[id]"/>
-        <param name="altid" value="$PARAM[groupid]"/>
-        <param name="left_posx" value="-200"/>
-        <param name="right_posx" value="1650"/>
-        <param name="posy" value="$PARAM[arrows_posy]"/>
-        <param name="visible" value="true"/>
         <animation effect="fade" start="100" end="0" time="200" condition="Integer.IsEqual(Window(home).Property(fade),$PARAM[id])">Conditional</animation>
         <nested/>
       </include>
@@ -545,15 +516,6 @@
         <param name="label" value="$PARAM[label]"/>
         <param name="fade" value="$PARAM[fade]"/>
         <param name="move_down_when_landscape" value="$PARAM[LandscapeCondition]"/>
-        <animation effect="fade" start="100" end="0" time="200" condition="Integer.IsEqual(Window(home).Property(fade),$PARAM[id])">Conditional</animation>
-      </include>
-      <include content="LeftRightArrows">
-        <param name="list_id" value="$PARAM[id]"/>
-        <param name="altid" value="$PARAM[groupid]"/>
-        <param name="left_posx" value="80"/>
-        <param name="right_posx" value="1820"/>
-        <param name="posy" value="$PARAM[arrows_posy]"/>
-        <param name="visible" value="true"/>
         <animation effect="fade" start="100" end="0" time="200" condition="Integer.IsEqual(Window(home).Property(fade),$PARAM[id])">Conditional</animation>
       </include>
       <control type="list" id="$PARAM[id]">
