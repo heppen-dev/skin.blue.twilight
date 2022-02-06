@@ -1030,7 +1030,7 @@
         <control type="label">
           <width>100%</width>
           <label>$PARAM[main_label]</label>
-          <font>font52_title</font>
+          <font>font30_title_upp</font>
           <shadowcolor>text_shadow</shadowcolor>
           <height>65</height>
           <align>center</align>

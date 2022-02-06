@@ -493,31 +493,18 @@
     </definition>
   </include>
   <include name="AddonDialogButton">
-    <param name="width">200</param>
+    <param name="width">240</param>
     <param name="onclick_1_condition">true</param>
     <param name="onclick_2_condition">true</param>
     <param name="onclick_3_condition">true</param>
     <definition>
-      <control type="radiobutton" id="$PARAM[id]">
+      <control type="button" id="$PARAM[id]">
         <width>$PARAM[width]</width>
-        <height>64</height>
-        <align>left</align>
-        <aligny>top</aligny>
-        <texturefocus border="5" colordiffuse="AltPosterBack">common/box.png</texturefocus>
+        <height>95</height>
+        <align>center</align>
+        <texturefocus />
         <texturenofocus />
-        <textoffsetx>64</textoffsetx>
-        <textoffsety>18</textoffsety>
-        <radioposx>-26</radioposx>
-        <radiowidth>110</radiowidth>
-        <radioheight>66</radioheight>
-        <textwidth>130</textwidth>
-        <font>font_tiny_match</font>
-        <textureradioonfocus colordiffuse="D0FFFFFF">$PARAM[icon]</textureradioonfocus>
-        <textureradioonnofocus colordiffuse="D0FFFFFF">$PARAM[icon]</textureradioonnofocus>
-        <textureradioofffocus colordiffuse="D0FFFFFF">$PARAM[icon]</textureradioofffocus>
-        <textureradiooffnofocus colordiffuse="D0FFFFFF">$PARAM[icon]</textureradiooffnofocus>
-        <textureradiooffdisabled colordiffuse="dialog_fg_30">$PARAM[icon]</textureradiooffdisabled>
-        <textureradioondisabled colordiffuse="dialog_fg_30">$PARAM[icon]</textureradioondisabled>
+        <font>font_menu</font>
         <label>$PARAM[label]</label>
         <onclick condition="$PARAM[onclick_1_condition]">$PARAM[onclick_1]</onclick>
         <onclick condition="$PARAM[onclick_2_condition]">$PARAM[onclick_2]</onclick>
@@ -528,33 +515,28 @@
     </definition>
   </include>
   <include name="AddonDialogToggleButton">
-    <param name="width">200</param>
+    <param name="width">240</param>
     <definition>
       <control type="radiobutton" id="$PARAM[id]">
         <width>$PARAM[width]</width>
-        <height>64</height>
-        <align>left</align>
-        <aligny>top</aligny>
-        <texturefocus border="5" colordiffuse="AltPosterBack">common/box.png</texturefocus>
+        <height>95</height>
+        <align>center</align>
+        <texturefocus />
         <texturenofocus />
-        <textoffsetx>64</textoffsetx>
-        <textoffsety>18</textoffsety>
-        <radioposx>-26</radioposx>
-        <radiowidth>110</radiowidth>
-        <radioheight>66</radioheight>
-        <textwidth>130</textwidth>
-        <font>font_tiny_match</font>
-        <textureradioonfocus colordiffuse="D0FFFFFF">$PARAM[icon_on]</textureradioonfocus>
-        <textureradioonnofocus colordiffuse="D0FFFFFF">$PARAM[icon_on]</textureradioonnofocus>
-        <textureradioofffocus colordiffuse="D0FFFFFF">$PARAM[icon_off]</textureradioofffocus>
-        <textureradiooffnofocus colordiffuse="D0FFFFFF">$PARAM[icon_off]</textureradiooffnofocus>
-        <textureradiooffdisabled colordiffuse="dialog_fg_30">$PARAM[icon_off]</textureradiooffdisabled>
-        <textureradioondisabled colordiffuse="dialog_fg_30">$PARAM[icon_on]</textureradioondisabled>
+        <font>font_menu</font>
         <selected>$PARAM[selected]</selected>
         <label>$PARAM[label]</label>
+        <label2>$PARAM[label2]</label2>
+        <textwidth>150</textwidth>
+        <textoffsetx>-1</textoffsetx>
         <onclick>$PARAM[onclick_1]</onclick>
         <onclick>$PARAM[onclick_2]</onclick>
         <visible>$PARAM[visible]</visible>
+        <textureradioonfocus/>
+        <textureradioonnofocus/>
+        <textureradioofffocus/>
+        <textureradiooffnofocus/>
+        <textureradioondisabled/>
       </control>
     </definition>
   </include>
