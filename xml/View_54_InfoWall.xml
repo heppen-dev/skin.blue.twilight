@@ -332,6 +332,28 @@
         <texture background="true" diffuse="diffuse/thumbinfopanel-diffuse.png">$VAR[IconWallThumbVar]</texture>
         <bordertexture border="72" colordiffuse="AltPosterBack">common/dark-shadow-24-2.png</bordertexture>
         <bordersize>22</bordersize>
+        <visible>!String.StartsWith(ListItem.FolderPath,pvr://)</visible>
+      </control>
+      <control type="image">
+        <top>-16</top>
+        <left>-16</left>
+        <width>300</width>
+        <height>300</height>
+        <aspectratio scalediffuse="true">keep</aspectratio>
+        <texture background="true" diffuse="diffuse/thumbinfopanel-diffuse.png" colordiffuse="AltPosterBack">common/white.png</texture>
+        <bordertexture border="72" colordiffuse="AltPosterBack">common/dark-shadow-24-2.png</bordertexture>
+        <bordersize>26</bordersize>
+        <visible>String.StartsWith(ListItem.FolderPath,pvr://)</visible>
+      </control>
+      <control type="image">
+        <top>15</top>
+        <left>13</left>
+        <width>250</width>
+        <height>250</height>
+        <aspectratio scalediffuse="false">keep</aspectratio>
+        <texture background="true">$VAR[Image_Landscape]</texture>
+        <bordersize>28</bordersize>
+        <visible>String.StartsWith(ListItem.FolderPath,pvr://)</visible>
       </control>
     </definition>
   </include>

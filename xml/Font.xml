@@ -221,6 +221,12 @@
       <style>bold</style>
     </font>
     <font>
+      <name>font30_title_upp</name>
+      <filename>AmazonEmberDisplay_Bd.ttf</filename>
+      <size>30</size>
+      <style>bold uppercase</style>
+    </font>
+    <font>
       <name>font36_title</name>
       <filename>AmazonEmberDisplay_Bd.ttf</filename>
       <size>36</size>

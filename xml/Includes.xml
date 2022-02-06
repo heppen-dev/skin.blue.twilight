@@ -422,15 +422,6 @@
         <width>1900</width>
         <usecontrolcoords>true</usecontrolcoords>
         <control type="group">
-          <top>10</top>
-          <width>200</width>
-          <visible>!String.IsEmpty($PARAM[infolabel_prefix]ListItem.Premiered)</visible>
-          <include content="InfoFlag">
-            <param name="icon" value="lists/year.png"/>
-            <param name="label" value="$INFO[$PARAM[infolabel_prefix]ListItem.Premiered]"/>
-          </include>
-        </control>
-        <control type="group">
           <width>115</width>
           <visible>!String.IsEmpty($PARAM[infolabel_prefix]ListItem.Duration)</visible>
           <control type="label">
@@ -458,6 +449,14 @@
           </control>
           <include content="MediaFlag">
             <param name="texture" value="flags/flag.png"/>
+          </include>
+        </control>
+        <control type="group">
+          <top>10</top>
+          <visible>!String.IsEmpty($PARAM[infolabel_prefix]ListItem.Premiered)</visible>
+          <include content="InfoFlag">
+            <param name="icon" value="lists/year.png"/>
+            <param name="label" value="$INFO[$PARAM[infolabel_prefix]ListItem.Premiered]"/>
           </include>
         </control>
       </control>
@@ -1030,7 +1029,7 @@
         <control type="label">
           <width>100%</width>
           <label>$PARAM[main_label]</label>
-          <font>font52_title</font>
+          <font>font30_title_upp</font>
           <shadowcolor>text_shadow</shadowcolor>
           <height>65</height>
           <align>center</align>
@@ -1143,6 +1142,7 @@
   </include>
   <include name="DialogBackgroundCommons">
     <param name="background_height" default="100%" />
+    <param name="closebutton_visible" default="true"/>
     <definition>
       <control type="image">
         <left>-2000</left>
@@ -1168,9 +1168,19 @@
         <width>$PARAM[width]</width>
         <height>$PARAM[height]</height>
         <control type="image">
-          <bottom>-10</bottom>
           <height>$PARAM[background_height]</height>
           <texture colordiffuse="$VAR[DialogBackgroundAlpha]" border="5">common/box.png</texture>
+          <visible>!Window.IsActive(addonsettings)</visible>
+        </control>
+        <control type="image">
+          <height>$PARAM[background_height]</height>
+          <texture colordiffuse="dialog_bg_100" border="5">common/box.png</texture>
+          <visible>Window.IsActive(addonsettings)</visible>
+        </control>
+        <control type="image" id="32111">
+          <include>$PARAM[background_height]</include>
+          <texture background="true" colordiffuse="$VAR[BackgroundOverlay]">$VAR[BlurBackground]</texture>
+          <visible>Window.IsActive(addonsettings)</visible>
         </control>
         <control type="radiobutton">
           <left>7</left>
@@ -1187,7 +1197,7 @@
           <textureradioonfocus colordiffuse="dialog_fg_70">dialogs/close.png</textureradioonfocus>
           <textureradioonnofocus colordiffuse="dialog_fg_70">special://skin/extras/icons/kodi.png</textureradioonnofocus>
           <onclick>Action(close)</onclick>
-          <visible>!Skin.HasSetting(touchmode)</visible>
+          <visible>$PARAM[closebutton_visible]</visible>
         </control>
         <control type="label" id="$PARAM[header_id]">
           <left>92</left>

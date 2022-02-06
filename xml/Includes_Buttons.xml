@@ -63,6 +63,33 @@
       </control>
     </definition>
   </include>
+  <include name="DefaultAddonSettingButtonGradient">
+    <param name="id" default=""/>
+    <param name="height" default="75"/>
+    <definition>
+      <control type="group">
+        <nested/>
+        <animation effect="fade" start="0" end="100" time="1">Visible</animation>
+        <animation effect="slide" end="0,$PARAM[height]" time="0" condition="Integer.IsGreater(Container($PARAM[id]).Position,0)">Conditional</animation>
+        <animation effect="slide" end="0,$PARAM[height]" time="0" condition="Integer.IsGreater(Container($PARAM[id]).Position,1)">Conditional</animation>
+        <animation effect="slide" end="0,$PARAM[height]" time="0" condition="Integer.IsGreater(Container($PARAM[id]).Position,2)">Conditional</animation>
+        <animation effect="slide" end="0,$PARAM[height]" time="0" condition="Integer.IsGreater(Container($PARAM[id]).Position,3)">Conditional</animation>
+        <animation effect="slide" end="0,$PARAM[height]" time="0" condition="Integer.IsGreater(Container($PARAM[id]).Position,4)">Conditional</animation>
+        <animation effect="slide" end="0,$PARAM[height]" time="0" condition="Integer.IsGreater(Container($PARAM[id]).Position,5)">Conditional</animation>
+        <animation effect="slide" end="0,$PARAM[height]" time="0" condition="Integer.IsGreater(Container($PARAM[id]).Position,6)">Conditional</animation>
+        <animation effect="slide" end="0,$PARAM[height]" time="0" condition="Integer.IsGreater(Container($PARAM[id]).Position,7)">Conditional</animation>
+        <animation effect="slide" end="0,$PARAM[height]" time="0" condition="Integer.IsGreater(Container($PARAM[id]).Position,8)">Conditional</animation>
+        <animation effect="slide" end="0,$PARAM[height]" time="0" condition="Integer.IsGreater(Container($PARAM[id]).Position,9)">Conditional</animation>
+        <animation effect="slide" end="0,$PARAM[height]" time="0" condition="Integer.IsGreater(Container($PARAM[id]).Position,10)">Conditional</animation>
+        <control type="image">
+          <texture colordiffuse="$VAR[ColorHighlight]" border="10">common/box.png</texture>
+        </control>
+        <control type="image">
+          <texture colordiffuse="$VAR[ColorGradient]" border="10">common/box-gradient.png</texture>
+        </control>
+      </control>
+    </definition>
+  </include>
   <include name="DefaultSettingButtonGradient">
     <param name="id" default=""/>
     <param name="height" default="75"/>
@@ -162,6 +189,7 @@
     <param name="onclick" default="" />
     <definition>
       <control type="$PARAM[controltype]" id="$PARAM[id]">
+        <nested/>
         <width>$PARAM[width]</width>
         <height>$PARAM[height]</height>
         <label>$PARAM[label]</label>
@@ -465,31 +493,18 @@
     </definition>
   </include>
   <include name="AddonDialogButton">
-    <param name="width">200</param>
+    <param name="width">240</param>
     <param name="onclick_1_condition">true</param>
     <param name="onclick_2_condition">true</param>
     <param name="onclick_3_condition">true</param>
     <definition>
-      <control type="radiobutton" id="$PARAM[id]">
+      <control type="button" id="$PARAM[id]">
         <width>$PARAM[width]</width>
-        <height>64</height>
-        <align>left</align>
-        <aligny>top</aligny>
-        <texturefocus border="5" colordiffuse="AltPosterBack">common/box.png</texturefocus>
+        <height>95</height>
+        <align>center</align>
+        <texturefocus />
         <texturenofocus />
-        <textoffsetx>64</textoffsetx>
-        <textoffsety>18</textoffsety>
-        <radioposx>-26</radioposx>
-        <radiowidth>110</radiowidth>
-        <radioheight>66</radioheight>
-        <textwidth>130</textwidth>
-        <font>font_tiny_match</font>
-        <textureradioonfocus colordiffuse="D0FFFFFF">$PARAM[icon]</textureradioonfocus>
-        <textureradioonnofocus colordiffuse="D0FFFFFF">$PARAM[icon]</textureradioonnofocus>
-        <textureradioofffocus colordiffuse="D0FFFFFF">$PARAM[icon]</textureradioofffocus>
-        <textureradiooffnofocus colordiffuse="D0FFFFFF">$PARAM[icon]</textureradiooffnofocus>
-        <textureradiooffdisabled colordiffuse="dialog_fg_30">$PARAM[icon]</textureradiooffdisabled>
-        <textureradioondisabled colordiffuse="dialog_fg_30">$PARAM[icon]</textureradioondisabled>
+        <font>font_menu</font>
         <label>$PARAM[label]</label>
         <onclick condition="$PARAM[onclick_1_condition]">$PARAM[onclick_1]</onclick>
         <onclick condition="$PARAM[onclick_2_condition]">$PARAM[onclick_2]</onclick>
@@ -500,33 +515,28 @@
     </definition>
   </include>
   <include name="AddonDialogToggleButton">
-    <param name="width">200</param>
+    <param name="width">240</param>
     <definition>
       <control type="radiobutton" id="$PARAM[id]">
         <width>$PARAM[width]</width>
-        <height>64</height>
-        <align>left</align>
-        <aligny>top</aligny>
-        <texturefocus border="5" colordiffuse="AltPosterBack">common/box.png</texturefocus>
+        <height>95</height>
+        <align>center</align>
+        <texturefocus />
         <texturenofocus />
-        <textoffsetx>64</textoffsetx>
-        <textoffsety>18</textoffsety>
-        <radioposx>-26</radioposx>
-        <radiowidth>110</radiowidth>
-        <radioheight>66</radioheight>
-        <textwidth>130</textwidth>
-        <font>font_tiny_match</font>
-        <textureradioonfocus colordiffuse="D0FFFFFF">$PARAM[icon_on]</textureradioonfocus>
-        <textureradioonnofocus colordiffuse="D0FFFFFF">$PARAM[icon_on]</textureradioonnofocus>
-        <textureradioofffocus colordiffuse="D0FFFFFF">$PARAM[icon_off]</textureradioofffocus>
-        <textureradiooffnofocus colordiffuse="D0FFFFFF">$PARAM[icon_off]</textureradiooffnofocus>
-        <textureradiooffdisabled colordiffuse="dialog_fg_30">$PARAM[icon_off]</textureradiooffdisabled>
-        <textureradioondisabled colordiffuse="dialog_fg_30">$PARAM[icon_on]</textureradioondisabled>
+        <font>font_menu</font>
         <selected>$PARAM[selected]</selected>
         <label>$PARAM[label]</label>
+        <label2>$PARAM[label2]</label2>
+        <textwidth>150</textwidth>
+        <textoffsetx>-1</textoffsetx>
         <onclick>$PARAM[onclick_1]</onclick>
         <onclick>$PARAM[onclick_2]</onclick>
         <visible>$PARAM[visible]</visible>
+        <textureradioonfocus/>
+        <textureradioonnofocus/>
+        <textureradioofffocus/>
+        <textureradiooffnofocus/>
+        <textureradioondisabled/>
       </control>
     </definition>
   </include>
