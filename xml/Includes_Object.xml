@@ -34,14 +34,14 @@
           <param name="bg_visible" value="true" />
         </include>
         <control type="group">
-          <visible>Skin.HasSetting(ShowLabelOnBanner) + Control.HasFocus($PARAM[id])</visible>
+          <visible>Skin.HasSetting(header_widget_label) + Control.HasFocus($PARAM[id])</visible>
           <animation effect="fade" time="200" end="100" reversible="false">Focus</animation>
           <control type="image">
             <top>175</top>
             <left>42</left>
             <width>1000</width>
             <height>55</height>
-            <texture colordiffuse="main_bg_100">common/white.png</texture>
+            <texture colordiffuse="dialog_bg_100">common/white.png</texture>
           </control>
           <control type="progress" id="12">
             <top>175</top>
@@ -79,7 +79,7 @@
           <left>30</left>
           <width>1025</width>
           <height>250</height>
-          <visible>!Skin.HasSetting(ShowLabelOnBanner)</visible>
+          <visible>!Skin.HasSetting(header_widget_label)</visible>
           <include content="Selectbox">
             <param name="visible" value="$PARAM[BannerCondition] + Control.HasFocus($PARAM[id])"/>
           </include>
@@ -89,7 +89,7 @@
           <left>30</left>
           <width>1025</width>
           <height>285</height>
-          <visible>Skin.HasSetting(ShowLabelOnBanner)</visible>
+          <visible>Skin.HasSetting(header_widget_label)</visible>
           <include content="Selectbox">
             <param name="visible" value="$PARAM[BannerCondition] + Control.HasFocus($PARAM[id])"/>
           </include>
@@ -230,9 +230,51 @@
       <focusedlayout height="300" width="300" condition="$PARAM[SquareCondition]">
         <include content="ViewSquareItemLayout"/>
         <control type="group">
-          <top>-16</top>
-          <left>-6</left>
-          <width>280</width>
+          <visible>Skin.HasSetting(header_widget_label) + Control.HasFocus($PARAM[id])</visible>
+          <animation effect="fade" time="200" end="100" reversible="false">Focus</animation>
+          <control type="image">
+            <top>210</top>
+            <left>6</left>
+            <width>255</width>
+            <height>55</height>
+            <texture colordiffuse="dialog_bg_100">common/white.png</texture>
+          </control>
+          <control type="progress" id="12">
+            <top>210</top>
+            <left>6</left>
+            <width>255</width>
+            <height>55</height>
+            <info>ListItem.Progress</info>
+            <righttexture/>
+            <lefttexture colordiffuse="$VAR[ColorHighlight]" border="4">diffuse/progress-left.png</lefttexture>
+            <midtexture colordiffuse="$VAR[ColorHighlight]" border="4">diffuse/progress-end.png</midtexture>
+            <animation effect="fade" time="0" end="50" reversible="false" condition="true">Conditional</animation>
+            <visible>Control.HasFocus($PARAM[id]) + String.StartsWith(ListItem.FolderPath,pvr://)</visible>
+          </control>
+          <control type="image">
+            <top>210</top>
+            <left>6</left>
+            <width>255</width>
+            <height>1</height>
+            <texture colordiffuse="80FFFFFF">common/white.png</texture>
+          </control>
+          <control type="label">
+            <top>210</top>
+            <left>6</left>
+            <width>255</width>
+            <height>50</height>
+            <font>font_tiny_hintlabel</font>
+            <textcolor>ffffffff</textcolor>
+            <align>center</align>
+            <aligny>center</aligny>
+            <scroll>true</scroll>
+            <label>$VAR[Label_HeaderWidget]</label>
+          </control>
+        </control>
+        <control type="group">
+          <top>-15</top>
+          <left>-4</left>
+          <width>275</width>
           <height>320</height>
           <include content="Selectbox">
             <param name="visible" value="$PARAM[SquareCondition] + Control.HasFocus($PARAM[id])"/>

@@ -1927,8 +1927,8 @@ msgstr "Pokaż nazwę widgetu"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31431"
-msgid "Show title on banner"
-msgstr "Pokaż nazwę pozycji na lokalnym banerze"
+msgid "Show header widget label"
+msgstr "Pokaż nazwę pozycji na widgecie nagłówka"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31432"

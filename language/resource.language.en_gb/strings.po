@@ -2103,7 +2103,7 @@ msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31431"
-msgid "Show title on banner"
+msgid "Show header widget label"
 msgstr ""
 
 #: /xml/SkinSettings.xml
