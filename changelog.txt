@@ -1,3 +1,8 @@
+1.1.1
+    Fixed: Selectbox width over landscape focused layout
+    Added: Header widget label for square aspect ratio
+    Changed: Left/right arrows in widget sections
+    Update: Textures.xbt
 1.1.0
     Fixed: Subtitle button on mouse hover
     Added: Square aspect ratio (initial commit)
