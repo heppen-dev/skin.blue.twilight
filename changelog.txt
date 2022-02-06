@@ -1,3 +1,16 @@
+1.1.0
+    Fixed: Subtitle button on mouse hover
+    Added: Square aspect ratio (initial commit)
+    Added: Additional aspect ratios to header widget (initial commit)
+    Changed: source URL in addon.xml
+    Fixed: PVR icon in header Square aspect ratio
+    Fixed: Playing TV Shows from header widget
+    Added: Darken background for DialogKeyboard
+    Changed: DialogAddonSettings layout
+    Changed: DialogAddonInfo layout
+    Fixed: Small tweaks to Object_Info_Fist_Line
+    Fixed: visible condition in tv guide
+    Improved: tv guide
 1.0.10
     Fixed: Clearlogo being cut off
     Fixed: Right arrows position
