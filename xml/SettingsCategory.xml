@@ -4,42 +4,44 @@
   <backgroundcolor>Background</backgroundcolor>
   <include>Defs_Settings_OnLoad</include>
   <controls>
-    <include>DefaultBackground</include>
+    <include content="DialogBackgroundCommonsBlur">
+      <param name="width" value="1920"/>
+      <param name="height" value="1080"/>
+      <param name="header_label" value=""/>
+      <param name="header_id" value=""/>
+      <param name="closebutton_visible" value="false"/>
+    </include>
     <control type="group">
-      <width>1720</width>
-      <height>840</height>
+      <width>1920</width>
+      <height>1080</height>
       <centertop>50%</centertop>
       <centerleft>50%</centerleft>
       <control type="image">
-        <width>1703</width>
-        <height>840</height>
-        <top>8</top>
-        <bottom>8</bottom>
-        <left>8</left>
-        <right>8</right>
-        <texture colordiffuse="dialog_bg_100" border="5">common/box.png</texture>
-        <bordertexture border="24">common/shadow-dialog-24.png</bordertexture>
-        <bordersize>18</bordersize>
+        <top>130</top>
+        <left>448</left>
+        <width>1</width>
+        <height>810</height>
+        <texture colordiffuse="dialog_fg_12">common/white.png</texture>
       </control>
       <control type="group">
-        <include content="DefaultSettingButtonGradient">
+        <include content="DefaultAddonSettingButtonGradient">
           <param name="id" value="5"/>
           <param name="height" value="75"/>
-          <top>80</top>
-          <bottom>137</bottom>
-          <width>1203</width>
+          <top>120</top>
+          <left>490</left>
           <height>75</height>
-          <right>28</right>
+          <right>0</right>
           <visible>ControlGroup(5).HasFocus()</visible>
         </include>
         <control type="grouplist" id="5">
           <description>control area</description>
-          <top>80</top>
-          <left>485</left>
+          <top>120</top>
+          <left>490</left>
           <right>0</right>
-          <width>1203</width>
-          <height>600</height>
+          <width>1440</width>
+          <height>825</height>
           <itemgap>0</itemgap>
+          <onup>300</onup>
           <onleft>3</onleft>
           <onright>60</onright>
           <pagecontrol>60</pagecontrol>
@@ -87,33 +89,33 @@
       </control>
       <control type="group">
         <depth>DepthContentPanel</depth>
-        <left>103</left>
-        <include content="DefaultSettingButtonGradient">
+        <left>0</left>
+        <include content="DefaultAddonSettingButtonGradient">
           <param name="id" value="3"/>
           <param name="height" value="75"/>
-          <top>80</top>
+          <top>120</top>
           <height>75</height>
-          <width>385</width>
-          <left>1</left>
+          <width>450</width>
+          <left>0</left>
           <visible>!Control.HasFocus(20)</visible>
         </include>
         <control type="grouplist" id="3">
           <description>button area</description>
           <left>0</left>
-          <top>80</top>
-          <width>385</width>
-          <height>600</height>
+          <top>120</top>
+          <width>450</width>
+          <height>825</height>
           <usecontrolcoords>true</usecontrolcoords>
           <onright>5</onright>
-          <onup>3</onup>
+          <onup>300</onup>
           <ondown>20</ondown>
-          <include>Defs_Settings_OnLeft</include>
+          <include>Defs_Settings_OnUp</include>
         </control>
         <control type="button" id="10">
           <description>Default Category Button</description>
           <left>0</left>
           <height>75</height>
-          <width>385</width>
+          <width>450</width>
           <textoffsetx>40</textoffsetx>
           <aligny>center</aligny>
           <texturefocus colordiffuse="00ffffff">lists/focus-rounded.png</texturefocus>
@@ -121,50 +123,12 @@
         </control>
       </control>
       <control type="group">
-        <depth>DepthContentPanel</depth>
-        <top>680</top>
-        <left>103</left>
-        <include content="DefaultSettingButtonGradient">
-          <param name="id" value="8800"/>
-          <top>0</top>
-          <height>75</height>
-          <width>385</width>
-          <visible>Control.HasFocus(20)</visible>
-        </include>
-        <control type="grouplist" id="8800">
-          <onleft>300</onleft>
-          <onright>5</onright>
-          <onup>3</onup>
-          <ondown>3</ondown>
-          <control type="radiobutton" id="20">
-            <width>385</width>
-            <height>75</height>
-            <aligny>center</aligny>
-            <onclick>SettingsLevelChange</onclick>
-            <textoffsetx>85</textoffsetx>
-            <textoffsety>0</textoffsety>
-            <texturefocus />
-            <texturenofocus/>
-            <radioposx>32</radioposx>
-            <radioposy>0</radioposy>
-            <radiowidth>32</radiowidth>
-            <radioheight>32</radioheight>
-            <textureradioonfocus colordiffuse="B3ededed">icons/settings.png</textureradioonfocus>
-            <textureradioonnofocus colordiffuse="dialog_fg_70">icons/settings.png</textureradioonnofocus>
-            <textureradioofffocus colordiffuse="B3ededed">icons/settings.png</textureradioofffocus>
-            <textureradiooffnofocus colordiffuse="dialog_fg_70">icons/settings.png</textureradiooffnofocus>
-          </control>
-        </control>
-      </control>
-      <control type="group">
-        <right>35</right>
-        <top>153</top>
-        <bottom>157</bottom>
+        <right>0</right>
+        <top>120</top>
+        <bottom>137</bottom>
         <width>60</width>
         <control type="scrollbar" id="60">
-          <right>0</right>
-          <top>0</top>
-          <bottom>0</bottom>
+          <right>6</right>
           <width>8</width>
           <orientation>vertical</orientation>
           <texturesliderbackground/>
@@ -179,44 +143,76 @@
         </control>
       </control>
       <control type="group">
+        <height>120</height>
+        <width>1920</width>
         <control type="image">
-          <left>488</left>
-          <top>80</top>
-          <width>1</width>
-          <height>675</height>
-          <texture colordiffuse="main_fg_12">common/white.png</texture>
+          <left>0</left>
+          <top>0</top>
+          <height>95</height>
+          <texture colordiffuse="dialog_bg_30">common/white.png</texture>
         </control>
-      </control>
-      <control type="group">
         <control type="image">
-          <left>103</left>
-          <top>80</top>
-          <width>1</width>
-          <height>675</height>
-          <texture colordiffuse="main_fg_12">common/white.png</texture>
+          <left>0</left>
+          <top>95</top>
+          <height>1</height>
+          <texture colordiffuse="main_fg_30">common/white.png</texture>
         </control>
       </control>
       <include content="Defs_Settings_Changer">
-        <onright>3</onright>
+        <ondown>5</ondown>
       </include>
     </control>
-    <include content="TopBar">
-      <param name="breadcrumbs_label" value="$INFO[Control.GetLabel(2)]"/>
-    </include>
-    <!-- <include>BottomBar</include> -->
-    <control type="group">
-      <control type="textbox" id="6">
-        <description>description area</description>
-        <top>865</top>
-        <left>625</left>
-        <width>1155</width>
-        <height>75</height>
-        <font>font_tiny_hintlabel</font>
-        <align>left</align>
-        <aligny>center</aligny>
-        <textcolor>$VAR[ColorHighlight]</textcolor>
-        <autoscroll time="3000" delay="5000" repeat="5000">true</autoscroll>
-      </control>
+    <control type="image">
+      <left>0</left>
+      <bottom>0</bottom>
+      <height>95</height>
+      <texture colordiffuse="dialog_bg_30">common/white.png</texture>
+    </control>
+    <control type="image">
+      <left>0</left>
+      <bottom>95</bottom>
+      <height>1</height>
+      <texture colordiffuse="main_fg_30">common/white.png</texture>
+    </control>
+    <control type="image">
+      <left>0</left>
+      <bottom>93</bottom>
+      <height>5</height>
+      <width>340</width>
+      <texture colordiffuse="main_fg_100">common/white.png</texture>
+      <visible>Control.HasFocus(20)</visible>
+    </control>
+    <control type="radiobutton" id="20">
+      <bottom>10</bottom>
+      <left>20</left>
+      <width>340</width>
+      <height>70</height>
+      <onup>3</onup>
+      <onclick>SettingsLevelChange</onclick>
+      <textoffsetx>85</textoffsetx>
+      <textoffsety>0</textoffsety>
+      <texturefocus />
+      <texturenofocus/>
+      <radioposx>32</radioposx>
+      <radioposy>0</radioposy>
+      <radiowidth>32</radiowidth>
+      <radioheight>32</radioheight>
+      <textureradioonfocus colordiffuse="B3ededed">icons/settings.png</textureradioonfocus>
+      <textureradioonnofocus colordiffuse="dialog_fg_70">icons/settings.png</textureradioonnofocus>
+      <textureradioofffocus colordiffuse="B3ededed">icons/settings.png</textureradioofffocus>
+      <textureradiooffnofocus colordiffuse="dialog_fg_70">icons/settings.png</textureradiooffnofocus>
+    </control>
+    <control type="textbox" id="6">
+      <description>description area</description>
+      <bottom>10</bottom>
+      <right>20</right>
+      <width>1100</width>
+      <height>70</height>
+      <font>font12</font>
+      <align>right</align>
+      <aligny>center</aligny>
+      <textcolor>$VAR[ColorHighlight]</textcolor>
+      <autoscroll time="3000" delay="5000" repeat="5000">true</autoscroll>
     </control>
     <control type="label" id="2">
       <description>breadcrumbs label</description>
