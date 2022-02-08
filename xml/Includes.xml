@@ -840,10 +840,10 @@
             <right>0</right>
             <bottom>0</bottom>
             <control type="image">
-              <texture colordiffuse="$VAR[ColorHighlight]" border="10">common/white.png</texture>
+              <texture colordiffuse="$VAR[ColorHighlight]" border="10">common/box.png</texture>
             </control>
             <control type="image">
-              <texture colordiffuse="$VAR[ColorGradient]" border="10">common/white-gradient.png</texture>
+              <texture colordiffuse="$VAR[ColorGradient]" border="10">common/box-gradient.png</texture>
             </control>
             <animation effect="fade" start="100" end="0" time="0" condition="!Control.HasFocus($PARAM[list_id])">Conditional</animation>
           </control>
