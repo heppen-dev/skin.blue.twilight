@@ -1,3 +1,34 @@
+1.1.2
+    Added: Watched indicators to header banners
+    Added: Option to enable fixed scrolling for each widget category
+    Changed: Skinshortcuts Layout
+    Tweaks to button size in skinshortcuts
+    Fixed: Visible condition in Fixed scrolling switch
+    Redesigned settings
+    Added: Topbar to settings home page
+    Open new settings screen without main settings page
+    Added: Add-ons and File Manager shortcuts and option to disable main menu tiles skip
+    Changed: DialogMediaSource layout tweaks
+    Changed: Default colour palette
+    Removed Light colour palette
+1.1.1
+    Fixed: Selectbox width over landscape focused layout
+    Added: Header widget label for square aspect ratio
+    Changed: Left/right arrows in widget sections
+    Update: Textures.xbt
+1.1.0
+    Fixed: Subtitle button on mouse hover
+    Added: Square aspect ratio (initial commit)
+    Added: Additional aspect ratios to header widget (initial commit)
+    Changed: source URL in addon.xml
+    Fixed: PVR icon in header Square aspect ratio
+    Fixed: Playing TV Shows from header widget
+    Added: Darken background for DialogKeyboard
+    Changed: DialogAddonSettings layout
+    Changed: DialogAddonInfo layout
+    Fixed: Small tweaks to Object_Info_Fist_Line
+    Fixed: visible condition in tv guide
+    Improved: tv guide
 1.0.10
     Fixed: Clearlogo being cut off
     Fixed: Right arrows position
