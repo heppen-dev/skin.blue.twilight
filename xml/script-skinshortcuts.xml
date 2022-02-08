@@ -102,38 +102,38 @@
         <texture colordiffuse="main_fg_30">common/white.png</texture>
       </control>
       <control type="grouplist" id="9200">
-        <top>105</top>
+        <top>118</top>
         <width>1920</width>
-        <height>75</height>
+        <height>95</height>
         <align>center</align>
-        <itemgap>100</itemgap>
+        <itemgap>128</itemgap>
         <onup>211</onup>
         <ondown>9100</ondown>
         <orientation>horizontal</orientation>
         <control type="button" id="301" description="Add">
-          <width>72</width>
-          <height>72</height>
+          <width>48</width>
+          <height>48</height>
           <font/>
           <texturenofocus colordiffuse="dialog_fg_30">buttons/plus-ss.png</texturenofocus>
           <texturefocus colordiffuse="selected">buttons/plus-ss.png</texturefocus>
         </control>
         <control type="button" id="303" description="Up">
-          <width>72</width>
-          <height>72</height>
+          <width>48</width>
+          <height>48</height>
           <font/>
           <texturenofocus colordiffuse="dialog_fg_30" flipx="true">buttons/right-ss.png</texturenofocus>
           <texturefocus colordiffuse="selected" flipx="true">buttons/right-ss.png</texturefocus>
         </control>
         <control type="button" id="304" description="Down">
-          <width>72</width>
-          <height>72</height>
+          <width>48</width>
+          <height>48</height>
           <font/>
           <texturenofocus colordiffuse="dialog_fg_30">buttons/right-ss.png</texturenofocus>
           <texturefocus colordiffuse="selected">buttons/right-ss.png</texturefocus>
         </control>
         <control type="button" id="302" description="Delete">
-          <width>72</width>
-          <height>72</height>
+          <width>48</width>
+          <height>48</height>
           <font/>
           <texturenofocus colordiffuse="dialog_fg_30">buttons/cross-ss.png</texturenofocus>
           <texturefocus colordiffuse="selected">buttons/cross-ss.png</texturefocus>
