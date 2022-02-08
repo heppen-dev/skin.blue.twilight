@@ -24,8 +24,8 @@
     <value condition="String.IsEqual(Skin.String(MenuStyle),Text)">$LOCALIZE[31307]</value>
   </variable>
   <variable name="widgetScrollingType">
-    <value condition="Skin.HasSetting(DisableFixedScrolling)">$LOCALIZE[31372]</value>
-    <value>$LOCALIZE[31373]</value>
+    <value condition="Skin.HasSetting(fixed_scrolling)">$LOCALIZE[31373]</value>
+    <value>$LOCALIZE[31372]</value>
   </variable>
   <variable name="highlightSizeValue">
     <value condition="String.IsEqual(Skin.String(HighlightSize),Thin)">$LOCALIZE[31374]</value>
@@ -88,28 +88,28 @@
     <value>37FFFFFF</value>
   </variable>
   <variable name="DialogBackgroundAlpha">
-    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),0)">FF1A2123</value>
-    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),5)">F21A2123</value>
-    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),10)">E61A2123</value>
-    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),15)">D91A2123</value>
-    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),20)">CC1A2123</value>
-    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),25)">B1A2123F</value>
-    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),30)">B31A2123</value>
-    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),35)">A61A2123</value>
-    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),40)">991A2123</value>
-    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),45)">8C1A2123</value>
-    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),50)">801A2123</value>
-    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),55)">731A2123</value>
-    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),60)">661A2123</value>
-    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),65)">591A2123</value>
-    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),70)">4D1A2123</value>
-    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),75)">401A2123</value>
-    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),80)">331A2123</value>
-    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),85)">261A2123</value>
-    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),90)">1A1A2123</value>
-    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),95)">0D1A2123</value>
-    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),100)">001A2123</value>
-    <value>FF1A2123</value>
+    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),0)">FF11375C</value>
+    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),5)">F211375C</value>
+    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),10)">E611375C</value>
+    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),15)">D911375C</value>
+    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),20)">CC11375C</value>
+    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),25)">B11375CF</value>
+    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),30)">B311375C</value>
+    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),35)">A611375C</value>
+    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),40)">9911375C</value>
+    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),45)">8C11375C</value>
+    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),50)">8011375C</value>
+    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),55)">7311375C</value>
+    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),60)">6611375C</value>
+    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),65)">5911375C</value>
+    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),70)">4D11375C</value>
+    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),75)">4011375C</value>
+    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),80)">3311375C</value>
+    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),85)">2611375C</value>
+    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),90)">1A11375C</value>
+    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),95)">0D11375C</value>
+    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),100)">0011375C</value>
+    <value>FF11375C</value>
   </variable>
   <variable name="AlphaFadeLevel">
     <value condition="String.IsEqual(Skin.String(AlphaValue),100)">100</value>
@@ -1226,12 +1226,11 @@
     <value condition="!String.IsEmpty(Container(9000).ListItem.Property(Background))">$INFO[Container(9000).ListItem.Property(Background)]</value>
     <value>common/background.jpg</value>
   </variable>
-  <variable name="BlurExpose">
+  <variable name="Blur">
     <value>$INFO[Window(Home).Property(TMDbHelper.ListItem.BlurImage)]</value>
   </variable>
   <variable name="BlurBackground">
-    <value condition="Window.IsActive(addonsettings)">$VAR[BlurExpose]</value>
-    <value condition="[$EXP[FirstExpose] | $EXP[SecondExpose] | $EXP[infodialog_active]] + !Skin.HasSetting(DisableBlur)">$VAR[BlurExpose]</value>
+    <value condition="[$EXP[FirstExpose] | $EXP[SecondExpose] | $EXP[infodialog_active]] + !Skin.HasSetting(DisableBlur)">$VAR[Blur]</value>
     <value condition="!ControlGroup(3000).HasFocus + !Skin.HasSetting(DisableBlur) | String.StartsWith(ListItem.FolderPath,favourites://)">$INFO[Window(Home).Property(TMDbHelper.ListItem.BlurImage)]</value>
     <value condition="!String.IsEmpty(ListItem.Property(background))">$INFO[ListItem.Property(background)]</value>
     <value>$VAR[MediaFanartVar]</value>

@@ -29,6 +29,10 @@
         <include content="ViewBannerItemLayout">
           <param name="bg_visible" value="false" />
         </include>
+        <include content="View_WatchedOverlay">
+          <param name="bottom" value="70"/>
+          <param name="right" value="72"/>
+        </include>
       </itemlayout>
       <focusedlayout height="270" width="1120" condition="$PARAM[BannerCondition]">
         <include content="ViewBannerItemLayout">
@@ -95,6 +99,17 @@
             <param name="visible" value="$PARAM[BannerCondition] + Control.HasFocus($PARAM[id])"/>
           </include>
         </control>
+        <include content="View_WatchedOverlay" condition="Skin.HasSetting(header_widget_label)">
+          <param name="bottom" value="38"/>
+          <param name="right" value="72"/>
+          <param name="id" value="$PARAM[id]"/>
+          <param name="visible" value="Control.HasFocus($PARAM[id])"/>
+        </include>
+        <include content="View_WatchedOverlay" condition="!Skin.HasSetting(header_widget_label)">
+          <param name="bottom" value="70"/>
+          <param name="right" value="72"/>
+          <param name="id" value="$PARAM[id]"/>
+        </include>
       </focusedlayout>
       <!-- Posters aspect ratio -->
       <itemlayout height="300" width="200" condition="$PARAM[PosterCondition]">
@@ -352,7 +367,7 @@
         <animation effect="fade" start="100" end="0" time="200" condition="Integer.IsEqual(Window(home).Property(fade),$PARAM[id])">Conditional</animation>
         <nested/>
       </include>
-      <control type="list" id="$PARAM[id]">
+      <control type="$PARAM[control_type]" id="$PARAM[id]">
         <nested/>
         <orientation>horizontal</orientation>
         <width>1600</width>
@@ -389,7 +404,7 @@
   </include>
   <include name="Object_WidgetsWall_Content">
     <definition>
-      <control type="list" id="$PARAM[id]">
+      <control type="$PARAM[control_type]" id="$PARAM[id]">
         <nested/>
         <orientation>horizontal</orientation>
         <width>1600</width>
@@ -435,7 +450,7 @@
         <animation effect="fade" start="100" end="0" time="200" condition="Integer.IsEqual(Window(home).Property(fade),$PARAM[id])">Conditional</animation>
         <nested/>
       </include>
-      <control type="list" id="$PARAM[id]">
+      <control type="$PARAM[control_type]" id="$PARAM[id]">
         <nested/>
         <orientation>horizontal</orientation>
         <width>1600</width>
@@ -471,7 +486,7 @@
   </include>
   <include name="Object_LocalWidget_Content">
     <definition>
-      <control type="$PARAM[controltype]" id="$PARAM[id]">
+      <control type="$PARAM[control_type]" id="$PARAM[id]">
         <nested/>
         <orientation>horizontal</orientation>
         <onleft>noop</onleft>
@@ -518,7 +533,7 @@
         <param name="move_down_when_landscape" value="$PARAM[LandscapeCondition]"/>
         <animation effect="fade" start="100" end="0" time="200" condition="Integer.IsEqual(Window(home).Property(fade),$PARAM[id])">Conditional</animation>
       </include>
-      <control type="list" id="$PARAM[id]">
+      <control type="$PARAM[control_type]" id="$PARAM[id]">
         <orientation>horizontal</orientation>
         <width>1600</width>
         <onup>SetFocus(2999)</onup>

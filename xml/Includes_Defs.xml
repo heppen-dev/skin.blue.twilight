@@ -91,16 +91,16 @@
     <onload condition="Window.IsActive(systeminfo)">SetFocus(300,7)</onload>
     <onload condition="Window.IsActive(profiles)">SetFocus(300,8)</onload>
   </include>
-  <include name="Defs_Settings_OnLeft">
-    <onleft condition="Window.IsActive(skinsettings)">SetFocus(300,0)</onleft>
-    <onleft condition="Window.IsActive(interfacesettings)">SetFocus(300,1)</onleft>
-    <onleft condition="Window.IsActive(mediasettings)">SetFocus(300,2)</onleft>
-    <onleft condition="Window.IsActive(playersettings)">SetFocus(300,3)</onleft>
-    <onleft condition="Window.IsActive(systemsettings)">SetFocus(300,4)</onleft>
-    <onleft condition="Window.IsActive(servicesettings)">SetFocus(300,5)</onleft>
-    <onleft condition="Window.IsActive(pvrsettings)">SetFocus(300,6)</onleft>
-    <onleft condition="Window.IsActive(systeminfo)">SetFocus(300,7)</onleft>
-    <onleft condition="Window.IsActive(profiles)">SetFocus(300,8)</onleft>
+  <include name="Defs_Settings_OnUp">
+    <onup condition="Window.IsActive(skinsettings)">SetFocus(300,0)</onup>
+    <onup condition="Window.IsActive(interfacesettings)">SetFocus(300,1)</onup>
+    <onup condition="Window.IsActive(mediasettings)">SetFocus(300,2)</onup>
+    <onup condition="Window.IsActive(playersettings)">SetFocus(300,3)</onup>
+    <onup condition="Window.IsActive(systemsettings)">SetFocus(300,4)</onup>
+    <onup condition="Window.IsActive(servicesettings)">SetFocus(300,5)</onup>
+    <onup condition="Window.IsActive(pvrsettings)">SetFocus(300,6)</onup>
+    <onup condition="Window.IsActive(systeminfo)">SetFocus(300,7)</onup>
+    <onup condition="Window.IsActive(profiles)">SetFocus(300,8)</onup>
   </include>
   <include name="Defs_SettingsTrick">
     <control type="button">
@@ -120,54 +120,45 @@
     <definition>
       <control type="list" id="300">
         <nested />
-        <left>28</left>
-        <top>80</top>
-        <bottom>75</bottom>
-        <width>75</width>
-        <orientation>vertical</orientation>
-        <itemlayout height="75" width="75">
-          <control type="group">
-            <width>75</width>
-            <control type="image">
-              <centerleft>50%</centerleft>
-              <centertop>50%</centertop>
-              <width>60</width>
-              <height>60</height>
-              <texture colordiffuse="dialog_fg_70">$INFO[ListItem.Icon]</texture>
-            </control>
-          </control>
-          <control type="label">
-            <left>75</left>
-            <label>$INFO[ListItem.Label]</label>
-            <font>font_tiny_hintlabel</font>
-            <textcolor>dialog_fg_70</textcolor>
-          </control>
-        </itemlayout>
-        <focusedlayout height="75" width="75">
+        <height>95</height>
+        <orientation>horizontal</orientation>
+        <focusedlayout height="95" width="240">
           <include>Defs_SettingsTrick</include>
-          <control type="image">
-            <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
-          </control>
-          <control type="image">
-            <texture colordiffuse="$VAR[ColorGradient]">common/white-gradient.png</texture>
-          </control>
-          <control type="group">
-            <width>75</width>
-            <control type="image">
-              <centerleft>50%</centerleft>
-              <centertop>50%</centertop>
-              <width>60</width>
-              <height>60</height>
-              <texture colordiffuse="b3ededed">$INFO[ListItem.Icon]</texture>
+            <control type="group">
+              <control type="label">
+                <left>0</left>
+                <top>0</top>
+                <height>95</height>
+                <scroll>true</scroll>
+                <aligny>center</aligny>
+                <align>center</align>
+                <font>font_menu</font>
+                <textcolor>ffffffff</textcolor>
+                <label>$INFO[ListItem.Label]</label>
+              </control>
+              <control type="image">
+                <left>0</left>
+                <top>90</top>
+                <height>5</height>
+                <width>240</width>
+                <texture colordiffuse="ffffffff">common/white.png</texture>
+                <visible>Control.HasFocus(300)</visible>
+              </control>
             </control>
-          </control>
-          <control type="label">
-            <left>75</left>
-            <label>$INFO[ListItem.Label]</label>
-            <font>font_tiny_hintlabel</font>
-            <textcolor>b3ededed</textcolor>
-          </control>
-        </focusedlayout>
+          </focusedlayout>
+          <itemlayout height="95" width="240">
+            <control type="label">
+              <left>0</left>
+              <top>0</top>
+              <height>95</height>
+              <scroll>true</scroll>
+              <aligny>center</aligny>
+              <align>center</align>
+              <font>font_menu</font>
+              <textcolor>B3ededed</textcolor>
+              <label>$INFO[ListItem.Label]</label>
+            </control>
+          </itemlayout>
         <content>
           <item id="4">
             <label>[CAPITALIZE]$LOCALIZE[20077][/CAPITALIZE]</label>
