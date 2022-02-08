@@ -14,6 +14,9 @@
     <action>Skin.SetString(SearchTerm)</action>
     <action>ActivateWindow(1121)</action>
   </override>
+  <override action="ActivateWindow(Settings)">
+    <action>ActivateWindow(skinsettings)</action>
+  </override>
   <!-- Widget scrolling type -->
   <property property="scrollingType" condition="Skin.HasSetting(fixed_scrolling)">True</property>
   <property property="scrollingType" condition="!Skin.HasSetting(fixed_scrolling)">False</property>
