@@ -24,8 +24,8 @@
     <value condition="String.IsEqual(Skin.String(MenuStyle),Text)">$LOCALIZE[31307]</value>
   </variable>
   <variable name="widgetScrollingType">
-    <value condition="Skin.HasSetting(DisableFixedScrolling)">$LOCALIZE[31372]</value>
-    <value>$LOCALIZE[31373]</value>
+    <value condition="Skin.HasSetting(fixed_scrolling)">$LOCALIZE[31373]</value>
+    <value>$LOCALIZE[31372]</value>
   </variable>
   <variable name="highlightSizeValue">
     <value condition="String.IsEqual(Skin.String(HighlightSize),Thin)">$LOCALIZE[31374]</value>

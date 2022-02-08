@@ -14,6 +14,10 @@
     <action>Skin.SetString(SearchTerm)</action>
     <action>ActivateWindow(1121)</action>
   </override>
+  <!-- Widget scrolling type -->
+  <property property="scrollingType" condition="Skin.HasSetting(fixed_scrolling)">True</property>
+  <property property="scrollingType" condition="!Skin.HasSetting(fixed_scrolling)">False</property>
+  <propertySettings toggle="scrollingType" buttonID="626" />
   <!-- Widget Target -->
   <property property="widgetTarget">videos</property>
   <property property="widgetTarget">music</property>

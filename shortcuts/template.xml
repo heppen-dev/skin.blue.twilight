@@ -13,7 +13,7 @@
       <propertyGroup>mainmenuWidgets</propertyGroup>
       <controls>
         <include content="Object_WidgetsWall_Content_withLabels" condition="Skin.HasSetting(ShowWidgetLabels)">
-          <param name="controltype" value="list"/>
+          <param name="control_type" value="$PYTHON['list' if scrolling in 'False' else 'fixedlist']"/>
           <param name="label" value="$SKINSHORTCUTS[label]"/>
           <param name="groupid" value="760$SKINSHORTCUTS[id]"/>
           <param name="labelid" value="770$SKINSHORTCUTS[id]"/>
@@ -31,7 +31,7 @@
           <param name="arrows_posy" value="$PYTHON['110' if widgetAspect in 'Landscape' else '150']"/>
         </include>
         <include content="Object_WidgetsWall_Content" condition="!Skin.HasSetting(ShowWidgetLabels)">
-          <param name="controltype" value="list"/>
+          <param name="control_type" value="$PYTHON['list' if scrolling in 'False' else 'fixedlist']"/>
           <param name="name" value="$SKINSHORTCUTS[label]"/>
           <param name="groupid" value="760$SKINSHORTCUTS[id]"/>
           <param name="image" value="$SKINSHORTCUTS[artwork]"/>
@@ -60,7 +60,7 @@
     <propertyGroup>mainmenuWidgets</propertyGroup>
     <controls>
       <include content="Object_LocalWidget_Content">
-        <param name="controltype" value="$PYTHON['list' if headerWidgetAspect in 'Square|Landscape' else 'fixedlist']"/>
+        <param name="control_type" value="$PYTHON['list' if headerWidgetAspect in 'Square|Landscape' else 'fixedlist']"/>
         <param name="name" value="$SKINSHORTCUTS[label]"/>
         <param name="groupid" value="660$SKINSHORTCUTS[id]"/>
         <param name="image" value="$SKINSHORTCUTS[artwork]"/>
@@ -132,7 +132,7 @@
       <propertyGroup>mainmenuWidgets</propertyGroup>
       <controls>
         <include content="Object_Widget_Content_SearchList">
-          <param name="controltype" value="fixedlist"/>
+          <param name="control_type" value="$PYTHON['list' if scrolling in 'False' else 'fixedlist']"/>
           <param name="label" value="$SKINSHORTCUTS[widgetLabel]"/>
           <param name="groupid" value="$PYTHON[int(id) + 8500]"/>
           <param name="labelid" value="$PYTHON[int(id) + 7600]"/>
@@ -173,7 +173,7 @@
       <propertyGroup>mainmenuWidgets</propertyGroup>
       <controls>
         <include content="Object_WidgetsWall_Content_withLabels" condition="Skin.HasSetting(ShowWidgetLabels)">
-          <param name="controltype" value="list"/>
+          <param name="control_type" value="$PYTHON['list' if scrolling in 'False' else 'fixedlist']"/>
           <param name="label" value="$SKINSHORTCUTS[label]"/>
           <param name="groupid" value="760$SKINSHORTCUTS[id]"/>
           <param name="labelid" value="770$SKINSHORTCUTS[id]"/>
@@ -192,7 +192,7 @@
           <visible>Integer.IsEqual(Container(3000).NumItems,0)</visible>
         </include>
         <include content="Object_WidgetsWall_Content" condition="!Skin.HasSetting(ShowWidgetLabels)">
-          <param name="controltype" value="list"/>
+          <param name="control_type" value="$PYTHON['list' if scrolling in 'False' else 'fixedlist']"/>
           <param name="name" value="$SKINSHORTCUTS[label]"/>
           <param name="groupid" value="760$SKINSHORTCUTS[id]"/>
           <param name="image" value="$SKINSHORTCUTS[artwork]"/>
@@ -221,7 +221,7 @@
     <propertyGroup>mainmenuWidgets</propertyGroup>
     <controls>
       <include content="Object_MoviesHub_Content">
-        <param name="controltype" value="list"/>
+        <param name="control_type" value="$PYTHON['list' if scrolling in 'False' else 'fixedlist']"/>
         <param name="label" value="$SKINSHORTCUTS[label]"/>
         <param name="groupid" value="760$SKINSHORTCUTS[id]"/>
         <param name="labelid" value="770$SKINSHORTCUTS[id]"/>
@@ -261,5 +261,7 @@
     <property name="widgetAspect">Landscape</property>
     <property name="headerWidgetAspect" tag="property" attribute="name|headerWidgetAspect"/>
     <property name="headerWidgetAspect">Banner</property>
+    <property name="scrolling" tag="property" attribute="name|scrollingType"/>
+    <property name="scrolling"></property>
   </propertyGroup>
 </template>

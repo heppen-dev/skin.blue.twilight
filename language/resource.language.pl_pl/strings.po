@@ -1512,8 +1512,8 @@ msgstr "Ustaw poziom przeroczystości nakładki"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31348"
-msgid "Select widget scrolling type"
-msgstr "Wybierz typ przewijania widgetów"
+msgid "Fixed scrolling"
+msgstr "Włącz ustalone przewijanie widgetów"
 
 #: /xml/overrides.xml
 msgctxt "#31349"

@@ -1688,7 +1688,7 @@ msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31348"
-msgid "Select widget scrolling type"
+msgid "Fixed scrolling"
 msgstr ""
 
 #: /xml/overrides.xml
