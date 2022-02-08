@@ -15,7 +15,12 @@
     <action>ActivateWindow(1121)</action>
   </override>
   <override action="ActivateWindow(Settings)">
+    <condition>!Skin.HasSetting(dont_skip_mainmenu_tiles)</condition>
     <action>ActivateWindow(skinsettings)</action>
+  </override>
+  <override action="ActivateWindow(Settings)">
+    <condition>Skin.HasSetting(dont_skip_mainmenu_tiles)</condition>
+    <action>ActivateWindow(Settings)</action>
   </override>
   <!-- Widget scrolling type -->
   <property property="scrollingType" condition="Skin.HasSetting(fixed_scrolling)">True</property>

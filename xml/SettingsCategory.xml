@@ -97,7 +97,7 @@
           <height>75</height>
           <width>450</width>
           <left>0</left>
-          <visible>!Control.HasFocus(20)</visible>
+          <visible>!ControlGroup(18).HasFocus</visible>
         </include>
         <control type="grouplist" id="3">
           <description>button area</description>
@@ -108,7 +108,7 @@
           <usecontrolcoords>true</usecontrolcoords>
           <onright>5</onright>
           <onup>300</onup>
-          <ondown>20</ondown>
+          <ondown>18</ondown>
           <include>Defs_Settings_OnUp</include>
         </control>
         <control type="button" id="10">
@@ -174,45 +174,97 @@
       <height>1</height>
       <texture colordiffuse="main_fg_30">common/white.png</texture>
     </control>
-    <control type="image">
-      <left>0</left>
-      <bottom>93</bottom>
-      <height>5</height>
-      <width>340</width>
-      <texture colordiffuse="main_fg_100">common/white.png</texture>
-      <visible>Control.HasFocus(20)</visible>
-    </control>
-    <control type="radiobutton" id="20">
-      <bottom>10</bottom>
-      <left>20</left>
-      <width>340</width>
-      <height>70</height>
-      <onup>3</onup>
-      <onclick>SettingsLevelChange</onclick>
-      <textoffsetx>85</textoffsetx>
-      <textoffsety>0</textoffsety>
-      <texturefocus />
-      <texturenofocus/>
-      <radioposx>32</radioposx>
-      <radioposy>0</radioposy>
-      <radiowidth>32</radiowidth>
-      <radioheight>32</radioheight>
-      <textureradioonfocus colordiffuse="B3ededed">icons/settings.png</textureradioonfocus>
-      <textureradioonnofocus colordiffuse="dialog_fg_70">icons/settings.png</textureradioonnofocus>
-      <textureradioofffocus colordiffuse="B3ededed">icons/settings.png</textureradioofffocus>
-      <textureradiooffnofocus colordiffuse="dialog_fg_70">icons/settings.png</textureradiooffnofocus>
-    </control>
     <control type="textbox" id="6">
       <description>description area</description>
       <bottom>10</bottom>
       <right>20</right>
-      <width>1100</width>
+      <width>900</width>
       <height>70</height>
       <font>font12</font>
       <align>right</align>
       <aligny>center</aligny>
       <textcolor>$VAR[ColorHighlight]</textcolor>
       <autoscroll time="3000" delay="5000" repeat="5000">true</autoscroll>
+    </control>
+    <control type="image">
+      <left>0</left>
+      <bottom>93</bottom>
+      <height>5</height>
+      <width>340</width>
+      <texture colordiffuse="main_fg_100">common/white.png</texture>
+      <visible>ControlGroup(18).HasFocus</visible>
+      <animation effect="slide" start="0" end="0,0" time="50" condition="Integer.IsEqual(Container(18).Position,0)">Conditional</animation>
+      <animation effect="slide" start="0" end="340,0" time="50" condition="Integer.IsEqual(Container(18).Position,1)">Conditional</animation>
+      <animation effect="slide" start="0" end="680,0" time="50" condition="Integer.IsEqual(Container(18).Position,2)">Conditional</animation>
+    </control>
+    <control type="grouplist" id="18">
+      <top>1000</top>
+      <orientation>horizontal</orientation>
+      <control type="radiobutton" id="22">
+        <bottom>10</bottom>
+        <left>20</left>
+        <width>340</width>
+        <height>70</height>
+        <onup>3</onup>
+        <font>font_menu</font>
+        <label>$LOCALIZE[10040]</label>
+        <onclick>ActivateWindow(addonbrowser)</onclick>
+        <textoffsetx>85</textoffsetx>
+        <textoffsety>0</textoffsety>
+        <texturefocus />
+        <texturenofocus/>
+        <radioposx>32</radioposx>
+        <radioposy>0</radioposy>
+        <radiowidth>48</radiowidth>
+        <radioheight>48</radioheight>
+        <textureradioonfocus colordiffuse="B3ededed">special://skin/extras/icons/addon.png</textureradioonfocus>
+        <textureradioonnofocus colordiffuse="dialog_fg_70">special://skin/extras/icons/addon.png</textureradioonnofocus>
+        <textureradioofffocus colordiffuse="B3ededed">special://skin/extras/icons/addon.png</textureradioofffocus>
+        <textureradiooffnofocus colordiffuse="dialog_fg_70">special://skin/extras/icons/addon.png</textureradiooffnofocus>
+      </control>
+      <control type="radiobutton" id="24">
+        <bottom>10</bottom>
+        <left>20</left>
+        <width>340</width>
+        <height>70</height>
+        <onup>3</onup>
+        <font>font_menu</font>
+        <label>7</label>
+        <onclick>ActivateWindow(filemanager)</onclick>
+        <textoffsetx>85</textoffsetx>
+        <textoffsety>0</textoffsety>
+        <texturefocus />
+        <texturenofocus/>
+        <radioposx>32</radioposx>
+        <radioposy>0</radioposy>
+        <radiowidth>48</radiowidth>
+        <radioheight>48</radioheight>
+        <textureradioonfocus colordiffuse="B3ededed">special://skin/extras/icons/files.png</textureradioonfocus>
+        <textureradioonnofocus colordiffuse="dialog_fg_70">special://skin/extras/icons/files.png</textureradioonnofocus>
+        <textureradioofffocus colordiffuse="B3ededed">special://skin/extras/icons/files.png</textureradioofffocus>
+        <textureradiooffnofocus colordiffuse="dialog_fg_70">special://skin/extras/icons/files.png</textureradiooffnofocus>
+      </control>
+      <control type="radiobutton" id="20">
+        <bottom>10</bottom>
+        <left>20</left>
+        <width>340</width>
+        <height>70</height>
+        <onup>3</onup>
+        <font>font_menu</font>
+        <onclick>SettingsLevelChange</onclick>
+        <textoffsetx>85</textoffsetx>
+        <textoffsety>0</textoffsety>
+        <texturefocus />
+        <texturenofocus/>
+        <radioposx>32</radioposx>
+        <radioposy>0</radioposy>
+        <radiowidth>48</radiowidth>
+        <radioheight>48</radioheight>
+        <textureradioonfocus colordiffuse="B3ededed">special://skin/extras/icons/settings.png</textureradioonfocus>
+        <textureradioonnofocus colordiffuse="dialog_fg_70">special://skin/extras/icons/settings.png</textureradioonnofocus>
+        <textureradioofffocus colordiffuse="B3ededed">special://skin/extras/icons/settings.png</textureradioofffocus>
+        <textureradiooffnofocus colordiffuse="dialog_fg_70">special://skin/extras/icons/settings.png</textureradiooffnofocus>
+      </control>
     </control>
     <control type="label" id="2">
       <description>breadcrumbs label</description>

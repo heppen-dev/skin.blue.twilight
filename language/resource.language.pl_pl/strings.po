@@ -1959,3 +1959,8 @@ msgstr "Jesteś w Hubie Filmowym"
 msgctxt "#31437"
 msgid "Load movies hub first"
 msgstr "Załaduj hub filmowy zamiast strony głównej"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31438"
+msgid "Skip main menu Tiles"
+msgstr "Pomiń kafelki menu głównego"

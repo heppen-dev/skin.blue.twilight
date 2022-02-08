@@ -2135,3 +2135,8 @@ msgstr ""
 msgctxt "#31437"
 msgid "Load movies hub first"
 msgstr ""
+
+#: /xml/SkinSettings.xml
+msgctxt "#31438"
+msgid "Skip main menu Tiles"
+msgstr ""

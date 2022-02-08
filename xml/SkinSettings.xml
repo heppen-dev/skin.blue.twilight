@@ -67,6 +67,12 @@
             <onclick>Skin.ToggleSetting(HubFirst)</onclick>
             <selected>Skin.HasSetting(HubFirst)</selected>
           </control>
+          <control type="radiobutton" id="628" description="Skip main menu tiles">
+            <label>$LOCALIZE[31438]</label>
+            <include>DefaultSettingButton</include>
+            <onclick>Skin.ToggleSetting(dont_skip_mainmenu_tiles)</onclick>
+            <selected>!Skin.HasSetting(dont_skip_mainmenu_tiles)</selected>
+          </control>
           <control type="radiobutton" id="623" description="Enable labels in widget wall">
             <label>$LOCALIZE[31430]</label>
             <include>DefaultSettingButton</include>
@@ -628,7 +634,7 @@
           <include>Defs_Settings_OnUp</include>
           <onright>10000</onright>
           <onup>300</onup>
-          <ondown>9000</ondown>
+          <ondown>18</ondown>
           <itemlayout height="75" width="450">
             <control type="label">
               <textoffsetx>40</textoffsetx>
@@ -758,6 +764,65 @@
       <label>$VAR[SkinSettingsHelpTextVar]</label>
       <textcolor>$VAR[ColorHighlight]</textcolor>
       <autoscroll time="3000" delay="5000" repeat="5000">true</autoscroll>
+    </control>
+    <control type="image">
+      <left>0</left>
+      <bottom>93</bottom>
+      <height>5</height>
+      <width>340</width>
+      <texture colordiffuse="main_fg_100">common/white.png</texture>
+      <visible>ControlGroup(18).HasFocus</visible>
+      <animation effect="slide" start="0" end="0,0" time="50" condition="Integer.IsEqual(Container(18).Position,0)">Conditional</animation>
+      <animation effect="slide" start="0" end="340,0" time="50" condition="Integer.IsEqual(Container(18).Position,1)">Conditional</animation>
+      <animation effect="slide" start="0" end="680,0" time="50" condition="Integer.IsEqual(Container(18).Position,2)">Conditional</animation>
+    </control>
+    <control type="grouplist" id="18">
+      <top>1000</top>
+      <orientation>horizontal</orientation>
+      <control type="radiobutton" id="22">
+        <bottom>10</bottom>
+        <left>20</left>
+        <width>340</width>
+        <height>70</height>
+        <onup>9000</onup>
+        <font>font_menu</font>
+        <label>$LOCALIZE[10040]</label>
+        <onclick>ActivateWindow(addonbrowser)</onclick>
+        <textoffsetx>85</textoffsetx>
+        <textoffsety>0</textoffsety>
+        <texturefocus />
+        <texturenofocus/>
+        <radioposx>32</radioposx>
+        <radioposy>0</radioposy>
+        <radiowidth>48</radiowidth>
+        <radioheight>48</radioheight>
+        <textureradioonfocus colordiffuse="B3ededed">special://skin/extras/icons/addon.png</textureradioonfocus>
+        <textureradioonnofocus colordiffuse="dialog_fg_70">special://skin/extras/icons/addon.png</textureradioonnofocus>
+        <textureradioofffocus colordiffuse="B3ededed">special://skin/extras/icons/addon.png</textureradioofffocus>
+        <textureradiooffnofocus colordiffuse="dialog_fg_70">special://skin/extras/icons/addon.png</textureradiooffnofocus>
+      </control>
+      <control type="radiobutton" id="24">
+        <bottom>10</bottom>
+        <left>20</left>
+        <width>340</width>
+        <height>70</height>
+        <onup>9000</onup>
+        <font>font_menu</font>
+        <label>7</label>
+        <onclick>ActivateWindow(filemanager)</onclick>
+        <textoffsetx>85</textoffsetx>
+        <textoffsety>0</textoffsety>
+        <texturefocus />
+        <texturenofocus/>
+        <radioposx>32</radioposx>
+        <radioposy>0</radioposy>
+        <radiowidth>48</radiowidth>
+        <radioheight>48</radioheight>
+        <textureradioonfocus colordiffuse="B3ededed">special://skin/extras/icons/files.png</textureradioonfocus>
+        <textureradioonnofocus colordiffuse="dialog_fg_70">special://skin/extras/icons/files.png</textureradioonnofocus>
+        <textureradioofffocus colordiffuse="B3ededed">special://skin/extras/icons/files.png</textureradioofffocus>
+        <textureradiooffnofocus colordiffuse="dialog_fg_70">special://skin/extras/icons/files.png</textureradiooffnofocus>
+      </control>
     </control>
   </controls>
 </window>
