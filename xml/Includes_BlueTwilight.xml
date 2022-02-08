@@ -131,22 +131,29 @@
         <control type="grouplist" id="2999">
           <onup>9000</onup>
           <ondown>3000</ondown>
-          <top>120</top>
+          <top>130</top>
           <left>-700</left>
           <height>300</height>
           <include>skinshortcuts-template-localWidget</include>
           <animation effect="slide" time="200" start="0" end="0,-600" reversible="true" condition="[ControlGroup(3000).HasFocus | $EXP[FirstExpose] | $EXP[SecondExpose] | String.IsEqual(Window(home).Property(activateSpotlight),true)] + !String.StartsWith(ListItem.FolderPath,favourites://)">Conditional</animation>
         </control>
         <control type="grouplist" id="3000">
-          <top>400</top>
+          <top>430</top>
           <left>160</left>
-          <height>675</height>
+          <height>650</height>
           <width>1920</width>
           <onup>2999</onup>
           <scrolltime>100</scrolltime>
           <include>skinshortcuts-template-widgetsWall</include>
           <animation effect="slide" time="200" start="0" end="0,740" reversible="true" condition="$EXP[FirstExpose] | $EXP[SecondExpose]">Conditional</animation>
         </control>
+        <include content="LeftRightArrowsHome">
+          <param name="altid" value="3005" />
+          <param name="left_posx" value="60"/>
+          <param name="right_posx" value="1800"/>
+          <param name="posy" value="750"/>
+          <param name="visible" value="true"/>
+        </include>
       </control>
       <control type="group">
         <top>-50</top>

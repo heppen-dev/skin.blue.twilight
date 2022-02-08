@@ -5,41 +5,48 @@
   <controls>
     <control type="group">
       <centertop>50%</centertop>
-      <height>750</height>
+      <height>1080</height>
       <centerleft>50%</centerleft>
-      <width>1200</width>
-      <include content="DialogBackgroundCommons">
-        <param name="width" value="1200"/>
-        <param name="height" value="750"/>
+      <width>1920</width>
+      <include content="DialogBackgroundCommonsBlur">
+        <param name="width" value="1920"/>
+        <param name="height" value="1080"/>
         <param name="header_label" value="$LOCALIZE[13406]"/>
         <param name="header_id" value="2"/>
       </include>
       <control type="group">
-        <left>865</left>
+        <left>1560</left>
         <top>220</top>
-        <height>320</height>
+        <height>240</height>
         <width>1</width>
         <control type="image">
-          <texture colordiffuse="dialog_bg_70">common/white.png</texture>
+          <texture colordiffuse="main_fg_12">common/white.png</texture>
         </control>
       </control>
       <control type="edit" id="12">
         <description>Name Button</description>
         <left>50</left>
         <top>100</top>
-        <width>1100</width>
+        <width>1820</width>
         <height>90</height>
         <align>center</align>
         <aligny>center</aligny>
         <label/>
+        <font>font30_title_upp</font>
         <onup>noop</onup>
         <ondown>10</ondown>
-        <texturenofocus colordiffuse="dialog_bg_30">common/white.png</texturenofocus>
+        <include content="ButtonType">
+          <param name="texturefocus" value="true"/>
+        </include>
+        <include content="ButtonType_TextureNoFocus">
+          <param name="colordiffuse" value="dialog_bg_30"/>
+          <param name="texture" value="common/button-dialog.png"/>
+        </include>
       </control>
       <control type="list" id="10">
         <left>45</left>
         <top>220</top>
-        <width>820</width>
+        <width>1480</width>
         <height>245</height>
         <onup>12</onup>
         <ondown>9001</ondown>
@@ -48,7 +55,7 @@
         <ondown>12</ondown>
         <pagecontrol>60</pagecontrol>
         <scrolltime>200</scrolltime>
-        <itemlayout height="70" width="820">
+        <itemlayout height="70" width="1480">
           <control type="label">
             <left>10</left>
             <right>10</right>
@@ -59,7 +66,7 @@
             <label>$INFO[ListItem.Label]</label>
           </control>
         </itemlayout>
-        <focusedlayout height="70" width="820">
+        <focusedlayout height="70" width="1480">
           <control type="group">
             <left>0</left>
             <top>0</top>
@@ -67,10 +74,10 @@
             <right>0</right>
             <visible>Control.HasFocus(10)</visible>
             <control type="image">
-              <texture colordiffuse="$VAR[ColorHighlight]" border="10">common/white.png</texture>
+              <texture colordiffuse="$VAR[ColorHighlight]" border="10">common/box.png</texture>
             </control>
             <control type="image">
-              <texture colordiffuse="$VAR[ColorGradient]" border="10">common/white-gradient.png</texture>
+              <texture colordiffuse="$VAR[ColorGradient]" border="10">common/box-gradient.png</texture>
             </control>
           </control>
           <control type="label">
@@ -84,7 +91,7 @@
         </focusedlayout>
       </control>
       <control type="scrollbar" id="60">
-        <left>870</left>
+        <left>1590</left>
         <top>166</top>
         <width>12</width>
         <height>243</height>
@@ -93,7 +100,7 @@
         <orientation>vertical</orientation>
       </control>
       <control type="grouplist" id="9000">
-        <left>880</left>
+        <left>1600</left>
         <top>220</top>
         <orientation>vertical</orientation>
         <onleft>10</onleft>
@@ -121,7 +128,7 @@
         <left>0</left>
         <bottom>40</bottom>
         <height>100</height>
-        <width>1200</width>
+        <width>1920</width>
         <align>center</align>
         <orientation>horizontal</orientation>
         <onup>10</onup>

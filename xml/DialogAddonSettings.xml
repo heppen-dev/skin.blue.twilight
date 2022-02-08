@@ -2,81 +2,127 @@
 <window>
   <defaultcontrol>5</defaultcontrol>
   <include>Animation_DialogPopupOpenClose</include>
+  <onload>RunScript(plugin.video.themoviedb.helper,blur_image=$INFO[Window(home).Property(infobackground)])</onload>
   <controls>
     <control type="group">
       <top>0</top>
       <centerleft>50%</centerleft>
       <width>1920</width>
       <include>Animation_DialogPopupVisible</include>
-      <include content="DialogBackgroundCommons">
+      <include content="DialogBackgroundCommonsBlur">
         <param name="width" value="1920"/>
         <param name="height" value="1080"/>
         <param name="header_label" value=""/>
-        <param name="header_id" value="2"/>
+        <param name="header_id" value=""/>
+        <param name="closebutton_visible" value="false"/>
       </include>
       <control type="group">
         <control type="image">
-          <left>427</left>
-          <top>120</top>
-          <width>1</width>
-          <height>880</height>
-          <texture colordiffuse="main_fg_12">common/white.png</texture>
+          <left>50</left>
+          <top>180</top>
+          <width>320</width>
+          <height>320</height>
+          <aspectratio>keep</aspectratio>
+          <texture>$INFO[ListItem.Icon]</texture>
         </control>
       </control>
-      <include content="DefaultSettingButtonGradient">
-        <param name="id" value="3"/>
-        <top>120</top>
+      <control type="image">
         <left>0</left>
-        <width>427</width>
-        <height>75</height>
-      </include>
+        <top>0</top>
+        <height>95</height>
+        <texture colordiffuse="dialog_bg_30">common/white.png</texture>
+      </control>
+      <control type="image">
+        <left>0</left>
+        <top>95</top>
+        <height>1</height>
+        <texture colordiffuse="main_fg_30">common/white.png</texture>
+      </control>
+      <control type="image">
+        <left>0</left>
+        <bottom>0</bottom>
+        <height>95</height>
+        <texture colordiffuse="dialog_bg_30">common/white.png</texture>
+      </control>
+      <control type="image">
+        <left>0</left>
+        <bottom>95</bottom>
+        <height>1</height>
+        <texture colordiffuse="main_fg_30">common/white.png</texture>
+      </control>
+      <control type="image">
+        <left>0</left>
+        <top>92</top>
+        <width>240</width>
+        <height>5</height>
+        <texture colordiffuse="main_fg_100">common/white.png</texture>
+        <visible>ControlGroup(3).HasFocus</visible>
+        <animation effect="slide" start="0,0" end="0,0" time="0" condition="Integer.IsEqual(Container(3).Position,0)">conditional</animation>
+        <animation effect="slide" start="0,0" end="240,0" time="0" condition="Integer.IsEqual(Container(3).Position,1)">conditional</animation>
+        <animation effect="slide" start="0,0" end="480,0" time="0" condition="Integer.IsEqual(Container(3).Position,2)">conditional</animation>
+        <animation effect="slide" start="0,0" end="720,0" time="0" condition="Integer.IsEqual(Container(3).Position,3)">conditional</animation>
+        <animation effect="slide" start="0,0" end="960,0" time="0" condition="Integer.IsEqual(Container(3).Position,4)">conditional</animation>
+        <animation effect="slide" start="0,0" end="1200,0" time="0" condition="Integer.IsEqual(Container(3).Position,5)">conditional</animation>
+        <animation effect="slide" start="0,0" end="1440,0" time="0" condition="Integer.IsEqual(Container(3).Position,6)">conditional</animation>
+        <animation effect="slide" start="0,0" end="1680,0" time="0" condition="Integer.IsGreaterOrEqual(Container(3).Position,7)">conditional</animation>
+      </control>
       <control type="grouplist" id="3">
         <description>Categories Area</description>
         <left>0</left>
-        <top>120</top>
-        <width>427</width>
-        <height>675</height>
+        <top>0</top>
+        <width>1920</width>
+        <height>70</height>
         <itemgap>0</itemgap>
-        <orientation>vertical</orientation>
-        <onleft>9000</onleft>
-        <onright>5</onright>
-        <onup>noop</onup>
-        <ondown>20</ondown>
+        <orientation>horizontal</orientation>
+        <onleft>noop</onleft>
+        <onright>noop</onright>
+        <onup>5</onup>
+        <ondown>5</ondown>
       </control>
       <control type="button" id="10">
         <description>Default Category Button</description>
-        <height>75</height>
-        <width>390</width>
+        <height>95</height>
+        <width>240</width>
         <textoffsetx>20</textoffsetx>
         <align>center</align>
         <aligny>center</aligny>
-        <font>font27</font>
+        <font>font_menu</font>
         <texturefocus/>
         <texturenofocus/>
       </control>
-      <include content="DefaultSettingButtonGradient">
+      <include content="DefaultAddonSettingButtonGradient">
         <param name="id" value="5"/>
-        <top>120</top>
-        <left>427</left>
+        <top>140</top>
+        <right>0</right>
         <width>1500</width>
         <height>75</height>
         <visible>ControlGroup(5).HasFocus()</visible>
       </include>
       <control type="grouplist" id="5">
         <description>control area</description>
-        <left>427</left>
-        <top>120</top>
+        <right>0</right>
+        <top>140</top>
         <width>1500</width>
-        <height>675</height>
+        <height>825</height>
         <pagecontrol>60</pagecontrol>
-        <onleft>3</onleft>
+        <onup>3</onup>
+        <onleft>9000</onleft>
         <onright>60</onright>
-        <onup>5</onup>
-        <ondown>5</ondown>
+      </control>
+      <control type="label">
+        <bottom>10</bottom>
+        <left>20</left>
+        <width>600</width>
+        <height>70</height>
+        <align>left</align>
+        <aligny>center</aligny>
+        <font>font30_title_upp</font>
+        <textcolor>dialog_fg_100</textcolor>
+        <label>$INFO[ListItem.Label]</label>
       </control>
       <control type="textbox" id="6">
         <description>description area</description>
-        <top>10</top>
+        <bottom>10</bottom>
         <right>20</right>
         <width>1100</width>
         <height>70</height>
@@ -112,16 +158,17 @@
         <include>DefaultSettingLabel</include>
       </control>
       <control type="grouplist" id="9000">
-        <left>445</left>
-        <top>925</top>
-        <orientation>horizontal</orientation>
-        <width>1480</width>
-        <height>300</height>
-        <itemgap>15</itemgap>
-        <onup>5</onup>
-        <onleft>20</onleft>
-        <onright>20</onright>
+        <top>500</top>
+        <left>70</left>
+        <orientation>vertical</orientation>
+        <width>270</width>
+        <height>500</height>
+        <itemgap>12</itemgap>
+        <onup>3</onup>
+        <onleft>5</onleft>
+        <onright>5</onright>
         <align>center</align>
+        <aligny>center</aligny>
         <include content="DefaultDialogButton">
           <param name="id" value="28"/>
           <param name="label" value=""/>
@@ -134,48 +181,17 @@
           <param name="id" value="30"/>
           <param name="label" value=""/>
         </include>
-      </control>
-      <control type="group">
-        <depth>DepthContentPanel</depth>
-        <top>925</top>
-        <include content="DefaultSettingButtonGradient">
-          <param name="id" value="8800"/>
-          <top>0</top>
-          <height>75</height>
-          <width>427</width>
-          <visible>Control.HasFocus(20)</visible>
+        <include content="DefaultDialogButton">
+          <param name="id" value="20"/>
+          <param name="label" value=""/>
+          <onclick>SettingsLevelChange</onclick>
         </include>
-        <control type="grouplist" id="8800">
-          <onleft>9000</onleft>
-          <onright>9000</onright>
-          <onup>3</onup>
-          <ondown>noop</ondown>
-          <control type="radiobutton" id="20">
-            <width>427</width>
-            <height>75</height>
-            <aligny>center</aligny>
-            <align>center</align>
-            <onclick>SettingsLevelChange</onclick>
-            <textoffsetx>100</textoffsetx>
-            <textoffsety>0</textoffsety>
-            <texturefocus />
-            <texturenofocus/>
-            <radioposx>40</radioposx>
-            <radioposy>0</radioposy>
-            <radiowidth>40</radiowidth>
-            <radioheight>40</radioheight>
-            <textureradioonfocus colordiffuse="dialog_fg_70">icons/settings.png</textureradioonfocus>
-            <textureradioonnofocus colordiffuse="dialog_fg_70">icons/settings.png</textureradioonnofocus>
-            <textureradioofffocus colordiffuse="dialog_fg_70">icons/settings.png</textureradioofffocus>
-            <textureradiooffnofocus colordiffuse="dialog_fg_70">icons/settings.png</textureradiooffnofocus>
-          </control>
-        </control>
       </control>
       <control type="scrollbar" id="60">
         <left>1910</left>
-        <top>120</top>
+        <top>140</top>
         <width>12</width>
-        <height>675</height>
+        <height>825</height>
         <orientation>vertical</orientation>
         <onleft>5</onleft>
         <onright>9000</onright>

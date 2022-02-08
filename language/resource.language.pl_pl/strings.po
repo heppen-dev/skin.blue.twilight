@@ -1512,8 +1512,8 @@ msgstr "Ustaw poziom przeroczystości nakładki"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31348"
-msgid "Select widget scrolling type"
-msgstr "Wybierz typ przewijania widgetów"
+msgid "Fixed scrolling"
+msgstr "Włącz ustalone przewijanie widgetów"
 
 #: /xml/overrides.xml
 msgctxt "#31349"
@@ -1927,8 +1927,8 @@ msgstr "Pokaż nazwę widgetu"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31431"
-msgid "Show title on banner"
-msgstr "Pokaż nazwę pozycji na lokalnym banerze"
+msgid "Show header widget label"
+msgstr "Pokaż nazwę pozycji na widgecie nagłówka"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31432"
@@ -1959,3 +1959,8 @@ msgstr "Jesteś w Hubie Filmowym"
 msgctxt "#31437"
 msgid "Load movies hub first"
 msgstr "Załaduj hub filmowy zamiast strony głównej"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31438"
+msgid "Skip main menu Tiles"
+msgstr "Pomiń kafelki menu głównego"

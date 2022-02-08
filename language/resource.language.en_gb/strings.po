@@ -1688,7 +1688,7 @@ msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31348"
-msgid "Select widget scrolling type"
+msgid "Fixed scrolling"
 msgstr ""
 
 #: /xml/overrides.xml
@@ -2103,7 +2103,7 @@ msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31431"
-msgid "Show title on banner"
+msgid "Show header widget label"
 msgstr ""
 
 #: /xml/SkinSettings.xml
@@ -2134,4 +2134,9 @@ msgstr ""
 #: /xml/SkinSettings.xml
 msgctxt "#31437"
 msgid "Load movies hub first"
+msgstr ""
+
+#: /xml/SkinSettings.xml
+msgctxt "#31438"
+msgid "Skip main menu Tiles"
 msgstr ""
