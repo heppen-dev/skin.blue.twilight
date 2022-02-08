@@ -278,6 +278,7 @@
             <include>DefaultSettingButton</include>
             <selected>!String.IsEmpty(Container(211).ListItem.Property(scrollingType))</selected>
             <onclick>Skin.ToggleSetting(fixed_scrolling)</onclick>
+            <visible>[String.EndsWith(Window.Property(groupname),.1) | String.IsEqual(Window.Property(groupname),searchmenu) | String.IsEqual(Window.Property(groupname),widgets) | String.IsEqual(Window.Property(groupname),globalhub)]</visible>
           </control>
           <!-- Header widget aspect-->
           <control type="button" id="605">
