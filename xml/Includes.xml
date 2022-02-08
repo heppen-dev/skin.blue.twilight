@@ -1182,7 +1182,7 @@
         <height>$PARAM[height]</height>
         <control type="image">
           <height>$PARAM[background_height]</height>
-          <texture colordiffuse="$VAR[DialogBackgroundAlpha]" border="5">common/box.png</texture>
+          <texture colordiffuse="dialog_bg_100" border="5">common/box.png</texture>
         </control>
         <control type="radiobutton">
           <left>7</left>
