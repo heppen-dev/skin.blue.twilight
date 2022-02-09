@@ -87,54 +87,6 @@
     <value condition="String.IsEqual(Skin.String(HomeAlphaValue),0)">00FFFFFF</value>
     <value>37FFFFFF</value>
   </variable>
-  <variable name="DialogBackgroundAlpha">
-    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),0)">FF11375C</value>
-    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),5)">F211375C</value>
-    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),10)">E611375C</value>
-    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),15)">D911375C</value>
-    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),20)">CC11375C</value>
-    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),25)">B11375CF</value>
-    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),30)">B311375C</value>
-    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),35)">A611375C</value>
-    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),40)">9911375C</value>
-    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),45)">8C11375C</value>
-    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),50)">8011375C</value>
-    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),55)">7311375C</value>
-    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),60)">6611375C</value>
-    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),65)">5911375C</value>
-    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),70)">4D11375C</value>
-    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),75)">4011375C</value>
-    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),80)">3311375C</value>
-    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),85)">2611375C</value>
-    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),90)">1A11375C</value>
-    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),95)">0D11375C</value>
-    <value condition="String.IsEqual(Skin.String(DialogAlphaValue),100)">0011375C</value>
-    <value>FF11375C</value>
-  </variable>
-  <variable name="AlphaFadeLevel">
-    <value condition="String.IsEqual(Skin.String(AlphaValue),100)">100</value>
-    <value condition="String.IsEqual(Skin.String(AlphaValue),95)">95</value>
-    <value condition="String.IsEqual(Skin.String(AlphaValue),90)">90</value>
-    <value condition="String.IsEqual(Skin.String(AlphaValue),85)">85</value>
-    <value condition="String.IsEqual(Skin.String(AlphaValue),80)">80</value>
-    <value condition="String.IsEqual(Skin.String(AlphaValue),75)">75</value>
-    <value condition="String.IsEqual(Skin.String(AlphaValue),70)">70</value>
-    <value condition="String.IsEqual(Skin.String(AlphaValue),65)">65</value>
-    <value condition="String.IsEqual(Skin.String(AlphaValue),60)">60</value>
-    <value condition="String.IsEqual(Skin.String(AlphaValue),55)">55</value>
-    <value condition="String.IsEqual(Skin.String(AlphaValue),50)">50</value>
-    <value condition="String.IsEqual(Skin.String(AlphaValue),45)">45</value>
-    <value condition="String.IsEqual(Skin.String(AlphaValue),40)">40</value>
-    <value condition="String.IsEqual(Skin.String(AlphaValue),35)">35</value>
-    <value condition="String.IsEqual(Skin.String(AlphaValue),30)">30</value>
-    <value condition="String.IsEqual(Skin.String(AlphaValue),25)">25</value>
-    <value condition="String.IsEqual(Skin.String(AlphaValue),20)">20</value>
-    <value condition="String.IsEqual(Skin.String(AlphaValue),15)">15</value>
-    <value condition="String.IsEqual(Skin.String(AlphaValue),10)">10</value>
-    <value condition="String.IsEqual(Skin.String(AlphaValue),5)">5</value>
-    <value condition="String.IsEqual(Skin.String(AlphaValue),0)">0</value>
-    <value>30</value>
-  </variable>
   <variable name="LuminanceVariable">
     <value condition="String.IsEqual(Skin.String(TMDbHelper.Colors.Luminance),1.0)">100%</value>
     <value condition="String.IsEqual(Skin.String(TMDbHelper.Colors.Luminance),0.95)">95%</value>
