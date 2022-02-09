@@ -19,13 +19,13 @@
           <height>5</height>
           <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
         </control>
-        <control type="label">
-          <top>115</top>
-          <align>center</align>
-          <font>font_tiny_hintlabel</font>
-          <label>$LOCALIZE[31436]</label>
-          <visible>!Skin.HasSetting(HubFirst)</visible>
-        </control>
+<!--        <control type="label">-->
+<!--          <top>115</top>-->
+<!--          <align>center</align>-->
+<!--          <font>font_tiny_hintlabel</font>-->
+<!--          <label>$LOCALIZE[31436]</label>-->
+<!--          <visible>!Skin.HasSetting(HubFirst)</visible>-->
+<!--        </control>-->
         <control type="list" id="9000">
           <top>3</top>
           <onup>9001</onup>
