@@ -1093,6 +1093,7 @@
     <definition>
       <control type="group" id="$PARAM[altid]">
         <nested/>
+        <visible>$PARAM[visible]</visible>
         <control type="image">
           <left>$PARAM[left_posx]</left>
           <top>$PARAM[posy]</top>
