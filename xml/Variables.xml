@@ -304,8 +304,8 @@
     <value>OFF</value>
   </variable>
   <variable name="DialogAddonButtonSelected">
-    <value condition="ListItem.IsAutoUpdateable">[ON]</value>
-    <value condition="!ListItem.IsAutoUpdateable">[OFF]</value>
+    <value condition="ListItem.IsAutoUpdateable">(*)</value>
+    <value condition="!ListItem.IsAutoUpdateable">(&#009;&#009;)</value>
   </variable>
   <variable name="Image_ClearLogo">
     <value condition="!String.IsEmpty(ListItem.Art(clearlogo))">$INFO[ListItem.Art(clearlogo)]</value>
