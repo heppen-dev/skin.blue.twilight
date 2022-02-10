@@ -551,6 +551,7 @@
         <textureradioofffocus/>
         <textureradiooffnofocus/>
         <textureradioondisabled/>
+        <textureradiooffdisabled/>
       </control>
     </definition>
   </include>
