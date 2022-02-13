@@ -11,7 +11,9 @@
       <onclick condition="[String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE, tvshow)] + Control.HasFocus($PARAM[id]) + [Skin.HasSetting(BackgroundPlayingTrailers) + Skin.HasSetting(Expose)] + !Player.HasVideo + !String.IsEmpty(ListItem.Trailer)">SetProperty(hasTrailer,true,home)</onclick>
       <onclick condition="[String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE, tvshow)] + Control.HasFocus($PARAM[id]) + [Skin.HasSetting(BackgroundPlayingTrailers) + Skin.HasSetting(Expose)] + !Player.HasVideo + String.IsEmpty(ListItem.Trailer) + !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Trailer))">SetProperty(hasTrailer,true,home)</onclick>
       <!-- fix for playing tv shows from header widget -->
-      <onclick condition="ListItem.IsFolder | ListItem.IsCollection">RunScript(plugin.video.themoviedb.helper,close_dialog=1190,call_path=$INFO[ListItem.FolderPath])</onclick>
+      <onclick condition="String.StartsWith(ListItem.FolderPath,plugin://plugin.video.themoviedb.helper) + [String.IsEmpty(ListItem.DBID) | [!String.IsEqual(ListItem.DBType,movie) + !String.IsEqual(ListItem.DBType,tvshow)]]">RunScript(plugin.video.themoviedb.helper,add_path=$INFO[ListItem.FolderPath],call_auto=1190)</onclick>
+      <onclick condition="String.StartsWith(ListItem.FolderPath,plugin://plugin.video.themoviedb.helper) + !String.IsEmpty(ListItem.DBID) + String.IsEqual(ListItem.DBType,movie)">RunScript(plugin.video.themoviedb.helper,add_path=$INFO[ListItem.Label,videodb://movies/titles/?xsp=%7B%22order%22%3A%7B%22direction%22%3A%22ascending%22%2C%22ignorefolders%22%3A0%2C%22method%22%3A%22sorttitle%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22title%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%22,%22%5D%7D%5D%7D%2C%22type%22%3A%22movies%22%7D],call_auto=1190)</onclick>
+      <onclick condition="String.StartsWith(ListItem.FolderPath,plugin://plugin.video.themoviedb.helper) + !String.IsEmpty(ListItem.DBID) + String.IsEqual(ListItem.DBType,tvshow)">RunScript(plugin.video.themoviedb.helper,add_path=$INFO[ListItem.Label,videodb://tvshows/titles/?xsp=%7B%22order%22%3A%7B%22direction%22%3A%22ascending%22%2C%22ignorefolders%22%3A0%2C%22method%22%3A%22sorttitle%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22title%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%22,%22%5D%7D%5D%7D%2C%22type%22%3A%22tvshows%22%7D],call_auto=1190)</onclick>
       <!-- flix spotlight -->
       <include content="Flix_Spotlight_Properties">
         <param name="include_condition" value="[!String.StartsWith(ListItem.FolderPath,favourites://) + !String.IsEqual(Listitem.DBTYPE,song) + !String.IsEqual(Listitem.DBTYPE,album) + !String.IsEqual(Listitem.DBTYPE,artist)] + Skin.HasSetting(Expose)" />
@@ -546,10 +548,8 @@
         <onfocus>SetProperty(fade,$PARAM[fade],home)</onfocus>
         <animation effect="fade" start="100" end="0" time="200" condition="Integer.IsEqual(Window(home).Property(fade),$PARAM[id])">Conditional</animation>
         <visible allowhiddenfocus="true">Integer.IsGreater(Container($PARAM[id]).NumItems,0)</visible>
-        <!-- Wall events -->
-        <include content="Object_Wall_Events">
-          <param name="id" value="$PARAM[id]"/>
-        </include>
+        <onfocus>SetProperty(TMDbHelper.WidgetContainer,$PARAM[id],Home)</onfocus>
+        <onfocus>SetProperty(arrow_list_id,$PARAM[id],Home)</onfocus>
         <!-- Item Layout -->
         <include content="Object_Wall_Layout">
           <param name="id" value="$PARAM[id]"/>
