@@ -532,16 +532,18 @@
     <param name="width">240</param>
     <definition>
       <control type="radiobutton" id="$PARAM[id]">
+        <nested/>
         <width>$PARAM[width]</width>
         <height>95</height>
         <align>center</align>
         <texturefocus />
         <texturenofocus />
+        <scroll>false</scroll>
         <font>font_menu</font>
         <selected>$PARAM[selected]</selected>
         <label>$PARAM[label]</label>
         <label2>$PARAM[label2]</label2>
-        <textwidth>150</textwidth>
+        <textwidth>180</textwidth>
         <textoffsetx>-1</textoffsetx>
         <onclick>$PARAM[onclick_1]</onclick>
         <onclick>$PARAM[onclick_2]</onclick>
@@ -551,6 +553,7 @@
         <textureradioofffocus/>
         <textureradiooffnofocus/>
         <textureradioondisabled/>
+        <textureradiooffdisabled/>
       </control>
     </definition>
   </include>

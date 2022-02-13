@@ -1093,6 +1093,7 @@
     <definition>
       <control type="group" id="$PARAM[altid]">
         <nested/>
+        <visible>$PARAM[visible]</visible>
         <control type="image">
           <left>$PARAM[left_posx]</left>
           <top>$PARAM[posy]</top>
@@ -1183,6 +1184,27 @@
         <control type="image">
           <height>$PARAM[background_height]</height>
           <texture colordiffuse="dialog_bg_100" border="5">common/box.png</texture>
+          <animation effect="fade" time="0" end="0" condition="String.IsEqual(Skin.String(DialogAlphaValue),100)">Conditional</animation>
+          <animation effect="fade" time="0" end="5" condition="String.IsEqual(Skin.String(DialogAlphaValue),95)">Conditional</animation>
+          <animation effect="fade" time="0" end="10" condition="String.IsEqual(Skin.String(DialogAlphaValue),90)">Conditional</animation>
+          <animation effect="fade" time="0" end="15" condition="String.IsEqual(Skin.String(DialogAlphaValue),85)">Conditional</animation>
+          <animation effect="fade" time="0" end="20" condition="String.IsEqual(Skin.String(DialogAlphaValue),80)">Conditional</animation>
+          <animation effect="fade" time="0" end="25" condition="String.IsEqual(Skin.String(DialogAlphaValue),75)">Conditional</animation>
+          <animation effect="fade" time="0" end="30" condition="String.IsEqual(Skin.String(DialogAlphaValue),70)">Conditional</animation>
+          <animation effect="fade" time="0" end="35" condition="String.IsEqual(Skin.String(DialogAlphaValue),65)">Conditional</animation>
+          <animation effect="fade" time="0" end="40" condition="String.IsEqual(Skin.String(DialogAlphaValue),60)">Conditional</animation>
+          <animation effect="fade" time="0" end="45" condition="String.IsEqual(Skin.String(DialogAlphaValue),55)">Conditional</animation>
+          <animation effect="fade" time="0" end="50" condition="String.IsEqual(Skin.String(DialogAlphaValue),50)">Conditional</animation>
+          <animation effect="fade" time="0" end="55" condition="String.IsEqual(Skin.String(DialogAlphaValue),45)">Conditional</animation>
+          <animation effect="fade" time="0" end="60" condition="String.IsEqual(Skin.String(DialogAlphaValue),40)">Conditional</animation>
+          <animation effect="fade" time="0" end="65" condition="String.IsEqual(Skin.String(DialogAlphaValue),35)">Conditional</animation>
+          <animation effect="fade" time="0" end="70" condition="String.IsEqual(Skin.String(DialogAlphaValue),30)">Conditional</animation>
+          <animation effect="fade" time="0" end="75" condition="String.IsEqual(Skin.String(DialogAlphaValue),25)">Conditional</animation>
+          <animation effect="fade" time="0" end="80" condition="String.IsEqual(Skin.String(DialogAlphaValue),20)">Conditional</animation>
+          <animation effect="fade" time="0" end="85" condition="String.IsEqual(Skin.String(DialogAlphaValue),15)">Conditional</animation>
+          <animation effect="fade" time="0" end="90" condition="String.IsEqual(Skin.String(DialogAlphaValue),10)">Conditional</animation>
+          <animation effect="fade" time="0" end="95" condition="String.IsEqual(Skin.String(DialogAlphaValue),5)">Conditional</animation>
+          <animation effect="fade" time="0" end="100" condition="String.IsEqual(Skin.String(DialogAlphaValue),0)">Conditional</animation>
         </control>
         <control type="radiobutton">
           <left>7</left>
