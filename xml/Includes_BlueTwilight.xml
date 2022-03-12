@@ -7,7 +7,7 @@
       <control type="group" id="5610">
         <top>25</top>
         <height>95</height>
-        <width>980</width>
+        <width>920</width>
         <centerleft>50%</centerleft>
         <control type="image">
           <left>0</left>
@@ -19,10 +19,10 @@
           <bordertexture colordiffuse="main_fg_30" border="22">common/box.png</bordertexture>
         </control>
         <control type="list" id="9000">
-          <width>980</width>
-          <centerleft>50%</centerleft>
+          <width>920</width>
           <height>100</height>
           <top>3</top>
+          <left>7</left>
           <onup>9001</onup>
           <ondown>2999</ondown>
           <orientation>horizontal</orientation>
@@ -82,7 +82,7 @@
           </content>
         </control>
         <control type="list" id="9001">
-          <width>980</width>
+          <width>920</width>
           <height>100</height>
           <top>3</top>
           <ondown>9000</ondown>
