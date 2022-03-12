@@ -85,17 +85,10 @@
           <width>920</width>
           <height>100</height>
           <top>3</top>
+          <left>7</left>
           <ondown>9000</ondown>
           <orientation>horizontal</orientation>
           <animation effect="slide" time="200" start="0" end="0,-100" reversible="true" condition="!Control.HasFocus(9001)">Conditional</animation>
-          <animation effect="slide" start="0,0" end="665,0" time="0" condition="Integer.IsEqual(Container(9001).NumItems,1)">conditional</animation>
-          <animation effect="slide" start="0,0" end="570,0" time="0" condition="Integer.IsEqual(Container(9001).NumItems,2)">conditional</animation>
-          <animation effect="slide" start="0,0" end="475,0" time="0" condition="Integer.IsEqual(Container(9001).NumItems,3)">conditional</animation>
-          <animation effect="slide" start="0,0" end="380,0" time="0" condition="Integer.IsEqual(Container(9001).NumItems,4)">conditional</animation>
-          <animation effect="slide" start="0,0" end="285,0" time="0" condition="Integer.IsEqual(Container(9001).NumItems,5)">conditional</animation>
-          <animation effect="slide" start="0,0" end="190,0" time="0" condition="Integer.IsEqual(Container(9001).NumItems,6)">conditional</animation>
-          <animation effect="slide" start="0,0" end="95,0" time="0" condition="Integer.IsEqual(Container(9001).NumItems,7)">conditional</animation>
-          <animation effect="slide" start="0,0" end="0" time="0" condition="Integer.IsGreater(Container(9001).NumItems,7)">conditional</animation>
           <focusedlayout height="95" width="240">
             <control type="group">
               <control type="image">
