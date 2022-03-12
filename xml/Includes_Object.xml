@@ -380,8 +380,8 @@
         <include condition="$PARAM[LandscapeCondition]">LandscapeHeight</include>
         <include condition="$PARAM[SquareCondition]">SquareHeight</include>
         <animation effect="slide" end="0,20" time="0" reversible="true" condition="true">Conditional</animation>
-        <onfocus>SetProperty(fade,$PARAM[fade],home)</onfocus>
-        <animation effect="fade" start="100" end="0" time="200" condition="Integer.IsEqual(Window(home).Property(fade),$PARAM[id])">Conditional</animation>
+<!--        <onfocus>SetProperty(fade,$PARAM[fade],home)</onfocus>-->
+<!--        <animation effect="fade" start="100" end="0" time="200" condition="Integer.IsEqual(Window(home).Property(fade),$PARAM[id])">Conditional</animation>-->
         <visible allowhiddenfocus="true">Integer.IsGreater(Container($PARAM[id]).NumItems,0)</visible>
         <!-- Wall events -->
         <include content="Object_Wall_Events">
@@ -417,8 +417,8 @@
         <include condition="$PARAM[LandscapeCondition]">LandscapeHeight</include>
         <include condition="$PARAM[SquareCondition]">SquareHeight</include>
         <animation effect="slide" end="0,20" time="0" reversible="true" condition="true">Conditional</animation>
-        <onfocus>SetProperty(fade,$PARAM[fade],home)</onfocus>
-        <animation effect="fade" start="100" end="0" time="200" condition="Integer.IsEqual(Window(home).Property(fade),$PARAM[id])">Conditional</animation>
+<!--        <onfocus>SetProperty(fade,$PARAM[fade],home)</onfocus>-->
+<!--        <animation effect="fade" start="100" end="0" time="200" condition="Integer.IsEqual(Window(home).Property(fade),$PARAM[id])">Conditional</animation>-->
         <visible allowhiddenfocus="true">Integer.IsGreater(Container($PARAM[id]).NumItems,0)</visible>
         <!-- Wall events -->
         <include content="Object_Wall_Events">
@@ -463,8 +463,8 @@
         <include condition="$PARAM[LandscapeCondition]">LandscapeHeight</include>
         <include condition="$PARAM[SquareCondition]">SquareHeight</include>
         <animation effect="slide" end="0,20" time="0" reversible="true" condition="true">Conditional</animation>
-        <onfocus>SetProperty(fade,$PARAM[fade],home)</onfocus>
-        <animation effect="fade" start="100" end="0" time="200" condition="Integer.IsEqual(Window(home).Property(fade),$PARAM[id])">Conditional</animation>
+<!--        <onfocus>SetProperty(fade,$PARAM[fade],home)</onfocus>-->
+<!--        <animation effect="fade" start="100" end="0" time="200" condition="Integer.IsEqual(Window(home).Property(fade),$PARAM[id])">Conditional</animation>-->
         <!-- Wall events -->
         <include content="Object_Wall_Events">
           <param name="id" value="$PARAM[id]"/>
@@ -545,8 +545,8 @@
         <include condition="$PARAM[LandscapeCondition]">LandscapeHeight</include>
         <include condition="$PARAM[SquareCondition]">SquareHeight</include>
         <animation effect="slide" end="0,20" time="0" reversible="true" condition="true">Conditional</animation>
-        <onfocus>SetProperty(fade,$PARAM[fade],home)</onfocus>
-        <animation effect="fade" start="100" end="0" time="200" condition="Integer.IsEqual(Window(home).Property(fade),$PARAM[id])">Conditional</animation>
+<!--        <onfocus>SetProperty(fade,$PARAM[fade],home)</onfocus>-->
+<!--        <animation effect="fade" start="100" end="0" time="200" condition="Integer.IsEqual(Window(home).Property(fade),$PARAM[id])">Conditional</animation>-->
         <visible allowhiddenfocus="true">Integer.IsGreater(Container($PARAM[id]).NumItems,0)</visible>
         <onfocus>SetProperty(TMDbHelper.WidgetContainer,$PARAM[id],Home)</onfocus>
         <onfocus>SetProperty(arrow_list_id,$PARAM[id],Home)</onfocus>
