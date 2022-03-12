@@ -26,7 +26,7 @@
           <onup>9001</onup>
           <ondown>2999</ondown>
           <orientation>horizontal</orientation>
-          <animation effect="slide" time="200" start="0" end="0,-100" reversible="true" condition="Control.HasFocus(9001)">Conditional</animation>
+          <animation effect="slide" time="200" start="0" end="0,-120" reversible="true" condition="Control.HasFocus(9001)">Conditional</animation>
           <animation effect="slide" start="0,0" end="665,0" time="0" condition="Integer.IsEqual(Container(9000).NumItems,1)">conditional</animation>
           <animation effect="slide" start="0,0" end="570,0" time="0" condition="Integer.IsEqual(Container(9000).NumItems,2)">conditional</animation>
           <animation effect="slide" start="0,0" end="475,0" time="0" condition="Integer.IsEqual(Container(9000).NumItems,3)">conditional</animation>
@@ -43,7 +43,6 @@
                 <height>64</height>
                 <width>240</width>
                 <texture colordiffuse="dialog_bg_70" border="22">common/box.png</texture>
-                <visible>Control.HasFocus(9000)</visible>
               </control>
               <control type="image">
                 <left>0</left>
@@ -51,7 +50,6 @@
                 <height>64</height>
                 <width>64</width>
                 <texture colordiffuse="ffffffff">$INFO[ListItem.Icon]</texture>
-                <visible>Control.HasFocus(9000)</visible>
               </control>
               <control type="label">
                 <left>60</left>
@@ -74,7 +72,6 @@
                 <height>64</height>
                 <width>64</width>
                 <texture colordiffuse="dialog_fg_70">$INFO[ListItem.Icon]</texture>
-                <visible>Control.HasFocus(9000)</visible>
               </control>
           </itemlayout>
           <content>
