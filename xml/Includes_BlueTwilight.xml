@@ -5,39 +5,58 @@
       <visible>!$EXP[infodialog_active]</visible>
       <include>Animation_TopSlide_Home</include>
       <control type="group" id="5610">
-        <height>120</height>
-        <width>1920</width>
+        <top>25</top>
+        <height>95</height>
+        <width>980</width>
+        <centerleft>50%</centerleft>
         <control type="image">
           <left>0</left>
           <top>0</top>
           <height>95</height>
-          <texture colordiffuse="dialog_bg_30">common/white.png</texture>
-        </control>
-        <control type="image">
-          <left>0</left>
-          <top>95</top>
-          <height>1</height>
-          <texture colordiffuse="main_fg_30">common/white.png</texture>
+          <width>100%</width>
+          <bordersize>1</bordersize>
+          <texture colordiffuse="dialog_bg_100" border="22">common/box.png</texture>
+          <bordertexture colordiffuse="main_fg_30" border="22">common/box.png</bordertexture>
         </control>
         <control type="list" id="9000">
+          <width>980</width>
+          <centerleft>50%</centerleft>
+          <height>100</height>
           <top>3</top>
           <onup>9001</onup>
           <ondown>2999</ondown>
           <orientation>horizontal</orientation>
           <animation effect="slide" time="200" start="0" end="0,-100" reversible="true" condition="Control.HasFocus(9001)">Conditional</animation>
-          <animation effect="slide" start="0,0" end="840,0" time="0" condition="Integer.IsEqual(Container(9000).NumItems,1)">conditional</animation>
-          <animation effect="slide" start="0,0" end="720,0" time="0" condition="Integer.IsEqual(Container(9000).NumItems,2)">conditional</animation>
-          <animation effect="slide" start="0,0" end="600,0" time="0" condition="Integer.IsEqual(Container(9000).NumItems,3)">conditional</animation>
-          <animation effect="slide" start="0,0" end="480,0" time="0" condition="Integer.IsEqual(Container(9000).NumItems,4)">conditional</animation>
-          <animation effect="slide" start="0,0" end="360,0" time="0" condition="Integer.IsEqual(Container(9000).NumItems,5)">conditional</animation>
-          <animation effect="slide" start="0,0" end="240,0" time="0" condition="Integer.IsEqual(Container(9000).NumItems,6)">conditional</animation>
-          <animation effect="slide" start="0,0" end="120,0" time="0" condition="Integer.IsEqual(Container(9000).NumItems,7)">conditional</animation>
+          <animation effect="slide" start="0,0" end="665,0" time="0" condition="Integer.IsEqual(Container(9000).NumItems,1)">conditional</animation>
+          <animation effect="slide" start="0,0" end="570,0" time="0" condition="Integer.IsEqual(Container(9000).NumItems,2)">conditional</animation>
+          <animation effect="slide" start="0,0" end="475,0" time="0" condition="Integer.IsEqual(Container(9000).NumItems,3)">conditional</animation>
+          <animation effect="slide" start="0,0" end="380,0" time="0" condition="Integer.IsEqual(Container(9000).NumItems,4)">conditional</animation>
+          <animation effect="slide" start="0,0" end="285,0" time="0" condition="Integer.IsEqual(Container(9000).NumItems,5)">conditional</animation>
+          <animation effect="slide" start="0,0" end="190,0" time="0" condition="Integer.IsEqual(Container(9000).NumItems,6)">conditional</animation>
+          <animation effect="slide" start="0,0" end="95,0" time="0" condition="Integer.IsEqual(Container(9000).NumItems,7)">conditional</animation>
           <animation effect="slide" start="0,0" end="0" time="0" condition="Integer.IsGreater(Container(9000).NumItems,7)">conditional</animation>
           <focusedlayout height="95" width="240">
             <control type="group">
-              <control type="label">
+              <control type="image">
                 <left>0</left>
+                <top>13</top>
+                <height>64</height>
+                <width>240</width>
+                <texture colordiffuse="dialog_bg_70" border="22">common/box.png</texture>
+                <visible>Control.HasFocus(9000)</visible>
+              </control>
+              <control type="image">
+                <left>0</left>
+                <top>13</top>
+                <height>64</height>
+                <width>64</width>
+                <texture colordiffuse="ffffffff">$INFO[ListItem.Icon]</texture>
+                <visible>Control.HasFocus(9000)</visible>
+              </control>
+              <control type="label">
+                <left>60</left>
                 <top>0</top>
+                <width>140</width>
                 <height>95</height>
                 <scroll>true</scroll>
                 <aligny>center</aligny>
@@ -46,48 +65,59 @@
                 <textcolor>ffffffff</textcolor>
                 <label>$INFO[ListItem.Label]</label>
               </control>
-              <control type="image">
-                <left>0</left>
-                <top>90</top>
-                <height>5</height>
-                <width>240</width>
-                <texture colordiffuse="ffffffff">common/white.png</texture>
-                <visible>Control.HasFocus(9000)</visible>
-              </control>
             </control>
           </focusedlayout>
-          <itemlayout height="95" width="240">
-            <control type="label">
-              <left>0</left>
-              <top>0</top>
-              <height>95</height>
-              <scroll>true</scroll>
-              <aligny>center</aligny>
-              <align>center</align>
-              <font>font_menu</font>
-              <textcolor>B3ededed</textcolor>
-              <label>$INFO[ListItem.Label]</label>
-            </control>
+          <itemlayout height="95" width="95">
+            <control type="image">
+                <left>0</left>
+                <top>13</top>
+                <height>64</height>
+                <width>64</width>
+                <texture colordiffuse="dialog_fg_70">$INFO[ListItem.Icon]</texture>
+                <visible>Control.HasFocus(9000)</visible>
+              </control>
           </itemlayout>
           <content>
             <include>skinshortcuts-mainmenu</include>
           </content>
         </control>
         <control type="list" id="9001">
-          <width>1920</width>
-          <centerleft>50%</centerleft>
+          <width>980</width>
           <height>100</height>
           <top>3</top>
           <ondown>9000</ondown>
           <orientation>horizontal</orientation>
           <animation effect="slide" time="200" start="0" end="0,-100" reversible="true" condition="!Control.HasFocus(9001)">Conditional</animation>
+          <animation effect="slide" start="0,0" end="665,0" time="0" condition="Integer.IsEqual(Container(9001).NumItems,1)">conditional</animation>
+          <animation effect="slide" start="0,0" end="570,0" time="0" condition="Integer.IsEqual(Container(9001).NumItems,2)">conditional</animation>
+          <animation effect="slide" start="0,0" end="475,0" time="0" condition="Integer.IsEqual(Container(9001).NumItems,3)">conditional</animation>
+          <animation effect="slide" start="0,0" end="380,0" time="0" condition="Integer.IsEqual(Container(9001).NumItems,4)">conditional</animation>
+          <animation effect="slide" start="0,0" end="285,0" time="0" condition="Integer.IsEqual(Container(9001).NumItems,5)">conditional</animation>
+          <animation effect="slide" start="0,0" end="190,0" time="0" condition="Integer.IsEqual(Container(9001).NumItems,6)">conditional</animation>
+          <animation effect="slide" start="0,0" end="95,0" time="0" condition="Integer.IsEqual(Container(9001).NumItems,7)">conditional</animation>
+          <animation effect="slide" start="0,0" end="0" time="0" condition="Integer.IsGreater(Container(9001).NumItems,7)">conditional</animation>
           <focusedlayout height="95" width="240">
             <control type="group">
-              <control type="label">
+              <control type="image">
                 <left>0</left>
-                <top>0</top>
-                <height>95</height>
+                <top>13</top>
+                <height>64</height>
                 <width>240</width>
+                <texture colordiffuse="dialog_bg_70" border="22">common/box.png</texture>
+                <visible>Control.HasFocus(9001)</visible>
+              </control>
+              <control type="image">
+                <left>0</left>
+                <top>13</top>
+                <height>64</height>
+                <width>64</width>
+                <texture colordiffuse="ffffffff">$INFO[ListItem.Icon]</texture>
+                <visible>Control.HasFocus(9001)</visible>
+              </control>
+              <control type="label">
+                <left>60</left>
+                <top>0</top>
+                <width>140</width>
                 <scroll>true</scroll>
                 <aligny>center</aligny>
                 <align>center</align>
@@ -95,31 +125,17 @@
                 <textcolor>ffffffff</textcolor>
                 <label>$INFO[ListItem.Label]</label>
               </control>
-              <control type="image">
-                <left>0</left>
-                <top>0</top>
-                <height>5</height>
-                <width>240</width>
-                <texture colordiffuse="ffffffff">common/white.png</texture>
-                <visible>Control.HasFocus(9001)</visible>
-              </control>
             </control>
           </focusedlayout>
-          <itemlayout height="95" width="240">
-            <control type="group">
-              <control type="label">
+          <itemlayout height="95" width="95">
+            <control type="image">
                 <left>0</left>
-                <top>0</top>
-                <height>95</height>
-                <width>240</width>
-                <scroll>true</scroll>
-                <aligny>center</aligny>
-                <align>center</align>
-                <font>font_menu</font>
-                <textcolor>B3ededed</textcolor>
-                <label>$INFO[ListItem.Label]</label>
+                <top>13</top>
+                <height>64</height>
+                <width>64</width>
+                <texture colordiffuse="dialog_fg_70">$INFO[ListItem.Icon]</texture>
+                <visible>Control.HasFocus(9001)</visible>
               </control>
-            </control>
           </itemlayout>
           <content>
             <include>skinshortcuts-submenu</include>
