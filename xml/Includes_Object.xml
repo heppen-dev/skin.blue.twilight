@@ -375,7 +375,7 @@
         <width>1600</width>
         <onup>SetFocus(2999)</onup>
         <onback>9000</onback>
-        <preload>2</preload>
+        <preloaditems>2</preloaditems>
         <include condition="$PARAM[PosterCondition]">PosterHeight</include>
         <include condition="$PARAM[LandscapeCondition]">LandscapeHeight</include>
         <include condition="$PARAM[SquareCondition]">SquareHeight</include>
@@ -412,7 +412,7 @@
         <width>1600</width>
         <onup>SetFocus(2999)</onup>
         <onback>9000</onback>
-        <preload>2</preload>
+        <preloaditems>2</preloaditems>
         <include condition="$PARAM[PosterCondition]">PosterHeight</include>
         <include condition="$PARAM[LandscapeCondition]">LandscapeHeight</include>
         <include condition="$PARAM[SquareCondition]">SquareHeight</include>
@@ -458,7 +458,7 @@
         <width>1600</width>
         <onup>SetFocus(2999)</onup>
         <onback>9000</onback>
-        <preload>2</preload>
+        <preloaditems>2</preloaditems>
         <include condition="$PARAM[PosterCondition]">PosterHeight</include>
         <include condition="$PARAM[LandscapeCondition]">LandscapeHeight</include>
         <include condition="$PARAM[SquareCondition]">SquareHeight</include>
@@ -502,7 +502,7 @@
         <include condition="$PARAM[LandscapeCondition]">LandscapeHeight</include>
         <include condition="$PARAM[SquareCondition]">SquareHeight</include>
         <focusposition>1</focusposition>
-        <preload>2</preload>
+        <preloaditems>2</preloaditems>
         <animation effect="slide" end="860,0" time="0" condition="$PARAM[SquareCondition] | $PARAM[LandscapeCondition]">Conditional</animation>
         <!-- Wall events -->
         <include content="Object_Wall_Events">
@@ -540,7 +540,7 @@
         <width>1600</width>
         <onup>SetFocus(2999)</onup>
         <onback>9000</onback>
-        <preload>2</preload>
+        <preloaditems>2</preloaditems>
         <include condition="$PARAM[PosterCondition]">PosterHeight</include>
         <include condition="$PARAM[LandscapeCondition]">LandscapeHeight</include>
         <include condition="$PARAM[SquareCondition]">SquareHeight</include>
