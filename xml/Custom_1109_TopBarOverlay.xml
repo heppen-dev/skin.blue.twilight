@@ -231,7 +231,7 @@
 				</control>
 			</control> -->
       <control type="group">
-        <visible>!Window.IsVisible(extendedprogressdialog)</visible>
+        <visible>!Window.IsVisible(extendedprogressdialog) + !Window.IsActive(playerprocessinfo)</visible>
         <animation effect="fade" time="150">VisibleChange</animation>
         <control type="grouplist">
           <left>48</left>

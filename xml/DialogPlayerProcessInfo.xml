@@ -9,13 +9,13 @@
       <bottom>0</bottom>
       <height>250</height>
       <animation effect="slide" end="0,-20" time="150" condition="VideoPlayer.Content(LiveTV)">conditional</animation>
-      <control type="image">
-        <left>30</left>
-        <top>-220</top>
-        <right>30</right>
-        <height>330</height>
-        <texture border="40">dialogs/dialog-bg-nobo.png</texture>
-      </control>
+<!--      <control type="image">-->
+<!--        <left>30</left>-->
+<!--        <top>-220</top>-->
+<!--        <right>30</right>-->
+<!--        <height>330</height>-->
+<!--        <texture border="40">dialogs/dialog-bg-nobo.png</texture>-->
+<!--      </control>-->
       <control type="grouplist">
         <left>52</left>
         <top>-204</top>
@@ -210,14 +210,18 @@
           <width>auto</width>
           <height>100</height>
           <textoffsetx>40</textoffsetx>
+          <font>font_tiny_hintlabel</font>
           <label>$LOCALIZE[31137]</label>
           <visible>VideoPlayer.Content(livetv)</visible>
+          <texturefocus />
         </control>
         <control type="button" id="5552">
           <width>auto</width>
           <height>100</height>
           <textoffsetx>40</textoffsetx>
+          <font>font_tiny_hintlabel</font>
           <label>$LOCALIZE[31138]</label>
+          <texturefocus />
         </control>
       </control>
     </control>
