@@ -406,6 +406,29 @@
       </control>
     </definition>
   </include>
+  <include name="MediaFlag_Text">
+    <param name="width">115</param>
+    <param name="height">60</param>
+    <param name="visible">true</param>
+    <definition>
+      <control type="group">
+          <width>$PARAM[width]</width>
+          <height>$PARAM[height]</height>
+          <control type="label">
+            <width>$PARAM[width]</width>
+            <height>$PARAM[height]</height>
+            <align>center</align>
+            <aligny>center</aligny>
+            <font>font_tiny_hintlabel</font>
+            <label colordiffuse="main_fg_70">$PARAM[label]</label>
+            <visible>$PARAM[visible]</visible>
+          </control>
+          <include content="MediaFlag">
+            <param name="texture" value="flags/flag.png"/>
+          </include>
+        </control>
+    </definition>
+  </include>
   <include name="MediaFlags">
     <param name="infolabel_prefix">
     </param>
@@ -687,6 +710,10 @@
         <include content="MediaFlag">
           <param name="texture" value="$PARAM[resolution_var]"/>
           <param name="visible" value="!String.IsEmpty($PARAM[infolabel_prefix]VideoPlayer.VideoResolution)"/>
+        </include>
+        <include content="MediaFlag_Text">
+          <param name="label" value="$INFO[Player.Process(VideoFPS)]"/>
+          <param name="visible" value="!String.IsEmpty(Player.Process(VideoFPS))"/>
         </include>
         <include content="MediaFlag">
           <param name="texture" value="$INFO[VideoPlayer.VideoAspect,flags/aspectratio/,.png]"/>
