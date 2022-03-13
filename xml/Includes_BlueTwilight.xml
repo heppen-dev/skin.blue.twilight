@@ -146,10 +146,11 @@
         <control type="grouplist" id="3000">
           <top>400</top>
           <left>160</left>
-          <height>675</height>
+          <height>680</height>
           <width>1920</width>
           <onup>2999</onup>
           <scrolltime>100</scrolltime>
+          <itemgap>5</itemgap>
           <include>skinshortcuts-template-widgetsWall</include>
           <animation effect="slide" time="200" start="0" end="0,740" reversible="true" condition="$EXP[FirstExpose] | $EXP[SecondExpose]">Conditional</animation>
         </control>
