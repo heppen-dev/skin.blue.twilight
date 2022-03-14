@@ -2324,7 +2324,7 @@
     <onfocus>ClearProperty(spotlight_DBType,home)</onfocus>
   </include>
   <include name="BannerWidth">
-    <width>2800</width>
+    <width>3220</width>
   </include>
   <include name="SquareWidth">
     <width>1600</width>
