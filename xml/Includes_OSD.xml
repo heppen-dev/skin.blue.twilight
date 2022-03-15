@@ -132,7 +132,6 @@
             <align>center</align>
             <scrolltime tween="sine">200</scrolltime>
             <orientation>horizontal</orientation>
-            <onup>69</onup>
             <ondown>noop</ondown>
             <onleft>70049</onleft>
             <onright>600</onright>
@@ -160,7 +159,6 @@
                 <texturenofocus/>
                 <onleft>600</onleft>
                 <onright>603</onright>
-                <onup>69</onup>
                 <ondown>noop</ondown>
                 <onclick>PlayerControl(Play)</onclick>
                 <include>OSD_Button_OnFocus</include>
@@ -432,7 +430,6 @@
           <align>center</align>
           <scrolltime tween="sine">200</scrolltime>
           <orientation>horizontal</orientation>
-          <onup>69</onup>
           <ondown>noop</ondown>
           <onleft>70049</onleft>
           <onright>600</onright>
@@ -460,7 +457,6 @@
               <texturenofocus/>
               <onleft>600</onleft>
               <onright>603</onright>
-              <onup>69</onup>
               <ondown>noop</ondown>
               <onclick>PlayerControl(Play)</onclick>
               <include>OSD_Button_OnFocus</include>
@@ -489,7 +485,6 @@
               <texturenofocus/>
               <onleft>604</onleft>
               <onright>607</onright>
-              <onup>69</onup>
               <ondown>noop</ondown>
               <onclick>PlayerControl(Stop)</onclick>
               <include>OSD_Button_OnFocus</include>
@@ -667,7 +662,6 @@
           <align>center</align>
           <scrolltime tween="sine">200</scrolltime>
           <orientation>horizontal</orientation>
-          <!-- <onup>69</onup> -->
           <ondown>noop</ondown>
           <onleft>noop</onleft>
           <onright>87</onright>
@@ -702,7 +696,6 @@
               <texturenofocus/>
               <onleft>601</onleft>
               <onright>603</onright>
-              <onup>69</onup>
               <ondown>noop</ondown>
               <onclick>PlayerControl(Play)</onclick>
               <include>OSD_Button_OnFocus</include>

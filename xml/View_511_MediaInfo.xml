@@ -61,21 +61,15 @@
       <control type="group">
         <control type="group">
           <top>60</top>
-          <include content="Object_Info_First_Line">
-            <param name="visible" value="true" />
-          </include>
+          <include content="Object_Info_First_Line" />
         </control>
         <control type="group">
           <top>120</top>
-          <include content="Object_Info_Line_MediaFlags">
-            <param name="visible" value="true" />
-          </include>
+          <include content="Object_Info_Line_MediaFlags" />
         </control>
         <control type="group">
           <top>300</top>
-          <include content="Object_Video_Info_Line">
-            <param name="visible" value="true" />
-          </include>
+          <include content="Object_Video_Info_Line" />
         </control>
         <control type="group">
           <control type="textbox">

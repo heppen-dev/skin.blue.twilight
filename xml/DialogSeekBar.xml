@@ -6,7 +6,6 @@
   <include>Animation_BottomSlide</include>
   <depth>DepthOSD</depth>
   <zorder>0</zorder>
-  <onload>SetFocus(69)</onload>
   <controls>
     <include>PVRChannelNumberInput</include>
     <!-- LiveTV start -->

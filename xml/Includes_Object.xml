@@ -10,10 +10,6 @@
       <onclick condition="[[String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE, tvshow)] + [Skin.HasSetting(BackgroundPlayingTrailers) + Skin.HasSetting(Expose)] + String.IsEmpty(ListItem.Trailer) + String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Trailer))] + !Skin.HasSetting(DontShowNotificationANT)">Notification($LOCALIZE[31389], $LOCALIZE[31390])</onclick>
       <onclick condition="[String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE, tvshow)] + Control.HasFocus($PARAM[id]) + [Skin.HasSetting(BackgroundPlayingTrailers) + Skin.HasSetting(Expose)] + !Player.HasVideo + !String.IsEmpty(ListItem.Trailer)">SetProperty(hasTrailer,true,home)</onclick>
       <onclick condition="[String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE, tvshow)] + Control.HasFocus($PARAM[id]) + [Skin.HasSetting(BackgroundPlayingTrailers) + Skin.HasSetting(Expose)] + !Player.HasVideo + String.IsEmpty(ListItem.Trailer) + !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Trailer))">SetProperty(hasTrailer,true,home)</onclick>
-      <!-- fix for playing tv shows from header widget -->
-      <onclick condition="String.StartsWith(ListItem.FolderPath,plugin://plugin.video.themoviedb.helper) + [String.IsEmpty(ListItem.DBID) | [!String.IsEqual(ListItem.DBType,movie) + !String.IsEqual(ListItem.DBType,tvshow)]]">RunScript(plugin.video.themoviedb.helper,add_path=$INFO[ListItem.FolderPath],call_auto=1190)</onclick>
-      <onclick condition="String.StartsWith(ListItem.FolderPath,plugin://plugin.video.themoviedb.helper) + !String.IsEmpty(ListItem.DBID) + String.IsEqual(ListItem.DBType,movie)">RunScript(plugin.video.themoviedb.helper,add_path=$INFO[ListItem.Label,videodb://movies/titles/?xsp=%7B%22order%22%3A%7B%22direction%22%3A%22ascending%22%2C%22ignorefolders%22%3A0%2C%22method%22%3A%22sorttitle%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22title%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%22,%22%5D%7D%5D%7D%2C%22type%22%3A%22movies%22%7D],call_auto=1190)</onclick>
-      <onclick condition="String.StartsWith(ListItem.FolderPath,plugin://plugin.video.themoviedb.helper) + !String.IsEmpty(ListItem.DBID) + String.IsEqual(ListItem.DBType,tvshow)">RunScript(plugin.video.themoviedb.helper,add_path=$INFO[ListItem.Label,videodb://tvshows/titles/?xsp=%7B%22order%22%3A%7B%22direction%22%3A%22ascending%22%2C%22ignorefolders%22%3A0%2C%22method%22%3A%22sorttitle%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22title%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%22,%22%5D%7D%5D%7D%2C%22type%22%3A%22tvshows%22%7D],call_auto=1190)</onclick>
       <!-- flix spotlight -->
       <include content="Flix_Spotlight_Properties">
         <param name="include_condition" value="[!String.StartsWith(ListItem.FolderPath,favourites://) + !String.IsEqual(Listitem.DBTYPE,song) + !String.IsEqual(Listitem.DBTYPE,album) + !String.IsEqual(Listitem.DBTYPE,artist)] + Skin.HasSetting(Expose)" />
@@ -713,6 +709,7 @@
     </definition>
   </include>
   <include name="Object_Info_First_Line">
+    <param name="visible" default="true"/>
     <definition>
       <control type="grouplist">
         <height>48</height>
@@ -725,13 +722,15 @@
           <top>8</top>
           <left>4</left>
           <width>260</width>
+          <visible>$PARAM[visible]</visible>
           <control type="image">
             <top>0</top>
             <width>260</width>
             <height>32</height>
             <aspectratio align="left">scale</aspectratio>
             <texture background="true" colordiffuse="ff0fafff">common/badge.png</texture>
-            <visible>$PARAM[visible] + [Integer.IsGreater(ListItem.Rating,1) | Integer.IsGreater(Window(home).Property(Expose_ListItem_Rating),1)]</visible>
+            <visible>Integer.IsGreater(ListItem.Rating,1) | Integer.IsGreater(Window(home).Property(Expose_ListItem_Rating),1)</visible>
+            <visible>$PARAM[visible]</visible>
           </control>
           <include content="Object_Info_Line_Label">
             <param name="label" value="$VAR[PercentageRating]% $LOCALIZE[31384]"/>
@@ -739,7 +738,7 @@
             <param name="textcolor" value="dialog_fg_100"/>
             <param name="divider" value="false"/>
             <param name="fallback" value="N/A"/>
-            <param name="visible" value="$PARAM[visible] + [Integer.IsGreater(ListItem.Rating,1) | Integer.IsGreater(Window(home).Property(Expose_ListItem_Rating),1)]"/>
+            <param name="visible" value="Integer.IsGreater(ListItem.Rating,1) | Integer.IsGreater(Window(home).Property(Expose_ListItem_Rating),1)"/>
             <param name="width" value="100%" />
             <param name="height" value="32"/>
             <param name="top" value="0" />
@@ -755,7 +754,9 @@
           <align>center</align>
           <font>font_tiny_hintlabel</font>
           <textcolor>dialog_fg_100</textcolor>
-          <visible>!String.IsEmpty(ListItem.Year) + $PARAM[visible] + Integer.IsGreater(ListItem.Rating,1) + ![$EXP[FirstExpose] + $EXP[SecondExpose]]</visible>
+          <visible>$EXP[FirstExpose] + $EXP[SecondExpose]</visible>
+          <visible>!String.IsEmpty(ListItem.Year) + Integer.IsGreater(ListItem.Rating,1)</visible>
+          <visible>$PARAM[visible]</visible>
         </control>
         <control type="label" id="$PARAM[id]">
           <label fallback="N/A">$INFO[Window(home).Property(Expose_ListItem_Year)]</label>
@@ -766,12 +767,14 @@
           <align>center</align>
           <font>font_tiny_hintlabel</font>
           <textcolor>dialog_fg_100</textcolor>
-          <visible>!String.IsEmpty(Window(home).Property(Expose_ListItem_Year)) + $PARAM[visible] + Integer.IsGreater(Window(home).Property(Expose_ListItem_Rating),1)  + [$EXP[FirstExpose] | $EXP[SecondExpose]]</visible>
+          <visible>$EXP[FirstExpose] | $EXP[SecondExpose]</visible>
+          <visible>!String.IsEmpty(Window(home).Property(Expose_ListItem_Year)) + Integer.IsGreater(Window(home).Property(Expose_ListItem_Rating),1)</visible>
+          <visible>$PARAM[visible]</visible>
         </control>
         <control type="group">
           <top>-6</top>
           <left>0</left>
-          <animation effect="slide" end="-277,0" time="0" condition="$PARAM[visible] + ![Integer.IsGreater(ListItem.Rating,1) | Integer.IsGreater(Window(home).Property(Expose_ListItem_Rating),1)]">Conditional</animation>
+          <animation effect="slide" end="-277,0" time="0" condition="!Integer.IsGreater(ListItem.Rating,1) + !Integer.IsGreater(Window(home).Property(Expose_ListItem_Rating),1)">Conditional</animation>
           <include content="MediaFlags" condition="!$EXP[FirstExpose] + !$EXP[SecondExpose]"/>
           <include content="MediaFlags_Expose" condition="$EXP[FirstExpose] | $EXP[SecondExpose]">
             <param name="visible" value="$EXP[FirstExpose] | $EXP[SecondExpose]"/>
