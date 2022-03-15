@@ -234,14 +234,14 @@
         </include>
       </focusedlayout>
       <!-- Square aspect ratio -->
-      <itemlayout height="300" width="300" condition="$PARAM[SquareCondition]">
+      <itemlayout height="300" width="330" condition="$PARAM[SquareCondition]">
         <include content="ViewSquareItemLayout"/>
         <include content="View_WatchedOverlay">
           <param name="bottom" value="28"/>
           <param name="right" value="28"/>
         </include>
       </itemlayout>
-      <focusedlayout height="300" width="300" condition="$PARAM[SquareCondition]">
+      <focusedlayout height="300" width="330" condition="$PARAM[SquareCondition]">
         <include content="ViewSquareItemLayout"/>
         <control type="group">
           <visible>Skin.HasSetting(header_widget_label) + Control.HasFocus($PARAM[id])</visible>
