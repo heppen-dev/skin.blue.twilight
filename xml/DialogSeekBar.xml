@@ -6,6 +6,7 @@
   <include>Animation_BottomSlide</include>
   <depth>DepthOSD</depth>
   <zorder>0</zorder>
+  <onload>SetFocus(69)</onload>
   <controls>
     <include>PVRChannelNumberInput</include>
     <!-- LiveTV start -->
@@ -152,33 +153,6 @@
           </control>
         </control>
         <control type="grouplist">
-          <left>20</left>
-          <centertop>125</centertop>
-          <width>800</width>
-          <height>50</height>
-          <align>right</align>
-          <include>Animation_BottomSlide</include>
-          <orientation>horizontal</orientation>
-          <itemgap>10</itemgap>
-          <visible>[Player.ShowInfo | Window.IsActive(fullscreeninfo)] + !Player.ChannelPreviewActive + Window.IsActive(fullscreenvideo)</visible>
-          <animation effect="fade" start="0" end="100" time="200" delay="1000">Visible</animation>
-          <include content="MediaFlag">
-            <param name="texture" value="$INFO[VideoPlayer.VideoCodec,flags/videocodec/,.png]"/>
-          </include>
-          <include content="MediaFlag">
-            <param name="texture" value="$INFO[VideoPlayer.VideoResolution,flags/videoresolution/,.png]"/>
-          </include>
-          <include content="MediaFlag">
-            <param name="texture" value="$INFO[VideoPlayer.VideoAspect,flags/aspectratio/,.png]"/>
-          </include>
-          <include content="MediaFlag">
-            <param name="texture" value="$INFO[VideoPlayer.AudioCodec,flags/audiocodec/,.png]"/>
-          </include>
-          <include content="MediaFlag">
-            <param name="texture" value="$INFO[VideoPlayer.AudioChannels,flags/audiochannel/,.png]"/>
-          </include>
-        </control>
-        <control type="grouplist">
           <right>110</right>
           <bottom>105</bottom>
           <width>800</width>
@@ -278,15 +252,16 @@
           <texture>$VAR[SeekbarPoster]</texture>
         </control>
         <control type="label">
-          <top>-220</top>
+          <top>-60</top>
           <left>440</left>
           <right>20</right>
           <height>160</height>
+          <width>1400</width>
           <font>font52_title</font>
           <label>$INFO[Player.Title]</label>
         </control>
         <control type="group">
-          <left>440</left>
+          <left>420</left>
           <width>1450</width>
           <top>22</top>
           <include>Object_Info_First_Line_OSD</include>
@@ -300,6 +275,7 @@
           <label fallback="19055">$INFO[VideoPlayer.Plot]</label>
           <align>justify</align>
           <autoscroll delay="5000" repeat="7500" time="5000">Skin.HasSetting(autoscroll)</autoscroll>
+          <visible>Player.ShowInfo</visible>
         </control>
       </control>
       <control type="group">
@@ -481,26 +457,6 @@
           </include>
         </control>
       </control>
-      <!-- <control type="ranges">
-      <left>0</left>
-      <top>70</top>
-      <width>100%</width>
-      <height>8</height>
-      <texturebg border="3" colordiffuse="00FFFFFF">colors/white50.png</texturebg>
-      <lefttexture>colors/white.png</lefttexture>
-      <midtexture colordiffuse="FFFF0000">colors/white.png</midtexture>
-      <righttexture>colors/white.png</righttexture>
-      <info>Player.Cutlist</info>
-    </control>
-    <control type="ranges">
-      <left>280</left>
-      <top>100</top>
-      <width>1450</width>
-      <height>4</height>
-      <texturebg border="3" colordiffuse="00FFFFFF">colors/white50.png</texturebg>
-      <righttexture>colors/white.png</righttexture>
-      <info>Player.Chapters</info>
-    </control> -->
   </control>
   <control type="group">
     <visible>!Window.IsVisible(playerprocessinfo)</visible>
@@ -510,41 +466,38 @@
     <animation effect="fade" start="100" end="0" time="100">Hidden</animation>
     <bottom>0</bottom>
     <height>470</height>
-    <control type="image">
-      <left>0</left>
-      <width>100%</width>
-      <height>330</height>
-      <texture>dialogs/dialog-bg-nobo.png</texture>
-    </control>
-    <control type="image">
-      <depth>DepthOSD+</depth>
-      <left>10</left>
-      <bottom>145</bottom>
-      <width>400</width>
-      <height>600</height>
-      <aspectratio aligny="bottom">keep</aspectratio>
-      <texture fallback="DefaultVideo.png" background="true">$VAR[NowPlayingPosterVar]</texture>
-      <bordertexture border="21">overlays/shadow.png</bordertexture>
-      <bordersize>20</bordersize>
-    </control>
-    <control type="grouplist">
-      <left>360</left>
-      <top>10</top>
-      <right>20</right>
-      <height>300</height>
-      <align>left</align>
-      <orientation>vertical</orientation>
-      <itemgap>10</itemgap>
-      <control type="textbox">
-        <height>250</height>
-        <label fallback="10005">$INFO[VideoPlayer.Tagline,[B],[/B][CR]]$INFO[VideoPlayer.Plot]</label>
-        <align>left</align>
-        <autoscroll delay="5000" repeat="7500" time="5000">Skin.HasSetting(autoscroll)</autoscroll>
+    <control type="group">
+      <control type="image">
+        <left>125</left>
+        <top>-70</top>
+        <width>200</width>
+        <aspectratio>keep</aspectratio>
+        <texture>$VAR[SeekbarPoster]</texture>
       </control>
       <control type="label">
-        <height>50</height>
-        <label>$VAR[OSDNextLabelVar]</label>
-        <visible>Integer.IsGreater(Playlist.Length(video),1)</visible>
+        <top>60</top>
+        <left>440</left>
+        <right>20</right>
+        <height>160</height>
+        <width>1400</width>
+        <font>font52_title</font>
+        <label>$INFO[Player.Title]</label>
+      </control>
+      <control type="group">
+        <left>420</left>
+        <width>1450</width>
+        <top>300</top>
+        <include>Object_Info_First_Line_OSD</include>
+      </control>
+      <control type="textbox">
+        <left>440</left>
+        <top>160</top>
+        <right>20</right>
+        <height>90</height>
+        <width>1380</width>
+        <label fallback="19055">$INFO[VideoPlayer.Plot]</label>
+        <align>justify</align>
+        <autoscroll delay="5000" repeat="7500" time="5000">Skin.HasSetting(autoscroll)</autoscroll>
       </control>
     </control>
   </control>

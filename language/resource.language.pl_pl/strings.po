@@ -1964,3 +1964,8 @@ msgstr "Załaduj hub filmowy zamiast strony głównej"
 msgctxt "#31438"
 msgid "Skip main menu Tiles"
 msgstr "Pomiń kafelki menu głównego"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31439"
+msgid "Disable system time"
+msgstr "Wyłącz zegar systemowy"

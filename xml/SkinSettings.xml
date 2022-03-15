@@ -469,6 +469,12 @@
             <onclick>RunScript(script.toolbox,info=selectdialog,header=Autoclose OSD)</onclick>
             <selected>!String.IsEmpty(Skin.String(OSD_Timeout))</selected>
           </control>
+          <control type="radiobutton" id="1003">
+            <label>$LOCALIZE[31439]</label>
+            <include>DefaultSettingButton</include>
+            <onclick>Skin.ToggleSetting(disable_clock_osd)</onclick>
+            <selected>Skin.HasSetting(disable_clock_osd)</selected>
+          </control>
         </control>
         <include content="DefaultAddonSettingButtonGradient">
           <param name="id" value="1100"/>

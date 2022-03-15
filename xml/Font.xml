@@ -242,7 +242,8 @@
       <name>font52_title</name>
       <filename>AmazonEmberDisplay_Bd.ttf</filename>
       <size>52</size>
-      <style>bold</style>
+<!--      <style>bold</style>-->
+      <aspect>0.8</aspect>
     </font>
     <font>
       <name>font_title</name>

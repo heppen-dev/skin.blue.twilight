@@ -393,7 +393,7 @@
   </include>
   <include name="MediaFlag">
     <param name="width">115</param>
-    <param name="height">60</param>
+    <param name="height">55</param>
     <param name="visible">true</param>
     <definition>
       <control type="image">
@@ -407,7 +407,7 @@
     </definition>
   </include>
   <include name="MediaFlag_Text">
-    <param name="width">115</param>
+    <param name="width">140</param>
     <param name="height">60</param>
     <param name="visible">true</param>
     <definition>
@@ -425,6 +425,7 @@
           </control>
           <include content="MediaFlag">
             <param name="texture" value="flags/flag.png"/>
+            <param name="width" value="140"/>
           </include>
         </control>
     </definition>
@@ -445,7 +446,7 @@
         <width>1900</width>
         <usecontrolcoords>true</usecontrolcoords>
         <control type="group">
-          <width>115</width>
+          <width>140</width>
           <visible>!String.IsEmpty($PARAM[infolabel_prefix]ListItem.Duration)</visible>
           <control type="label">
             <width>115</width>
@@ -548,37 +549,29 @@
     <definition>
       <control type="grouplist">
         <orientation>horizontal</orientation>
-        <left>320</left>
+        <left>0</left>
         <top>0</top>
         <height>70</height>
         <align>$PARAM[align]</align>
-        <itemgap>10</itemgap>
-        <width>800</width>
+        <itemgap>0</itemgap>
+        <width>1200</width>
         <usecontrolcoords>true</usecontrolcoords>
-        <control type="group">
-          <top>10</top>
-          <width>200</width>
-          <visible>!String.IsEmpty($PARAM[infolabel_prefix]VideoPlayer.Premiered)</visible>
-          <include content="InfoFlag">
-            <param name="icon" value="lists/year.png"/>
-            <param name="label" value="$INFO[$PARAM[infolabel_prefix]VideoPlayer.Premiered]"/>
-          </include>
-        </control>
-        <control type="group">
-          <width>115</width>
-          <visible>!String.IsEmpty($PARAM[infolabel_prefix]VideoPlayer.Duration)</visible>
-          <control type="label">
-            <width>115</width>
-            <height>60</height>
-            <align>center</align>
-            <aligny>center</aligny>
-            <label>$INFO[$PARAM[infolabel_prefix]VideoPlayer.Duration]</label>
-            <font>font_tiny_hintlabel</font>
-          </control>
-          <include content="MediaFlag">
-            <param name="texture" value="flags/flag.png"/>
-          </include>
-        </control>
+        <include content="MediaFlag_Text">
+          <param name="label" value="$VAR[PercentageRating_OSD]% $LOCALIZE[31384]"/>
+          <param name="visible" value="$PARAM[visible_condi]"/>
+        </include>
+        <include content="MediaFlag_Text">
+          <param name="label" value="$INFO[VideoPlayer.Year]"/>
+          <param name="visible" value="!String.IsEmpty(VideoPlayer.Year)"/>
+        </include>
+        <include content="MediaFlag_Text">
+          <param name="label" value="$INFO[$PARAM[infolabel_prefix]VideoPlayer.Duration]"/>
+          <param name="visible" value="!String.IsEmpty($PARAM[infolabel_prefix]VideoPlayer.Duration)"/>
+        </include>
+        <include content="MediaFlag_Text">
+          <param name="label" value="$INFO[VideoPlayer.Premiered]"/>
+          <param name="visible" value="!String.IsEmpty(VideoPlayer.Premiered)"/>
+        </include>
         <control type="group">
           <width>150</width>
           <visible>System.AddonIsEnabled(resource.images.studios.white) + !String.IsEmpty($PARAM[infolabel_prefix]VideoPlayer.Studio)</visible>
@@ -699,33 +692,39 @@
         <left>0</left>
         <top>0</top>
         <height>70</height>
-        <width>1000</width>
+        <width>1200</width>
         <align>left</align>
-        <itemgap>10</itemgap>
+        <itemgap>0</itemgap>
         <usecontrolcoords>true</usecontrolcoords>
         <include content="MediaFlag">
           <param name="texture" value="$INFO[ListItem.VideoCodec,flags/videocodec/,.png]"/>
           <param name="visible" value="!String.IsEmpty($PARAM[infolabel_prefix]VideoPlayer.VideoCodec)"/>
+          <param name="width" value="140"/>
         </include>
         <include content="MediaFlag">
           <param name="texture" value="$PARAM[resolution_var]"/>
           <param name="visible" value="!String.IsEmpty($PARAM[infolabel_prefix]VideoPlayer.VideoResolution)"/>
+          <param name="width" value="140"/>
         </include>
         <include content="MediaFlag_Text">
           <param name="label" value="$INFO[Player.Process(VideoFPS)]"/>
           <param name="visible" value="!String.IsEmpty(Player.Process(VideoFPS))"/>
+          <param name="width" value="140"/>
         </include>
         <include content="MediaFlag">
           <param name="texture" value="$INFO[VideoPlayer.VideoAspect,flags/aspectratio/,.png]"/>
           <param name="visible" value="!String.IsEmpty($PARAM[infolabel_prefix]VideoPlayer.VideoAspect)"/>
+          <param name="width" value="140"/>
         </include>
         <include content="MediaFlag">
           <param name="texture" value="$INFO[$PARAM[infolabel_prefix]VideoPlayer.AudioCodec,flags/audiocodec/,.png]"/>
           <param name="visible" value="!String.IsEmpty($PARAM[infolabel_prefix]VideoPlayer.AudioCodec)"/>
+          <param name="width" value="140"/>
         </include>
         <include content="MediaFlag">
           <param name="texture" value="$INFO[$PARAM[infolabel_prefix]VideoPlayer.AudioChannels,flags/audiochannel/,.png]"/>
           <param name="visible" value="!String.IsEmpty($PARAM[infolabel_prefix]VideoPlayer.AudioChannels)"/>
+          <param name="width" value="140"/>
         </include>
       </control>
     </definition>

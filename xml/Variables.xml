@@ -894,7 +894,8 @@
   </variable>
   <variable name="SeekbarPoster">
     <value condition="!String.IsEmpty(Player.Art(tvshow.poster))">$INFO[Player.Art(tvshow.poster)]</value>
-    <value>$INFO[Player.Art(poster)]</value>
+    <value condition="!String.IsEmpty(Player.Art(poster))">$INFO[Player.Art(poster)]</value>
+    <value>$INFO[Player.Icon]</value>
   </variable>
   <variable name="ListBoxInfoVar">
     <value condition="String.IsEqual(Container.FolderPath,addons://outdated/) + !String.IsEmpty(ListItem.Addonnews)">$INFO[ListItem.Addonnews]</value>

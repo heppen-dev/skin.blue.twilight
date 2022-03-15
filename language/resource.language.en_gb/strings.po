@@ -2140,3 +2140,8 @@ msgstr ""
 msgctxt "#31438"
 msgid "Skip main menu Tiles"
 msgstr ""
+
+#: /xml/SkinSettings.xml
+msgctxt "#31439"
+msgid "Disable system time"
+msgstr ""
