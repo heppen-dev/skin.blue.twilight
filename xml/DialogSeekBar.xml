@@ -461,8 +461,8 @@
           <width>1380</width>
           <height>26</height>
           <texturesliderbar colordiffuse="00FFFFFF">osd/progress/nub_bar.png</texturesliderbar>
-          <textureslidernib colordiffuse="bf777777">osd/progress/nub_bar.png</textureslidernib>
-          <textureslidernibfocus colordiffuse="bf777777">colors/white.png</textureslidernibfocus>
+          <textureslidernib colordiffuse="00777777">osd/progress/nub_bar.png</textureslidernib>
+          <textureslidernibfocus colordiffuse="00777777">colors/white.png</textureslidernibfocus>
           <visible>Player.SeekEnabled</visible>
         </control>
       </control>

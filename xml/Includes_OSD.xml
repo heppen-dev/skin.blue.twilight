@@ -788,6 +788,20 @@
         </animation>
         <visible>Player.SeekEnabled</visible>
         <visible>!VideoPlayer.Content(livetv)</visible>
+        <control type="slider">
+          <top>38</top>
+          <left>440</left>
+          <width>1380</width>
+          <height>26</height>
+          <texturesliderbar colordiffuse="00FFFFFF">osd/progress/nub_leftright.png</texturesliderbar>
+          <textureslidernib>osd/progress/nub_leftright.png</textureslidernib>
+          <textureslidernibfocus colordiffuse="$VAR[ColorHighlight]">osd/progress/nub_leftright.png</textureslidernibfocus>
+          <info>Player.Progress</info>
+          <onup>200</onup>
+          <ondown>200</ondown>
+          <action>seek</action>
+          <visible>!Control.HasFocus(87) + !VideoPlayer.Content(LiveTV)</visible>
+        </control>
         <control type="button" id="87">
           <include>HiddenObject</include>
           <onup>200</onup>
