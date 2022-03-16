@@ -57,14 +57,14 @@
       <control type="radiobutton" id="8">
         <description>Default RadioButton</description>
         <include content="DefaultSettingButton">
-          <param name="textwidth" value="640"/>
+          <param name="textwidth" value="1200"/>
           <param name="height" value="75" />
         </include>
       </control>
       <control type="spincontrolex" id="9">
         <description>Default SpinControlex</description>
         <include content="DefaultSettingButton">
-          <param name="textwidth" value="640"/>
+          <param name="textwidth" value="1200"/>
           <param name="height" value="75" />
         </include>
         <aligny>center</aligny>
