@@ -129,7 +129,6 @@
                 <left>0</left>
                 <top>0</top>
                 <height>95</height>
-                <scroll>true</scroll>
                 <aligny>center</aligny>
                 <align>center</align>
                 <font>font_menu</font>
@@ -151,7 +150,6 @@
               <left>0</left>
               <top>0</top>
               <height>95</height>
-              <scroll>true</scroll>
               <aligny>center</aligny>
               <align>center</align>
               <font>font_menu</font>
