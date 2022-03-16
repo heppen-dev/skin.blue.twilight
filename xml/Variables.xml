@@ -1162,6 +1162,14 @@
     <value condition="!String.IsEmpty(Skin.String(HomeFanart.path)) + Control.HasFocus(801)">$INFO[Skin.String(HomeFanart.path)]search$INFO[Skin.String(HomeFanart.ext)]</value>
     <value condition="!String.IsEmpty(Skin.String(HomeFanart.path))">$INFO[Skin.String(HomeFanart.path)]$INFO[Container(9000).ListItem.Property(id)]$INFO[Skin.String(HomeFanart.ext)]</value>
   </variable>
+  <variable name="Global_Background_Image_NoFanart_Fallback">
+    <value>special://skin/extras/backgrounds/background.jpg</value>
+  </variable>
+
+  <variable name="Global_Background_Image_NoFanart">
+    <value condition="Window.IsVisible(Home) + !String.IsEmpty(Container(9000).ListItem.Property(Background))">$INFO[Container(9000).ListItem.Property(Background)]</value>
+    <value>$VAR[Global_Background_Image_NoFanart_Fallback]</value>
+  </variable>
   <variable name="MediaFanartVar">
     <value condition="Skin.HasSetting(no_fanart)">
     </value>
@@ -1177,7 +1185,7 @@
     <value condition="Window.IsActive(1141)">$INFO[Window(home).Property(spotlight_Fanart)]</value>
     <value condition="!String.IsEmpty(Container.Art(fanart))">$INFO[Container.Art(fanart)]</value>
     <value condition="!String.IsEmpty(Container(9000).ListItem.Property(Background))">$INFO[Container(9000).ListItem.Property(Background)]</value>
-    <value>common/background.jpg</value>
+    <value>$VAR[Global_Background_Image_NoFanart]</value>
   </variable>
   <variable name="Blur">
     <value>$INFO[Window(Home).Property(TMDbHelper.ListItem.BlurImage)]</value>
