@@ -2333,10 +2333,10 @@
     <width>3220</width>
   </include>
   <include name="SquareWidth">
-    <width>1600</width>
+    <width>1700</width>
   </include>
   <include name="LandscapeWidth">
-    <width>1600</width>
+    <width>1700</width>
   </include>
   <include name="SquareHeight">
     <height>320</height>
