@@ -513,7 +513,7 @@
         <include condition="$PARAM[SquareCondition]">SquareHeight</include>
         <focusposition>1</focusposition>
         <preloaditems>2</preloaditems>
-        <animation effect="slide" end="820,0" time="0" condition="$PARAM[SquareCondition] | $PARAM[LandscapeCondition]">Conditional</animation>
+        <animation effect="slide" end="810,0" time="0" condition="$PARAM[SquareCondition] | $PARAM[LandscapeCondition]">Conditional</animation>
         <!-- Wall events -->
         <include content="Object_Wall_Events">
           <param name="id" value="$PARAM[id]"/>
