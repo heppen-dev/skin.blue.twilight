@@ -289,12 +289,12 @@
         <control type="group">
           <control type="image">
             <top>0</top>
-            <left>-27</left>
+            <left>-10</left>
             <width>365</width>
             <height>320</height>
             <aspectratio scalediffuse="false">scale</aspectratio>
-            <texture background="true" colordiffuse="D92d3436" diffuse="common/landscape-diffuse.png">diffuse/poster-wall.png</texture>
-            <bordertexture border="20">common/dark-shadow-24.png</bordertexture>
+            <texture background="true" colordiffuse="ff2d3436" diffuse="common/landscape-diffuse.png">diffuse/poster-wall.png</texture>
+            <bordertexture border="26">common/rightlistpanel-diffuse-shadow.png</bordertexture>
             <bordersize>25</bordersize>
           </control>
           <control type="image">
@@ -303,7 +303,7 @@
               <effect type="fade" start="20" end="100" time="150" tween="back" easing="out"/>
             </animation>
             <top>0</top>
-            <left>-27</left>
+            <left>-10</left>
             <width>365</width>
             <height>320</height>
             <aspectratio scalediffuse="false">scale</aspectratio>
@@ -317,7 +317,7 @@
               <effect type="fade" start="20" end="100" time="150" tween="back" easing="out"/>
             </animation>
             <top>0</top>
-            <left>-27</left>
+            <left>-10</left>
             <width>365</width>
             <height>320</height>
             <aspectratio scalediffuse="false">scale</aspectratio>
@@ -327,7 +327,7 @@
           </control>
           <control type="image">
             <top>15</top>
-            <left>-12</left>
+            <left>5</left>
             <width>335</width>
             <height>205</height>
             <aspectratio scalediffuse="false">scale</aspectratio>
@@ -336,7 +336,7 @@
           </control>
           <control type="image">
             <top>15</top>
-            <left>-12</left>
+            <left>5</left>
             <width>335</width>
             <height>205</height>
             <aspectratio scalediffuse="false">scale</aspectratio>
@@ -347,7 +347,7 @@
         </control>
         <control type="image">
           <top>15</top>
-          <left>-12</left>
+          <left>5</left>
           <width>335</width>
           <height>205</height>
           <aspectratio scalediffuse="false">keep</aspectratio>

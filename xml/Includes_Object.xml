@@ -137,12 +137,12 @@
         </include>
       </focusedlayout>
       <!-- Landscapes -->
-      <itemlayout height="300" width="342" condition="$PARAM[LandscapeCondition]">
+      <itemlayout height="300" width="340" condition="$PARAM[LandscapeCondition]">
         <include content="ViewLandscapeItemLayout" />
         <control type="group">
           <control type="label">
             <top>210</top>
-            <left>30</left>
+            <left>45</left>
             <width>255</width>
             <height>55</height>
             <align>center</align>
@@ -153,7 +153,7 @@
           </control>
           <control type="label">
             <top>220</top>
-            <left>30</left>
+            <left>45</left>
             <width>255</width>
             <height>100</height>
             <align>center</align>
@@ -183,10 +183,10 @@
         </control>
         <include content="View_WatchedOverlay">
           <param name="bottom" value="0"/>
-          <param name="right" value="30"/>
+          <param name="right" value="10"/>
         </include>
       </itemlayout>
-      <focusedlayout height="300" width="342" condition="$PARAM[LandscapeCondition]">
+      <focusedlayout height="300" width="340" condition="$PARAM[LandscapeCondition]">
         <control type="button">
           <include>HiddenObject</include>
           <onfocus condition="ListItem.IsFolder">SetProperty(spotlight_isFolder,true,home)</onfocus>
@@ -220,7 +220,7 @@
         <control type="group">
           <control type="label">
             <top>210</top>
-            <left>30</left>
+            <left>45</left>
             <width>255</width>
             <height>55</height>
             <align>center</align>
@@ -231,7 +231,7 @@
           </control>
           <control type="label">
             <top>220</top>
-            <left>30</left>
+            <left>45</left>
             <width>255</width>
             <height>100</height>
             <align>center</align>
@@ -243,7 +243,7 @@
         </control>
         <include content="View_WatchedOverlay">
           <param name="bottom" value="0"/>
-          <param name="right" value="30"/>
+          <param name="right" value="10"/>
           <param name="id" value="$PARAM[id]"/>
         </include>
       </focusedlayout>
@@ -382,7 +382,7 @@
       <control type="$PARAM[control_type]" id="$PARAM[id]">
         <nested/>
         <orientation>horizontal</orientation>
-        <width>1600</width>
+        <width>1700</width>
         <onup>SetFocus(2999)</onup>
         <onback>9000</onback>
         <preloaditems>2</preloaditems>
