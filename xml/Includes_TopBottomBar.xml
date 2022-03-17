@@ -182,7 +182,7 @@
     <control type="label">
       <label>$PARAM[breadcrumbs_label]$INFO[Container.ShowTitle, &#8226; ]</label>
       <font>font25</font>
-      <visible>!String.IsEmpty(Container.ShowTitle) + !String.IsEqual(Container.ShowTitle,Container.FolderName)</visible>
+      <visible>!String.IsEmpty(Container.ShowTitle) + !String.IsEqual(Container.ShowTitle,Container.FolderName) + Container.Content()</visible>
     </control>
     <control type="label">
       <label>$PARAM[breadcrumbs_label]$INFO[Container.FolderName, &#8226; ]</label>
