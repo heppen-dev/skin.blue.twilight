@@ -1123,8 +1123,8 @@
         <control type="image">
           <left>$PARAM[left_posx]</left>
           <top>$PARAM[posy]</top>
-          <width>64</width>
-          <height>64</height>
+          <width>48</width>
+          <height>48</height>
           <texture flipx="true" colordiffuse="$VAR[ColorHighlight]">common/right-arrow.png</texture>
           <animation effect="zoom" start="0,100" end="100,100" center="auto" time="50">VisibleChange</animation>
           <animation effect="zoom" start="0,100" end="100,100" delay="500" center="auto" time="50">WindowOpen</animation>
@@ -1134,8 +1134,8 @@
         <control type="image">
           <left>$PARAM[right_posx]</left>
           <top>$PARAM[posy]</top>
-          <width>64</width>
-          <height>64</height>
+          <width>48</width>
+          <height>48</height>
           <texture colordiffuse="$VAR[ColorHighlight]">common/right-arrow.png</texture>
           <animation effect="zoom" start="0,100" end="100,100" center="auto" time="50">VisibleChange</animation>
           <animation effect="zoom" start="0,100" end="100,100" delay="500" center="auto" time="50">WindowOpen</animation>
@@ -2348,7 +2348,7 @@
     <height>320</height>
   </include>
   <include name="LandscapeHeight">
-    <height>225</height>
+    <height>320</height>
   </include>
   <include name="SquareHeight">
     <height>320</height>

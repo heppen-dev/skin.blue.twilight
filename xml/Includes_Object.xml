@@ -5,6 +5,7 @@
       <!-- trailers -->
       <onfocus>SetProperty(TMDbHelper.WidgetContainer,$PARAM[id],Home)</onfocus>
       <onfocus>SetProperty(arrow_list_id,$PARAM[id],Home)</onfocus>
+      <animation effect="fade" start="100" end="0" time="300" reversible="true" easing="inout" condition="Integer.IsGreater(Window(home).Property(TMDbHelper.WidgetContainer),$PARAM[id])">Conditional</animation>
       <onclick condition="[String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE, tvshow)] + Control.HasFocus($PARAM[id]) + [Skin.HasSetting(BackgroundPlayingTrailers) + Skin.HasSetting(Expose)] + !Player.HasVideo + !String.IsEmpty(ListItem.Trailer)">AlarmClock(trailerdelay,PlayMedia($ESCINFO[ListItem.Trailer],1),00:01,silent)</onclick>
       <onclick condition="[String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE, tvshow)] + Control.HasFocus($PARAM[id]) + [Skin.HasSetting(BackgroundPlayingTrailers) + Skin.HasSetting(Expose)] + !Player.HasVideo + String.IsEmpty(ListItem.Trailer) + !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Trailer))">AlarmClock(trailerdelay,PlayMedia($ESCINFO[Window(Home).Property(TMDbHelper.ListItem.Trailer)],1),00:01,silent)</onclick>
       <onclick condition="[[String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE, tvshow)] + [Skin.HasSetting(BackgroundPlayingTrailers) + Skin.HasSetting(Expose)] + String.IsEmpty(ListItem.Trailer) + String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Trailer))] + !Skin.HasSetting(DontShowNotificationANT)">Notification($LOCALIZE[31389], $LOCALIZE[31390])</onclick>
@@ -110,14 +111,14 @@
         </include>
       </focusedlayout>
       <!-- Posters aspect ratio -->
-      <itemlayout height="300" width="200" condition="$PARAM[PosterCondition]">
+      <itemlayout height="300" width="215" condition="$PARAM[PosterCondition]">
         <include content="ViewPosterItemLayout" />
         <include content="View_WatchedOverlay">
           <param name="bottom" value="8"/>
-          <param name="right" value="12"/>
+          <param name="right" value="30"/>
         </include>
       </itemlayout>
-      <focusedlayout height="300" width="200" condition="$PARAM[PosterCondition]">
+      <focusedlayout height="300" width="215" condition="$PARAM[PosterCondition]">
         <include content="ViewPosterItemLayout">
         </include>
         <control type="group">
@@ -131,13 +132,37 @@
         </control>
         <include content="View_WatchedOverlay">
           <param name="bottom" value="8"/>
-          <param name="right" value="12"/>
+          <param name="right" value="30"/>
           <param name="id" value="$PARAM[id]"/>
         </include>
       </focusedlayout>
       <!-- Landscapes -->
-      <itemlayout height="200" width="322" condition="$PARAM[LandscapeCondition]">
+      <itemlayout height="300" width="342" condition="$PARAM[LandscapeCondition]">
         <include content="ViewLandscapeItemLayout" />
+        <control type="group">
+          <control type="label">
+            <top>210</top>
+            <left>30</left>
+            <width>255</width>
+            <height>55</height>
+            <align>center</align>
+            <aligny>center</aligny>
+            <textcolor>ffffffff</textcolor>
+            <font>font_tiny_hintlabel_title</font>
+            <label>$INFO[ListItem.Label]</label>
+          </control>
+          <control type="label">
+            <top>220</top>
+            <left>30</left>
+            <width>255</width>
+            <height>100</height>
+            <align>center</align>
+            <aligny>center</aligny>
+            <textcolor>ffffffff</textcolor>
+            <font>font_tiny_hintlabel_italics</font>
+            <label>$INFO[ListItem.Genre]</label>
+          </control>
+        </control>
         <control type="group">
           <top>30</top>
           <left>50</left>
@@ -157,11 +182,11 @@
           </control>
         </control>
         <include content="View_WatchedOverlay">
-          <param name="bottom" value="8"/>
-          <param name="right" value="12"/>
+          <param name="bottom" value="0"/>
+          <param name="right" value="30"/>
         </include>
       </itemlayout>
-      <focusedlayout height="200" width="322" condition="$PARAM[LandscapeCondition]">
+      <focusedlayout height="300" width="342" condition="$PARAM[LandscapeCondition]">
         <control type="button">
           <include>HiddenObject</include>
           <onfocus condition="ListItem.IsFolder">SetProperty(spotlight_isFolder,true,home)</onfocus>
@@ -171,7 +196,9 @@
           <onfocus>SetProperty(spotlight_Title,$INFO[ListItem.Title],home)</onfocus>
           <include>Expose_Clear_Props</include>
         </control>
-        <include content="ViewLandscapeItemLayout" />
+        <include content="ViewLandscapeItemLayout">
+          <param name="id" value="$PARAM[id]"/>
+        </include>
         <control type="group">
           <top>30</top>
           <left>50</left>
@@ -191,71 +218,58 @@
           </control>
         </control>
         <control type="group">
-          <visible>String.StartsWith(ListItem.FolderPath,favourites://) + Control.HasFocus($PARAM[id])</visible>
-          <animation effect="fade" time="200" end="100" reversible="false">Focus</animation>
-          <control type="image">
-            <top>130</top>
-            <left>15</left>
-            <width>285</width>
-            <height>55</height>
-            <texture colordiffuse="main_bg_100">common/white.png</texture>
-          </control>
-          <control type="image">
-            <top>130</top>
-            <left>15</left>
-            <width>285</width>
-            <height>1</height>
-            <texture colordiffuse="80FFFFFF">common/white.png</texture>
-          </control>
           <control type="label">
-            <top>125</top>
+            <top>210</top>
             <left>30</left>
             <width>255</width>
             <height>55</height>
             <align>center</align>
             <aligny>center</aligny>
             <textcolor>ffffffff</textcolor>
-            <font>font_tiny_hintlabel</font>
+            <font>font_tiny_hintlabel_title</font>
             <label>$INFO[ListItem.Label]</label>
           </control>
-        </control>
-        <control type="group">
-          <left>-3</left>
-          <width>318</width>
-          <height>225</height>
-          <include content="Selectbox">
-            <param name="visible" value="$PARAM[LandscapeCondition] + Control.HasFocus($PARAM[id])"/>
-          </include>
+          <control type="label">
+            <top>220</top>
+            <left>30</left>
+            <width>255</width>
+            <height>100</height>
+            <align>center</align>
+            <aligny>center</aligny>
+            <textcolor>ffffffff</textcolor>
+            <font>font_tiny_hintlabel_italics</font>
+            <label>$INFO[ListItem.Genre]</label>
+          </control>
         </control>
         <include content="View_WatchedOverlay">
-          <param name="bottom" value="8"/>
-          <param name="right" value="12"/>
+          <param name="bottom" value="0"/>
+          <param name="right" value="30"/>
           <param name="id" value="$PARAM[id]"/>
         </include>
       </focusedlayout>
       <!-- Square aspect ratio -->
-      <itemlayout height="300" width="330" condition="$PARAM[SquareCondition]">
+      <itemlayout height="300" width="342" condition="$PARAM[SquareCondition]">
         <include content="ViewSquareItemLayout"/>
         <include content="View_WatchedOverlay">
           <param name="bottom" value="28"/>
-          <param name="right" value="28"/>
+          <param name="right" value="56"/>
         </include>
       </itemlayout>
-      <focusedlayout height="300" width="330" condition="$PARAM[SquareCondition]">
+      <focusedlayout height="300" width="342" condition="$PARAM[SquareCondition]">
         <include content="ViewSquareItemLayout"/>
         <control type="group">
           <visible>Skin.HasSetting(header_widget_label) + Control.HasFocus($PARAM[id])</visible>
           <animation effect="fade" time="200" end="100" reversible="false">Focus</animation>
           <control type="image">
             <top>210</top>
-            <left>6</left>
+            <left>26</left>
             <width>255</width>
             <height>55</height>
             <texture colordiffuse="dialog_bg_100">common/white.png</texture>
           </control>
           <control type="progress" id="12">
             <top>210</top>
-            <left>6</left>
+            <left>26</left>
             <width>255</width>
             <height>55</height>
             <info>ListItem.Progress</info>
@@ -267,14 +281,14 @@
           </control>
           <control type="image">
             <top>210</top>
-            <left>6</left>
+            <left>26</left>
             <width>255</width>
             <height>1</height>
             <texture colordiffuse="80FFFFFF">common/white.png</texture>
           </control>
           <control type="label">
             <top>210</top>
-            <left>6</left>
+            <left>26</left>
             <width>255</width>
             <height>50</height>
             <font>font_tiny_hintlabel</font>
@@ -287,7 +301,7 @@
         </control>
         <control type="group">
           <top>-15</top>
-          <left>-5</left>
+          <left>15</left>
           <width>278</width>
           <height>320</height>
           <include content="Selectbox">
@@ -296,7 +310,7 @@
         </control>
         <include content="View_WatchedOverlay">
           <param name="bottom" value="28"/>
-          <param name="right" value="28"/>
+          <param name="right" value="56"/>
           <param name="id" value="$PARAM[id]"/>
         </include>
       </focusedlayout>
@@ -405,7 +419,7 @@
       <control type="$PARAM[control_type]" id="$PARAM[id]">
         <nested/>
         <orientation>horizontal</orientation>
-        <width>1600</width>
+        <width>1700</width>
         <onup>SetFocus(2999)</onup>
         <onback>9000</onback>
         <preloaditems>2</preloaditems>

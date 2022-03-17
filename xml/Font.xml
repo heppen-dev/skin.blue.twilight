@@ -15,10 +15,22 @@
     </font>
     <!-- Tiny Fonts -->
     <font>
+      <name>font_tiny_hintlabel_italics</name>
+      <style>uppercase lighten</style>
+      <filename>AmazonEmberDisplay_Bd.ttf</filename>
+      <size>14</size>
+    </font>
+    <font>
       <name>font_tiny_hintlabel</name>
       <style>uppercase</style>
       <filename>AmazonEmberDisplay_Bd.ttf</filename>
       <size>18</size>
+    </font>
+    <font>
+      <name>font_tiny_hintlabel_title</name>
+      <style>uppercase bold</style>
+      <filename>AmazonEmberDisplay_Bd.ttf</filename>
+      <size>20</size>
     </font>
     <font>
       <name>font_tiny10</name>

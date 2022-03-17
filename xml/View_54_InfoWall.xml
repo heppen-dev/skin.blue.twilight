@@ -289,6 +289,44 @@
         <control type="group">
           <control type="image">
             <top>0</top>
+            <left>-27</left>
+            <width>365</width>
+            <height>320</height>
+            <aspectratio scalediffuse="false">scale</aspectratio>
+            <texture background="true" colordiffuse="D92d3436" diffuse="common/landscape-diffuse.png">diffuse/poster-wall.png</texture>
+            <bordertexture border="20">common/dark-shadow-24.png</bordertexture>
+            <bordersize>25</bordersize>
+          </control>
+          <control type="image">
+            <animation type="Focus">
+              <effect type="zoom" start="96.5" end="100" time="150" tween="sine" easing="inout" center="auto"/>
+              <effect type="fade" start="20" end="100" time="150" tween="back" easing="out"/>
+            </animation>
+            <top>0</top>
+            <left>-27</left>
+            <width>365</width>
+            <height>320</height>
+            <aspectratio scalediffuse="false">scale</aspectratio>
+            <texture background="true" colordiffuse="$VAR[ColorHighlight]" diffuse="common/landscape-diffuse.png">diffuse/poster-wall.png</texture>
+            <bordersize>25</bordersize>
+            <visible>Control.HasFocus($PARAM[id])</visible>
+          </control>
+          <control type="image">
+            <animation type="Focus">
+              <effect type="zoom" start="96.5" end="100" time="150" tween="sine" easing="inout" center="auto"/>
+              <effect type="fade" start="20" end="100" time="150" tween="back" easing="out"/>
+            </animation>
+            <top>0</top>
+            <left>-27</left>
+            <width>365</width>
+            <height>320</height>
+            <aspectratio scalediffuse="false">scale</aspectratio>
+            <texture background="true" colordiffuse="$VAR[ColorGradient]" diffuse="common/landscape-diffuse.png">common/landscape-diffuse-gradient.png</texture>
+            <bordersize>25</bordersize>
+            <visible>Control.HasFocus($PARAM[id])</visible>
+          </control>
+          <control type="image">
+            <top>15</top>
             <left>-12</left>
             <width>335</width>
             <height>205</height>
@@ -297,19 +335,18 @@
             <bordersize>20</bordersize>
           </control>
           <control type="image">
-            <top>0</top>
+            <top>15</top>
             <left>-12</left>
             <width>335</width>
             <height>205</height>
             <aspectratio scalediffuse="false">scale</aspectratio>
             <texture background="true" diffuse="common/landscape-diffuse.png">$VAR[Image_Landscape]</texture>
-            <bordertexture border="32">common/dark-shadow-24.png</bordertexture>
             <bordersize>20</bordersize>
             <visible>!String.StartsWith(ListItem.FolderPath,pvr://)</visible>
           </control>
         </control>
         <control type="image">
-          <top>0</top>
+          <top>15</top>
           <left>-12</left>
           <width>335</width>
           <height>205</height>
@@ -325,7 +362,7 @@
     <definition>
       <control type="image">
         <top>-16</top>
-        <left>-16</left>
+        <left>4</left>
         <width>300</width>
         <height>300</height>
         <aspectratio scalediffuse="false">scale</aspectratio>
@@ -336,7 +373,7 @@
       </control>
       <control type="image">
         <top>-16</top>
-        <left>-16</left>
+        <left>4</left>
         <width>300</width>
         <height>300</height>
         <aspectratio scalediffuse="true">keep</aspectratio>
