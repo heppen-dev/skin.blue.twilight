@@ -461,6 +461,7 @@
         <param name="fade" value="$PARAM[fade]"/>
         <param name="move_down_when_landscape" value="$PARAM[LandscapeCondition]"/>
         <animation effect="fade" start="100" end="0" time="200" condition="Integer.IsEqual(Window(home).Property(fade),$PARAM[id])">Conditional</animation>
+        <animation effect="fade" start="100" end="0" time="300" reversible="true" easing="inout" condition="Integer.IsGreater(Window(home).Property(TMDbHelper.WidgetContainer),$PARAM[id])">Conditional</animation>
         <nested/>
       </include>
       <control type="$PARAM[control_type]" id="$PARAM[id]">
