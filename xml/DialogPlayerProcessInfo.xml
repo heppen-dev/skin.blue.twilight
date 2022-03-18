@@ -1,229 +1,179 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-  <depth>DepthOSD</depth>
-  <defaultcontrol always="true">5550</defaultcontrol>
-  <animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
-  <animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
-  <controls>
-    <control type="group">
-      <bottom>0</bottom>
-      <height>250</height>
-      <animation effect="slide" end="0,-20" time="150" condition="VideoPlayer.Content(LiveTV)">conditional</animation>
-<!--      <control type="image">-->
-<!--        <left>30</left>-->
-<!--        <top>-220</top>-->
-<!--        <right>30</right>-->
-<!--        <height>330</height>-->
-<!--        <texture border="40">dialogs/dialog-bg-nobo.png</texture>-->
-<!--      </control>-->
-      <control type="grouplist">
-        <left>52</left>
-        <top>-204</top>
-        <visible>Control.HasFocus(5551)</visible>
-        <control type="label">
-          <width>1200</width>
-          <height>50</height>
-          <aligny>bottom</aligny>
-          <label>[COLOR $VAR[ColorHighlight]]$LOCALIZE[19099]:[/COLOR] $INFO[PVR.ActStreamServiceName]</label>
-          <font>font14</font>
-          <shadowcolor>black</shadowcolor>
+    <defaultcontrol always="true">9000</defaultcontrol>
+    <controls>
+        <include content="Object_ShadowSpot_Group">
+            <param name="width" value="1500" />
+            <param name="height" value="450" />
+            <visible>!VideoPlayer.Content(livetv)</visible>
+            <include content="Object_ShadowSpot_Grouplist">
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="Player Process Info" />
+                    <param name="font" value="font_small_bold" />
+                    <param name="textcolor" value="panel_fg_100" />
+                    <param name="height" value="50" />
+                    <param name="top" value="-10" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="$INFO[Player.Process(videodecoder),[COLOR panel_fg_100]$LOCALIZE[31279]:[/COLOR] ]$VAR[Label_VideoHWDecoder, (,)]" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="$INFO[Player.Process(pixformat),[COLOR panel_fg_100]$LOCALIZE[31280]:[/COLOR] ]" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="$INFO[Player.Process(deintmethod),[COLOR panel_fg_100]$LOCALIZE[16038]:[/COLOR] ]" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="$INFO[Player.Process(videowidth),[COLOR panel_fg_100]$LOCALIZE[38031]:[/COLOR] ,x]$INFO[Player.Process(videoheight),, px]$INFO[Player.Process(videodar),$COMMA , AR]$INFO[Player.Process(videofps),$COMMA , FPS]" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="[COLOR panel_fg_100]$LOCALIZE[460]:[/COLOR] $INFO[Player.Process(audiochannels),,$COMMA ]$INFO[Player.Process(audiodecoder)]$INFO[Player.Process(audiobitspersample),$COMMA , bits]$INFO[Player.Process(audiosamplerate),$COMMA , Hz]" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="$INFO[System.CpuUsage,[COLOR panel_fg_100]$LOCALIZE[13271][/COLOR] ,       ][COLOR panel_fg_100]RAM:[/COLOR] $INFO[system.memory(used)] / $INFO[system.memory(total)] - $INFO[System.Memory(used.percent)]" />
+                </include>
+            </include>
+        </include>
+        <include content="Object_ShadowSpot_Group">
+            <param name="width" value="1500" />
+            <param name="height" value="450" />
+            <param name="left" value="1300" />
+            <visible>!VideoPlayer.Content(livetv)</visible>
+            <visible>System.HasAddon(service.coreelec.settings)</visible>
+            <include content="Object_ShadowSpot_Grouplist">
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="" />
+                    <param name="font" value="font_small_bold" />
+                    <param name="textcolor" value="panel_fg_100" />
+                    <param name="height" value="50" />
+                    <param name="top" value="-10" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="$INFO[Player.Process(amlogic.displaymode),[COLOR panel_fg_100]Display mode: [/COLOR] ] " />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="$INFO[Player.Process(amlogic.eoft_gamut),[COLOR panel_fg_100]Eotf&Gamut: [/COLOR] ]" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="$INFO[Player.Process(amlogic.pixformat),[COLOR panel_fg_100]Colour Depth: [/COLOR] ]" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="[COLOR panel_fg_100]Soc Temp: [/COLOR] $INFO[System.CPUTemperature]" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="[COLOR panel_fg_100]CPU Frequency: [/COLOR] $INFO[System.CpuFrequency]" />
+                </include>
+                  <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="[COLOR panel_fg_100]System FPS: [/COLOR] $INFO[System.FPS] FPS" />
+                </include>
+            </include>
+        </include>
+        <include content="Object_ShadowSpot_Group">
+            <param name="width" value="1500" />
+            <param name="height" value="1080" />
+            <visible>VideoPlayer.Content(livetv)</visible>
+            <include content="Object_ShadowSpot_Grouplist">
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="Player Process Info" />
+                    <param name="font" value="font_small_bold" />
+                    <param name="textcolor" value="panel_fg_100" />
+                    <param name="height" value="50" />
+                    <param name="top" value="-10" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="$INFO[Player.Process(videodecoder),[COLOR panel_fg_100]$LOCALIZE[31279]:[/COLOR] ]$VAR[Label_VideoHWDecoder, (,)]" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="$INFO[Player.Process(pixformat),[COLOR panel_fg_100]$LOCALIZE[31280]:[/COLOR] ]" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="$INFO[Player.Process(deintmethod),[COLOR panel_fg_100]$LOCALIZE[16038]:[/COLOR] ]" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="$INFO[Player.Process(videowidth),[COLOR panel_fg_100]$LOCALIZE[38031]:[/COLOR] ,x]$INFO[Player.Process(videoheight),, px]$INFO[Player.Process(videodar),$COMMA , AR]$INFO[Player.Process(videofps),$COMMA , FPS]" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="[COLOR panel_fg_100]$LOCALIZE[460]:[/COLOR] $INFO[Player.Process(audiochannels),,$COMMA ]$INFO[Player.Process(audiodecoder)]$INFO[Player.Process(audiobitspersample),$COMMA , bits]$INFO[Player.Process(audiosamplerate),$COMMA , Hz]" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="PVR Stream" />
+                    <param name="font" value="font_small_bold" />
+                    <param name="textcolor" value="panel_fg_100" />
+                    <param name="height" value="50" />
+                    <param name="top" value="50" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="$INFO[System.CpuUsage,[COLOR panel_fg_100]$LOCALIZE[13271][/COLOR] ,       ]$INFO[System.Memory(used.percent),[COLOR panel_fg_100]RAM:[/COLOR] ,]" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="$INFO[PVR.ActStreamServiceName,[COLOR panel_fg_100]$LOCALIZE[19099]:[/COLOR] ]" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="$INFO[PVR.ActStreamProviderName,[COLOR panel_fg_100]$LOCALIZE[19101]:[/COLOR] ]" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="$INFO[PVR.ActStreamClient,[COLOR panel_fg_100]$LOCALIZE[19012]:[/COLOR] ]" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="$INFO[PVR.ActStreamDevice,[COLOR panel_fg_100]$LOCALIZE[19006]:[/COLOR] ]" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="$INFO[PVR.ActStreamStatus,[COLOR panel_fg_100]$LOCALIZE[19007]:[/COLOR] ]" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="$INFO[PVR.ActStreamEncryptionName,[COLOR panel_fg_100]$LOCALIZE[19015]:[/COLOR] ]" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="$INFO[PVR.ActStreamBer,[COLOR panel_fg_100]$LOCALIZE[19010]:[/COLOR] ]" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="$INFO[PVR.ActStreamUnc,[COLOR panel_fg_100]$LOCALIZE[19011]:[/COLOR] ]" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="$INFO[PVR.ActStreamMux,[COLOR panel_fg_100]$LOCALIZE[19100]:[/COLOR] ]" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="top" value="30" />
+                    <param name="label" value="$INFO[PVR.ActStreamSignal,[COLOR panel_fg_100]$LOCALIZE[19008]:[/COLOR] ]" />
+                </include>
+                <control type="group">
+                    <height>40</height>
+                    <control type="progress">
+                        <top>5</top>
+                        <width>528</width>
+                        <height>10</height>
+                        <info>PVR.ActStreamProgrSignal</info>
+                    </control>
+                </control>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="top" value="15" />
+                    <param name="label" value="$INFO[PVR.ActStreamSNR,[COLOR panel_fg_100]$LOCALIZE[19009]:[/COLOR] ]" />
+                </include>
+                <control type="group">
+                    <height>40</height>
+                    <control type="progress">
+                        <top>5</top>
+                        <width>528</width>
+                        <height>10</height>
+                        <info>PVR.ActStreamProgrSNR</info>
+                    </control>
+                </control>
+            </include>
+        </include>
+        <control type="group">
+            <include>Animation_FadeIn</include>
+            <include>Animation_FadeOut</include>
+            <top>0</top>
+            <width>1920</width>
+            <height>420</height>
+            <control type="button" id="9000">
+                <visible allowhiddenfocus="true">false</visible>
+                <onclick>Close</onclick>
+                <onleft>Close</onleft>
+                <onright>Close</onright>
+                <onup>Close</onup>
+                <ondown>Close</ondown>
+            </control>
         </control>
-        <control type="label">
-          <width>1200</width>
-          <height>50</height>
-          <aligny>bottom</aligny>
-          <label>[COLOR $VAR[ColorHighlight]]$LOCALIZE[19101]:[/COLOR] $INFO[PVR.ActStreamProviderName]</label>
-          <font>font14</font>
-          <shadowcolor>black</shadowcolor>
-        </control>
-        <control type="label">
-          <width>1200</width>
-          <height>50</height>
-          <aligny>bottom</aligny>
-          <label>[COLOR $VAR[ColorHighlight]]$LOCALIZE[19012]:[/COLOR] $INFO[PVR.ActStreamClient]</label>
-          <font>font14</font>
-          <shadowcolor>black</shadowcolor>
-        </control>
-        <control type="label">
-          <width>1200</width>
-          <height>50</height>
-          <aligny>bottom</aligny>
-          <label>[COLOR $VAR[ColorHighlight]]$LOCALIZE[19006]:[/COLOR] $INFO[PVR.ActStreamDevice]</label>
-          <font>font14</font>
-          <shadowcolor>black</shadowcolor>
-        </control>
-        <control type="label">
-          <width>1200</width>
-          <height>50</height>
-          <aligny>bottom</aligny>
-          <label>[COLOR $VAR[ColorHighlight]]$LOCALIZE[19007]:[/COLOR] $INFO[PVR.ActStreamStatus]</label>
-          <font>font14</font>
-          <shadowcolor>black</shadowcolor>
-        </control>
-        <control type="label">
-          <width>1200</width>
-          <height>50</height>
-          <aligny>bottom</aligny>
-          <label>[COLOR $VAR[ColorHighlight]]$LOCALIZE[19015]:[/COLOR] $INFO[PVR.ActStreamEncryptionName]</label>
-          <font>font14</font>
-          <shadowcolor>black</shadowcolor>
-        </control>
-      </control>
-      <control type="grouplist">
-        <left>1250</left>
-        <top>-204</top>
-        <visible>Control.HasFocus(5551)</visible>
-        <usecontrolcoords>true</usecontrolcoords>
-        <control type="label">
-          <width>600</width>
-          <height>50</height>
-          <aligny>bottom</aligny>
-          <label>[COLOR $VAR[ColorHighlight]]$LOCALIZE[19010]:[/COLOR] $INFO[PVR.ActStreamBer]</label>
-          <font>font14</font>
-          <shadowcolor>black</shadowcolor>
-        </control>
-        <control type="label">
-          <width>600</width>
-          <height>50</height>
-          <aligny>bottom</aligny>
-          <label>[COLOR $VAR[ColorHighlight]]$LOCALIZE[19011]:[/COLOR] $INFO[PVR.ActStreamUnc]</label>
-          <font>font14</font>
-          <shadowcolor>black</shadowcolor>
-        </control>
-        <control type="label">
-          <width>600</width>
-          <height>50</height>
-          <aligny>bottom</aligny>
-          <label>[COLOR $VAR[ColorHighlight]]$LOCALIZE[19100]:[/COLOR] $INFO[PVR.ActStreamMux]</label>
-          <font>font14</font>
-          <shadowcolor>black</shadowcolor>
-        </control>
-        <control type="label">
-          <width>600</width>
-          <height>50</height>
-          <aligny>bottom</aligny>
-          <label>[COLOR $VAR[ColorHighlight]]$LOCALIZE[19008]:[/COLOR] $INFO[PVR.ActStreamSignal]</label>
-          <font>font14</font>
-          <shadowcolor>black</shadowcolor>
-        </control>
-        <control type="progress">
-          <top>5</top>
-          <width>600</width>
-          <height>18</height>
-          <info>PVR.ActStreamProgrSignal</info>
-        </control>
-        <control type="label">
-          <top>5</top>
-          <width>1600</width>
-          <height>50</height>
-          <aligny>bottom</aligny>
-          <label>[COLOR $VAR[ColorHighlight]]$LOCALIZE[19009]:[/COLOR] $INFO[PVR.ActStreamSNR]</label>
-          <font>font14</font>
-          <shadowcolor>black</shadowcolor>
-        </control>
-        <control type="progress">
-          <top>0</top>
-          <width>600</width>
-          <height>18</height>
-          <info>PVR.ActStreamProgrSNR</info>
-        </control>
-      </control>
-      <control type="grouplist">
-        <left>52</left>
-        <top>-204</top>
-        <visible>Control.HasFocus(5552)</visible>
-        <control type="label">
-          <width>1600</width>
-          <height>50</height>
-          <aligny>bottom</aligny>
-          <label>[COLOR $VAR[ColorHighlight]]$LOCALIZE[31139]:[/COLOR] $INFO[Player.Process(videodecoder)]$VAR[VideoHWDecoder, (,)]</label>
-          <font>font14</font>
-          <shadowcolor>black</shadowcolor>
-          <visible>Player.HasVideo</visible>
-        </control>
-        <control type="label">
-          <width>1600</width>
-          <height>50</height>
-          <aligny>bottom</aligny>
-          <label>[COLOR $VAR[ColorHighlight]]$LOCALIZE[31140]:[/COLOR] $INFO[Player.Process(pixformat)]</label>
-          <font>font14</font>
-          <shadowcolor>black</shadowcolor>
-          <visible>Player.HasVideo</visible>
-        </control>
-        <control type="label">
-          <width>1600</width>
-          <height>50</height>
-          <aligny>bottom</aligny>
-          <label>[COLOR $VAR[ColorHighlight]]$LOCALIZE[16038]:[/COLOR] $INFO[Player.Process(deintmethod)]</label>
-          <font>font14</font>
-          <shadowcolor>black</shadowcolor>
-          <visible>Player.HasVideo</visible>
-        </control>
-        <control type="label">
-          <width>1600</width>
-          <height>50</height>
-          <aligny>bottom</aligny>
-          <label>[COLOR $VAR[ColorHighlight]]$LOCALIZE[38031]x:[/COLOR] $INFO[Player.Process(videowidth)]$INFO[Player.Process(videoheight),, px]$INFO[Player.Process(videodar),$COMMA , AR]$INFO[Player.Process(videofps),$COMMA , FPS]</label>
-          <font>font14</font>
-          <shadowcolor>black</shadowcolor>
-          <visible>Player.HasVideo</visible>
-        </control>
-        <control type="label">
-          <width>1600</width>
-          <height>50</height>
-          <aligny>bottom</aligny>
-          <label>[COLOR $VAR[ColorHighlight]]$LOCALIZE[460]:[/COLOR] $INFO[Player.Process(audiochannels),,$COMMA ]$INFO[Player.Process(audiodecoder)]$INFO[Player.Process(audiobitspersample),$COMMA , bits]$INFO[Player.Process(audiosamplerate),$COMMA , Hz]</label>
-          <font>font14</font>
-          <shadowcolor>black</shadowcolor>
-        </control>
-        <control type="label">
-          <width>1600</width>
-          <height>50</height>
-          <aligny>bottom</aligny>
-          <label>[COLOR $VAR[ColorHighlight]]$LOCALIZE[31030]:[/COLOR] $INFO[System.Memory(used.percent)]       [COLOR $VAR[ColorHighlight]]$LOCALIZE[13271][/COLOR] $INFO[System.CpuUsage]</label>
-          <font>font14</font>
-          <shadowcolor>black</shadowcolor>
-          <visible>System.SupportsCPUUsage</visible>
-        </control>
-        <control type="label">
-          <width>1600</width>
-          <height>50</height>
-          <aligny>bottom</aligny>
-          <label>[COLOR $VAR[ColorHighlight]]$LOCALIZE[31030]:[/COLOR] $INFO[System.Memory(used.percent)]</label>
-          <font>font14</font>
-          <shadowcolor>black</shadowcolor>
-          <visible>!System.SupportsCPUUsage</visible>
-        </control>
-      </control>
-      <control type="grouplist" id="5550">
-        <right>15</right>
-        <top>-310</top>
-        <width>1000</width>
-        <height>100</height>
-        <align>right</align>
-        <orientation>horizontal</orientation>
-        <itemgap>-10</itemgap>
-        <onup>Close</onup>
-        <ondown>Close</ondown>
-        <usecontrolcoords>true</usecontrolcoords>
-        <control type="button" id="5551">
-          <width>auto</width>
-          <height>100</height>
-          <textoffsetx>40</textoffsetx>
-          <font>font_tiny_hintlabel</font>
-          <label>$LOCALIZE[31137]</label>
-          <visible>VideoPlayer.Content(livetv)</visible>
-          <texturefocus />
-        </control>
-        <control type="button" id="5552">
-          <width>auto</width>
-          <height>100</height>
-          <textoffsetx>40</textoffsetx>
-          <font>font_tiny_hintlabel</font>
-          <label>$LOCALIZE[31138]</label>
-          <texturefocus />
-        </control>
-      </control>
-    </control>
-  </controls>
+    </controls>
 </window>

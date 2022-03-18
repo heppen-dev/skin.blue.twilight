@@ -93,6 +93,7 @@
               <onright>SetFocus(9000)</onright>
               <onup>noop</onup>
               <ondown>50</ondown>
+              <onback>AlarmClock(guide_hack,Action(Back),00:00,silent)</onback>
               <orientation>horizontal</orientation>
               <scrolltime>200</scrolltime>
               <visible>Control.IsVisible(50)</visible>
