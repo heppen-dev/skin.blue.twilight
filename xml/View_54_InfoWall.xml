@@ -293,8 +293,8 @@
             <width>365</width>
             <height>320</height>
             <aspectratio scalediffuse="false">scale</aspectratio>
-            <texture background="true" colordiffuse="ff2d3436" diffuse="common/landscape-diffuse.png">diffuse/poster-wall.png</texture>
-            <bordertexture border="26">common/rightlistpanel-diffuse-shadow.png</bordertexture>
+            <texture background="true" colordiffuse="ff2d3436" diffuse="diffuse/landscape-big-diffuse.png">diffuse/landscape-big-diffuse.png</texture>
+            <bordertexture border="12">diffuse/landscape-diffuse-shadow.png</bordertexture>
             <bordersize>25</bordersize>
           </control>
           <control type="image">
@@ -307,7 +307,7 @@
             <width>365</width>
             <height>320</height>
             <aspectratio scalediffuse="false">scale</aspectratio>
-            <texture background="true" colordiffuse="$VAR[ColorHighlight]" diffuse="common/landscape-diffuse.png">diffuse/poster-wall.png</texture>
+            <texture background="true" colordiffuse="$VAR[ColorHighlight]" diffuse="diffuse/landscape-big-diffuse.png">diffuse/landscape-big-diffuse.png</texture>
             <bordersize>25</bordersize>
             <visible>Control.HasFocus($PARAM[id])</visible>
           </control>
@@ -321,7 +321,7 @@
             <width>365</width>
             <height>320</height>
             <aspectratio scalediffuse="false">scale</aspectratio>
-            <texture background="true" colordiffuse="$VAR[ColorGradient]" diffuse="common/landscape-diffuse.png">common/landscape-diffuse-gradient.png</texture>
+            <texture background="true" colordiffuse="$VAR[ColorGradient]">diffuse/landscape-diffuse-gradient.png</texture>
             <bordersize>25</bordersize>
             <visible>Control.HasFocus($PARAM[id])</visible>
           </control>

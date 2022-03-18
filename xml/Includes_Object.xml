@@ -114,8 +114,8 @@
       <itemlayout height="300" width="215" condition="$PARAM[PosterCondition]">
         <include content="ViewPosterItemLayout" />
         <include content="View_WatchedOverlay">
-          <param name="bottom" value="8"/>
-          <param name="right" value="30"/>
+          <param name="bottom" value="0"/>
+          <param name="right" value="50"/>
         </include>
       </itemlayout>
       <focusedlayout height="300" width="215" condition="$PARAM[PosterCondition]">
@@ -131,8 +131,8 @@
           </include>
         </control>
         <include content="View_WatchedOverlay">
-          <param name="bottom" value="8"/>
-          <param name="right" value="30"/>
+          <param name="bottom" value="0"/>
+          <param name="right" value="50"/>
           <param name="id" value="$PARAM[id]"/>
         </include>
       </focusedlayout>
@@ -141,9 +141,9 @@
         <include content="ViewLandscapeItemLayout" />
         <control type="group">
           <control type="label">
-            <top>210</top>
+            <top>215</top>
             <left>45</left>
-            <width>255</width>
+            <width>250</width>
             <height>55</height>
             <align>center</align>
             <aligny>center</aligny>
@@ -154,7 +154,7 @@
           <control type="label">
             <top>220</top>
             <left>45</left>
-            <width>255</width>
+            <width>250</width>
             <height>100</height>
             <align>center</align>
             <aligny>center</aligny>
@@ -182,8 +182,8 @@
           </control>
         </control>
         <include content="View_WatchedOverlay">
-          <param name="bottom" value="0"/>
-          <param name="right" value="10"/>
+          <param name="bottom" value="80"/>
+          <param name="right" value="40"/>
         </include>
       </itemlayout>
       <focusedlayout height="300" width="340" condition="$PARAM[LandscapeCondition]">
@@ -219,9 +219,9 @@
         </control>
         <control type="group">
           <control type="label">
-            <top>210</top>
+            <top>215</top>
             <left>45</left>
-            <width>255</width>
+            <width>250</width>
             <height>55</height>
             <align>center</align>
             <aligny>center</aligny>
@@ -232,7 +232,7 @@
           <control type="label">
             <top>220</top>
             <left>45</left>
-            <width>255</width>
+            <width>250</width>
             <height>100</height>
             <align>center</align>
             <aligny>center</aligny>
@@ -242,8 +242,8 @@
           </control>
         </control>
         <include content="View_WatchedOverlay">
-          <param name="bottom" value="0"/>
-          <param name="right" value="10"/>
+          <param name="bottom" value="80"/>
+          <param name="right" value="40"/>
           <param name="id" value="$PARAM[id]"/>
         </include>
       </focusedlayout>
