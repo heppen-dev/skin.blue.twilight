@@ -1969,3 +1969,8 @@ msgstr "Pomiń kafelki menu głównego"
 msgctxt "#31439"
 msgid "Disable system time"
 msgstr "Wyłącz zegar systemowy"
+
+#: /xml/Custom_1150_osdMenu.xml
+msgctxt "#31440"
+msgid "More settings"
+msgstr "Więcej ustawień"

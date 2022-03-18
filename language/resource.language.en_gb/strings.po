@@ -2145,3 +2145,8 @@ msgstr ""
 msgctxt "#31439"
 msgid "Disable system time"
 msgstr ""
+
+#: /xml/Custom_1150_osdMenu.xml
+msgctxt "#31440"
+msgid "More settings"
+msgstr ""

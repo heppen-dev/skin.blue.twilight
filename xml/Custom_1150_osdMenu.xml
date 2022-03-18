@@ -27,7 +27,7 @@
     <include content="DialogBackgroundCommons">
       <param name="width" value="480"/>
       <param name="height" value="415"/>
-      <param name="header_label" value="More Settings"/>
+      <param name="header_label" value="$LOCALIZE[31440]"/>
       <param name="header_id" value="999"/>
     </include>
     <include content="DefaultSettingButtonGradient">
@@ -49,6 +49,16 @@
       <scrolltime tween="sine">200</scrolltime>
       <orientation>vertical</orientation>
       <visible>!VideoPlayer.Content(livetv) | VideoPlayer.HasMenu | Integer.IsGreater(Playlist.Length(video),1) | !VideoPlayer.Content(livetv) | VideoPlayer.HasSubtitles | VideoPlayer.IsStereoscopic</visible>
+      <control type="button" id="70048">
+        <width>480</width>
+        <height>75</height>
+        <include>DialogSettingButton</include>
+        <onclick>Dialog.Close(1150)</onclick>
+        <onclick>SetProperty(settingslist_content,osd,home)</onclick>
+        <label>$LOCALIZE[21417]</label>
+        <onclick>SetProperty(settingslist_header,$LOCALIZE[5],home)</onclick>
+        <onclick>ActivateWindow(1101)</onclick>
+      </control>
       <control type="button" id="803">
         <width>480</width>
         <height>75</height>
@@ -187,16 +197,6 @@
         <label>$LOCALIZE[10120]</label>
         <onclick>ActivateWindow(1105)</onclick>
         <visible>VideoPlayer.Content(musicvideos)</visible>
-      </control>
-      <control type="button" id="70048">
-        <width>480</width>
-        <height>75</height>
-        <include>DialogSettingButton</include>
-        <onclick>Dialog.Close(1150)</onclick>
-        <onclick>SetProperty(settingslist_content,osd,home)</onclick>
-        <label>$LOCALIZE[21417]</label>
-        <onclick>SetProperty(settingslist_header,$LOCALIZE[5],home)</onclick>
-        <onclick>ActivateWindow(1101)</onclick>
       </control>
     </control>
     <include content="UpDownArrows">
