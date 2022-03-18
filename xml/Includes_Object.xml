@@ -325,7 +325,7 @@
         <itemgap>12</itemgap>
         <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,0)</visible>
         <animation effect="slide" end="10,0" time="0" reversible="false" condition="!$PARAM[move_down_when_landscape]">Conditional</animation>
-        <animation effect="slide" end="10,15" time="0" reversible="false" condition="$PARAM[move_down_when_landscape]">Conditional</animation>
+        <animation effect="slide" end="30,15" time="0" reversible="false" condition="$PARAM[move_down_when_landscape]">Conditional</animation>
         <control type="label">
           <width>auto</width>
           <label>$PARAM[label]</label>
@@ -377,6 +377,7 @@
         <param name="fade" value="$PARAM[fade]"/>
         <param name="move_down_when_landscape" value="$PARAM[LandscapeCondition]"/>
         <animation effect="fade" start="100" end="0" time="200" condition="Integer.IsEqual(Window(home).Property(fade),$PARAM[id])">Conditional</animation>
+        <animation effect="fade" start="100" end="0" time="300" reversible="true" easing="inout" condition="Integer.IsGreater(Window(home).Property(TMDbHelper.WidgetContainer),$PARAM[id])">Conditional</animation>
         <nested/>
       </include>
       <control type="$PARAM[control_type]" id="$PARAM[id]">
@@ -384,7 +385,7 @@
         <orientation>horizontal</orientation>
         <width>1700</width>
         <onup>SetFocus(2999)</onup>
-        <onback>9000</onback>
+<!--        <onback>9000</onback>-->
         <preloaditems>2</preloaditems>
         <include condition="$PARAM[PosterCondition]">PosterHeight</include>
         <include condition="$PARAM[LandscapeCondition]">LandscapeHeight</include>
@@ -421,7 +422,7 @@
         <orientation>horizontal</orientation>
         <width>1700</width>
         <onup>SetFocus(2999)</onup>
-        <onback>9000</onback>
+<!--        <onback>9000</onback>-->
         <preloaditems>2</preloaditems>
         <include condition="$PARAM[PosterCondition]">PosterHeight</include>
         <include condition="$PARAM[LandscapeCondition]">LandscapeHeight</include>
