@@ -177,7 +177,7 @@
           <param name="left_posx" value="40"/>
           <param name="right_posx" value="1820"/>
           <param name="posy" value="750"/>
-          <param name="visible" value="Window.IsVisible(home) + !$EXP[FirstExpose] + !$EXP[SecondExpose]"/>
+          <param name="visible" value="!$EXP[FirstExpose] + !$EXP[SecondExpose]"/>
         </include>
       </control>
       <control type="group">

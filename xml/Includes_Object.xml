@@ -467,9 +467,9 @@
       <control type="$PARAM[control_type]" id="$PARAM[id]">
         <nested/>
         <orientation>horizontal</orientation>
-        <width>1600</width>
+        <width>1700</width>
         <onup>SetFocus(2999)</onup>
-        <onback>9000</onback>
+<!--        <onback>9000</onback>-->
         <preloaditems>2</preloaditems>
         <include condition="$PARAM[PosterCondition]">PosterHeight</include>
         <include condition="$PARAM[LandscapeCondition]">LandscapeHeight</include>
