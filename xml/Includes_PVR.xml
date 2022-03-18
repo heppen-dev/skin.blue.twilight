@@ -778,107 +778,228 @@
   </include>
   <include name="PVRChannelGuideModern">
     <control type="group">
-      <include>Animation_DialogPopupOpenClose</include>
-      <visible>!$EXP[infodialog_active]</visible>
       <control type="image">
         <top>-15</top>
-        <left>620</left>
-        <width>480</width>
+        <left>-15</left>
+        <width>740</width>
         <height>1110</height>
-        <texture background="true" colordiffuse="$VAR[ColorHighlight]" border="20">common/pvrchannels-bg.png</texture>
-        <animation effect="fade" time="200" end="35" condition="Window.IsVisible(pvrchannelguide)">Conditional</animation>
+        <texture background="true" colordiffuse="ff000000" border="20">common/white.png</texture>
+        <animation effect="fade" time="200" end="0" condition="String.IsEqual(Skin.String(HomeAlphaValue),100)">Conditional</animation>
+        <animation effect="fade" time="200" end="5" condition="String.IsEqual(Skin.String(HomeAlphaValue),95)">Conditional</animation>
+        <animation effect="fade" time="200" end="10" condition="String.IsEqual(Skin.String(HomeAlphaValue),90)">Conditional</animation>
+        <animation effect="fade" time="200" end="15" condition="String.IsEqual(Skin.String(HomeAlphaValue),85)">Conditional</animation>
+        <animation effect="fade" time="200" end="20" condition="String.IsEqual(Skin.String(HomeAlphaValue),80)">Conditional</animation>
+        <animation effect="fade" time="200" end="25" condition="String.IsEqual(Skin.String(HomeAlphaValue),75)">Conditional</animation>
+        <animation effect="fade" time="200" end="30" condition="String.IsEqual(Skin.String(HomeAlphaValue),70)">Conditional</animation>
+        <animation effect="fade" time="200" end="35" condition="String.IsEqual(Skin.String(HomeAlphaValue),65)">Conditional</animation>
+        <animation effect="fade" time="200" end="40" condition="String.IsEqual(Skin.String(HomeAlphaValue),60)">Conditional</animation>
+        <animation effect="fade" time="200" end="45" condition="String.IsEqual(Skin.String(HomeAlphaValue),55)">Conditional</animation>
+        <animation effect="fade" time="200" end="50" condition="String.IsEqual(Skin.String(HomeAlphaValue),50)">Conditional</animation>
+        <animation effect="fade" time="200" end="55" condition="String.IsEqual(Skin.String(HomeAlphaValue),45)">Conditional</animation>
+        <animation effect="fade" time="200" end="60" condition="String.IsEqual(Skin.String(HomeAlphaValue),40)">Conditional</animation>
+        <animation effect="fade" time="200" end="65" condition="String.IsEqual(Skin.String(HomeAlphaValue),35)">Conditional</animation>
+        <animation effect="fade" time="200" end="70" condition="String.IsEqual(Skin.String(HomeAlphaValue),30)">Conditional</animation>
+        <animation effect="fade" time="200" end="75" condition="String.IsEqual(Skin.String(HomeAlphaValue),25)">Conditional</animation>
+        <animation effect="fade" time="200" end="80" condition="String.IsEqual(Skin.String(HomeAlphaValue),20)">Conditional</animation>
+        <animation effect="fade" time="200" end="85" condition="String.IsEqual(Skin.String(HomeAlphaValue),15)">Conditional</animation>
+        <animation effect="fade" time="200" end="90" condition="String.IsEqual(Skin.String(HomeAlphaValue),10)">Conditional</animation>
+        <animation effect="fade" time="200" end="95" condition="String.IsEqual(Skin.String(HomeAlphaValue),5)">Conditional</animation>
+        <animation effect="fade" time="200" end="100" condition="String.IsEqual(Skin.String(HomeAlphaValue),0)">Conditional</animation>
       </control>
-      <control type="panel" id="11">
-        <left>420</left>
-        <top>154</top>
-        <bottom>154</bottom>
-        <width>970</width>
-        <height>880</height>
+      <include>OpenClose_Bottom</include>
+      <control type="label">
+        <top>28</top>
+        <left>70</left>
+        <font>font32_title</font>
+        <textcolor>dialog_fg_100</textcolor>
+        <label>$LOCALIZE[19686]</label>
+      </control>
+      <control type="label">
+        <top>34</top>
+        <left>512</left>
+        <font>font_tiny_title_uppercase</font>
+        <textcolor>main_fg_100</textcolor>
+        <label>$INFO[System.Time]</label>
+      </control>
+      <control type="label">
+        <top>128</top>
+        <left>70</left>
+        <font>font_tiny_hintlabel</font>
+        <label>$INFO[VideoPlayer.ChannelGroup]</label>
+      </control>
+      <control type="label">
+        <top>156</top>
+        <left>70</left>
+        <font>font13</font>
+        <label>$INFO[Container(11).ListItem.StartDate] &#8226; $INFO[Weather.Temperature]</label>
+      </control>
+    </control>
+    <control type="group">
+      <include>OpenClose_Bottom</include>
+      <control type="fixedlist" id="11">
+        <left>30</left>
+        <top>202</top>
+        <bottom>104</bottom>
+        <width>660</width>
+        <height>768</height>
+        <focusposition>2</focusposition>
         <onup>11</onup>
         <ondown>11</ondown>
-        <onleft>Dialog.Close(pvrchannelguide)</onleft>
-        <onright>Dialog.Close(pvrchannelguide)</onright>
         <scrolltime tween="cubic" easing="out">500</scrolltime>
-        <itemlayout width="640" height="64">
+        <itemlayout width="640" height="128">
           <control type="group">
-            <left>115.5</left>
-            <width>640</width>
-            <top>20</top>
+            <left>32</left>
+            <top>0</top>
+            <height>128</height>
+            <width max="100">100</width>
+            <control type="image">
+              <width>128</width>
+              <texture background="true" colordiffuse="dialog_fg_12" border="22">common/box.png</texture>
+              <bordersize>2</bordersize>
+            </control>
+            <control type="image">
+              <left>28</left>
+              <aspectratio>keep</aspectratio>
+              <texture background="true">$INFO[ListItem.Icon]</texture>
+              <bordersize>2</bordersize>
+            </control>
+          </control>
+          <control type="group">
+            <left>160</left>
+            <width>480</width>
+            <top>0</top>
             <bottom>0</bottom>
+            <control type="image">
+              <width>480</width>
+              <texture background="true" colordiffuse="dialog_fg_12" border="22">common/box.png</texture>
+              <bordersize>2</bordersize>
+            </control>
+            <control type="label">
+              <font>font_small_pvr_channels</font>
+              <right>32</right>
+              <top>64</top>
+              <align>right</align>
+              <aligny>center</aligny>
+              <textcolor>main_fg_70</textcolor>
+              <label>$INFO[ListItem.StartTime] - $INFO[ListItem.EndTime]</label>
+            </control>
             <control type="group">
-              <left>30</left>
-              <right>30</right>
-              <top>15</top>
-              <bottom>20</bottom>
+              <left>0</left>
+              <width>400</width>
+              <height>128</height>
               <control type="label">
-                <font>font_small_pvr_channels</font>
-                <left>92</left>
-                <top>-25</top>
-                <aligny>top</aligny>
-                <width max="128">auto</width>
-                <textcolor>panel_fg_100</textcolor>
-                <selectedcolor>panel_fg_100</selectedcolor>
-                <label>$INFO[ListItem.StartTime]</label>
+                <font>font32_title</font>
+                <left>12</left>
+                <top>0</top>
+                <aligny>center</aligny>
+                <width max="440">440</width>
+                <textcolor>main_fg_100</textcolor>
+                <label>$INFO[ListItem.Title]</label>
+                <visible>!String.IsEmpty(ListItem.Title)</visible>
+              </control>
+              <control type="label">
+                <font>font32_title</font>
+                <left>12</left>
+                <top>0</top>
+                <aligny>center</aligny>
+                <width max="420">auto</width>
+                <textcolor>main_fg_100</textcolor>
+                <label>$INFO[ListItem.ChannelName]</label>
+                <visible>String.IsEmpty(ListItem.Title)</visible>
               </control>
               <control type="label">
                 <font>font_small_pvr_channels</font>
-                <left>200</left>
-                <top>-25</top>
-                <aligny>top</aligny>
-                <width max="320">auto</width>
-                <textcolor>panel_fg_100</textcolor>
-                <selectedcolor>panel_fg_100</selectedcolor>
-                <label>$INFO[ListItem.Title]</label>
+                <left>12</left>
+                <top>64</top>
+                <aligny>center</aligny>
+                <textcolor>main_fg_70</textcolor>
+                <label>$INFO[ListItem.ChannelName]</label>
               </control>
             </control>
           </control>
         </itemlayout>
-        <focusedlayout width="640" height="64">
+        <focusedlayout width="640" height="128">
           <control type="group">
-            <left>115.5</left>
-            <width>640</width>
-            <top>20</top>
+            <left>32</left>
+            <top>0</top>
+            <height>128</height>
+            <width max="100">100</width>
+            <control type="image">
+              <width>128</width>
+              <texture background="true" colordiffuse="$VAR[ColorHighlight]" border="22">common/box.png</texture>
+              <bordersize>2</bordersize>
+            </control>
+            <control type="image">
+              <width>128</width>
+              <texture background="true" colordiffuse="$VAR[ColorGradient]" border="22">common/box-gradient.png</texture>
+              <bordersize>2</bordersize>
+            </control>
+            <control type="image">
+              <left>28</left>
+              <aspectratio>keep</aspectratio>
+              <texture background="true">$INFO[ListItem.Icon]</texture>
+              <bordersize>2</bordersize>
+            </control>
+          </control>
+          <control type="group">
+            <left>160</left>
+            <width>480</width>
+            <top>0</top>
             <bottom>0</bottom>
+            <control type="image">
+              <width>480</width>
+              <texture background="true" colordiffuse="$VAR[ColorHighlight]" border="22">common/box.png</texture>
+              <bordersize>2</bordersize>
+            </control>
+            <control type="image">
+              <width>480</width>
+              <texture background="true" colordiffuse="$VAR[ColorGradient]" border="22">common/box-gradient.png</texture>
+              <bordersize>2</bordersize>
+            </control>
+            <control type="label">
+              <font>font_small_pvr_channels</font>
+              <right>32</right>
+              <top>64</top>
+              <align>right</align>
+              <aligny>center</aligny>
+              <textcolor>main_fg_70</textcolor>
+              <label>$INFO[ListItem.StartTime] - $INFO[ListItem.EndTime]</label>
+            </control>
             <control type="group">
-              <left>30</left>
-              <right>30</right>
-              <top>15</top>
-              <bottom>20</bottom>
+              <left>0</left>
+              <width>400</width>
+              <height>128</height>
               <control type="label">
-                <font>font_small_pvr_channels</font>
-                <left>92</left>
-                <top>-25</top>
-                <aligny>top</aligny>
-                <width max="128">auto</width>
-                <textcolor>ffffd700</textcolor>
-                <label>$INFO[ListItem.StartTime]</label>
+                <font>font32_title</font>
+                <left>12</left>
+                <top>0</top>
+                <aligny>center</aligny>
+                <width max="440">440</width>
+                <textcolor>main_fg_100</textcolor>
+                <label>$INFO[ListItem.Title]</label>
+                <visible>!String.IsEmpty(ListItem.Title)</visible>
+              </control>
+              <control type="label">
+                <font>font32_title</font>
+                <left>12</left>
+                <top>0</top>
+                <aligny>center</aligny>
+                <width max="440">440</width>
+                <textcolor>main_fg_100</textcolor>
+                <label>$INFO[ListItem.ChannelName]</label>
+                <visible>String.IsEmpty(ListItem.Title)</visible>
               </control>
               <control type="label">
                 <font>font_small_pvr_channels</font>
-                <left>200</left>
-                <top>-25</top>
-                <aligny>top</aligny>
-                <width max="320">auto</width>
-                <textcolor>ffffd700</textcolor>
-                <label>$INFO[ListItem.Title]</label>
+                <left>12</left>
+                <top>64</top>
+                <aligny>center</aligny>
+                <textcolor>main_fg_70</textcolor>
+                <label>$INFO[ListItem.ChannelName]</label>
               </control>
             </control>
           </control>
         </focusedlayout>
-      </control>
-    </control>
-    <control type="group">
-      <include>Animation_DialogPopupOpenClose</include>
-      <visible>!$EXP[infodialog_active]</visible>
-      <control type="label" id="2">
-        <description>header label</description>
-        <left>640</left>
-        <width>440</width>
-        <height>120</height>
-        <aligny>center</aligny>
-        <align>center</align>
-        <font>font32</font>
-        <label>$INFO[Container(11).ListItem.StartDate]</label>
       </control>
     </control>
   </include>
