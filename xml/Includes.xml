@@ -1039,40 +1039,6 @@
       </control>
     </definition>
   </include>
-  <include name="InfoDialogTopBarInfo">
-    <param name="id">33333</param>
-    <param name="posy">20</param>
-    <definition>
-      <control type="grouplist">
-        <left>100</left>
-        <right>100</right>
-        <top>$PARAM[posy]</top>
-        <animation effect="fade" start="0" end="100" time="300" delay="300">WindowOpen</animation>
-        <animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
-        <height>150</height>
-        <itemgap>0</itemgap>
-        <orientation>vertical</orientation>
-        <control type="label">
-          <width>100%</width>
-          <label>$PARAM[main_label]</label>
-          <font>font30_title_upp</font>
-          <shadowcolor>text_shadow</shadowcolor>
-          <height>65</height>
-          <align>center</align>
-          <scroll>true</scroll>
-          <animation effect="slide" start="0,0" end="0,25" time="0" condition="String.IsEmpty(Control.GetLabel($PARAM[id]))">Conditional</animation>
-        </control>
-        <control type="label" id="$PARAM[id]">
-          <label>$PARAM[sub_label]</label>
-          <left>85</left>
-          <shadowcolor>text_shadow</shadowcolor>
-          <align>center</align>
-          <height>100</height>
-          <width>100%</width>
-        </control>
-      </control>
-    </definition>
-  </include>
   <include name="UpDownArrows">
     <param name="up_posy">134</param>
     <param name="down_posy">910</param>
@@ -1391,7 +1357,7 @@
         <aspectratio>scale</aspectratio>
         <texture colordiffuse="$VAR[ColorsOverlay]" fallback="special://skin/extras/backgrounds/pattern1.jpg">$INFO[Skin.String(background_overlay),special://skin/extras/backgrounds/pattern,.jpg]</texture>
       </control>
-      <visible>Skin.HasSetting(EnableColoredBackground) | Player.HasVideo | [Window.IsVisible(10600) | Window.IsVisible(10609)]</visible>
+      <visible>Skin.HasSetting(EnableColoredBackground) | Player.HasVideo</visible>
     </definition>
   </include>
   <include name="DefaultBackground">

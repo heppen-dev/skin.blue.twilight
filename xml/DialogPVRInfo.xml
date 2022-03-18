@@ -5,30 +5,35 @@
   <onunload>ClearProperty(infobackground,home)</onunload>
   <controls>
     <control type="group">
-      <animation effect="fade" start="0" end="100" time="100">WindowOpen</animation>
-      <animation effect="fade" start="100" end="0" time="100">WindowClose</animation>
-      <animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
       <visible>Window.isActive(fullscreenvideo) | Window.Previous(10609)</visible>
-      <include>ColoredBackgroundImages</include>
+      <include>DefaultBackground</include>
     </control>
     <control type="group">
       <centertop>50%</centertop>
       <height>1080</height>
       <centerleft>50%</centerleft>
       <width>1920</width>
+      <include>OpenClose_Bottom</include>
       <control type="image">
-        <include>OpenClose_Bottom</include>
-        <left>114</left>
-        <top>236</top>
+        <top>150</top>
+        <left>100</left>
         <width>461</width>
         <height>461</height>
         <aspectratio>keep</aspectratio>
         <texture fallback="DefaultTVShows.png">$INFO[ListItem.Icon]</texture>
       </control>
+      <control type="label">
+        <top>100</top>
+        <font>font30_title_upp</font>
+        <align>center</align>
+        <aligny>center</aligny>
+        <height>110</height>
+        <width>1920</width>
+        <label>$INFO[ListItem.Title] $INFO[ListItem.Year,([COLOR grey],[/COLOR])]</label>
+      </control>
       <control type="group">
         <top>230</top>
         <left>50</left>
-        <include>OpenClose_Bottom</include>
         <control type="button" id="61">
           <left>600</left>
           <top>-18</top>
@@ -42,85 +47,103 @@
           <onclick>SetProperty(TextViewer_Header,$LOCALIZE[207],home)</onclick>
           <onclick>SetProperty(TextViewer_Text,$ESCINFO[ListItem.Plot],home)</onclick>
           <onclick>ActivateWindow(1102)</onclick>
+          <texturenofocus />
+          <texturefocus />
         </control>
         <control type="textbox" id="400">
-          <left>660</left>
-          <top>20</top>
+          <left>560</left>
+          <top>15</top>
           <width>1050</width>
-          <height>425</height>
+          <height>275</height>
           <align>justify</align>
-          <label>$INFO[ListItem.ChannelName,[B],[/B][CR]]$INFO[ListItem.Date,[COLOR grey]$LOCALIZE[552]:[/COLOR] ,[CR]]$INFO[ListItem.Duration,[COLOR grey]$LOCALIZE[180]:[/COLOR] ,[CR]]$VAR[RecordingSizeLabel]$VAR[PremieredLabel]$INFO[ListItem.Rating,[COLOR grey]$LOCALIZE[563]:[/COLOR] ,[CR]]$VAR[ExpirationDateTimeLabel]$INFO[ListItem.Genre,[COLOR grey]$LOCALIZE[515]:[/COLOR] ,[CR]]$INFO[ListItem.Writer,[COLOR grey]$LOCALIZE[20417]:[/COLOR] ,[CR]]$INFO[ListItem.Director,[COLOR grey]$LOCALIZE[20339]:[/COLOR] ,[CR]]$INFO[ListItem.Cast,[COLOR grey]$LOCALIZE[206]:[/COLOR] ,[CR]][CR]$INFO[ListItem.Plot]</label>
+          <label>$INFO[ListItem.ChannelName,[B],[/B][CR]]$INFO[ListItem.Date,[COLOR grey]$LOCALIZE[552]:[/COLOR] ,[CR]]$INFO[ListItem.Duration,[COLOR grey]$LOCALIZE[180]:[/COLOR] ,[CR]]$VAR[RecordingSizeLabel]$VAR[PremieredLabel]$INFO[ListItem.Rating,[COLOR grey]$LOCALIZE[563]:[/COLOR] ,[CR]]$VAR[ExpirationDateTimeLabel]$INFO[ListItem.Genre,[COLOR grey]$LOCALIZE[515]:[/COLOR] ,[CR]]$INFO[ListItem.Writer,[COLOR grey]$LOCALIZE[20417]:[/COLOR] ,[CR]]$INFO[ListItem.Director,[COLOR grey]$LOCALIZE[20339]:[/COLOR] ,[CR]]$INFO[ListItem.Cast,[COLOR grey]$LOCALIZE[206]:[/COLOR] ,[CR]]</label>
+          <autoscroll time="3000" delay="4000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
+        </control>
+        <control type="textbox" id="401">
+          <left>60</left>
+          <top>360</top>
+          <width>1260</width>
+          <height>200</height>
+          <label>$INFO[ListItem.Plot]</label>
           <autoscroll time="3000" delay="4000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
         </control>
         <control type="grouplist" id="9000">
-          <left>150</left>
-          <top>600</top>
-          <width>1520</width>
+          <right>100</right>
+          <top>700</top>
+          <width>1920</width>
           <height>160</height>
-          <itemgap>10</itemgap>
-          <align>center</align>
+          <itemgap>0</itemgap>
+          <align>right</align>
           <orientation>horizontal</orientation>
           <defaultcontrol always="true">5</defaultcontrol>
           <onleft>9000</onleft>
           <onright>9000</onright>
           <onup>61</onup>
           <ondown>61</ondown>
-          <include content="InfoDialogButton">
-            <param name="width" value="275"/>
+          <include content="InfoButton">
             <param name="id" value="5"/>
+            <param name="groupid" value="1060"/>
             <param name="icon" value="icons/infodialogs/launch.png"/>
+            <param name="icon_size" value="42"/>
             <param name="label" value="$LOCALIZE[19165]"/>
-            <param name="visible" value="Window.IsActive(PVRGuideInfo)"/>
+            <param name="visible" value="Window.IsActive(PVRGuideInfo) + Control.IsVisible(5)"/>
           </include>
-          <include content="InfoDialogButton">
-            <param name="width" value="275"/>
+          <include content="InfoButton">
             <param name="id" value="10"/>
+            <param name="groupid" value="1061"/>
             <param name="icon" value="icons/infodialogs/cinema.png"/>
+            <param name="icon_size" value="42"/>
             <param name="label" value="$LOCALIZE[19190]"/>
-            <param name="visible" value="Window.IsActive(PVRGuideInfo)"/>
+            <param name="visible" value="Window.IsActive(PVRGuideInfo) + Control.IsVisible(10)"/>
           </include>
-          <include content="InfoDialogButton">
-            <param name="width" value="275"/>
+          <include content="InfoButton">
             <param name="id" value="8"/>
+            <param name="groupid" value="1062"/>
             <param name="icon" value="icons/infodialogs/play_record.png"/>
+            <param name="icon_size" value="42"/>
             <param name="label" value="$LOCALIZE[19687]"/>
-            <param name="visible" value="Window.IsActive(PVRGuideInfo) | Window.IsActive(PVRRecordingInfo)"/>
+            <param name="visible" value="[Window.IsActive(PVRGuideInfo) | Window.IsActive(PVRRecordingInfo)] + Control.IsVisible(8)"/>
           </include>
-          <include content="InfoDialogButton">
-            <param name="width" value="275"/>
+          <include content="InfoButton">
             <param name="id" value="6"/>
+            <param name="groupid" value="1063"/>
             <param name="icon" value="icons/infodialogs/record.png"/>
-            <param name="visible" value="Window.IsActive(PVRGuideInfo)"/>
+            <param name="icon_size" value="42"/>
+            <param name="visible" value="Window.IsActive(PVRGuideInfo) + Control.IsVisible(6)"/>
           </include>
-          <include content="InfoDialogButton">
-            <param name="width" value="275"/>
+          <include content="InfoButton">
             <param name="id" value="9"/>
+            <param name="groupid" value="1064"/>
             <param name="icon" value="icons/infodialogs/timer.png"/>
+            <param name="icon_size" value="42"/>
             <param name="label" value="$LOCALIZE[19061]"/>
-            <param name="visible" value="Window.IsActive(PVRGuideInfo)"/>
+            <param name="visible" value="Window.IsActive(PVRGuideInfo) + Control.IsVisible(9)"/>
           </include>
-          <include content="InfoDialogButton">
-            <param name="width" value="275"/>
+          <include content="InfoButton">
             <param name="id" value="11"/>
+            <param name="groupid" value="1065"/>
             <param name="icon" value="icons/infodialogs/bell.png"/>
+            <param name="icon_size" value="42"/>
             <param name="label" value="$LOCALIZE[826]"/>
-            <param name="visible" value="Window.IsActive(PVRGuideInfo)"/>
+            <param name="visible" value="Window.IsActive(PVRGuideInfo) + Control.IsVisible(11)"/>
           </include>
-          <include content="InfoDialogButton">
-            <param name="width" value="275"/>
+          <include content="InfoButton">
             <param name="id" value="4"/>
+            <param name="groupid" value="1066"/>
             <param name="icon" value="icons/infodialogs/similar.png"/>
+            <param name="icon_size" value="42"/>
             <param name="label" value="$LOCALIZE[19003]"/>
-            <param name="visible" value="Window.IsActive(PVRGuideInfo) | Window.IsActive(PVRRecordingInfo)"/>
+            <param name="visible" value="[Window.IsActive(PVRGuideInfo) | Window.IsActive(PVRRecordingInfo)] + Control.IsVisible(4)"/>
           </include>
         </control>
       </control>
-      <include content="InfoDialogTopBarInfo">
-        <param name="main_label" value="$INFO[ListItem.Title] $INFO[ListItem.Year,([COLOR grey],[/COLOR])]"/>
-        <param name="sub_label" value="$VAR[FlagDashLabel][COLOR grey]$VAR[SeasonEpisodeLabel][/COLOR]$INFO[ListItem.EpisodeName,[COLOR white][B],[/B][/COLOR]]"/>
-        <param name="posy" value="40"/>
+    </control>
+    <control type="group">
+      <top>250</top>
+      <include>OpenClose_Bottom</include>
+      <include content="TopBar">
+        <param name="sublabel" value="$VAR[FlagDashLabel][COLOR grey]$VAR[SeasonEpisodeLabel][/COLOR]$INFO[ListItem.EpisodeName,[COLOR white][UPPERCASE][B],[/B][/UPPERCASE][/COLOR]]"/>
       </include>
     </control>
-    <include condition="Skin.HasSetting(touchmode)">TouchBackButton</include>
   </controls>
 </window>

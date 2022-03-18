@@ -411,8 +411,8 @@
       <control type="image">
         <left>32</left>
         <centertop>50%</centertop>
-        <width>60</width>
-        <height>60</height>
+        <width>$PARAM[icon_size]</width>
+        <height>$PARAM[icon_size]</height>
         <texture colordiffuse="$PARAM[colordiffuse-icon]">$PARAM[icon]</texture>
       </control>
     </control>
@@ -422,6 +422,7 @@
     <param name="control-type" default="button"/>
     <param name="width" default="auto"/>
     <param name="focused" default="false"/>
+    <param name="icon_size" default="60"/>
     <param name="onclick_1_condition">true</param>
     <param name="onclick_2_condition">true</param>
     <param name="onclick_3_condition">true</param>
@@ -437,6 +438,7 @@
           <param name="visible" value="Control.HasFocus($PARAM[id]) | $PARAM[focused]"/>
           <param name="texture" value="common/button-view-fo.png"/>
           <param name="icon" value="$PARAM[icon]"/>
+          <param name="icon_size" value="$PARAM[icon_size]"/>
           <param name="colordiffuse-icon" value="panel_bg"/>
           <param name="colordiffuse-texture" value="selected"/>
         </include>
@@ -444,6 +446,7 @@
           <param name="visible" value="![Control.HasFocus($PARAM[id]) | $PARAM[focused]]"/>
           <param name="texture" value="common/button-view-nf.png"/>
           <param name="icon" value="$PARAM[icon]"/>
+          <param name="icon_size" value="$PARAM[icon_size]"/>
           <param name="colordiffuse-icon" value="main_fg_70"/>
           <param name="colordiffuse-texture" value="main_fg_12"/>
         </include>
