@@ -860,7 +860,7 @@
         <left>0</left>
         <right>0</right>
         <control type="grouplist">
-          <left>-125</left>
+          <left>15</left>
           <orientation>horizontal</orientation>
           <include>MediaFlags_NewLine_OSD</include>
           <include>MediaFlags_OSD</include>

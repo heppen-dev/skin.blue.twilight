@@ -408,7 +408,7 @@
   </include>
   <include name="MediaFlag_Text">
     <param name="width">140</param>
-    <param name="height">60</param>
+    <param name="height">55</param>
     <param name="visible">true</param>
     <definition>
       <control type="group">
@@ -557,10 +557,6 @@
         <width>1200</width>
         <usecontrolcoords>true</usecontrolcoords>
         <include content="MediaFlag_Text">
-          <param name="label" value="$VAR[PercentageRating_OSD]% $LOCALIZE[31384]"/>
-          <param name="visible" value="$PARAM[visible_condi]"/>
-        </include>
-        <include content="MediaFlag_Text">
           <param name="label" value="$INFO[VideoPlayer.Year]"/>
           <param name="visible" value="!String.IsEmpty(VideoPlayer.Year)"/>
         </include>
@@ -697,11 +693,6 @@
         <itemgap>0</itemgap>
         <usecontrolcoords>true</usecontrolcoords>
         <include content="MediaFlag">
-          <param name="texture" value="$INFO[ListItem.VideoCodec,flags/videocodec/,.png]"/>
-          <param name="visible" value="!String.IsEmpty($PARAM[infolabel_prefix]VideoPlayer.VideoCodec)"/>
-          <param name="width" value="140"/>
-        </include>
-        <include content="MediaFlag">
           <param name="texture" value="$PARAM[resolution_var]"/>
           <param name="visible" value="!String.IsEmpty($PARAM[infolabel_prefix]VideoPlayer.VideoResolution)"/>
           <param name="width" value="140"/>
@@ -709,6 +700,11 @@
         <include content="MediaFlag_Text">
           <param name="label" value="$INFO[Player.Process(VideoFPS)]"/>
           <param name="visible" value="!String.IsEmpty(Player.Process(VideoFPS))"/>
+          <param name="width" value="140"/>
+        </include>
+        <include content="MediaFlag_Text">
+          <param name="label" value="$INFO[VideoPlayer.VideoCodec]"/>
+          <param name="visible" value="!String.IsEmpty(VideoPlayer.VideoCodec)"/>
           <param name="width" value="140"/>
         </include>
         <include content="MediaFlag">
