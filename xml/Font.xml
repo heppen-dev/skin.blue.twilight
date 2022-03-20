@@ -255,7 +255,7 @@
       <filename>AmazonEmberDisplay_Bd.ttf</filename>
       <size>52</size>
 <!--      <style>bold</style>-->
-      <aspect>0.8</aspect>
+<!--      <aspect>0.8</aspect>-->
     </font>
     <font>
       <name>font_title</name>
