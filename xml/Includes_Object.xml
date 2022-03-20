@@ -623,11 +623,8 @@
           <include content="Object_Info_First_Line">
             <param name="visible" value="$PARAM[visible]" />
           </include>
-          <include content="Object_Info_Line_MediaFlags" condition="!$EXP[Ratings] + !$EXP[FirstExpose] + !$EXP[SecondExpose]">
-            <param name="visible" value="!$EXP[Ratings] + !$EXP[FirstExpose] + !$EXP[SecondExpose]"/>
-          </include>
           <include content="Object_Info_Line_Ratings" condition="$EXP[Ratings] + !$EXP[FirstExpose] + !$EXP[SecondExpose]">
-            <param name="visible" value="$EXP[Ratings] + !$EXP[FirstExpose] + !$EXP[SecondExpose]" />
+            <param name="visible" value="!$EXP[FirstExpose] + !$EXP[SecondExpose]" />
           </include>
           <control type="textbox">
             <width>720</width>
@@ -640,7 +637,10 @@
             <visible>!Skin.HasSetting(HidePlot)</visible>
           </control>
           <include content="Object_Video_Info_Line">
-            <param name="visible" value="false" />
+            <param name="visible" value="true" />
+          </include>
+          <include content="Object_Info_Line_MediaFlags" condition="$EXP[Exp_MediaFlags] + ![$EXP[FirstExpose] | $EXP[SecondExpose]]">
+            <param name="visible" value="!$EXP[FirstExpose] + !$EXP[SecondExpose]"/>
           </include>
         </control>
       </control>
@@ -770,7 +770,6 @@
           <align>center</align>
           <font>font_tiny_hintlabel</font>
           <textcolor>dialog_fg_100</textcolor>
-          <visible>$EXP[FirstExpose] + $EXP[SecondExpose]</visible>
           <visible>!String.IsEmpty(ListItem.Year) + Integer.IsGreater(ListItem.Rating,1)</visible>
           <visible>$PARAM[visible]</visible>
         </control>
@@ -805,8 +804,6 @@
     <param name="textcolor" default="main_fg_100"/>
     <param name="container" default=""/>
     <param name="uid" default="661"/>
-    <param name="green" default="ff27ae60"/>
-    <param name="visible" default="$EXP[MediaFlags]" />
     <definition>
       <control type="grouplist">
         <height>72</height>
@@ -815,7 +812,6 @@
         <itemgap>0</itemgap>
         <left>0</left>
         <right>0</right>
-        <visible>$PARAM[visible]</visible>
         <control type="group">
           <width>1000</width>
           <include content="MediaFlags_NewLine" condition="!$EXP[FirstExpose] + !$EXP[SecondExpose]"/>
@@ -873,7 +869,7 @@
     <param name="green" default="ff27ae60"/>
     <definition>
       <control type="grouplist">
-        <height>100</height>
+        <height>60</height>
         <orientation>horizontal</orientation>
         <usecontrolcoords>true</usecontrolcoords>
         <itemgap>0</itemgap>
