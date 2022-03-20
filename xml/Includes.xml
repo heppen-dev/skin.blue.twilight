@@ -414,6 +414,7 @@
       <control type="group">
           <width>$PARAM[width]</width>
           <height>$PARAM[height]</height>
+          <visible>$PARAM[visible]</visible>
           <control type="label">
             <width>$PARAM[width]</width>
             <height>$PARAM[height]</height>
@@ -421,7 +422,6 @@
             <aligny>center</aligny>
             <font>font_tiny_hintlabel</font>
             <label colordiffuse="main_fg_70">$PARAM[label]</label>
-            <visible>$PARAM[visible]</visible>
           </control>
           <include content="MediaFlag">
             <param name="texture" value="flags/flag.png"/>
@@ -566,7 +566,7 @@
         </include>
         <include content="MediaFlag_Text">
           <param name="label" value="$INFO[VideoPlayer.Premiered]"/>
-          <param name="visible" value="!String.IsEmpty(VideoPlayer.Premiered)"/>
+          <param name="visible" value="!String.IsEmpty($PARAM[infolabel_prefix]VideoPlayer.Premiered)"/>
         </include>
         <control type="group">
           <width>150</width>
