@@ -584,7 +584,7 @@
   </include>
   <include name="Object_Item_Showcase">
     <param name="top" default="55"/>
-    <param name="left" default="100"/>
+    <param name="left" default="60"/>
     <param name="percentageinfo_line_top" default="200"/>
     <param name="mediaflags_line_top" default="250"/>
     <param name="videoinfo_line_top" default="460"/>
@@ -606,7 +606,7 @@
             <textcolor>$VAR[TitleColour]</textcolor>
             <label>$PARAM[title]</label>
             <font>font_title</font>
-            <width>700</width>
+            <width>800</width>
             <height>$PARAM[cltitle_height]</height>
             <aligny>center</aligny>
             <visible>[[String.IsEmpty(ListItem.Art(clearlogo)) + String.IsEmpty(ListItem.Art(tvshow.clearlogo))] | Skin.HasSetting(DisableClearlogo)] + [!Control.HasFocus(9000) + !Control.HasFocus(9001)]</visible>
@@ -627,12 +627,11 @@
             <param name="visible" value="!$EXP[FirstExpose] + !$EXP[SecondExpose]" />
           </include>
           <control type="textbox">
-            <width>720</width>
+            <width>800</width>
             <height>$PARAM[plot_height]</height>
             <textcolor>white</textcolor>
             <label>$PARAM[plot]</label>
             <font>font_plot_normal</font>
-            <shadowcolor>black</shadowcolor>
             <autoscroll delay="4000" time="4500" repeat="7000">Skin.HasSetting(autoscroll)</autoscroll>
             <visible>!Skin.HasSetting(HidePlot)</visible>
           </control>
