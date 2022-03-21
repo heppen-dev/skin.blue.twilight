@@ -3,6 +3,7 @@
   <defaultcontrol/>
   <onload>Dialog.Close(10609)</onload>
   <onload>ClearProperty(hasTrailer,home)</onload>
+  <onload>ClearProperty(osd_extended_info,home)</onload>
   <controls>
     <control type="group" id="0">
       <control type="label" id="10">

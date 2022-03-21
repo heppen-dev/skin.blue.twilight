@@ -42,6 +42,15 @@
       <include content="LiveTV_OSD_Minimal" condition="VideoPlayer.Content(livetv) + Skin.HasSetting(KeepMinimalPVROSD)"/>
       <include content="LiveTV_OSD" condition="VideoPlayer.Content(livetv) + !Skin.HasSetting(KeepMinimalPVROSD)"/>
       <include content="Video_OSD" condition="!VideoPlayer.Content(livetv)"/>
+      <control type="button" id="69">
+        <top>-250</top>
+        <width>1920</width>
+        <height>320</height>
+        <onclick>SetProperty(osd_extended_info,true,home)</onclick>
+        <onclick condition="String.IsEqual(Window(home).Property(osd_extended_info),true)">ClearProperty(osd_extended_info,home)</onclick>
+        <texturefocus/>
+        <texturenofocus/>
+      </control>
     </control>
   </controls>
 </window>

@@ -9,6 +9,8 @@
     <onfocus condition="Skin.String(OSD_Timeout,$LOCALIZE[31290])">AlarmClock(osd_timeout,SetFocus(99220),00:20,silent)</onfocus>
     <onfocus condition="Skin.String(OSD_Timeout,$LOCALIZE[31291])">AlarmClock(osd_timeout,SetFocus(99220),00:30,silent)</onfocus>
     <onfocus condition="Skin.String(OSD_Timeout,$LOCALIZE[31292])">AlarmClock(osd_timeout,SetFocus(99220),01:00,silent)</onfocus>
+    <onup>SetProperty(osd_extended_info,true,home)</onup>
+    <ondown>ClearProperty(osd_extended_info,home)</ondown>
     <onunfocus>CancelAlarm(osd_timeout,true)</onunfocus>
   </include>
   <include name="LiveTV_OSD_Minimal">
