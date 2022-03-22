@@ -1,3 +1,37 @@
+1.2.0
+    Changes to colour palettes
+    Removed fade effect
+    Fixed preloading items
+    Changed main menu on homescreen
+    Added option to set icon for main menu
+    Added video fps to osd media flags
+    Visual tweaks to playerprocessinfo
+    Changed PVRChannelsOSDLayout_Modern
+    Fixed skinshortcuts widgets target
+    Fixed squares spacing in header widget
+    Added 401 marker to dialogseekbar
+    Added slider to video osd
+    Fixed blurred background
+    Changed source image for blurred background
+    Removed srolling text in settings
+    Changes to fullscreen fanart
+    Fixed header widget height
+    Added animation to widget scrolling
+    Fixed tv shows label on topbar overlapping
+    Tweaks to landscape aspect ratio
+    Fixed width in header widget
+    Fancy scrolling in movies hub
+    Fixed arrows and width in movies hub
+    Changed DialogPVRInfo look and feel
+    Changes to vignette and landscape
+    Changed PVRChannelGuideModern layout
+    Changed livetv osd buttons and playerprocessinfo
+    Added video codec flag to video osd
+    Changed landscape colordiffuse and textureslidernib colordiffuse
+    Fixed mediaflag_text visible condition
+    Changed font52 aspect
+    Changes to object_item_showcase
+    Added osd extended info
 1.1.4
     Fixed: Dialog alpha control
     Added: Button to Expose for switching to fullscreen video when playing trailer
