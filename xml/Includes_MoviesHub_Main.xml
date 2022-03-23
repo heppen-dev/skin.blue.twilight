@@ -4,37 +4,73 @@
     <control type="group">
       <visible>!$EXP[infodialog_active]</visible>
       <include>Animation_TopSlide_Home</include>
-      <control type="image">
-        <top>0</top>
-        <height>95</height>
-        <width>1040</width>
-        <centerleft>50%</centerleft>
-        <texture colordiffuse="00ffffff" border="22">common/box.png</texture>
-        <bordertexture border="72" colordiffuse="AltPosterBack">common/dark-shadow-24-2.png</bordertexture>
-        <animation effect="slide" time="200" start="0" end="0,-400" reversible="true" condition="[[ControlGroup(3000).HasFocus | ControlGroup(4000).HasFocus] | $EXP[FirstExpose] | $EXP[SecondExpose] | String.IsEqual(Window(home).Property(activateSpotlight),true)] + !String.StartsWith(ListItem.FolderPath,favourites://)">Conditional</animation>
-      </control>
-      <control type="group" id="5610">
+      <control type="group">
         <top>25</top>
         <height>95</height>
-        <width>970</width>
-        <centerleft>50%</centerleft>
+        <control type="group">
+          <include>MainMenuBackground</include>
+          <visible>Integer.IsGreater(Container(9000).NumItems,7)</visible>
+          <width>970</width>
+          <left>475</left>
+        </control>
+        <control type="group">
+          <include>MainMenuBackground</include>
+          <visible>Integer.IsEqual(Container(9000).NumItems,7)</visible>
+          <width>870</width>
+          <left>525</left>
+        </control>
+        <control type="group">
+          <include>MainMenuBackground</include>
+          <visible>Integer.IsEqual(Container(9000).NumItems,6)</visible>
+          <width>770</width>
+          <left>575</left>
+        </control>
+        <control type="group">
+          <include>MainMenuBackground</include>
+          <visible>Integer.IsEqual(Container(9000).NumItems,5)</visible>
+          <width>670</width>
+          <left>625</left>
+        </control>
+        <control type="group">
+          <include>MainMenuBackground</include>
+          <visible>Integer.IsEqual(Container(9000).NumItems,4)</visible>
+          <width>570</width>
+          <left>675</left>
+        </control>
+        <control type="group">
+          <include>MainMenuBackground</include>
+          <visible>Integer.IsEqual(Container(9000).NumItems,3)</visible>
+          <width>470</width>
+          <left>725</left>
+        </control>
+        <control type="group">
+          <include>MainMenuBackground</include>
+          <visible>Integer.IsEqual(Container(9000).NumItems,2)</visible>
+          <width>370</width>
+          <left>775</left>
+        </control>
+        <control type="group">
+          <include>MainMenuBackground</include>
+          <visible>Integer.IsEqual(Container(9000).NumItems,1)</visible>
+          <width>270</width>
+          <left>825</left>
+        </control>
         <control type="list" id="9000">
           <width>940</width>
           <height>100</height>
           <top>3</top>
-          <left>7</left>
+          <left>17</left>
           <onup>9001</onup>
           <ondown>2999</ondown>
           <orientation>horizontal</orientation>
-          <animation effect="slide" time="200" start="0" end="0,-120" reversible="true" condition="Control.HasFocus(9001)">Conditional</animation>
-          <animation effect="slide" start="0,0" end="360,0" time="0" condition="Integer.IsEqual(Container(9000).NumItems,1)">conditional</animation>
-          <animation effect="slide" start="0,0" end="310,0" time="0" condition="Integer.IsEqual(Container(9000).NumItems,2)">conditional</animation>
-          <animation effect="slide" start="0,0" end="260,0" time="0" condition="Integer.IsEqual(Container(9000).NumItems,3)">conditional</animation>
-          <animation effect="slide" start="0,0" end="210,0" time="0" condition="Integer.IsEqual(Container(9000).NumItems,4)">conditional</animation>
-          <animation effect="slide" start="0,0" end="160,0" time="0" condition="Integer.IsEqual(Container(9000).NumItems,5)">conditional</animation>
-          <animation effect="slide" start="0,0" end="110,0" time="0" condition="Integer.IsEqual(Container(9000).NumItems,6)">conditional</animation>
-          <animation effect="slide" start="0,0" end="60,0" time="0" condition="Integer.IsEqual(Container(9000).NumItems,7)">conditional</animation>
-          <animation effect="slide" start="0,0" end="10" time="0" condition="Integer.IsGreater(Container(9000).NumItems,7)">conditional</animation>
+          <animation effect="slide" start="0,0" end="825,0" time="0" condition="Integer.IsEqual(Container(9000).NumItems,1)">conditional</animation>
+          <animation effect="slide" start="0,0" end="775,0" time="0" condition="Integer.IsEqual(Container(9000).NumItems,2)">conditional</animation>
+          <animation effect="slide" start="0,0" end="725,0" time="0" condition="Integer.IsEqual(Container(9000).NumItems,3)">conditional</animation>
+          <animation effect="slide" start="0,0" end="675,0" time="0" condition="Integer.IsEqual(Container(9000).NumItems,4)">conditional</animation>
+          <animation effect="slide" start="0,0" end="625,0" time="0" condition="Integer.IsEqual(Container(9000).NumItems,5)">conditional</animation>
+          <animation effect="slide" start="0,0" end="575,0" time="0" condition="Integer.IsEqual(Container(9000).NumItems,6)">conditional</animation>
+          <animation effect="slide" start="0,0" end="525,0" time="0" condition="Integer.IsEqual(Container(9000).NumItems,7)">conditional</animation>
+          <animation effect="slide" start="0,0" end="475" time="0" condition="Integer.IsGreater(Container(9000).NumItems,7)">conditional</animation>
           <focusedlayout height="95" width="240">
             <control type="group">
               <control type="image">
@@ -78,14 +114,75 @@
             <include>skinshortcuts-mainmenu</include>
           </content>
         </control>
+        <animation effect="slide" time="200" start="0" end="0,-120" reversible="true" condition="Control.HasFocus(9001)">Conditional</animation>
+        <animation effect="slide" time="200" start="0" end="0,-400" reversible="true" condition="[ControlGroup(3000).HasFocus | $EXP[FirstExpose] | $EXP[SecondExpose] | String.IsEqual(Window(home).Property(activateSpotlight),true)] + !String.StartsWith(ListItem.FolderPath,favourites://)">Conditional</animation>
+      </control>
+      <control type="group">
+        <top>25</top>
+        <height>95</height>
+        <control type="group">
+          <include>MainMenuBackground</include>
+          <visible>Integer.IsGreater(Container(9001).NumItems,7)</visible>
+          <width>970</width>
+          <left>475</left>
+        </control>
+        <control type="group">
+          <include>MainMenuBackground</include>
+          <visible>Integer.IsEqual(Container(9001).NumItems,7)</visible>
+          <width>870</width>
+          <left>525</left>
+        </control>
+        <control type="group">
+          <include>MainMenuBackground</include>
+          <visible>Integer.IsEqual(Container(9001).NumItems,6)</visible>
+          <width>770</width>
+          <left>575</left>
+        </control>
+        <control type="group">
+          <include>MainMenuBackground</include>
+          <visible>Integer.IsEqual(Container(9001).NumItems,5)</visible>
+          <width>670</width>
+          <left>625</left>
+        </control>
+        <control type="group">
+          <include>MainMenuBackground</include>
+          <visible>Integer.IsEqual(Container(9001).NumItems,4)</visible>
+          <width>570</width>
+          <left>675</left>
+        </control>
+        <control type="group">
+          <include>MainMenuBackground</include>
+          <visible>Integer.IsEqual(Container(9001).NumItems,3)</visible>
+          <width>470</width>
+          <left>725</left>
+        </control>
+        <control type="group">
+          <include>MainMenuBackground</include>
+          <visible>Integer.IsEqual(Container(9001).NumItems,2)</visible>
+          <width>370</width>
+          <left>775</left>
+        </control>
+        <control type="group">
+          <include>MainMenuBackground</include>
+          <visible>Integer.IsEqual(Container(9001).NumItems,1)</visible>
+          <width>270</width>
+          <left>825</left>
+        </control>
         <control type="list" id="9001">
           <width>920</width>
           <height>100</height>
           <top>3</top>
-          <left>7</left>
+          <left>17</left>
           <ondown>9000</ondown>
           <orientation>horizontal</orientation>
-          <animation effect="slide" time="200" start="0" end="0,-100" reversible="true" condition="!Control.HasFocus(9001)">Conditional</animation>
+          <animation effect="slide" start="0,0" end="825,0" time="0" condition="Integer.IsEqual(Container(9001).NumItems,1)">conditional</animation>
+          <animation effect="slide" start="0,0" end="775,0" time="0" condition="Integer.IsEqual(Container(9001).NumItems,2)">conditional</animation>
+          <animation effect="slide" start="0,0" end="725,0" time="0" condition="Integer.IsEqual(Container(9001).NumItems,3)">conditional</animation>
+          <animation effect="slide" start="0,0" end="675,0" time="0" condition="Integer.IsEqual(Container(9001).NumItems,4)">conditional</animation>
+          <animation effect="slide" start="0,0" end="625,0" time="0" condition="Integer.IsEqual(Container(9001).NumItems,5)">conditional</animation>
+          <animation effect="slide" start="0,0" end="575,0" time="0" condition="Integer.IsEqual(Container(9001).NumItems,6)">conditional</animation>
+          <animation effect="slide" start="0,0" end="525,0" time="0" condition="Integer.IsEqual(Container(9001).NumItems,7)">conditional</animation>
+          <animation effect="slide" start="0,0" end="475" time="0" condition="Integer.IsGreater(Container(9001).NumItems,7)">conditional</animation>
           <focusedlayout height="95" width="240">
             <control type="group">
               <control type="image">
@@ -131,7 +228,8 @@
             <include>skinshortcuts-submenu</include>
           </content>
         </control>
-        <animation effect="slide" time="200" start="0" end="0,-400" reversible="true" condition="[[ControlGroup(3000).HasFocus | ControlGroup(4000).HasFocus] | $EXP[FirstExpose] | $EXP[SecondExpose] | String.IsEqual(Window(home).Property(activateSpotlight),true)] + !String.StartsWith(ListItem.FolderPath,favourites://)">Conditional</animation>
+        <animation effect="slide" time="200" start="0" end="0,-120" reversible="true" condition="!Control.HasFocus(9001)">Conditional</animation>
+        <animation effect="slide" time="200" start="0" end="0,-400" reversible="true" condition="[ControlGroup(3000).HasFocus | $EXP[FirstExpose] | $EXP[SecondExpose] | String.IsEqual(Window(home).Property(activateSpotlight),true)] + !String.StartsWith(ListItem.FolderPath,favourites://)">Conditional</animation>
       </control>
       <control type="group">
         <control type="grouplist" id="2999">
