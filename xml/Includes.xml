@@ -2284,4 +2284,14 @@
   <include name="SquareHeight">
     <height>320</height>
   </include>
+  <include name="MainMenuBackground">
+    <control type="image">
+      <top>-24</top>
+      <bottom>-24</bottom>
+      <left>-24</left>
+      <right>-24</right>
+      <texture colordiffuse="00ffffff" border="22">common/box.png</texture>
+      <bordertexture border="72" colordiffuse="AltPosterBack">common/dark-shadow-24-2.png</bordertexture>
+    </control>
+  </include>
 </includes>
