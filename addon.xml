@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.blue.twilight" version="1.2.0" name="Blue Twilight" provider-name="heppen-dev">
+<addon id="skin.blue.twilight" version="1.2.1" name="Blue Twilight" provider-name="heppen-dev">
   <requires>
     <import addon="xbmc.gui" version="5.15.0"/>
     <import addon="script.skinshortcuts" version="1.1.5"/>
@@ -13,7 +13,7 @@
     <res width="1920" height="1080" aspect="16:9" default="true" folder="xml"/>
   </extension>
   <extension point="xbmc.addon.metadata">
-    <news>Changes to colour palettes[CR]Removed fade effect[CR]Fixed preloading items[CR]Changed main menu on homescreen[CR]Added option to set icon for main menu[CR]Added video fps to osd media flags[CR]Visual tweaks to playerprocessinfo[CR]Changed PVRChannelsOSDLayout_Modern[CR]Fixed skinshortcuts widgets target[CR]Fixed squares spacing in header widget[CR]Added 401 marker to dialogseekbar[CR]Added slider to video osd[CR]Fixed blurred background[CR]Changed source image for blurred background[CR]Removed srolling text in settings[CR]Changes to fullscreen fanart[CR]Fixed header widget height[CR]Added animation to widget scrolling[CR]Fixed tv shows label on topbar overlapping[CR]Tweaks to landscape aspect ratio[CR]Fixed width in header widget[CR]Fancy scrolling in movies hub[CR]Fixed arrows and width in movies hub[CR]Changed DialogPVRInfo look and feel[CR]Changes to vignette and landscape[CR]Changed PVRChannelGuideModern layout[CR]Changed livetv osd buttons and playerprocessinfo[CR]Added video codec flag to video osd[CR]Changed landscape colordiffuse and textureslidernib colordiffuse[CR]Fixed mediaflag_text visible condition[CR]Changed font52 aspect[CR]Changes to object_item_showcase[CR]Added osd extended info</news>
+    <news>Fixed main menu bar background width[CR]Added shadowspot under system time[CR]Fixed menu bar width in movies hub[CR]Fixed onback event in movieshub[CR]Changed searchlist a bit</news>
     <summary lang="en_GB">Simple. Lightweight. Elegant. That's all you need to enjoy Kodi.</summary>
     <summary lang="pl_PL">Prosto. Lekko. Elegancko. To wszystko czego potrzebujesz do rozrywki z Kodi.</summary>
     <description lang="en_GB">The skin is designed to allow the user to focus on media consumption. It provides many innovative solutions that every movie lover will appreciate.</description>

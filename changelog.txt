@@ -1,3 +1,9 @@
+1.2.1
+    Fixed main menu bar background width
+    Added shadowspot under system time
+    Fixed menu bar width in movies hub
+    Fixed onback event in movieshub
+    Changed searchlist a bit
 1.2.0
     Changes to colour palettes
     Removed fade effect
