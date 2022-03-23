@@ -228,7 +228,7 @@
             <include>skinshortcuts-submenu</include>
           </content>
         </control>
-        <animation effect="slide" time="200" start="0" end="0,-120" reversible="true" condition="!Control.HasFocus(9001)">Conditional</animation>
+        <animation effect="slide" time="200" start="0" end="0,-125" reversible="true" condition="!Control.HasFocus(9001)">Conditional</animation>
         <animation effect="slide" time="200" start="0" end="0,-400" reversible="true" condition="[ControlGroup(3000).HasFocus | $EXP[FirstExpose] | $EXP[SecondExpose] | String.IsEqual(Window(home).Property(activateSpotlight),true)] + !String.StartsWith(ListItem.FolderPath,favourites://)">Conditional</animation>
       </control>
       <control type="group">

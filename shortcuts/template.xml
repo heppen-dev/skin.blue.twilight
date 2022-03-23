@@ -246,8 +246,7 @@
     <property name="name" tag="property" attribute="name|widgetName"/>
     <!-- <property name="path" tag="property" attribute="name|path" /> -->
     <property name="target" tag="property" attribute="name|widgetTarget"/>
-    <property name="target">
-    </property>
+    <property name="target"></property>
     <!-- <property name="path">$INCLUDE[skinshortcuts-group-$SKINSHORTCUTS[submenuVisibility]]</property> -->
     <!-- For TV Shows, we want to specify the artwork as the tv show poster, otherwise we'll use the icon -->
     <property name="artwork" tag="property" attribute="name|widgetType" value="tvshows">$INFO[ListItem.Art(tvshow.poster)]</property>
