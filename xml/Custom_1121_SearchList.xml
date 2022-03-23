@@ -9,17 +9,17 @@
       <include>OpenClose_Bottom</include>
       <control type="group">
         <control type="grouplist" id="4100">
-          <top>400</top>
-          <left>160</left>
-          <height>675</height>
+          <top>420</top>
+          <left>110</left>
+          <height>650</height>
           <width>1920</width>
           <scrolltime>100</scrolltime>
           <include>skinshortcuts-template-search</include>
         </control>
         <include content="LeftRightArrowsHome">
           <param name="altid" value="3005" />
-          <param name="left_posx" value="60"/>
-          <param name="right_posx" value="1800"/>
+          <param name="left_posx" value="40"/>
+          <param name="right_posx" value="1820"/>
           <param name="posy" value="750"/>
           <param name="visible" value="true"/>
         </include>
@@ -31,8 +31,9 @@
           <param name="title" value="$INFO[ListItem.Label]"/>
           <param name="title_width" value="1000" />
           <param name="clearlogo_top_margin" value="200"/>
+          <param name="cltitle_height" value="100"/>
           <param name="plot" value="$VAR[Label_PlotTextBoxVar]"/>
-          <param name="plot_height" value="95"/>
+          <param name="plot_height" value="65"/>
           <param name="visible" value="Window.IsVisible(1121)"/>
         </include>
       </control>
