@@ -177,6 +177,15 @@
       <control type="group">
         <visible>!Window.IsVisible(extendedprogressdialog) + !Window.IsActive(playerprocessinfo)</visible>
         <animation effect="fade" time="150">VisibleChange</animation>
+        <control type="image">
+          <top>-200</top>
+          <left>-170</left>
+          <width>600</width>
+          <height>500</height>
+          <aspectratio>stretch</aspectratio>
+          <texture>common/shadowspot.png</texture>
+          <visible>!Skin.HasSetting(disable_clock_osd)</visible>
+        </control>
         <control type="grouplist">
           <left>48</left>
           <top>48</top>
