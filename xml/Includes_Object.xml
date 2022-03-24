@@ -611,7 +611,7 @@
     <param name="plot_top" default="320"/>
     <param name="plot_height" default="125"/>
     <param name="title_visible" default="true" />
-    <param name="cltitle_height" default="155"/>
+    <param name="cltitle_height" default="125"/>
     <param name="cl_visible" default="true"/>
     <definition>
       <control type="group">
