@@ -1,3 +1,15 @@
+1.2.2
+    Added floating setting button in video osd
+    Added TopBar to home screen and movies hub
+    Removed 19055 label from list view
+    Changes to background overlay
+    Fixed background overlay condition
+    Fixed movies hub busy spinner
+    Fixed searchlist visible condition when widgets are loading
+    Fixed background in infodialog
+    Fixed white poster highlight for landscape
+    Reduced clearlogo height in Object_Item_Showcase
+    Fixed white landscape highlight condition
 1.2.1
     Fixed main menu bar background width
     Added shadowspot under system time
