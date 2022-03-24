@@ -150,7 +150,7 @@
     <value condition="!Window.IsVisible(Home)">$VAR[AlphaPercentage]</value>
   </variable>
   <variable name="Landscape_Title_Label">
-    <value condition="!String.IsEqual(Skin.String(PosterHighlight),Highlight)">main_bg_100</value>
+    <value condition="String.IsEqual(Skin.String(PosterHighlight),White)">main_bg_100</value>
     <value>ffffffff</value>
   </variable>
   <variable name="Horizontal_RightTopbar">
