@@ -137,7 +137,7 @@
   </variable>
   <variable name="BackgroundOverlay">
     <value condition="[Control.HasFocus(57) | [[ControlGroup(3000).HasFocus | ControlGroup(4000).HasFocus] + !String.StartsWith(ListItem.FolderPath,favourites://)]] + !Skin.HasSetting(FullScreenHomeBackground)">FFFFFFFF</value>
-    <value condition="Window.IsActive(1121) | Skin.HasSetting(FullScreenHomeBackground)">FFFFFFFF</value>
+    <value condition="Window.IsActive(1121) | [Skin.HasSetting(FullScreenHomeBackground) + [ControlGroup(3000).HasFocus | ControlGroup(4000).HasFocus]]">FFFFFFFF</value>
     <value condition="[Control.HasFocus(57) | [[ControlGroup(3000).HasFocus | ControlGroup(4000).HasFocus] + !String.StartsWith(ListItem.FolderPath,favourites://)]] + Skin.HasSetting(FullScreenHomeBackground)">8CFFFFFF</value>
     <value condition="Window.IsVisible(Home) | Window.IsVisible(1170)">$VAR[HomeAlphaPercentage]</value>
     <value>$VAR[AlphaPercentage]</value>
