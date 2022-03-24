@@ -278,5 +278,10 @@
         <animation effect="fade" time="200" end="0" start="100" condition="$EXP[FirstExpose] | $EXP[SecondExpose]">Conditional</animation>
       </control>
     </control>
+    <control type="group">
+      <top>-125</top>
+      <include>TopBar</include>
+      <animation effect="slide" time="200" start="0" end="0,125" reversible="true" condition="Control.HasFocus(9000) | Control.HasFocus(9001)">Conditional</animation>
+    </control>
   </include>
 </includes>

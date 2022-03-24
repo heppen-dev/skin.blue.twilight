@@ -7,7 +7,6 @@
     <definition>
       <control type="group">
         <animation effect="slide" end="0,-224" time="300" tween="sine" easing="inout" condition="$EXP[infodialog_active] | Window.IsVisible(contextmenu) | ControlGroup(9000).HasFocus">conditional</animation>
-        <depth>DepthBars</depth>
         <animation effect="fade" start="0" end="100" time="300" condition="[Window.Previous(fullscreenvideo) | Window.Previous(startup)] + !Window.IsVisible(1109)">WindowOpen</animation>
         <visible>$PARAM[topbar_visible]</visible>
         <left>$PARAM[left]</left>
@@ -177,7 +176,7 @@
     <usecontrolcoords>true</usecontrolcoords>
     <animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
     <animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
-    <animation effect="slide" end="0,16" time="200" reversible="true" condition="String.IsEmpty(Control.GetLabel(18900))">Conditional</animation>
+    <animation effect="slide" end="0,16" time="200" reversible="true" condition="String.IsEmpty(Control.GetLabel(18900)) + !Window.IsVisible(1170)">Conditional</animation>
     <animation effect="slide" end="70,0" time="200" reversible="true" condition="Control.IsVisible(799)">Conditional</animation>
     <control type="label">
       <label>$PARAM[breadcrumbs_label]$INFO[Container.ShowTitle, &#8226; ]</label>
@@ -205,6 +204,11 @@
       <label>($LOCALIZE[31052])</label>
       <font>font25</font>
       <visible>Container.Filtered</visible>
+    </control>
+    <control type="label">
+      <label>($LOCALIZE[31435])</label>
+      <font>font25</font>
+      <visible>Window.IsVisible(1170)</visible>
     </control>
   </include>
   <include name="InfoDialogTopBarInfo">
