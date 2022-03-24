@@ -60,18 +60,18 @@
             <label>$INFO[ListItem.Tagline,[I],[/I][CR][CR]]$INFO[ListItem.Plot][CR][CR]</label>
             <autoscroll delay="10000" time="3000" repeat="10000">Skin.HasSetting(autoscroll)</autoscroll>
           </control>
-          <control type="textbox">
-            <left>-160</left>
-            <top>360</top>
-            <width>530</width>
-            <height>413</height>
-            <align>center</align>
-            <aligny>center</aligny>
-            <font>font27</font>
-            <textcolor>80FFFFFF</textcolor>
-            <label>$LOCALIZE[19055]</label>
-            <visible>String.IsEmpty(Listitem.Plot) + String.IsEmpty(Listitem.Tagline) + !ListItem.IsCollection + !ListItem.IsParentFolder</visible>
-          </control>
+<!--          <control type="textbox">-->
+<!--            <left>-160</left>-->
+<!--            <top>360</top>-->
+<!--            <width>530</width>-->
+<!--            <height>413</height>-->
+<!--            <align>center</align>-->
+<!--            <aligny>center</aligny>-->
+<!--            <font>font27</font>-->
+<!--            <textcolor>80FFFFFF</textcolor>-->
+<!--            <label>$LOCALIZE[19055]</label>-->
+<!--            <visible>String.IsEmpty(Listitem.Plot) + String.IsEmpty(Listitem.Tagline) + !ListItem.IsCollection + !ListItem.IsParentFolder</visible>-->
+<!--          </control>-->
           <control type="group">
             <left>20</left>
             <top>245</top>
