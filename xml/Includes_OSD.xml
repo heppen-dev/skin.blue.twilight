@@ -10,6 +10,7 @@
     <onfocus condition="Skin.String(OSD_Timeout,$LOCALIZE[31291])">AlarmClock(osd_timeout,SetFocus(99220),00:30,silent)</onfocus>
     <onfocus condition="Skin.String(OSD_Timeout,$LOCALIZE[31292])">AlarmClock(osd_timeout,SetFocus(99220),01:00,silent)</onfocus>
     <onup>SetProperty(osd_extended_info,true,home)</onup>
+    <onup condition="String.IsEqual(Window(home).Property(osd_extended_info),true)">SetFocus(609)</onup>
     <ondown>ClearProperty(osd_extended_info,home)</ondown>
     <onunfocus>CancelAlarm(osd_timeout,true)</onunfocus>
   </include>
@@ -448,7 +449,7 @@
             <width>48</width>
             <height>48</height>
             <label/>
-            <altlabel></altlabel>
+            <altlabel/>
             <font/>
             <texturefocus colordiffuse="$VAR[ColorHighlight]">osd/pause.png</texturefocus>
             <texturenofocus colordiffuse="panel_fg_70">osd/pause.png</texturenofocus>
@@ -719,16 +720,18 @@
             <include content="OSDButton">
               <param name="texture" value="osd/fullscreen/buttons/settings-subtitle.png"/>
             </include>
+            <include>OSD_Button_OnFocus</include>
             <onclick>ActivateWindow(osdsubtitlesettings)</onclick>
             <visible>!VideoPlayer.Content(LiveTV) | VideoPlayer.HasSubtitles</visible>
-            <include>OSD_Button_OnFocus</include>
           </control>
-          <control type="radiobutton" id="609">
+          <control type="button" id="70042">
             <include content="OSDButton">
-              <param name="texture" value="osd/fullscreen/buttons/settings.png"/>
+              <param name="texture" value="osd/fullscreen/buttons/playlist.png"/>
             </include>
-            <onclick>ActivateWindow(1150)</onclick>
             <include>OSD_Button_OnFocus</include>
+            <onclick>Dialog.Close(all, true)</onclick>
+            <onclick>ActivateWindow(videoplaylist)</onclick>
+            <visible>Integer.IsGreater(Playlist.Length(video),1)</visible>
           </control>
         </control>
       </control>
@@ -771,6 +774,38 @@
           <onleft>StepBack</onleft>
           <onright condition="!Player.Paused">StepForward</onright>
           <onright condition="Player.Paused">PlayerControl(FrameAdvance(1))</onright>
+        </control>
+      </control>
+      <control type="group">
+        <top>-840</top>
+        <left>50</left>
+        <include>Animation_TopSlide</include>
+        <control type="image">
+          <width>48</width>
+          <height>48</height>
+          <texture colordiffuse="$VAR[ColorHighlight]">diffuse/circle.png</texture>
+          <visible>Control.HasFocus(609) + Window.IsVisible(1150)</visible>
+        </control>
+        <control type="radiobutton" id="609">
+          <textureradioonfocus colordiffuse="white">osd/fullscreen/buttons/settings.png</textureradioonfocus>
+          <textureradioonnofocus>osd/fullscreen/buttons/settings.png</textureradioonnofocus>
+          <textureradioofffocus colordiffuse="white">osd/fullscreen/buttons/settings.png</textureradioofffocus>
+          <textureradiooffnofocus>osd/fullscreen/buttons/settings.png</textureradiooffnofocus>
+          <textureradioondisabled colordiffuse="dialog_fg_30">osd/fullscreen/buttons/settings.png</textureradioondisabled>
+          <textureradiooffdisabled colordiffuse="dialog_fg_30">osd/fullscreen/buttons/settings.png</textureradiooffdisabled>
+          <texturefocus/>
+          <texturenofocus/>
+          <width>42</width>
+          <animation center="38,38" effect="zoom" end="100" reversible="false" start="95" time="480" tween="back">Focus</animation>
+          <height>42</height>
+          <radiowidth>42</radiowidth>
+          <radioheight>42</radioheight>
+          <font/>
+          <radioposx>3</radioposx>
+          <radioposy>3</radioposy>
+          <onfocus>ActivateWindow(1150)</onfocus>
+          <ondown>602</ondown>
+          <include>OSD_Button_OnFocus</include>
         </control>
       </control>
     </definition>

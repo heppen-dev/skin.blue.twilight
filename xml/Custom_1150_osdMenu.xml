@@ -3,18 +3,9 @@
   <defaultcontrol always="true">202</defaultcontrol>
   <include>Animation_DialogPopupOpenClose</include>
   <coordinates>
-    <origin x="770" y="250"/>
+    <origin x="50" y="140"/>
   </coordinates>
   <controls>
-    <control type="image">
-      <left>-1920</left>
-      <top>-1080</top>
-      <width>5760</width>
-      <height>3240</height>
-      <animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
-      <animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
-      <texture colordiffuse="B0FFFFFF">colors/black.png</texture>
-    </control>
     <control type="button">
       <left>-1920</left>
       <top>-1080</top>
@@ -76,15 +67,6 @@
         <onclick>Dialog.Close(1150)</onclick>
         <onclick>PlayerControl(ShowVideoMenu)</onclick>
         <visible>VideoPlayer.HasMenu</visible>
-      </control>
-      <control type="button" id="70042">
-        <width>480</width>
-        <height>75</height>
-        <include>DialogSettingButton</include>
-        <label>$LOCALIZE[20012]</label>
-        <onclick>Dialog.Close(all, true)</onclick>
-        <onclick>ActivateWindow(videoplaylist)</onclick>
-        <visible>Integer.IsGreater(Playlist.Length(video),1)</visible>
       </control>
       <control type="button" id="70044">
         <width>480</width>

@@ -179,7 +179,7 @@
         <animation effect="fade" time="150">VisibleChange</animation>
         <control type="image">
           <top>-200</top>
-          <left>-170</left>
+          <left>-100</left>
           <width>600</width>
           <height>500</height>
           <aspectratio>stretch</aspectratio>
@@ -197,6 +197,7 @@
           <usecontrolcoords>true</usecontrolcoords>
           <control type="label">
             <top>0</top>
+            <left>64</left>
             <font>font_clock</font>
             <label>$INFO[System.Time]</label>
             <visible>!Skin.HasSetting(disable_clock_osd)</visible>
