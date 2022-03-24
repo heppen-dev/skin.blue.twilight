@@ -225,6 +225,31 @@
             <height>55</height>
             <align>center</align>
             <aligny>center</aligny>
+            <textcolor>$VAR[Landscape_Title_Label]</textcolor>
+            <font>font_tiny_hintlabel_title</font>
+            <label>$INFO[ListItem.Label]</label>
+          </control>
+          <control type="label">
+            <top>220</top>
+            <left>45</left>
+            <width>250</width>
+            <height>100</height>
+            <align>center</align>
+            <aligny>center</aligny>
+            <textcolor>$VAR[Landscape_Title_Label]</textcolor>
+            <font>font_tiny_hintlabel_italics</font>
+            <label>$INFO[ListItem.Genre]</label>
+          </control>
+          <visible>Control.HasFocus($PARAM[id])</visible>
+        </control>
+        <control type="group">
+          <control type="label">
+            <top>215</top>
+            <left>45</left>
+            <width>250</width>
+            <height>55</height>
+            <align>center</align>
+            <aligny>center</aligny>
             <textcolor>ffffffff</textcolor>
             <font>font_tiny_hintlabel_title</font>
             <label>$INFO[ListItem.Label]</label>
@@ -240,6 +265,7 @@
             <font>font_tiny_hintlabel_italics</font>
             <label>$INFO[ListItem.Genre]</label>
           </control>
+          <visible>!Control.HasFocus($PARAM[id])</visible>
         </control>
         <include content="View_WatchedOverlay">
           <param name="bottom" value="80"/>

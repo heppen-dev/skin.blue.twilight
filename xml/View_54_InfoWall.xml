@@ -325,6 +325,21 @@
             <bordersize>25</bordersize>
             <visible>Control.HasFocus($PARAM[id])</visible>
           </control>
+        <!-- for white selection colour -->
+          <control type="image">
+            <animation type="Focus">
+              <effect type="zoom" start="96.5" end="100" time="150" tween="sine" easing="inout" center="auto"/>
+              <effect type="fade" start="20" end="100" time="150" tween="back" easing="out"/>
+            </animation>
+            <top>0</top>
+            <left>-10</left>
+            <width>365</width>
+            <height>320</height>
+            <aspectratio scalediffuse="false">scale</aspectratio>
+            <texture background="true" colordiffuse="ffffffff">diffuse/landscape-big-diffuse.png</texture>
+            <bordersize>25</bordersize>
+            <visible>Control.HasFocus($PARAM[id]) + !String.IsEqual(Skin.String(PosterHighlight),Highlight)</visible>
+          </control>
           <control type="image">
             <top>15</top>
             <left>5</left>

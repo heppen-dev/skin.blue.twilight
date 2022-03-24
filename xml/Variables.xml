@@ -149,6 +149,10 @@
   <variable name="HighlightOverlay">
     <value condition="!Window.IsVisible(Home)">$VAR[AlphaPercentage]</value>
   </variable>
+  <variable name="Landscape_Title_Label">
+    <value condition="!String.IsEqual(Skin.String(PosterHighlight),Highlight)">main_bg_100</value>
+    <value>ffffffff</value>
+  </variable>
   <variable name="Horizontal_RightTopbar">
     <value condition="Skin.HasSetting(EnableWeatherInHorizontalTopbar)">$INFO[Weather.Temperature, ,] • $INFO[System.Date,[UPPERCASE],[/UPPERCASE]]</value>
     <value>$INFO[System.Date,[UPPERCASE],[/UPPERCASE]]</value>
