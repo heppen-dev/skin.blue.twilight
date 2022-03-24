@@ -138,14 +138,12 @@
           <param name="labelid" value="$PYTHON[int(id) + 7600]"/>
           <param name="image" value="$SKINSHORTCUTS[widgetSourceArt]"/>
           <param name="id" value="$PYTHON[int(id) + 7500]"/>
-          <param name="target" value="$SKINSHORTCUTS[widgetTarget]"/>
-          <param name="limit" value="$SKINSHORTCUTS[widgetLimit]"/>
-          <param name="path" value="$SKINSHORTCUTS[widgetPath]$INFO[Skin.String(SearchTerm)]$SKINSHORTCUTS[widgetPath2]"/>
           <param name="fade" value="$PYTHON[(int(7500) + int(id)) - int(2)]"/>
           <param name="PosterCondition" value="$PYTHON['true' if widgetAspect in 'Poster' else 'false']"/>
           <param name="LandscapeCondition" value="$PYTHON['true' if widgetAspect in 'Landscape' else 'false']"/>
           <param name="SquareCondition" value="$PYTHON['true' if widgetAspect in 'Square' else 'false']"/>
           <param name="arrows_posy" value="$PYTHON['110' if widgetAspect in 'Landscape' else '150']"/>
+          <content target="$SKINSHORTCUTS[widgetTarget]" limit="$SKINSHORTCUTS[widgetLimit]" >$SKINSHORTCUTS[widgetPath]$INFO[Skin.String(SearchTerm)]$SKINSHORTCUTS[widgetPath2]</content>
         </include>
       </controls>
     </items>

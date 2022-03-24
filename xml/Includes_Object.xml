@@ -545,6 +545,8 @@
         <param name="label" value="$PARAM[label]"/>
         <param name="fade" value="$PARAM[fade]"/>
         <param name="move_down_when_landscape" value="$PARAM[LandscapeCondition]"/>
+        <visible>Control.IsVisible($PARAM[id])</visible>
+        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater(Container($PARAM[id]).NumItems,0) | Container($PARAM[id]).IsUpdating">Conditional</animation>
       </include>
       <control type="$PARAM[control_type]" id="$PARAM[id]">
         <orientation>horizontal</orientation>
@@ -556,11 +558,10 @@
         <include condition="$PARAM[LandscapeCondition]">LandscapeHeight</include>
         <include condition="$PARAM[SquareCondition]">SquareHeight</include>
         <animation effect="slide" end="0,20" time="0" reversible="true" condition="true">Conditional</animation>
-<!--        <onfocus>SetProperty(fade,$PARAM[fade],home)</onfocus>-->
-<!--        <animation effect="fade" start="100" end="0" time="200" condition="Integer.IsEqual(Window(home).Property(fade),$PARAM[id])">Conditional</animation>-->
-        <visible allowhiddenfocus="true">Integer.IsGreater(Container($PARAM[id]).NumItems,0)</visible>
         <onfocus>SetProperty(TMDbHelper.WidgetContainer,$PARAM[id],Home)</onfocus>
         <onfocus>SetProperty(arrow_list_id,$PARAM[id],Home)</onfocus>
+        <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,0) | Container($PARAM[id]).IsUpdating</visible>
+        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater(Container($PARAM[id]).NumItems,0) | Container($PARAM[id]).IsUpdating">Conditional</animation>
         <!-- Item Layout -->
         <include content="Object_Wall_Layout">
           <param name="id" value="$PARAM[id]"/>
@@ -568,13 +569,7 @@
           <param name="LandscapeCondition" value="$PARAM[LandscapeCondition]"/>
           <param name="SquareCondition" value="$PARAM[SquareCondition]"/>
         </include>
-        <include content="Object_Widget_Content_Path">
-          <param name="target" value="$PARAM[target]"/>
-          <param name="sortby" value="$PARAM[sortby]"/>
-          <param name="sortdirection" value="$PARAM[sortdirection]"/>
-          <param name="limit" value="$PARAM[limit]"/>
-          <param name="path" value="$PARAM[path]"/>
-        </include>
+        <nested/>
       </control>
     </definition>
   </include>
