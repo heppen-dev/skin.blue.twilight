@@ -223,10 +223,10 @@
       <include content="Object_MoviesHub_Content">
         <param name="control_type" value="$PYTHON['list' if scrolling in 'False' else 'fixedlist']"/>
         <param name="label" value="$SKINSHORTCUTS[label]"/>
-        <param name="groupid" value="760$SKINSHORTCUTS[id]"/>
-        <param name="labelid" value="770$SKINSHORTCUTS[id]"/>
+        <param name="groupid" value="860$SKINSHORTCUTS[id]"/>
+        <param name="labelid" value="870$SKINSHORTCUTS[id]"/>
         <param name="image" value="$SKINSHORTCUTS[artwork]"/>
-        <param name="id" value="750$SKINSHORTCUTS[id]"/>
+        <param name="id" value="850$SKINSHORTCUTS[id]"/>
         <param name="target" value="$SKINSHORTCUTS[target]"/>
         <param name="sortby" value="$SKINSHORTCUTS[sortby]"/>
         <param name="sortdirection" value="$SKINSHORTCUTS[sortdirection]"/>
