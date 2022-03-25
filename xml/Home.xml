@@ -5,7 +5,7 @@
   <onunload>ClearProperty(TMDbHelper.WidgetContainer,home)</onunload>
   <onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;levels=1&amp;group=mainmenu|widgets|globalhub|shutdown|searchmenu)</onload>
   <onload>SetProperty(TMDbHelper.Blur.Fallback,$VAR[Global_Background_Image_NoFanart_Fallback],Home)</onload>
-  <onload>SetProperty(TMDbHelper.Blur.SourceImage,Art(poster),Home)</onload>
+  <onload>SetProperty(TMDbHelper.Blur.SourceImage,Art(poster)|Art(fanart)|Art(landscape)|Art(tvshow.poster),Home)</onload>
   <!-- set default selection box -->
   <onload condition="String.IsEmpty(Skin.String(HighlightSize))">Skin.SetString(HighlightSize,Bold)</onload>
   <onload condition="String.IsEmpty(Skin.String(PosterHighlight))">Skin.SetString(PosterHighlight,Highlight)</onload>
