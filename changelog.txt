@@ -1,3 +1,6 @@
+1.2.3
+    Changed blur source
+    Improved background in SkinSettings @zuzia-dev
 1.2.2
     Added floating setting button in video osd
     Added TopBar to home screen and movies hub
