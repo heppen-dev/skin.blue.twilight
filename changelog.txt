@@ -1,3 +1,5 @@
+1.2.4
+    Fixed mouse support in LiveTV OSD
 1.2.3
     Changed blur source
     Improved background in SkinSettings @zuzia-dev
