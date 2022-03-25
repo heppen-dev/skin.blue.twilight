@@ -423,7 +423,6 @@
       </control>
       <control type="group" id="200">
         <include>Animation_BottomSlide</include>
-        <animation effect="fade" start="0" end="100" time="400" condition="ControlGroup(201).HasFocus">Conditional</animation>
         <control type="grouplist" id="201">
           <top>92</top>
           <left>185</left>
@@ -443,7 +442,6 @@
             </include>
             <include>OSD_Button_OnFocus</include>
             <onclick>PlayerControl(Previous)</onclick>
-            <visible>ControlGroup(201).HasFocus</visible>
           </control>
           <control type="togglebutton" id="604">
             <width>48</width>
@@ -473,7 +471,6 @@
             </include>
             <onclick>PlayerControl(Next)</onclick>
             <visible>Player.ChapterCount | Integer.IsGreater(Playlist.Length(video),1) | PVR.IsTimeShift</visible>
-            <visible>ControlGroup(201).HasFocus</visible>
             <include>OSD_Button_OnFocus</include>
           </control>
           <control type="togglebutton" id="608">
@@ -498,7 +495,6 @@
             </include>
             <onclick>PlayerControl(ShowVideoMenu)</onclick>
             <visible>VideoPlayer.HasMenu</visible>
-            <visible>ControlGroup(201).HasFocus</visible>
             <include>OSD_Button_OnFocus</include>
           </control>
           <control type="button" id="70042">
@@ -508,36 +504,14 @@
             <onclick>Dialog.Close(all, true)</onclick>
             <onclick>ActivateWindow(tvguide)</onclick>
             <visible>VideoPlayer.Content(livetv) + VideoPlayer.HasEPG</visible>
-            <visible>ControlGroup(201).HasFocus</visible>
             <include>OSD_Button_OnFocus</include>
           </control>
-<!--          <control type="button" id="70040">-->
-<!--            <include content="PVROSDButton">-->
-<!--              <param name="texture" value="osd/fullscreen/buttons/channels.png"/>-->
-<!--            </include>-->
-<!--            <onclick>Dialog.Close(VideoOSD)</onclick>-->
-<!--            <onclick>ActivateWindow(PVROSDChannels)</onclick>-->
-<!--            <visible>VideoPlayer.Content(livetv)</visible>-->
-<!--            <visible>ControlGroup(201).HasFocus</visible>-->
-<!--            <include>OSD_Button_OnFocus</include>-->
-<!--          </control>-->
-<!--          <control type="button" id="70041">-->
-<!--            <include content="PVROSDButton">-->
-<!--              <param name="texture" value="osd/fullscreen/buttons/guide.png"/>-->
-<!--            </include>-->
-<!--            <onclick>Dialog.Close(VideoOSD)</onclick>-->
-<!--            <onclick>ActivateWindow(pvrchannelguide)</onclick>-->
-<!--            <visible>VideoPlayer.Content(livetv) + VideoPlayer.HasEPG</visible>-->
-<!--            <visible>ControlGroup(201).HasFocus</visible>-->
-<!--            <include>OSD_Button_OnFocus</include>-->
-<!--          </control>-->
           <control type="button" id="70043">
             <include content="PVROSDButton">
               <param name="texture" value="osd/fullscreen/buttons/information.png"/>
             </include>
             <onclick>Info</onclick>
             <onclick>Dialog.Close(videoosd)</onclick>
-            <visible>ControlGroup(201).HasFocus</visible>
             <include>OSD_Button_OnFocus</include>
           </control>
           <control type="button" id="70044">
@@ -546,7 +520,6 @@
             </include>
             <onclick>ActivateWindow(videobookmarks)</onclick>
             <visible>!VideoPlayer.Content(livetv)</visible>
-            <visible>ControlGroup(201).HasFocus</visible>
             <include>OSD_Button_OnFocus</include>
           </control>
           <control type="button" id="70045">
@@ -556,7 +529,6 @@
             <onclick>Dialog.Close(VideoOSD)</onclick>
             <onclick>ActivateWindow(Teletext)</onclick>
             <visible>VideoPlayer.HasTeletext</visible>
-            <visible>ControlGroup(201).HasFocus</visible>
             <include>OSD_Button_OnFocus</include>
           </control>
           <control type="button" id="70046">
@@ -565,7 +537,6 @@
             </include>
             <onclick>ActivateWindow(osdsubtitlesettings)</onclick>
             <visible>!VideoPlayer.Content(LiveTV) | VideoPlayer.HasSubtitles</visible>
-            <visible>ControlGroup(201).HasFocus</visible>
             <include>OSD_Button_OnFocus</include>
           </control>
           <control type="button" id="70047">
@@ -576,7 +547,6 @@
             <onclick>SetProperty(settingslist_content,3d,home)</onclick>
             <onclick>SetProperty(settingslist_header,$LOCALIZE[36501],home)</onclick>
             <onclick>ActivateWindow(1101)</onclick>
-            <visible>ControlGroup(201).HasFocus</visible>
             <include>OSD_Button_OnFocus</include>
           </control>
           <control type="button" id="70048">
@@ -585,7 +555,6 @@
             </include>
             <onclick>ActivateWindow(playerprocessinfo)</onclick>
             <visible>Window.IsVisible(videoosd)</visible>
-            <visible>ControlGroup(201).HasFocus</visible>
             <include>OSD_Button_OnFocus</include>
           </control>
           <control type="button" id="70049">
@@ -595,7 +564,6 @@
             <onclick>SetProperty(settingslist_content,osd,home)</onclick>
             <onclick>SetProperty(settingslist_header,$LOCALIZE[5],home)</onclick>
             <onclick>ActivateWindow(1101)</onclick>
-            <visible>ControlGroup(201).HasFocus</visible>
             <include>OSD_Button_OnFocus</include>
           </control>
         </control>
