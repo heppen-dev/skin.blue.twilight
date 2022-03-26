@@ -30,6 +30,7 @@
   <include file="View_503_NowPlaying.xml"/>
   <include file="View_500_Wall.xml"/>
   <include file="View_501_Banner.xml"/>
+  <include file="View_505_Wall.xml"/>
   <include file="View_502_FanArt.xml"/>
   <include file="View_510_Flix.xml"/>
   <include file="View_511_MediaInfo.xml"/>

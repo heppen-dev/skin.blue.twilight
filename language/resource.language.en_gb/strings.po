@@ -2150,3 +2150,8 @@ msgstr ""
 msgctxt "#31440"
 msgid "More settings"
 msgstr ""
+
+#: /xml/View_505_Wall.xml
+msgctxt "#31441"
+msgid "Tiles"
+msgstr ""

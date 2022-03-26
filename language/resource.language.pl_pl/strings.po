@@ -1974,3 +1974,8 @@ msgstr "Wyłącz zegar systemowy"
 msgctxt "#31440"
 msgid "More settings"
 msgstr "Więcej ustawień"
+
+#: /xml/View_505_Wall.xml
+msgctxt "#31441"
+msgid "Tiles"
+msgstr "Kafelki"
