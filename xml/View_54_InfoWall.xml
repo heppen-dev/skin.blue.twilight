@@ -764,6 +764,73 @@
       </control>
     </definition>
   </include>
+  <include name="TilesMovieLayout">
+    <param name="focused">false</param>
+    <definition>
+      <control type="group">
+        <visible>!String.IsEmpty(ListItem.Art(poster))</visible>
+        <control type="group">
+          <left>15</left>
+          <top>100</top>
+          <control type="image">
+            <width>390</width>
+            <height>515</height>
+            <texture background="true">$INFO[ListItem.Art(poster)]</texture>
+            <aspectratio scalediffuse="false">scale</aspectratio>
+            <bordersize>20</bordersize>
+          </control>
+          <control type="image">
+            <top>485</top>
+            <width>390</width>
+            <height>515</height>
+            <texture background="true" diffuse="diffuse/poster-light.png">$INFO[ListItem.Art(poster)]</texture>
+            <aspectratio scalediffuse="false">scale</aspectratio>
+            <bordersize>20</bordersize>
+          </control>
+        </control>
+        <control type="image">
+          <left>35</left>
+          <top>290</top>
+          <width>80</width>
+          <height>80</height>
+          <texture>overlays/overlay-bg.png</texture>
+          <visible>Listitem.IsCollection | ListItem.IsPlaying | Integer.IsGreater(ListItem.Playcount,0)</visible>
+        </control>
+      </control>
+      <control type="group">
+        <visible>String.IsEmpty(ListItem.Art(poster))</visible>
+        <control type="group">
+          <left>15</left>
+          <top>100</top>
+          <control type="image">
+            <width>390</width>
+            <height>515</height>
+            <texture background="true">$INFO[ListItem.Icon]</texture>
+            <aspectratio scalediffuse="false">scale</aspectratio>
+            <bordersize>20</bordersize>
+          </control>
+          <control type="image">
+            <top>485</top>
+            <width>390</width>
+            <height>515</height>
+            <texture background="true" diffuse="diffuse/poster-light.png">$INFO[ListItem.Icon]</texture>
+            <aspectratio scalediffuse="false">scale</aspectratio>
+            <bordersize>20</bordersize>
+          </control>
+        </control>
+      </control>
+      <control type="group">
+          <top>105</top>
+          <left>20</left>
+          <control type="image">
+            <width>380</width>
+            <height>505</height>
+            <texture border="15">common/square-border.png</texture>
+          </control>
+          <visible>$PARAM[focused]</visible>
+        </control>
+    </definition>
+  </include>
   <include name="View_54_InfoWall">
     <control type="group">
       <include>OpenClose_Bottom</include>
