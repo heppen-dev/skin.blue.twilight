@@ -9,28 +9,32 @@
             <include content="Object_ShadowSpot_Grouplist">
                 <include content="Object_ShadowSpot_Label">
                     <param name="label" value="Player Process Info" />
-                    <param name="font" value="font_small_bold" />
-                    <param name="textcolor" value="panel_fg_100" />
-                    <param name="height" value="50" />
-                    <param name="top" value="-10" />
+                    <param name="font" value="font_tiny_title_uppercase" />
+                    <param name="textcolor" value="fff39c12" />
+                    <param name="height" value="40" />
+                    <param name="top" value="0" />
                 </include>
                 <include content="Object_ShadowSpot_Label">
-                    <param name="label" value="$INFO[Player.Process(videodecoder),[COLOR panel_fg_100]$LOCALIZE[31279]:[/COLOR] ]$VAR[Label_VideoHWDecoder, (,)]" />
+                    <param name="label" value="[COLOR fff39c12]$LOCALIZE[31139]:[/COLOR] $INFO[Player.Process(videodecoder)]$VAR[VideoHWDecoder, (,)]" />
                 </include>
                 <include content="Object_ShadowSpot_Label">
-                    <param name="label" value="$INFO[Player.Process(pixformat),[COLOR panel_fg_100]$LOCALIZE[31280]:[/COLOR] ]" />
+                    <param name="label" value="$INFO[Player.Process(pixformat),[COLOR fff39c12]Pixel Format:[/COLOR] ]" />
                 </include>
                 <include content="Object_ShadowSpot_Label">
-                    <param name="label" value="$INFO[Player.Process(deintmethod),[COLOR panel_fg_100]$LOCALIZE[16038]:[/COLOR] ]" />
+                    <param name="label" value="$INFO[Player.Process(deintmethod),[COLOR fff39c12]$LOCALIZE[16038]:[/COLOR] ]" />
                 </include>
                 <include content="Object_ShadowSpot_Label">
-                    <param name="label" value="$INFO[Player.Process(videowidth),[COLOR panel_fg_100]$LOCALIZE[38031]:[/COLOR] ,x]$INFO[Player.Process(videoheight),, px]$INFO[Player.Process(videodar),$COMMA , AR]$INFO[Player.Process(videofps),$COMMA , FPS]" />
+                    <param name="label" value="$INFO[Player.Process(videowidth),[COLOR fff39c12]$LOCALIZE[38031]:[/COLOR] ,x]$INFO[Player.Process(videoheight),, px]$INFO[Player.Process(videodar),$COMMA , AR]$INFO[Player.Process(videofps),$COMMA , FPS]" />
                 </include>
                 <include content="Object_ShadowSpot_Label">
-                    <param name="label" value="[COLOR panel_fg_100]$LOCALIZE[460]:[/COLOR] $INFO[Player.Process(audiochannels),,$COMMA ]$INFO[Player.Process(audiodecoder)]$INFO[Player.Process(audiobitspersample),$COMMA , bits]$INFO[Player.Process(audiosamplerate),$COMMA , Hz]" />
+                    <param name="label" value="[COLOR fff39c12]$LOCALIZE[460]:[/COLOR] $INFO[Player.Process(audiochannels),,$COMMA ]$INFO[Player.Process(audiodecoder)]$INFO[Player.Process(audiobitspersample),$COMMA , bits]$INFO[Player.Process(audiosamplerate),$COMMA , Hz]" />
                 </include>
                 <include content="Object_ShadowSpot_Label">
-                    <param name="label" value="$INFO[System.CpuUsage,[COLOR panel_fg_100]$LOCALIZE[13271][/COLOR] ,       ][COLOR panel_fg_100]RAM:[/COLOR] $INFO[system.memory(used)] / $INFO[system.memory(total)] - $INFO[System.Memory(used.percent)]" />
+                    <param name="label" value="$INFO[System.CpuUsage,[COLOR fff39c12]CPU:[/COLOR] ,]" />
+                    <param name="width" value="760"/>
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="[COLOR fff39c12]RAM:[/COLOR] $INFO[system.memory(used)] / $INFO[system.memory(total)] - $INFO[System.Memory(used.percent)]" />
                 </include>
             </include>
         </include>
@@ -43,28 +47,28 @@
             <include content="Object_ShadowSpot_Grouplist">
                 <include content="Object_ShadowSpot_Label">
                     <param name="label" value="" />
-                    <param name="font" value="font_small_bold" />
-                    <param name="textcolor" value="panel_fg_100" />
-                    <param name="height" value="50" />
-                    <param name="top" value="-10" />
+                    <param name="font" value="font_tiny_title_uppercase" />
+                    <param name="textcolor" value="fff39c12" />
+                    <param name="height" value="40" />
+                    <param name="top" value="0" />
                 </include>
                 <include content="Object_ShadowSpot_Label">
-                    <param name="label" value="$INFO[Player.Process(amlogic.displaymode),[COLOR panel_fg_100]Display mode: [/COLOR] ] " />
+                    <param name="label" value="$INFO[Player.Process(amlogic.displaymode),[COLOR fff39c12]Display mode: [/COLOR] ] " />
                 </include>
                 <include content="Object_ShadowSpot_Label">
-                    <param name="label" value="$INFO[Player.Process(amlogic.eoft_gamut),[COLOR panel_fg_100]Eotf&Gamut: [/COLOR] ]" />
+                    <param name="label" value="$INFO[Player.Process(amlogic.eoft_gamut),[COLOR fff39c12]Eotf&Gamut: [/COLOR] ]" />
                 </include>
                 <include content="Object_ShadowSpot_Label">
-                    <param name="label" value="$INFO[Player.Process(amlogic.pixformat),[COLOR panel_fg_100]Colour Depth: [/COLOR] ]" />
+                    <param name="label" value="$INFO[Player.Process(amlogic.pixformat),[COLOR fff39c12]Colour Depth: [/COLOR] ]" />
                 </include>
                 <include content="Object_ShadowSpot_Label">
-                    <param name="label" value="[COLOR panel_fg_100]Soc Temp: [/COLOR] $INFO[System.CPUTemperature]" />
+                    <param name="label" value="[COLOR fff39c12]Soc Temp: [/COLOR] $INFO[System.CPUTemperature]" />
                 </include>
                 <include content="Object_ShadowSpot_Label">
-                    <param name="label" value="[COLOR panel_fg_100]CPU Frequency: [/COLOR] $INFO[System.CpuFrequency]" />
+                    <param name="label" value="[COLOR fff39c12]CPU Frequency: [/COLOR] $INFO[System.CpuFrequency]" />
                 </include>
                   <include content="Object_ShadowSpot_Label">
-                    <param name="label" value="[COLOR panel_fg_100]System FPS: [/COLOR] $INFO[System.FPS] FPS" />
+                    <param name="label" value="[COLOR fff39c12]System FPS: [/COLOR] $INFO[System.FPS] FPS" />
                 </include>
             </include>
         </include>
@@ -75,66 +79,70 @@
             <include content="Object_ShadowSpot_Grouplist">
                 <include content="Object_ShadowSpot_Label">
                     <param name="label" value="Player Process Info" />
-                    <param name="font" value="font_small_bold" />
-                    <param name="textcolor" value="panel_fg_100" />
-                    <param name="height" value="50" />
-                    <param name="top" value="-10" />
+                    <param name="font" value="font_tiny_title_uppercase" />
+                    <param name="textcolor" value="fff39c12" />
+                    <param name="height" value="40" />
+                    <param name="top" value="0" />
                 </include>
                 <include content="Object_ShadowSpot_Label">
-                    <param name="label" value="$INFO[Player.Process(videodecoder),[COLOR panel_fg_100]$LOCALIZE[31279]:[/COLOR] ]$VAR[Label_VideoHWDecoder, (,)]" />
+                    <param name="label" value="[COLOR fff39c12]$LOCALIZE[31139]:[/COLOR] $INFO[Player.Process(videodecoder)]$VAR[VideoHWDecoder, (,)]" />
                 </include>
                 <include content="Object_ShadowSpot_Label">
-                    <param name="label" value="$INFO[Player.Process(pixformat),[COLOR panel_fg_100]$LOCALIZE[31280]:[/COLOR] ]" />
+                    <param name="label" value="$INFO[Player.Process(pixformat),[COLOR fff39c12]Pixel Format:[/COLOR] ]" />
                 </include>
                 <include content="Object_ShadowSpot_Label">
-                    <param name="label" value="$INFO[Player.Process(deintmethod),[COLOR panel_fg_100]$LOCALIZE[16038]:[/COLOR] ]" />
+                    <param name="label" value="$INFO[Player.Process(deintmethod),[COLOR fff39c12]$LOCALIZE[16038]:[/COLOR] ]" />
                 </include>
                 <include content="Object_ShadowSpot_Label">
-                    <param name="label" value="$INFO[Player.Process(videowidth),[COLOR panel_fg_100]$LOCALIZE[38031]:[/COLOR] ,x]$INFO[Player.Process(videoheight),, px]$INFO[Player.Process(videodar),$COMMA , AR]$INFO[Player.Process(videofps),$COMMA , FPS]" />
+                    <param name="label" value="$INFO[Player.Process(videowidth),[COLOR fff39c12]$LOCALIZE[38031]:[/COLOR] ,x]$INFO[Player.Process(videoheight),, px]$INFO[Player.Process(videodar),$COMMA , AR]$INFO[Player.Process(videofps),$COMMA , FPS]" />
                 </include>
                 <include content="Object_ShadowSpot_Label">
-                    <param name="label" value="[COLOR panel_fg_100]$LOCALIZE[460]:[/COLOR] $INFO[Player.Process(audiochannels),,$COMMA ]$INFO[Player.Process(audiodecoder)]$INFO[Player.Process(audiobitspersample),$COMMA , bits]$INFO[Player.Process(audiosamplerate),$COMMA , Hz]" />
+                    <param name="label" value="[COLOR fff39c12]$LOCALIZE[460]:[/COLOR] $INFO[Player.Process(audiochannels),,$COMMA ]$INFO[Player.Process(audiodecoder)]$INFO[Player.Process(audiobitspersample),$COMMA , bits]$INFO[Player.Process(audiosamplerate),$COMMA , Hz]" />
                 </include>
                 <include content="Object_ShadowSpot_Label">
                     <param name="label" value="PVR Stream" />
-                    <param name="font" value="font_small_bold" />
-                    <param name="textcolor" value="panel_fg_100" />
-                    <param name="height" value="50" />
+                    <param name="font" value="font_tiny_title_uppercase" />
+                    <param name="textcolor" value="fff39c12" />
+                    <param name="height" value="40" />
                     <param name="top" value="50" />
                 </include>
                 <include content="Object_ShadowSpot_Label">
-                    <param name="label" value="$INFO[System.CpuUsage,[COLOR panel_fg_100]$LOCALIZE[13271][/COLOR] ,       ]$INFO[System.Memory(used.percent),[COLOR panel_fg_100]RAM:[/COLOR] ,]" />
+                    <param name="label" value="$INFO[System.CpuUsage,[COLOR fff39c12]CPU:[/COLOR] ,]" />
+                    <param name="width" value="760"/>
                 </include>
                 <include content="Object_ShadowSpot_Label">
-                    <param name="label" value="$INFO[PVR.ActStreamServiceName,[COLOR panel_fg_100]$LOCALIZE[19099]:[/COLOR] ]" />
+                    <param name="label" value="[COLOR fff39c12]RAM:[/COLOR] $INFO[system.memory(used)] / $INFO[system.memory(total)] - $INFO[System.Memory(used.percent)]" />
                 </include>
                 <include content="Object_ShadowSpot_Label">
-                    <param name="label" value="$INFO[PVR.ActStreamProviderName,[COLOR panel_fg_100]$LOCALIZE[19101]:[/COLOR] ]" />
+                    <param name="label" value="$INFO[PVR.ActStreamServiceName,[COLOR fff39c12]$LOCALIZE[19099]:[/COLOR] ]" />
                 </include>
                 <include content="Object_ShadowSpot_Label">
-                    <param name="label" value="$INFO[PVR.ActStreamClient,[COLOR panel_fg_100]$LOCALIZE[19012]:[/COLOR] ]" />
+                    <param name="label" value="$INFO[PVR.ActStreamProviderName,[COLOR fff39c12]$LOCALIZE[19101]:[/COLOR] ]" />
                 </include>
                 <include content="Object_ShadowSpot_Label">
-                    <param name="label" value="$INFO[PVR.ActStreamDevice,[COLOR panel_fg_100]$LOCALIZE[19006]:[/COLOR] ]" />
+                    <param name="label" value="$INFO[PVR.ActStreamClient,[COLOR fff39c12]$LOCALIZE[19012]:[/COLOR] ]" />
                 </include>
                 <include content="Object_ShadowSpot_Label">
-                    <param name="label" value="$INFO[PVR.ActStreamStatus,[COLOR panel_fg_100]$LOCALIZE[19007]:[/COLOR] ]" />
+                    <param name="label" value="$INFO[PVR.ActStreamDevice,[COLOR fff39c12]$LOCALIZE[19006]:[/COLOR] ]" />
                 </include>
                 <include content="Object_ShadowSpot_Label">
-                    <param name="label" value="$INFO[PVR.ActStreamEncryptionName,[COLOR panel_fg_100]$LOCALIZE[19015]:[/COLOR] ]" />
+                    <param name="label" value="$INFO[PVR.ActStreamStatus,[COLOR fff39c12]$LOCALIZE[19007]:[/COLOR] ]" />
                 </include>
                 <include content="Object_ShadowSpot_Label">
-                    <param name="label" value="$INFO[PVR.ActStreamBer,[COLOR panel_fg_100]$LOCALIZE[19010]:[/COLOR] ]" />
+                    <param name="label" value="$INFO[PVR.ActStreamEncryptionName,[COLOR fff39c12]$LOCALIZE[19015]:[/COLOR] ]" />
                 </include>
                 <include content="Object_ShadowSpot_Label">
-                    <param name="label" value="$INFO[PVR.ActStreamUnc,[COLOR panel_fg_100]$LOCALIZE[19011]:[/COLOR] ]" />
+                    <param name="label" value="$INFO[PVR.ActStreamBer,[COLOR fff39c12]$LOCALIZE[19010]:[/COLOR] ]" />
                 </include>
                 <include content="Object_ShadowSpot_Label">
-                    <param name="label" value="$INFO[PVR.ActStreamMux,[COLOR panel_fg_100]$LOCALIZE[19100]:[/COLOR] ]" />
+                    <param name="label" value="$INFO[PVR.ActStreamUnc,[COLOR fff39c12]$LOCALIZE[19011]:[/COLOR] ]" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="$INFO[PVR.ActStreamMux,[COLOR fff39c12]$LOCALIZE[19100]:[/COLOR] ]" />
                 </include>
                 <include content="Object_ShadowSpot_Label">
                     <param name="top" value="30" />
-                    <param name="label" value="$INFO[PVR.ActStreamSignal,[COLOR panel_fg_100]$LOCALIZE[19008]:[/COLOR] ]" />
+                    <param name="label" value="$INFO[PVR.ActStreamSignal,[COLOR fff39c12]$LOCALIZE[19008]:[/COLOR] ]" />
                 </include>
                 <control type="group">
                     <height>40</height>
@@ -147,7 +155,7 @@
                 </control>
                 <include content="Object_ShadowSpot_Label">
                     <param name="top" value="15" />
-                    <param name="label" value="$INFO[PVR.ActStreamSNR,[COLOR panel_fg_100]$LOCALIZE[19009]:[/COLOR] ]" />
+                    <param name="label" value="$INFO[PVR.ActStreamSNR,[COLOR fff39c12]$LOCALIZE[19009]:[/COLOR] ]" />
                 </include>
                 <control type="group">
                     <height>40</height>
@@ -161,8 +169,7 @@
             </include>
         </include>
         <control type="group">
-            <include>Animation_FadeIn</include>
-            <include>Animation_FadeOut</include>
+            <include>Animation_DialogPopupVisible</include>
             <top>0</top>
             <width>1920</width>
             <height>420</height>

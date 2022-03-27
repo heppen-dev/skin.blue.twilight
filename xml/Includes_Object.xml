@@ -1310,14 +1310,15 @@
     </control>
   </include>
   <include name="Object_ShadowSpot_Label">
-    <param name="font" default="font_tiny" />
+    <param name="font" default="font_tiny_uppercase" />
     <param name="textcolor" default="panel_fg_70" />
-    <param name="height" default="40" />
+    <param name="height" default="30" />
+    <param name="width" default="auto"/>
     <param name="top" default="0" />
     <definition>
         <control type="label" id="$PARAM[id]">
           <top>$PARAM[top]</top>
-          <width>auto</width>
+          <width>$PARAM[width]</width>
           <height>$PARAM[height]</height>
           <align>left</align>
           <aligny>top</aligny>
@@ -1330,8 +1331,6 @@
     <include name="Object_ShadowSpot_Grouplist">
       <control type="grouplist">
         <orientation>vertical</orientation>
-        <left>view_pad</left>
-        <top>view_pad</top>
         <itemgap>0</itemgap>
         <usecontrolcoords>true</usecontrolcoords>
         <nested />
@@ -1344,7 +1343,7 @@
       <param name="top" default="30" />
       <definition>
         <control type="group" id="$PARAM[id]">
-          <include>Animation_FadeIn</include>
+          <include>Animation_DialogPopupVisible</include>
           <left>$PARAM[left]</left>
           <top>$PARAM[top]</top>
           <width>$PARAM[width]</width>
