@@ -1198,7 +1198,7 @@
   </variable>
   <variable name="BlurBackground">
     <value condition="[$EXP[FirstExpose] | $EXP[SecondExpose] | $EXP[infodialog_active]] + !Skin.HasSetting(DisableBlur)">$VAR[Blur]</value>
-    <value condition="![ControlGroup(3000).HasFocus | ControlGroup(4000).HasFocus | Window.IsActive(1121)] + !Skin.HasSetting(DisableBlur) | String.StartsWith(ListItem.FolderPath,favourites://)">$INFO[Window(Home).Property(TMDbHelper.ListItem.BlurImage)]</value>
+    <value condition="![ControlGroup(3000).HasFocus | ControlGroup(4000).HasFocus | Window.IsActive(1121) | Control.HasFocus(510)] + !Skin.HasSetting(DisableBlur) | String.StartsWith(ListItem.FolderPath,favourites://)">$INFO[Window(Home).Property(TMDbHelper.ListItem.BlurImage)]</value>
     <value condition="!String.IsEmpty(ListItem.Property(background))">$INFO[ListItem.Property(background)]</value>
     <value>$VAR[MediaFanartVar]</value>
   </variable>

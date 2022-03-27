@@ -67,6 +67,7 @@
           <param name="bottom" value="-12"/>
           <param name="right" value="20"/>
           <param name="visible" value="Control.HasFocus(510)"/>
+          <param name="selected" value="true"/>
         </include>
       </control>
       <include content="Object_Scrollbar_Horz">
