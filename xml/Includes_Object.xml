@@ -1315,6 +1315,7 @@
     <param name="height" default="30" />
     <param name="width" default="auto"/>
     <param name="top" default="0" />
+    <param name="visible" default="true"/>
     <definition>
         <control type="label" id="$PARAM[id]">
           <top>$PARAM[top]</top>
@@ -1325,6 +1326,7 @@
           <textcolor>$PARAM[textcolor]</textcolor>
           <font>$PARAM[font]</font>
           <label>$PARAM[label]</label>
+          <visible>$PARAM[visible]</visible>
         </control>
     </definition>
     </include>

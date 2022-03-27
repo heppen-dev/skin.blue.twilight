@@ -30,11 +30,14 @@
                     <param name="label" value="[COLOR fff39c12]$LOCALIZE[460]:[/COLOR] $INFO[Player.Process(audiochannels),,$COMMA ]$INFO[Player.Process(audiodecoder)]$INFO[Player.Process(audiobitspersample),$COMMA , bits]$INFO[Player.Process(audiosamplerate),$COMMA , Hz]" />
                 </include>
                 <include content="Object_ShadowSpot_Label">
-                    <param name="label" value="$INFO[System.CpuUsage,[COLOR fff39c12]CPU:[/COLOR] ,]" />
-                    <param name="width" value="760"/>
+                    <param name="label" value="[COLOR fff39c12]$LOCALIZE[31030]:[/COLOR] $INFO[System.Memory(used.percent),,       ][COLOR fff39c12]$LOCALIZE[13271][/COLOR] $INFO[System.CPUUsage]" />
+                    <param name="visible" value="System.SupportsCPUUsage"/>
+                    <param name="width" value="1600"/>
                 </include>
                 <include content="Object_ShadowSpot_Label">
-                    <param name="label" value="[COLOR fff39c12]RAM:[/COLOR] $INFO[system.memory(used)] / $INFO[system.memory(total)] - $INFO[System.Memory(used.percent)]" />
+                    <param name="label" value="[COLOR fff39c12]$LOCALIZE[31030]:[/COLOR] $INFO[System.Memory(used.percent),,]" />
+                    <param name="visible" value="!System.SupportsCPUUsage"/>
+                    <param name="width" value="1600"/>
                 </include>
             </include>
         </include>
@@ -107,11 +110,12 @@
                     <param name="top" value="50" />
                 </include>
                 <include content="Object_ShadowSpot_Label">
-                    <param name="label" value="$INFO[System.CpuUsage,[COLOR fff39c12]CPU:[/COLOR] ,]" />
-                    <param name="width" value="760"/>
+                    <param name="label" value="[COLOR fff39c12]$LOCALIZE[31030]:[/COLOR] $INFO[System.Memory(used.percent),,       ][COLOR fff39c12]$LOCALIZE[13271][/COLOR] $INFO[System.CPUUsage]" />
+                    <param name="visible" value="System.SupportsCPUUsage"/>
                 </include>
                 <include content="Object_ShadowSpot_Label">
-                    <param name="label" value="[COLOR fff39c12]RAM:[/COLOR] $INFO[system.memory(used)] / $INFO[system.memory(total)] - $INFO[System.Memory(used.percent)]" />
+                    <param name="label" value="[COLOR fff39c12]$LOCALIZE[31030]:[/COLOR] $INFO[System.Memory(used.percent),,]" />
+                    <param name="visible" value="!System.SupportsCPUUsage"/>
                 </include>
                 <include content="Object_ShadowSpot_Label">
                     <param name="label" value="$INFO[PVR.ActStreamServiceName,[COLOR fff39c12]$LOCALIZE[19099]:[/COLOR] ]" />
