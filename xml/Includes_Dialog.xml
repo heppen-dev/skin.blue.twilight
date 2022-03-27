@@ -25,7 +25,7 @@
           <aspectratio scalediffuse="false">stretch</aspectratio>
           <texture colordiffuse="main_bg_100" border="5">common/dialog.png</texture>
           <bordertexture border="24">common/shadow-20.png</bordertexture>
-          <bordersize>18</bordersize>
+          <bordersize>12</bordersize>
           <visible>!Skin.HasSetting(TransparentNotification)</visible>
         </control>
         <control type="image">
@@ -34,7 +34,7 @@
           <aspectratio scalediffuse="false">stretch</aspectratio>
           <texture colordiffuse="main_bg_70" border="5">common/dialog.png</texture>
           <bordertexture border="24">common/shadow-20.png</bordertexture>
-          <bordersize>18</bordersize>
+          <bordersize>12</bordersize>
           <visible>Skin.HasSetting(TransparentNotification)</visible>
         </control>
       </control>
