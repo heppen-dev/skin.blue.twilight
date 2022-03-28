@@ -692,9 +692,9 @@
             <onclick>ActivateWindow(osdsubtitlesettings)</onclick>
             <visible>!VideoPlayer.Content(LiveTV) | VideoPlayer.HasSubtitles</visible>
           </control>
-          <control type="button" id="70042">
+          <control type="radiobutton" id="70042">
             <include content="OSDButton">
-              <param name="texture" value="osd/fullscreen/buttons/playlist.png"/>
+              <param name="texture" value="special://skin/extras/icons/playlist.png"/>
             </include>
             <include>OSD_Button_OnFocus</include>
             <onclick>Dialog.Close(all, true)</onclick>
