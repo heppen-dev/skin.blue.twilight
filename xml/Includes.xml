@@ -1401,6 +1401,14 @@
             <include>OpenClose_Fade</include>
           </control>
           <control type="image">
+            <include>FanartDimensions</include>
+            <animation effect="zoom" end="75" center="360,288" time="200" condition="true">Conditional</animation>
+            <animation effect="slide" start="0" end="650,-100" time="200" condition="true">Conditional</animation>
+            <aspectratio aligny="top">scale</aspectratio>
+            <texture background="true" diffuse="diffuse/fanart-spot.png">$VAR[MediaFanartVar]</texture>
+            <visible>Control.HasFocus(510)</visible>
+          </control>
+          <control type="image">
             <left>-3</left>
             <top>0</top>
             <right>1193</right>
