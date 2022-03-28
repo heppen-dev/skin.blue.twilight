@@ -192,7 +192,7 @@
         <right>30</right>
         <height>156</height>
         <font>$PARAM[font]</font>
-        <autoscroll delay="7000" time="3500" repeat="10000">Skin.HasSetting(autoscroll)</autoscroll>
+        <autoscroll delay="5000" time="5000" repeat="10000">!Skin.HasSetting(autoscroll)</autoscroll>
         <label>$PARAM[textbox_content]</label>
       </control>
     </control>

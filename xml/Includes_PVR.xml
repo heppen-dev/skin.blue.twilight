@@ -457,7 +457,7 @@
                   <font>font13</font>
                   <top>57</top>
                   <aligny>top</aligny>
-                  <autoscroll delay="3000" time="2500" repeat="10000">!String.IsEmpty(ListItem.Plot) + Skin.HasSetting(autoscroll)</autoscroll>
+                  <autoscroll delay="5000" time="5000" repeat="10000">!String.IsEmpty(ListItem.Plot) + !Skin.HasSetting(autoscroll)</autoscroll>
                   <textcolor>panel_fg_100</textcolor>
                   <selectedcolor>panel_fg_100</selectedcolor>
                   <label>$INFO[ListItem.Plot]</label>
@@ -1189,7 +1189,7 @@
                   <font>font13</font>
                   <top>57</top>
                   <aligny>top</aligny>
-                  <autoscroll delay="3000" time="2500" repeat="10000">!String.IsEmpty(ListItem.Plot) + Skin.HasSetting(autoscroll)</autoscroll>
+                  <autoscroll delay="5000" time="2500" repeat="10000">!String.IsEmpty(ListItem.Plot) + !Skin.HasSetting(autoscroll)</autoscroll>
                   <textcolor>panel_fg_100</textcolor>
                   <selectedcolor>panel_fg_100</selectedcolor>
                   <label>$INFO[ListItem.Plot]</label>
@@ -1313,7 +1313,7 @@
                 <width>760</width>
                 <height>290</height>
                 <label>$INFO[ListItem.Plot]</label>
-                <autoscroll time="3000" delay="4000" repeat="5000">Skin.HasSetting(autoscroll)</autoscroll>
+                <autoscroll time="5000" delay="5000" repeat="5000">!Skin.HasSetting(autoscroll)</autoscroll>
               </control>
             </control>
           </focusedlayout>
@@ -1668,7 +1668,7 @@
       <width>830</width>
       <bottom>80</bottom>
       <label>$VAR[FlagLabel,,[CR]]$INFO[ListItem.Genre,[COLOR grey]$LOCALIZE[515]:[/COLOR] ,[CR]]$INFO[ListItem.TimerType,[COLOR grey]$LOCALIZE[803]:[/COLOR] ,[CR]]$VAR[RecordingSizeLabel]$VAR[ExpirationDateTimeLabel]$INFO[ListItem.Plot,[CR]]</label>
-      <autoscroll delay="10000" time="3000" repeat="10000">Skin.HasSetting(autoscroll)</autoscroll>
+      <autoscroll delay="10000" time="5000" repeat="10000">!Skin.HasSetting(autoscroll)</autoscroll>
     </control>
   </control>
   <control type="group">

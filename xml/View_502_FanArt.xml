@@ -50,7 +50,7 @@
           <top>769</top>
           <bottom>105</bottom>
           <label>$VAR[PlotTextBoxVar]</label>
-          <autoscroll time="3000" delay="7000" repeat="5000">!System.HasActiveModalDialog + Skin.HasSetting(AutoScroll)</autoscroll>
+          <autoscroll time="5000" delay="5000" repeat="5000">!System.HasActiveModalDialog + !Skin.HasSetting(AutoScroll)</autoscroll>
         </control>
         <control type="scrollbar" id="502600">
           <left>20</left>

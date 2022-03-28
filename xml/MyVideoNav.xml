@@ -57,7 +57,7 @@
             <bottom>100</bottom>
             <visible>![ListItem.IsCollection + String.IsEmpty(ListItem.Plot)]</visible>
             <label>$INFO[ListItem.Tagline,[I],[/I][CR][CR]]$INFO[ListItem.Plot][CR][CR]</label>
-            <autoscroll delay="10000" time="3000" repeat="10000">Skin.HasSetting(autoscroll)</autoscroll>
+            <autoscroll delay="5000" time="5000" repeat="10000">!Skin.HasSetting(autoscroll)</autoscroll>
           </control>
           <control type="textbox">
             <left>30</left>

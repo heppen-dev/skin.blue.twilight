@@ -80,7 +80,7 @@
             <label>$VAR[Label_PlotTextBoxVar]</label>
             <font>font_plot_normal</font>
             <shadowcolor>black</shadowcolor>
-            <autoscroll delay="4000" time="4500" repeat="7000">Skin.HasSetting(autoscroll)</autoscroll>
+            <autoscroll delay="5000" time="5000" repeat="7000">!Skin.HasSetting(autoscroll)</autoscroll>
             <visible>!Skin.HasSetting(HidePlot)</visible>
           </control>
         </control>

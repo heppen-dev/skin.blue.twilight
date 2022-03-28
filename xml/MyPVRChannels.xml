@@ -68,7 +68,7 @@
           <height>145</height>
           <align>justify</align>
           <font>font13</font>
-          <scroll>Skin.HasSetting(autoscroll)</scroll>
+          <scroll>!Skin.HasSetting(autoscroll)</scroll>
           <label>$INFO[ListItem.Plot]</label>
         </control>
       </control>

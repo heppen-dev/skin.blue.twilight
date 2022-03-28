@@ -58,7 +58,7 @@
             <textcolor>main_fg_70</textcolor>
             <visible>![ListItem.IsCollection + String.IsEmpty(ListItem.Plot)]</visible>
             <label>$INFO[ListItem.Tagline,[I],[/I][CR][CR]]$INFO[ListItem.Plot][CR][CR]</label>
-            <autoscroll delay="10000" time="3000" repeat="10000">Skin.HasSetting(autoscroll)</autoscroll>
+            <autoscroll delay="5000" time="5000" repeat="10000">!Skin.HasSetting(autoscroll)</autoscroll>
           </control>
 <!--          <control type="textbox">-->
 <!--            <left>-160</left>-->
@@ -139,7 +139,7 @@
             <top>600</top>
             <width>540</width>
             <bottom>70</bottom>
-            <autoscroll time="3000" delay="7000" repeat="5000">!System.HasModalDialog + Skin.HasSetting(AutoScroll)</autoscroll>
+            <autoscroll time="5000" delay="5000" repeat="5000">!System.HasModalDialog + !Skin.HasSetting(AutoScroll)</autoscroll>
             <label>[COLOR $VAR[ColorHighlight]][B]$LOCALIZE[31000]: [/COLOR]$INFO[musicplayer.Playlistposition,]$INFO[musicplayer.Playlistlength,/][/B][CR]$VAR[NowPlayingInfoVar]</label>
           </control>
           <control type="textbox" id="15599">
@@ -148,7 +148,7 @@
             <top>640</top>
             <width>540</width>
             <bottom>70</bottom>
-            <autoscroll time="3000" delay="7000" repeat="5000">!System.HasModalDialog + Skin.HasSetting(AutoScroll)</autoscroll>
+            <autoscroll time="5000" delay="5000" repeat="5000">!System.HasModalDialog + !Skin.HasSetting(AutoScroll)</autoscroll>
             <label>[COLOR $VAR[ColorHighlight]][B]$LOCALIZE[31000]: [/COLOR]$LOCALIZE[36623][/B]</label>
           </control>
         </control>
