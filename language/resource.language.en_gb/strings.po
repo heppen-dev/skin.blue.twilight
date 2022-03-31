@@ -2155,3 +2155,8 @@ msgstr ""
 msgctxt "#31441"
 msgid "Tiles"
 msgstr ""
+
+#: /xml/SkinSettings.xml
+msgctxt "#31442"
+msgid "Blur home screen vignette"
+msgstr ""

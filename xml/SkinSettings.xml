@@ -204,6 +204,12 @@
             <onclick>Skin.ToggleSetting(DisableBlur)</onclick>
             <selected>!Skin.HasSetting(DisableBlur)</selected>
           </control>
+          <control type="radiobutton" id="711" description="Enable blur for home screen vignette">
+            <label>$LOCALIZE[31442]</label>
+            <include>DefaultSettingButton</include>
+            <onclick>Skin.ToggleSetting(BlurredHomeScreen)</onclick>
+            <selected>Skin.HasSetting(BlurredHomeScreen)</selected>
+          </control>
           <control type="radiobutton" id="708" description="Animate background using Ken Burns Effect">
             <label>$LOCALIZE[31247]</label>
             <include>DefaultSettingButton</include>

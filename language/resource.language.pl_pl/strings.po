@@ -1979,3 +1979,8 @@ msgstr "Więcej ustawień"
 msgctxt "#31441"
 msgid "Tiles"
 msgstr "Kafelki"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31442"
+msgid "Blur home screen vignette"
+msgstr "Rozmyj winietę na stronie głównej"
