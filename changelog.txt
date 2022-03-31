@@ -1,3 +1,13 @@
+1.2.6
+    Added Title to Tiles view
+    Reduced notification dialog shadow
+    Disabled blur and fixed watched overlay in Flix view
+    Visual changes to DialogProcessInfo
+    Added System.SupportsCPUUsage bool to DialogProcessInfo
+    Changes to Flix view
+    Enable autoscroll for plot
+    Fixed playlist button in osd
+    Added option to toggle blur on home screen vignette
 1.2.5
     Added 505 Tiles view
 1.2.4
